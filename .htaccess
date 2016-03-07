@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^jakejarvis.net$ [OR]
+RewriteCond %{HTTP_HOST} ^www.jakejarvis.net$ [OR]
+RewriteCond %{HTTP_HOST} ^jakejarvis.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www.jakejarvis.org$ [OR]
+RewriteCond %{HTTP_HOST} ^jake.xxx$ [OR]
+RewriteCond %{HTTP_HOST} ^www.jake.xxx$ [OR]
+RewriteCond %{HTTP_HOST} ^jakejarv.is$ [OR]
+RewriteCond %{HTTP_HOST} ^www.jakejarv.is$ [OR]
+RewriteCond %{HTTP_HOST} ^www.jakejarvis.com$
+RewriteRule (.*)$ http://jakejarvis.com/$1 [R=301,L]
