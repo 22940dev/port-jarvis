@@ -132,3 +132,9 @@ iframe {
   overflow: hidden;
   background-color: #fff;
 }
+div.resume_link {
+  font-size: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
