@@ -7,3 +7,6 @@ RewriteCond %{HTTP_HOST} ^www.jakejarvis.org$ [OR]
 RewriteCond %{HTTP_HOST} ^jakejarv.is$ [OR]
 RewriteCond %{HTTP_HOST} ^www.jakejarv.is$
 RewriteRule (.*)$ https://jakejarvis.com/$1 [R=301,L]
+
+RedirectMatch 404 /\.git
+
