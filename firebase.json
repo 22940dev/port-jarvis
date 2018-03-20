@@ -1,10 +1,6 @@
 {
   "hosting": {
     "public": "public",
-    "rewrites": [ {
-      "source": "**",
-      "destination": "/index.html"
-    }],
     "headers": [
       {
         "source": "**/*",
@@ -50,6 +46,13 @@
         "headers" : [{
           "key" : "Cache-Control",
           "value" : "max-age=86400"
+        }]
+      },
+      {
+        "source" : "404.html",
+        "headers" : [{
+          "key" : "Cache-Control",
+          "value" : "max-age=300"
         }]
       }
     ]
