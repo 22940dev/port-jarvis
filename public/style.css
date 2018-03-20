@@ -320,11 +320,8 @@ span#shh {
   color: #cccccc;
 }
 
-a#fairy {
+span#fairy {
   color: #fd5da8;
-}
-a#fairy:hover {
-  border-color: #fd5da8;
 }
 
 a#javascript {
