@@ -1,161 +1,518 @@
-@font-face {
-  font-family: 'Proxima Nova';
-  src: url('fonts/proximanova-regular-webfont.eot');
-  src: url('fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('fonts/proximanova-regular-webfont.woff') format('woff'),
-       url('fonts/proximanova-regular-webfont.ttf') format('truetype'),
-       url('fonts/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block
 }
-@font-face {
-  font-family: 'Proxima Nova';
-  src: url('fonts/proximanova-semibold-webfont.eot');
-  src: url('fonts/proximanova-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-       url('fonts/proximanova-semibold-webfont.woff') format('woff'),
-       url('fonts/proximanova-semibold-webfont.ttf') format('truetype'),
-       url('fonts/proximanova-semibold-webfont.svg#proxima_nova_rgsemibold') format('svg');
-  font-weight: bold;
-  font-style: normal;
+
+audio,
+canvas,
+video {
+    display: inline-block
 }
-.clearfix:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0px;
-  height: 0px;
+
+audio:not([controls]) {
+    display: none;
+    height: 0
 }
-.clearfix {
-  display: inline-block;
+
+[hidden],
+template {
+    display: none
 }
-html[xmlns] .clearfix {
-  display: block;
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
 }
-* html .clearfix {
-  height: 1%;
-}
+
 body {
-  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 26px;
-  color: #333;
-  text-shadow: 0px 1px rgba(255, 255, 255, 0.8);
-  background: #f3f1ea url('images/back.jpg') top left;
-  margin: 0px;
-  width: 100%;
-  height: 100%;
+    margin: 0
 }
-::selection {
-  background: rgba(0, 0, 0, 0.2);
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: none;
-}
-::-moz-selection { /* can't combine with above ::selection for some reason */
-  background: rgba(0, 0, 0, 0.2);
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: none;
-}
+
 a {
-  color: #555;
-  font-weight: bold;
-  text-decoration: none;
+    background: transparent
 }
+
+a:focus {
+    outline: thin dotted
+}
+
+a:active,
 a:hover {
-  color: #777;
+    outline: 0
 }
-div#container {
-  width: 600px;
-  margin: 60px auto;
-  text-align: left;
-  border: 1px solid #ccc;
-  padding: 0px;
-  background-color: rgba(255,255,255,0.4);
-}
+
 h1 {
-  font-size: 32px;
-  line-height: 35px;
-  height: 35px;
-  font-weight: bold;
-  border-bottom: 1px solid #ccc;
-  margin: 0px;
-  padding: 20px 25px 17px 25px;
-  background-color: rgba(255,255,255,0.5);
+    font-size: 2em;
+    margin: .67em 0
 }
-h2 {
-  font-size: 22px;
-  line-height: 22px;
-  font-weight: bold;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  margin: 0px;
-  padding: 20px;
-  background-color: rgba(255,255,255,0.5);
-  text-align: center;
+
+abbr[title] {
+    border-bottom: 1px dotted
 }
-p {
-  margin: 12px 0px;
-  padding: 10px 20px;
-  text-align: center;
+
+b,
+strong {
+    font-weight: bold
 }
+
+dfn {
+    font-style: italic
+}
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0
+}
+
+mark {
+    background: #ff0;
+    color: #000
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em
+}
+
+pre {
+    white-space: pre-wrap
+}
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019"
+}
+
+small {
+    font-size: 80%
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sup {
+    top: -0.5em
+}
+
+sub {
+    bottom: -0.25em
+}
+
 img {
-  border: 0px;
+    border: 0
 }
-ul {
-  margin: 0px;
-  padding: 0px;
+
+svg:not(:root) {
+    overflow: hidden
 }
-li {
-  list-style-type: none;
-  display: block;
-  padding: 0px;
-  margin: 0px;
-  text-align: center;
-  font-size: 14px;
+
+figure {
+    margin: 0
 }
-div.section {
-  padding: 21px;
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: .35em .625em .75em
 }
-div.section img {
-  float: left;
-  margin: 20px 28px;
+
+legend {
+    border: 0;
+    padding: 0
 }
-div#social {
-  margin: 10px 0px 25px 0px;
-  padding: 10px 20px;
-  line-height: 32px;
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0
+}
+
+button,
+input {
+    line-height: normal
+}
+
+button,
+select {
+    text-transform: none
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+
+button[disabled],
+html input[disabled] {
+    cursor: default
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+/* open-sans-light 300 */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('fonts/open-sans-light.eot'); /* IE9 Compat Modes */
+  src: local('Open Sans Light'), local('OpenSans-Light'),
+       url('fonts/open-sans-light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/open-sans-light.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/open-sans-light.woff') format('woff'), /* Modern Browsers */
+       url('fonts/open-sans-light.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/open-sans-light.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+
+body {
+  color: #1a1a1a;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1.5;
+  width: 60%;
+}
+
+img#me {
   float: right;
+  margin: 0 0 12px 12px;
+  padding: 4px;
+  border: 1px solid #ddd;
+  width: 120px;
+  height: 120px;
 }
-div#social img {
-  margin: 0px 10px;
-  width: 32px;
-  height: 32px;
-  float: left;
-}
-div#blurb p {
-  float: right;
-  width: 420px;
-}
-div#blurb img#photo {
-  margin: 10px 0px 10px 60px;
-  float: left;
-  width: 75px;
-  height: 75px;
-}
-div#portfolio img, div#press img {
-  width: 130px;
-  height: 48px;
-}
-iframe {
-  width: 600px;
-  height: 600px;
-  border: 0px;
-  overflow: hidden;
-  background-color: #fff;
-}
-div.resume_link {
-  font-size: 10px;
-  text-align: center;
-  margin-bottom: 10px;
+
+div#container {
+  display: table;
+  height: 100%;
+  position: absolute;
   width: 100%;
+}
+
+div#content {
+  display: table-cell;
+  padding: 10%;
+  vertical-align: middle;
+  margin: 0 auto;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px dashed transparent;
+  transition: border-color 0.2s linear;
+  -moz-transition: border-color 0.2s linear;
+  -webkit-transition: border-color 0.2s linear;
+  -o-transition: border-color 0.2s linear;
+}
+
+h1 {
+  margin: 0 0 20px 0;
+  font-size: 150%;
+  line-height: 1;
+}
+
+h2 {
+  margin: 20px 0;
+  font-size: 120%;
+}
+
+p {
+  margin: 20px 0px;
+}
+
+sup {
+  vertical-align: middle;
+  font-size: 50%;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 18px;
+  }
+
+  img#me {
+    width: 75px;
+    height: 75px;
+  }
+
+  h1 {
+    font-size: 130%;
+  }
+
+  h2 {
+    font-size: 100%;
+  }
+}
+
+a#boston {
+  color: #008349;
+}
+a#boston:hover {
+  border-color: #008349;
+}
+
+a#y2k {
+  color: #ffcd47;
+}
+a#y2k:hover {
+  border-color: #ffcd47;
+}
+
+span#shh {
+  color: #cccccc;
+}
+
+a#fairy {
+  color: #fd5da8;
+}
+a#fairy:hover {
+  border-color: #fd5da8;
+}
+
+a#javascript {
+  color: #f48024;
+}
+a#javascript:hover {
+  border-color: #f48024;
+}
+
+a#node {
+  color: #6fbc4e;
+}
+a#node:hover {
+  border-color: #6fbc4e;
+}
+
+a#react {
+  color: #61dafb;
+}
+a#react:hover {
+  border-color: #61dafb;
+}
+
+a#angular {
+  color: #c3002f;
+}
+a#angular:hover {
+  border-color: #c3002f;
+}
+
+a#java {
+  color: #ab6311;
+}
+a#java:hover {
+  border-color: #ab6311;
+}
+
+a#cpp {
+  color: #865fc5;
+}
+a#cpp:hover {
+  border-color: #865fc5;
+}
+
+a#php {
+  color: #8892BF;
+}
+a#php:hover {
+  border-color: #8892BF;
+}
+
+a#ruby {
+  color: #d34135;
+}
+a#ruby:hover {
+  border-color: #d34135;
+}
+
+a#github {
+  color: #7290a4;
+}
+a#github:hover {
+  border-color: #7290a4;
+}
+
+a#linkedin {
+  color: #0073b1;
+}
+a#linkedin:hover {
+  border-color: #0073b1;
+}
+
+a#facebook {
+  color: #4267b2;
+}
+a#facebook:hover {
+  border-color: #4267b2;
+}
+
+a.twitter {
+  color: #00ACEE;
+}
+a.twitter:hover {
+  border-color: #00ACEE;
+}
+
+a#instagram {
+  color: #a37754;
+}
+a#instagram:hover {
+  border-color: #a37754;
+}
+
+a#news-1 {
+  color: #e23838;
+}
+a#news-1:hover {
+  border-color: #e23838;
+}
+
+a#news-2 {
+  color: #f78200;
+}
+a#news-2:hover {
+  border-color: #f78200;
+}
+
+a#news-3 {
+  color: #ffb900;
+}
+a#news-3:hover {
+  border-color: #ffb900;
+}
+
+a#news-4 {
+  color: #5ebd3e;
+}
+a#news-4:hover {
+  border-color: #5ebd3e;
+}
+
+a#news-5 {
+  color: #009cdf;
+}
+a#news-5:hover {
+  border-color: #009cdf;
+}
+
+a#news-6 {
+  color: #3e49bb;
+}
+a#news-6:hover {
+  border-color: #3e49bb;
+}
+
+a#news-7 {
+  color: #973999;
+}
+a#news-7:hover {
+  border-color: #973999;
+}
+
+a#udacity {
+  color: #02b3e4;
+}
+a#udacity:hover {
+  border-color: #02b3e4;
+}
+
+a#infosec {
+  color: #ed1c24;
+}
+a#infosec:hover {
+  border-color: #ed1c24;
+}
+
+a#serverless {
+  color: #ff9900;
+}
+a#serverless:hover {
+  border-color: #ff9900;
+}
+
+a#containerization {
+  color: #3bb878;
+}
+a#containerization:hover {
+  border-color: #3bb878;
+}
+
+a#resume {
+  color: #c30b15;
+}
+a#resume:hover {
+  border-color: #c30b15;
+}
+
+a#email {
+  color: #fad509;
+}
+a#email:hover {
+  border-color: #fad509;
+}
+
+a#pgp {
+  color: #999999;
+  margin-left: 4px;
+}
+a#pgp:hover {
+  border-color: #999999;
 }
