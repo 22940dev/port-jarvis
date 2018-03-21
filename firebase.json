@@ -1,6 +1,17 @@
 {
   "hosting": {
     "public": "public",
+    "ignore": [
+      "firebase.json",
+      "database.rules.json",
+      "package.json",
+      "Gruntfile.js",
+      "README.md",
+      ".DS_Store",
+      "**/node_modules/**",
+      "**/bower_components/**",
+      "/scripts/.eslint.rc"
+    ],
     "headers": [
       {
         "source": "**/*",
