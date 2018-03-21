@@ -508,8 +508,15 @@ a#email:hover {
 
 a#pgp {
   color: #999999;
-  margin-left: 4px;
+  margin: 0 4px;
 }
 a#pgp:hover {
   border-color: #999999;
+}
+
+a#sms {
+  color: #93d841;
+}
+a#sms:hover {
+  border-color: #93d841;
 }
