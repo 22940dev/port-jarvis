@@ -9,3 +9,6 @@ yarn.lock
 .npmrc
 
 .DS_Store
+
+*.asc
+y2k/
