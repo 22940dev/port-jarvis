@@ -327,6 +327,9 @@ span#shh {
 span#fairy {
   color: #fd5da8;
 }
+span#fairy:hover {
+  cursor: url(data:image/svg+xml;utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMiIgc3R5bGU9ImZvbnQtc2l6ZToxNnB4Ij48dGV4dCB5PSIxOCI+8J+nmjwvdGV4dD48L3N2Zz4=),auto !important;
+}
 
 a#javascript {
   color: #f48024;
