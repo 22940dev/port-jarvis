@@ -226,12 +226,23 @@ table {
 /* custom CSS */
 
 body {
+  display: table;
+  width: 100%;
+  height: 100%;
   color: #1a1a1a;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-size: 24px;
   line-height: 1.5;
-  width: 60%;
+}
+
+div#container {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 10%;
 }
 
 img#me {
@@ -241,21 +252,6 @@ img#me {
   border: 1px solid #dddddd;
   width: 120px;
   height: 120px;
-}
-
-div#container {
-  display: table;
-  height: 100%;
-  position: absolute;
-  width: 100%;
-}
-
-div#content {
-  display: table-cell;
-  padding: 10%;
-  vertical-align: middle;
-  margin: 0 auto;
-  width: 100%;
 }
 
 a {
@@ -279,7 +275,7 @@ h2 {
 }
 
 p {
-  margin: 20px 0px;
+  margin: 20px 0;
 }
 
 sup {
