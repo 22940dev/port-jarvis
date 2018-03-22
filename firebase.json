@@ -25,7 +25,7 @@
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "max-age=180"
+            "value": "max-age=3600"
           },
           {
             "key": "X-Content-Type-Options",
@@ -33,11 +33,11 @@
           },
           {
             "key": "X-Frame-Options",
-            "value": "DENY"
+            "value": "SAMEORIGIN"
           },
           {
             "key": "X-UA-Compatible",
-            "value": "ie=edge"
+            "value": "IE=edge"
           },
           {
             "key": "X-XSS-Protection",
@@ -60,10 +60,17 @@
         }]
       },
       {
+        "source" : "**/*.@(ttf|otf|woff|woff2|svg|eot)",
+        "headers" : [{
+          "key" : "Cache-Control",
+          "value" : "max-age=2628000"
+        }]
+      },
+      {
         "source" : "404.html",
         "headers" : [{
           "key" : "Cache-Control",
-          "value" : "max-age=300"
+          "value" : "max-age=3600"
         }]
       }
     ]
