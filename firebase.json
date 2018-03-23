@@ -3,14 +3,12 @@
     "public": "public",
     "ignore": [
       "firebase.json",
-      "database.rules.json",
       "package.json",
       "Gruntfile.js",
       "README.md",
-      ".DS_Store",
+      "**/.DS_Store",
       "**/node_modules/**",
-      "**/bower_components/**",
-      "/scripts/.eslint.rc"
+      "**/bower_components/**"
     ],
     "headers": [
       {
