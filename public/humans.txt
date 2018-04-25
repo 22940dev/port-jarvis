@@ -1,0 +1,35 @@
+          ## 
+   ###----## 
+   ###      \
+   /        ##__
+  /       ##   #     --#  
+ :           __/   -#   :  
+,'          _\     >     : 
+####      :'     #########:   
+##########          |  ###:   
+######################    :
+#######################   :
+######################...,'
+            :
+             ;
+              ;
+               ;
+              ,;
+           ;##########
+          ;###########
+,,,,,,,,,;########### 
+
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+  Jake Jarvis -- @jakejarvis
+  jakejarvis <<at>> gmail
+  https://github.com/jakejarvis
+
+# TECHNOLOGY COLOPHON
+
+  HTML5, CSS3
+  Fastly CDN (via Firebase hosting)
+  Google Analytics
