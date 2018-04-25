@@ -12,11 +12,25 @@
     ],
     "headers": [
       {
-        "source": "**/*",
-        "headers": [{
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        }]
+        "source": "**",
+        "headers": [
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "X-XSS-Protection",
+            "value": "1; mode=block"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "SAMEORIGIN"
+          },
+          {
+            "key": "X-DNS-Prefetch-Control",
+            "value": "off"
+          }
+        ]
       },
       {
         "source" : "**/",
@@ -26,20 +40,8 @@
             "value": "max-age=3600"
           },
           {
-            "key": "X-Content-Type-Options",
-            "value": "nosniff"
-          },
-          {
-            "key": "X-Frame-Options",
-            "value": "SAMEORIGIN"
-          },
-          {
             "key": "X-UA-Compatible",
             "value": "IE=edge"
-          },
-          {
-            "key": "X-XSS-Protection",
-            "value": "1; mode=block"
           }
         ]
       },
