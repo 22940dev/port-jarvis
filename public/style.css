@@ -1,3 +1,19 @@
+/*! Open Sans Light | Apache License 2.0 | fonts.google.com/specimen/Open+Sans */
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: url("fonts/open-sans-light.eot");
+  src: local("Open Sans Light"), local("OpenSans-Light"),
+       url("fonts/open-sans-light.eot?#iefix") format("embedded-opentype"),
+       url("fonts/open-sans-light.woff2") format("woff2"),
+       url("fonts/open-sans-light.woff") format("woff"),
+       url("fonts/open-sans-light.ttf") format("truetype"),
+       url("fonts/open-sans-light.svg#OpenSans") format("svg");
+}
+
+
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 
 html {
@@ -174,22 +190,6 @@ template {
 
 [hidden] {
   display: none;
-}
-
-
-/*! Open Sans Light | Apache License 2.0 | fonts.google.com/specimen/Open+Sans */
-
-@font-face {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 300;
-  src: url("fonts/open-sans-light.eot");
-  src: local("Open Sans Light"), local("OpenSans-Light"),
-       url("fonts/open-sans-light.eot?#iefix") format("embedded-opentype"),
-       url("fonts/open-sans-light.woff2") format("woff2"),
-       url("fonts/open-sans-light.woff") format("woff"),
-       url("fonts/open-sans-light.ttf") format("truetype"),
-       url("fonts/open-sans-light.svg#OpenSans") format("svg");
 }
 
 
