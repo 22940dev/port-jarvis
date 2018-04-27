@@ -1,0 +1,3 @@
+User-Agent: *
+Disallow: /y2k/
+Disallow: /scrabble/
