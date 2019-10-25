@@ -8,6 +8,7 @@ tags:
   - Continuous Integration
   - Docker
   - Open Source
+image: "actions-flow.png"
 draft: false
 ---
 
