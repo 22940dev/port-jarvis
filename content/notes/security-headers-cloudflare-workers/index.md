@@ -13,7 +13,7 @@ draft: false
 ---
 
 
-{{< image src="images/security-headers.png" width="700" alt="A+ security grade for this website" >}}
+{{< image src="images/security-headers.png" width="700" alt="A+ security grade for this website!" caption="A+ security grade for this website!" >}}
 
 In 2019, it's becoming more and more important to harden websites via HTTP response headers, which all modern browsers parse and enforce. Multiple standards have been introduced over the past few years to protect users from various attack vectors, including `Content-Security-Policy` for injection protection, `Strict-Transport-Security` for HTTPS enforcement, `X-XSS-Protection` for cross-site scripting prevention, `X-Content-Type-Options` to enforce correct MIME types, `Referrer-Policy` to limit information sent with external links, [and many, many more](https://www.netsparker.com/whitepaper-http-security-headers/).
 

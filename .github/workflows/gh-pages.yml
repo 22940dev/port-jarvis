@@ -31,6 +31,16 @@ jobs:
         cp -r $GITHUB_WORKSPACE/public $HOME/gh-pages
         echo "jarv.is" > $HOME/gh-pages/CNAME
 
+    # Put a bow on top of Hugo's automatic image processing by using
+    # pngquant and jpegoptim to optimize/compress images in posts,
+    # just a little lossily (is that a word?)
+    - name: Optimize processed images
+      run: |
+        sudo apt-get install -y --no-install-recommends pngquant jpegoptim
+        cd $HOME/gh-pages/notes
+        find . -iname "*.jp*" -print0 | xargs -0 jpegoptim --max=90 --strip-all
+        find . -iname "*.png" -print0 | xargs -0 pngquant --quality=60-75 --speed 1 --ext=.png --force --verbose
+
     # Initialize a sub-repository in the new gh-pages directory and
     # add jakejarvis/jakejarvis.github.io as a remote.
     # Using native git commands for speed and simplicity, and because

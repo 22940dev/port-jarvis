@@ -1,6 +1,6 @@
 ---
 title: "I ❤️ GitHub Actions"
-date: 2019-10-25 1:58:39-0400
+date: 2019-10-25 13:58:39-0400
 description: "I've found a new hobby of making cool GitHub Actions, the latest tool in the CI world. Here's why."
 tags:
   - DevOps

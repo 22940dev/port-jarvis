@@ -13,7 +13,8 @@ pygmentsCodeFences = true
 
 enableRobotsTXT = true
 
-# enableGitInfo = true     # messed up sitemap.xml timestamps
+# increase timeout for image processing
+timeout = 60000
 
 [outputs]
   home = ["HTML", "RSS"]
@@ -21,6 +22,12 @@ enableRobotsTXT = true
 
 [sitemap]
   filename = "sitemap.xml"
+
+[imaging]
+  # options for resampling filters:
+  # https://github.com/disintegration/imaging#image-resizing
+  resampleFilter = "Linear"
+  quality = 100
 
 [blackfriday]
   hrefTargetBlank = true

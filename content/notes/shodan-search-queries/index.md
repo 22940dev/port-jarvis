@@ -18,8 +18,7 @@ draft: false
 
 Over time, I've collected an assortment of interesting, funny, and depressing search queries to plug into [Shodan](https://www.shodan.io/), the ([literal](https://www.vice.com/en_uk/article/9bvxmd/shodan-exposes-the-dark-side-of-the-net)) internet search engine. Some return facepalm-inducing results, while others return serious and/or ancient vulnerabilities in the wild.
 
-![Shodan.io](images/shodan.png)
-*[Most search filters require a Shodan account.](https://account.shodan.io/register)*
+{{< image src="images/shodan.png" alt="Some search filters require a Shodan account." caption="Some search filters require a Shodan account." >}}
 
 You can assume these queries only return unsecured/open instances when possible. For your own legal benefit, do not attempt to login (even with default passwords) if they aren't! Narrow down results by adding filters like `country:US` or `org:"Harvard University"` or `hostname:"nasa.gov"` to the end.
 

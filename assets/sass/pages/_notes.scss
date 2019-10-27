@@ -97,7 +97,6 @@ body#notes {
     }
 
     div {
-
       &#copyright,
       &#poweredby {
         width: 40%;
@@ -184,10 +183,16 @@ body#notes {
           line-height: 1.5;
         }
 
-        img {
+        img,
+        figure {
           max-width: 100%;
-          margin: 0 auto;
+          margin: 1em auto;
           display: block;
+        }
+
+        // reduce margin between image and caption
+        figure img {
+          margin-bottom: 0.4em;
         }
 
         // image captions -- two different markdown hacks
@@ -198,7 +203,6 @@ body#notes {
           font-style: normal;
           color: $color-light;
           text-align: center;
-          margin-top: 0.4em;
         }
 
         blockquote {
@@ -250,7 +254,7 @@ body#notes {
           margin: 0 auto;
           display: block;
         }
-        
+
         code {
           // https://markdotto.com/2018/02/07/github-system-fonts/
           font-family: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
@@ -263,6 +267,7 @@ body#notes {
         pre code {
           display: block;
           padding: 1em 1.5em;
+          margin: 1.4em 0;
           line-height: 1.6;
           border-left: 3px solid $color-links;
           max-width: 100%;
@@ -309,7 +314,6 @@ body#notes {
       h2 {
         font-size: 1.8em;
       }
-
     }
   }
 }
