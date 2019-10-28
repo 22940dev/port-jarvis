@@ -21,7 +21,7 @@ jobs:
     - name: Build Hugo
       run: |
         echo ${{ secrets.GITHUB_ACCESS_TOKEN }} | docker login docker.pkg.github.com -u $GITHUB_ACTOR --password-stdin
-        docker run -v $GITHUB_WORKSPACE:/src docker.pkg.github.com/jakejarvis/hugo-custom/hugo-custom:latest --gc --cleanDestinationDir
+        docker run -v $GITHUB_WORKSPACE:/src docker.pkg.github.com/jakejarvis/hugo-custom/hugo-custom:latest --gc --cleanDestinationDir --verbose
         docker logout docker.pkg.github.com
 
     # Copy built site to a directory where we have permissions, and

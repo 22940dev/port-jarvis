@@ -2,6 +2,9 @@ baseURL = "https://jarv.is/"
 languageCode = "en-us"
 title = "Jake Jarvis"
 
+# increase timeout for image processing
+timeout = 60000
+
 canonifyURLs = true
 
 disableFastRender = true
@@ -13,8 +16,17 @@ pygmentsCodeFences = true
 
 enableRobotsTXT = true
 
-# increase timeout for image processing
-timeout = 60000
+[author]
+  name = "Jake Jarvis"
+  email = "jake@jarv.is"
+  twitter = "@jakejarvis"
+  github = "jakejarvis"
+
+[params]
+  domain = "jarv.is"
+  gitRepo = "https://github.com/jakejarvis/jarv.is"
+  wayback = "https://web.archive.org/web/20010501000000*/jakejarvis.com"
+  copyrightFirstYear = "2001"
 
 [outputs]
   home = ["HTML", "RSS"]

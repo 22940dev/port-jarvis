@@ -12,10 +12,12 @@
 // Pages
 @import 'pages/home';
 @import 'pages/notes';
+@import 'pages/videos';
 
 // Responsive Pages
 @import 'pages/responsive/global';
 
 // Miscellaneous
+@import 'components/logo';
 @import 'components/syntax';
 @import 'components/wave';

@@ -25,7 +25,12 @@ body#notes {
         color: $color-medium;
         padding: 15px;
 
-        img, svg {
+        &:hover {
+          color: $color-links;
+        }
+
+        img,
+        svg {
           height: 45px;
           width: auto;
         }
@@ -34,26 +39,6 @@ body#notes {
           margin-left: 20px;
           font-size: 1.4em;
           font-weight: 500;
-        }
-        
-        &:hover {
-          color: $color-links;
-
-          $logo-original1: #6fbc4e;
-          $logo-original2: #ffb900;
-          $logo-original3: #009cdf;
-
-          svg {
-            g#color1 {
-              fill: $logo-original2;
-            }
-            g#color2 {
-              fill: $logo-original3;
-            }
-            g#color3 {
-              fill: $logo-original1;
-            }
-          }
         }
       }
 

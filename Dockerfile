@@ -20,4 +20,4 @@ WORKDIR /src
 EXPOSE 1313
 
 ENTRYPOINT ["/usr/bin/hugo"]
-CMD ["server", "--bind", "0.0.0.0", "--port", "1313"]
+CMD ["server", "--bind", "0.0.0.0", "--port", "1313", "--verbose"]
