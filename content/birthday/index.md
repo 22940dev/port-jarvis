@@ -1,6 +1,6 @@
 ---
 title: "🎉 Cranky Birthday Boy on VHS Tape 📼"
-date: 1996-02-06 00:01:01-0400
+date: 1996-02-04 00:01:01-0400
 url: "/birthday"
 image: "thumb.png"
 type: videos

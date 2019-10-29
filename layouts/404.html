@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    {{ hugo.Generator }}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Page Not Found</title>
+    <title>Page Not Found &ndash; {{ .Site.Title }}</title>
     <style>
       body {
         background: #efefef;
@@ -13,12 +14,12 @@
         padding: 0;
       }
       div#message {
-        background: #fff;
+        background: #ffffff;
         max-width: 400px;
         margin: 100px auto 16px;
         padding: 16px 32px;
         border-radius: 4px;
-        box-shadow: 0 1px 3px #e0e0e0, 0 1px 2px #888;
+        box-shadow: 0 1px 3px #e0e0e0, 0 1px 2px #888888;
       }
       div#message h1 {
         margin: 16px 0;
@@ -31,14 +32,14 @@
         line-height: 140%;
       }
       div#message a {
-        color: #0077a7;
+        color: #0e6dc2;
       }
       div#message a:hover {
         text-decoration: underline;
       }
       @media (max-width: 600px) {
         body, div#message {
-          background: #fff;
+          background: #ffffff;
           margin-top: 16px;
           box-shadow: none;
         }

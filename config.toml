@@ -21,9 +21,12 @@ enableRobotsTXT = true
   email = "jake@jarv.is"
   twitter = "@jakejarvis"
   github = "jakejarvis"
+  facebook = "jakejarvis"
+  facebook_id = "1329090853"
 
 [params]
   domain = "jarv.is"
+  facebook_app_id = "3357248167622283"
   gitRepo = "https://github.com/jakejarvis/jarv.is"
   wayback = "https://web.archive.org/web/20010501000000*/jakejarvis.com"
   copyrightFirstYear = "2001"
