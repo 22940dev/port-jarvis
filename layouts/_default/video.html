@@ -3,8 +3,8 @@
 
     <video poster="{{ with .Resources.GetMatch "images/*.png" }}{{ .Permalink }}{{ end }}" controls crossorigin playsinline preload="none">
       <!-- Video files -->
-      {{ with .Resources.GetMatch "*.mp4" }}<source src="{{ .Permalink }}" type="video/mp4">{{ end }}
       {{ with .Resources.GetMatch "*.webm" }}<source src="{{ .Permalink }}" type="video/webm">{{ end }}
+      {{ with .Resources.GetMatch "*.mp4" }}<source src="{{ .Permalink }}" type="video/mp4">{{ end }}
 
       <!-- Caption files -->
       {{ with .Resources.GetMatch "*.en.vtt" }}<track src="{{ .Permalink }}" kind="captions" label="English" srclang="en" default>{{ end }}
