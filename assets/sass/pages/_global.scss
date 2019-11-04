@@ -33,3 +33,15 @@ body {
     }
   }
 }
+
+
+// Responsive
+@mixin responsive--global() {
+  body {
+    // Safari iOS menu bar reappers below 44px:
+    // https://www.eventbrite.com/engineering/mobile-safari-why/
+    padding-bottom: 45px !important;
+    // Allows you to scroll below the viewport; default value is visible
+    overflow-y: scroll;
+  }
+}

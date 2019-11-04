@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 // nifty color swapping on svg logo hover
-
 a#logo {
   &:hover {
     $logo-original1: #6fbc4e;
@@ -9,13 +8,13 @@ a#logo {
     $logo-original3: #009cdf;
 
     svg {
-      g#color1 {
+      g#c1 {
         fill: $logo-original2;
       }
-      g#color2 {
+      g#c2 {
         fill: $logo-original3;
       }
-      g#color3 {
+      g#c3 {
         fill: $logo-original1;
       }
     }

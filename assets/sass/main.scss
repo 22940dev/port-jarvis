@@ -14,8 +14,8 @@
 @import 'pages/notes';
 @import 'pages/videos';
 
-// Responsive Pages
-@import 'pages/responsive/global';
+// Responsive Mixins
+@import 'abstracts/responsive';
 
 // Miscellaneous
 @import 'components/logo';

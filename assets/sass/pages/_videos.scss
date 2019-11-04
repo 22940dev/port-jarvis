@@ -30,3 +30,21 @@ body#videos {
     font-family: inherit;    // for subtitles
   }
 }
+
+
+// Responsive
+@mixin responsive--videos() {
+  body#videos {
+    margin: 20px 0;
+  
+    h1 {
+      font-size: 1.6em;
+      padding: 0 10px;
+    }
+  
+    video {
+      width: 100%;
+      height: auto;
+    }
+  }  
+}

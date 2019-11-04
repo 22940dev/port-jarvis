@@ -1,5 +1,4 @@
 <!-- Automatic resizing for HiDPI/retina images -->
-<!-- https://gohugo.io/content-management/image-processing/ -->
 
 {{- $original := .Page.Resources.GetMatch (.Get "src") -}}
 {{- .Scratch.Set "image" $original -}}
@@ -24,13 +23,16 @@
 
 {{- $image := .Scratch.Get "image" -}}
 
+{{- $displayWidth := (math.Round (div $image.Width 2)) -}}
+{{- $displayHeight := (math.Round (div $image.Height 2)) -}}
+
 {{- if .Get "caption" -}}
 <figure>
   <picture>
 {{- else -}}
 <p>
 {{- end -}}
-<img src="{{ $image.Permalink }}"{{ if .Get "alt" }} alt="{{ .Get "alt" }}"{{ end }}{{ if .Get "width" }} width="{{ .Get "width" }}"{{ end }}{{ if .Get "caption" }} title="{{ .Get "caption"}}"{{ end }}>
+<img src="{{ $image.Permalink }}" width="{{ $displayWidth }}" height="{{ $displayHeight }}"{{ if .Get "alt" }} alt="{{ .Get "alt" }}"{{ end }}{{ if .Get "caption" }} title="{{ .Get "caption"}}"{{ end }}>
 {{- if .Get "caption" -}}
   </picture>
   <figcaption>{{ .Get "caption" }}</figcaption>

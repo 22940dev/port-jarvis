@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+// Responsive Awesomeness
+@media screen and (max-width: $responsive-width) {
+  @include responsive--global();
+  @include responsive--home();
+  @include responsive--notes();
+  @include responsive--videos();
+}
