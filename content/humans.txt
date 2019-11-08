@@ -33,7 +33,6 @@
     GitHub Pages
     GitHub Actions
     Commento
-    Fathom Analytics
 
 # VIEW SOURCE
 
