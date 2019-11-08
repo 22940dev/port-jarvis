@@ -3,7 +3,13 @@
 {{- $video_ogg := .Page.Resources.GetMatch (.Get "ogg") -}}
 {{- $img_poster := .Page.Resources.GetMatch (.Get "poster") -}}
 
-<video class="embed"{{ if .Get "width" }} width="{{ .Get "width" }}"{{ end }}{{ if .Get "height" }} height="{{ .Get "height" }}"{{ end }}{{ if .Get "poster" }} poster="{{ $img_poster.Permalink }}"{{ end }}{{ if .Get "autoplay" }} autoplay{{ end }}{{ if .Get "loop" }} loop{{ end }}{{ if ne (.Get "nocontrols") "1" }} controls{{ end }}>
+<video class="embed"
+       {{- if .Get "width" }} width="{{ .Get "width" }}"{{ end }}
+       {{- if .Get "height" }} height="{{ .Get "height" }}"{{ end }}
+       {{- if .Get "poster" }} poster="{{ $img_poster.Permalink }}"{{ end }}
+       {{- if .Get "autoplay" }} autoplay{{ end }}
+       {{- if .Get "loop" }} loop{{ end }}
+       {{- if ne (.Get "nocontrols") "1" }} controls{{ end }}>
   {{ if .Get "webm" }}<source src="{{ $video_webm.Permalink }}" type="video/webm">{{ end }}
   {{ if .Get "mp4"  }}<source src="{{ $video_mp4.Permalink }}" type="video/mp4">{{ end }}
   {{ if .Get "ogg"  }}<source src="{{ $video_ogg.Permalink }}" type="video/ogg">{{ end }}

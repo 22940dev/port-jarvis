@@ -5,17 +5,18 @@
 
 <!-- TODO: automatically pull max-width of page -->
 {{- $maxWidth := 910 -}}
+{{- $setWidth := 0 -}}
 
 {{- if .Get "width" }}
-  {{- $inputWidth := (int (.Get "width")) -}}
-  {{- $retinaWidth := (mul $inputWidth 2) -}}
+  {{- $setWidth = (int (.Get "width")) -}}
+  {{- $retinaWidth := (mul $setWidth 2) -}}
 
   {{- if gt $original.Width $retinaWidth -}}
     {{- $finalWidth := (printf "%dx" $retinaWidth ) -}}
     {{- .Scratch.Set "image" ($original.Resize $finalWidth) -}}
   {{- end -}}
 {{- else -}}
-  {{- $inputWidth := $maxWidth -}}
+  {{- $setWidth = $maxWidth -}}
   {{- if gt $original.Width 1820 -}}
     {{- .Scratch.Set "image" ($original.Resize "1820x") -}}
   {{- end -}}
@@ -23,7 +24,7 @@
 
 {{- $image := .Scratch.Get "image" -}}
 
-{{- $displayWidth := (math.Round (div $image.Width 2)) -}}
+{{- $displayWidth := $setWidth -}}
 {{- $displayHeight := (math.Round (div $image.Height 2)) -}}
 
 {{- if .Get "caption" -}}
@@ -32,7 +33,9 @@
 {{- else -}}
 <p>
 {{- end -}}
-<img src="{{ $image.Permalink }}" width="{{ $displayWidth }}" height="{{ $displayHeight }}"{{ if .Get "alt" }} alt="{{ .Get "alt" }}"{{ end }}{{ if .Get "caption" }} title="{{ .Get "caption"}}"{{ end }}>
+<img src="{{ $image.Permalink }}" width="{{ $displayWidth }}" height="{{ $displayHeight }}"
+     {{- if .Get "alt" }} alt="{{ .Get "alt" }}"{{ end }}
+     {{- if .Get "caption" }} title="{{ .Get "caption"}}"{{ end }}>
 {{- if .Get "caption" -}}
   </picture>
   <figcaption>{{ .Get "caption" }}</figcaption>

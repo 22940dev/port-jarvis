@@ -39,7 +39,7 @@ jobs:
         sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends pngquant jpegoptim
         cd $HOME/gh-pages/notes
         find . -iname "*.jp*" -print0 | xargs -0 jpegoptim --max=80 --strip-all
-        find . -iname "*.png" -print0 | xargs -0 pngquant --quality=60-70 --speed 1 --ext=.png --force --verbose
+        find . -iname "*.png" -print0 | xargs -0 pngquant --quality=60-65 --speed 1 --ext=.png --force --verbose
 
     # Initialize a sub-repository in the new gh-pages directory and
     # add jakejarvis/jakejarvis.github.io as a remote.
