@@ -1,0 +1,45 @@
+{
+  "name": "{{ .Site.Title }}",
+  "short_name": "{{ .Site.Params.domain }}",
+  "icons": [
+    {
+      "src": "{{ "favicon-512.png" | absURL }}",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "{{ "favicon-192.png" | absURL }}",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "{{ "favicon-180.png" | absURL }}",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "{{ "favicon-152.png" | absURL }}",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "{{ "favicon-128.png" | absURL }}",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "{{ "favicon-96.png" | absURL }}",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "{{ "favicon-64.png" | absURL }}",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "{{ .Site.BaseURL }}",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#0e6dc2"
+}

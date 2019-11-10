@@ -35,7 +35,7 @@ disableAliases = true
   copyrightFirstYear = "2001"
 
 [outputs]
-  home = ["HTML", "RSS", "REDIRECTS", "HEADERS"]
+  home = ["HTML", "RSS", "MANIFEST", "REDIRECTS", "HEADERS"]
   section = ["HTML"]
 
 [mediaTypes]
@@ -43,6 +43,10 @@ disableAliases = true
   delimiter = ""
 
 [outputFormats]
+  [outputFormats.MANIFEST]
+    mediaType = "application/json"
+    baseName = "manifest"
+    notAlternative = true
   [outputFormats.REDIRECTS]
     mediatype = "text/netlify"
     baseName = "_redirects"

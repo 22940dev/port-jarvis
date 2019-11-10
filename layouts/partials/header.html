@@ -34,9 +34,12 @@
     <meta name="twitter:creator" content="{{ .Site.Author.twitter }}">
     <meta name="twitter:dnt" content="on">
     <meta name="twitter:widgets:csp" content="on">
-    <link rel="canonical" href="{{ .Permalink }}">
-    <link rel="alternate" type="application/rss+xml" href="{{ "index.xml" | absURL }}" title="{{ .Site.Title }} (RSS)">
-    {{- $style := resources.Get "sass/main.scss" | resources.ToCSS (dict "targetPath" "style.css" "outputStyle" "compact") }}
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}">
+    <meta name="theme-color" content="#0e6dc2">
+    <link rel="manifest" href="{{ "manifest.json" | absURL }}">
+{{- $style := resources.Get "sass/main.scss" | resources.ToCSS (dict "targetPath" "style.css" "outputStyle" "compact") }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
     <link rel="icon" href="{{ "favicon-192.png" | absURL }}" sizes="192x192">
@@ -44,6 +47,8 @@
     <link rel="icon" href="{{ "favicon-32.png" | absURL }}" sizes="32x32">
     <link rel="icon" href="{{ "favicon-16.png" | absURL }}" sizes="16x16">
     <link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="alternate" type="application/rss+xml" href="{{ "index.xml" | absURL }}" title="{{ .Site.Title }} (RSS)">
     <link rel="author" href="{{ "humans.txt" | absURL }}">
   </head>
   <body id="{{ .Type }}">
