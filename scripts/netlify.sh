@@ -8,10 +8,10 @@ set -euo pipefail
 BINDIR=$HOME/jj-bin
 mkdir -p $BINDIR
 
-# download forked Hugo extended binary
+# download latest forked Hugo extended binary
 # https://github.com/jakejarvis/hugo-custom/releases
 echo "Downloading Hugo..."
-curl -sS -L https://github.com/jakejarvis/hugo-custom/releases/download/v0.53-patch3/hugo-extended -o $BINDIR/hugo-extended
+curl -sS -L https://github.com/jakejarvis/hugo-custom/releases/latest/download/hugo-extended -o $BINDIR/hugo-extended
 chmod +x $BINDIR/hugo-extended
 
 # download jpegoptim binary

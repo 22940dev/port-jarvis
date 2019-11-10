@@ -1,6 +1,9 @@
 #!/bin/bash
 
-# Make sure run from parent directory...
+# Make sure you run this script from the root of the site repository...
+
+echo "Pull latest base image..."
+docker pull jakejarvis/hugo-custom:latest
 
 echo "Building Docker image..."
 docker build -t jarv.is:develop -f Dockerfile .
