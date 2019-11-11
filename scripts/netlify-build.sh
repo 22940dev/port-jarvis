@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# only designed to run on Netlify's build image:
+# only designed to run on Netlify's build image
 # https://github.com/netlify/build-image
 
 set -euo pipefail
@@ -30,7 +30,7 @@ curl -sS -L https://github.com/imagemin/optipng-bin/raw/master/vendor/linux/x64/
 chmod +x $BINDIR/optipng
 
 # make sure everything's OK
-echo "Is Hugo ready..?"
+echo "Is Hugo ready?"
 $BINDIR/hugo-extended version
 
 # build Hugo site
@@ -42,7 +42,7 @@ echo "Optimizing JPEGs..."
 find ./public -iname "*.jp*" -print0 | xargs -0 $BINDIR/jpegoptim --max=80 --strip-all --quiet
 echo "Optimizing PNGs..."
 find ./public -iname "*.png" -print0 | xargs -0 $BINDIR/pngquant --quality=50-70 --speed 3 --ext=.png --force
-find ./public -iname "*.png" -print0 | xargs -0 $BINDIR/optipng -o3 -force -strip all -quiet --
+find ./public -iname "*.png" -print0 | xargs -0 $BINDIR/optipng -o1 -force -strip all -quiet --
 
 # remove binaries (kinda unsafe, but doesn't really matter b/c it's docker)
 echo "Cleaning up binaries..."

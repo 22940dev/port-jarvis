@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Make sure you run this script from the root of the site repository...
+# Make sure you run this script from the root of the site repository.
 
 echo "Pull latest base image..."
 docker pull jakejarvis/hugo-custom:latest
