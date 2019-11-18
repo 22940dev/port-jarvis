@@ -1,8 +1,10 @@
-{{ if eq hugo.Environment "production" }}User-Agent: *
+User-Agent: *
+{{- if eq hugo.Environment "production" }}
 Disallow: /y2k/
+Disallow: /scrabble/
 Disallow: /comp20/
 
 Sitemap: {{ "sitemap.xml" | absURL }}
-{{ else }}User-Agent: *
+{{- else }}
 Disallow: /
-{{ end }}
+{{- end }}

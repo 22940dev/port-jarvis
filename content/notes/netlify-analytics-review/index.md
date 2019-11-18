@@ -76,7 +76,7 @@ It makes sense that Netlify needs to subsidize the cost of providing free enterp
 
 Clearly, as much as I wish they did, 30,000+ visitors didn't type my website directly into the URL bar in the past week. Some of my articles have been circulating on Hacker News, Reddit, Twitter, etc. — none of which have even made a blip on the dashboard.
 
-There are various possible reasons that referrers aren't being sent, mostly relating to HTTP headers and [incresingly sensible](https://blog.mozilla.org/blog/2019/06/04/firefox-now-available-with-enhanced-tracking-protection-by-default/) browser defaults, that aren't Netlify's fault. But this section is the most obvious example of important data you can miss out on by not tracking incoming visitors via JavaScript.
+There are various possible reasons that referrers aren't being sent, mostly relating to HTTP headers and [increasingly sensible](https://blog.mozilla.org/blog/2019/06/04/firefox-now-available-with-enhanced-tracking-protection-by-default/) browser defaults, that aren't Netlify's fault. But this section is the most obvious example of important data you can miss out on by not tracking incoming visitors via JavaScript.
 
 Another benefit of using Google's own analytics service becomes glaringly apparent here: I have **no idea** which search terms were used to reach which page. Netlify could mitigate this a bit by separating out referrers for each individual page, though, so at least I'd know which pages were having the most organic success on search engines.
 
