@@ -24,8 +24,9 @@
 
 {{- $image := .Scratch.Get "image" -}}
 
+{{- $origRatio := (div (float $image.Height) $image.Width) }}
 {{- $displayWidth := $setWidth -}}
-{{- $displayHeight := (math.Round (div $image.Height 2)) -}}
+{{- $displayHeight := (math.Ceil (mul $origRatio $setWidth)) -}}
 
 {{- if .Get "caption" -}}
 <figure>
