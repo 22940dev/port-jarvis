@@ -42,6 +42,7 @@
 {{- $style := resources.Get "sass/main.scss" | resources.ToCSS (dict "targetPath" "style.css" "outputStyle" "compact") }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
+    <link rel="mask-icon" href="{{ "safari-pinned-tab.svg" | absURL }}" color="#009cdf">
     <link rel="icon" href="{{ "favicon-192.png" | absURL }}" sizes="192x192">
     <link rel="icon" href="{{ "favicon-48.png" | absURL }}" sizes="48x48">
     <link rel="icon" href="{{ "favicon-32.png" | absURL }}" sizes="32x32">
