@@ -99,17 +99,25 @@
         text-align: right;
       }
       footer {
-        width: 100%;
+        display: flex;
+        justify-content: space-between;
         padding: 20px;
         border-top: 1px solid #bbbbbb;
         color: #555;
+        line-height: 1.5rem;
       }
       footer a {
         text-decoration: none;
       }
-      footer a.back-to-top {
-        position: absolute;
-        right: 20px;
+      footer div {
+        vertical-align: middle;
+        height: 100%;
+      }
+      div.left {
+        text-align: left;
+      }
+      div.right {
+        text-align: right;
       }
       code {
         font-family: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
@@ -168,8 +176,8 @@
 {{ .Content }}
     </article>
     <footer>
-      Content by <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" title="Creative Commons Attribution 4.0 International" target="_blank" rel="noopener noreferrer nofollow">CC-BY-4.0</a>.
-      <a class="back-to-top" href="#top">↑ Back to top.</a>
+      <div class="left">Content by <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" title="Creative Commons Attribution 4.0 International" target="_blank" rel="noopener noreferrer nofollow">CC-BY-4.0</a>.</div>
+      <div class="right"><a class="back-to-top" href="#top">↑ Back to top.</a></div>
     </footer>
   </body>
 </html>
