@@ -1,7 +1,18 @@
-# netlify.sh downloads Hugo fork and builds the site independently.
 [build]
-  command = "./scripts/netlify-build.sh"
+  command = "npm run build"
   publish = "public"
+
+[context.production.environment]
+  HUGO_VERSION = "0.59.1"
+  HUGO_ENV = "production"
+
+[context.deploy-preview]
+  command = "npm run build:preview"
+  publish = "public"
+
+[context.deploy-preview.environment]
+  HUGO_VERSION = "0.59.1"
+  HUGO_ENV = "development"
 
 
 # The most important headers and redirects are specified in the _headers and

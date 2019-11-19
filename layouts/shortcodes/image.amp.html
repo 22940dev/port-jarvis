@@ -1,5 +1,3 @@
-<!-- Automatic resizing for HiDPI/retina images -->
-
 {{- $original := .Page.Resources.GetMatch (.Get "src") -}}
 {{- .Scratch.Set "image" $original -}}
 
@@ -28,19 +26,15 @@
 {{- $displayWidth := $setWidth -}}
 {{- $displayHeight := (math.Ceil (mul $origRatio $setWidth)) -}}
 
-{{- if .Get "caption" -}}
-<figure>
-  <picture>
-{{- else -}}
-<p>
-{{- end -}}
-<img src="{{ $image.Permalink }}" width="{{ $displayWidth }}" height="{{ $displayHeight }}"
-     {{- if .Get "alt" }} alt="{{ .Get "alt" }}"{{ end }}
-     {{- if .Get "caption" }} title="{{ .Get "caption"}}"{{ end }}>
-{{- if .Get "caption" -}}
-  </picture>
-  <figcaption>{{ .Get "caption" }}</figcaption>
-</figure>
-{{- else -}}
+<p class="image">
+  <amp-img
+    alt="{{ .Get "alt" }}"
+    src="{{ $image.Permalink }}"
+    width="{{ $displayWidth }}"
+    height="{{ $displayHeight }}"
+    layout="intrinsic"
+  >
+  </amp-img>
 </p>
-{{- end -}}
+
+{{- with (.Get "caption") }}<p class="caption"><em>{{ . }}</em></p>{{ end -}}

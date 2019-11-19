@@ -1,6 +1,6 @@
 # 🏡&nbsp; [jarv.is](https://jarv.is/)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a7403a53-fd9d-44c0-a708-a84d9fc1454d/deploy-status)](https://app.netlify.com/sites/jakejarvis/deploys) [![GitHub repo size](https://img.shields.io/github/repo-size/jakejarvis/jarv.is)](https://github.com/jakejarvis/jarv.is) [![License](https://img.shields.io/github/license/jakejarvis/jarv.is?color=red)](LICENSE.md)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a7403a53-fd9d-44c0-a708-a84d9fc1454d/deploy-status)](https://app.netlify.com/sites/jakejarvis/deploys) [![View website](https://img.shields.io/badge/view%20site-jarv.is-green)](https://jarv.is/) [![Hugo v0.59.1](https://img.shields.io/badge/hugo-v0.59.1-orange)](https://github.com/gohugoio/hugo) [![GitHub repo size](https://img.shields.io/github/repo-size/jakejarvis/jarv.is)](https://github.com/jakejarvis/jarv.is) [![License](https://img.shields.io/github/license/jakejarvis/jarv.is?color=red)](LICENSE.md) [![Twitter Follow](https://img.shields.io/twitter/follow/jakejarvis?label=Follow&style=social)](https://twitter.com/intent/user?screen_name=jakejarvis)
 
 Personal website of [@jakejarvis](https://github.com/jakejarvis), created and deployed using the following:
 
@@ -13,9 +13,9 @@ I keep an ongoing list of [blog post ideas](https://github.com/jakejarvis/jarv.i
 
 ## Running a local testing server with Docker
 
-This site runs a [custom version](https://github.com/jakejarvis/hugo-custom) of [Hugo Extended](https://github.com/gohugoio/hugo) with a few (very opinionated) changes. To ensure consistency, the [`Dockerfile`](Dockerfile) in this repository will pull my Hugo [fork](https://github.com/jakejarvis/hugo-custom) (forked from `v0.53-DEV`, [gohugo/hugo@`a28865c`](https://github.com/gohugoio/hugo/tree/a28865cfc3e296cf0ddd0bd6c1368fcdb2154d0f) and pre-built on [Docker Hub](https://hub.docker.com/r/jakejarvis/hugo-custom) and [GitHub Package Registry](https://github.com/jakejarvis/hugo-custom/packages)) and run a live testing server.
+This site is built with [Hugo extended](https://github.com/gohugoio/hugo). To ensure consistency and compatibility, the [`Dockerfile`](Dockerfile) in this repository will download and verify the Hugo binary ([v0.59.1](https://github.com/gohugoio/hugo/releases/tag/v0.59.1)) and run a live testing server.
 
-Run [`./scripts/docker-server.sh`](scripts/docker-server.sh) from the root of this repository, or execute these Docker commands:
+#### Usage:
 
 ```bash
 docker build -t jarv.is:develop -f Dockerfile .
@@ -31,4 +31,4 @@ docker run -v $(pwd):/src -p 1313:1313 jarv.is:develop
 
 Site content (everything in [`content/notes`](content/notes/)) is published under the [Creative Commons Attribution 4.0 International License](LICENSE.md) (CC-BY-4.0), which means that you can copy, redistribute, remix, transform, and build upon the content for any purpose as long as you give appropriate credit.
 
-All code in this repository (like my [Hugo theme](layouts/)) is published under the [MIT license](https://opensource.org/licenses/MIT), except the customized Hugo fork in the [`Dockerfile`](Dockerfile) which retains Hugo's [original Apache-2.0 license](https://github.com/gohugoio/hugo/blob/master/LICENSE).
+All code in this repository (like my [Hugo theme](layouts/)) is published under the [MIT license](https://opensource.org/licenses/MIT).
