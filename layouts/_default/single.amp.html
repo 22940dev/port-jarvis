@@ -153,7 +153,6 @@
     <link rel="icon" href="{{ "favicon-16.png" | absURL }}" sizes="16x16">
     <link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}">
     <link rel="alternate" type="application/rss+xml" href="{{ "index.xml" | absURL }}" title="{{ .Site.Title }} (RSS)">
-    <link rel="manifest" href="{{ "manifest.json" | absURL }}">
 {{ partial "schema.html" . }}
   </head>
   <body>
@@ -172,7 +171,10 @@
     </header>
     <article>
       <h1 class="title">{{ .Title }}</h1>
-      <p class="meta">by <a class="author" href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a> on <a class="date" href="{{ .Permalink }}">{{ .Date.Format "January 2, 2006" }}</a></p>
+      <p class="meta">
+        by <a class="author" href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>
+        on <a class="date" href="{{ (.OutputFormats.Get "html").Permalink }}">{{ .Date.Format "January 2, 2006" }}</a>
+      </p>
 {{ .Content }}
     </article>
     <footer>

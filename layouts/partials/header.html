@@ -13,7 +13,6 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}">
     <meta name="theme-color" content="#0e6dc2">
-    <link rel="manifest" href="{{ "manifest.json" | absURL }}">
 {{- $style := resources.Get "sass/main.scss" | resources.ToCSS (dict "targetPath" "style.css" "outputStyle" "compact") }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
