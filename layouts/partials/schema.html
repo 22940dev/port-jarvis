@@ -14,9 +14,9 @@
           "url": {{ .Site.BaseURL }},
           "image": {
             "@type": "ImageObject",
-            "url": {{ "me.jpg" | absURL }},
-            "width": 320,
-            "height": 320
+            "url": {{ "me_lg.jpg" | absURL }},
+            "width": 920,
+            "height": 920
           }
         },
         "publisher": {
@@ -32,7 +32,7 @@
         },
         "image": {
           "@type": "ImageObject",
-          "url": {{ if .Params.image }}{{ (printf "%s%s%s"  (.OutputFormats.Get "html").Permalink  "images/" .Params.image ) }}{{ else }}{{ "me.jpg" | absURL }}{{ end }}
+          "url": {{ if .Params.image }}{{ (printf "%s%s%s"  (.OutputFormats.Get "html").Permalink  "images/" .Params.image ) }}{{ else }}{{ "me_lg.jpg" | absURL }}{{ end }}
         }
       }
     </script>
