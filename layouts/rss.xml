@@ -12,7 +12,7 @@
     {{ with .OutputFormats.Get "RSS" }}
       {{- printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML -}}
     {{ end }}
-    {{ range first 15 (where .Data.Pages "Section" "notes") }}
+    {{ range (where .Site.RegularPages "Section" "notes") }}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
@@ -20,7 +20,7 @@
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       <guid>{{ .Permalink }}</guid>
       <description>
-        {{ .Content | html }}
+        {{ .Summary | html }}
       </description>
     </item>
     {{ end }}
