@@ -8,6 +8,16 @@ body#home {
   max-width: 1070px;
   padding: 50px 65px;
 
+  a {
+    // Loop through $colors-home -- the main reason I switched to SASS :)
+    @each $id, $color in $colors-home {
+      &##{$id} {
+        color: $color;
+        background-image: underline-hack($color);
+      }
+    }
+  }
+
   h1 {
     margin: 0;
     font-size: 1.5em;
@@ -47,16 +57,6 @@ body#home {
     height: 160px;
   }
 
-  a {
-    // Loop through $colors-home -- the main reason I switched to SASS :)
-    @each $id, $color in $colors-home {
-      &##{$id} {
-        color: $color;
-        background-image: underline-hack($color);
-      }
-    }
-  }
-
   // easter egg emoji cursor
   a#birthday {
     &:hover {
@@ -94,22 +94,6 @@ body#home {
         }
       }
 
-      &#panda {
-        width: 20%;
-        text-align: center;
-        font-size: 1.25em;
-        line-height: 1.4;  // magic numbers don't judge
-
-        a {
-          display: inline-block;
-          transition: transform 0.2s ease-in-out;
-
-          &:hover {
-            transform: scale(1.6) rotate(10deg);
-          }
-        }
-      }
-
       &#info {
         width: 40%;
         text-align: right;
@@ -122,6 +106,22 @@ body#home {
 
           &#source {
             border-bottom: 1px solid $color-super-light;
+          }
+        }
+      }
+
+      &#panda {
+        width: 20%;
+        text-align: center;
+        font-size: 1.25em;
+        line-height: 1.4;  // magic numbers don't judge
+
+        a {
+          display: inline-block;
+          transition: transform 0.2s ease-in-out;
+
+          &:hover {
+            transform: scale(1.6) rotate(10deg);
           }
         }
       }

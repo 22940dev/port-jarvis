@@ -33,7 +33,6 @@ body#notes {
         svg {
           width: 30px;
           height: 45px;
-          width: auto;
         }
 
         span#name {
@@ -78,6 +77,7 @@ body#notes {
     display: flex;
     justify-content: space-between;
 
+    /* stylelint-disable-next-line no-descending-specificity */
     a {
       color: inherit;
     }
@@ -122,20 +122,6 @@ body#notes {
 
   main {
     &#single article div {
-      &#info {
-        text-align: center;
-
-        h1 {
-          margin: 0.3em 0;
-          font-size: 2em;
-          line-height: 1.4;
-
-          a {
-            color: inherit;
-          }
-        }
-      }
-
       &#meta {
         color: $color-light;
         font-size: 0.85em;
@@ -153,6 +139,20 @@ body#notes {
 
           span.tag {
             margin: 0 0.6em;
+          }
+        }
+      }
+
+      &#info {
+        text-align: center;
+
+        h1 {
+          margin: 0.3em 0;
+          font-size: 2em;
+          line-height: 1.4;
+
+          a {
+            color: inherit;
           }
         }
       }
@@ -275,12 +275,14 @@ body#notes {
     &#archive section.year {
       font-size: 1.1em;
 
+      /* stylelint-disable-next-line no-descending-specificity */
       ul {
         list-style-type: none;
         padding-left: 0;
         display: block;
       }
 
+      /* stylelint-disable-next-line no-descending-specificity */
       li {
         display: flex;
 
@@ -296,15 +298,18 @@ body#notes {
           clear: both;
         }
 
+        /* stylelint-disable-next-line no-descending-specificity */
         &:last-child {
           margin-bottom: 1.8em;
         }
 
+        /* stylelint-disable-next-line no-descending-specificity */
         + li {
           margin-top: 1.3em;
         }
       }
 
+      /* stylelint-disable-next-line no-descending-specificity */
       h2 {
         font-size: 1.8em;
       }
