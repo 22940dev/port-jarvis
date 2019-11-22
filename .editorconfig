@@ -15,7 +15,3 @@ insert_final_newline = true
 # site content
 [*.md]
 trim_trailing_whitespace = false
-
-# Hugo templates
-[*.html]
-insert_final_newline = false
