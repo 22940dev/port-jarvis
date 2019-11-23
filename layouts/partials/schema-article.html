@@ -1,3 +1,15 @@
+{{- $imagePath := "null" -}}
+
+{{- if .Params.image }}
+  {{ $imagePath = (printf "%s%s%s%s" "content" (.OutputFormats.Get "html").RelPermalink "images/" .Params.image ) }}
+{{- else }}
+  {{ $imagePath = "content/me_large.jpg" }}
+{{- end -}}
+
+{{- $imageResource := resources.Get $imagePath }}
+{{- .Scratch.Set "image" $imageResource }}
+{{- $image := .Scratch.Get "image" -}}
+
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
@@ -16,9 +28,9 @@
     "url": {{ .Site.BaseURL }},
     "image": {
       "@type": "ImageObject",
-      "url": {{ "me_lg.jpg" | absURL }},
-      "width": 920,
-      "height": 920
+      "url": {{ "me_large.jpg" | absURL }},
+      "width": "1000",
+      "height": "1000"
     }
   },
   "publisher": {
@@ -27,14 +39,16 @@
     "url": {{ .Site.BaseURL }},
     "logo": {
       "@type": "ImageObject",
-      "url": {{ "favicon-512.png" | absURL }},
-      "width": 512,
-      "height": 512
+      "url": {{ "logo.png" | absURL }},
+      "width": "2048",
+      "height": "2048"
     }
   },
   "image": {
     "@type": "ImageObject",
-    "url": {{ if .Params.image }}{{ (printf "%s%s%s" (.OutputFormats.Get "html").Permalink "images/" .Params.image ) }}{{ else }}{{ "me_lg.jpg" | absURL }}{{ end }}
+    "url": {{ if .Params.image }}{{ (printf "%s%s%s" (.OutputFormats.Get "html").Permalink "images/" .Params.image ) }}{{ else }}{{ "me_large.jpg" | absURL }}{{ end }},
+    "width": "{{ $image.Width }}",
+    "height": "{{ $image.Height }}"
   }
 }
 </script>
