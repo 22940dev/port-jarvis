@@ -21,13 +21,16 @@ disableAliases = true
 
 [author]
   name = "Jake Jarvis"
+  jobTitle = "Front-End Web Developer"
   email = "jake@jarv.is"
-  twitter = "@jakejarvis"
+  twitter = "jakejarvis"
   github = "jakejarvis"
   facebook = "jakejarvis"
   facebook_id = "1329090853"
+  linkedin = "jakejarvis"
 
 [params]
+  description = "Hello! I'm a frontend web developer based in Boston, Massachusetts specializing in modern JavaScript frameworks and progressive web apps."
   domain = "jarv.is"
   facebook_app_id = "3357248167622283"
   gitRepo = "https://github.com/jakejarvis/jarv.is"

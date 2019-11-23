@@ -2,7 +2,9 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
+  "url": {{ with .OutputFormats.Get "html" }}{{ .Permalink }}{{ end }},
   "mainEntityOfPage": {{ with .OutputFormats.Get "html" }}{{ .Permalink }}{{ end }},
+  "name": {{ .Title }},
   "headline": {{ .Title }},
   "datePublished": {{ .PublishDate.Format "2006-01-02T15:04:05-07:00" }},
   "dateModified": {{ .PublishDate.Format "2006-01-02T15:04:05-07:00" }},
@@ -32,7 +34,7 @@
   },
   "image": {
     "@type": "ImageObject",
-    "url": {{ if .Params.image }}{{ (printf "%s%s%s"  (.OutputFormats.Get "html").Permalink  "images/" .Params.image ) }}{{ else }}{{ "me_lg.jpg" | absURL }}{{ end }}
+    "url": {{ if .Params.image }}{{ (printf "%s%s%s" (.OutputFormats.Get "html").Permalink "images/" .Params.image ) }}{{ else }}{{ "me_lg.jpg" | absURL }}{{ end }}
   }
 }
 </script>

@@ -1,22 +1,22 @@
 {{ partial "header.html" . }}
 {{ partial "blog-header.html" . }}
 <main id="single">
-  <article itemscope itemtype="http://schema.org/BlogPosting" class="h-entry">
+  <article>
     <div id="info">
-      <h1 itemprop="name headline" class="p-name"><a href="{{ .Permalink }}" itemprop="url" class="u-url no-underline">{{ .Title }}</a></h1>
+      <h1><a href="{{ .Permalink }}" class="no-underline">{{ .Title }}</a></h1>
       <div id="meta">
-        by <span itemprop="author" itemscope itemtype="http://schema.org/Person" class="p-author"><a itemprop="url" rel="me author" href="{{ .Site.BaseURL }}" title="{{ .Site.Author.name }}" class="h-card no-underline"><span itemprop="name" class="p-name">{{ .Site.Author.name }}</span></a></span>
-        &middot; <a class="no-underline" href="{{ .Permalink }}" title="{{ .Date.Format "Mon, Jan 2 2006 3:04:05 PM MST" }}"><time itemprop="datePublished" content="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}" datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}" class="dt-published">{{ .Date.Format "January 2, 2006" }}</time></a>
+        by <a class="no-underline" href="{{ .Site.BaseURL }}" rel="me author">{{ .Site.Author.name }}</a>
+        &middot; <a class="no-underline" href="{{ .Permalink }}" title="{{ .Date.Format "Mon, Jan 2 2006 3:04:05 PM MST" }}">{{ .Date.Format "January 2, 2006" }}</a>
         &middot; <a class="no-underline" href="{{ .Site.Params.gitRepo }}/blob/master/content/{{ .File.Path }}" title="Edit this page on GitHub" target="_blank" rel="noopener nofollow noreferrer">Improve Post</a>
         <div id="tags">
         {{- range .Params.tags }}
-          <span itemprop="keywords" class="tag p-category">{{ . }}</span>
+          <span class="tag">{{ . }}</span>
         {{- end }}
         </div>
       </div>
     </div>
-    <div id="content" itemprop="articleBody" class="e-content">
-{{ .Content }}
+    <div id="content">
+      {{ .Content }}
     </div>
   </article>
 </main>

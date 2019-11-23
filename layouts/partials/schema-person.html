@@ -1,0 +1,23 @@
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "name": {{ .Site.Author.name }},
+  "url": {{ .Site.BaseURL }},
+  "description": {{ .Site.Params.description }},
+  "jobTitle": {{ .Site.Author.jobtitle }},
+  "image": {
+    "@type": "ImageObject",
+    "url": {{ "me_lg.jpg" | absURL }},
+    "width": 920,
+    "height": 920
+  },
+  "sameAs": [
+    {{ .Site.BaseURL }},
+    "https://github.com/{{ .Site.Author.github }}",
+    "https://twitter.com/{{ .Site.Author.twitter }}",
+    "https://www.facebook.com/{{ .Site.Author.facebook }}",
+    "https://www.linkedin.com/in/{{ .Site.Author.linkedin }}/"
+  ]
+}
+</script>
