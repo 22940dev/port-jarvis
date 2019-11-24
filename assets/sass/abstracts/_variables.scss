@@ -2,7 +2,9 @@
 
 // Global Colors
 $color-background:   #ffffff;
+$color-gray-background: #fbfbfb;
 $color-text:         #222222;
+$color-medium-dark:   #313131;
 $color-medium:       #444444;
 $color-light:        #666666;
 $color-medium-light: #757575;
@@ -51,6 +53,11 @@ $colors-home:(
   news-7:     #973999
 );
 $color-serverless: #87cef7;
+
+// For nifty color swapping on svg logo hover in components/_header.scss
+$color-logo1: #6fbc4e;
+$color-logo2: #ffb900;
+$color-logo3: #009cdf;
 
 // Other Settings
 $link-opacity: 40%;
