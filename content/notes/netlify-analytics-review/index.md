@@ -9,12 +9,12 @@ tags:
 - Netlify
 - Privacy
 - JAMStack
-image: "pageviews.png"
+image: "overview.png"
 draft: false
 ---
 
 
-I've been trying out [Netlify Analytics](https://www.netlify.com/products/analytics/) on this site for about ten days now (non-consecutively) and have some quick thoughts about this unique offering in a world full of bloated and invasive tracking scripts.
+I've been trying out [Netlify Analytics](https://www.netlify.com/products/analytics/) on this site for almost a month now (non-consecutively) and have some quick thoughts about this unique offering in a world full of bloated and invasive tracking scripts.
 
 {{< image src="images/pageviews.png" alt="Pageview charts on Netlify Analytics" >}}
 
@@ -74,7 +74,7 @@ It makes sense that Netlify needs to subsidize the cost of providing free enterp
 
 {{< image src="images/sources-bandwidth.png" alt="Referrer and bandwidth tracking on Netlify Analytics" >}}
 
-Clearly, as much as I wish they did, 30,000+ visitors didn't type my website directly into the URL bar in the past week. Some of my articles have been circulating on Hacker News, Reddit, Twitter, etc. — none of which have even made a blip on the dashboard.
+Clearly, as much as I wish they did, 60,000+ visitors didn't type my website directly into the URL bar in the past month. Some of my articles have been circulating on Hacker News, Reddit, Twitter, etc. — none of which have even made a blip on the dashboard.
 
 There are various possible reasons that referrers aren't being sent, mostly relating to HTTP headers and [increasingly sensible](https://blog.mozilla.org/blog/2019/06/04/firefox-now-available-with-enhanced-tracking-protection-by-default/) browser defaults, that aren't Netlify's fault. But this section is the most obvious example of important data you can miss out on by not tracking incoming visitors via JavaScript.
 
