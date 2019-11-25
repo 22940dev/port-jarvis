@@ -35,16 +35,16 @@ header {
       // mix up logo colors on hover
       &:hover {
         color: $color-links;
-    
+
         svg {
           g#c1 {
-            fill: $color-logo1;
-          }
-          g#c2 {
             fill: $color-logo2;
           }
-          g#c3 {
+          g#c2 {
             fill: $color-logo3;
+          }
+          g#c3 {
+            fill: $color-logo1;
           }
         }
       }
