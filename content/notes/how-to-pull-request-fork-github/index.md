@@ -36,7 +36,7 @@ Assuming you're using GitHub, this step is easy. Just find the repository you're
 
 GitHub will automatically redirect you to the forked repository under your username. This is the repository you need to clone to your local development environment, **not** the original. Grab the URL GitHub provides under the green "Clone or Download" button and plug it into the command below.
 
-```
+```bash
 git clone git@github.com:jakejarvis/react-native.git
 ```
 
@@ -51,7 +51,7 @@ Switch directories to the forked repository you just cloned and run the followin
 
 This links the fork back to the original repository as a remote, which we'll name `upstream`, and then fetch it.
 
-```
+```bash
 git remote add --track master upstream git@github.com:facebook/react-native.git
 git fetch upstream
 ```
@@ -61,7 +61,7 @@ git fetch upstream
 
 It's possible to make changes directly to the `master` branch, but this might FUBAR things down the road for complicated reasons. It's best to [`checkout`](https://git-scm.com/docs/git-checkout) a new branch for **each** change/improvement you want to make. Replace `fix-readme-typo` with a more descriptive name for your changes, like `add-mobile-site` or `update-dependencies`.
 
-```
+```bash
 git checkout -b fix-readme-typo upstream/master
 ```
 
@@ -75,14 +75,14 @@ This is either the easiest part or the hardest part, depending on how you look a
 
 You're probably used to these commands. Add the files you've changed and commit them with a descriptive message.
 
-```
+```bash
 git add .
 git commit -m "Fix grammar mistakes in the readme file"
 ```
 
 The one difference is the branch you're pushing to. You likely usually push to `master`, but in this case, we're pushing to the branch with the name you created in step 4.
 
-```
+```bash
 git push -u origin fix-readme-typo
 ```
 

@@ -27,22 +27,23 @@ My [full dotfiles are posted at this Git repository](https://git.jarv.is/jake/do
 * * *
 
 
-Check your current IP address (IPv4 or IPv6):
+Check your current IP address (IPv4 or IPv6 or both) — uses [my simpip server!](https://github.com/jakejarvis/simpip):
 
-```
-alias ip4="dig +short myip.opendns.com A @resolver1.opendns.com"
-alias ip6="dig +short -6 myip.opendns.com AAAA @resolver1.ipv6-sandbox.opendns.com"
+```bash
+alias ip4="curl -4 simpip.com --max-time 1 --proto-default https --silent"
+alias ip6="curl -6 simpip.com --max-time 1 --proto-default https --silent"
+alias ip="ip4; ip6"
 ```
 
 Check your current local IP address:
 
-```
+```bash
 alias iplocal="ipconfig getifaddr en0"
 ```
 
 Check, clear, set ([Google DNS](https://developers.google.com/speed/public-dns/) or [Cloudflare DNS](https://1.1.1.1/) or custom), and flush your computer's DNS, overriding your router:
 
-```
+```bash
 alias dns-check="networksetup -setdnsservers Wi-Fi"
 alias dns-clear="networksetup -getdnsservers Wi-Fi"
 
@@ -55,25 +56,25 @@ alias dns-flush="sudo killall -HUP mDNSResponder; sudo killall mDNSResponderHelp
 
 Start a simple local web server in current directory:
 
-```
+```bash
 alias serve="python -c 'import SimpleHTTPServer; SimpleHTTPServer.test()'"
 ```
 
 Test your internet connection's speed (uses 100MB of data):
 
-```
+```bash
 alias speed="wget -O /dev/null http://cachefly.cachefly.net/100mb.test"
 ```
 
 Query DNS records of a domain:
 
-```
+```bash
 alias digg="dig @8.8.8.8 +nocmd any +multiline +noall +answer"   # example: digg google.com
 ```
 
 Make a new directory and change directories into it.
 
-```
+```bash
 mkcdir() {
     mkdir -p -- "$1" &&
     cd -P -- "$1"
@@ -82,50 +83,50 @@ mkcdir() {
 
 Unhide and rehide hidden files and folders on macOS:
 
-```
+```bash
 alias unhide="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias rehide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 ```
 
 Force empty trash on macOS:
 
-```
+```bash
 alias forcetrash="sudo rm -rf ~/.Trash /Volumes/*/.Trashes"
 ```
 
 Quickly lock your screen on macOS:
 
-```
+```bash
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 ```
 
 Update Homebrew packages, global NPM packages, Ruby Gems, and macOS in all one swoop:
 
-```
+```bash
 alias update="brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup; sudo softwareupdate -i -a;"
 ```
 
 Copy your public key to the clipboard:
 
-```
+```bash
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 ```
 
 Undo the most recent commit in current Git repo:
 
-```
+```bash
 alias gundo="git push -f origin HEAD^:master"
 ```
 
 Un-quarantine an "unidentified developer's" application [blocked by Gatekeeper](https://support.apple.com/en-us/HT202491) on macOS's walled <del>prison</del> garden:
 
-```
+```bash
 alias unq="sudo xattr -rd com.apple.quarantine"
 ```
 
 Quickly open a Bash prompt in a running Docker container:
 
-```
+```bash
 docker-bash() {
     docker exec -ti $1 /bin/bash
 }
@@ -133,13 +134,13 @@ docker-bash() {
 
 Pull updates for all Docker images with the tag "latest":
 
-```
+```bash
 docker images --format "{{.Repository}}:{{.Tag}}" | grep :latest | xargs -L1 docker pull
 ```
 
 This odd hack is needed to run any of these aliases as sudo:
 
-```
+```bash
 alias sudo="sudo "
 ```
 

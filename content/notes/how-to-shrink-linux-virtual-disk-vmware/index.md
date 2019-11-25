@@ -32,23 +32,40 @@ The "clean up" feature that VMware has developed for Windows guests can be appli
 
 Once you're ready, here's how to shrink your Linux-based VM:
 
+---
+
+## Update (Dec. 30, 2018):
+
+The open-source version of VMware Tools for Linux, [open-vm-tools](https://github.com/vmware/open-vm-tools), has added a simple command to automate the above steps in the latest version. Make sure you have the latest update through either apt or yum, and then run the following command in the **guest** terminal:
+
+```bash
+vmware-toolbox-cmd disk shrink /
+```
+
+Thank you to [commenter Susanna](https://jake.wordpress.com/2018/12/04/how-to-shrink-linux-virtual-disk-vmware/#comment-21) for pointing this out! The manual way below still works exactly the same.
+
+---
 
 ## **Step 1:** Clean up time
 
 Boot up your Linux virtual machine. We'll start by optimizing the OS as much as possible before shrinking it. In addition to manually deleting files you no longer use, running this command in your terminal can free up a little more space by removing some installation caches left behind by old versions of software you've installed and updated:
 
-    sudo apt-get clean
+```bash
+sudo apt-get clean
+```
 
 
 ## **Step 2:** Make "empty" space actually empty
 
 This step is the crucial one. In order for VMware to detect the newly free space, we need to free it up ourselves using a little trickery. We're going to have Linux overwrite the free space with a file full of zeros – the size of this file will be the size of however much space we're freeing up (5 GB, in the example above) – and then delete it. These commands will create the file, wait a moment, and then delete the file:
 
-    cat /dev/zero > zero.fill
-    sync
-    sleep 1
-    sync
-    rm -f zero.fill
+```bash
+cat /dev/zero > zero.fill
+sync
+sleep 1
+sync
+rm -f zero.fill
+```
 
 Depending on how much space we're freeing, this could take a while. Let it finish or else you'll be left with an actual, real file that will occupy a ton of space – the opposite of what we're trying to accomplish!
 
@@ -67,17 +84,23 @@ Now, we're going to run our final command in our **host** terminal, so open that
 
 We're going to feed this command the exact location of the VMDK file we're shrinking. You can either do this by typing the **full path** to it, or by simply dragging the VMDK file onto the terminal after typing the first part of the command (up to and including "-d"). The "-d" argument will defragment the disk.
 
-    /Applications/VMware\ Fusion.app/Contents/Library/vmware-vdiskmanager -d <path to your .VMDK file>
+```bash
+/Applications/VMware\ Fusion.app/Contents/Library/vmware-vdiskmanager -d <path to your .VMDK file>
+```
 
 The final command should look something like this, with your VMDK file instead:
 
-    /Applications/VMware\ Fusion.app/Contents/Library/vmware-vdiskmanager -d /Users/jake/Documents/Virtual\ Machines/Debian9.vmwarevm/Virtual\ Disk.vmdk
+```bash
+/Applications/VMware\ Fusion.app/Contents/Library/vmware-vdiskmanager -d /Users/jake/Documents/Virtual\ Machines/Debian9.vmwarevm/Virtual\ Disk.vmdk
+```
 
 If you've done this correctly, you'll see it defragmenting the file, and then return "Defragmentation completed successfully." If it returns a different error, such as "This disk is read-only in the snapshot chain," it should tell you which disk you should actually shrink. Just run the command again with that VMDK file instead.
 
 After the defragmentation completes, we need to finally shrink the image. We do this by running the same command as you did above, but replacing the "-d" with "-k" as follows:
 
-    /Applications/VMware\ Fusion.app/Contents/Library/vmware-vdiskmanager -k <path to the same .VMDK file>
+```bash
+/Applications/VMware\ Fusion.app/Contents/Library/vmware-vdiskmanager -k <path to the same .VMDK file>
+```
 
 
 ## **Step 4:** Storage Profit!
@@ -85,14 +108,3 @@ After the defragmentation completes, we need to finally shrink the image. We do 
 Obviously, this is a really annoying way to perform a feature that only takes one click to execute on Windows virtual machines. I don't recommend going through this entire process every time you delete a few random files. However, if you notice the free space on your host OS is mysteriously lower than it should be, the time this takes can be well worth it.
 
 Let's hope this will be integrated in VMware Tools in the near future – feel free to [nudge VMware about it](https://my.vmware.com/group/vmware/get-help?p_p_id=getHelp_WAR_itsupport&p_p_lifecycle=0&_getHelp_WAR_itsupport_execution=e1s2) in the meantime!
-
-
-* * *
-
-### Update (Dec. 30, 2018):
-
-The open-source version of VMware Tools for Linux, [open-vm-tools](https://github.com/vmware/open-vm-tools), has added a simple command to automate the above steps in the latest version. Make sure you have the latest update through either apt or yum, and then run the following command in the **guest** terminal:
-
-    vmware-toolbox-cmd disk shrink /
-
-Thank you to [commenter Susanna](https://jake.wordpress.com/2018/12/04/how-to-shrink-linux-virtual-disk-vmware/#comment-21) for pointing this out!
