@@ -17,8 +17,9 @@
     "hugo:serve": "hugo server --buildDrafts --buildFuture --port 1313 --bind=0.0.0.0 --verbose",
     "docker:serve": "docker build -t jarv.is:develop -f Dockerfile . && docker run -v $(pwd):/src -p 1313:1313 jarv.is:develop",
     "netlify:serve": "netlify dev --command 'yarn hugo:serve'",
-    "optimize": "yarn optimize:html && yarn optimize:img",
+    "optimize": "yarn optimize:html && yarn optimize:css && yarn optimize:img",
     "optimize:html": "html-minifier --html5 --collapse-whitespace --preserve-line-breaks --minify-css --file-ext html --input-dir public --output-dir public **/*.html",
+    "optimize:css": "cleancss -O0 --format 'keep-breaks' -o public/style.css public/style.css",
     "optimize:img": "find public/ -type d -exec imagemin {}/* --plugin=jpegoptim --plugin=pngquant --plugin=optipng --plugin=svgo --plugin=gifsicle --out-dir={} \\;",
     "lint": "yarn lint:markdown; yarn lint:sass",
     "lint:markdown": "markdownlint content/notes/**/*.md",
@@ -28,6 +29,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "clean-css-cli": "~4.3.0",
     "html-minifier": "~4.0.0",
     "imagemin-cli": "^5.0.0",
     "imagemin-gifsicle": "^6.0.1",

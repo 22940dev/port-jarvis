@@ -20,7 +20,7 @@
   "headline": {{ .Title }},
   "datePublished": {{ .PublishDate.Format "2006-01-02T15:04:05-07:00" }},
   "dateModified": {{ .PublishDate.Format "2006-01-02T15:04:05-07:00" }},
-  "keywords": "{{ with .Params.tags }}{{ range $index, $tag := . }}{{ if gt $index 0 }}, {{ end }}{{ $tag }}{{ end }}{{ end }}",
+  "keywords": {{ with .Params.tags }}{{ delimit . ", " }}{{ end }},
   "description": {{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }},
   "wordCount": "{{ .WordCount }}",
   "author": {

@@ -9,20 +9,17 @@ main#list {
   section.year {
     font-size: 1.1em;
 
-    /* stylelint-disable-next-line no-descending-specificity */
     h2 {
       font-size: 1.8em;
       margin: 0;
     }
 
-    /* stylelint-disable-next-line no-descending-specificity */
     ul {
       list-style-type: none;
       padding-left: 0;
       display: block;
     }
 
-    /* stylelint-disable-next-line no-descending-specificity */
     li {
       display: flex;
 
@@ -38,12 +35,10 @@ main#list {
         clear: both;
       }
 
-      /* stylelint-disable-next-line no-descending-specificity */
       &:last-child {
         margin-bottom: 1.8em;
       }
 
-      /* stylelint-disable-next-line no-descending-specificity */
       + li {
         margin-top: 1.3em;
       }
