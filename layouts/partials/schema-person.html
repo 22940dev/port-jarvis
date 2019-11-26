@@ -2,6 +2,7 @@
 {
   "@context": "http://schema.org",
   "@type": "Person",
+  "@id": {{ printf "%s%s" .Site.BaseURL "#author" }},
   "name": {{ .Site.Author.name }},
   "url": {{ .Site.BaseURL }},
   "description": {{ .Site.Params.description }},
@@ -16,8 +17,9 @@
     {{ .Site.BaseURL }},
     {{ printf "%s%s" "https://github.com/" .Site.Author.github }},
     {{ printf "%s%s" "https://twitter.com/" .Site.Author.twitter }},
-    {{ printf "%s%s" "https://www.facebook.com/" .Site.Author.facebook }},
     {{ printf "%s%s%s" "https://www.linkedin.com/in/" .Site.Author.linkedin "/" }},
+    {{ printf "%s%s" "https://www.facebook.com/" .Site.Author.facebook }},
+    {{ printf "%s%s%s" "https://www.instagram.com/" .Site.Author.instagram "/" }},
     {{ printf "%s%s" "https://" .Site.Author.mastodon }}
   ]
 }

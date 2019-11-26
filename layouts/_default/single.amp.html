@@ -155,6 +155,7 @@
     <link rel="icon" href="{{ "favicon-16.png" | absURL }}" sizes="16x16">
     <link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}">
     <link rel="alternate" type="application/rss+xml" href="{{ "index.xml" | absURL }}" title="{{ .Site.Title }} (RSS)">
+    {{ partial "schema-person.html" . }}
     {{ partial "schema-article.html" . }}
   </head>
   <body>

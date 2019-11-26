@@ -20,26 +20,11 @@
   "headline": {{ .Title }},
   "datePublished": {{ .PublishDate.Format "2006-01-02T15:04:05-07:00" }},
   "dateModified": {{ .PublishDate.Format "2006-01-02T15:04:05-07:00" }},
-  "description": {{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }},
   "keywords": "{{ with .Params.tags }}{{ range $index, $tag := . }}{{ if gt $index 0 }}, {{ end }}{{ $tag }}{{ end }}{{ end }}",
+  "description": {{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }},
+  "wordCount": "{{ .WordCount }}",
   "author": {
-    "@type": "Person",
-    "name": {{ .Site.Author.name }},
-    "url": {{ .Site.BaseURL }},
-    "image": {
-      "@type": "ImageObject",
-      "url": {{ "me_large.jpg" | absURL }},
-      "width": "1200",
-      "height": "1200"
-    },
-    "sameAs": [
-      {{ .Site.BaseURL }},
-      {{ printf "%s%s" "https://github.com/" .Site.Author.github }},
-      {{ printf "%s%s" "https://twitter.com/" .Site.Author.twitter }},
-      {{ printf "%s%s" "https://www.facebook.com/" .Site.Author.facebook }},
-      {{ printf "%s%s%s" "https://www.linkedin.com/in/" .Site.Author.linkedin "/" }},
-      {{ printf "%s%s" "https://" .Site.Author.mastodon }}
-    ]
+    "@id": "https://jarv.is/#author"
   },
   "publisher": {
     "@type": "Organization",

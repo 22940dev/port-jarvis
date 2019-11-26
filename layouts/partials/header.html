@@ -29,6 +29,7 @@
       {{ with .OutputFormats.Get "amp" }}
         <link rel="amphtml" href="{{ .Permalink }}">
       {{ end }}
+      {{ partial "schema-person.html" . }}
       {{ partial "schema-article.html" . }}
     {{ else }}
       {{ partial "schema-person.html" . }}
