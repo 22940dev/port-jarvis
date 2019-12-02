@@ -47,7 +47,7 @@ The world and its devices are quickly becoming more connected through the shiny 
 
 
 
-# Industrial Control Systems:
+# Industrial Control Systems: {#industrial-control-systems}
 
 
 ### Samsung Electronic Billboards [🔎 &#x2192;](https://www.shodan.io/search?query=%22Server%3A+Prismview+Player%22)
@@ -219,7 +219,7 @@ Secured by default, thankfully, but these 1,700+ machines still [have no busines
 
 
 
-# Remote Desktop:
+# Remote Desktop: {#remote-desktop}
 
 
 ### Unprotected VNC [🔎 &#x2192;](https://www.shodan.io/search?query=%22authentication+disabled%22+%22RFB+003.008%22)
@@ -247,7 +247,7 @@ Secured by default, thankfully, but these 1,700+ machines still [have no busines
 
 
 
-# Network Infrastructure:
+# Network Infrastructure: {#network-infrastructure}
 
 
 ### MongoDB [🔎 &#x2192;](https://www.shodan.io/search?query=product%3AMongoDB+-authentication)
@@ -419,7 +419,7 @@ HP-ILO-4 !"HP-ILO-4/2.53" !"HP-ILO-4/2.54" !"HP-ILO-4/2.55" !"HP-ILO-4/2.60" !"H
 
 
 
-# Network Attached Storage (NAS):
+# Network Attached Storage (NAS): {#network-attached-storage-nas}
 
 
 ### SMB (Samba) File Shares [🔎 &#x2192;](https://www.shodan.io/search?query=%22Authentication%3A+disabled%22+port%3A445)
@@ -492,7 +492,7 @@ Redirecting sencha port:9000
 
 
 
-# Webcams:
+# Webcams: {#webcams}
 
 Example images not necessary. 🤦
 
@@ -529,7 +529,7 @@ html:"DVR_H264 ActiveX"
 
 
 
-# Printers & Copiers:
+# Printers & Copiers: {#printers-copiers}
 
 
 ### HP Printers [🔎 &#x2192;](https://www.shodan.io/search?query=%22Serial+Number%3A%22+%22Built%3A%22+%22Server%3A+HP+HTTP%22)
@@ -581,7 +581,7 @@ ssl:"Xerox Generic Root"
 
 
 
-# Home Devices:
+# Home Devices: {#home-devices}
 
 
 ### Yamaha Stereos [🔎 &#x2192;](https://www.shodan.io/search?query=%22Server%3A+AV_Receiver%22+%22HTTP%2F1.1+406%22)
@@ -620,7 +620,7 @@ Apple TVs, HomePods, etc.
 
 
 
-# Random Stuff:
+# Random Stuff: {#random-stuff}
 
 
 ### OctoPrint 3D Printer Controllers [🔎 &#x2192;](https://www.shodan.io/search?query=title%3A%22OctoPrint%22+-title%3A%22Login%22+http.favicon.hash%3A1307375944)

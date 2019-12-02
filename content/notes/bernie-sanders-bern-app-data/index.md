@@ -33,7 +33,7 @@ But how do I know who I know, you might ask? BERN's [FAQ page](https://app.berni
 >
 > - Go through your phone book or, if you use Facebook, your Facebook friend list.
 > - Who would you invite to your birthday party or wedding? Where have you lived throughout your life? Who did you know in each of the places you have lived?
-
+>
 > **Which people can I add to my contact list the BERN app?** *[sic]*
 > We use the word “friend” very broadly: You can add anyone you have met and known in your life to the app. 
 

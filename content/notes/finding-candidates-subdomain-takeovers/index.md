@@ -77,23 +77,23 @@ Since you have this luxury of time, it becomes ***extremely important*** that yo
 
 
 > I have found three subdomains of ********.com vulnerable to takeovers via unclaimed endpoints at [Azure's Traffic Manager](https://azure.microsoft.com/en-us/services/traffic-manager/). I have claimed these endpoints and redirected them to a blank page to prevent a bad actor from doing so in the meantime, and hosted a POC file at obscure URLs. These are the following domains I discovered and the outdated endpoints on Azure to which they point:
-
+>
 > xxxx.********.com --> aaa.trafficmanager.net
-
+>
 > yyyy.********.com --> bbb.trafficmanager.net
-
+>
 > zzzz.********.com --> ccc.trafficmanager.net
-
+>
 > ...and the proof-of-concept files are at the following locations:
-
+>
 > [http://xxxx.********.com/poc-d4ca9e8ceb.html](#)
-
+>
 > [http://yyyy.********.com/poc-d4ca9e8ceb.html](#)
-
+>
 > [http://zzzz.********.com/poc-d4ca9e8ceb.html](#)
-
+>
 > I have not hosted any other file nor attempted any other vector of attack. You're probably familiar with takeovers like this by now, but through this vulnerability, it would be possible for an attacker to obtain cookies and other sensitive information from your users via phishing, cookie hijacking, or XSS. It is also possible to obtain SSL certificates for ********.com subdomains from CAs that only require domain validation such as [Let's Encrypt](https://letsencrypt.org/how-it-works/), but I have not attempted to do so. More info on possible attack vectors [can be found here](https://0xpatrik.com/subdomain-takeover/).
-
+>
 > Please let me know when you've received this report and I'll delete the endpoints from my personal Azure account, so you can either reclaim them or remove the subdomains entirely from your DNS records. Thanks!
 
 

@@ -79,11 +79,22 @@ disableAliases = true
   resampleFilter = "Linear"
   quality = 75
 
-[blackfriday]
-  nofollowLinks = true
-  noreferrerLinks = true
-  plainIDAnchors = true
-  fractions = false
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      linkify = true
+      strikethrough = true
+      typographer = true
+    [markup.goldmark.parser]
+      autoHeadingID = false
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    codeFences = true
+    lineNos = false
+    noClasses = true
+    tabWidth = 4
 
 [privacy]
   [privacy.twitter]

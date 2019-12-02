@@ -35,12 +35,12 @@ main#list {
         clear: both;
       }
 
-      &:last-child {
-        margin-bottom: 1.8em;
-      }
-
       + li {
         margin-top: 1.3em;
+      }
+
+      &:last-child {
+        margin-bottom: 1.8em;
       }
     }
   }

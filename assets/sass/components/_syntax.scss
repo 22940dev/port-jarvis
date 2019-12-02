@@ -29,4 +29,10 @@ div.highlight span {
   &.gs {
     font-weight: bold;
   }
+
+  // TODO: line numbers
+  &.ln {
+    color: #999999;
+    margin-right: 1.5em;
+  }
 }

@@ -6,7 +6,7 @@
       <div id="meta">
         by <a class="no-underline" href="{{ .Site.BaseURL }}" rel="me author">{{ .Site.Author.name }}</a>
         &middot; <a class="no-underline" href="{{ .Permalink }}" title="{{ .Date.Format "Mon, Jan 2 2006 3:04:05 PM MST" }}">{{ .Date.Format "January 2, 2006" }}</a>
-        &middot; <a class="no-underline" href="{{ .Site.Params.gitRepo }}/blob/master/content/{{ .File.Path }}" title="Edit this page on GitHub" target="_blank" rel="noopener nofollow noreferrer">Improve Post</a>
+        &middot; <a class="no-underline" href="{{ .Site.Params.gitRepo }}/blob/master/content/{{ .File.Path }}" title="Edit this page on GitHub" target="_blank" rel="noopener">Improve Post</a>
         <div id="tags">
         {{- range .Params.tags }}
           <span class="tag">{{ . }}</span>

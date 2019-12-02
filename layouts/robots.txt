@@ -3,6 +3,8 @@ User-Agent: *
 Disallow: /y2k/
 Disallow: /scrabble/
 Disallow: /comp20/
+Disallow: /candies/
+Disallow: /awesome/
 
 Sitemap: {{ "sitemap.xml" | absURL }}
 {{- else }}
