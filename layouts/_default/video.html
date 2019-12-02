@@ -1,19 +1,17 @@
-{{ partial "header.html" . }}
+{{ define "main" }}
 <main id="video">
   <h1>{{ .Title }}</h1>
 
   <video poster="{{ with .Resources.GetMatch "images/*.png" }}{{ .Permalink }}{{ end }}" controls crossorigin playsinline preload="none">
-    <!-- Video files -->
     {{ with .Resources.GetMatch "*.webm" }}<source src="{{ .Permalink }}" type="video/webm">{{ end }}
     {{ with .Resources.GetMatch "*.mp4" }}<source src="{{ .Permalink }}" type="video/mp4">{{ end }}
+    {{ with .Resources.GetMatch "*.ogg" }}<source src="{{ .Permalink }}" type="video/ogg">{{ end }}
 
-    <!-- Caption files -->
     {{ with .Resources.GetMatch "*.en.vtt" }}<track src="{{ .Permalink }}" kind="captions" label="English" srclang="en" default>{{ end }}
 
-    <!-- Fallback for browsers that don't support the <video> element -->
-    Your browser doesn't support HTML5 video. {{ with .Resources.GetMatch "*.mp4" }}<a href="{{ .Permalink }}">Click here to view the raw .mp4 video.</a>{{ end }}
+    <p>Your browser doesn't support HTML5 video. {{ with .Resources.GetMatch "*.mp4" }}<a href="{{ .Permalink }}">Click here to view the raw .mp4 video.</a>{{ end }}</p>
   </video>
 
   {{ .Content }}
 </main>
-{{ partial "footer.html" . }}
+{{ end }}

@@ -14,7 +14,7 @@ draft: false
 
 # Howdy, friends! <span style="display: inline-block; animation-name: wave; animation-duration: 2.5s; animation-iteration-count: infinite; transform-origin: 70% 70%;">👋</span>
 
-If you examine [my homepage](https://jarv.is/) long enough, you might notice the 👋 hand emoji at the top subtly waving at you. This was easily accomplished using a few lines of CSS with a feature called [`@keyframes`](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) --- no bulky GIFs involved, and no JS mess or jQuery overkill required.
+If you examine [my homepage](https://jarv.is/) long enough, you might notice the 👋 hand emoji at the top subtly waving at you. This was easily accomplished using a few lines of CSS with a feature called [`@keyframes`](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) — no bulky GIFs involved, and no JS mess or jQuery overkill required.
 
 Below are the code snippets you can grab and customize to make your own 
 ["waving hand" 👋](https://emojipedia.org/waving-hand-sign/) emojis ***actually wave***, and a [CodePen playground](https://codepen.io/jakejarvis/pen/pBZWZw) for live testing.

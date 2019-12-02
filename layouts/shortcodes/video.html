@@ -14,5 +14,5 @@
   {{ if .Get "mp4"  }}<source src="{{ $video_mp4.Permalink }}" type="video/mp4">{{ end }}
   {{ if .Get "ogg"  }}<source src="{{ $video_ogg.Permalink }}" type="video/ogg">{{ end }}
 
-  Your browser does not support HTML5 video. <a href="{{ $video_mp4.Permalink }}">Load the .mp4 video directly.</a>
+  <p>Your browser does not support HTML5 video. <a href="{{ $video_mp4.Permalink }}">Load the .mp4 video directly.</a></p>
 </video>

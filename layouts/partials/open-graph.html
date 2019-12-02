@@ -1,14 +1,6 @@
-{{- $imagePath := "null" -}}
-
-{{- if .Params.image }}
-  {{ $imagePath = (printf "%s%s%s%s" "content" (.OutputFormats.Get "html").RelPermalink "images/" .Params.image ) }}
-{{- else }}
-  {{ $imagePath = "content/me_large.jpg" }}
-{{- end -}}
-
-{{- $imageResource := resources.Get $imagePath }}
-{{- .Scratch.Set "image" $imageResource }}
-{{- $image := .Scratch.Get "image" -}}
+{{- $imagePath := "content/me_large.jpg" -}}
+{{- if .Params.image }}{{ $imagePath = (printf "%s%s%s%s" "content" (.OutputFormats.Get "html").RelPermalink "images/" .Params.image ) }}{{ end -}}
+{{- $image := resources.Get $imagePath -}}
 
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">

@@ -9,7 +9,7 @@ main#video {
     font-size: 0.85em;
     line-height: 1.5em;
     color: #777777;
-    margin: 20px 10px;
+    margin: 1.25em;
   }
 
   a {
@@ -28,12 +28,12 @@ main#video {
 @mixin responsive--videos() {
   main#video {
     margin: 20px 0;
-  
+
     h1 {
       font-size: 1.6em;
       padding: 0 15px;
     }
-  
+
     video {
       width: 100%;
       height: auto;

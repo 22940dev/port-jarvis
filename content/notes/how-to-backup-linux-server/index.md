@@ -16,7 +16,7 @@ draft: false
 
 {{< image src="images/apocalypse.png" alt="The Cloud-pocalypse: Coming soon(er than you think) to a server near you." caption="The Cloud-pocalypse: Coming soon(er than you think) to a server near you." >}}
 
-Last month, the founder of [a small startup](https://raisup.com/) got quite a bit of [attention on Twitter](https://twitter.com/w3Nicolas/status/1134529316904153089) (and [Hacker News](https://news.ycombinator.com/item?id=20064169)) when he called out [DigitalOcean](https://www.digitalocean.com/) who, in his words, "killed" his company. Long story short: DigitalOcean's automated abuse system flagged the startup's account after they spun up about ten powerful droplets for some CPU-intensive jobs and deleted them shortly after --- which is literally **the biggest selling point** of a "servers by the hour" company like DigitalOcean, by the way --- and, after replying to the support ticket, an unsympathetic customer support agent [declined to reactivate](https://twitter.com/w3Nicolas/status/1134529372172509184) the account without explanation. [Nicolas](https://twitter.com/w3Nicolas) had no way of even accessing his data, turning the inconvenient but trivial task of migrating servers into a potentially fatal situation for his company.
+Last month, the founder of [a small startup](https://raisup.com/) got quite a bit of [attention on Twitter](https://twitter.com/w3Nicolas/status/1134529316904153089) (and [Hacker News](https://news.ycombinator.com/item?id=20064169)) when he called out [DigitalOcean](https://www.digitalocean.com/) who, in his words, "killed" his company. Long story short: DigitalOcean's automated abuse system flagged the startup's account after they spun up about ten powerful droplets for some CPU-intensive jobs and deleted them shortly after --- which is literally **the biggest selling point** of a "servers by the hour" company like DigitalOcean, by the way — and, after replying to the support ticket, an unsympathetic customer support agent [declined to reactivate](https://twitter.com/w3Nicolas/status/1134529372172509184) the account without explanation. [Nicolas](https://twitter.com/w3Nicolas) had no way of even accessing his data, turning the inconvenient but trivial task of migrating servers into a potentially fatal situation for his company.
 
 {{< tweet 1134529316904153089 >}}
 
@@ -30,7 +30,7 @@ Luckily, crafting a DIY automated backup system using a second redundant storage
 ---
 
 
-There are quite a few tools that have been around for decades that could accomplish this task --- namely [`rsync`](https://en.wikipedia.org/wiki/Rsync) --- but an [open-source](https://github.com/restic/restic) tool named [**Restic**](https://restic.net/) has won my heart for both its simplicity and the wide range of destinations it natively supports, including but not limited to:
+There are quite a few tools that have been around for decades that could accomplish this task — namely [`rsync`](https://en.wikipedia.org/wiki/Rsync) — but an [open-source](https://github.com/restic/restic) tool named [**Restic**](https://restic.net/) has won my heart for both its simplicity and the wide range of destinations it natively supports, including but not limited to:
 
 - [Amazon AWS S3](https://aws.amazon.com/s3/)
 - [Backblaze B2](https://www.backblaze.com/b2/cloud-storage.html)
@@ -48,7 +48,7 @@ Setting up Restic is certainly easier than a low-level tool like `rsync`, but it
 
 ## 0. Sign up for a second cloud service
 
-I host most of my projects on [Linode](https://www.linode.com/?r=0c5aeace9bd591be9fbf32f96f58470295f1ee05) (affiliate link) and chose [Amazon's S3](https://aws.amazon.com/s3/) as my backup destination. S3 is easily the gold-standard in random file storage and I'd highly recommend it --- unless your servers are also on Amazon with EC2, of course. My second choice would be [Backblaze's B2](https://www.backblaze.com/b2/cloud-storage.html), which is comparable to S3 in semantics and price.
+I host most of my projects on [Linode](https://www.linode.com/?r=0c5aeace9bd591be9fbf32f96f58470295f1ee05) (affiliate link) and chose [Amazon's S3](https://aws.amazon.com/s3/) as my backup destination. S3 is easily the gold-standard in random file storage and I'd highly recommend it — unless your servers are also on Amazon with EC2, of course. My second choice would be [Backblaze's B2](https://www.backblaze.com/b2/cloud-storage.html), which is comparable to S3 in semantics and price.
 
 Writing steps to create an S3 bucket would be incredibly redundant, so here are Amazon's writeups on creating one (make sure the bucket is ***fully private;*** the other default settings are fine) as well as grabbing your account's "access keys" which will be used to authenticate Restic with S3.
 
@@ -100,7 +100,7 @@ export AWS_ACCESS_KEY_ID="your AWS access key"
 export AWS_SECRET_ACCESS_KEY="your AWS secret"
 ```
 
-We'll also need to tell Restic where the bucket is located and set a secure password to encrypt the backups. You can generate a super-secure 32-character password by running `openssl rand -base64 32` --- just make sure you store it somewhere safe!
+We'll also need to tell Restic where the bucket is located and set a secure password to encrypt the backups. You can generate a super-secure 32-character password by running `openssl rand -base64 32` — just make sure you store it somewhere safe!
 
 ```bash
 export RESTIC_REPOSITORY="s3:s3.amazonaws.com/your-bucket-name"
@@ -171,7 +171,7 @@ Lastly, we need to set the actual cron job. To do this, run `sudo crontab -e` an
 0 * * * * /root/backup.sh
 ```
 
-The first part specifies how often the script should run. `0 * * * *` runs it right at the top of every hour. Personally, I choose to run it at the 15th minute of every *other* hour, so mine looks like `15 */2 * * *`. [crontab.guru](https://crontab.guru/#0_*_*_*_*) is a nifty "calculator" to help you customize this expression to your liking --- it's definitely not the most intuitive syntax.
+The first part specifies how often the script should run. `0 * * * *` runs it right at the top of every hour. Personally, I choose to run it at the 15th minute of every *other* hour, so mine looks like `15 */2 * * *`. [crontab.guru](https://crontab.guru/#0_*_*_*_*) is a nifty "calculator" to help you customize this expression to your liking — it's definitely not the most intuitive syntax.
 
 The second part specifies where the script we just wrote is located, of course, so set that to wherever you saved `backup.sh`.
 
@@ -180,7 +180,7 @@ The second part specifies where the script we just wrote is located, of course, 
 
 **Side note:** In order to use `restic` in future shell sessions, we need to make the four environment variables permanent by adding them to your `.bash_profile` or `.bashrc` file in your home directory. Simply copy and paste the four `export` lines from the `backup.sh` file we created above to the end of either dotfile.
 
-Take note of the next time that your new cron job *should* run, so we can check that it was automatically triggered. After that time --- at the top of the next hour if you used my defaults in the last step --- you can run `restic snapshots` like we did before to make sure there's an additional snapshot listed, and optionally take the IDs of each snapshot and run `restic diff ID_1 ID_2` to see what's changed between the two.
+Take note of the next time that your new cron job *should* run, so we can check that it was automatically triggered. After that time — at the top of the next hour if you used my defaults in the last step — you can run `restic snapshots` like we did before to make sure there's an additional snapshot listed, and optionally take the IDs of each snapshot and run `restic diff ID_1 ID_2` to see what's changed between the two.
 
 To restore a snapshot to a certain location, grab the ID from `restic snapshots` and use `restore` like so:
 
@@ -200,6 +200,6 @@ There are a few other neat options for browsing and restoring snapshots, like `m
 
 Again, [Restic's documentation](https://restic.readthedocs.io/en/latest/index.html) is really, really well written, so I definitely recommend skimming it to see what else is possible.
 
-Literally every company's Doomsday protocols can *always* be improved, and external backups are just one part of redundancy. But pat yourself on the back --- this might have been a convoluted process, but hopefully you'll be able to sleep better at night knowing your startup or personal server now has a **far** better chance of surviving whatever the cloud rains down upon you!
+Literally every company's Doomsday protocols can *always* be improved, and external backups are just one part of redundancy. But pat yourself on the back — this might have been a convoluted process, but hopefully you'll be able to sleep better at night knowing your startup or personal server now has a **far** better chance of surviving whatever the cloud rains down upon you!
 
 If you have any questions, feel free to leave a comment or <a href="&#x6D;&#x61;&#x69;&#x6C;&#x74;&#x6F;&#x3A;&#x6A;&#x61;&#x6B;&#x65;&#x40;&#x6A;&#x61;&#x72;&#x76;&#x2E;&#x69;&#x73;">get in touch with me</a>. Be safe out there!

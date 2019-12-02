@@ -19,7 +19,7 @@ draft: false
 
 Contributing to an open-source project can be intimidating at first. The convoluted process of submitting your improvements for approval via a [**pull request**](https://help.github.com/en/articles/about-pull-requests) certainly doesn't help.
 
-The following steps to submit a pull request will work on Git repositories hosted anywhere --- on [GitLab](https://gitlab.com/), [Bitbucket](https://bitbucket.org/), [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/repos/), etc. --- but most open-source repositories one would want to contribute to are likely on [**GitHub**](https://github.com/), which is what we'll be using.
+The following steps to submit a pull request will work on Git repositories hosted anywhere — on [GitLab](https://gitlab.com/), [Bitbucket](https://bitbucket.org/), [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/repos/), etc. — but most open-source repositories one would want to contribute to are likely on [**GitHub**](https://github.com/), which is what we'll be using.
 
 Starting from the very beginning, we'll fork an existing repository to our account, clone the fork locally, commit your changes to a new branch, and push it back upstream to GitHub to submit for approval.
 
@@ -47,7 +47,7 @@ git clone git@github.com:jakejarvis/react-native.git
 
 Once you've forked a repository, changes to the original (or "upstream") repository are not pushed to your fork. We need to tell the new repository to follow changes made upstream to keep it fresh via [something called a `remote`](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes).
 
-Switch directories to the forked repository you just cloned and run the following commands. Replace the last part of the first line with the **original** repository clone URL --- similar to the how you grabbed the URL in step 2, but this **isn't** the one with your username.
+Switch directories to the forked repository you just cloned and run the following commands. Replace the last part of the first line with the **original** repository clone URL — similar to the how you grabbed the URL in step 2, but this **isn't** the one with your username.
 
 This links the fork back to the original repository as a remote, which we'll name `upstream`, and then fetch it.
 
@@ -97,4 +97,4 @@ You're now all ready to submit the improvement you've made to the project's main
 
 ---
 
-I'll admit, I need to refer back to these notes whenever I'm preparing to contribute to an open-source project. It's certainly not the most intuitive process, but at least it's the same wherever the project is located --- for example, I host my [own private GitLab CE instance](https://git.jarv.is/jake). The universality of Git is what makes it great! 👍
+I'll admit, I need to refer back to these notes whenever I'm preparing to contribute to an open-source project. It's certainly not the most intuitive process, but at least it's the same wherever the project is located — for example, I host my [own private GitLab CE instance](https://git.jarv.is/jake). The universality of Git is what makes it great! 👍

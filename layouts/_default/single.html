@@ -1,17 +1,17 @@
-{{ partial "header.html" . }}
+{{ define "main" }}
 <main id="single">
   <article>
-    <div id="info">
+    <div id="meta">
       <h1><a href="{{ .Permalink }}" class="no-underline">{{ .Title }}</a></h1>
-      <div id="meta">
+      <div id="byline">
         by <a class="no-underline" href="{{ .Site.BaseURL }}" rel="me author">{{ .Site.Author.name }}</a>
         &middot; <a class="no-underline" href="{{ .Permalink }}" title="{{ .Date.Format "Mon, Jan 2 2006 3:04:05 PM MST" }}">{{ .Date.Format "January 2, 2006" }}</a>
         &middot; <a class="no-underline" href="{{ .Site.Params.gitRepo }}/blob/master/content/{{ .File.Path }}" title="Edit this page on GitHub" target="_blank" rel="noopener">Improve Post</a>
-        <div id="tags">
+        <ul id="tags">
         {{- range .Params.tags }}
-          <span class="tag">{{ . }}</span>
+          <li>{{ . }}</li>
         {{- end }}
-        </div>
+        </ul>
       </div>
     </div>
     <div id="content">
@@ -19,4 +19,4 @@
     </div>
   </article>
 </main>
-{{ partial "footer.html" . }}
+{{ end }}

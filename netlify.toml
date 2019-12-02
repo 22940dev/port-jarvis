@@ -55,6 +55,10 @@
   to = "https://jakejarvis.github.io/comp20/:splat"
   status = 200
 [[redirects]]
+  from = "/candies/*"
+  to = "https://jakejarvis.github.io/candies/:splat"
+  status = 200
+[[redirects]]
   from = "/awesome/*"
   to = "https://jakejarvis.github.io/synonyms-for-awesome/:splat"
   status = 200

@@ -1,4 +1,4 @@
-{{ partial "header.html" . }}
+{{ define "main" }}
 <main id="list">
   {{- range (where .Site.RegularPages "Type" "notes").GroupByDate "2006" }}
   <section class="year">
@@ -14,4 +14,4 @@
   </section>
   {{- end }}
 </main>
-{{ partial "footer.html" . }}
+{{ end }}
