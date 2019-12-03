@@ -25,11 +25,15 @@
 # Support ancient RSS subscriptions from WordPress era:
 [[redirects]]
   from = "/feed"
-  to = "/index.xml"
+  to = "/feed.xml"
   status = 301
 [[redirects]]
   from = "/rss"
-  to = "/index.xml"
+  to = "/feed.xml"
+  status = 301
+[[redirects]]
+  from = "/index.xml"
+  to = "/feed.xml"
   status = 301
 
 # Mirror Y2K site from GitHub Pages:

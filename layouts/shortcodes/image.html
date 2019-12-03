@@ -12,7 +12,7 @@
   {{- $retinaWidth := (mul $setWidth 2) -}}
 
   {{- if gt $original.Width $retinaWidth -}}
-    {{- $finalWidth := (printf "%dx" $retinaWidth ) -}}
+    {{- $finalWidth := (printf "%dx" $retinaWidth) -}}
     {{- .Scratch.Set "image" ($original.Resize $finalWidth) -}}
   {{- end -}}
 {{- else -}}
@@ -35,11 +35,11 @@
 <p>
 {{- end -}}
 <img src="{{ $image.Permalink }}" width="{{ $displayWidth }}" height="{{ $displayHeight }}"
-     {{- if .Get "alt" }} alt="{{ .Get "alt" }}"{{ end }}
-     {{- if .Get "caption" }} title="{{ .Get "caption"}}"{{ end }}>
-{{- if .Get "caption" -}}
+     {{- with .Get "alt" }} alt="{{ . }}"{{ end }}
+     {{- with .Get "caption" }} title="{{ . }}"{{ end }}>
+{{- with .Get "caption" -}}
   </picture>
-  <figcaption>{{ .Get "caption" }}</figcaption>
+  <figcaption>{{ . }}</figcaption>
 </figure>
 {{- else -}}
 </p>

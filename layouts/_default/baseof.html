@@ -1,12 +1,12 @@
 <!doctype html>
 {{"<!--\n      ,,,        ,,,\n    ;\"   ^;    ;\"   \",\n   ;     s$$$$$s      ;\n    ,  ss$$$$$$$ss  ,\"\n    ;$$$$$$$$$$$$$$$$\n    $$$$$$$$$$$$$$$$$$           Hello, human. :)\n   $$$$$\"\"\"$$$\"\"\"$$$$$$\n  $$$$$  p\"$$$\"q  $$$$$     https://jarv.is/humans.txt\n   $$$$  .$$$$$.  $$$$\n    $$$$$$$$$$$$$$$$$\n      \"$$$$\"*\"$$$$\"\n         \"$$.$$\"\n-->" | safeHTML}}
-<html lang="en">
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-us{{ end }}">
   <head>
     <meta charset="utf-8">
     {{ hugo.Generator }}
     <title>{{ .Title }}{{ if not .IsHome }} &ndash; {{ .Site.Title }}{{ else }} &#x1f468;&#x200d;&#x1f4bb;{{ end }}</title>
-    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    <meta name="author" content="{{ .Site.Author.name }}">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    {{ with .Site.Author.name }}<meta name="author" content="{{ . }}">{{ end }}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ partial "open-graph" . }}
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -23,7 +23,7 @@
     <link rel="icon" href="{{ "favicon-16.png" | absURL }}" sizes="16x16">
     <link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}" sizes="16x16 32x32 48x48">
     <link rel="canonical" href="{{ .Permalink }}">
-    <link rel="alternate" type="application/rss+xml" href="{{ "index.xml" | absURL }}" title="{{ .Site.Title }} (RSS)">
+    <link rel="alternate" type="application/rss+xml" href="{{ "feed.xml" | absURL }}" title="{{ .Site.Title }} (RSS)">
     <link rel="author" href="{{ "humans.txt" | absURL }}">
     {{ if and (eq .Type "notes") (eq .Kind "page") }}
       {{ with .OutputFormats.Get "amp" }}

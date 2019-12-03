@@ -1,26 +1,36 @@
+{{- with .Site.Author -}}
+
+{{- $image := "" }}
+{{- with $.Site.Params.defaultimage }}
+  {{- $image = resources.Get (printf "%s%s" "content" .) }}
+{{- end -}}
+
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "Person",
-  "@id": {{ printf "%s%s" .Site.BaseURL "#author" }},
-  "name": {{ .Site.Author.name }},
-  "url": {{ .Site.BaseURL }},
-  "description": {{ .Site.Params.description }},
-  "jobTitle": {{ .Site.Author.jobtitle }},
+  "@id": {{ printf "%s%s" $.Site.BaseURL "#author" }},
+  "name": {{ $.Site.Author.name }},
+  "url": {{ $.Site.BaseURL }},
+  "description": {{ $.Site.Params.description }},
+  {{ with .jobtitle }}"jobTitle": {{ . }},{{ end }}
+  {{- with $image }}
   "image": {
     "@type": "ImageObject",
-    "url": {{ "me_large.jpg" | absURL }},
-    "width": "1200",
-    "height": "1200"
+    "url": {{ replace .Permalink "/content/" "/" }},
+    "width": "{{ .Width }}",
+    "height": "{{ .Height }}"
   },
+  {{- end }}
   "sameAs": [
-    {{ .Site.BaseURL }},
-    {{ printf "%s%s" "https://github.com/" .Site.Author.github }},
-    {{ printf "%s%s" "https://twitter.com/" .Site.Author.twitter }},
-    {{ printf "%s%s%s" "https://www.linkedin.com/in/" .Site.Author.linkedin "/" }},
-    {{ printf "%s%s" "https://www.facebook.com/" .Site.Author.facebook }},
-    {{ printf "%s%s%s" "https://www.instagram.com/" .Site.Author.instagram "/" }},
-    {{ printf "%s%s" "https://" .Site.Author.mastodon }}
+    {{ $.Site.BaseURL }},
+    {{ with .github }}{{ printf "%s%s" "https://github.com/" . }},{{ end }}
+    {{ with .twitter }}{{ printf "%s%s" "https://twitter.com/" . }},{{ end }}
+    {{ with .linkedin }}{{ printf "%s%s%s" "https://www.linkedin.com/in/" . "/" }},{{ end }}
+    {{ with .facebook }}{{ printf "%s%s" "https://www.facebook.com/" . }},{{ end }}
+    {{ with .instagram }}{{ printf "%s%s%s" "https://www.instagram.com/" . "/" }},{{ end }}
+    {{ with .mastodon }}{{ printf "%s%s" "https://" . }}{{ end }}
   ]
 }
 </script>
+{{- end -}}

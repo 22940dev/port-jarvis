@@ -2,7 +2,9 @@
 <main id="video">
   <h1>{{ .Title }}</h1>
 
-  <video poster="{{ with .Resources.GetMatch "images/*.png" }}{{ .Permalink }}{{ end }}" controls crossorigin playsinline preload="none">
+  <video
+    {{ with .Resources.GetMatch "images/*.png" }}poster="{{ .Permalink }}"{{ end }}
+    controls crossorigin playsinline preload="none">
     {{ with .Resources.GetMatch "*.webm" }}<source src="{{ .Permalink }}" type="video/webm">{{ end }}
     {{ with .Resources.GetMatch "*.mp4" }}<source src="{{ .Permalink }}" type="video/mp4">{{ end }}
     {{ with .Resources.GetMatch "*.ogg" }}<source src="{{ .Permalink }}" type="video/ogg">{{ end }}

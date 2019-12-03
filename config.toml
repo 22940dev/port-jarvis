@@ -1,5 +1,5 @@
 baseURL = "https://jarv.is/"
-languageCode = "en-us"
+languageCode = "en-US"
 title = "Jake Jarvis"
 
 # increase timeout for image processing
@@ -32,12 +32,13 @@ disableAliases = true
   mastodon = "mastodon.social/@jakejarvis"
 
 [params]
-  description = "Hello! I'm a frontend web developer based in Boston, Massachusetts specializing in modern JavaScript frameworks and progressive web apps."
+  description = "Hi there! I'm a frontend web developer based in Boston, Massachusetts specializing in modern JavaScript frameworks and progressive web apps."
   domain = "jarv.is"
   facebook_app_id = "3357248167622283"
   gitRepo = "https://github.com/jakejarvis/jarv.is"
   wayback = "https://web.archive.org/web/20010501000000*/jakejarvis.com"
   copyrightFirstYear = "2001"
+  defaultImage = "/me_large.jpg"
 
 [outputs]
   home = ["HTML", "RSS", "MANIFEST", "REDIRECTS", "HEADERS"]
@@ -49,6 +50,9 @@ disableAliases = true
     delimiter = ""
 
 [outputFormats]
+  [outputFormats.RSS]
+    mediatype = "application/rss"
+    baseName = "feed"
   [outputFormats.AMP]
     mediaType = "text/html"
     basename = "amp"
@@ -92,7 +96,8 @@ disableAliases = true
       unsafe = true
   [markup.highlight]
     codeFences = true
-    lineNos = false
+    lineNos = true
+    lineNumbersInTable = true
     noClasses = true
     tabWidth = 4
 

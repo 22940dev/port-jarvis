@@ -10,7 +10,7 @@
   {{- $retinaWidth := (mul $setWidth 2) -}}
 
   {{- if gt $original.Width $retinaWidth -}}
-    {{- $finalWidth := (printf "%dx" $retinaWidth ) -}}
+    {{- $finalWidth := (printf "%dx" $retinaWidth) -}}
     {{- .Scratch.Set "image" ($original.Resize $finalWidth) -}}
   {{- end -}}
 {{- else -}}
@@ -28,13 +28,12 @@
 
 <p class="image">
   <amp-img
-    alt="{{ .Get "alt" }}"
+    {{ with .Get "alt" }}alt="{{ . }}"{{ end }}
     src="{{ $image.Permalink }}"
     width="{{ $displayWidth }}"
     height="{{ $displayHeight }}"
-    layout="intrinsic"
-  >
+    layout="intrinsic">
   </amp-img>
 </p>
 
-{{- with (.Get "caption") }}<p class="caption"><em>{{ . }}</em></p>{{ end -}}
+{{- with .Get "caption" }}<p class="caption"><em>{{ . }}</em></p>{{ end -}}

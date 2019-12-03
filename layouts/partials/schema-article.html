@@ -1,5 +1,7 @@
-{{- $imagePath := "content/me_large.jpg" -}}
-{{- if .Params.image }}{{ $imagePath = (printf "%s%s%s%s" "content" (.OutputFormats.Get "html").RelPermalink "images/" .Params.image ) }}{{ end -}}
+{{- $imagePath := "" }}
+{{- with .Params.image }}
+  {{- $imagePath = (printf "%s%s%s%s" "content" ($.OutputFormats.Get "html").RelPermalink "images/" .) }}
+{{- end }}
 {{- $image := resources.Get $imagePath -}}
 
 <script type="application/ld+json">
@@ -13,14 +15,14 @@
   "datePublished": {{ .PublishDate.Format "2006-01-02T15:04:05-07:00" }},
   "dateModified": {{ .PublishDate.Format "2006-01-02T15:04:05-07:00" }},
   "keywords": {{ with .Params.tags }}{{ delimit . ", " }}{{ end }},
-  "description": {{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }},
+  "description": {{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }},
   "wordCount": "{{ .WordCount }}",
   "author": {
-    "@id": "https://jarv.is/#author"
+    "@id": {{ printf "%s%s" .Site.BaseURL "#author" }}
   },
   "publisher": {
     "@type": "Organization",
-    "name": {{ .Site.Author.name }},
+    "name": {{ .Site.Title }},
     "url": {{ .Site.BaseURL }},
     "logo": {
       "@type": "ImageObject",
@@ -28,12 +30,13 @@
       "width": "2048",
       "height": "2048"
     }
-  },
+  }{{ with $image }},
   "image": {
     "@type": "ImageObject",
-    "url": {{ if .Params.image }}{{ (printf "%s%s%s" (.OutputFormats.Get "html").Permalink "images/" .Params.image ) }}{{ else }}{{ "me_large.jpg" | absURL }}{{ end }},
-    "width": "{{ $image.Width }}",
-    "height": "{{ $image.Height }}"
+    "url": {{ replace .Permalink "/content/" "/" }},
+    "width": "{{ .Width }}",
+    "height": "{{ .Height }}"
   }
+  {{- end }}
 }
 </script>

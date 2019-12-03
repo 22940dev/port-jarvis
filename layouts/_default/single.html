@@ -6,10 +6,12 @@
       <div id="byline">
         by <a class="no-underline" href="{{ .Site.BaseURL }}" rel="me author">{{ .Site.Author.name }}</a>
         &middot; <a class="no-underline" href="{{ .Permalink }}" title="{{ .Date.Format "Mon, Jan 2 2006 3:04:05 PM MST" }}">{{ .Date.Format "January 2, 2006" }}</a>
-        &middot; <a class="no-underline" href="{{ .Site.Params.gitRepo }}/blob/master/content/{{ .File.Path }}" title="Edit this page on GitHub" target="_blank" rel="noopener">Improve Post</a>
+        {{ with .Site.Params.gitRepo }}&middot; <a class="no-underline" href="{{ . }}/blob/master/content/{{ $.File.Path }}" title="Edit this page on GitHub" target="_blank" rel="noopener">Improve Post</a>{{ end }}
         <ul id="tags">
-        {{- range .Params.tags }}
+        {{- with .Params.tags }}
+        {{- range . }}
           <li>{{ . }}</li>
+        {{- end }}
         {{- end }}
         </ul>
       </div>
