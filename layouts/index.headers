@@ -3,16 +3,10 @@
 #  - Test website: https://securityheaders.com/
 
 /*
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Content-Type-Options: nosniff
   X-Frame-Options: sameorigin
   X-XSS-Protection: 1; mode=block
-  Referrer-Policy: no-referrer
-  X-Content-Type-Options: nosniff
-
-
-# Recommended MIME type for RSS feed
-
-/index.xml
-  Content-Type: application/rss+xml
 
 
 # Recommended MIME type for PWA manifests

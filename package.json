@@ -9,6 +9,10 @@
     "email": "jake@jarv.is",
     "url": "https://github.com/jakejarvis"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakejarvis/jarv.is.git"
+  },
   "scripts": {
     "build": "yarn clean && yarn hugo:build && yarn optimize",
     "build:preview": "yarn clean && yarn hugo:build-dev",
@@ -32,6 +36,7 @@
     "clean-css-cli": "~4.3.0",
     "cross-env": "^6.0.3",
     "html-minifier": "~4.0.0",
+    "hugo-bin": "0.48.1",
     "imagemin-cli": "^5.0.0",
     "imagemin-gifsicle": "^6.0.1",
     "imagemin-jpegoptim": "^6.0.0",
@@ -45,9 +50,8 @@
     "stylelint-config-recommended-scss": "~4.1.0",
     "stylelint-scss": "~3.13.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jakejarvis/jarv.is.git"
+  "hugo-bin": {
+    "buildTags": "extended"
   },
   "stylelint": {
     "extends": "stylelint-config-recommended-scss",
