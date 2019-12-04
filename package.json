@@ -17,10 +17,12 @@
     "build": "yarn clean && yarn hugo:build && yarn optimize",
     "build:preview": "yarn clean && yarn hugo:build-dev",
     "hugo:build": "hugo --gc --cleanDestinationDir --verbose",
-    "hugo:build-dev": "cross-env HUGO_ENV=development hugo -e development -b $DEPLOY_PRIME_URL --gc --cleanDestinationDir --buildDrafts --buildFuture --verbose",
-    "hugo:serve": "hugo server --buildDrafts --buildFuture --renderToDisk --port 1313 --bind 0.0.0.0 --verbose",
-    "docker:serve": "docker build -t jarv.is:develop -f Dockerfile . && docker run -v $(pwd):/src -p 1313:1313 jarv.is:develop",
-    "netlify:serve": "netlify dev --command 'yarn hugo:serve'",
+    "hugo:build-dev": "cross-env HUGO_ENV=development hugo -e development --buildDrafts --buildFuture --baseURL ${DEPLOY_PRIME_URL:-/} --gc --cleanDestinationDir --verbose",
+    "hugo:version": "hugo version; hugo env",
+    "start": "yarn serve:hugo",
+    "serve:hugo": "hugo server --buildDrafts --buildFuture --port 1313 --bind 0.0.0.0 --verbose",
+    "serve:docker": "docker build -t jarv.is:develop -f Dockerfile . && docker run -v $(pwd):/src -p 1313:1313 jarv.is:develop",
+    "serve:netlify": "netlify dev --command 'yarn serve:hugo'",
     "optimize": "yarn optimize:html && yarn optimize:css && yarn optimize:img",
     "optimize:html": "html-minifier --html5 --collapse-whitespace --preserve-line-breaks --minify-css --file-ext html --input-dir public --output-dir public **/*.html",
     "optimize:css": "cleancss -O0 --format 'keep-breaks' -o public/style.css public/style.css",
@@ -28,8 +30,7 @@
     "lint": "yarn lint:markdown; yarn lint:sass",
     "lint:markdown": "markdownlint content/notes/**/*.md",
     "lint:sass": "stylelint assets/sass/**/* --syntax scss",
-    "clean": "rimraf public/ resources/",
-    "test": "hugo version; hugo env"
+    "clean": "rimraf public/ resources/"
   },
   "dependencies": {},
   "devDependencies": {
