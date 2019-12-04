@@ -62,27 +62,27 @@ Restic might be included in your OS's default repositories (it is on Ubuntu) but
 
 Find the latest version of Restic on their [GitHub releases page](https://github.com/restic/restic/releases/latest). Since I'm assuming this is a Linux server, we only want the file ending in `_linux_amd64.bz2`. (For a 32-bit Linux server, find `_linux_386.bz2`. Windows, macOS, and BSD binaries are also there.) Right-click and copy the direct URL for that file and head over to your server's command line to download it into your home directory:
 
-```bash
+```bash {linenos=false}
 cd ~
 wget https://github.com/restic/restic/releases/download/v0.9.5/restic_0.9.5_linux_amd64.bz2
 ```
 
 Next, we'll unzip the download in place:
 
-```bash
+```bash {linenos=false}
 bunzip2 restic_*
 ```
 
 This should leave us with a single file: the Restic binary. In order to make Restic available system-wide and accessible with a simple `restic` command, we need to move it into the `/usr/local/bin` folder, which requires `sudo` access:
 
-```bash
+```bash {linenos=false}
 sudo mv restic_* /usr/local/bin/restic
 sudo chmod a+x /usr/local/bin/restic
 ```
 
 Now's a good time to run `restic` to make sure we're good to move on. If you see the version number we downloaded, you're all set!
 
-```bash
+```bash {linenos=false}
 restic version
 ```
 
@@ -95,14 +95,14 @@ If you haven't already [created a new S3 bucket](https://docs.aws.amazon.com/qui
 
 We need to store these keys as environment variables named `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. For now, we'll set these temporarily until we automate everything in the next step.
 
-```bash
+```bash {linenos=false}
 export AWS_ACCESS_KEY_ID="your AWS access key"
 export AWS_SECRET_ACCESS_KEY="your AWS secret"
 ```
 
 We'll also need to tell Restic where the bucket is located and set a secure password to encrypt the backups. You can generate a super-secure 32-character password by running `openssl rand -base64 32` — just make sure you store it somewhere safe!
 
-```bash
+```bash {linenos=false}
 export RESTIC_REPOSITORY="s3:s3.amazonaws.com/your-bucket-name"
 export RESTIC_PASSWORD="passw0rd123-just-kidding"
 ```
@@ -112,7 +112,7 @@ export RESTIC_PASSWORD="passw0rd123-just-kidding"
 
 Now we're ready to have Restic initialize the repository. This saves a `config` file in your S3 bucket and starts the encryption process right off the bat. You only need to run this once.
 
-```bash
+```bash {linenos=false}
 restic init
 ```
 
@@ -123,7 +123,7 @@ If successful, you should see a message containing `created restic backend`. If 
 
 Now that the hard parts are done, creating a backup (or "snapshot" in Restic terms) is as simple as a one-line command. All we need to specify is the directory you want to backup.
 
-```bash
+```bash {linenos=false}
 restic backup /srv/important/data
 ```
 
@@ -153,7 +153,7 @@ I highly recommend adding one final command to the end of the file: Restic's `fo
 
 This command keeps one snapshot from each of the last **six hours**, one snapshot from each of the last **seven days**, one snapshot from each of the last **four weeks**, and one snapshot from each of the last **twelve months**. 
 
-```bash
+```bash {linenos=false}
 restic forget -q --prune --keep-hourly 6 --keep-daily 7 --keep-weekly 4 --keep-monthly 12
 ```
 
@@ -161,13 +161,13 @@ Reading [the documentation](https://restic.readthedocs.io/en/latest/060_forget.h
 
 Save the shell script and close the editor. Don't forget to make the script we just wrote actually executable:
 
-```bash
+```bash {linenos=false}
 chmod +x backup.sh
 ```
 
 Lastly, we need to set the actual cron job. To do this, run `sudo crontab -e` and add the following line to the end:
 
-```bash
+```bash {linenos=false}
 0 * * * * /root/backup.sh
 ```
 
@@ -184,7 +184,7 @@ Take note of the next time that your new cron job *should* run, so we can check 
 
 To restore a snapshot to a certain location, grab the ID from `restic snapshots` and use `restore` like so:
 
-```bash
+```bash {linenos=false}
 restic restore 420x69abc --target ~/restored_files
 ```
 

@@ -38,7 +38,7 @@ Once you're ready, here's how to shrink your Linux-based VM:
 
 The open-source version of VMware Tools for Linux, [open-vm-tools](https://github.com/vmware/open-vm-tools), has added a simple command to automate the above steps in the latest version. Make sure you have the latest update through either apt or yum, and then run the following command in the **guest** terminal:
 
-```bash
+```bash {linenos=false}
 vmware-toolbox-cmd disk shrink /
 ```
 
@@ -50,7 +50,7 @@ Thank you to [commenter Susanna](https://jake.wordpress.com/2018/12/04/how-to-sh
 
 Boot up your Linux virtual machine. We'll start by optimizing the OS as much as possible before shrinking it. In addition to manually deleting files you no longer use, running this command in your terminal can free up a little more space by removing some installation caches left behind by old versions of software you've installed and updated:
 
-```bash
+```bash {linenos=false}
 sudo apt-get clean
 ```
 
@@ -59,7 +59,7 @@ sudo apt-get clean
 
 This step is the crucial one. In order for VMware to detect the newly free space, we need to free it up ourselves using a little trickery. We're going to have Linux overwrite the free space with a file full of zeros – the size of this file will be the size of however much space we're freeing up (5 GB, in the example above) – and then delete it. These commands will create the file, wait a moment, and then delete the file:
 
-```bash
+```bash {linenos=false}
 cat /dev/zero > zero.fill
 sync
 sleep 1
@@ -84,13 +84,13 @@ Now, we're going to run our final command in our **host** terminal, so open that
 
 We're going to feed this command the exact location of the VMDK file we're shrinking. You can either do this by typing the **full path** to it, or by simply dragging the VMDK file onto the terminal after typing the first part of the command (up to and including "-d"). The "-d" argument will defragment the disk.
 
-```bash
+```bash {linenos=false}
 /Applications/VMware\ Fusion.app/Contents/Library/vmware-vdiskmanager -d <path to your .VMDK file>
 ```
 
 The final command should look something like this, with your VMDK file instead:
 
-```bash
+```bash {linenos=false}
 /Applications/VMware\ Fusion.app/Contents/Library/vmware-vdiskmanager -d /Users/jake/Documents/Virtual\ Machines/Debian9.vmwarevm/Virtual\ Disk.vmdk
 ```
 
@@ -98,7 +98,7 @@ If you've done this correctly, you'll see it defragmenting the file, and then re
 
 After the defragmentation completes, we need to finally shrink the image. We do this by running the same command as you did above, but replacing the "-d" with "-k" as follows:
 
-```bash
+```bash {linenos=false}
 /Applications/VMware\ Fusion.app/Contents/Library/vmware-vdiskmanager -k <path to the same .VMDK file>
 ```
 

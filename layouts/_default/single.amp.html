@@ -120,23 +120,29 @@
       div.right {
         text-align: right;
       }
-      code {
+      div.highlight, code {
         font-family: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
-        font-size: 0.9em;
-        padding: 0.2em;
         background: #f4f4f4;
-        border: 1px solid #dddddd;
+        font-size: 0.9em;
+        page-break-inside: avoid;
       }
-      pre code {
-        display: block;
-        padding: 1em 1.5em;
-        margin: 1.4em 0;
-        line-height: 1.6;
+      p code {
+        border: 1px solid #dddddd;
+        padding: 0.2em;
+      }
+      div.highlight {
+        border: 1px solid #dddddd;
         border-left: 3px solid #0e6dc2;
+        line-height: 1.6;
         max-width: 100%;
         overflow-x: scroll;
-        page-break-inside: avoid;
         object-fit: scale-down;
+        font-size: 1em;
+        margin: 1em 0;
+      }
+      div.highlight pre {
+        display: block;
+        margin-left: 1.5em;
       }
       div.highlight span.k, div.highlight span.kc, div.highlight span.kd, div.highlight span.kp, div.highlight span.kr, div.highlight span.kt, div.highlight span.no { color: #03748a; }
       div.highlight span.n, div.highlight span.bp, div.highlight span.nb, div.highlight span.ni, div.highlight span.fm, div.highlight span.nl, div.highlight span.nn, div.highlight span.py, div.highlight span.nv, div.highlight span.vc, div.highlight span.vg, div.highlight span.vi, div.highlight span.vm, div.highlight span.p { color: #111111; }
@@ -147,6 +153,7 @@
       div.highlight span.c, div.highlight span.ch, div.highlight span.cm, div.highlight span.c1, div.highlight span.cs, div.highlight span.cp, div.highlight span.cpf { color: #6b6859; }
       div.highlight span.ge { font-style: italic; }
       div.highlight span.gs { font-weight: bold; }
+      div.highlight span.lnt { color: #999999; }
     </style>
 
     <link rel="icon" href="{{ "favicon-192.png" | absURL }}" sizes="192x192">

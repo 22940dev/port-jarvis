@@ -79,6 +79,7 @@ main#single {
       div.embed.video-player {
         position: relative;
         padding-bottom: 56.25%;
+        margin: 1em auto;
         height: 0;
         overflow: hidden;
 
@@ -102,24 +103,35 @@ main#single {
         border: 0;
       }
 
-      code {
+      // all code
+      div.highlight, code {
         // https://markdotto.com/2018/02/07/github-system-fonts/
         font-family: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
-        font-size: 0.9em;
-        padding: 0.2em;
         background: $color-super-duper-light;
-        border: 1px solid $color-super-light;
+        font-size: 0.9em;
+        page-break-inside: avoid;
       }
 
-      pre code {
-        display: block;
-        padding: 1em 1.5em;
-        line-height: 1.6;
+      // inline code in paragraphs
+      p code {
+        border: 1px solid $color-super-light;
+        padding: 0.2em;
+      }
+
+      // code fences
+      div.highlight {
+        border: 1px solid $color-super-light;
         border-left: 3px solid $color-links;
+        line-height: 1.6;
         max-width: 100%;
         overflow-x: scroll;
-        page-break-inside: avoid;
         object-fit: scale-down;
+        font-size: 1em;
+        margin: 1em 0;
+      }
+      div.highlight pre {
+        display: block;
+        margin-left: 1.5em;
       }
     }
 

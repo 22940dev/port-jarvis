@@ -30,9 +30,9 @@ div.highlight span {
     font-weight: bold;
   }
 
-  // TODO: line numbers
-  &.ln {
+  // line numbers
+  &.lnt {
     color: #999999;
-    margin-right: 1.5em;
+    user-select: none;  // maybe add prefixes? https://caniuse.com/#feat=user-select-none
   }
 }
