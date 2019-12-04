@@ -49,19 +49,19 @@
   status = 200
 [[redirects]]
   from = "/scrabble/*"
-  to = "https://jakejarvis.github.io/scrabble/:splat"
+  to = "https://modest-jackson-d5516b.netlify.com/scrabble/:splat"
   status = 200
 [[redirects]]
   from = "/comp20/*"
-  to = "https://jakejarvis.github.io/comp20/:splat"
+  to = "https://modest-jackson-d5516b.netlify.com/comp20/:splat"
   status = 200
 [[redirects]]
   from = "/candies/*"
-  to = "https://jakejarvis.github.io/candies/:splat"
+  to = "https://modest-jackson-d5516b.netlify.com/candies/:splat"
   status = 200
 [[redirects]]
   from = "/awesome/*"
-  to = "https://jakejarvis.github.io/synonyms-for-awesome/:splat"
+  to = "https://modest-jackson-d5516b.netlify.com/awesome/:splat"
   status = 200
 
 # H A C K E R M A N ( ͡° ͜ʖ ͡°)
