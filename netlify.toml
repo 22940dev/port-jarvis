@@ -1,12 +1,27 @@
+[build]
+  command = "yarn build"
+  publish = "public"
+
 [build.environment]
   NODE_VERSION = "12.13.1"
   NPM_VERSION = "6.13.1"
   YARN_VERSION = "1.21.0"
   YARN_FLAGS = "--no-ignore-optional --frozen-lockfile"
 
-[build]
-  command = "yarn build"
-  publish = "public"
+# Ensure *only* Pretty URLs are enabled, even though this is already set up in
+# the Netlify dashboard.
+[build.processing]
+  skip_processing = false
+  [build.processing.css]
+    bundle = false
+    minify = false
+  [build.processing.js]
+    bundle = false
+    minify = false
+  [build.processing.html]
+    pretty_urls = true
+  [build.processing.images]
+    compress = false
 
 [context.deploy-preview]
   command = "yarn build:preview"
@@ -36,13 +51,12 @@
   to = "/feed.xml"
   status = 301
 
-# Mirror Y2K site from GitHub Pages:
+# Mirror these directories from elsewhere to mimic old GitHub Pages behavior
+# and keep the main repository squeaky clean:
 [[redirects]]
   from = "/y2k/*"
   to = "https://jakejarvis.github.io/y2k/:splat"
   status = 200
-
-# Legacy GitHub Pages subdirectory behavior:
 [[redirects]]
   from = "/ios-trackers/*"
   to = "https://jakejarvis.github.io/ios-trackers/:splat"
