@@ -19,6 +19,15 @@ enableRobotsTXT = true
 # prefer Netlify's _redirects file, see outputs below
 disableAliases = true
 
+[params]
+  description = "Hi there! I'm a frontend web developer based in Boston, Massachusetts specializing in modern JavaScript frameworks and progressive web apps."
+  domain = "jarv.is"
+  facebookAppID = "3357248167622283"
+  gitRepo = "https://github.com/jakejarvis/jarv.is"
+  defaultImage = "/me_large.jpg"
+  copyrightFirstYear = "2001"
+  wayback = "https://web.archive.org/web/20010501000000*/jakejarvis.com"
+
 [author]
   name = "Jake Jarvis"
   jobTitle = "Front-End Web Developer"
@@ -26,19 +35,10 @@ disableAliases = true
   twitter = "jakejarvis"
   github = "jakejarvis"
   facebook = "jakejarvis"
-  facebook_id = "1329090853"
+  facebookID = "1329090853"
   instagram = "jakejarvis"
   linkedin = "jakejarvis"
   mastodon = "mastodon.social/@jakejarvis"
-
-[params]
-  description = "Hi there! I'm a frontend web developer based in Boston, Massachusetts specializing in modern JavaScript frameworks and progressive web apps."
-  domain = "jarv.is"
-  facebook_app_id = "3357248167622283"
-  gitRepo = "https://github.com/jakejarvis/jarv.is"
-  wayback = "https://web.archive.org/web/20010501000000*/jakejarvis.com"
-  copyrightFirstYear = "2001"
-  defaultImage = "/me_large.jpg"
 
 [outputs]
   home = ["HTML", "RSS", "MANIFEST", "REDIRECTS", "HEADERS"]
@@ -51,11 +51,11 @@ disableAliases = true
 
 [outputFormats]
   [outputFormats.RSS]
-    mediatype = "application/rss"
+    mediaType = "application/rss"
     baseName = "feed"
   [outputFormats.AMP]
     mediaType = "text/html"
-    basename = "amp"
+    baseName = "amp"
     path = "."
     permalinkable = true
     isHTML = true
@@ -64,12 +64,12 @@ disableAliases = true
     baseName = "manifest"
     notAlternative = true
   [outputFormats.REDIRECTS]
-    mediatype = "text/netlify"
+    mediaType = "text/netlify"
     baseName = "_redirects"
     isPlainText = true
     notAlternative = true
   [outputFormats.HEADERS]
-    mediatype = "text/netlify"
+    mediaType = "text/netlify"
     baseName = "_headers"
     isPlainText = true
     notAlternative = true

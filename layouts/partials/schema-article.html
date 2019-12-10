@@ -1,8 +1,7 @@
-{{- $imagePath := "" }}
+{{- $image := "" }}
 {{- with .Params.image }}
-  {{- $imagePath = (printf "%s%s%s%s" "content" ($.OutputFormats.Get "html").RelPermalink "images/" .) }}
+  {{- $image = resources.Get (printf "%s%s%s%s" "content" ($.OutputFormats.Get "html").RelPermalink "images/" .) }}
 {{- end }}
-{{- $image := resources.Get $imagePath -}}
 
 <script type="application/ld+json">
 {

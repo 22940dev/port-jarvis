@@ -1,10 +1,9 @@
-{{- $imagePath := "" }}
+{{- $image := "" }}
 {{- with .Params.image }}
-  {{- $imagePath = (printf "%s%s%s%s" "content" ($.OutputFormats.Get "html").RelPermalink "images/" .) }}
+  {{- $image = resources.Get (printf "%s%s%s%s" "content" ($.OutputFormats.Get "html").RelPermalink "images/" .) }}
 {{- else }}
-  {{- $imagePath = (printf "%s%s" "content" $.Site.Params.defaultimage) }}
+  {{- $image = resources.Get (printf "%s%s" "content" $.Site.Params.defaultimage) }}
 {{- end }}
-{{- $image := resources.Get $imagePath -}}
 
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
@@ -33,8 +32,9 @@
 {{- with .Params.tags }}{{ range . }}
 <meta property="article:tag" content="{{ . }}">{{ end }}{{ end }}
 {{- end }}
-{{ with .Site.Author.facebook_id }}<meta property="fb:admins" content="{{ . }}">{{ end }}
-{{ with .Site.Params.facebook_app_id }}<meta property="fb:app_id" content="{{ . }}">{{ end }}
+
+{{ with .Site.Author.facebookid }}<meta property="fb:admins" content="{{ . }}">{{ end }}
+{{ with .Site.Params.facebookappid }}<meta property="fb:app_id" content="{{ . }}">{{ end }}
 <meta name="twitter:card" content="summary">
 <meta name="twitter:domain" content="{{ .Site.Params.domain }}">
 {{- with .Site.Author.twitter }}

@@ -20,16 +20,15 @@ header {
       color: $color-medium-dark;
       padding: 15px;
 
-      img,
-      svg {
-        width: 30px;
-        height: 45px;
-      }
-
       h1#name {
         margin: 0 0 0 20px;
         font-size: 1.4em;
         font-weight: 500;
+      }
+
+      svg {
+        width: 30px;
+        height: 45px;
       }
 
       // mix up logo colors on hover

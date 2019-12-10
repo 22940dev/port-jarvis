@@ -9,7 +9,7 @@ main#single {
   article div {
     &#content {
       font-weight: 400;
-      line-height: 1.8;
+      line-height: 1.7;
 
       h1,
       h2,
@@ -106,7 +106,7 @@ main#single {
       // all code
       div.highlight, code {
         // https://markdotto.com/2018/02/07/github-system-fonts/
-        font-family: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
+        font-family: $system-fonts-monospace;
         background: $color-super-duper-light;
         font-size: 0.9em;
         page-break-inside: avoid;

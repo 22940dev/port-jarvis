@@ -1,16 +1,35 @@
 @charset "UTF-8";
 
+// System Fonts
+// https://markdotto.com/2018/02/07/github-system-fonts/
+$system-fonts: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+               "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+               "Droid Sans", "Helvetica Neue", sans-serif,
+               "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$system-fonts-monospace: "SFMono-Regular", "Consolas", "Liberation Mono",
+               "Menlo", "Courier", monospace;
+
+// Misc Settings
+$responsive-width: 890px;
+$link-opacity: 40%;
+$link-underline-size: 2px;
+
 // Global Colors
 $color-background:   #ffffff;
 $color-gray-background: #fbfbfb;
 $color-text:         #222222;
-$color-medium-dark:   #313131;
+$color-medium-dark:  #313131;
 $color-medium:       #444444;
 $color-light:        #666666;
 $color-medium-light: #757575;
 $color-super-light:  #dddddd;
 $color-super-duper-light: #f4f4f4;
 $color-links:        #0e6dc2;
+
+// For nifty color swapping on svg logo hover in components/_header.scss
+$color-logo1: #6fbc4e;
+$color-logo2: #ffb900;
+$color-logo3: #009cdf;
 
 // Colorful Homepage
 $colors-home:(
@@ -22,7 +41,7 @@ $colors-home:(
   angular:    #c3002f,
   vue:        #486491,
   java:       #ab6311,
-  cpp:        #865fc5,
+//  cpp:        #865fc5,
   python:     #fea500,
   php:        #8892bf,
   ruby:       #d34135,
@@ -53,14 +72,3 @@ $colors-home:(
   news-7:     #973999
 );
 $color-serverless: #87cef7;
-
-// For nifty color swapping on svg logo hover in components/_header.scss
-$color-logo1: #6fbc4e;
-$color-logo2: #ffb900;
-$color-logo3: #009cdf;
-
-// Other Settings
-$link-opacity: 40%;
-$link-underline-size: 2px;
-
-$responsive-width: 890px;

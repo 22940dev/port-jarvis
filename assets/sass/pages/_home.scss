@@ -25,7 +25,7 @@ main#home {
 
   h3 {
     margin: 0.6em 0;
-    font-size: 1.15em;
+    font-size: 1.2em;
     font-weight: 400;
     line-height: 1.4;
   }
@@ -65,7 +65,7 @@ main#home {
     &#blog {
       font-size: 0.9em;
       margin-bottom: 0;
-  
+
       span {
         margin-right: 4px;
       }
@@ -84,6 +84,7 @@ main#home {
     margin: 0 0 0.5em 1em;
     padding: 4px;
     border: 1px solid $color-super-light;
+    border-radius: 50%;
     width: 160px;
     height: 160px;
   }
@@ -96,12 +97,12 @@ main#home {
     font-size: 1.1em;
     line-height: 1.6;
     padding: 1em 1.2em 0.5em 1.2em;
-  
+
     img#me {
       width: 85px;
       height: 85px;
       margin: 0 0 0.3em 0.6em;
       padding: 2px;
     }
-  }  
+  }
 }
