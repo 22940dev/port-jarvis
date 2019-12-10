@@ -14,9 +14,9 @@ draft: false
 ---
 
 
-I've been trying out [Netlify Analytics](https://www.netlify.com/products/analytics/) on this site for almost a month now (non-consecutively) and have some quick thoughts about this unique offering in a world full of bloated and invasive tracking scripts.
+I've been trying out [Netlify Analytics](https://www.netlify.com/products/analytics/) on this site for over a month now and have some quick thoughts about this unique offering in a world full of bloated and invasive tracking scripts.
 
-{{< image src="images/pageviews.png" alt="Pageview charts on Netlify Analytics" >}}
+{{< image src="images/pageviews-2.png" alt="Pageview charts on Netlify Analytics" >}}
 
 
 ---
