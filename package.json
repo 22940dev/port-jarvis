@@ -14,8 +14,8 @@
     "url": "git+https://github.com/jakejarvis/jarv.is.git"
   },
   "scripts": {
-    "build": "yarn clean && yarn hugo:build && yarn optimize",
-    "build:preview": "yarn clean && yarn hugo:build-dev",
+    "build": "yarn clean && yarn hugo:version && yarn hugo:build && yarn optimize",
+    "build:preview": "yarn clean && yarn hugo:version && yarn hugo:build-dev",
     "hugo:build": "hugo --gc --cleanDestinationDir --verbose",
     "hugo:build-dev": "cross-env HUGO_ENV=development hugo -e development --buildDrafts --buildFuture --baseURL ${DEPLOY_PRIME_URL:-/} --gc --cleanDestinationDir --verbose",
     "hugo:version": "hugo version; hugo env",

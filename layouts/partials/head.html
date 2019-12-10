@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 {{ hugo.Generator }}
-<title>{{ .Title }}{{ if not .IsHome }} &ndash; {{ .Site.Title }}{{ else }} &#x1F468;&#x200D;&#x1F4BB;{{ end }}</title>
+<title>{{ .Title }}{{ if not .IsHome }} – {{ .Site.Title }}{{ else }} &#x1F468;&#x200D;&#x1F4BB;{{ end }}</title>
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 {{ with .Site.Author.name }}<meta name="author" content="{{ . }}">{{ end }}
 <meta name="viewport" content="width=device-width, initial-scale=1">
