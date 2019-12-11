@@ -41,5 +41,10 @@ a {
     padding-bottom: 45px !important;
     // Allows you to scroll below the viewport; default value is visible
     overflow-y: scroll;
+
+    // Fix weird font size behavior on iOS Safari: https://github.com/jakejarvis/jarv.is/issues/18
+    // https://stackoverflow.com/questions/3226001/some-font-sizes-rendered-larger-on-safari-iphone
+    // https://www.456bereastreet.com/archive/201011/beware_of_-webkit-text-size-adjustnone/
+    -webkit-text-size-adjust: 100%;
   }
 }
