@@ -22,8 +22,6 @@ Run `yarn install` then `yarn start` ([Yarn must be installed](https://yarnpkg.c
 
 To ensure consistency and compatibility, the [`Dockerfile`](Dockerfile) in this repository will download the Hugo Extended binary and its dependencies, and start a live testing server.
 
-Simply run `yarn serve:docker` or build and run manually with:
-
 ```bash
 docker build -t jarv.is:develop -f Dockerfile .
 docker run -v $(pwd):/src -p 1313:1313 jarv.is:develop

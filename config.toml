@@ -1,5 +1,5 @@
 baseURL = "https://jarv.is/"
-languageCode = "en-US"
+languageCode = "en-us"
 title = "Jake Jarvis"
 
 # increase timeout for image processing
@@ -7,9 +7,8 @@ timeout = 120000
 
 canonifyURLs = true
 
-disableFastRender = true
-disableHugoGeneratorInject = true   # don't worry, inserted manually :)
 disableKinds = ["taxonomy", "taxonomyTerm"]
+disableHugoGeneratorInject = true   # don't worry, inserted manually :)
 
 pygmentsUseClasses = true
 pygmentsCodeFences = true
