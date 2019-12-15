@@ -80,17 +80,27 @@
 # H A C K E R M A N ( ͡° ͜ʖ ͡°)
 [[redirects]]
   from = "*/wp-login.php"
-  to = "/h4x0rz.gif"
-  status = 200
+  to = "/403.html"
+  status = 403
+  force = true
 [[redirects]]
   from = "*/wp-admin/*"
-  to = "/h4x0rz.gif"
-  status = 200
+  to = "/403.html"
+  status = 403
+  force = true
 [[redirects]]
   from = "/login"
-  to = "/h4x0rz.gif"
-  status = 200
+  to = "/403.html"
+  status = 403
+  force = true
 [[redirects]]
-  from = "/login.php"
-  to = "/h4x0rz.gif"
-  status = 200
+  from = "*/login.php"
+  to = "/403.html"
+  status = 403
+  force = true
+# no clue what these requests are? but there are a lot...
+[[redirects]]
+  from = "/plus/*.php"
+  to = "/403.html"
+  status = 403
+  force = true
