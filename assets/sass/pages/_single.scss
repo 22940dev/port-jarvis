@@ -3,7 +3,7 @@
 // Post Styles
 main#single {
   max-width: 910px;
-  padding: 1em 3em;
+  padding: 1em 2.5em;
   margin: 0 auto;
 
   article div {
@@ -38,7 +38,7 @@ main#single {
         display: block;
         font-size: 0.9em;
         font-style: normal;
-        color: $color-light;
+        color: $color-medium;
         text-align: center;
       }
 
@@ -107,20 +107,20 @@ main#single {
       div.highlight, code {
         // https://markdotto.com/2018/02/07/github-system-fonts/
         font-family: $system-fonts-monospace;
-        background: $color-super-duper-light;
+        background: $color-super-light;
         font-size: 0.9em;
         page-break-inside: avoid;
       }
 
       // inline code in paragraphs
       p code {
-        border: 1px solid $color-super-light;
+        border: 1px solid $color-light;
         padding: 0.2em;
       }
 
       // code fences
       div.highlight {
-        border: 1px solid $color-super-light;
+        border: 1px solid $color-light;
         border-left: 3px solid $color-links;
         line-height: 1.6;
         max-width: 100%;
@@ -149,10 +149,10 @@ main#single {
       }
 
       div#byline {
-        color: $color-light;
+        color: $color-medium;
         font-size: 0.85em;
         line-height: 1.5;
-        letter-spacing: 1px;
+        letter-spacing: 0.08em;
 
         a {
           color: inherit;
@@ -167,7 +167,7 @@ main#single {
             display: inline;
             margin: 0 0.7em;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 0.15em;
           }
         }
       }
@@ -179,13 +179,10 @@ main#single {
 // Responsive
 @mixin responsive--single() {
   main#single {
-    padding: 0.8em 1.2em;
+    padding: 0.8em 1.5em;
 
     article {
-      width: 100%;
-      max-width: 100%;
-
-      div#info h1 {
+      div#meta h1 {
         font-size: 1.7em;
       }
     }

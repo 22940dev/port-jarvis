@@ -67,7 +67,7 @@ main#home {
       margin-bottom: 0;
 
       span {
-        margin-right: 4px;
+        margin-right: 0.2em;
       }
     }
 
@@ -83,7 +83,7 @@ main#home {
     float: right;
     margin: 0 0 0.5em 1em;
     padding: 4px;
-    border: 1px solid $color-super-light;
+    border: 1px solid $color-light;
     border-radius: 50%;
     width: 160px;
     height: 160px;
@@ -96,7 +96,7 @@ main#home {
   main#home {
     font-size: 1.1em;
     line-height: 1.6;
-    padding: 1em 1.2em 0.5em 1.2em;
+    padding: 1.2em 1.2em 0.2em 1.2em;
 
     img#me {
       width: 85px;

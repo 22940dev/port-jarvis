@@ -2,8 +2,8 @@
 
 // Archive/List Styles
 main#list {
-  max-width: 1010px;
-  padding: 1.5em 3em;
+  max-width: 980px;
+  padding: 1.5em 2.5em;
   margin: 0 auto;
 
   section.year {
@@ -24,11 +24,11 @@ main#list {
       display: flex;
 
       div.date {
-        color: $color-light;
+        color: $color-medium;
         width: 5.25em;
         flex-shrink: 0;
       }
-    
+
       &::after {
         content: '';
         display: block;
@@ -50,7 +50,7 @@ main#list {
 // Responsive
 @mixin responsive--list() {
   main#list {
-    padding: 1em 1.2em;
+    padding: 1em 1.5em;
 
     section.year {
       font-size: 1em;

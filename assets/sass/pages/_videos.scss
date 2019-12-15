@@ -2,8 +2,13 @@
 
 // Video Styles
 main#video {
-  margin: 20px auto;
+  margin: 0 auto;
+  padding: 1.5em 0;
   text-align: center;
+
+  h1 {
+    margin-top: 0;
+  }
 
   p {
     font-size: 0.85em;
@@ -27,16 +32,16 @@ main#video {
 // Responsive
 @mixin responsive--videos() {
   main#video {
-    margin: 20px 0;
+    padding: 1em 0;
 
     h1 {
       font-size: 1.6em;
-      padding: 0 15px;
+      padding: 0 0.6em;
     }
 
     video {
       width: 100%;
       height: auto;
     }
-  }  
+  }
 }

@@ -6,7 +6,9 @@
   </head>
   <body>
 {{ block "header" . }}{{ partial "header" . }}{{ end }}
+<div id="wrap">
 {{ block "main" . }}{{ end }}
+</div>
 {{ block "footer" . }}{{ partial "footer" . }}{{ end }}
   </body>
 </html>
