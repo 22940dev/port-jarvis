@@ -1,9 +1,8 @@
-<!-- Automatic resizing for HiDPI/retina images -->
+{{- /* Automatic resizing for HiDPI/retina images */ -}}
 
 {{- $original := .Page.Resources.GetMatch (.Get "src") -}}
 {{- .Scratch.Set "image" $original -}}
 
-<!-- TODO: automatically pull max-width of page -->
 {{- $maxWidth := 910 -}}
 {{- $setWidth := 0 -}}
 
