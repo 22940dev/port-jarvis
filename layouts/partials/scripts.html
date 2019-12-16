@@ -1,0 +1,14 @@
+{{- if .HasShortcode "gh-buttons"}}
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+{{ end -}}
+
+{{- if .HasShortcode "tweet"}}
+<script async defer src="https://platform.twitter.com/widgets.js"></script>
+{{ end -}}
+
+{{- if .HasShortcode "facebook"}}
+<div id="fb-root"></div>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0"></script>
+{{ end -}}
+
+{{- template "_internal/google_analytics_async.html" . }}

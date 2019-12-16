@@ -98,9 +98,3 @@
   to = "/403.html"
   status = 403
   force = true
-# no clue what these requests are? but there are a lot...
-[[redirects]]
-  from = "/plus/*.php"
-  to = "/403.html"
-  status = 403
-  force = true

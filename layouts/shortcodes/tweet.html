@@ -1,0 +1,5 @@
+{{- /* Modified from tpl/tplimpl/embedded/templates/shortcodes/twitter.html, minus script */ -}}
+
+{{- $url := printf "https://api.twitter.com/1/statuses/oembed.json?id=%v&dnt=1&omit_script=1" (index .Params 0) -}}
+{{- $json := getJSON $url -}}
+{{- $json.html | safeHTML -}}
