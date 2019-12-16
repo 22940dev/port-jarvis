@@ -152,10 +152,15 @@ main#single {
         color: $color-medium;
         font-size: 0.85em;
         line-height: 1.5;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.075em;
 
         a {
           color: inherit;
+        }
+
+        span.dot {
+          margin: 0 0.1em;
+          font-weight: 700;
         }
 
         ul#tags {
@@ -165,7 +170,7 @@ main#single {
 
           li {
             display: inline;
-            margin: 0 0.7em;
+            margin: 0 0.8em;
             text-transform: uppercase;
             letter-spacing: 0.15em;
           }
@@ -182,8 +187,22 @@ main#single {
     padding: 0.8em 1.5em;
 
     article {
-      div#meta h1 {
-        font-size: 1.7em;
+      div#meta{
+        h1 {
+          font-size: 1.8em;
+        }
+
+        div#byline {
+          // hide "Improve Post" link on mobile
+          span#edit {
+            display: none;
+          }
+
+          // less space between tags
+          ul#tags li {
+            margin: 0 0.5em;
+          }
+        }
       }
     }
   }
