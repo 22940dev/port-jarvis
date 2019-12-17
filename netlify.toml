@@ -47,19 +47,37 @@
   status = 301
   force = true
 
-# Support ancient RSS subscriptions from WordPress era:
+# Support ancient RSS subscriptions and links from WordPress era:
 [[redirects]]
   from = "/feed"
   to = "/feed.xml"
   status = 301
+  force = true
 [[redirects]]
   from = "/rss"
   to = "/feed.xml"
   status = 301
+  force = true
 [[redirects]]
   from = "/index.xml"
   to = "/feed.xml"
   status = 301
+  force = true
+[[redirects]]
+  from = "/index.php*"
+  to = "/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/blog/*"
+  to = "/notes/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/archives/*"
+  to = "/notes/"
+  status = 301
+  force = true
 
 # Mirror these directories from elsewhere to mimic old GitHub Pages behavior
 # and keep the main repository squeaky clean:
@@ -86,6 +104,11 @@
 [[redirects]]
   from = "/awesome/*"
   to = "https://modest-jackson-d5516b.netlify.com/awesome/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/me_lg.jpg"
+  to = "/me_large.jpg"
   status = 200
 
 # H A C K E R M A N ( ͡° ͜ʖ ͡°)
