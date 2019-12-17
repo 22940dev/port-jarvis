@@ -29,7 +29,8 @@
 
 <p class="image">
   <amp-img
-    {{ with .Get "alt" }}alt="{{ . }}"{{ end }}
+    {{- with .Get "alt" }} alt="{{ . | safeHTMLAttr }}" title="{{ . | safeHTMLAttr }}"{{ end }}
+    {{- with .Inner }} alt="{{ . | plainify | safeHTMLAttr }}" title="{{ . | plainify | safeHTMLAttr }}"{{ end }}
     src="{{ $image.Permalink }}"
     width="{{ $displayWidth }}"
     height="{{ $displayHeight }}"
@@ -37,4 +38,4 @@
   </amp-img>
 </p>
 
-{{- with .Get "caption" }}<p class="caption"><em>{{ . }}</em></p>{{ end -}}
+{{- with .Inner }}<p class="caption">{{ . | safeHTML }}</p>{{ end -}}

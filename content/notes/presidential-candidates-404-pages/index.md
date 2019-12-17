@@ -11,7 +11,7 @@ image: "obama-laughing.jpg"
 draft: false
 ---
 
-{{< image src="images/obama-laughing.jpg" alt="President Obama probably ranking 404 pages." >}}
+{{< image src="images/obama-laughing.jpg" >}}President Barack H. Obama, probably ranking 404 pages.{{< /image >}}
 
 Ever since [President Obama injected technology](https://arstechnica.com/information-technology/2012/11/built-to-win-deep-inside-obamas-campaign-tech/) into presidential politics in a historic way, one of the few bright spots of the incredibly long and exhausting race for me has been inspecting each candidate's campaign website. They end up revealing a great deal about how much each of them is willing to invest in the internet, and how young and innovative (and potentially funny) the staff members they attract are.
 
@@ -23,7 +23,7 @@ More recently, though, little-known hidden Easter eggs on ["404 Not Found"](http
 
 I'm a _huge_ sucker for Kate McKinnon's spot-on impression of Warren on Saturday Night Live. And [unfortunately](https://twitter.com/realdonaldtrump/status/1097116612279316480), seeing a campaign embrace SNL is like a breath of fresh air these days. [Watch all of the Kate McWarren videos so far here; you won't regret it.](http://www.nbc.com/saturday-night-live/cast/kate-mckinnon-15056/impersonation/elizabeth-warren-287903)
 
-{{< image src="images/warren.png" alt="Elizabeth Warren" >}}
+{{< image src="images/warren.png" alt="Elizabeth Warren" />}}
 
 ---
 
@@ -39,7 +39,7 @@ Although the designer who selected this GIF likely had _thousands_ of choices wh
 
 Uncle Joe has a nice and simple 404 page. I like it, along with the Ray-Bans and his choice of vanilla ice cream.
 
-{{< image src="images/biden.png" alt="Joe Biden" >}}
+{{< image src="images/biden.png" alt="Joe Biden" />}}
 
 ---
 
@@ -63,7 +63,7 @@ Another clean and simple page with a top-notch GIF. It injected some emotion int
 
 I love, love, _love_ Pete's design for his whole campaign, and his beautiful 404 page is no exception. In case you didn't know, Pete for America has an entire ["Design Toolkit"](https://design.peteforamerica.com/) publicly available for all to view and use, with really cool and in-depth explanations for all of their choices — even their [color palette](https://design.peteforamerica.com/colors). Very progressive indeed.
 
-{{< image src="images/buttigeg.png" alt="Pete Buttigeg" >}}
+{{< image src="images/buttigeg.png" alt="Pete Buttigeg" />}}
 
 ---
 
@@ -71,7 +71,7 @@ I love, love, _love_ Pete's design for his whole campaign, and his beautiful 404
 
 Love the photo choice. But although pains me to go against my Senator from my home state, I still _cannot stand_ his choice of font. Oh well, I guess that's now a criterion for running for president in 2020.
 
-{{< image src="images/booker.png" alt="Cory Booker" >}}
+{{< image src="images/booker.png" alt="Cory Booker" />}}
 
 ---
 
@@ -79,7 +79,7 @@ Love the photo choice. But although pains me to go against my Senator from my ho
 
 Not sure if donating to Yang 2020 will help put a page at [yang2020.com/alsdjfzoif](https://www.yang2020.com/alsdjfzoif) — the actual URL I visited to grab this screenshot — but the Bitmoji Andrew looks pretty chill.
 
-{{< image src="images/yang.png" alt="Andrew Yang" >}}
+{{< image src="images/yang.png" alt="Andrew Yang" />}}
 
 ---
 
@@ -87,7 +87,7 @@ Not sure if donating to Yang 2020 will help put a page at [yang2020.com/alsdjfzo
 
 This is the 404 page of someone who won't forget the [Midwestern roots](https://en.wikipedia.org/wiki/Uff_da) she comes from once she moves into the White House...or writes a memoir about her campaign from her Minnesota home.
 
-{{< image src="images/klobuchar.png" alt="Amy Klobuchar" >}}
+{{< image src="images/klobuchar.png" alt="Amy Klobuchar" />}}
 
 ---
 
@@ -95,7 +95,7 @@ This is the 404 page of someone who won't forget the [Midwestern roots](https://
 
 I'll never publicly say anything against a good Dad joke. This is no exception.
 
-{{< image src="images/bullock.png" alt="Steve Bullock" >}}
+{{< image src="images/bullock.png" alt="Steve Bullock" />}}
 
 ---
 
@@ -103,7 +103,7 @@ I'll never publicly say anything against a good Dad joke. This is no exception.
 
 Another quality Dad joke here. 
 
-{{< image src="images/bennet.png" alt="Michael Bennet" >}}
+{{< image src="images/bennet.png" alt="Michael Bennet" />}}
 
 ---
 
@@ -111,7 +111,7 @@ Another quality Dad joke here.
 
 Yet another Dad joke? I honestly had the hardest time ranking these three.
 
-{{< image src="images/delaney.png" alt="John Delaney" >}}
+{{< image src="images/delaney.png" alt="John Delaney" />}}
 
 ---
 
@@ -119,7 +119,7 @@ Yet another Dad joke? I honestly had the hardest time ranking these three.
 
 A 404 page only a motivational author and speaker running for president could envision.
 
-{{< image src="images/williamson.png" alt="Marianne Williamson" >}}
+{{< image src="images/williamson.png" alt="Marianne Williamson" />}}
 
 ---
 
@@ -127,7 +127,7 @@ A 404 page only a motivational author and speaker running for president could en
 
 I guess this would be slightly humorous...four years ago. Time to move on from your middle-school crush, Donny.
 
-{{< image src="images/trump.png" alt="Trump/Pence" >}}
+{{< image src="images/trump.png" alt="Trump/Pence" />}}
 
 ---
 
@@ -137,23 +137,23 @@ These candidates haven't configured a custom 404 page, settling for the default 
 
 ### Julián Castro — [julianforthefuture.com](https://www.julianforthefuture.com/asdfasdf404) {#castro}
 
-{{< image src="images/castro.png" alt="Julián Castro" >}}
+{{< image src="images/castro.png" alt="Julián Castro" />}}
 
 ---
 
 ### Wayne Messam — [wayneforusa.com](https://wayneforusa.com/asdfasdf404) {#messam}
 
-{{< image src="images/messam.png" alt="Wayne Messam" >}}
+{{< image src="images/messam.png" alt="Wayne Messam" />}}
 
 ---
 
 ### Tulsi Gabbard — [tulsi2020.com](https://www.tulsi2020.com/asdfasdf404) {#gabbard}
 
-{{< image src="images/gabbard.png" alt="Tulsi Gabbard" >}}
+{{< image src="images/gabbard.png" alt="Tulsi Gabbard" />}}
 
 ---
 
 ### Joe Sestak — [joesestak.com](https://www.joesestak.com/asdfasdf404) {#sestak}
 
-{{< image src="images/sestak.png" alt="Joe Sestak" >}}
+{{< image src="images/sestak.png" alt="Joe Sestak" />}}
 

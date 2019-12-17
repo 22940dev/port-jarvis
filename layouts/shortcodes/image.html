@@ -27,19 +27,15 @@
 {{- $displayWidth := $setWidth -}}
 {{- $displayHeight := (math.Ceil (mul $origRatio $setWidth)) -}}
 
-{{- if .Get "caption" -}}
+{{ with .Inner }}
 <figure>
   <picture>
-{{- else -}}
-<p>
-{{- end -}}
-<img src="{{ $image.Permalink }}" width="{{ $displayWidth }}" height="{{ $displayHeight }}"
-     {{- with .Get "alt" }} alt="{{ . }}"{{ end }}
-     {{- with .Get "caption" }} title="{{ . }}"{{ end }}>
-{{- with .Get "caption" -}}
+    <img src="{{ $image.Permalink }}" width="{{ $displayWidth }}" height="{{ $displayHeight }}"
+         alt="{{ . | plainify | safeHTMLAttr }}" title="{{ . | plainify | safeHTMLAttr }}">
   </picture>
-  <figcaption>{{ . }}</figcaption>
+  <figcaption>{{ . | safeHTML }}</figcaption>
 </figure>
-{{- else -}}
-</p>
-{{- end -}}
+{{ else }}
+<p><img src="{{ $image.Permalink }}" width="{{ $displayWidth }}" height="{{ $displayHeight }}"
+     {{- with .Get "alt" }} alt="{{ . | safeHTMLAttr }}" title="{{ . | safeHTMLAttr }}"{{ end }}></p>
+{{ end }}

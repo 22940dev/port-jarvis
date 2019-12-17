@@ -13,13 +13,13 @@ draft: false
 ---
 
 
-{{< image src="images/actions-flow.png" width="780" alt="Example workflow for a GitHub Action" >}}
+{{< image src="images/actions-flow.png" width="780" alt="Example workflow for a GitHub Action" />}}
 
 Since being accepted into the beta for [GitHub Actions](https://github.com/features/actions) a few months ago, I've found a new side hobby of whipping up new (and ideally creative) actions for anybody to add to their CI pipeline. Actions are modular steps that interact with a GitHub repository and can be coded with [Docker](https://github.com/actions/hello-world-docker-action) or [JavaScript/Node](https://github.com/actions/hello-world-javascript-action) — and either way, they can be as [simple](https://github.com/jakejarvis/wait-action) or as [complex](https://github.com/jakejarvis/lighthouse-action) as you want. But in both cases, they're incredibly fun to make and the results always scratch my itch for instant gratification.
 
 My favorite so far is my [Lighthouse Audit action](https://github.com/jakejarvis/lighthouse-action), which spins up a headless Google Chrome instance in an Ubuntu container and runs [Google's Lighthouse tool](https://developers.google.com/web/tools/lighthouse), which scores webpages on performance, accessibility, SEO, etc. and provides actual suggestions to improve them. It's a perfect example of the power of combining containers with Git workflows.
 
-{{< image src="images/lighthouse-output.png" width="750" alt="The output of my Lighthouse Audit action." caption="The results of a Lighthouse audit on this website, after running tests in a headless Google Chrome." >}}
+{{< image src="images/lighthouse-output.png" width="750" >}}The results of a Lighthouse audit on this website, after running tests in a headless Google Chrome.{{< /image >}}
 
 It's also been a fantastic avenue to dip my feet into the collaborative nature of GitHub and the open-source community. I've made some small apps in the past but these are the first projects where I'm regularly receiving new issues to help out with and impressive pull requests to merge. It's a great feeling!
 
@@ -87,7 +87,7 @@ jobs:
 
 For a more complex example, when I forked [Hugo](https://github.com/gohugoio/hugo) (the static site generator used to build this website) to make some small personalized changes, I also translated [their `.travis.yml` file](https://github.com/gohugoio/hugo/blob/master/.travis.yml) into a [`workflow.yml` file](https://github.com/jakejarvis/hugo-custom/blob/master/.github/workflows/workflow.yml) for practice, which simultaneously runs comprehensive unit tests on **three operating systems** (Ubuntu 18.04, Windows 10, and macOS 10.14) with the latest two Go versions *each!* If the tests are all successful, it builds a Docker image and pushes it to both [Docker Hub](https://hub.docker.com/r/jakejarvis/hugo-custom) and the [GitHub Package Registry](https://github.com/jakejarvis/hugo-custom/packages) (also [in beta](https://github.com/features/package-registry)).
 
-{{< image src="images/hugo-logs.png" alt="Build logs for my Hugo fork" >}}
+{{< image src="images/hugo-logs.png" alt="Build logs for my Hugo fork" />}}
 
 Then another workflow, which [lives in this website's repository](https://github.com/jakejarvis/jarv.is/blob/master/.github/workflows/gh-pages.yml), pulls that Docker image, builds the Hugo site, and pushes it to GitHub Pages. All astoundingly fast. All for free.
 

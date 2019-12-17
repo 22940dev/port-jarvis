@@ -16,7 +16,7 @@ draft: false
 
 I've been trying out [Netlify Analytics](https://www.netlify.com/products/analytics/) on this site for over a month now and have some quick thoughts about this unique offering in a world full of bloated and invasive tracking scripts.
 
-{{< image src="images/pageviews-2.png" alt="Pageview charts on Netlify Analytics" >}}
+{{< image src="images/pageviews-2.png" alt="Pageview charts on Netlify Analytics" />}}
 
 
 ---
@@ -52,7 +52,7 @@ Ad blocking is becoming commonplace on the World Wide Web with [over 25% of user
 
 That's a _huge_ chunk of visitors missing that Netlify Analytics gains back for you — and probably far more if your audience is tech-savvy like those reading this post likely are. (Some might even [block JavaScript completely](https://www.gnu.org/philosophy/javascript-trap.en.html) using extensions like [NoScript](https://addons.mozilla.org/en-US/firefox/addon/noscript/).)
 
-{{< image src="images/pages.png" alt="Pageview and 404 tracking on Netlify Analytics" >}}
+{{< image src="images/pages.png" alt="Pageview and 404 tracking on Netlify Analytics" />}}
 
 Another tangential benefit you simply don't get from JavaScript-based tools like Google Analytics is the "Resources Not Found" box, which separates out URLs that resulted in a 404 Not Found error. Because of the 404 tracking, I discovered how many people were still subscribed to my posts via RSS from when I used WordPress _years_ ago, and I was able to redirect `/feed` and `/rss` to the new location.
 
@@ -72,7 +72,7 @@ It makes sense that Netlify needs to subsidize the cost of providing free enterp
 
 ### 📈&nbsp; Accuracy {#accuracy}
 
-{{< image src="images/sources-bandwidth.png" alt="Referrer and bandwidth tracking on Netlify Analytics" >}}
+{{< image src="images/sources-bandwidth.png" alt="Referrer and bandwidth tracking on Netlify Analytics" />}}
 
 Clearly, as much as I wish they did, 60,000+ visitors didn't type my website directly into the URL bar in the past month. Some of my articles have been circulating on Hacker News, Reddit, Twitter, etc. — none of which have even made a blip on the dashboard.
 
@@ -84,7 +84,7 @@ One more note: since Netlify doesn't process IP addresses or user agents, bots c
 
 ### ⏱️&nbsp; Historical Data {#historical-data}
 
-{{< image src="images/overview.png" alt="Overview of Netlify Analytics stats" >}}
+{{< image src="images/overview.png" alt="Overview of Netlify Analytics stats" />}}
 
 Trying out Netlify Analytics meant switching this site from [GitHub Pages](https://pages.github.com/) to Netlify — something I still have mixed feelings about. But if I had been on Netlify the entire time, I would have gotten thirty days of historical stats backfilled right off the bat, from before I even started paying for Analytics.
 

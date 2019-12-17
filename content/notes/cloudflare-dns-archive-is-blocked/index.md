@@ -14,7 +14,7 @@ draft: false
 
 **tl;dr:** No. Quite the opposite, actually -- [Archive.is](https://archive.is/)'s owner is intentionally blocking 1.1.1.1 users.
 
-{{< image src="images/archive-is.png" alt="Sad Bernie" >}}
+{{< image src="images/archive-is.png" alt="Archive.today screenshot" />}}
 
 A [recent post on Hacker News](https://news.ycombinator.com/item?id=19828317) pointed out something I've noticed myself over the past year -- the [Archive.is](https://archive.is/) website archiving tool (aka [Archive.today](https://archive.today/) and a few other TLDs) appears unresponsive when I'm on my home network, where I use Cloudflare's fantastic public DNS service, [1.1.1.1](https://1.1.1.1/). I didn't connect the two variables until I read this post, where somebody noticed that the Archive.is domain resolves for [Google's 8.8.8.8](https://developers.google.com/speed/public-dns/) DNS, but not 1.1.1.1. An interesting and timeless debate on [privacy versus convenience](https://www.adweek.com/digital/why-consumers-are-increasingly-willing-to-trade-privacy-for-convenience/) ensued.
 

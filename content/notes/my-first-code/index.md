@@ -13,9 +13,9 @@ draft: false
 ---
 
 
-{{< image src="images/netscape.png" alt="Awesome First Code on GitHub" >}}
+{{< image src="images/netscape.png" alt="Awesome First Code on GitHub" />}}
 
-{{< image src="images/badges.png" width="537" alt="Code Quality: A for effort" >}}
+{{< image src="images/badges.png" width="537" alt="Code Quality: A for effort" />}}
 
 
 I recently published my terrible, horrible, no good, very bad [first HTML site](https://jarv.is/y2k) and [first PHP project](https://github.com/jakejarvis/jbb#readme) ever and developed a new addiction to Web 1.0 nostalgia, fed by others who were brave enough to do the same.
@@ -28,7 +28,7 @@ Hopefully we can all look back at our first projects and be proud of how far we'
 ---
 
 
-{{< image src="images/jbb-logo.png" width="640" alt="Jake's Bulletin Board" caption="Jake's Bulletin Board" >}}
+{{< image src="images/jbb-logo.png" width="640" >}}Jake's Bulletin Board{{< /image >}}
 
 
 Aside from my [first HTML creation](https://jarv.is/y2k) (circa 2001), my first real coding project was in 2003: a PHP 4 masterpiece creatively titled **Jake's Bulletin Board**. I've published the [source code in full on GitHub](https://github.com/jakejarvis/jbb) for your viewing pleasure and highlighted the best/worst parts below.
@@ -159,10 +159,10 @@ while ($topic = mysql_fetch_object($result30)) {
 
 The installation "wizard" (that's the joke, I presume...) ([sql_submit.php](https://github.com/jakejarvis/jbb/blob/87b606797414b2fe563af85e269566fc5e076cc5/setup/sql_submit.php))
 
-{{< image src="images/jbb-screen1.png" alt="JBB Installation Wizard" >}}
+{{< image src="images/jbb-screen1.png" >}}JBB Installation Wizard{{< /image >}}
 
 And finally, JBB's actual interface... or literally as much of it as I could get to function in 2019. ([index.php](https://github.com/jakejarvis/jbb/blob/87b606797414b2fe563af85e269566fc5e076cc5/index.php))
 
-{{< image src="images/jbb-screen3.png" alt="JBB Homepage" >}}
+{{< image src="images/jbb-screen3.png" >}}JBB Homepage{{< /image >}}
 
-{{< image src="images/jbb-screen4.png" alt="JBB Post" >}}
+{{< image src="images/jbb-screen4.png" >}}JBB Post{{< /image >}}

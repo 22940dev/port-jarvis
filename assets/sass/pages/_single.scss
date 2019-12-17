@@ -32,12 +32,9 @@ main#single {
         margin-bottom: 0.4em;
       }
 
-      // image captions -- two different markdown hacks
-      img + em,
+      // image captions
       figure figcaption {
-        display: block;
         font-size: 0.9em;
-        font-style: normal;
         color: $color-medium;
         text-align: center;
       }
