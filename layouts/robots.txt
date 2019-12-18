@@ -4,10 +4,8 @@ Disallow: /403.html
 Disallow: /404.html
 
 Disallow: /y2k/
-Disallow: /scrabble/
-Disallow: /comp20/
 Disallow: /candies/
-Disallow: /awesome/
+Disallow: /comp20/
 
 Sitemap: {{ "sitemap.xml" | absURL }}
 {{- else }}
