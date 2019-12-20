@@ -8,6 +8,10 @@ main#video {
 
   h1 {
     margin-top: 0;
+
+    a {
+      color: inherit;
+    }
   }
 
   p {
@@ -15,16 +19,21 @@ main#video {
     line-height: 1.5;
     color: #777777;
     margin: 1.25em;
-  }
 
-  a {
-    font-weight: bold;
+    a {
+      font-weight: bold;
+    }
   }
 
   video {
     width: $responsive-width;
     height: auto;
     font-family: inherit;    // for subtitles
+
+    /* stylelint-disable-next-line selector-pseudo-element-no-unknown */
+    &::cue {
+      font-family: inherit;
+    }
   }
 }
 

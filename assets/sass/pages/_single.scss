@@ -71,6 +71,11 @@ main#single {
         max-width: 100%;
         height: auto;
         border: 0;
+
+        /* stylelint-disable-next-line selector-pseudo-element-no-unknown */
+        &::cue {
+          font-family: inherit;
+        }
       }
 
       div.embed.video-player {

@@ -1,6 +1,7 @@
 ---
 title: "🎉 Cranky Birthday Boy on VHS Tape 📼"
-date: 1996-02-04 00:01:01-0400
+description: "The origin of my hatred for the Happy Birthday song."
+date: 1996-02-04 00:00:00-0400
 url: "/birthday"
 image: "thumb.png"
 type: videos

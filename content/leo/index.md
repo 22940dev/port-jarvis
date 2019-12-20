@@ -1,6 +1,7 @@
 ---
 title: "Facebook App on \"The Lab with Leo Laporte\""
-date: 2007-01-01 00:01:01-0400
+description: "Powncer app featured in Leo Laporte's TechTV show."
+date: 2007-01-01 00:00:00-0400
 url: "/leo"
 image: "thumb.png"
 type: videos

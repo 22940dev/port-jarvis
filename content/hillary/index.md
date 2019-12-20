@@ -1,6 +1,7 @@
 ---
-title: "Hillary's America: Combating Substance Abuse"
-date: 2016-07-25 00:01:01-0400
+title: "My Brief Apperance in Hillary Clinton's DNC Video"
+description: "My brief apperance in one of Hillary Clinton's 2016 DNC convention videos on substance abuse."
+date: 2016-07-25 00:00:00-0400
 url: "/hillary"
 image: "convention-720p.png"
 type: videos
