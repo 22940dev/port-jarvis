@@ -35,10 +35,10 @@ But how do I know who I know, you might ask? BERN's [FAQ page](https://app.berni
 > - Who would you invite to your birthday party or wedding? Where have you lived throughout your life? Who did you know in each of the places you have lived?
 >
 > **Which people can I add to my contact list the BERN app?** *[sic]*
-> We use the word “friend” very broadly: You can add anyone you have met and known in your life to the app. 
+> We use the word "friend" very broadly: You can add anyone you have met and known in your life to the app. 
 
 
-Using either feature, a volunteer starts with a search of the database for the voter he or she is (theoretically) talking to by entering the voter's first name, last name, and location (which only requires entering the state but can be narrowed down by town and/or ZIP code). Every match pops up with each voter's age, sex, and location along with an option to add the information of someone who’s not listed or still needs to register to vote.
+Using either feature, a volunteer starts with a search of the database for the voter he or she is (theoretically) talking to by entering the voter's first name, last name, and location (which only requires entering the state but can be narrowed down by town and/or ZIP code). Every match pops up with each voter's age, sex, and location along with an option to add the information of someone who's not listed or still needs to register to vote.
 
 Here's one of the instructional videos provided internally to volunteers:
 
@@ -50,7 +50,7 @@ Here's one of the instructional videos provided internally to volunteers:
 
 {{< image src="images/webinar-qa-2.png" width="400" alt="Q&A 2" />}}
 
-Defenders of the BERN app have pointed out that the information used is already available from public voter rolls maintained independently by each state. This is true. But these public records have never been tied to a campaign's internal voter files through a tool that’s wide open to the entire internet, with incentives to add valuable data that benefits one candidate.
+Defenders of the BERN app have pointed out that the information used is already available from public voter rolls maintained independently by each state. This is true. But these public records have never been tied to a campaign's internal voter files through a tool that's wide open to the entire internet, with incentives to add valuable data that benefits one candidate.
 
 There were even unverified claims that [BERN was leaking voter ID numbers](https://info.idagent.com/blog/bern-app-exposes-150m-voter-records), which are the same as one's driver's license ID numbers in some states, through JSON responses in the first few days after its release. There don't be appear to be strict rate limits on calls to the API either, potentially inviting malicious actors from around the world  — wink wink  — to scrape personal data on tens of millions of Americans en masse.
 
@@ -66,7 +66,7 @@ BERN is taking this to an unprecedented level. Allowing anybody on the internet 
 
 [{{< image src="images/reddit-bros.png" width="600" alt="Reddit comments on BERN" />}}](https://www.reddit.com/r/SandersForPresident/comments/bi15la/new_get_the_official_bernie_sanders_2020_app_bern/elxi85m/)
 
-In addition to the points system, it was revealed in the webinar mentioned above that the campaign is planning on giving out shiny rewards based on how many friends one adds, setting expectations at 50+ contacts to reach the “Bernie Super Bundler” tier — whatever that means.
+In addition to the points system, it was revealed in the webinar mentioned above that the campaign is planning on giving out shiny rewards based on how many friends one adds, setting expectations at 50+ contacts to reach the "Bernie Super Bundler" tier — whatever that means.
 
 {{< image src="images/webinar-slide-1.png" width="700" alt="Webinar Slide 1" />}}
 

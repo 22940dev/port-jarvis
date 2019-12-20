@@ -24,7 +24,7 @@ You may have noticed the recent trend of techies [posting their "dotfiles" on Gi
 My [full dotfiles are posted at this Git repository](https://github.com/jakejarvis/dotfiles), but here's a summary of the ones I find most helpful that you can add to your own `.bash_profile` or `.bashrc` file.
 
 
-* * *
+---
 
 
 Check your current IP address (IPv4 or IPv6 or both) — uses [my ⚡ fast simpip server!](https://github.com/jakejarvis/simpip)
@@ -145,7 +145,7 @@ alias sudo="sudo "
 ```
 
 
-* * *
+---
 
 
 [View all of my dotfiles here](https://github.com/jakejarvis/dotfiles) or [check out other cool programmers' dotfiles over at this amazing collection](https://dotfiles.github.io/).
