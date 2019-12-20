@@ -1,5 +1,5 @@
 ---
-title: "\"No Homo!\" – Still Rap's Motto in 2012?"
+title: "\"No Homo!\" — Still Rap's Motto in 2012?"
 date: 2013-11-22 11:58:20-0400
 description: "This essay was written for Professor David Valdes-Greenwood's \"Love & Sexuality\" class at Tufts University in April 2012."
 tags:
