@@ -1,10 +1,4 @@
 {{- with .Site.Author -}}
-
-{{- $imagePath := "" }}
-{{- with $.Site.Params.defaultimage }}
-  {{- $imagePath = (path.Join "content" .) }}
-{{- end }}
-
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
@@ -14,14 +8,12 @@
   "url": {{ $.Site.BaseURL }},
   "description": {{ $.Site.Params.description }},
   {{ with .jobtitle }}"jobTitle": {{ . }},{{ end }}
-  {{- with (imageConfig $imagePath) }}
   "image": {
     "@type": "ImageObject",
-    "url": {{ replace $imagePath "content/" $.Site.BaseURL }},
-    "width": "{{ .Width }}",
-    "height": "{{ .Height }}"
+    "url": {{ $.Scratch.Get "defaultImage_url" }},
+    "width": "{{ $.Scratch.Get "defaultImage_width" }}",
+    "height": "{{ $.Scratch.Get "defaultImage_height" }}"
   },
-  {{- end }}
   "sameAs": [
     {{ $.Site.BaseURL }},
     {{ with .github }}{{ printf "%s%s" "https://github.com/" . }},{{ end }}

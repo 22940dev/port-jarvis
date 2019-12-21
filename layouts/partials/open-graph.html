@@ -1,10 +1,3 @@
-{{- $imagePath := "" }}
-{{- with .Params.image }}
-  {{- $imagePath = (path.Join "content" $.File.Dir "images/" .) }}
-{{- else }}
-  {{- $imagePath = (path.Join "content" $.Site.Params.defaultimage) }}
-{{- end }}
-
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
 <meta property="og:type" content="{{ if and .IsPage (eq .Type "notes") }}article{{ else }}website{{ end }}">
@@ -12,12 +5,10 @@
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
-{{- with (imageConfig $imagePath) }}
-<meta property="og:image" content="{{ replace $imagePath "content/" $.Site.BaseURL }}">
-<meta property="og:image:width" content="{{ .Width }}">
-<meta property="og:image:height" content="{{ .Height }}">
-<meta property="og:image:alt" content="{{ $.Title }}">
-{{- end }}
+<meta property="og:image" content="{{ .Scratch.Get "socialImage_url" }}">
+<meta property="og:image:width" content="{{ .Scratch.Get "socialImage_width" }}">
+<meta property="og:image:height" content="{{ .Scratch.Get "socialImage_height" }}">
+<meta property="og:image:alt" content="{{ .Title }}">
 
 {{- if and .IsPage (eq .Type "notes") }}
 {{- if not .PublishDate.IsZero }}
