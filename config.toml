@@ -107,17 +107,3 @@ disableAliases = true
     enableDNT = true
   [privacy.youtube]
     privacyEnhanced = true
-
-# TODO: find better way than double-mounting content as weird hack to allow
-# access to image resources from templates.
-# https://gohugo.io/hugo-modules/configuration/#module-config-mounts
-[module]
-  [[module.mounts]]
-    source = "content"
-    target = "assets/content"
-  [[module.mounts]]
-    source = "assets"
-    target = "assets"
-  [[module.mounts]]
-    source = "content"
-    target = "content"

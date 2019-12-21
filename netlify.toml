@@ -3,7 +3,7 @@
   publish = "public"
 
 [build.environment]
-  NODE_VERSION = "12.13.1"
+  NODE_VERSION = "12.14.0"
   YARN_VERSION = "1.21.1"
   YARN_FLAGS = "--no-ignore-optional --frozen-lockfile"
 

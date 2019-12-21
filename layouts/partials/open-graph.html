@@ -1,8 +1,8 @@
-{{- $image := "" }}
+{{- $imagePath := "" }}
 {{- with .Params.image }}
-  {{- $image = resources.Get (printf "%s%s%s%s" "content" ($.OutputFormats.Get "html").RelPermalink "images/" .) }}
+  {{- $imagePath = (path.Join "content" $.File.Dir "images/" .) }}
 {{- else }}
-  {{- $image = resources.Get (printf "%s%s" "content" $.Site.Params.defaultimage) }}
+  {{- $imagePath = (path.Join "content" $.Site.Params.defaultimage) }}
 {{- end }}
 
 <meta property="og:title" content="{{ .Title }}">
@@ -12,8 +12,8 @@
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
-{{- with $image }}
-<meta property="og:image" content="{{ replace .Permalink "/content/" "/" }}">
+{{- with (imageConfig $imagePath) }}
+<meta property="og:image" content="{{ replace $imagePath "content/" $.Site.BaseURL }}">
 <meta property="og:image:width" content="{{ .Width }}">
 <meta property="og:image:height" content="{{ .Height }}">
 <meta property="og:image:alt" content="{{ $.Title }}">

@@ -1,9 +1,9 @@
 {{- with .Site.Author -}}
 
-{{- $image := "" }}
+{{- $imagePath := "" }}
 {{- with $.Site.Params.defaultimage }}
-  {{- $image = resources.Get (printf "%s%s" "content" .) }}
-{{- end -}}
+  {{- $imagePath = (path.Join "content" .) }}
+{{- end }}
 
 <script type="application/ld+json">
 {
@@ -14,10 +14,10 @@
   "url": {{ $.Site.BaseURL }},
   "description": {{ $.Site.Params.description }},
   {{ with .jobtitle }}"jobTitle": {{ . }},{{ end }}
-  {{- with $image }}
+  {{- with (imageConfig $imagePath) }}
   "image": {
     "@type": "ImageObject",
-    "url": {{ replace .Permalink "/content/" "/" }},
+    "url": {{ replace $imagePath "content/" $.Site.BaseURL }},
     "width": "{{ .Width }}",
     "height": "{{ .Height }}"
   },

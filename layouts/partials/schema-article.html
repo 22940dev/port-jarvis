@@ -1,6 +1,6 @@
-{{- $image := "" }}
+{{- $imagePath := "" }}
 {{- with .Params.image }}
-  {{- $image = resources.Get (printf "%s%s%s%s" "content" ($.OutputFormats.Get "html").RelPermalink "images/" .) }}
+  {{- $imagePath = (path.Join "content" $.File.Dir "images/" .) }}
 {{- end }}
 
 <script type="application/ld+json">
@@ -29,10 +29,10 @@
       "width": "2048",
       "height": "2048"
     }
-  }{{ with $image }},
+  }{{ with (imageConfig $imagePath) }},
   "image": {
     "@type": "ImageObject",
-    "url": {{ replace .Permalink "/content/" "/" }},
+    "url": {{ replace $imagePath "content/" $.Site.BaseURL }},
     "width": "{{ .Width }}",
     "height": "{{ .Height }}"
   }
