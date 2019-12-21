@@ -13,7 +13,7 @@ draft: false
 ---
 
 
-[{{< image src="images/netscape.png" alt="Awesome First Code on GitHub" />}}](https://github.com/jakejarvis/awesome-first-code)
+{{< image src="images/netscape.png" alt="Awesome First Code on GitHub" />}}
 
 {{< image src="images/badges.png" width="537" alt="Code Quality: A for effort" />}}
 
