@@ -1,0 +1,25 @@
+{{- /* Automatic resizing for HiDPI/retina images */ -}}
+
+{{- $original := .Page.Resources.GetMatch (.Get "src") -}}
+{{- .Scratch.Set "image" $original -}}
+
+{{- $setWidth := 910 -}}
+
+{{- if .Get "width" -}}
+  {{- $setWidth = (int (.Get "width")) -}}
+{{- end -}}
+
+{{- $retinaWidth := (mul $setWidth 2) -}}
+
+{{- if gt $original.Width $retinaWidth -}}
+  {{- $finalWidth := (printf "%dx" $retinaWidth) -}}
+  {{- .Scratch.Set "image" ($original.Resize $finalWidth) -}}
+{{- end -}}
+
+{{- $image := .Scratch.Get "image" -}}
+
+{{- $origRatio := (div (float $image.Height) $image.Width) -}}
+{{- .Scratch.Set "displayWidth" $setWidth -}}
+{{- .Scratch.Set "displayHeight" (math.Ceil (mul $origRatio $setWidth)) -}}
+
+{{- return $image -}}

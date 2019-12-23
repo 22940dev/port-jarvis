@@ -1,41 +1,14 @@
-{{- /* Automatic resizing for HiDPI/retina images */ -}}
+{{- $optimized := partial "optimize-image" . -}}
 
-{{- $original := .Page.Resources.GetMatch (.Get "src") -}}
-{{- .Scratch.Set "image" $original -}}
-
-{{- $maxWidth := 910 -}}
-{{- $setWidth := 0 -}}
-
-{{- if .Get "width" -}}
-  {{- $setWidth = (int (.Get "width")) -}}
-  {{- $retinaWidth := (mul $setWidth 2) -}}
-
-  {{- if gt $original.Width $retinaWidth -}}
-    {{- $finalWidth := (printf "%dx" $retinaWidth) -}}
-    {{- .Scratch.Set "image" ($original.Resize $finalWidth) -}}
-  {{- end -}}
-{{- else -}}
-  {{- $setWidth = $maxWidth -}}
-  {{- if gt $original.Width 1820 -}}
-    {{- .Scratch.Set "image" ($original.Resize "1820x") -}}
-  {{- end -}}
-{{- end -}}
-
-{{- $image := .Scratch.Get "image" -}}
-
-{{- $origRatio := (div (float $image.Height) $image.Width) -}}
-{{- $displayWidth := $setWidth -}}
-{{- $displayHeight := (math.Ceil (mul $origRatio $setWidth)) -}}
-
-{{ with .Inner }}
+{{- with .Inner }}
 <figure>
   <picture>
-    <img src="{{ $image.Permalink }}" width="{{ $displayWidth }}" height="{{ $displayHeight }}"
+    <img src="{{ $optimized.Permalink }}" width="{{ $.Scratch.Get "displayWidth" }}" height="{{ $.Scratch.Get "displayHeight" }}"
          alt="{{ . | markdownify | plainify | safeHTMLAttr }}" title="{{ . | markdownify | plainify | safeHTMLAttr }}">
   </picture>
   <figcaption>{{ $.Page.RenderString . | safeHTML }}</figcaption>
 </figure>
-{{ else }}
-<p><img src="{{ $image.Permalink }}" width="{{ $displayWidth }}" height="{{ $displayHeight }}"
+{{- else -}}
+<p><img src="{{ $optimized.Permalink }}" width="{{ $.Scratch.Get "displayWidth" }}" height="{{ $.Scratch.Get "displayHeight" }}"
      {{- with .Get "alt" }} alt="{{ . | safeHTMLAttr }}" title="{{ . | safeHTMLAttr }}"{{ end }}></p>
-{{ end }}
+{{- end }}

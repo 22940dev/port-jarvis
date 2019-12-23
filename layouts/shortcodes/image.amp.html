@@ -1,39 +1,12 @@
-{{- /* Automatic resizing for HiDPI/retina images */ -}}
-
-{{- $original := .Page.Resources.GetMatch (.Get "src") -}}
-{{- .Scratch.Set "image" $original -}}
-
-{{- $maxWidth := 910 -}}
-{{- $setWidth := 0 -}}
-
-{{- if .Get "width" -}}
-  {{- $setWidth = (int (.Get "width")) -}}
-  {{- $retinaWidth := (mul $setWidth 2) -}}
-
-  {{- if gt $original.Width $retinaWidth -}}
-    {{- $finalWidth := (printf "%dx" $retinaWidth) -}}
-    {{- .Scratch.Set "image" ($original.Resize $finalWidth) -}}
-  {{- end -}}
-{{- else -}}
-  {{- $setWidth = $maxWidth -}}
-  {{- if gt $original.Width 1820 -}}
-    {{- .Scratch.Set "image" ($original.Resize "1820x") -}}
-  {{- end -}}
-{{- end -}}
-
-{{- $image := .Scratch.Get "image" -}}
-
-{{- $origRatio := (div (float $image.Height) $image.Width) -}}
-{{- $displayWidth := $setWidth -}}
-{{- $displayHeight := (math.Ceil (mul $origRatio $setWidth)) -}}
+{{- $optimized := partial "optimize-image" . -}}
 
 <p class="image">
   <amp-img
     {{- with .Get "alt" }} alt="{{ . | safeHTMLAttr }}" title="{{ . | safeHTMLAttr }}"{{ end }}
     {{- with .Inner }} alt="{{ . | markdownify | plainify | safeHTMLAttr }}" title="{{ . | markdownify | plainify | safeHTMLAttr }}"{{ end }}
-    src="{{ $image.Permalink }}"
-    width="{{ $displayWidth }}"
-    height="{{ $displayHeight }}"
+    src="{{ $optimized.Permalink }}"
+    width="{{ .Scratch.Get "displayWidth" }}"
+    height="{{ .Scratch.Get "displayHeight" }}"
     layout="intrinsic">
   </amp-img>
 </p>
