@@ -31,5 +31,5 @@
 <img src="{{ $image.Permalink }}" width="{{ $displayWidth }}" height="{{ $displayHeight }}"
      {{- with .Get "alt" }} alt="{{ . | safeHTMLAttr }}" title="{{ . | safeHTMLAttr }}"{{ end }}
      {{- with .Inner }} alt="{{ . | markdownify | plainify | safeHTMLAttr }}" title="{{ . | markdownify | plainify | safeHTMLAttr }}"{{ end }}>
-{{ with .Inner }}<br>{{ . | markdownify | safeHTML }}{{ end -}}
+{{ with .Inner }}<br>{{ $.Page.RenderString . | safeHTML }}{{ end -}}
 </p>
