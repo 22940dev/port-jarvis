@@ -18,7 +18,7 @@ draft: false
 {{< image src="images/badges.png" width="537" alt="Code Quality: A for effort" />}}
 
 
-I recently published my terrible, horrible, no good, very bad [first HTML site](https://jarv.is/y2k) and [first PHP project](https://github.com/jakejarvis/jbb#readme) ever and developed a new addiction to Web 1.0 nostalgia, fed by others who were brave enough to do the same.
+I recently published my terrible, horrible, no good, very bad [first HTML site](/y2k/) and [first PHP project](https://github.com/jakejarvis/jbb#readme) ever and developed a new addiction to Web 1.0 nostalgia, fed by others who were brave enough to do the same.
 
 So, I started compiling an [awesome-list of other "first code" on GitHub](https://github.com/jakejarvis/awesome-first-code). It was originally aimed towards those of us who grew up in the Geocities and FrontPage and Macromedia Flash era, but coders of all ages are welcome to dust off that floppy disk or 256MB USB thumb drive (or the [Wayback Machine](https://archive.org/web/), if you can remember your first screen name 😬) and commit your first project unmodified to GitHub for posterity — and proudly [link to it](https://github.com/jakejarvis/awesome-first-code/edit/master/readme.md) on the list! (I'm trying very hard to make this a cool trend, if you couldn't tell.)
 
@@ -31,7 +31,7 @@ Hopefully we can all look back at our first projects and be proud of how far we'
 {{< image src="images/jbb-logo.png" width="640" >}}[Jake's Bulletin Board](https://github.com/jakejarvis/jbb){{< /image >}}
 
 
-Aside from my [first HTML creation](https://jarv.is/y2k) (circa 2001), my first real coding project was in 2003: a PHP 4 masterpiece creatively titled **Jake's Bulletin Board**. I've published the [source code in full on GitHub](https://github.com/jakejarvis/jbb) for your viewing pleasure and highlighted the best/worst parts below.
+Aside from my [first HTML creation](/y2k/) (circa 2001), my first real coding project was in 2003: a PHP 4 masterpiece creatively titled **Jake's Bulletin Board**. I've published the [source code in full on GitHub](https://github.com/jakejarvis/jbb) for your viewing pleasure and highlighted the best/worst parts below.
 
 ## Usage
 

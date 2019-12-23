@@ -76,7 +76,7 @@ In the middle of the webinar, the organizer also paused the presentation for *fi
 
 The [Privacy Policy link](https://berniesanders.com/privacy-policy/) at the bottom of the app links to a generic policy that looks like it's been copied from a default Wix website. There's no mention of the BERN app, no details of how they explicitly use our information, and no sign of an opt-out procedure.
 
-Without getting too political — everyone who knows me already knows [what I think of Bernie](https://jarv.is/notes/millenial-with-hillary-clinton/) — it's hard to refute that his "bros" are [notorious for harassment](https://www.washingtonpost.com/news/the-fix/wp/2016/06/07/the-bernie-bros-are-out-in-full-force-harassing-female-reporters/?utm_term=.795f3a6a6ac9) and internet trolling. Giving them any additional information beyond the Twitter handles of their targets is surely not going to help detoxify the discourse this time around.
+Without getting too political — everyone who knows me already knows [what I think of Bernie](/notes/millenial-with-hillary-clinton/) — it's hard to refute that his "bros" are [notorious for harassment](https://www.washingtonpost.com/news/the-fix/wp/2016/06/07/the-bernie-bros-are-out-in-full-force-harassing-female-reporters/?utm_term=.795f3a6a6ac9) and internet trolling. Giving them any additional information beyond the Twitter handles of their targets is surely not going to help detoxify the discourse this time around.
 
 Count me out of feeling the Bern and the BERN. Just regular old heartburn for me. 🤢
 
