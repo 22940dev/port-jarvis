@@ -3,5 +3,5 @@
   width="1200"
   height="{{ with .Get "height" }}{{ . }}{{ else }}500{{ end }}"
   scrolling="no"
-  src="https://codepen.io/{{ .Get "username" }}/embed/{{ .Get "id" }}/?height={{ if .Get "height" }}{{ .Get "height" }}{{ else }}500{{ end }}&amp;theme-id=light&amp;default-tab={{ .Get "left-tab" }}{{ with .Get "right-tab" }},{{ . }}{{ end }}">
+  src="https://codepen.io/{{ .Get "username" }}/embed/{{ .Get "id" }}/?height={{ with .Get "height" }}{{ . }}{{ else }}500{{ end }}&amp;theme-id=light&amp;default-tab={{ .Get "left-tab" }}{{ with .Get "right-tab" }},{{ . }}{{ end }}">
 </amp-iframe>

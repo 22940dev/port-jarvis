@@ -60,8 +60,6 @@
   },
   "stylelint": {
     "extends": "stylelint-config-recommended-scss",
-    "rules": {
-      "selector-type-no-unknown": null
-    }
+    "rules": {}
   }
 }

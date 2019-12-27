@@ -6,7 +6,7 @@
     <img src="{{ $optimized.Permalink }}" width="{{ $.Scratch.Get "displayWidth" }}" height="{{ $.Scratch.Get "displayHeight" }}"
          alt="{{ . | markdownify | plainify | safeHTMLAttr }}" title="{{ . | markdownify | plainify | safeHTMLAttr }}">
   </picture>
-  <figcaption>{{ $.Page.RenderString . | safeHTML }}</figcaption>
+  <figcaption>{{ . | $.Page.RenderString | safeHTML }}</figcaption>
 </figure>
 {{- else -}}
 <p><img src="{{ $optimized.Permalink }}" width="{{ $.Scratch.Get "displayWidth" }}" height="{{ $.Scratch.Get "displayHeight" }}"

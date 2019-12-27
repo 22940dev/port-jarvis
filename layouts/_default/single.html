@@ -15,7 +15,7 @@
       </div>
     </div>
     <div id="content">
-      {{ .Page.RenderString .Content }}
+      {{ .Content | .Page.RenderString }}
     </div>
   </article>
 </main>

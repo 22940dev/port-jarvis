@@ -1,8 +1,8 @@
-{{- $optimized := partial "optimize-image" . -}}
+{{- $optimized := partialCached "optimize-image" . (.Get "src") -}}
 
 <p style="text-align: center;">
 <img src="{{ $optimized.Permalink }}" width="{{ .Scratch.Get "displayWidth" }}" height="{{ .Scratch.Get "displayHeight" }}"
      {{- with .Get "alt" }} alt="{{ . | safeHTMLAttr }}" title="{{ . | safeHTMLAttr }}"{{ end }}
      {{- with .Inner }} alt="{{ . | markdownify | plainify | safeHTMLAttr }}" title="{{ . | markdownify | plainify | safeHTMLAttr }}"{{ end }}>
-{{ with .Inner }}<br>{{ $.Page.RenderString . | safeHTML }}{{ end -}}
+{{ with .Inner }}<br>{{ . | $.Page.RenderString | safeHTML }}{{ end -}}
 </p>

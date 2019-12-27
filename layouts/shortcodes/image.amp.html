@@ -11,4 +11,4 @@
   </amp-img>
 </p>
 
-{{- with .Inner }}<p class="caption">{{ $.Page.RenderString . | safeHTML }}</p>{{ end -}}
+{{- with .Inner }}<p class="caption">{{ . | $.Page.RenderString | safeHTML }}</p>{{ end -}}

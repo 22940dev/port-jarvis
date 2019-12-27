@@ -1,7 +1,7 @@
 <header>
   <nav>
     <a class="no-underline" href="{{ .Site.BaseURL }}" id="logo" rel="me author" title="{{ .Site.Title }}" aria-label="{{ .Site.Title }}">
-      {{ partial "logo" . }}
+      {{ partialCached "logo" . }}
       <h1 id="name">{{ .Site.Title }}</h1>
     </a>
     <ul>

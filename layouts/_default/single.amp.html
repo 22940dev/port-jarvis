@@ -12,7 +12,7 @@
     <title>{{ .Title }} &ndash; {{ .Site.Title }}</title>
     {{ with .OutputFormats.Get "html" }}<link rel="canonical" href="{{ .Permalink }}">{{ end }}
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <meta name="author" content="{{ .Site.Author.name }}">
     {{ partial "open-graph" . }}
 
@@ -177,7 +177,7 @@
     <header>
       <nav>
         <a id="logo" href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}">
-          {{ partial "logo" . }}
+          {{ partialCached "logo" . }}
           <span id="name">{{ .Site.Title }}</span>
         </a>
 
@@ -196,7 +196,7 @@
         on <a class="date" href="{{ (.OutputFormats.Get "html").Permalink }}">{{ .Date.Format "January 2, 2006" }}</a>
       </p>
 
-      {{ .Page.RenderString .Content }}
+      {{ .Content | .Page.RenderString }}
     </article>
 
     <footer>

@@ -5,11 +5,11 @@
 {{ partial "head" . }}
   </head>
   <body>
-{{ partial "header" . }}
+{{ partialCached "header" . }}
 <div id="wrap">
 {{ block "main" . }}{{ end }}
 </div>
-{{ partial "footer" . }}
+{{ partialCached "footer" . }}
 {{ partial "scripts" . }}
   </body>
 </html>
