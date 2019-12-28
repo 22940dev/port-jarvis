@@ -88,7 +88,7 @@ disableAliases = true
   defaultMarkdownHandler = "goldmark"
   [markup.goldmark]
     [markup.goldmark.extensions]
-      linkify = true
+      linkify = false
       strikethrough = true
       typographer = true
     [markup.goldmark.parser]
