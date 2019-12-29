@@ -30,7 +30,7 @@ main#video {
     height: auto;
     font-family: inherit;    // for subtitles
 
-    /* stylelint-disable-next-line selector-pseudo-element-no-unknown */
+    // stylelint-disable-next-line selector-pseudo-element-no-unknown
     &::cue {
       font-family: inherit;
     }
