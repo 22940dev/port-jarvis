@@ -23,7 +23,7 @@
     "optimize": "run-p optimize:**",
     "optimize:html": "html-minifier --html5 --collapse-whitespace --preserve-line-breaks --minify-css --file-ext html --input-dir public --output-dir public **/*.html",
     "optimize:css": "cleancss -O0 --format 'keep-breaks' -o public/style.css public/style.css",
-    "optimize:img": "find public/ -type d | xargs -n1 -P8 -I{} imagemin {}/* --plugin=jpegoptim --plugin.jpegoptim.progressive --plugin.jpegoptim.stripAll --plugin=pngquant --plugin.pngquant.speed=4 --plugin.pngquant.strip --plugin=optipng --plugin.optipng.optimizationLevel=2 --plugin=svgo --plugin=gifsicle --out-dir={}",
+    "optimize:img": "find public/ -type d | xargs -n1 -P8 -I{} imagemin {}/* --plugin=jpegoptim --plugin.jpegoptim.progressive --plugin.jpegoptim.stripAll --plugin=pngquant --plugin.pngquant.speed=5 --plugin.pngquant.strip --plugin=optipng --plugin.optipng.optimizationLevel=2 --plugin=svgo --plugin=gifsicle --out-dir={}",
     "lint": "run-p lint:**",
     "lint:markdown": "markdownlint content/notes/**/*.md",
     "lint:sass": "stylelint assets/sass/**/* --syntax scss",
