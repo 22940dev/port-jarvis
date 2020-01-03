@@ -1,4 +1,4 @@
-{{- $optimized := partialCached "optimize-image" . (.Get "src") -}}
+{{- $optimized := partial "functions/optimize-image" . -}}
 
 <p style="text-align: center;">
 <img src="{{ $optimized.Permalink }}" width="{{ .Scratch.Get "displayWidth" }}" height="{{ .Scratch.Get "displayHeight" }}"

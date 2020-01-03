@@ -12,7 +12,7 @@ image: "codepen.png"
 draft: false
 ---
 
-# Howdy, friends! <span style="display: inline-block; animation-name: wave; animation-duration: 2.5s; animation-iteration-count: infinite; transform-origin: 70% 70%;">👋</span>
+# Howdy, friends! <span class="wave">👋</span>
 
 If you examine [my homepage](/) long enough, you might notice the 👋 hand emoji at the top subtly waving at you. This was easily accomplished using a few lines of CSS with a feature called [`@keyframes`](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) — no bulky GIFs involved, and no JS mess or jQuery overkill required.
 
@@ -51,4 +51,4 @@ span.wave {
 
 That's it! More skin tones can be [found on 📕Emojipedia](https://emojipedia.org/search/?q=waving+hand).
 
-### <span style="display: inline-block; animation-name: wave; animation-duration: 2.5s; animation-iteration-count: infinite; transform-origin: 70% 70%;">👋🏼</span> Toodles!
+### <span class="wave">👋🏼</span> Toodles!

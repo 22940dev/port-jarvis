@@ -1,6 +1,15 @@
 @charset "UTF-8";
 
 /*! Fancy Waving Hand Emoji (TM) - https://go.jarv.is/wave */
+
+span.wave {
+  display: inline-block;
+  animation-name: wave;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+}
+
 @keyframes wave {
   0% { transform: rotate(  0.0deg); }
  10% { transform: rotate(-10.0deg); }

@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main id="list">
-  {{- with (where .Site.RegularPages "Type" "notes") }}
+  {{- with .Pages }}
   {{- range .GroupByDate "2006" }}
   <section class="year">
     <h2>{{ .Key }}</h2>

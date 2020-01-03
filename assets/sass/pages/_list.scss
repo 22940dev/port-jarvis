@@ -29,12 +29,6 @@ main#list {
         flex-shrink: 0;
       }
 
-      &::after {
-        content: '';
-        display: block;
-        clear: both;
-      }
-
       + li {
         margin-top: 1.3em;
       }

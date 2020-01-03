@@ -74,6 +74,7 @@ main#single {
         height: auto;
         border: 0;
 
+        // Subtitle caption styling
         // stylelint-disable-next-line selector-pseudo-element-no-unknown
         &::cue {
           font-family: inherit;

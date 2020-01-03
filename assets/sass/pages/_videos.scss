@@ -28,8 +28,8 @@ main#video {
   video {
     width: $responsive-width;
     height: auto;
-    font-family: inherit;    // for subtitles
 
+    // Subtitle caption styling
     // stylelint-disable-next-line selector-pseudo-element-no-unknown
     &::cue {
       font-family: inherit;

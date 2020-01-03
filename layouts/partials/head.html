@@ -4,8 +4,8 @@
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 {{ with .Site.Author.name }}<meta name="author" content="{{ . }}">{{ end }}
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{{ partial "social-images" . }}
-{{ partial "open-graph" . }}
+{{ partial "seo/social-images" . }}
+{{ partial "seo/open-graph" . }}
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}">
@@ -29,8 +29,8 @@
   {{ with .OutputFormats.Get "amp" }}
   <link rel="amphtml" href="{{ .Permalink }}">
   {{ end }}
-  {{ partial "schema-person" . }}
-  {{ partial "schema-article" . }}
+  {{ partial "seo/schema-person" . }}
+  {{ partial "seo/schema-article" . }}
 {{ else }}
-  {{ partial "schema-person" . }}
+  {{ partial "seo/schema-person" . }}
 {{ end }}
