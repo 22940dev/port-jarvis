@@ -5,7 +5,6 @@
   Referrer-Policy: strict-origin-when-cross-origin
   X-Content-Type-Options: nosniff
   X-Frame-Options: sameorigin
-  X-XSS-Protection: 1; mode=block
 
 # Super long cache for web fonts (one year)
 /fonts/*
