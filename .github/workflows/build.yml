@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
       with:
         fetch-depth: 1
         lfs: false
@@ -37,7 +37,7 @@ jobs:
       run: yarn debug:hugo
     - name: Build Hugo
       run: yarn build:preview
-    - uses: actions/upload-artifact@master
+    - uses: actions/upload-artifact@v1
       if: github.event_name == 'pull_request'
       with:
         name: public
