@@ -33,11 +33,6 @@ div.highlight span {
   // line numbers
   &.lnt {
     color: #999999;
-
-    // disable text selection: https://caniuse.com/#feat=user-select-none
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
   }
 }
