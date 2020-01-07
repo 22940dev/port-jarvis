@@ -71,17 +71,14 @@
   },
   "browserslist": [
     ">= 1%",
-    "last 2 major versions",
+    "last 4 major versions",
     "not dead",
-    "Chrome >= 56",
-    "Firefox >= 51",
-    "Safari >= 10",
-    "Edge >= 15.15063",
-    "Opera >= 43",
-    "Android >= 6",
-    "iOS >= 10.3",
-    "Explorer 11",
-    "not ExplorerMobile <= 11"
+    "chrome >= 54",
+    "firefox >= 49",
+    "ie 11",
+    "android >= 5",
+    "ios_saf >= 9.3",
+    "not ie_mob <= 11"
   ],
   "stylelint": {
     "extends": "stylelint-config-recommended-scss",
