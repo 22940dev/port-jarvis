@@ -1,4 +1,4 @@
-name: Build Hugo
+name: Build and Lint
 
 on:
   push:
@@ -37,6 +37,10 @@ jobs:
       run: yarn debug:hugo
     - name: Build Hugo
       run: yarn build:preview
+    - name: Lint Styles
+      run: yarn lint:sass
+    - name: Lint Markdown
+      run: yarn lint:markdown
     - uses: actions/upload-artifact@v1
       if: github.event_name == 'pull_request'
       with:
