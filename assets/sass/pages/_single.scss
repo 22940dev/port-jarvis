@@ -184,7 +184,8 @@ main#single {
 
           li {
             display: inline;
-            margin: 0 0.8em;
+            margin-left: 0.8em;
+            margin-right: 0.8em;
             text-transform: uppercase;
             letter-spacing: 0.15em;
           }
@@ -201,7 +202,7 @@ main#single {
     padding: 0.8em 1.5em;
 
     article {
-      div#meta{
+      div#meta {
         h1 {
           font-size: 1.8em;
         }

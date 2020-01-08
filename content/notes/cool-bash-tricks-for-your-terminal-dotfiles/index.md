@@ -118,7 +118,7 @@ Undo the most recent commit in current Git repo:
 alias gundo="git push -f origin HEAD^:master"
 ```
 
-Un-quarantine an "unidentified developer's" application [blocked by Gatekeeper](https://support.apple.com/en-us/HT202491) on macOS's walled <del>prison</del> garden:
+Un-quarantine an "unidentified developer's" application [blocked by Gatekeeper](https://support.apple.com/en-us/HT202491) on macOS's walled ~~prison~~ garden:
 
 ```bash
 alias unq="sudo xattr -rd com.apple.quarantine"

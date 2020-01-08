@@ -33,7 +33,7 @@ Here are the actions I've made so far, sorted by popularity as of this posting:
 - **[🔄 Backblaze B2 Sync](https://github.com/jakejarvis/backblaze-b2-action)** —  Sync a directory with a remote [Backblaze B2](https://www.backblaze.com/b2/cloud-storage.html) storage bucket.
 - **[💤 Wait](https://github.com/jakejarvis/wait-action)** — A very, very simple action to sleep for a given amount of time (10s, 2m, etc.)
 
-----
+---
 
 As an example of an *extremely* simple (and almost completely unnecessary) action, the [Wait action](https://github.com/jakejarvis/wait-action) takes one input — a unit of time — and has the pipeline sleep for that amount of time. The [`Dockerfile`](https://github.com/jakejarvis/wait-action/blob/master/Dockerfile) is as simple as this:
 

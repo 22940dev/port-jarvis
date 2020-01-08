@@ -14,9 +14,9 @@ I keep an ongoing list of [blog post ideas](https://github.com/jakejarvis/jarv.i
 
 ## Running a local testing server
 
-#### Using Yarn:
+#### Using Yarn/NPM:
 
-Run `yarn install` then `yarn start` ([Yarn must be installed](https://yarnpkg.com/en/docs/install) first), then open [http://localhost:1313/](http://localhost:1313/). Pages will live-refresh when source files are changed.
+Run `yarn install` (or `npm install`) and `yarn start` (or `npm start`) ([Yarn must be installed](https://yarnpkg.com/en/docs/install) first), then open [http://localhost:1313/](http://localhost:1313/). Pages will live-refresh when source files are changed.
 
 #### Using Docker:
 

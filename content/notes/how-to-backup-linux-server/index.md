@@ -202,4 +202,4 @@ Again, [Restic's documentation](https://restic.readthedocs.io/en/latest/index.ht
 
 Literally every company's Doomsday protocols can *always* be improved, and external backups are just one part of redundancy. But pat yourself on the back — this might have been a convoluted process, but hopefully you'll be able to sleep better at night knowing your startup or personal server now has a **far** better chance of surviving whatever the cloud rains down upon you!
 
-If you have any questions, feel free to leave a comment or <a href="&#x6D;&#x61;&#x69;&#x6C;&#x74;&#x6F;&#x3A;&#x6A;&#x61;&#x6B;&#x65;&#x40;&#x6A;&#x61;&#x72;&#x76;&#x2E;&#x69;&#x73;">get in touch with me</a>. Be safe out there!
+If you have any questions, feel free to leave a comment or [get in touch with me](mailto:jake@jarv.is). Be safe out there!

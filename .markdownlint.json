@@ -1,0 +1,18 @@
+{
+  "default": true,
+  "code-block-style": { "style": "fenced" },
+  "code-fence-style": { "style": "backtick" },
+  "fenced-code-language": true,
+  "heading-increment": false,
+  "heading-style": { "style": "atx" },
+  "hr-style": { "style": "---" },
+  "line-length": false,
+  "no-blanks-blockquote": true,
+  "no-empty-links": false,
+  "no-hard-tabs": false,
+  "no-inline-html": { "allowed_elements": [ "span" ] },
+  "no-multiple-blanks": false,
+  "no-trailing-punctuation": false,
+  "single-h1": false,
+  "whitespace": false
+}
