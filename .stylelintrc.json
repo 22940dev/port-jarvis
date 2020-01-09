@@ -6,7 +6,8 @@
   "rules": {
     "color-hex-length": "long",
     "function-parentheses-space-inside": null,
-    "indentation": [ 2, { "severity": "warning" } ],
+    "function-url-quotes": null,
+    "indentation": null,
     "max-nesting-depth": 5,
     "number-no-trailing-zeros": null,
     "order/properties-alphabetical-order": null,
@@ -17,6 +18,7 @@
     "selector-max-compound-selectors": null,
     "selector-max-id": null,
     "selector-no-qualifying-type": null,
+    "selector-pseudo-element-no-unknown": [ true, { "ignorePseudoElements": [ "cue" ] } ],
     "shorthand-property-no-redundant-values": null,
     "string-quotes": [ "double", { "severity": "warning" } ]
   }

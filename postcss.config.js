@@ -3,9 +3,15 @@ module.exports = {
     map: false
   },
   plugins: [
-    require('autoprefixer')(),
-    require('postcss-clean')({
-      compatibility: '*',
+    require("stylelint")({
+      configFile: ".stylelintrc.json"
+    }),
+    require("autoprefixer")(),
+    require("postcss-pxtorem")({
+      replace: true
+    }),
+    require("postcss-clean")({
+      compatibility: "*",
       level: 0,
       format: {
         breaks: {
@@ -21,6 +27,9 @@ module.exports = {
         },
         semicolonAfterLastProperty: true
       }
+    }),
+    require("postcss-reporter")({
+      clearReportedMessages: true
     })
   ]
 };
