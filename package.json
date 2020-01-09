@@ -22,7 +22,6 @@
     "start": "hugo server --buildDrafts --buildFuture --port 1313 --bind 0.0.0.0 --verbose",
     "optimize": "run-s optimize:**",
     "optimize:html": "html-minifier --html5 --collapse-whitespace --collapse-boolean-attributes --preserve-line-breaks --minify-css --file-ext html --input-dir public --output-dir public **/*.html",
-    "optimize:css": "postcss public/style.css --use autoprefixer --no-map --replace --verbose && sleep 10 && cleancss -O0 --format 'keep-breaks' -o public/style.css public/style.css",
     "optimize:img": "find public/ -type d | xargs -n1 -P8 -I{} imagemin {}/* --plugin=jpegoptim --plugin.jpegoptim.progressive --plugin.jpegoptim.stripAll --plugin=pngquant --plugin.pngquant.speed=5 --plugin.pngquant.strip --plugin=optipng --plugin.optipng.optimizationLevel=2 --plugin=svgo --plugin=gifsicle --out-dir={}",
     "lint": "run-p lint:**",
     "lint:markdown": "markdownlint content/notes/**/*.md",
@@ -34,7 +33,6 @@
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^9.7.3",
-    "clean-css-cli": "^4.3.0",
     "cross-env": "^6.0.3",
     "get-folder-size": "^2.0.1",
     "html-minifier": "^4.0.0",
@@ -50,6 +48,7 @@
     "markdownlint-cli": "~0.21.0",
     "netlify-cli": "^2.27.0",
     "npm-run-all": "^4.1.5",
+    "postcss-clean": "^1.1.0",
     "postcss-cli": "^7.1.0",
     "rimraf": "^3.0.0",
     "stylelint": "~12.0.1",
@@ -64,13 +63,5 @@
   },
   "hugo-bin": {
     "buildTags": "extended"
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {},
-      "stylelint": {
-        "configFile": ".stylelintrc.json"
-      }
-    }
   }
 }
