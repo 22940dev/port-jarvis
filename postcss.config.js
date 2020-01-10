@@ -7,9 +7,6 @@ module.exports = {
       configFile: ".stylelintrc.json"
     }),
     require("autoprefixer")(),
-    require("postcss-pxtorem")({
-      replace: true
-    }),
     require("postcss-clean")({
       compatibility: "*",
       level: 0,
