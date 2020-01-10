@@ -4,7 +4,12 @@ module.exports = {
   },
   plugins: [
     require("stylelint")({
-      configFile: ".stylelintrc.json"
+      configFile: ".stylelintrc",
+      configOverrides: {
+        "rules": {
+          "indentation": null
+        }
+      }
     }),
     require("autoprefixer")(),
     require("postcss-clean")({

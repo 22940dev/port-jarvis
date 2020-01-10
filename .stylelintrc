@@ -7,7 +7,7 @@
     "color-hex-length": "long",
     "function-parentheses-space-inside": null,
     "function-url-quotes": null,
-    "indentation": null,
+    "indentation": [ 2, { "severity": "warning" } ],
     "max-nesting-depth": 5,
     "number-no-trailing-zeros": null,
     "order/properties-alphabetical-order": null,

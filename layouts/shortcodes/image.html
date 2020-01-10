@@ -4,11 +4,11 @@
 <figure>
   <picture>
     <img src="{{ $optimized.Permalink }}" width="{{ $.Scratch.Get "displayWidth" }}" height="{{ $.Scratch.Get "displayHeight" }}"
-         alt="{{ . | markdownify | plainify | safeHTMLAttr }}" title="{{ . | markdownify | plainify | safeHTMLAttr }}">
+         alt="{{ . | markdownify | plainify | safeHTML }}" title="{{ . | markdownify | plainify | safeHTML }}">
   </picture>
   <figcaption>{{ . | $.Page.RenderString | safeHTML }}</figcaption>
 </figure>
 {{- else -}}
 <p><img src="{{ $optimized.Permalink }}" width="{{ $.Scratch.Get "displayWidth" }}" height="{{ $.Scratch.Get "displayHeight" }}"
-     {{- with .Get "alt" }} alt="{{ . | safeHTMLAttr }}" title="{{ . | safeHTMLAttr }}"{{ end }}></p>
+     {{- with .Get "alt" }} alt="{{ . | safeHTML }}" title="{{ . | safeHTML }}"{{ end }}></p>
 {{- end }}

@@ -2,8 +2,8 @@
 
 <p class="image">
   <amp-img
-    {{- with .Get "alt" }} alt="{{ . | safeHTMLAttr }}" title="{{ . | safeHTMLAttr }}"{{ else }}
-    {{- with .Inner }} alt="{{ . | markdownify | plainify | safeHTMLAttr }}" title="{{ . | markdownify | plainify | safeHTMLAttr }}"{{ end }}{{ end }}
+    {{- with .Get "alt" }} alt="{{ . | safeHTML }}" title="{{ . | safeHTML }}"{{ else }}
+    {{- with .Inner }} alt="{{ . | markdownify | plainify | safeHTML }}" title="{{ . | markdownify | plainify | safeHTML }}"{{ end }}{{ end }}
     src="{{ $optimized.Permalink }}"
     width="{{ .Scratch.Get "displayWidth" }}"
     height="{{ .Scratch.Get "displayHeight" }}"
