@@ -1,0 +1,8 @@
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
+<link rel="mask-icon" href="{{ "safari-pinned-tab.svg" | absURL }}" color="#009cdf">
+
+{{ range (split .png_sizes " ") -}}
+<link rel="icon" href="{{ (printf "favicon-%v.png" .) | absURL }}" sizes="{{ . }}x{{ . }}">
+{{ end -}}
+
+<link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}" sizes="{{ .ico_sizes }}">

@@ -1,6 +1,7 @@
-<iframe 
-  height="{{ with .Get "height" }}{{ . }}{{ else }}500{{ end }}"
-  style="width: 100%;"
-  scrolling="no"
-  src="https://codepen.io/{{ .Get "username" }}/embed/{{ .Get "id" }}/?height={{ with .Get "height" }}{{ . }}{{ else }}500{{ end }}&amp;theme-id=light&amp;default-tab={{ .Get "left-tab" }}{{ with .Get "right-tab" }},{{ . }}{{ end }}">
-</iframe>
+<div class="embed codepen">
+  <iframe
+    height="{{ with .Get "height" }}{{ . }}{{ else }}500{{ end }}"
+    src="https://codepen.io/{{ .Get "username" }}/embed/{{ .Get "id" }}/?theme-id=light&amp;default-tab={{ .Get "left-tab" }}{{ with .Get "right-tab" }},{{ . }}{{ end }}"
+    scrolling="no">
+  </iframe>
+</div>

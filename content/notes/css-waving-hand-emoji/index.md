@@ -19,7 +19,7 @@ If you examine [my homepage](/) long enough, you might notice the 👋 hand emoj
 Below are the code snippets you can grab and customize to make your own 
 ["waving hand" 👋](https://emojipedia.org/waving-hand-sign/) emojis ***actually wave***, and a [CodePen playground](https://codepen.io/jakejarvis/pen/pBZWZw) for live testing.
 
-{{< codepen username="jakejarvis" id="pBZWZw" left-tab="css" right-tab="result" height="400" >}}
+{{< codepen username="jakejarvis" id="pBZWZw" left-tab="css" right-tab="result" >}}
 
 ### CSS:
 

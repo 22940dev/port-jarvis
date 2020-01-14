@@ -1,0 +1,11 @@
+{{ if .HasShortcode "gh-buttons" -}}
+{{ partial "scripts/shortcodes/gh-buttons" . }}
+{{ end -}}
+
+{{ if .HasShortcode "tweet" -}}
+{{ partial "scripts/shortcodes/tweet" . }}
+{{ end -}}
+
+{{ if .HasShortcode "facebook" -}}
+{{ partial "scripts/shortcodes/facebook" . }}
+{{ end -}}

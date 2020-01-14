@@ -81,21 +81,33 @@ main#single {
         }
       }
 
-      div.embed.video-player {
-        position: relative;
-        padding-bottom: 56.25%;
-        margin: 1em auto;
-        height: 0;
-        overflow: hidden;
+      div.embed {
+        p {
+          text-align: center;
+        }
 
-        iframe.youtube-player {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          border: 0;
-          display: inline-block;
+        &.youtube {
+          position: relative;
+          padding-bottom: 56.25%;
+          margin: 1em auto;
+          height: 0;
+          overflow: hidden;
+
+          iframe.youtube-player {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: inline-block;
+          }
+        }
+
+        &.codepen {
+          iframe {
+            width: 100%;
+          }
         }
       }
 
