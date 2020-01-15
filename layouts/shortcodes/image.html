@@ -3,12 +3,12 @@
 {{- with .Inner }}
 <figure>
   <picture>
-    <img src="{{ $optimized.Permalink }}" width="{{ $.Scratch.Get "displayWidth" }}" height="{{ $.Scratch.Get "displayHeight" }}"
-         alt="{{ . | markdownify | plainify | safeHTML }}" title="{{ . | markdownify | plainify | safeHTML }}">
+    <img src="{{ $optimized.Permalink }}" width="{{ $optimized.Width }}" height="{{ $optimized.Height }}"
+         alt="{{ . | $.Page.RenderString | plainify | safeHTML }}" title="{{ . | $.Page.RenderString | plainify | safeHTML }}">
   </picture>
   <figcaption>{{ . | $.Page.RenderString | safeHTML }}</figcaption>
 </figure>
 {{- else -}}
-<p><img src="{{ $optimized.Permalink }}" width="{{ $.Scratch.Get "displayWidth" }}" height="{{ $.Scratch.Get "displayHeight" }}"
+<p><img src="{{ $optimized.Permalink }}" width="{{ $optimized.Width }}" height="{{ $optimized.Height }}"
      {{- with .Get "alt" }} alt="{{ . | safeHTML }}" title="{{ . | safeHTML }}"{{ end }}></p>
 {{- end }}

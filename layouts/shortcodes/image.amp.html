@@ -3,10 +3,10 @@
 <p class="image">
   <amp-img
     {{- with .Get "alt" }} alt="{{ . | safeHTML }}" title="{{ . | safeHTML }}"{{ else }}
-    {{- with .Inner }} alt="{{ . | markdownify | plainify | safeHTML }}" title="{{ . | markdownify | plainify | safeHTML }}"{{ end }}{{ end }}
+    {{- with .Inner }} alt="{{ . | $.Page.RenderString | plainify | safeHTML }}" title="{{ . | $.Page.RenderString | plainify | safeHTML }}"{{ end }}{{ end }}
     src="{{ $optimized.Permalink }}"
-    width="{{ .Scratch.Get "displayWidth" }}"
-    height="{{ .Scratch.Get "displayHeight" }}"
+    width="{{ $optimized.Width }}"
+    height="{{ $optimized.Height }}"
     layout="intrinsic">
   </amp-img>
 </p>

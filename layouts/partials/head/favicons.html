@@ -5,4 +5,6 @@
 <link rel="icon" href="{{ (printf "favicon-%v.png" .) | absURL }}" sizes="{{ . }}x{{ . }}">
 {{ end -}}
 
-<link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}" sizes="{{ .ico_sizes }}">
+{{ $s := slice -}}
+{{ range (split .ico_sizes " ") }}{{ $s = $s | append (printf "%vx%v" . .) }}{{ end -}}
+<link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}" sizes="{{ delimit $s " " }}">
