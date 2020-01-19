@@ -37,51 +37,15 @@ Here are the actions I've made so far, sorted by popularity as of this posting:
 
 As an example of an *extremely* simple (and almost completely unnecessary) action, the [Wait action](https://github.com/jakejarvis/wait-action) takes one input — a unit of time — and has the pipeline sleep for that amount of time. The [`Dockerfile`](https://github.com/jakejarvis/wait-action/blob/master/Dockerfile) is as simple as this:
 
-```docker
-FROM busybox:latest
-
-LABEL "com.github.actions.name"="Wait / Sleep"
-LABEL "com.github.actions.description"="Very simple action to sleep for an amount of time (10s, 2m, etc.)"
-LABEL "com.github.actions.icon"="clock"
-LABEL "com.github.actions.color"="purple"
-
-LABEL version="0.1.0"
-LABEL repository="https://github.com/jakejarvis/wait-action"
-LABEL homepage="https://jarv.is/"
-LABEL maintainer="Jake Jarvis <jake@jarv.is>"
-
-ADD entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
-```
+{{< gist id="6a0830c7c3e514980b30fdf86b4931c5" file="Dockerfile" >}}
 
 ...with a super-short [`entrypoint.sh`](https://github.com/jakejarvis/wait-action/blob/master/entrypoint.sh):
 
-```sh
-#!/bin/sh
-
-echo "Sleeping for ${INPUT_TIME}..."
-sleep ${INPUT_TIME}
-echo "Time to wake up!"
-
-exit 0
-```
+{{< gist id="6a0830c7c3e514980b30fdf86b4931c5" file="entrypoint.sh" >}}
 
 Using an action is also surprisingly simple, and more intuitive than [Travis CI](https://travis-ci.com/) or [CircleCI](https://circleci.com/), in my humble opinion. Pipelines in GitHub Actions are called ["workflows,"](https://help.github.com/en/github/automating-your-workflow-with-github-actions/configuring-a-workflow) and live in a file with [YAML syntax](https://help.github.com/en/github/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions) in `.github/workflows`. An example of a `workflow.yml` file that uses the above action to wait 10 seconds (on both pushes and pull requests) would look something like:
 
-```yaml
-name: Nap time
-
-on: [push, pull_request]
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Sleep for 10 seconds
-      uses: jakejarvis/wait-action@master
-      with:
-        time: '10s'
-```
+{{< gist id="6a0830c7c3e514980b30fdf86b4931c5" file="workflow.yml" >}}
 
 ---
 
