@@ -31,16 +31,11 @@ jobs:
         key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-yarn-
-    - name: Install dependencies
-      run: yarn install --no-ignore-optional --frozen-lockfile
-    - name: Hugo version
-      run: yarn debug:hugo
-    - name: Build Hugo
-      run: yarn build:preview
-    - name: Lint Styles
-      run: yarn lint:sass
-    - name: Lint Markdown
-      run: yarn lint:markdown
+    - run: yarn install --no-ignore-optional --frozen-lockfile
+    - run: yarn debug:hugo
+    - run: yarn build:preview
+    - run: yarn lint
+      continue-on-error: true
     - uses: actions/upload-artifact@v1
       if: github.event_name == 'pull_request'
       with:

@@ -43,6 +43,7 @@
     X-XSS-Protection = "1; mode=block"
     # X-XSS-Protection = "1; mode=block; report=https://jarvis.report-uri.com/r/d/xss/enforce"
     X-Got-Milk = "always"
+    X-View-Source = "https://go.jarv.is/source"
 
 # PGP file: open in browser, download correctly
 [[headers]]
@@ -52,9 +53,14 @@
     Content-Type = "text/plain; charset=utf-8"
     Content-Disposition = "inline; filename=\"jarvis.asc\""
 
-# Redirect default Netlify subdomain to primary domain:
+# Redirect www and Netlify subdomains to primary domain:
 [[redirects]]
   from = "https://jakejarvis.netlify.com/*"
+  to = "https://jarv.is/:splat"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://www.jarv.is/*"
   to = "https://jarv.is/:splat"
   status = 301
   force = true
@@ -95,11 +101,11 @@
 # and keep the main repository squeaky clean:
 [[redirects]]
   from = "/y2k/*"
-  to = "https://jakejarvis.github.io/y2k/:splat"
+  to = "https://modest-jackson-d5516b.netlify.com/y2k/:splat"
   status = 200
 [[redirects]]
   from = "/ios-trackers/*"
-  to = "https://jakejarvis.github.io/ios-trackers/:splat"
+  to = "https://modest-jackson-d5516b.netlify.com/ios-trackers/:splat"
   status = 200
 [[redirects]]
   from = "/scrabble/*"
@@ -118,6 +124,11 @@
   to = "https://modest-jackson-d5516b.netlify.com/awesome/:splat"
   status = 200
 
+# More miscellaneous mirrors:
+[[redirects]]
+  from = "/apple-touch-icon-precomposed.png"
+  to = "/apple-touch-icon.png"
+  status = 200
 [[redirects]]
   from = "/me_lg.jpg"
   to = "/me_large.jpg"

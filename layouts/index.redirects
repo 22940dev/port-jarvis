@@ -11,3 +11,4 @@
 # https://github.com/w3c/manifest/issues/689
 
 /manifest.webmanifest      /manifest.json      200
+/site.webmanifest          /manifest.json      200
