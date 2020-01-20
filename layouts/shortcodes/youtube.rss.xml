@@ -1,1 +1,1 @@
-<p style="text-align: center;"><a href="https://www.youtube.com/watch?v={{ index .Params 0 }}">Watch this video on YouTube.</a></p>
+<p style="text-align: center;"><a href="https://www.youtube.com/watch?v={{ index .Params 0 }}" target="_blank" rel="noopener">Watch this video on YouTube.</a></p>

@@ -5,11 +5,13 @@
     {{ hugo.Generator }}
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
-    <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
-    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
-    <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
-    <script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
-    <script async custom-element="amp-gist" src="https://cdn.ampproject.org/v0/amp-gist-0.1.js"></script>
+    {{ if .HasShortcode "video" }}<script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>{{ end }}
+    {{ if .HasShortcode "youtube" }}<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>{{ end }}
+    {{ if .HasShortcode "tweet" }}<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>{{ end }}
+    {{ if .HasShortcode "facebook" }}<script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>{{ end }}
+    {{ if .HasShortcode "gist" }}<script async custom-element="amp-gist" src="https://cdn.ampproject.org/v0/amp-gist-0.1.js"></script>{{ end }}
+    {{ if .HasShortcode "instagram" }}<script async custom-element="amp-gist" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>{{ end }}
+    {{ if .HasShortcode "vimeo" }}<script async custom-element="amp-gist" src="https://cdn.ampproject.org/v0/amp-vimeo-0.1.js"></script>{{ end }}
     <title>{{ .Title }} &ndash; {{ .Site.Title }}</title>
     {{ with .OutputFormats.Get "html" }}<link rel="canonical" href="{{ .Permalink }}">{{ end }}
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -169,6 +171,7 @@
     <link rel="icon" href="{{ "favicon-32.png" | absURL }}" sizes="32x32">
     <link rel="icon" href="{{ "favicon-16.png" | absURL }}" sizes="16x16">
     <link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}">
+    <link rel="manifest" href="{{ "site.webmanifest" | absURL }}">
     <link rel="alternate" type="application/rss+xml" href="{{ "feed.xml" | absURL }}" title="{{ .Site.Title }} (RSS)">
 
     {{ partial "head/schema-person" . }}

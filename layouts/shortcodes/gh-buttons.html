@@ -2,3 +2,7 @@
   <a class="github-button" href="https://github.com/{{ .Get "username" }}/{{ .Get "repo" }}" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star {{ .Get "username" }}/{{ .Get "repo" }} on GitHub">Star</a>&nbsp;&nbsp;&nbsp;
   <a class="github-button" href="https://github.com/{{ .Get "username" }}/{{ .Get "repo" }}/issues" data-icon="octicon-issue-opened" data-size="large" data-show-count="true" aria-label="Issues for {{ .Get "username" }}/{{ .Get "repo" }} on GitHub">Issue</a>
 </p></div>
+
+{{- define "__shortcode_gh-buttons_js" }}
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+{{- end }}

@@ -4,3 +4,7 @@
 <div class="embed tweet">
 {{ $json.html | safeHTML }}
 </div>
+
+{{- define "__shortcode_twitter_js" }}
+<script async defer src="https://platform.twitter.com/widgets.js"></script>
+{{- end }}

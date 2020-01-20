@@ -1,11 +1,19 @@
 {{ if .HasShortcode "gh-buttons" -}}
-{{ partial "scripts/shortcodes/gh-buttons" . }}
+{{ template "__shortcode_gh-buttons_js" $ }}
 {{ end -}}
 
 {{ if .HasShortcode "tweet" -}}
-{{ partial "scripts/shortcodes/tweet" . }}
+{{ template "__shortcode_twitter_js" $ }}
 {{ end -}}
 
 {{ if .HasShortcode "facebook" -}}
-{{ partial "scripts/shortcodes/facebook" . }}
+{{ template "__shortcode_facebook_js" $ }}
+{{ end -}}
+
+{{ if .HasShortcode "instagram" -}}
+{{ template "__shortcode_instagram_js" $ }}
+{{ end -}}
+
+{{ if .HasShortcode "vimeo" -}}
+{{ template "__shortcode_vimeo_js" $ }}
 {{ end -}}

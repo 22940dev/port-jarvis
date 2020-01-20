@@ -1,0 +1,10 @@
+{{- $url := printf "https://api.instagram.com/oembed/?omitscript=1&url=https://www.instagram.com/p/%s" (.Get "id") -}}
+{{- $json := getJSON $url -}}
+
+<div class="embed instagram">
+{{ $json.html | safeHTML }}
+</div>
+
+{{- define "__shortcode_instagram_js" }}
+<script async src="https://www.instagram.com/embed.js"></script>
+{{- end }}
