@@ -42,6 +42,7 @@
     # Feature-Policy = "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; sync-xhr 'none'; payment 'none'; usb 'none'; vr 'none'"
     X-XSS-Protection = "1; mode=block"
     # X-XSS-Protection = "1; mode=block; report=https://jarvis.report-uri.com/r/d/xss/enforce"
+    X-Pingback = "https://jarv.is/ping/xmlrpc"
     X-Got-Milk = "always"
     X-View-Source = "https://go.jarv.is/source"
 
@@ -50,7 +51,7 @@
   for = "/jarvis.asc"
   [headers.values]
     Cache-Control = "max-age=0, no-cache, no-store"
-    Content-Type = "text/plain; charset=utf-8"
+    Content-Type = "text/plain; charset=UTF-8"
     Content-Disposition = "inline; filename=\"jarvis.asc\""
 
 # Redirect www and Netlify subdomains to primary domain:
@@ -97,8 +98,9 @@
   status = 301
   force = true
 
-# Mirror these directories from elsewhere to mimic old GitHub Pages behavior
-# and keep the main repository squeaky clean:
+# Proxy these directories from elsewhere to mimic GitHub Pages behavior and
+# keep this main repository squeaky clean.
+# https://github.com/jakejarvis/random-sites
 [[redirects]]
   from = "/y2k/*"
   to = "https://modest-jackson-d5516b.netlify.com/y2k/:splat"
@@ -132,6 +134,21 @@
 [[redirects]]
   from = "/me_lg.jpg"
   to = "/me_large.jpg"
+  status = 200
+
+# Send pingbacks to https://webmention.io
+[[redirects]]
+  from = "/xmlrpc.php"
+  to = "https://webmention.io/jarv.is/xmlrpc"
+  status = 200
+[[redirects]]
+  from = "/ping/*"
+  to = "https://webmention.io/jarv.is/:splat"
+  status = 200
+# fixes manual form submission
+[[redirects]]
+  from = "/jarv.is/webmention"
+  to = "https://webmention.io/jarv.is/webmention"
   status = 200
 
 # H A C K E R M A N ( ͡° ͜ʖ ͡°)

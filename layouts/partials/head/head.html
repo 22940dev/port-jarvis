@@ -1,17 +1,14 @@
 {{ partial "head/meta" . -}}
 {{ partial "head/social-images" . -}}
 {{ partial "head/open-graph" . -}}
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}">
-<meta name="msapplication-TileColor" content="#0e6dc2">
-<meta name="theme-color" content="#0e6dc2">
+{{ partialCached "head/mobile" . -}}
 {{ partialCached "head/preload" . -}}
 {{ partialCached "head/styles" . -}}
 {{ partialCached "head/favicons" (dict "png_sizes" "192 48 32 16" "ico_sizes" "16 32 48") -}}
 <link rel="manifest" href="{{ "site.webmanifest" | absURL }}">
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="alternate" type="application/rss+xml" href="{{ "feed.xml" | absURL }}" title="{{ .Site.Title }} (RSS)">
+{{ partialCached "head/webmention" . -}}
 <link rel="author" href="{{ "humans.txt" | absURL }}">
 {{ if and .IsPage (eq .Type "notes") }}
   {{- with .OutputFormats.Get "amp" -}}
