@@ -24,7 +24,7 @@
     "optimize:html": "html-minifier --html5 --collapse-whitespace --collapse-boolean-attributes --preserve-line-breaks --minify-css --file-ext html --input-dir public --output-dir public **/*.html",
     "optimize:img": "find public/ -type d | xargs -n1 -P8 -I{} imagemin {}/* --plugin=jpegoptim --plugin.jpegoptim.progressive --plugin.jpegoptim.stripAll --plugin=pngquant --plugin.pngquant.speed=5 --plugin.pngquant.strip --plugin=optipng --plugin.optipng.optimizationLevel=2 --plugin=svgo --plugin=gifsicle --out-dir={}",
     "lint": "run-p lint:**",
-    "lint:markdown": "markdownlint content/notes/**/*.md",
+    "lint:markdown": "markdownlint content/**/*.md",
     "lint:sass": "stylelint assets/sass/**/* --syntax scss",
     "lint:links": "linkinator http://localhost:1313/ --recurse --silent --skip https://www.shodan.io/ --skip https://images.shodan.io/ --skip https://archive.today/ --skip https://archive.is/ --skip https://www.linkedin.com/ --skip http://localhost:1313/y2k/ --skip 'asdfasdf404/?$'",
     "debug:hugo": "hugo version; hugo env",

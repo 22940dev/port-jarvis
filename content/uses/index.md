@@ -1,0 +1,130 @@
+---
+title: "/uses 💻"
+description: "Things I use."
+date: 2020-01-22 09:51:08-0400
+url: "/uses"
+type: etc
+layout: etc
+---
+
+~~I regularly get messages asking about specific things I use.~~ Nobody has asked me what I use. Ever. But here's a list of my daily lifelines anyways, mostly revolving around my Apple sheep-ness. Inspired by [many, many others](https://uses.tech/). 😊
+
+
+## 💾&nbsp; Development {#development}
+
+- [**iTerm 2**](https://iterm2.com/)
+  - [My various ZSH aliases in my .dotfiles repository.](https://github.com/jakejarvis/dotfiles/blob/master/zsh/aliases.zsh)
+  - [Oh-My-ZSH](https://ohmyz.sh/)
+    - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+    - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+- [**Visual Studio Code (Insiders build)**](https://code.visualstudio.com/insiders/)
+  - [All of my settings](https://gist.github.com/jakejarvis/80a04530e0142ff5b7b77c92d5c6f526) via [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync).
+  - Themes:
+    - [Slime Theme](https://marketplace.visualstudio.com/items?itemName=smlombardi.slime)
+    - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+    - [Source Code Pro font](https://github.com/adobe-fonts/source-code-pro)
+  - Extensions:
+    - [AWS Toolkit](https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.aws-toolkit-vscode)
+    - [Better TOML](https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml)
+    - [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
+    - [Debugger for Firefox](https://marketplace.visualstudio.com/items?itemName=firefox-devtools.vscode-firefox-debug)
+    - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
+    - [Duplicate action](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-duplicate)
+    - [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+    - [GitHub Pull Requests](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
+    - [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
+    - [Remote Development Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
+    - [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
+    - [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
+- [**Xcode**](https://developer.apple.com/xcode/)
+- [**Docker Desktop**](https://www.docker.com/products/docker-desktop)
+- [**VMware Fusion**](https://www.vmware.com/products/fusion.html)
+  - Microsoft's [free Windows 7 & 10 virtual machines](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/) for developers are super convenient and shockingly generous.
+- [**Sketch**](https://www.sketch.com/)
+- [**Adobe Creative Cloud**](https://www.adobe.com/creativecloud.html)
+  - Still on the $20/month [Student Plan](https://www.adobe.com/creativecloud/buy/students.html), thankfully. Will need to re-evaulate once I'm kicked off; it's hard to justify spending almost 3x that...
+- [**Transmit**](https://panic.com/transmit/)
+- [**Sequel Pro**](https://www.sequelpro.com/)
+- [**Robo 3T**](https://robomongo.org/)
+- [**Local by Flywheel**](https://localbyflywheel.com/)
+
+
+## 🌎&nbsp; Browsing {#browsing}
+
+- [**Firefox Developer Editon**](https://www.mozilla.org/en-US/firefox/developer/)
+  - [My default user.js settings.](https://github.com/jakejarvis/dotfiles/blob/master/firefox/user.js)
+  - Add-ons:
+    - [1Password](https://1password.com/browsers/firefox/)
+    - [BetterTTV](https://addons.mozilla.org/en-US/firefox/addon/betterttv/)
+    - [Cookie Editor](https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/)
+    - [Country Flag & IP Whois](https://addons.mozilla.org/en-US/firefox/addon/country-flags-ip-whois/)
+    - [Decentraleyes](https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/)
+    - [Facebook Container](https://addons.mozilla.org/en-US/firefox/addon/facebook-container/)
+    - [Firefox Multi-Account Containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)
+    - [Hide Private Mode](https://addons.mozilla.org/en-US/firefox/addon/hide-private-mode/)
+    - [HTTPS Everywhere](https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/)
+    - [Mailvelope](https://addons.mozilla.org/en-US/firefox/addon/mailvelope/)
+    - [React Developer Tools](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+    - [OctoLinker](https://addons.mozilla.org/en-US/firefox/addon/octolinker/)
+    - [Save Image to Downloads](https://addons.mozilla.org/en-US/firefox/addon/save-image-2-downloads/)
+    - [Search by Image on Google](https://addons.mozilla.org/en-US/firefox/addon/search-by-image-on-google/)
+    - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
+    - [View Image](https://addons.mozilla.org/en-US/firefox/addon/view-image/)
+
+
+## 💻&nbsp; macOS {#macos}
+
+- [**1Password**](https://1password.com/)
+- [**Little Snitch**](https://www.obdev.at/products/littlesnitch/index.html)
+- [~~Dropbox~~](https://www.dropbox.com/) → [**iCloud Drive**](https://www.icloud.com/iclouddrive)
+  - [Read why.](http://localhost:1313/notes/dropping-dropbox/)
+- [~~VLC~~](https://www.videolan.org/vlc/index.html) → [**IINA**](https://iina.io/)
+- [**Backblaze**](https://secure.backblaze.com/r/00x84e) (referral link)
+- [**Transmission**](https://transmissionbt.com/)
+- [**Unshaky**](https://unshaky.nestederror.com/) ⌨️
+  - Toooo &nbsp;lzy too vist &nbsp;&nbsp;the&nbsp; Aple Stre geeniusses oonce &nbsp;agin.
+- [**DaisyDisk**](https://daisydiskapp.com/)
+- [**Paragon NTFS**](https://www.paragon-software.com/us/home/ntfs-mac/#)
+- [**iStat Menus**](https://bjango.com/mac/istatmenus/)
+- [**Beamer**](https://beamer-app.com/)
+- [**Amphetamine**](https://roaringapps.com/app/amphetamine)
+- [**NVIDIA GeForce NOW** (beta)](https://www.nvidia.com/en-us/geforce-now/)
+- [**Microsoft Office**](https://products.office.com/en-us/mac/microsoft-office-for-mac)
+
+
+## 📱&nbsp; iOS {#ios}
+
+I have far too many apps to count, but here the essentials that have earned a spot on my home screen:
+
+- [**1Password**](https://apps.apple.com/us/app/1password-password-manager/id568903335)
+- [**Waze** (beta)](https://apps.apple.com/us/app/waze-navigation-live-traffic/id323229106)
+- [**Google Maps**](https://apps.apple.com/us/app/google-maps-transit-food/id585027354)
+- [**Dark Sky**](https://apps.apple.com/us/app/dark-sky-weather/id517329357)
+- [**Xfinity Stream**](https://apps.apple.com/us/app/xfinity-stream/id731629156)
+- [**Pocket Casts**](https://apps.apple.com/us/app/pocket-casts/id414834813)
+- [**Audible**](https://apps.apple.com/us/app/audible-audiobooks-originals/id379693831)
+- [**SiriusXM**](https://apps.apple.com/us/app/siriusxm-music-comedy-sports/id317951436)
+- [**Plex** (beta)](https://apps.apple.com/us/app/plex-movies-tv-music-more/id383457673)
+- [**Wunderlist**](https://apps.apple.com/us/app/wunderlist-to-do-list-tasks/id406644151)
+- [**Reeder 4**](https://apps.apple.com/us/app/reeder-4/id1449412357)
+- [**Blink Shell**](https://apps.apple.com/us/app/blink-shell-mosh-ssh-client/id1156707581)
+
+
+## 🍎&nbsp; Hardware {#hardware}
+
+- **MacBook Pro 15"** (2018)
+  - Core i9, 2.9 GHZ
+  - 32 GB RAM
+  - 1 TB SSD
+  - Radeon Pro 560X 4 GB
+- **iPhone 11 Pro**
+  - 512 GB in Midnight Green
+  - [Evutec Karbon case](https://evutec.com/collections/all-iphone-11-cases/products/evutec-karbon-iphone-11-pro-5-8-inch-unique-hard-smooth-heavy-duty-phone-case-cover-real-aramid-fiber-strong-protective-slim-1-6mm-durable-black-afix-free-vent-mount)
+- **iPad Pro 10.5"** (2017)
+  - 256 GB in Space Gray
+- **Apple Watch Series 3** (GPS + Cellular)
+  - Stainless Steel – Space Black
+  - 38mm (I have incredibly small wrists.)
+- **Powerbeats<sup>3</sup> Wireless** (in the pretty rad [Pop Indigo](https://www.apple.com/shop/product/MREQ2LL/A/powerbeats3-wireless-earphones-beats-pop-collection-pop-indigo) color)
+  - I also have incredibly weird ears, apparently, so the AirPods went right back to the store when they came out. 😢
+  - ...but these are a great alternative with the [same pairing and continuity features](https://www.soundguys.com/how-does-apple-w1-chip-work-21049/) between all of my 🍎 devices.

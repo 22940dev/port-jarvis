@@ -10,7 +10,7 @@
   "no-blanks-blockquote": true,
   "no-empty-links": false,
   "no-hard-tabs": false,
-  "no-inline-html": { "allowed_elements": [ "span" ] },
+  "no-inline-html": { "allowed_elements": [ "span", "sup" ] },
   "no-multiple-blanks": false,
   "no-trailing-punctuation": false,
   "single-h1": false,
