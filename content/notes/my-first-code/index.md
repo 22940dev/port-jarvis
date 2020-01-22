@@ -1,7 +1,7 @@
 ---
 title: "My First Code: Jake's Bulletin Board"
 date: 2019-10-01 08:34:25-0400
-description: "My first full coding project ever – a PHP bulletin board creatively titled Jake's Bulletin Board, circa 2003."
+description: "My first full coding project ever: a PHP bulletin board creatively titled Jake's Bulletin Board, circa 2003."
 tags:
   - Hello World
   - Baby's First PHP

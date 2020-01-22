@@ -20,6 +20,10 @@ main#single {
         line-height: 1.5;
       }
 
+      strong {
+        letter-spacing: 0.001em;
+      }
+
       img,
       figure {
         height: auto;
@@ -180,7 +184,7 @@ main#single {
         color: $color-medium;
         font-size: 0.85em;
         line-height: 1.5;
-        letter-spacing: 0.075em;
+        letter-spacing: 0.07em;
 
         a {
           color: inherit;
@@ -202,6 +206,7 @@ main#single {
             margin-right: 0.8em;
             text-transform: uppercase;
             letter-spacing: 0.15em;
+            white-space: nowrap;
           }
         }
       }
@@ -213,7 +218,7 @@ main#single {
 // Responsive
 @mixin responsive--single() {
   main#single {
-    padding: 0.8em 1.5em;
+    padding: 0.8em 1.1em;
 
     article {
       div#meta {
@@ -230,6 +235,7 @@ main#single {
           // less space between tags
           ul#tags li {
             margin: 0 0.5em;
+            line-height: 1.7;
           }
         }
       }

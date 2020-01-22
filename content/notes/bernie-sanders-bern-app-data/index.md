@@ -52,7 +52,7 @@ Here's one of the instructional videos provided internally to volunteers:
 
 Defenders of the BERN app have pointed out that the information used is already available from public voter rolls maintained independently by each state. This is true. But these public records have never been tied to a campaign's internal voter files through a tool that's wide open to the entire internet, with incentives to add valuable data that benefits one candidate.
 
-There were even unverified claims that [BERN was leaking voter ID numbers](https://info.idagent.com/blog/bern-app-exposes-150m-voter-records), which are the same as one's driver's license ID numbers in some states, through JSON responses in the first few days after its release. There don't be appear to be strict rate limits on calls to the API either, potentially inviting malicious actors from around the world  — wink wink  — to scrape personal data on tens of millions of Americans en masse.
+There were even unverified claims that [BERN was leaking voter ID numbers](https://info.idagent.com/blog/bern-app-exposes-150m-voter-records), which are the same as one's driver's license ID numbers in some states, through JSON responses in the first few days after its release. There don't be appear to be strict rate limits on calls to the API either, potentially inviting malicious actors from around the world — wink wink — to scrape personal data on tens of millions of Americans en masse.
 
 {{< image src="images/json-response.jpg" alt="JSON Response" >}}BERN's API response in Chrome DevTools{{< /image >}}
 
@@ -66,11 +66,11 @@ BERN is taking this to an unprecedented level. Allowing anybody on the internet 
 
 {{< image src="images/reddit-bros.png" width="600" alt="Reddit comments on BERN">}}[BERN discussion on /r/SandersForPresident thread](https://www.reddit.com/r/SandersForPresident/comments/bi15la/new_get_the_official_bernie_sanders_2020_app_bern/elxi85m/){{< /image >}}
 
-In addition to the points system, it was revealed in the webinar mentioned above that the campaign is planning on giving out shiny rewards based on how many friends one adds, setting expectations at 50+ contacts to reach the "Bernie Super Bundler" tier — whatever that means.
+In addition to the points system, it was revealed in the webinar mentioned above that the campaign is planning on giving out shiny rewards based on how many friends one adds, setting expectations at 50+ contacts to reach the "Bernie Super Bundler" tier — whatever that means.
 
 {{< image src="images/webinar-slide-1.png" width="700" alt="Webinar Slide 1" />}}
 
-In the middle of the webinar, the organizer also paused the presentation for *fifteen minutes * — complete with a countdown clock  —  and told volunteers to race to add as many of their friends as possible in that time. She announced afterwards that participants added 20 to 40 friends into the app on average, with some allegedly adding close to 100 in fifteen minutes.
+In the middle of the webinar, the organizer also paused the presentation for _fifteen minutes_ — complete with a countdown clock — and told volunteers to race to add as many of their friends as possible in that time. She announced afterwards that participants added 20 to 40 friends into the app on average, with some allegedly adding close to 100 in fifteen minutes.
 
 {{< image src="images/webinar-slide-2.png" width="700" alt="Webinar Slide 2" />}}
 
