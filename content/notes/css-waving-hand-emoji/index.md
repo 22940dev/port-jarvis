@@ -45,7 +45,7 @@ span.wave {
 
 ### HTML:
 
-```html
+```html {linenos=false}
 <span class="wave">👋</span>
 ```
 

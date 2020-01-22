@@ -14,7 +14,7 @@
 
 // Web fonts (see components/_fonts.scss)
 @mixin font-face($family, $src,
-                 $style: normal, $weight: normal, $display: swap) {
+                 $weight: normal, $style: normal, $display: swap) {
 	@font-face {
     font-family: $family;
     font-style: $style;
