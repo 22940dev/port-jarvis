@@ -15,38 +15,6 @@ main#etc {
       color: inherit;
     }
   }
-
-  strong {
-    letter-spacing: 0.001em;
-  }
-
-  div#content {
-    letter-spacing: -0.011em;
-    line-height: 1.7;
-
-    h1,
-    h2,
-    h3 {
-      margin: 0.5em 0;
-      font-weight: 700;
-      line-height: 1.5;
-    }
-
-    p {
-
-    }
-
-    ul {
-      list-style-position: outside;
-      list-style-type: square;
-      margin-left: 1em;
-      padding-left: 0;
-
-      li {
-        padding-left: 0.25em;
-      }
-    }
-  }
 }
 
 
@@ -60,15 +28,5 @@ main#etc {
       padding: 0 0.6em;
     }
 
-    div#content {
-      h1,
-      h2,
-      h3 {
-        margin: 0.5em 0;
-        font-size: 1.35em;
-        font-weight: 700;
-        line-height: 1.5;
-      }
-    }
   }
 }

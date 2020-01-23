@@ -35,10 +35,169 @@ a {
   }
 }
 
+strong {
+  letter-spacing: 0.001em;
+}
+
 // white background for entire width content area
 div#wrap {
   width: 100%;
   background-color: $color-background;
+}
+
+div#content {
+  letter-spacing: -0.011em;
+  line-height: 1.7;
+
+  h1,
+  h2,
+  h3 {
+    margin: 0.5em 0;
+    letter-spacing: 0.001em;
+    line-height: 1.5;
+  }
+
+  img,
+  figure {
+    height: auto;
+    max-width: 100%;
+    margin: 1em auto;
+    display: block;
+  }
+
+  figure {
+    // reduce margin between image and caption
+    img {
+      margin-bottom: 0.4em;
+    }
+
+    // image captions
+    figcaption {
+      font-size: 0.9em;
+      color: $color-medium;
+      text-align: center;
+    }
+  }
+
+  blockquote {
+    border-left: 5px solid $color-links;
+    margin-left: 0.5em;
+    padding-left: 1em;
+  }
+
+  ul {
+    list-style-position: outside;
+    list-style-type: square;
+    margin-left: 1em;
+    padding-left: 0;
+
+    li {
+      padding-left: 0.25em;
+    }
+  }
+
+  // https://css-tricks.com/examples/hrs/
+  hr {
+    width: 90%;
+    margin: 1.5em auto;
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, #ffffff, #cccccc, #ffffff);
+  }
+
+  video.embed {
+    display: block;
+    margin: 1em auto;
+    max-width: 100%;
+    height: auto;
+    border: 0;
+
+    // Subtitle caption styling
+    // stylelint-disable-next-line selector-pseudo-element-no-unknown
+    &::cue {
+      font-family: inherit;
+    }
+  }
+
+  div.embed {
+    p {
+      text-align: center;
+    }
+
+    &.youtube {
+      position: relative;
+      padding-bottom: 56.25%;
+      margin: 1em auto;
+      height: 0;
+      overflow: hidden;
+
+      iframe.youtube-player {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: inline-block;
+      }
+    }
+
+    &.codepen {
+      iframe {
+        width: 100%;
+      }
+    }
+  }
+
+  // stylelint-disable-next-line selector-type-no-unknown
+  twitter-widget,
+  iframe.twitter-tweet {
+    margin: 0 auto;
+    display: block;
+  }
+
+  iframe {
+    border: 0;
+  }
+
+  // all code
+  code,
+  div.highlight {
+    font-family: $system-fonts-monospace;
+    background: $color-super-light;
+    font-size: 0.9em;
+    letter-spacing: 0;
+    page-break-inside: avoid;
+  }
+
+  // inline code in paragraphs (single tildes)
+  code {
+    border: 1px solid $color-light;
+    padding: 0.2em;
+  }
+
+  // code fences
+  div.highlight {
+    border: 1px solid $color-light;
+    border-left: 3px solid $color-links;
+    line-height: 1.6;
+    max-width: 100%;
+    overflow-x: scroll;
+    object-fit: scale-down;
+    font-size: 1em;
+    margin: 1em 0;
+
+    pre {
+      display: block;
+      margin-left: 1.5em;
+    }
+
+    // overrides inline code styles
+    code {
+      border: 0;
+      padding: 0;
+    }
+  }
 }
 
 
