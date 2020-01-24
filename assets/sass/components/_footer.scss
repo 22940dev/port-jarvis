@@ -20,40 +20,40 @@ footer {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+  }
 
-    div {
-      &#copyright,
-      &#poweredby {
-        width: 40%;
-        font-size: 0.85em;
-        line-height: 2;
+  div {
+    &#copyright,
+    &#poweredby {
+      width: 40%;
+      font-size: 0.85em;
+      line-height: 2;
+    }
+
+    &#copyright {
+      text-align: left;
+    }
+
+    &#poweredby {
+      text-align: right;
+
+      a#source {
+        border-bottom: 1px solid $color-light;
       }
+    }
 
-      &#copyright {
-        text-align: left;
-      }
+    &#panda {
+      width: 20%;
+      text-align: center;
+      font-size: 1.7em;
+      line-height: 1;
 
-      &#poweredby {
-        text-align: right;
+      a {
+        display: inline-block;
+        transition: transform 0.2s ease-in-out;
 
-        a#source {
-          border-bottom: 1px solid $color-light;
-        }
-      }
-
-      &#panda {
-        width: 20%;
-        text-align: center;
-        font-size: 1.7em;
-        line-height: 1;
-
-        a {
-          display: inline-block;
-          transition: transform 0.2s ease-in-out;
-
-          &:hover {
-            transform: scale(1.6) rotate(10deg);
-          }
+        &:hover {
+          transform: scale(1.6) rotate(10deg);
         }
       }
     }
@@ -65,7 +65,7 @@ footer {
   footer {
     padding: 1em 1.5em 0 1.5em;
 
-    div#row div {
+    div {
       // no more room at the inn for panda :(
       &#panda {
         display: none;

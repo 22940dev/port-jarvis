@@ -32,6 +32,7 @@
     Hugo extended
     Netlify
     Commento
+    ...and more: https://jarv.is/uses/
 
 # VIEW SOURCE
 

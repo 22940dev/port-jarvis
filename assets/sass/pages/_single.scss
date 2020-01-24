@@ -6,48 +6,46 @@ main#single {
   padding: 1em 2.5em;
   margin: 0 auto;
 
-  article div {
-    &#meta {
-      text-align: center;
+  div#meta {
+    text-align: center;
 
-      h1 {
-        margin: 0.3em 0;
-        font-size: 2em;
-        line-height: 1.4;
+    h1 {
+      margin: 0.3em 0;
+      font-size: 2em;
+      line-height: 1.4;
 
-        a {
-          color: inherit;
-        }
+      a {
+        color: inherit;
+      }
+    }
+
+    div#byline {
+      color: $color-medium;
+      font-size: 0.85em;
+      line-height: 1.5;
+      letter-spacing: 0.07em;
+
+      a {
+        color: inherit;
       }
 
-      div#byline {
-        color: $color-medium;
-        font-size: 0.85em;
-        line-height: 1.5;
-        letter-spacing: 0.07em;
+      span.dot {
+        margin: 0 0.1em;
+        font-weight: 700;
+      }
 
-        a {
-          color: inherit;
-        }
+      ul#tags {
+        margin-top: 0.5em;
+        padding: 0;
+        list-style: none;
 
-        span.dot {
-          margin: 0 0.1em;
-          font-weight: 700;
-        }
-
-        ul#tags {
-          margin-top: 0.5em;
-          padding: 0;
-          list-style: none;
-
-          li {
-            display: inline;
-            margin-left: 0.8em;
-            margin-right: 0.8em;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            white-space: nowrap;
-          }
+        li {
+          display: inline;
+          margin-left: 0.8em;
+          margin-right: 0.8em;
+          text-transform: uppercase;
+          letter-spacing: 0.15em;
+          white-space: nowrap;
         }
       }
     }
@@ -60,23 +58,21 @@ main#single {
   main#single {
     padding: 0.8em 1.1em;
 
-    article {
-      div#meta {
-        h1 {
-          font-size: 1.8em;
+    div#meta {
+      h1 {
+        font-size: 1.8em;
+      }
+
+      div#byline {
+        // hide "Improve Post" link on mobile
+        span#edit {
+          display: none;
         }
 
-        div#byline {
-          // hide "Improve Post" link on mobile
-          span#edit {
-            display: none;
-          }
-
-          // less space between tags
-          ul#tags li {
-            margin: 0 0.5em;
-            line-height: 1.7;
-          }
+        // less space between tags
+        ul#tags li {
+          margin: 0 0.5em;
+          line-height: 1.7;
         }
       }
     }

@@ -1,22 +1,45 @@
 ---
 title: "/uses 💻"
-description: "Things I use."
+description: "Things I use daily."
 date: 2020-01-22 09:51:08-0400
 url: "/uses"
 type: etc
 layout: etc
 ---
 
-~~I regularly get messages asking about specific things I use.~~ Nobody has asked me what I use. Ever. But here's a list of my daily lifelines anyways, mostly revolving around my Apple sheep-ness. Inspired by [many, many others](https://uses.tech/). 😊
+~~I regularly get messages asking about specific things I use.~~ Nobody has asked me what I use. Ever. But here's a list of my daily requirements anyways, mostly revolving around my Apple sheep-ness. Inspired by [many, many others](https://uses.tech/). 😊
 
 {{< image src="images/desktop.png" alt="My mess of a desktop." />}}
+
+---
+
+## 🍎&nbsp; Hardware {#hardware}
+
+- [**MacBook Pro 15"** (Mid-2018)](https://browser.geekbench.com/v5/cpu/1074682)
+  - Core i9 @ 2.9 GHZ 🔥 🚒
+  - 32 GB RAM
+  - 1 TB SSD
+  - Radeon Pro 560X – 4 GB
+- **iPhone 11 Pro**
+  - 512 GB in Midnight Green 😎
+  - [Evutec Karbon case](https://evutec.com/collections/all-iphone-11-cases/products/evutec-karbon-iphone-11-pro-5-8-inch-unique-hard-smooth-heavy-duty-phone-case-cover-real-aramid-fiber-strong-protective-slim-1-6mm-durable-black-afix-free-vent-mount)
+- **iPad Pro 10.5"**
+  - 256 GB in Space Gray
+  - Smart Keyboard & Apple Pencil
+- **Apple Watch Series 3** (GPS + Cellular on Verizon)
+  - Stainless Steel – Space Black
+  - 38mm (I have incredibly small wrists.)
+  - Usually either the Midnight Blue sport band or 🏳️‍🌈 woven nylon band.
+- [**Powerbeats<sup>3</sup> Wireless**](https://www.beatsbydre.com/earphones/powerbeats3-wireless) (in the pretty rad [Pop Indigo](https://www.apple.com/shop/product/MREQ2LL/A/powerbeats3-wireless-earphones-beats-pop-collection-pop-indigo) color)
+  - I also have incredibly weird ears, apparently, so my AirPods went right back to the store when they came out. 😢
+  - ...but these are a great alternative with the [same pairing and continuity features](https://www.soundguys.com/how-does-apple-w1-chip-work-21049/) between all of my 🍎 devices.
 
 ---
 
 ## 💾&nbsp; Development {#development}
 
 - [**iTerm 2**](https://iterm2.com/)
-  - My various [ZSH aliases](https://github.com/jakejarvis/dotfiles/blob/master/zsh/aliases.zsh) and [functions](https://github.com/jakejarvis/dotfiles/blob/master/zsh/functions.zsh) are in my [.dotfiles repository.](https://github.com/jakejarvis/dotfiles)
+  - My various [ZSH aliases](https://github.com/jakejarvis/dotfiles/blob/master/zsh/aliases.zsh) and [functions](https://github.com/jakejarvis/dotfiles/blob/master/zsh/functions.zsh) are in [my `.dotfiles` repository.](https://github.com/jakejarvis/dotfiles)
   - [Oh My ZSH](https://ohmyz.sh/)
     - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
     - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
@@ -39,16 +62,21 @@ layout: etc
     - [Remote Development Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
     - [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
     - [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
+- [**Homebrew**](https://brew.sh/)
+  - [View my messy `Brewfile` dump](https://github.com/jakejarvis/dotfiles/blob/master/Brewfile) with all of my installed packages.
 - [**Xcode**](https://developer.apple.com/xcode/)
 - [**Docker Desktop**](https://www.docker.com/products/docker-desktop)
 - [**VMware Fusion**](https://www.vmware.com/products/fusion.html)
   - Microsoft's [free Windows 7 & 10 virtual machines](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/) for developers are super convenient and shockingly generous.
 - [**Sketch**](https://www.sketch.com/)
 - [**Adobe Creative Cloud**](https://www.adobe.com/creativecloud.html)
-  - Still on the $20/month [Student Plan](https://www.adobe.com/creativecloud/buy/students.html), thankfully. Will need to re-evaulate once I'm kicked off; it's hard to justify spending almost 3x that...
+  - Still on the $20/month [Student Plan](https://www.adobe.com/creativecloud/buy/students.html), somehow. Will need to re-evaulate once I'm kicked off; it's hard to justify spending almost 3x that...
 - [**Transmit**](https://panic.com/transmit/)
-- [**Sequel Pro**](https://www.sequelpro.com/)
-- [**Robo 3T**](https://robomongo.org/)
+- [**Postman**](https://www.getpostman.com/)
+- [**BrowserStack**](https://www.browserstack.com/)
+- [~~Sequel Pro~~](https://www.sequelpro.com/) → [**TablePlus**](https://tableplus.com/)
+- [~~Robo 3T~~](https://robomongo.org/) → [**TablePlus**](https://tableplus.com/)
+- [**ImageOptim**](https://imageoptim.com/mac)
 - [**Local by Flywheel**](https://localbyflywheel.com/)
 
 ---
@@ -56,7 +84,7 @@ layout: etc
 ## 🌎&nbsp; Browsing {#browsing}
 
 - [**Firefox Developer Editon**](https://www.mozilla.org/en-US/firefox/developer/) 🦊
-  - [My default user.js settings.](https://github.com/jakejarvis/dotfiles/blob/master/firefox/user.js)
+  - [My default `user.js` settings.](https://github.com/jakejarvis/dotfiles/blob/master/firefox/user.js)
   - Add-ons:
     - [1Password](https://1password.com/browsers/firefox/)
     - [BetterTTV](https://addons.mozilla.org/en-US/firefox/addon/betterttv/)
@@ -74,6 +102,9 @@ layout: etc
     - [Search by Image on Google](https://addons.mozilla.org/en-US/firefox/addon/search-by-image-on-google/)
     - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
     - [View Image](https://addons.mozilla.org/en-US/firefox/addon/view-image/)
+- [**Google Chrome** (Dev Channel)](https://www.google.com/chrome/browser/?extra=devchannel) — for testing **only!**
+  - [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?h1=en)
+  - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 
 ---
 
@@ -81,8 +112,6 @@ layout: etc
 
 - [**1Password**](https://1password.com/)
 - [**Little Snitch**](https://www.obdev.at/products/littlesnitch/index.html) and [**Micro Snitch**](https://www.obdev.at/products/microsnitch/index.html)
-- [~~Dropbox~~](https://www.dropbox.com/) → [**iCloud Drive**](https://www.icloud.com/iclouddrive)
-  - [Read why.](/notes/dropping-dropbox/)
 - [~~VLC~~](https://www.videolan.org/vlc/index.html) → [**IINA**](https://iina.io/)
 - [**Backblaze**](https://www.backblaze.com/) [(referral link)](https://secure.backblaze.com/r/00x84e)
 - [**Transmission**](https://transmissionbt.com/)
@@ -91,6 +120,7 @@ layout: etc
 - [**DaisyDisk**](https://daisydiskapp.com/)
 - [**CleanMyMac X**](https://macpaw.com/cleanmymac)
 - [**Paragon NTFS**](https://www.paragon-software.com/us/home/ntfs-mac/#)
+- [**The Unarchiver**](https://theunarchiver.com/)
 - [**iStat Menus**](https://bjango.com/mac/istatmenus/)
 - [**Beamer**](https://beamer-app.com/)
 - [**Amphetamine**](https://roaringapps.com/app/amphetamine)
@@ -118,26 +148,22 @@ I have far too many apps to count, but here the essentials that have earned a sp
 
 ---
 
-## 🍎&nbsp; Hardware {#hardware}
+## ☁️&nbsp; Cloud {#cloud}
 
-- **MacBook Pro 15"** (2018)
-  - Core i9 @ 2.9 GHZ 🔥 🚒
-  - 32 GB RAM
-  - 1 TB SSD
-  - Radeon Pro 560X – 4 GB
-- **iPhone 11 Pro**
-  - 512 GB in Midnight Green 😎
-  - [Evutec Karbon case](https://evutec.com/collections/all-iphone-11-cases/products/evutec-karbon-iphone-11-pro-5-8-inch-unique-hard-smooth-heavy-duty-phone-case-cover-real-aramid-fiber-strong-protective-slim-1-6mm-durable-black-afix-free-vent-mount)
-- **iPad Pro 10.5"** (2017)
-  - 256 GB in Space Gray
-  - Smart Keyboard & Apple Pencil
-- **Apple Watch Series 3** (GPS + Cellular on Verizon)
-  - Stainless Steel – Space Black
-  - 38mm (I have incredibly small wrists.)
-  - Usually either the Midnight Blue sport band or 🏳️‍🌈 woven nylon band.
-- [**Powerbeats<sup>3</sup> Wireless**](https://www.beatsbydre.com/earphones/powerbeats3-wireless) (in the pretty rad [Pop Indigo](https://www.apple.com/shop/product/MREQ2LL/A/powerbeats3-wireless-earphones-beats-pop-collection-pop-indigo) color)
-  - I also have incredibly weird ears, apparently, so my AirPods went right back to the store when they came out. 😢
-  - ...but these are a great alternative with the [same pairing and continuity features](https://www.soundguys.com/how-does-apple-w1-chip-work-21049/) between all of my 🍎 devices.
+I've been making recent efforts to [de-Google](https://www.reddit.com/r/degoogle/) my life, with mixed results...
+
+- ~~Gmail~~ → [**Fastmail**](https://www.fastmail.com/) [(referral link)](https://ref.fm/u20274504)
+- ~~Chrome~~ → [**Firefox Developer Edition**](#browsing) 🦊
+- ~~Google Drive~~ → [~~Dropbox~~](https://www.dropbox.com/) → [**iCloud Drive**](https://www.icloud.com/iclouddrive)
+  - [Read why.](/notes/dropping-dropbox/)
+- ~~Google Docs~~ → [**Microsoft Office**](https://products.office.com/en-us/mac/microsoft-office-for-mac) (hey, it works 🤷)
+- ~~Google Photos~~ → [**iCloud Photos**](https://www.icloud.com/photos/)
+- ~~Google DNS~~ → [**Cloudflare 1.1.1.1**](https://1.1.1.1/)
+- ~~Google Analytics~~ → [**Matomo**](https://github.com/matomo-org/matomo), [**Fathom**](https://usefathom.com/), [**Netlify Analytics**](https://www.netlify.com/products/analytics/) [(my review)](/notes/netlify-analytics-review/)
+- [**Netlify**](https://www.netlify.com/) for static sites.
+- [**Linode**](https://www.linode.com/) for virtual servers.
+- [**Backblaze**](https://www.backblaze.com/) [(referral link)](https://secure.backblaze.com/r/00x84e)
+- [**Plex**](https://www.plex.tv/) + [**Sonarr**](https://sonarr.tv/) + [**Radarr**](https://radarr.video/)
 
 ---
 
@@ -145,6 +171,7 @@ I have far too many apps to count, but here the essentials that have earned a sp
 
 - [**Synology RT2600ac**](https://www.synology.com/en-us/products/RT2600ac)
 - [**Synology DiskStation DS218+**](https://www.synology.com/en-us/products/DS218+)
+- [**Dell Inspiron 3647**](https://www.cnet.com/products/dell-inspiron-3647-desktop-computer-fddonp321s/) running [**VMware ESXi**](https://www.vmware.com/products/esxi-and-esx.html) as a really, _really_ crappy home server.
 - [**Philips Hue**](https://www2.meethue.com/en-us) — color bulbs, dimmer switches, etc.
-- 2x [**Sonos One**](https://www.sonos.com/en-us/shop/one.html)
+- 2x [**Sonos One**](https://www.sonos.com/en-us/shop/one.html) (with Alexa turned off...allegedly.)
 - [**Petcube Play**](https://petcube.com/play/) 😻
