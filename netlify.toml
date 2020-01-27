@@ -44,7 +44,7 @@
     # X-XSS-Protection = "1; mode=block; report=https://jarvis.report-uri.com/r/d/xss/enforce"
     X-Pingback = "https://jarv.is/ping/xmlrpc"
     X-Got-Milk = "always"
-    X-View-Source = "https://go.jarv.is/source"
+    X-View-Source = "https://github.com/jakejarvis/jarv.is"
 
 # PGP file: open in browser, download correctly
 [[headers]]
@@ -54,7 +54,7 @@
     Content-Type = "text/plain; charset=UTF-8"
     Content-Disposition = "inline; filename=\"jarvis.asc\""
 
-# Redirect www and Netlify subdomains to primary domain:
+# Redirect Netlify and www subdomains to primary domain:
 [[redirects]]
   from = "https://jakejarvis.netlify.com/*"
   to = "https://jarv.is/:splat"
@@ -71,32 +71,26 @@
   from = "/feed"
   to = "/feed.xml"
   status = 301
-  force = true
 [[redirects]]
   from = "/rss"
   to = "/feed.xml"
   status = 301
-  force = true
 [[redirects]]
   from = "/index.xml"
   to = "/feed.xml"
   status = 301
-  force = true
 [[redirects]]
   from = "/index.php*"
   to = "/"
   status = 301
-  force = true
 [[redirects]]
   from = "/blog/*"
   to = "/notes/"
   status = 301
-  force = true
 [[redirects]]
   from = "/archives/*"
   to = "/notes/"
   status = 301
-  force = true
 
 # Proxy these directories from elsewhere to mimic GitHub Pages behavior and
 # keep this main repository squeaky clean.
@@ -156,19 +150,15 @@
   from = "*/wp-login.php"
   to = "/403.html"
   status = 403
-  force = true
 [[redirects]]
   from = "*/wp-admin/*"
   to = "/403.html"
   status = 403
-  force = true
 [[redirects]]
   from = "/login"
   to = "/403.html"
   status = 403
-  force = true
 [[redirects]]
   from = "*/login.php"
   to = "/403.html"
   status = 403
-  force = true

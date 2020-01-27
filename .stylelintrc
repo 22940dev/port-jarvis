@@ -1,8 +1,6 @@
 {
   "extends": "stylelint-config-sass-guidelines",
-  "plugins": [
-    "stylelint-declaration-block-no-ignored-properties"
-  ],
+  "plugins": [],
   "rules": {
     "color-hex-length": "long",
     "function-parentheses-space-inside": null,
@@ -11,7 +9,6 @@
     "max-nesting-depth": 5,
     "number-no-trailing-zeros": null,
     "order/properties-alphabetical-order": null,
-    "plugin/declaration-block-no-ignored-properties": true,
     "rule-empty-line-before": null,
     "scss/dollar-variable-colon-space-after": null,
     "selector-list-comma-newline-after": null,

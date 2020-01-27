@@ -10,6 +10,7 @@ span.wave {
   transform-origin: 70% 70%;
 }
 
+// stylelint-disable indentation
 @keyframes wave {
   0% { transform: rotate(  0.0deg); }
  10% { transform: rotate(-10.0deg); }
