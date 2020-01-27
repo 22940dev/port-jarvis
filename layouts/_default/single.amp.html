@@ -28,8 +28,8 @@
         font-style: normal;
         font-weight: 400;
         font-display: swap;
-        src: url("{{ "fonts/inter-regular.woff2" | absURL }}") format("woff2"),
-             url("{{ "fonts/inter-regular.woff" | absURL }}") format("woff");
+        src: url("{{ "fonts/inter-regular-subset.woff2" | absURL }}") format("woff2"),
+             url("{{ "fonts/inter-regular-subset.woff" | absURL }}") format("woff");
         unicode-range: U+0000-00FF, U+2000-206F, U+20A0-20CF,
                        U+2190-21FF, U+2200-22FF, U+2122;
       }
@@ -38,8 +38,8 @@
         font-style: normal;
         font-weight: 500;
         font-display: swap;
-        src: url("{{ "fonts/inter-medium.woff2" | absURL }}") format("woff2"),
-             url("{{ "fonts/inter-medium.woff" | absURL }}") format("woff");
+        src: url("{{ "fonts/inter-medium-subset.woff2" | absURL }}") format("woff2"),
+             url("{{ "fonts/inter-medium-subset.woff" | absURL }}") format("woff");
         unicode-range: U+0000-00FF, U+2000-206F, U+20A0-20CF,
                        U+2190-21FF, U+2200-22FF, U+2122;
       }
@@ -48,11 +48,20 @@
         font-style: normal;
         font-weight: 700;
         font-display: swap;
-        src: url("{{ "fonts/inter-bold.woff2" | absURL }}") format("woff2"),
-             url("{{ "fonts/inter-bold.woff" | absURL }}") format("woff");
+        src: url("{{ "fonts/inter-bold-subset.woff2" | absURL }}") format("woff2"),
+             url("{{ "fonts/inter-bold-subset.woff" | absURL }}") format("woff");
         unicode-range: U+0000-00FF, U+2000-206F, U+20A0-20CF,
                        U+2190-21FF, U+2200-22FF, U+2122;
       }
+      @font-face {
+        font-family: "Hack";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("{{ "fonts/hack-regular-subset.woff2" | absURL }}") format("woff2"),
+             url("{{ "fonts/hack-regular-subset.woff" | absURL }}") format("woff");
+      }
+
 
       body {
         font-family: "Inter", sans-serif;
@@ -171,9 +180,9 @@
         text-align: right;
       }
       div.highlight, code {
-        font-family: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
+        font-family: "Hack", monospace;
         background: #f4f4f4;
-        font-size: 0.9em;
+        font-size: 0.95em;
         letter-spacing: 0;
         page-break-inside: avoid;
       }

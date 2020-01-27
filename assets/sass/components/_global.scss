@@ -111,12 +111,6 @@ div#content {
     max-width: 100%;
     height: auto;
     border: 0;
-
-    // Subtitle caption styling
-    // stylelint-disable-next-line selector-pseudo-element-no-unknown
-    &::cue {
-      font-family: inherit;
-    }
   }
 
   div.embed {
@@ -163,9 +157,9 @@ div#content {
   // all code
   code,
   div.highlight {
-    font-family: $system-fonts-monospace;
+    font-family: $webfont-hack;
     background: $color-super-light;
-    font-size: 0.9em;
+    font-size: 0.95em;
     letter-spacing: 0;
     page-break-inside: avoid;
   }

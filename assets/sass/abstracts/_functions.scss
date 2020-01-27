@@ -13,8 +13,8 @@
 }
 
 // Web fonts (see components/_fonts.scss)
-@mixin font-face($family, $src,
-                 $weight: normal, $style: normal, $display: swap) {
+// stylelint-disable indentation
+@mixin font-face($family, $src, $weight: normal, $range: false, $style: normal, $display: swap) {
 	@font-face {
     font-family: $family;
     font-style: $style;
@@ -25,7 +25,9 @@
     // src: local("#{$src-local}"), local("#{$src-local-alt}"),
     //      url('#{$src}.ttf') format('truetype'),
     //      url('#{$src}.eot') format('embedded-opentype');
-    unicode-range: U+0000-00FF, U+2000-206F, U+20A0-20CF,
-                   U+2190-21FF, U+2200-22FF, U+2122;
+    @if $range {
+      unicode-range: U+0000-00FF, U+2000-206F, U+20A0-20CF,
+                     U+2190-21FF, U+2200-22FF, U+2122;
+    }
   }
 }

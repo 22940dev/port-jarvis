@@ -1,6 +1,9 @@
 @charset "UTF-8";
 
-/*! Inter UI | SIL Open Font License 1.1 | https://rsms.me/inter/ */
-@include font-face("Inter", "./fonts/inter-regular-subset", 400);
-@include font-face("Inter", "./fonts/inter-medium-subset", 500);
-@include font-face("Inter", "./fonts/inter-bold-subset", 700);
+/*! Inter Typeface | SIL Open Font License 1.1 | https://rsms.me/inter/ */
+@include font-face("Inter", "./fonts/inter-regular-subset", 400, true);
+@include font-face("Inter", "./fonts/inter-medium-subset", 500, true);
+@include font-face("Inter", "./fonts/inter-bold-subset", 700, true);
+
+/*! Hack Typeface | MIT License | https://sourcefoundry.org/hack/ */
+@include font-face("Hack", "./fonts/hack-regular-subset", 400);
