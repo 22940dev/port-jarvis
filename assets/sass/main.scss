@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-/*! Compiled CSS from SASS: https://go.jarv.is/ssKHe */
-
 // Variables & Functions
 @import 'abstracts/variables';
 @import 'abstracts/functions';
@@ -11,6 +9,7 @@
 @import 'components/global';
 @import 'components/header';
 @import 'components/footer';
+@import 'components/content';
 
 // Pages
 @import 'pages/home';

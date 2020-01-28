@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
-// System fonts and web fonts
+// Web fonts
+$webfont-sans: "Inter", sans-serif;
+$webfont-mono: "Hack", monospace;
+
+// System fonts
 // https://markdotto.com/2018/02/07/github-system-fonts/
 // stylelint-disable indentation
 $system-fonts: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -10,8 +14,6 @@ $system-fonts: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 $system-fonts-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $system-fonts-monospace: "SFMono-Regular", "Consolas", "Liberation Mono",
                "Menlo", "Courier", monospace;
-$webfont-inter: "Inter", sans-serif;
-$webfont-hack: "Hack", monospace;
 
 // Misc Settings
 $responsive-width: 890px;

@@ -5,6 +5,7 @@
   @include responsive--global();
   @include responsive--header();
   @include responsive--footer();
+  @include responsive--content();
 
   @include responsive--home();
   @include responsive--list();

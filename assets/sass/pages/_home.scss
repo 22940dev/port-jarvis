@@ -38,17 +38,6 @@ main#home {
     vertical-align: middle;
   }
 
-  // non-link colors
-  span {
-    &#serverless {
-      color: $color-serverless;
-    }
-
-    &#shh {
-      color: $color-medium-light;
-    }
-  }
-
   img#me {
     float: right;
     margin: 0 0 0.5em 1em;
@@ -60,7 +49,7 @@ main#home {
   }
 
   a {
-    // Loop through $colors-home -- the main reason I switched to SASS :)
+    // Loop through $colors-home (see abstracts/_variables)
     @each $id, $color in $colors-home {
       &##{$id} {
         color: $color;
@@ -83,6 +72,17 @@ main#home {
         // stylelint-disable-next-line function-url-quotes
         cursor: url(data:image/svg+xml;utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzNiIgdmlld3BvcnQ9IjAgMCAxMDAgMTAwIiBzdHlsZT0iZm9udC1zaXplOjE4cHgiPjx0ZXh0IHk9IjUwJSI+8J+nmjwvdGV4dD48L3N2Zz4=) 5 5, auto;
       }
+    }
+  }
+
+  // non-link colors
+  span {
+    &#serverless {
+      color: $color-serverless;
+    }
+
+    &#shh {
+      color: $color-medium-light;
     }
   }
 }
