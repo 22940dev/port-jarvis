@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+// Note to self: got this list after subsetting Inter with glyphhanger:
+// https://github.com/filamentgroup/glyphhanger
+// ex: glyphhanger --whitelist="" --family="Inter" --formats=woff2,woff --subset="*.woff"
+$unicode-subset: U+0000-00FF, U+2000-206F, U+20A0-20CF, U+2190-21FF, U+2200-22FF, U+2122;
+
 /*!
  *  Inter typeface v3.11 - https://rsms.me/inter/
  *
@@ -7,9 +12,15 @@
  *  Licensed under the SIL Open Font License, Version 1.1:
  *  https://github.com/rsms/inter/blob/v3.11/LICENSE.txt
  */
-@include font-face("Inter", "./fonts/inter-regular-subset", 400, true);
-@include font-face("Inter", "./fonts/inter-medium-subset", 500, true);
-@include font-face("Inter", "./fonts/inter-bold-subset", 700, true);
+@include font-face("Inter", "fonts/inter-regular-subset", 400) {
+  unicode-range: $unicode-subset;
+}
+@include font-face("Inter", "fonts/inter-medium-subset", 500) {
+  unicode-range: $unicode-subset;
+}
+@include font-face("Inter", "fonts/inter-bold-subset", 700) {
+  unicode-range: $unicode-subset;
+}
 
 /*!
  *  Hack typeface v3.003 - https://sourcefoundry.org/hack/
@@ -18,4 +29,4 @@
  *  Licensed under the MIT License:
  *  https://github.com/source-foundry/Hack/blob/v3.003/LICENSE.md
  */
-@include font-face("Hack", "./fonts/hack-regular-subset", 400);
+@include font-face("Hack", "fonts/hack-regular-subset", 400);
