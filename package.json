@@ -27,7 +27,7 @@
     "lint:markdown": "markdownlint content/**/*.md",
     "lint:sass": "stylelint assets/sass/**/* --syntax scss",
     "lint:links": "linkinator http://localhost:1313/ --recurse --silent --skip https://www.shodan.io/ --skip https://images.shodan.io/ --skip https://archive.today/ --skip https://archive.is/ --skip https://www.linkedin.com/ --skip http://localhost:1313/y2k/ --skip 'asdfasdf404/?$'",
-    "debug:hugo": "hugo version; hugo env",
+    "debug:hugo": "hugo version && hugo env",
     "debug:size": "get-folder-size --folder=public"
   },
   "dependencies": {},
@@ -36,7 +36,7 @@
     "cross-env": "^7.0.0",
     "get-folder-size": "^2.0.1",
     "html-minifier": "^4.0.0",
-    "hugo-bin": "0.51.2",
+    "hugo-extended": "0.63.2",
     "imagemin-cli": "^5.1.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-jpegoptim": "^6.0.0",
@@ -59,8 +59,5 @@
     "node": ">=12.13.0",
     "npm": "^6.13.0",
     "yarn": "^1.19.2"
-  },
-  "hugo-bin": {
-    "buildTags": "extended"
   }
 }
