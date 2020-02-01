@@ -32,6 +32,7 @@
     Hugo extended
     Netlify
     Commento
+    Simple Analytics
     ...and much more: https://jarv.is/uses/
 
 # VIEW SOURCE

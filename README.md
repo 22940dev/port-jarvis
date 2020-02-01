@@ -8,6 +8,7 @@ Personal website of [@jakejarvis](https://github.com/jakejarvis), created and de
 - [Hugo extended](https://github.com/gohugoio/hugo)
 - [Netlify](https://www.netlify.com/)
 - [Commento](https://gitlab.com/commento/commento)
+- [Simple Analytics](https://simpleanalytics.com/) ([referral link](https://referral.simpleanalytics.com/jake-jarvis))
 - [...and much more.](https://jarv.is/uses/)
 
 I keep an ongoing list of [blog post ideas](https://github.com/jakejarvis/jarv.is/issues/1) and [coding to-dos](https://github.com/jakejarvis/jarv.is/issues/11) as issues in this repo.
