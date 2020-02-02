@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     {{ hugo.Generator }}
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     {{ if .HasShortcode "video" }}<script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>{{ end }}
     {{ if .HasShortcode "youtube" }}<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>{{ end }}
@@ -258,39 +257,9 @@
       <div class="right"><a class="back-to-top" href="#top">↑ Back to top.</a></div>
     </footer>
 
-<!-- Manually send pageview to Simple Analytics API -->
-<!-- https://docs.simpleanalytics.com/server-side-tracking -->
-<amp-analytics>
-<script type="application/json">
-{
-  "requests": {
-    "event": "https://s.jarv.is/api"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "event"
-    }
-  },
-  "extraUrlParams": {
-    "url": "{{ (.OutputFormats.Get "html").Permalink }}",
-    "urlReferrer": "AMP"
-  },
-  "transport": {
-    "beacon": true,
-    "xhrpost": false,
-    "image": false,
-    "useBody": true
-  }
-}
-</script>
-</amp-analytics>
-
-{{ if eq hugo.Environment "production" }}
-<!-- Alternate option: -->
-<!--<amp-pixel src="https://s.jarv.is/image.gif" layout="nodisplay"></amp-pixel>-->
-{{ end }}
-
+    {{ if eq hugo.Environment "production" }}
+    <amp-pixel src="https://s.jarv.is/image.gif" layout="nodisplay"></amp-pixel>
+    {{ end }}
   </body>
 </html>
 
