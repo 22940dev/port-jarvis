@@ -94,6 +94,7 @@ layout: etc
     - [Facebook Container](https://addons.mozilla.org/en-US/firefox/addon/facebook-container/)
     - [Firefox Multi-Account Containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)
     - [Hide Private Mode](https://addons.mozilla.org/en-US/firefox/addon/hide-private-mode/)
+    - [HTTP Header Spy](https://addons.mozilla.org/en-US/firefox/addon/http-header-spy/)
     - [HTTPS Everywhere](https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/)
     - [Mailvelope](https://addons.mozilla.org/en-US/firefox/addon/mailvelope/)
     - [React Developer Tools](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
@@ -102,6 +103,7 @@ layout: etc
     - [Search by Image on Google](https://addons.mozilla.org/en-US/firefox/addon/search-by-image-on-google/)
     - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
     - [View Image](https://addons.mozilla.org/en-US/firefox/addon/view-image/)
+    - [Wappalyzer](https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/)
 - [**Google Chrome** (Dev Channel)](https://www.google.com/chrome/browser/?extra=devchannel) — for testing **only!**
   - [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?h1=en)
   - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
@@ -153,13 +155,14 @@ I have far too many apps to count, but here the essentials that have earned a sp
 I've been making recent efforts to [de-Google](https://www.reddit.com/r/degoogle/) my life, with mixed results...
 
 - ~~Gmail~~ → [**Fastmail**](https://www.fastmail.com/) [(referral link)](https://ref.fm/u20274504)
-- ~~Chrome~~ → [**Firefox Developer Edition**](#browsing) 🦊
 - ~~Google Drive~~ → [~~Dropbox~~](https://www.dropbox.com/) → [**iCloud Drive**](https://www.icloud.com/iclouddrive)
   - [Read why.](/notes/dropping-dropbox/)
 - ~~Google Docs~~ → [**Microsoft Office**](https://products.office.com/en-us/mac/microsoft-office-for-mac) (hey, it works 🤷)
 - ~~Google Photos~~ → [**iCloud Photos**](https://www.icloud.com/photos/)
 - ~~Google DNS~~ → [**Cloudflare 1.1.1.1**](https://1.1.1.1/)
-- ~~Google Analytics~~ → [**Matomo**](https://github.com/matomo-org/matomo), [**Fathom**](https://usefathom.com/), [**Netlify Analytics**](https://www.netlify.com/products/analytics/) [(my review)](/notes/netlify-analytics-review/)
+- ~~Google Analytics~~ → both of these are awesome, privacy-aware "visitor counters" rather than trackers:
+  - [**Netlify Analytics**](https://www.netlify.com/products/analytics/) [(my review)](/notes/netlify-analytics-review/)
+  - [**Simple Analytics**](https://simpleanalytics.com/) [(referral link)](https://referral.simpleanalytics.com/jake-jarvis)
 - [**Netlify**](https://www.netlify.com/) for static sites.
 - [**Linode**](https://www.linode.com/) for virtual servers.
 - [**Backblaze**](https://www.backblaze.com/) [(referral link)](https://secure.backblaze.com/r/00x84e)

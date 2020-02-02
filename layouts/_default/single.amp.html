@@ -257,8 +257,9 @@
       <div class="right"><a class="back-to-top" href="#top">↑ Back to top.</a></div>
     </footer>
 
-    <!-- Simple Analytics -->
+    {{ if eq hugo.Environment "production" }}
     <amp-pixel src="https://s.jarv.is/image.gif" layout="nodisplay"></amp-pixel>
+    {{ end }}
   </body>
 </html>
 

@@ -36,7 +36,7 @@
     "cross-env": "^7.0.0",
     "get-folder-size": "^2.0.1",
     "html-minifier": "^4.0.0",
-    "hugo-extended": "0.63.2",
+    "hugo-extended": "git+https://github.com/jakejarvis/hugo-extended.git#master",
     "imagemin-cli": "^5.1.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-jpegoptim": "^6.0.0",
