@@ -54,6 +54,13 @@
     Content-Type = "text/plain; charset=UTF-8"
     Content-Disposition = "inline; filename=\"jarvis.asc\""
 
+# AMP cache invalidation key requirements
+# https://developers.google.com/amp/cache/update-cache#update-cache-guidelines
+[[headers]]
+  for = "/.well-known/amphtml/apikey.pub"
+  [headers.values]
+    Content-Type = "text/plain; charset=UTF-8"
+
 # Redirect Netlify and www subdomains to primary domain:
 [[redirects]]
   from = "https://jakejarvis.netlify.com/*"

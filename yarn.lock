@@ -2312,7 +2312,7 @@ https-proxy-agent@^4.0.0:
 
 "hugo-extended@git+https://github.com/jakejarvis/hugo-extended.git#master":
   version "0.63.2"
-  resolved "git+https://github.com/jakejarvis/hugo-extended.git#32b8bb651270c3875f75160ef8fa375b2951aac9"
+  resolved "git+https://github.com/jakejarvis/hugo-extended.git#f6b20c2deeabdc9d45f49ee9cfa3f8d7c704737a"
   dependencies:
     bin-wrapper "^4.1.0"
     rimraf "^3.0.1"
