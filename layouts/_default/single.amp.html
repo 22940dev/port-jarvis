@@ -14,7 +14,7 @@
     {{ if .HasShortcode "vimeo" }}<script async custom-element="amp-gist" src="https://cdn.ampproject.org/v0/amp-vimeo-0.1.js"></script>{{ end }}
     <title>{{ .Title }} &ndash; {{ .Site.Title }}</title>
     {{ with .OutputFormats.Get "html" }}<link rel="canonical" href="{{ .Permalink }}">{{ end }}
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <meta name="author" content="{{ .Site.Author.name }}">
     {{ partial "head/open-graph" . }}
