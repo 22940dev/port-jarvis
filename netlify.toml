@@ -3,8 +3,8 @@
   publish = "public"
 
 [build.environment]
-  NODE_VERSION = "12.14.1"
-  YARN_VERSION = "1.21.1"
+  NODE_VERSION = "12.16.1"
+  YARN_VERSION = "1.22.0"
   YARN_FLAGS = "--no-ignore-optional --frozen-lockfile"
 
 # Ensure *only* Pretty URLs are enabled, even though this is already set up in
