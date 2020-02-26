@@ -4,7 +4,7 @@
   "@context": "http://schema.org",
   "@type": "Person",
   "@id": {{ path.Join $.Site.BaseURL "#author" }},
-  "name": {{ $.Site.Author.name }},
+  "name": {{ .name }},
   "url": {{ $.Site.BaseURL }},
   "description": {{ $.Site.Params.description }},
   {{ with .jobtitle }}"jobTitle": {{ . }},{{ end }}
