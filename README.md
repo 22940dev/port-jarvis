@@ -18,18 +18,18 @@ I keep an ongoing list of [blog post ideas](https://github.com/jakejarvis/jarv.i
 
 #### Using Yarn/NPM:
 
-Run `yarn install` ([Yarn must be installed](https://yarnpkg.com/en/docs/install) first, or use `npm install`) and `yarn start` (or `npm start`), then open [http://localhost:1313/](http://localhost:1313/). Pages will live-refresh when source files are changed.
+Run `yarn install` ([Yarn must be installed](https://yarnpkg.com/en/docs/install) first, or use `npm install`) and `yarn start` (or `npm start`), then open [http://localhost:1337/](http://localhost:1337/). Pages will live-refresh when source files are changed.
 
 #### Using Docker:
 
 To ensure consistency and compatibility, the [`Dockerfile`](Dockerfile) in this repository will download the Hugo Extended binary and its dependencies, and start a live testing server.
 
 ```bash
-docker build -t jarv.is:develop -f Dockerfile .
-docker run -v $(pwd):/src -p 1313:1313 jarv.is:develop
+docker build -t jarv.is -f Dockerfile .
+docker run -v $(pwd):/src -p 1337:1337 jarv.is
 ```
 
-...then open [http://localhost:1313/](http://localhost:1313/) as above.
+...then open [http://localhost:1337/](http://localhost:1337/) as above.
 
 
 ## Licenses

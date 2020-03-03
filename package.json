@@ -19,7 +19,7 @@
     "build:preview": "run-s clean hugo:dev",
     "hugo": "hugo --gc --cleanDestinationDir --verbose",
     "hugo:dev": "hugo --environment development --baseURL \"${DEPLOY_PRIME_URL:-/}\" --buildDrafts --buildFuture --gc --cleanDestinationDir --verbose",
-    "start": "hugo server --buildDrafts --buildFuture --port 1313 --bind 0.0.0.0 --verbose",
+    "start": "hugo server --buildDrafts --buildFuture --port 1337 --bind 0.0.0.0 --verbose",
     "optimize": "run-s optimize:**",
     "optimize:html": "html-minifier --html5 --collapse-whitespace --collapse-boolean-attributes --preserve-line-breaks --minify-css --file-ext html --input-dir public --output-dir public **/*.html",
     "optimize:img": "find public/ -type d | xargs -n1 -P8 -I{} imagemin {}/* --plugin=jpegoptim --plugin.jpegoptim.progressive --plugin.jpegoptim.stripAll --plugin=pngquant --plugin.pngquant.speed=5 --plugin.pngquant.strip --plugin=optipng --plugin.optipng.optimizationLevel=2 --plugin=svgo --plugin=gifsicle --out-dir={}",
@@ -27,7 +27,7 @@
     "lint:sass": "stylelint assets/sass/**/* --syntax scss",
     "lint:markdown": "markdownlint --rules markdownlint-rule-emphasis-style content/**/*.md",
     "lint:spellcheck": "mdspell --en-us --ignore-numbers --ignore-acronyms --report content/**/*.md content/notes/**/*.md content/_index.html",
-    "lint:links": "linkinator http://localhost:1313/ --recurse --silent --skip https://www.shodan.io/ --skip https://images.shodan.io/ --skip https://archive.today/ --skip https://archive.is/ --skip https://www.linkedin.com/ --skip http://localhost:1313/y2k/ --skip 'asdfasdf404/?$' || true",
+    "lint:links": "linkinator http://localhost:1337/ --recurse --silent --skip https://www.shodan.io/ --skip https://images.shodan.io/ --skip https://archive.today/ --skip https://archive.is/ --skip https://www.linkedin.com/ --skip http://localhost:1337/y2k/ --skip 'asdfasdf404/?$' || true",
     "debug:hugo": "hugo version && hugo env",
     "debug:size": "get-folder-size --folder=public"
   },
