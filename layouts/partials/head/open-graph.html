@@ -25,7 +25,7 @@
 {{- end }}
 
 {{ with .Site.Author.facebookid }}<meta property="fb:admins" content="{{ . }}">{{ end }}
-{{ with .Site.Params.facebookappid }}<meta property="fb:app_id" content="{{ . }}">{{ end }}
+{{ with .Site.Params.facebookAppID }}<meta property="fb:app_id" content="{{ . }}">{{ end }}
 
 <meta name="twitter:card" content="{{ if .IsPage }}summary_large_image{{ else }}summary{{ end }}">
 <meta name="twitter:domain" content="{{ .Site.Params.domain }}">

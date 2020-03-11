@@ -7,14 +7,16 @@ timeout = 120000
 
 canonifyURLs = true
 
-disableKinds = ["taxonomy", "taxonomyTerm"]
-disableHugoGeneratorInject = true   # don't worry, inserted manually :)
-
 pygmentsUseClasses = true
 pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = false
 
 enableRobotsTXT = true
+
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+# don't worry, inserted manually :)
+disableHugoGeneratorInject = true
 
 # prefer Netlify's _redirects file, see outputs below
 disableAliases = true
@@ -27,10 +29,9 @@ disableAliases = true
   defaultImage = "/me_large.jpg"
   copyrightFirstYear = "2001"
   wayback = "https://web.archive.org/web/20010501000000*/jakejarvis.com"
-
-[params.algolia]
-  vars = ["title", "summary", "date", "permalink", "draft"]
-  params = ["tags"]
+  license = "CC-BY-4.0"
+  licenseFull = "Creative Commons Attribution 4.0 International"
+  licenseURL = "https://creativecommons.org/licenses/by/4.0/"
 
 [author]
   name = "Jake Jarvis"
@@ -72,6 +73,7 @@ disableAliases = true
   [outputFormats.MANIFEST]
     mediaType = "application/json"
     baseName = "manifest"
+    isPlainText = true
     notAlternative = true
   [outputFormats.REDIRECTS]
     mediaType = "text/netlify"

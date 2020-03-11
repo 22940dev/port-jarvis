@@ -1,5 +1,5 @@
 {{/* Default image */}}
-{{- $defaultImagePath := (path.Join "content" $.Site.Params.defaultimage) }}
+{{- $defaultImagePath := (path.Join "content" $.Site.Params.defaultImage) }}
 {{ $.Scratch.Set "defaultImage_url" (replace $defaultImagePath "content/" "") }}
 {{ with (imageConfig $defaultImagePath) }}
   {{- $.Scratch.Set "defaultImage_width" .Width }}

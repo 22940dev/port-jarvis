@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     {{ hugo.Generator }}
-    <meta name="robots" content="noindex">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Page Not Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+
     <style>
       body {
         background: #efefef;
@@ -46,6 +47,8 @@
         }
       }
     </style>
+
+    {{ partialCached "head/favicons" (dict "pngSizes" "192 48 32 16" "icoSizes" "16 32 48") }}
   </head>
   <body>
     <div id="message">

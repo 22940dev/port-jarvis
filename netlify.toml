@@ -4,7 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "12.16.1"
-  YARN_VERSION = "1.22.0"
+  YARN_VERSION = "1.22.4"
   YARN_FLAGS = "--no-ignore-optional --frozen-lockfile"
 
 # Ensure *only* Pretty URLs are enabled, even though this is already set up in
@@ -27,6 +27,14 @@
 
 [context.branch-deploy]
   command = "yarn build:preview"
+
+# https://github.com/netlify/cli/blob/master/docs/netlify-dev.md#netlifytoml-dev-block
+[dev]
+  command = "yarn start"
+  port = 1338
+  targetPort = 1337
+  publish = "public"
+  autoLaunch = false
 
 
 # The most important headers and redirects are specified in the _headers and
