@@ -14,7 +14,7 @@
     "url": "git+https://github.com/jakejarvis/jarv.is.git"
   },
   "scripts": {
-    "clean": "rimraf public/ resources/",
+    "clean": "rimraf public/ resources/ builds/",
     "build": "run-s clean hugo optimize",
     "build:preview": "run-s clean hugo:dev",
     "hugo": "hugo --gc --cleanDestinationDir --verbose",
@@ -24,21 +24,16 @@
     "optimize:html": "html-minifier --html5 --collapse-whitespace --collapse-boolean-attributes --preserve-line-breaks --minify-css --file-ext html --input-dir public --output-dir public **/*.html",
     "optimize:img": "find public/ -type d | xargs -n1 -P8 -I{} imagemin {}/* --plugin=jpegoptim --plugin.jpegoptim.progressive --plugin.jpegoptim.stripAll --plugin=pngquant --plugin.pngquant.speed=5 --plugin.pngquant.strip --plugin=optipng --plugin.optipng.optimizationLevel=2 --plugin=svgo --plugin=gifsicle --out-dir={}",
     "lint": "run-s lint:**",
-    "lint:sass": "stylelint assets/sass/**/* --syntax scss",
-    "lint:markdown": "markdownlint --rules markdownlint-rule-emphasis-style content/**/*.md",
-    "lint:spellcheck": "mdspell --en-us --ignore-numbers --ignore-acronyms --report content/**/*.md content/notes/**/*.md content/_index.html",
-    "lint:links": "linkinator http://localhost:1337/ --recurse --silent --skip https://www.shodan.io/ --skip https://images.shodan.io/ --skip https://archive.today/ --skip https://archive.is/ --skip https://www.linkedin.com/ --skip http://localhost:1337/y2k/ --skip 'asdfasdf404/?$' || true",
+    "lint:scss": "stylelint assets/sass/**/* --syntax scss",
+    "lint:md": "markdownlint --rules markdownlint-rule-emphasis-style content/**/*.md",
     "index": "run-s clean hugo index:** clean",
-    "index:algolia": "atomic-algolia",
-    "debug:hugo": "hugo version && hugo env",
-    "debug:size": "get-folder-size --folder=public"
+    "index:algolia": "atomic-algolia"
   },
   "dependencies": {},
   "devDependencies": {
     "atomic-algolia": "^0.3.17",
     "autoprefixer": "^9.7.4",
     "cross-env": "^7.0.2",
-    "get-folder-size": "^2.0.1",
     "html-minifier": "^4.0.0",
     "hugo-extended": "0.65.3",
     "husky": "^4.2.3",
@@ -49,9 +44,7 @@
     "imagemin-optipng": "^7.1.0",
     "imagemin-pngquant": "^8.0.0",
     "imagemin-svgo": "^7.1.0",
-    "linkinator": "^2.0.3",
     "lint-staged": "^10.0.8",
-    "markdown-spellcheck": "^1.3.1",
     "markdownlint-cli": "~0.22.0",
     "markdownlint-rule-emphasis-style": "~1.0.1",
     "npm-run-all": "^4.1.5",
@@ -70,15 +63,10 @@
   },
   "lint-staged": {
     "*.scss": [
-      "yarn lint:sass"
+      "yarn lint:scss"
     ],
     "*.md": [
-      "yarn lint:markdown"
+      "yarn lint:md"
     ]
-  },
-  "engines": {
-    "node": ">=12.13.0",
-    "npm": "^6.13.0",
-    "yarn": "^1.19.2"
   }
 }
