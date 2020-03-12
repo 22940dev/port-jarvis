@@ -19,9 +19,6 @@ I've been trying out [Netlify Analytics](https://www.netlify.com/products/analyt
 {{< image src="images/pageviews-2.png" alt="Pageview charts on Netlify Analytics" />}}
 
 
----
-
-
 ## 👍&nbsp; Pros {#pros}
 
 Pretty much all of the benefits of Netlify Analytics stem from the fact that it's **purely server-side software**. This is what singularly sets it apart from [Google Analytics](https://analytics.google.com/analytics/web/) — by _far_ the [status quo](https://trends.builtwith.com/analytics/Google-Analytics) — and even self-hosted, open-source applications I've tried like [Matomo](https://github.com/matomo-org/matomo) and [Fathom](https://github.com/usefathom/fathom).
@@ -59,9 +56,6 @@ Another tangential benefit you simply don't get from JavaScript-based tools like
 _Side note: This section has also become cluttered with requests from script kiddies who are scanning the internet for files like `login.php` and `/wp-admin` and `AspCms_Config.asp` (huh?) — but that's a whole separate problem for another day._
 
 
----
-
-
 ## 👎&nbsp; Cons {#cons}
 
 ### 💰&nbsp; Price {#price}
@@ -92,9 +86,7 @@ Sure, this is a cool bonus. However, "thirty days" has another meaning on Netlif
 
 I hope Netlify proves me wrong in Version 2, since analyzing trends over the course of a year (or two, or five) is an **integral reason** to track visitor behavior in the first place. Otherwise, it's nearly impossible to tell which piece of content or which new feature caused your website to explode in popularity, unless you're meticulously watching it happen in real time.
 
-
 ---
-
 
 I'm _super_ happy to see an investment in privacy-minded solutions for analytics, and [the Netlify team should be proud](https://www.youtube.com/watch?v=jMo0oQwTVak) of what they've built. And for the time being, I'm willing to continue forking over the nine bucks per month to give Netlify a chance to keep building upon this awesome (and, dare I say, [courageous](https://www.theverge.com/2016/9/7/12838024/apple-iphone-7-plus-headphone-jack-removal-courage)) concept. But only time will tell if others are willing to do the same — and if they are, how long they're willing to wait before resorting back to injecting bloated JavaScript snippets and hoarding invasive amounts of our data to share with the [behemoths of the internet](https://www.google.com/).
 

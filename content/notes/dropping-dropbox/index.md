@@ -16,7 +16,6 @@ I've been a loyal Dropbox user since its inception as a [Y Combinator startup](h
 
 {{< image src="images/email.png" width="504" >}}Deleting 401,907 files from Dropbox... 😬{{< /image >}}
 
----
 
 ## Five strikes, you're out...
 
@@ -33,7 +32,6 @@ Decisions made by the top folks at Dropbox gave me an increasingly sour taste in
 
 {{< video mp4="images/cancel.mp4" webm="images/cancel.webm" width="800" height="450" poster="images/cancel.png" >}}
 
----
 
 ## Seeking an alternative...
 

@@ -43,13 +43,11 @@ blockquote {
   padding-left: 1em;
 }
 
-// https://css-tricks.com/examples/hrs/
 hr {
-  width: 90%;
   margin: 1.5em auto;
-  border: 0;
   height: 2px;
-  background-image: linear-gradient(to right, #ffffff, #cccccc, #ffffff);
+  border: 0;
+  background-color: $color-light;
 }
 
 // all code

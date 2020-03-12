@@ -11,7 +11,6 @@ layout: etc
 
 {{< image src="images/desktop.png" alt="My mess of a desktop." />}}
 
----
 
 ## 🍎&nbsp; Hardware {#hardware}
 
@@ -34,7 +33,6 @@ layout: etc
   - I also have incredibly weird ears, apparently, so my AirPods went right back to the store when they came out. 😢
   - ...but these are a great alternative with the [same pairing and continuity features](https://www.soundguys.com/how-does-apple-w1-chip-work-21049/) between all of my 🍎 devices.
 
----
 
 ## 💾&nbsp; Development {#development}
 
@@ -79,7 +77,6 @@ layout: etc
 - [**ImageOptim**](https://imageoptim.com/mac)
 - [**Local by Flywheel**](https://localbyflywheel.com/)
 
----
 
 ## 🌎&nbsp; Browsing {#browsing}
 
@@ -108,7 +105,6 @@ layout: etc
   - [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?h1=en)
   - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 
----
 
 ## 💻&nbsp; macOS {#macos}
 
@@ -129,7 +125,6 @@ layout: etc
 - [**NVIDIA GeForce NOW** (beta)](https://www.nvidia.com/en-us/geforce-now/)
 - [**Microsoft Office**](https://products.office.com/en-us/mac/microsoft-office-for-mac)
 
----
 
 ## 📱&nbsp; iOS {#ios}
 
@@ -148,7 +143,6 @@ I have far too many apps to count, but here the essentials that have earned a sp
 - [**Reeder 4**](https://apps.apple.com/us/app/reeder-4/id1449412357)
 - [**Blink Shell**](https://apps.apple.com/us/app/blink-shell-mosh-ssh-client/id1156707581)
 
----
 
 ## ☁️&nbsp; Cloud {#cloud}
 
@@ -168,13 +162,12 @@ I've been making recent efforts to [de-Google](https://www.reddit.com/r/degoogle
 - [**Backblaze**](https://www.backblaze.com/) [(referral link)](https://secure.backblaze.com/r/00x84e)
 - [**Plex**](https://www.plex.tv/) + [**Sonarr**](https://sonarr.tv/) + [**Radarr**](https://radarr.video/)
 
----
 
 ## 🏠&nbsp; Internet of ~~Things~~ [Crap](/notes/shodan-search-queries/) {#home}
 
 - [**Synology RT2600ac**](https://www.synology.com/en-us/products/RT2600ac)
 - [**Synology DiskStation DS218+**](https://www.synology.com/en-us/products/DS218+)
-- [**Dell Inspiron 3647**](https://www.cnet.com/products/dell-inspiron-3647-desktop-computer-fddonp321s/) running [**VMware ESXi**](https://www.vmware.com/products/esxi-and-esx.html) as a really, *really* crappy home server.
+- [**Dell Inspiron 3647**](https://www.amazon.com/dp/B00HWML468/) running [**VMware ESXi**](https://www.vmware.com/products/esxi-and-esx.html) as a really, *really* crappy home server.
 - [**Philips Hue**](https://www2.meethue.com/en-us) — color bulbs, dimmer switches, etc.
 - 2x [**Sonos One**](https://www.sonos.com/en-us/shop/one.html) (with Alexa turned off...allegedly.)
 - [**Petcube Play**](https://petcube.com/play/) 😻
