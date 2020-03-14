@@ -34,7 +34,7 @@ Once you're ready, here's how to shrink your Linux-based VM:
 
 ---
 
-## Update (Dec. 30, 2018):
+### Update (Dec. 30, 2018):
 
 The open-source version of VMware Tools for Linux, [open-vm-tools](https://github.com/vmware/open-vm-tools), has added a simple command to automate the above steps in the latest version. Make sure you have the latest update through either apt or yum, and then run the following command in the **guest** terminal:
 

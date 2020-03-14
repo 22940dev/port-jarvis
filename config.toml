@@ -101,13 +101,14 @@ disableAliases = true
     [markup.goldmark.extensions]
       linkify = false
       strikethrough = true
-      typographer = false
+      typographer = true
     [markup.goldmark.parser]
       autoHeadingID = false
     [markup.goldmark.renderer]
       unsafe = true
   [markup.highlight]
     codeFences = true
+    guessSyntax = false
     lineNos = true
     lineNumbersInTable = true
     noClasses = true

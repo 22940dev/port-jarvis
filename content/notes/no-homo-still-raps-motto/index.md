@@ -18,9 +18,6 @@ draft: false
 {{< image src="images/1_b41ztscbaxqi60snwsswfw.jpg" >}}This essay was written for Professor [David Valdes-Greenwood](http://www.davidvaldesgreenwood.com/)'s "Love & Sexuality" class at [Tufts University](https://www.tufts.edu/) in April 2012.{{< /image >}}
 
 
----
-
-
 > _Too many faggot n\*ggas clocking my spending, exercising your gay-like minds like Richard Simmons ... Fucking faggot-ass light skin n\*ggas, get the fuck out of my face ... It's crazy how you can go from being Joe Blow, to everybody on your dick, no homo ... You homo n\*ggas getting AIDS in the ass, while the homie here's trying to get paid in advance ... If y'all leave me alone this wouldn't be my M.O., I wouldn't have to go, ‘eenee-meene-minie-moe,' catch a homo by his toe, man I don't know no more..._
 
 
