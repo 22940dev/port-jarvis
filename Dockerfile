@@ -5,7 +5,7 @@
 #
 # Based on: https://github.com/jakejarvis/hugo-build-action/blob/master/Dockerfile
 
-FROM alpine:latest
+FROM node:lts-alpine
 
 ENV HUGO_VERSION 0.65.3
 # remove/comment the following line completely to build with vanilla Hugo:
@@ -17,7 +17,11 @@ RUN apk update && \
     apk add --no-cache \
       ca-certificates \
       git \
-      nodejs \
+      yarn \
+      asciidoctor \
+      python3 \
+      py3-setuptools \
+      py3-pygments \
       ${HUGO_EXTENDED:+libc6-compat libstdc++} && \
     update-ca-certificates && \
     wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_EXTENDED:+extended_}${HUGO_VERSION}_Linux-64bit.tar.gz && \

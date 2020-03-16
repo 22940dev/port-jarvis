@@ -52,7 +52,7 @@
     # X-XSS-Protection = "1; mode=block; report=https://jarvis.report-uri.com/r/d/xss/enforce"
     X-Pingback = "https://jarv.is/ping/xmlrpc"
     X-Got-Milk = "2%"
-    X-View-Source = "https://github.com/jakejarvis/jarv.is"
+    # X-View-Source = "https://github.com/jakejarvis/jarv.is"
 
 # PGP file: open in browser, download correctly
 [[headers]]
@@ -72,6 +72,11 @@
 # Redirect Netlify and www subdomains to primary domain:
 [[redirects]]
   from = "https://jakejarvis.netlify.com/*"
+  to = "https://jarv.is/:splat"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://jakejarvis.netlify.app/*"
   to = "https://jarv.is/:splat"
   status = 301
   force = true
