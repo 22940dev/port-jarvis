@@ -2,7 +2,7 @@
 {{ partial "functions/social-images" . -}}
 {{ partial "head/open-graph" . -}}
 {{ partialCached "head/mobile" . -}}
-{{ partialCached "head/preload" . -}}
+{{ partial "head/preload" . -}}
 {{ partialCached "head/styles" . -}}
 {{ partialCached "head/favicons" (dict "pngSizes" "192 48 32 16" "icoSizes" "16 32 48") -}}
 <link rel="manifest" href="{{ "site.webmanifest" | absURL }}">

@@ -50,6 +50,16 @@ main#single {
       }
     }
   }
+
+  div#comments {
+    margin-top: 1.5em;
+    padding-top: 0.5em;
+    border-top: 2px solid $color-light;
+
+    div.utterances {
+      max-width: unset;
+    }
+  }
 }
 
 
