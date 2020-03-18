@@ -31,8 +31,8 @@
 
     Hugo extended
     Netlify
-    Commento
     Simple Analytics
+    utteranc.es
     ...and much more: https://jarv.is/uses/
 
 # VIEW SOURCE
