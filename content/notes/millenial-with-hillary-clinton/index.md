@@ -11,6 +11,7 @@ image: "9e58a-1bvweqv_ve2_c1tw5-ihrhw.jpg"
 aliases:
   - /2016/02/28/millenial-with-hillary-clinton/
 draft: false
+comments: false
 ---
 
 

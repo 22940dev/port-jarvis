@@ -18,7 +18,7 @@
       {{ .Content }}
     </div>
 
-    {{ if eq hugo.Environment "production" }}
+    {{ if and (ne .Params.comments false) (eq hugo.Environment "production") }}
     <div id="comments">
       {{ partial "scripts/utterances" . }}
     </div>

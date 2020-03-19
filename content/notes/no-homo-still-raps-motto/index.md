@@ -12,6 +12,7 @@ image: "1_b41ztscbaxqi60snwsswfw.jpg"
 aliases:
   - /2013/11/21/no-homo-still-raps-motto/
 draft: false
+comments: false
 ---
 
 

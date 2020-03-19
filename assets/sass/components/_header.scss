@@ -7,7 +7,7 @@ header {
 
   nav {
     width: 100%;
-    padding: 0.25em 0.75em;
+    padding: 0.25em 1.75em;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -17,7 +17,6 @@ header {
       display: flex;
       align-items: center;
       color: $color-medium-dark;
-      padding: 15px;
 
       h1#name {
         margin: 0 0 0 0.8em;
@@ -56,11 +55,9 @@ header {
       align-items: center;
       font-size: 1.5em;
       line-height: 1;
-      padding: 0;
-      margin-right: 16px;
 
       li {
-        width: 2.6em;
+        width: 2.5em;
         text-align: right;
 
         a {
@@ -80,11 +77,9 @@ header {
 // Responsive
 @mixin responsive--header() {
   header nav {
-    padding: 0.4em 1em;
+    padding: 0.1em 1.25em;
 
     a#logo {
-      padding: 10px;
-
       img,
       svg {
         width: 40px;
@@ -97,11 +92,10 @@ header {
     }
 
     ul {
-      font-size: 1.75em;
-      margin-right: 10px;
+      font-size: 1.7em;
 
       li {
-        width: 55px;
+        width: 2em;
       }
     }
   }
