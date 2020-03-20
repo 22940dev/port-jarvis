@@ -45,7 +45,7 @@ disableAliases = true
   facebookID = "1329090853"
   instagram = "jakejarvis"
   linkedin = "jakejarvis"
-  mastodon = "mastodon.social/@jakejarvis"
+  mastodon = "pogge.rs/@jake"
 
 [outputs]
   home = ["HTML", "RSS", "ALGOLIA", "MANIFEST", "REDIRECTS", "HEADERS"]
