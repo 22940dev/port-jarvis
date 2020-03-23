@@ -9,7 +9,7 @@
     {{- range . }}
       <li>
         <div class="date">{{ .Date.Format "Jan 2" }}</div>
-        <div class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
+        <div class="title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></div>
       </li>
     {{- end }}
     {{- end }}
