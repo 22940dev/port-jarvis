@@ -12,6 +12,8 @@ image: "covid19dashboards.png"
 draft: false
 ---
 
+<!-- markdownlint-disable MD033 -->
+
 <style>
 img.github {
   display: inline !important;

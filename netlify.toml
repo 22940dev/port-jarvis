@@ -48,11 +48,9 @@
     # NEL = "{\"report_to\":\"default\",\"max_age\":604800}"
     # Content-Security-Policy = "default-src 'none'; script-src 'self' platform.twitter.com syndication.twitter.com cdn.syndication.twimg.com buttons.github.io assets.codepen.io production-assets.codepen.io; style-src 'self' 'unsafe-inline' fonts.googleapis.com platform.twitter.com assets-cdn.github.com github.githubassets.com; img-src 'self' data: https:; font-src 'self' fonts.gstatic.com; form-action 'self'; child-src 'self' www.youtube.com www.youtube-nocookie.com twitter.com syndication.twitter.com platform.twitter.com codepen.io cdpn.io; frame-src 'self'; frame-ancestors 'self'; base-uri 'none'; object-src 'self'; worker-src 'none'; connect-src 'self' jarvis.report-uri.com syndication.twitter.com api.github.com; upgrade-insecure-requests; report-uri https://jarvis.report-uri.com/r/d/csp/enforce; report-to default"
     # Feature-Policy = "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; sync-xhr 'none'; payment 'none'; usb 'none'; vr 'none'"
-    X-XSS-Protection = "1; mode=block"
-    # X-XSS-Protection = "1; mode=block; report=https://jarvis.report-uri.com/r/d/xss/enforce"
+    X-XSS-Protection = "1; mode=block"   # ; report=https://jarvis.report-uri.com/r/d/xss/enforce
     X-Pingback = "https://jarv.is/ping/xmlrpc"
     X-Got-Milk = "2%"
-    # X-View-Source = "https://github.com/jakejarvis/jarv.is"
 
 # PGP file: open in browser, download correctly
 [[headers]]

@@ -25,7 +25,7 @@
     "optimize:img": "find public/ -type d | xargs -n1 -P8 -I{} imagemin {}/* --plugin=jpegoptim --plugin.jpegoptim.progressive --plugin.jpegoptim.stripAll --plugin=pngquant --plugin.pngquant.speed=5 --plugin.pngquant.strip --plugin=optipng --plugin.optipng.optimizationLevel=2 --plugin=svgo --plugin=gifsicle --out-dir={}",
     "lint": "run-s lint:**",
     "lint:scss": "stylelint assets/sass/**/* --syntax scss",
-    "lint:md": "markdownlint --rules markdownlint-rule-emphasis-style content/**/*.md",
+    "lint:md": "markdownlint --rules markdownlint-rule-emphasis-style content/**/*.md content/**/**/*.md",
     "index": "run-s clean hugo index:** clean",
     "index:algolia": "atomic-algolia"
   },
