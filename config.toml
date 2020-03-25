@@ -47,6 +47,29 @@ disableAliases = true
   linkedin = "jakejarvis"
   mastodon = "pogge.rs/@jake"
 
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pre = "&#x1F3E0;"
+    url = "/"
+    weight = -100
+  [[menu.main]]
+    name = "Notes"
+    pre = "&#x1F4DD;"
+    url = "/notes/"
+    weight = -90
+  [[menu.main]]
+    name = "GitHub"
+    pre = "&#x1F468;&#x200D;&#x1F4BB;"
+    url = "https://github.com/jakejarvis"
+    weight = -80
+  [[menu.main]]
+    name = "Email"
+    pre = "&#x1F4EC;"
+    # encode my email address -- probably not effective but why not?
+    url = "&#x6D;&#x61;&#x69;&#x6C;&#x74;&#x6F;&#x3A;&#x6A;&#x61;&#x6B;&#x65;&#x40;&#x6A;&#x61;&#x72;&#x76;&#x2E;&#x69;&#x73;"
+    weight = -70
+
 [outputs]
   home = ["HTML", "RSS", "ALGOLIA", "MANIFEST", "REDIRECTS", "HEADERS"]
   section = ["HTML"]
