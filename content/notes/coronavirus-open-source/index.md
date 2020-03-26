@@ -15,17 +15,17 @@ draft: false
 <!-- markdownlint-disable MD033 -->
 
 <style>
-img.github {
-  display: inline !important;
-  vertical-align: text-bottom;
-  width: 30px;
-  height: 30px;
-  margin: 0 !important;
-}
+/* override link underlines */
 h2 a {
   background-image: none !important;
   padding-bottom: 0 !important;
   margin-right: 8px !important;
+}
+/* override image alignment */
+h2 img {
+  display: inline !important;
+  margin: 0 !important;
+  vertical-align: text-bottom;
 }
 </style>
 
@@ -33,59 +33,61 @@ We're all quickly learning that worldwide pandemics can bring out both [the best
 
 These are just a few incredible open source projects that didn't exist a few months ago, but rapidly formed teams of dozens of contributors to fill both big needs and small niches in the fight to defeat the novel coronavirus, aka [**COVID-19**](https://www.cdc.gov/coronavirus/2019-nCoV/index.html).
 
-## [The COVID Tracking Project](https://covidtracking.com/) [<img class="github" src="images/github.svg" alt="View on GitHub" title="View on GitHub">](https://github.com/COVID19Tracking/website)
+## [The COVID Tracking Project](https://covidtracking.com/) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/COVID19Tracking/website "View on GitHub")
 
-Now that Americans are *finally* starting to get tested for the coronavirus, information and statistics about testing results are being released state-by-state, which has led to a scattering of primary sources across the web. This project automatically collects as much information as possible from each health department's website and puts everything together in [easy-to-digest tables](https://covidtracking.com/data/), as well as [spreadsheets](https://docs.google.com/spreadsheets/u/2/d/e/2PACX-1vRwAqp96T9sYYq2-i7Tj0pvTf6XVHjDSMIKBdZHXiCGGdNC0ypEU9NbngS8mxea55JuCFuua1MUeOj5/pubhtml) and a [public API](https://covidtracking.com/api/).
+Now that Americans are *finally* starting to get tested for the coronavirus, information and statistics about the results are being released state-by-state, which has led to a scattering of primary sources across the web, each releasing [different figures in different forms](https://docs.google.com/document/d/1OyN6_1UeDePwPwKi6UKZB8GwNC7-kSf1-BO2af8kqVA/edit). The [COVID Tracking Project](https://covidtracking.com/) collects as much information as possible from each local health authority's website and puts everything together in [easy-to-digest tables](https://covidtracking.com/data/), as well as [spreadsheets](https://docs.google.com/spreadsheets/u/2/d/e/2PACX-1vRwAqp96T9sYYq2-i7Tj0pvTf6XVHjDSMIKBdZHXiCGGdNC0ypEU9NbngS8mxea55JuCFuua1MUeOj5/pubhtml) and a [public API](https://covidtracking.com/api/).
+
+The maintainers are also [fully transparent](https://covidtracking.com/about-tracker/) about their process and take great care to annotate individual figures with the methodology used to arrive at each, which has earned them the [trust](https://covidtracking.com/#press) of even the largest national news organizations reporting on COVID-19.
 
 {{< image src="images/covidtracking.png" width="680" alt="The COVID Tracking Project" />}}
 
-## [#findthemasks](https://findthemasks.com/) [<img class="github" src="images/github.svg" alt="View on GitHub" title="View on GitHub">](https://github.com/r-pop/findthemasks)
+## [#findthemasks](https://findthemasks.com/) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/r-pop/findthemasks "View on GitHub")
 
-This one might be my favorite, simply because of how targeted the problem it's trying to solve is. The United States is [already running out](https://www.nytimes.com/2020/03/19/health/coronavirus-masks-shortage.html) of personal protective equipment (PPE) for the healthcare professionals on the front line of this crisis right now. [#findthemasks.com](https://findthemasks.com/) has gathered specific donation requests and personnel contacts from hospitals around the country in desperate need of basic supplies.
+This one might be my favorite, simply because of its laser-like focus on solving a very specific (yet catastrophic) problem. The United States is [already running out](https://www.nytimes.com/2020/03/19/health/coronavirus-masks-shortage.html) of [personal protective equipment (PPE)](https://www.fda.gov/medical-devices/general-hospital-devices-and-supplies/personal-protective-equipment-infection-control) for the healthcare professionals on the front lines of this crisis. [#findthemasks.com](https://findthemasks.com/) has gathered specific donation requests and points of contact from hospitals around the country in desperate need of basic supplies.
 
-*Please* look up your local hospitals on [#findthemasks](https://findthemasks.com/#sites) and follow their instructions to donate anything you have hoarded — it's one of the most impactful things you can do right now. If you don't see your local hospital, or don't feel comfortable shipping equipment to any hospital listed, you can also visit [PPE Link](https://ppelink.org/ppe-donations/) and they will connect you with hospitals in your area.
+*Please* look up your local hospitals on [#findthemasks](https://findthemasks.com/#sites) and follow their instructions to donate anything you have hoarded — it's likely the single most impactful thing you can do at this point. If you don't see your local hospital, or don't feel comfortable shipping equipment to any hospital listed, you can also visit [PPE Link](https://ppelink.org/ppe-donations/) and they will connect you with hospitals in your area.
 
 {{< image src="images/findthemasks.png" width="600" alt="#findthemasks" />}}
 
-## [#StayTheFuckHome](https://staythefuckhome.com/) [<img class="github" src="images/github.svg" alt="View on GitHub" title="View on GitHub">](https://github.com/flore2003/staythefuckhome)
+## [#StayTheFuckHome](https://staythefuckhome.com/) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/flore2003/staythefuckhome "View on GitHub")
 
 I figured I'd throw in this cheeky website broadcasting a simple but serious message: **STAY THE FUCK HOME!!!** If you're *still* not convinced of the importance of this "suggestion," give their ["Self-Quarantine Manifesto"](https://staythefuckhome.com/) a quick read. Now.
 
-The [GitHub community](https://github.com/flore2003/staythefuckhome/pulls?q=is%3Apr) has translated the instructional essay into over a dozen different languages — including a [safe-for-work version](https://staythefuckhome.com/sfw/), if that helps — and they're [looking for more translators](https://github.com/flore2003/staythefuckhome#contributing) if you're multilingual and need something besides Netflix to fill your time with while you ***stay the fuck at home!*** 😉
+The [GitHub community](https://github.com/flore2003/staythefuckhome/pulls?q=is%3Apr) has translated the instructional essay into over a dozen different languages — including a [safe-for-work version](https://staythefuckhome.com/sfw/), if that helps — and they're [looking for more translators](https://github.com/flore2003/staythefuckhome#contributing) if you're multilingual and need something besides Netflix to fill your time with while you ***stay the fuck home!*** 😉
 
 {{< image src="images/staythefuckhome.png" width="600" alt="#StayTheFuckHome" />}}
 
-## [COVID-19 Dashboards](https://covid19dashboards.com/) [<img class="github" src="images/github.svg" alt="View on GitHub" title="View on GitHub">](https://github.com/github/covid19-dashboard)
+## [COVID-19 Dashboards](https://covid19dashboards.com/) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/github/covid19-dashboard "View on GitHub")
 
 This collection of various visualizations is fascinating (and sobering) to look at. If you're smarter than I am and have experience in data analysis, their team (led by a [GitHub engineer](https://github.com/hamelsmu)) would be more than happy to [add your contribution](https://github.com/github/covid19-dashboard/blob/master/CONTRIBUTING.md) to the site — they're using [Jupyter Notebooks](https://jupyter.org/) and [fastpages](https://github.com/fastai/fastpages).
 
 {{< image src="images/covid19dashboards.png" width="580" alt="COVID-19 Dashboards" />}}
 
-## [CoronaTracker](https://coronatracker.samabox.com/) [<img class="github" src="images/github.svg" alt="View on GitHub" title="View on GitHub">](https://github.com/MhdHejazi/CoronaTracker)
+## [CoronaTracker](https://coronatracker.samabox.com/) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/MhdHejazi/CoronaTracker "View on GitHub")
 
-CoronaTracker is a _beautiful_ cross-platform app for iOS and macOS with intuitive maps and charts fed by reputable live data. Apple is [being (justifiably) picky](https://developer.apple.com/news/?id=03142020a) about "non-official" Coronavirus apps in their App Store (and [so is Google](https://www.cnet.com/news/apple-google-amazon-block-nonofficial-coronavirus-apps-from-app-stores/)), but you can still [download the macOS app directly](https://coronatracker.samabox.com/) or [compile the iOS source code](https://github.com/MhdHejazi/CoronaTracker#1-ios-app) yourself using Xcode if you desire.
+CoronaTracker is a _beautiful_ cross-platform app for iOS and macOS with intuitive maps and charts fed by reputable live data. Apple is [being justifiably picky](https://developer.apple.com/news/?id=03142020a) about "non-official" Coronavirus apps in their App Store ([so is Google](https://blog.google/inside-google/company-announcements/coronavirus-covid19-response/), by the way) but you can still [download the macOS app directly](https://coronatracker.samabox.com/) or [compile the iOS source code](https://github.com/MhdHejazi/CoronaTracker#1-ios-app) yourself using Xcode if you wish.
 
 {{< image src="images/coronatracker.png" alt="CoronaTracker" />}}
 
-## [Staying Home Club](https://stayinghome.club/) [<img class="github" src="images/github.svg" alt="View on GitHub" title="View on GitHub">](https://github.com/phildini/stayinghomeclub)
+## [Staying Home Club](https://stayinghome.club/) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/phildini/stayinghomeclub "View on GitHub")
 
 A bit more family-friendly than [#StayTheFuckHome](https://staythefuckhome.com/), the [Staying Home Club](https://stayinghome.club/) is maintaining a running list of over a thousand companies and universities mandating that employees and students work from home, as well as events that have been canceled or moved online. Quarantining yourself might feel lonely, but here's solid proof that you're far from alone right now.
 
 {{< image src="images/stayinghome.png" width="600" alt="Staying Home Club" />}}
 
-## [Nextstrain for nCoV](https://nextstrain.org/ncov) [<img class="github" src="images/github.svg" alt="View on GitHub" title="View on GitHub">](https://github.com/nextstrain/ncov)
+## [Nextstrain for nCoV](https://nextstrain.org/ncov) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/nextstrain/ncov "View on GitHub")
 
-This one is a bit over my head, but apparently [Nextstrain](https://nextstrain.org/) is a pretty cool open-source service targeted at genome data analysis and visualization of different pathogens. Their [COVID-19 page](https://nextstrain.org/ncov) is still awe-inspiring to look at for a layman like me, but probably 100 times more so if you're an actual scientist — in which case, the [genome data they've open-sourced](https://github.com/nextstrain/ncov) might interest you.
+This one is a bit over my head, but apparently [Nextstrain](https://nextstrain.org/) is a pretty impressive open-source service targeted at genome data analysis and visualization of different pathogens. Their [COVID-19 page](https://nextstrain.org/ncov) is still awe-inspiring to look at for a layman like me, but probably a thousand times more so if you're an actual scientist — in which case, the [genome data they've open-sourced](https://github.com/nextstrain/ncov) might be of interest to you.
 
 {{< image src="images/nextstrain.png" alt="Nextstrain for nCOV" />}}
 
-## [Johns Hopkins 2019-nCoV Data](https://systems.jhu.edu/research/public-health/ncov/) [<img class="github" src="images/github.svg" alt="View on GitHub" title="View on GitHub">](https://github.com/CSSEGISandData/COVID-19)
+## [Johns Hopkins 2019-nCoV Data](https://systems.jhu.edu/research/public-health/ncov/) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/CSSEGISandData/COVID-19 "View on GitHub")
 
-Johns Hopkins University's [visual COVID-19 global dashboard](https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6) has been bookmarked as my go-to source of information since the beginning of this crisis. Now, JHU's [Center for Systems Science and Engineering](https://systems.jhu.edu/) has open-sourced [their data and analysis](https://github.com/CSSEGISandData/COVID-19) for anybody to use.
+Johns Hopkins University's [visual COVID-19 global dashboard](https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6) has been bookmarked as my go-to source of information since the beginning of this crisis earlier this year. Now, JHU's [Center for Systems Science and Engineering](https://systems.jhu.edu/) has open-sourced [their data and analysis](https://github.com/CSSEGISandData/COVID-19) for anybody to use.
 
 {{< image src="images/hopkins.png" alt="Johns Hopkins 2019-nCoV Data" />}}
 
-## [COVID-19 Scenarios](https://neherlab.org/covid19/) [<img class="github" src="images/github.svg" alt="View on GitHub" title="View on GitHub">](https://github.com/neherlab/covid19_scenarios)
+## [COVID-19 Scenarios](https://neherlab.org/covid19/) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/neherlab/covid19_scenarios "View on GitHub")
 
 COVID-19 Scenarios will probably hit everyone in a different way, depending on your levels of optimism and/or pessimism right now. It uses [advanced scientific models](https://neherlab.org/covid19/about) to predict the future of the virus based on past data and future variables and assumptions you can tinker with yourself.
 
@@ -93,13 +95,13 @@ The maintainers at the [Neher Lab in Basel, Switzerland](https://neherlab.org/) 
 
 {{< image src="images/scenarios.png" width="740" alt="COVID-19 Scenarios" />}}
 
-## [Corona Data Scraper](https://coronadatascraper.com/#home) [<img class="github" src="images/github.svg" alt="View on GitHub" title="View on GitHub">](https://github.com/lazd/coronadatascraper)
+## [Corona Data Scraper](https://coronadatascraper.com/#home) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/lazd/coronadatascraper "View on GitHub")
 
 Similar to the [COVID Tracking Project](https://covidtracking.com/) above, the [Corona Data Scraper](https://coronadatascraper.com/#home) has set up an automated process to scrape verified data from across the web to form massive CSV spreadsheets and JSON objects. They even [rate the quality](https://github.com/lazd/coronadatascraper#source-rating) of each source to prioritize data accordingly.
 
 {{< image src="images/coronadatascraper.png" width="750" alt="Corona Data Scraper" />}}
 
-## [Folding@home](https://foldingathome.org/covid19/) [<img class="github" src="images/github.svg" alt="View on GitHub" title="View on GitHub">](https://github.com/FoldingAtHome/coronavirus)
+## [Folding@home](https://foldingathome.org/covid19/) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/FoldingAtHome/coronavirus "View on GitHub")
 
 [Folding@home](https://foldingathome.org/) has been around [*forever*](https://en.wikipedia.org/wiki/Folding@home). I remember installing it on my family's home computer as a curious kid and making my father infuriated over how slow it got. But they [switched gears this month](https://foldingathome.org/2020/03/15/coronavirus-what-were-doing-and-how-you-can-help-in-simple-terms/) from using our computers to crunch various proteins and molecules in the background, and all of their power is now going towards discovering unknown "folds" in the coronavirus, which might be able to lead scientists to find better cures and potential vaccines.
 
@@ -109,10 +111,10 @@ You can [download their software here](https://foldingathome.org/start-folding/)
 
 {{< youtube NTLU1anxe8c >}}
 
-## [Coronavirus Tracker API](https://coronavirus-tracker-api.herokuapp.com/v2/locations) [<img class="github" src="images/github.svg" alt="View on GitHub" title="View on GitHub">](https://github.com/ExpDev07/coronavirus-tracker-api)
+## [Coronavirus Tracker API](https://coronavirus-tracker-api.herokuapp.com/v2/locations) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/ExpDev07/coronavirus-tracker-api "View on GitHub")
 
-To wrap this list up, I thought I'd include [yet another API](https://github.com/ExpDev07/coronavirus-tracker-api) fed by multiple data sources that you can use to create your own open-source project if any of these inspired you. This one is incredibly flexible in terms of input parameters but returns simple JSON responses like we all know and love.
+To wrap this list up, I thought I'd include [yet another API](https://github.com/ExpDev07/coronavirus-tracker-api) fed by multiple data sources that you can use to create your own open-source project if any of these inspired you. This one is incredibly flexible in terms of [query parameters and endpoints](https://github.com/ExpDev07/coronavirus-tracker-api#api-endpoints) but they all return simple JSON responses like we all know and love.
 
 {{< image src="images/tracker-api.png" width="712" alt="Coronavirus Tracker API" />}}
 
-### Stay safe (and [home](https://staythefuckhome.com/)), friends! ❤️
+### Stay safe (and [home](https://staythefuckhome.com/ "One last time...")), friends! ❤️
