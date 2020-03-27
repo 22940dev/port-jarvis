@@ -19,3 +19,10 @@
 {{ else }}
   {{ partial "head/schema-person" . }}
 {{ end -}}
+
+{{/* Page-specific styles set via page-css shortcode */}}
+{{- with .Page.Scratch.Get "css" }}
+<style>
+  {{- . | safeCSS -}}
+</style>
+{{ end -}}

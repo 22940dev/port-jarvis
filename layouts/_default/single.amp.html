@@ -216,6 +216,11 @@
       div.highlight span.ge { font-style: italic; }
       div.highlight span.gs { font-weight: bold; }
       div.highlight span.lnt { color: #999999; }
+
+      {{/* Page-specific styles set via page-css shortcode */}}
+      {{- with .Page.Scratch.Get "css" }}
+        {{- . | safeCSS -}}
+      {{ end -}}
     </style>
 
     {{ partialCached "head/favicons" (dict "pngSizes" "192 48 32 16" "icoSizes" "16 32 48") }}
