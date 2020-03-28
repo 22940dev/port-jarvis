@@ -1,6 +1,6 @@
 <amp-video
   layout="responsive"
-  width="{{ with .Get "width" }}{{ . }}{{ else }}910{{ end }}"
+  width="{{ with .Get "width" }}{{ . }}{{ else }}{{ .Site.Params.pageMaxWidth }}{{ end }}"
   height="{{ with .Get "height" }}{{ . }}{{ else }}600{{ end }}"
   {{- with .Page.Resources.GetMatch (.Get "poster") }} poster="{{ .Permalink }}"{{ end }}
   {{- if .Get "autoplay" }} autoplay{{ end }}

@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+// all variables set by Hugo's config.toml must go here
+// stylelint-disable
+$max-width: {{ printf "%d%s" .Site.Params.pageMaxWidth "px" }};
+// stylelint-enable
+
 // Variables & Functions
 @import 'abstracts/variables';
 @import 'abstracts/functions';

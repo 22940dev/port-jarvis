@@ -1,2 +1,2 @@
-{{ $style := resources.Get "sass/main.scss" | resources.ToCSS (dict "targetPath" "style.css") | resources.PostCSS (dict "config" "postcss.config.js") }}
+{{ $style := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "sass/main.scss" . | resources.ToCSS (dict "targetPath" "style.css") | resources.PostCSS (dict "config" "postcss.config.js") }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">

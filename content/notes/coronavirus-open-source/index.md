@@ -12,8 +12,6 @@ image: "covid19dashboards.png"
 draft: false
 ---
 
-<!-- markdownlint-disable MD033 -->
-
 {{< page-css >}}
 /* override link underlines */
 h2 a {
