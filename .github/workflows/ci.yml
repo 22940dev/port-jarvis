@@ -3,21 +3,32 @@ name: CI
 on: [push, pull_request]
 
 jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: Install netlify-cli
+      run: npm install -g netlify-cli
+    - name: Wait for Netlify
+      run: netlify watch
+      env:
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
   lighthouse:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    needs: deploy
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
       with:
         node-version: 12.x
     - name: Install utilities
-      run: npm install -g netlify-cli @lhci/cli
-    - name: Wait for Netlify
-      run: netlify watch
-      env:
-        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      run: npm install -g @lhci/cli
     - name: Audit deploy preview
       if: github.event_name == 'pull_request'
       continue-on-error: true
