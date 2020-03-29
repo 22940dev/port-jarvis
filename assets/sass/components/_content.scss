@@ -19,16 +19,18 @@ div#content {
     border-bottom: 1px solid $color-kinda-light;
   }
 
-  img,
-  figure {
+  p.image img,
+  figure img {
     height: auto;
     max-width: 100%;
-    margin: 1em auto;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   figure {
-    // reduce margin between image and caption
+    margin: 1em auto;
+
     img {
       margin-bottom: 0.4em;
     }
