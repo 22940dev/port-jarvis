@@ -10,6 +10,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Lighthouse CI
+.lighthouseci/
+
 # here be secrets
 .env
 .env.production

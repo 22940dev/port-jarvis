@@ -1,0 +1,37 @@
+{
+  "ci": {
+    "collect": {
+      "url": [
+        "http://localhost:1337/",
+        "http://localhost:1337/notes/",
+        "http://localhost:1337/notes/how-to-pull-request-fork-github/",
+        "http://localhost:1337/notes/how-to-pull-request-fork-github/amp.html"
+      ],
+      "numberOfRuns": 1,
+      "startServerCommand": "yarn start --disableLiveReload",
+      "startServerReadyPattern": "Web Server is available at"
+    },
+    "assert": {
+      "preset": "lighthouse:no-pwa",
+      "assertions": {
+        "color-contrast": ["warn", {"minScore": 0.9}],
+        "link-text": "warn",
+        "tap-targets": ["warn", {"minScore": 0.6}],
+        "total-byte-weight": ["warn", {"minScore": 0.9}],
+        "unused-css-rules": "warn",
+        "uses-rel-preconnect": "warn",
+        "is-crawlable": "off",
+        "redirects-http": "off",
+        "uses-http2": "off",
+        "uses-long-cache-ttl": "off",
+        "uses-optimized-images": "off",
+        "uses-responsive-images": "off",
+        "uses-text-compression": "off",
+        "uses-webp-images": "off"
+      }
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    }
+  }
+}
