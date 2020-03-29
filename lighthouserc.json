@@ -1,20 +1,13 @@
 {
   "ci": {
     "collect": {
-      "url": [
-        "http://localhost:1337/",
-        "http://localhost:1337/notes/",
-        "http://localhost:1337/notes/how-to-pull-request-fork-github/",
-        "http://localhost:1337/notes/how-to-pull-request-fork-github/amp.html"
-      ],
-      "numberOfRuns": 1,
-      "startServerCommand": "yarn start --disableLiveReload",
-      "startServerReadyPattern": "Web Server is available at"
+      "numberOfRuns": 1
     },
     "assert": {
       "preset": "lighthouse:no-pwa",
       "assertions": {
         "color-contrast": ["warn", {"minScore": 0.9}],
+        "errors-in-console": "warn",
         "link-text": "warn",
         "tap-targets": ["warn", {"minScore": 0.6}],
         "total-byte-weight": ["warn", {"minScore": 0.9}],
