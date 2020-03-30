@@ -100,6 +100,6 @@ jobs:
     - uses: percy/snapshot-action@v0.1.0
       with:
         build-directory: public
-        flags: --snapshot-files "**/index.html,notes/**/amp.html"
+        flags: --snapshot-files "**/index.html" --network-idle-timeout 2000
       env:
         PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
