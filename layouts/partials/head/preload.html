@@ -1,10 +1,12 @@
 {{ if eq hugo.Environment "production" }}
-<link rel="preconnect" href="https://s.jarv.is">
-{{ if and .IsPage (eq .Type "notes") }}
-<link rel="preconnect" href="https://utteranc.es">
-{{ end }}
+  <link rel="preconnect" href="https://s.jarv.is" crossorigin="anonymous">
+  {{ if and .IsPage (eq .Type "notes") }}
+    <link rel="preconnect" href="https://utteranc.es" crossorigin="anonymous">
+    <link rel="preconnect" href="https://api.utteranc.es" crossorigin="anonymous">
+    <link rel="preconnect" href="https://api.github.com" crossorigin="anonymous">
+  {{ end }}
 {{ end }}
 
-<link rel="preload" href="{{ "fonts/inter-regular-subset.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="{{ "fonts/inter-medium-subset.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="{{ "fonts/inter-bold-subset.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/inter-regular-subset.woff2" | absURL }}" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="{{ "fonts/inter-medium-subset.woff2" | absURL }}" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="{{ "fonts/inter-bold-subset.woff2" | absURL }}" as="font" type="font/woff2" crossorigin="anonymous">
