@@ -39,7 +39,6 @@ jobs:
       run: |
         lhci autorun --config=./lighthouserc.json \
           --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.com/ \
-          --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.com/notes/ \
           --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.com/notes/how-to-pull-request-fork-github/ \
           --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.com/notes/how-to-pull-request-fork-github/amp.html
       env:
@@ -50,13 +49,11 @@ jobs:
       run: |
         lhci autorun --config=./lighthouserc.json \
           --collect.url=https://jarv.is/ \
-          --collect.url=https://jarv.is/notes/ \
           --collect.url=https://jarv.is/notes/how-to-pull-request-fork-github/ \
           --collect.url=https://jarv.is/notes/how-to-pull-request-fork-github/amp.html
       env:
         LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
     - name: Upload results as artifact
-      if: success()
       uses: actions/upload-artifact@v1
       with:
         name: lhci-results

@@ -9,6 +9,7 @@
         "color-contrast": ["warn", {"minScore": 0.9}],
         "errors-in-console": "warn",
         "link-text": "warn",
+        "offscreen-images": "warn",
         "tap-targets": ["warn", {"minScore": 0.6}],
         "total-byte-weight": ["warn", {"minScore": 0.9}],
         "unused-css-rules": "warn",
