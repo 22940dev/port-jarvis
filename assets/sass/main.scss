@@ -3,6 +3,7 @@
 // all variables set by Hugo's config.toml must go here
 // stylelint-disable
 $max-width: {{ printf "%d%s" .Site.Params.pageMaxWidth "px" }};
+$base-url: "{{ strings.TrimRight "/" .Site.BaseURL }}/";   // consistent trailing forward slash
 // stylelint-enable
 
 // Variables & Functions

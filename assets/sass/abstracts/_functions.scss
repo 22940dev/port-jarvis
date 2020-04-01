@@ -19,8 +19,8 @@
     font-style: $style;
     font-weight: $weight;
     font-display: $display;
-    src: url("#{$src}.woff2") format("woff2"),
-         url("#{$src}.woff") format("woff");    // stylelint-disable-line indentation
+    src: url($base-url + $src + ".woff2") format("woff2"),
+         url($base-url + $src + ".woff") format("woff");    // stylelint-disable-line indentation
 
     // Allow additional declarations to be passed in:
     @content;
