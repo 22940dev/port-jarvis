@@ -40,9 +40,26 @@
 
     https://go.jarv.is/source
 
-# LICENSE
+# LICENSES
 
     All content is licensed under CC-BY-4.0, an
-    open & permissive Creative Commons license.
+    open & permissive Creative Commons license:
 
-    https://jarv.is/license.txt
+        https://jarv.is/license.txt
+
+    Twemoji: Licensed under Creative Commons
+    Attribution 4.0 International by Twitter, Inc.
+    and other contributors:
+
+        https://twemoji.twitter.com/
+
+    Inter: Copyright (c) 2016-2019 The Inter
+    Project Authors. Licensed under the SIL Open
+    Font License, Version 1.1:
+
+        https://rsms.me/inter/
+
+    Hack: Copyright (c) 2018 Source Foundry
+    Authors. Licensed under the MIT License:
+
+        https://sourcefoundry.org/hack/

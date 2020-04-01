@@ -39,6 +39,12 @@ docker run -v $(pwd):/src -p 1337:1337 jarv.is
 
 ![Creative Commons Attribution 4.0 International License](https://raw.githubusercontent.com/creativecommons/cc-cert-core/master/images/cc-by-88x31.png "CC BY")
 
-Site content (everything in [`content/notes`](content/notes/)) is published under the [Creative Commons Attribution 4.0 International License](LICENSE.md) (CC-BY-4.0), which means that you can copy, redistribute, remix, transform, and build upon the content for any purpose as long as you give appropriate credit.
+Site content (everything in [`content/notes`](content/notes/)) is published under the [**Creative Commons Attribution 4.0 International License**](LICENSE.md) (CC-BY-4.0), which means that you can copy, redistribute, remix, transform, and build upon the content for any purpose as long as you give appropriate credit.
 
-All code in this repository (like my [Hugo theme](layouts/)) is published under the [MIT license](https://opensource.org/licenses/MIT).
+All original code in this repository (like my [Hugo theme](layouts/)) is published under the [**MIT License**](https://opensource.org/licenses/MIT).
+
+External assets include:
+
+- [**Twemoji**](https://twemoji.twitter.com/): Copyright (c) 2018 Twitter, Inc. and other contributors. [Licensed under CC-BY-4.0.](https://github.com/twitter/twemoji/blob/v12.1.5/LICENSE-GRAPHICS)
+- [**Inter**](https://rsms.me/inter/): Copyright (c) 2016-2019 The Inter Project Authors. [Licensed under the SIL Open Font License, Version 1.1.](https://github.com/rsms/inter/blob/v3.12/LICENSE.txt)
+- [**Hack**](https://sourcefoundry.org/hack/): Copyright (c) 2018 Source Foundry Authors. [Licensed under the MIT License.](https://github.com/source-foundry/Hack/blob/v3.003/LICENSE.md)
