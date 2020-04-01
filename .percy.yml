@@ -1,0 +1,20 @@
+version: 1
+snapshot:
+  widths: [375, 1280] # px
+  enable-javascript: true
+  percy-css: |
+    video {
+      display: none;
+    }
+    div.embed {
+      display: none;
+    }
+    div.highlight {
+      border: 0;  /* no clue why this bugs out... */
+    }
+static-snapshots:
+  path: public/
+  snapshot-files: '**/index.html'
+agent:
+  asset-discovery:
+    network-idle-timeout: 10000 # ms
