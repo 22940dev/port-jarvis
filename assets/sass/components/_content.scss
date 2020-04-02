@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 div#content {
-  font-size: 0.95em;
+  font-size: 0.935em;   // ~15px
   letter-spacing: -0.008em;
   line-height: 1.7;
 
@@ -37,7 +37,7 @@ div#content {
 
     // image captions
     figcaption {
-      font-size: 0.9em;
+      font-size: 0.95em;
       color: $color-medium;
       text-align: center;
     }

@@ -10,22 +10,19 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    env:
+      NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
     steps:
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
-    - name: Install netlify-cli
-      run: npm install -g netlify-cli
     - name: Wait for Netlify
-      run: netlify watch
-      env:
-        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      run: npx netlify-cli watch
 
   lighthouse:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     needs: deploy
+    env:
+      LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
@@ -41,8 +38,6 @@ jobs:
           --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.com/ \
           --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.com/notes/how-to-pull-request-fork-github/ \
           --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.com/notes/how-to-pull-request-fork-github/amp.html
-      env:
-        LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
     - name: Audit jarv.is
       if: github.event_name == 'push' && github.ref == 'refs/heads/master'
       continue-on-error: true
@@ -51,8 +46,6 @@ jobs:
           --collect.url=https://jarv.is/ \
           --collect.url=https://jarv.is/notes/how-to-pull-request-fork-github/ \
           --collect.url=https://jarv.is/notes/how-to-pull-request-fork-github/amp.html
-      env:
-        LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
     - name: Upload results as artifact
       uses: actions/upload-artifact@v1
       with:
@@ -98,6 +91,8 @@ jobs:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     needs: build
+    env:
+      PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
     steps:
     - uses: actions/download-artifact@v1
       with:
@@ -105,5 +100,3 @@ jobs:
     - uses: percy/snapshot-action@v0.1.0
       with:
         flags: --config public/.percy.yml
-      env:
-        PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
