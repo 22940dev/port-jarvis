@@ -66,23 +66,19 @@ footer {
   footer {
     padding: 1em 1.25em 0 1.25em;
 
-    div {
+    div#row {
+      display: block;
+
       // no more room at the inn for panda :(
-      &#panda {
+      div#panda {
         display: none;
       }
 
-      &#copyright,
-      &#poweredby {
-        line-height: 1.9;
-        width: 50%;
-      }
-
-      &#poweredby {
-        a#hugo::after {
-          content: "\A";
-          white-space: pre;
-        }
+      div#copyright,
+      div#poweredby {
+        width: 100%;
+        text-align: left;
+        line-height: 2;
       }
     }
   }
