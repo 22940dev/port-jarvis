@@ -19,7 +19,7 @@
     "build:preview": "run-s clean hugo:dev",
     "hugo": "hugo --gc --cleanDestinationDir --verbose",
     "hugo:dev": "hugo --environment development --baseURL \"${DEPLOY_PRIME_URL:-/}\" --buildDrafts --buildFuture --gc --cleanDestinationDir --verbose",
-    "start": "hugo server --buildDrafts --buildFuture --port 1337 --bind 0.0.0.0 --verbose",
+    "start": "hugo server --disableFastRender --buildDrafts --buildFuture --port 1337 --bind 0.0.0.0 --verbose",
     "optimize": "run-s optimize:**",
     "optimize:emoji": "rimraf public/twemoji/{*.html,72x72}",
     "optimize:html": "html-minifier --html5 --collapse-whitespace --collapse-boolean-attributes --preserve-line-breaks --minify-css --file-ext html --input-dir public --output-dir public **/*.html",

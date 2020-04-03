@@ -9,7 +9,7 @@
 
 Personal website of [@jakejarvis](https://github.com/jakejarvis), created and deployed using the following:
 
-- [Hugo extended](https://github.com/gohugoio/hugo)
+- [Hugo Extended](https://github.com/gohugoio/hugo)
 - [Netlify](https://www.netlify.com/)
 - [Simple Analytics](https://referral.simpleanalytics.com/jake-jarvis) (referral link)
 - [utteranc.es](https://utteranc.es/)
@@ -22,7 +22,7 @@ I keep an ongoing list of [blog post ideas](https://github.com/jakejarvis/jarv.i
 
 #### Using Yarn/NPM:
 
-Run `yarn install` ([Yarn must be installed](https://yarnpkg.com/en/docs/install) first, or use `npm install`) and `yarn start` (or `npm start`), then open [http://localhost:1337/](http://localhost:1337/). Pages will live-refresh when source files are changed.
+Run `yarn install` ([Yarn must be installed](https://yarnpkg.com/en/docs/install) first, or use `npm install` if you insist) and `yarn start` (or `npm start`), then open [http://localhost:1337/](http://localhost:1337/). Pages will live-refresh when source files are changed.
 
 #### Using Docker:
 
@@ -33,7 +33,7 @@ docker build -t jarv.is -f Dockerfile .
 docker run -v $(pwd):/src -p 1337:1337 jarv.is
 ```
 
-...then open [http://localhost:1337/](http://localhost:1337/) as above.
+...then open [http://localhost:1337/](http://localhost:1337/).
 
 ## Licenses
 
