@@ -1,13 +1,14 @@
 @charset "UTF-8";
 
-/*! Magic Waving Hand™ - https://go.jarv.is/wave */
-
-span.wave {
+.wave {
   display: inline-block;
-  animation-name: wave;
-  animation-duration: 2.5s;
-  animation-iteration-count: infinite;
+  animation: wave 2.5s infinite;
   transform-origin: 70% 70%;
+}
+
+.beat {
+  display: inline-block;
+  animation: beat 2s infinite;   // 30 bpm, call 911 if you see this please.
 }
 
 // stylelint-disable indentation
@@ -19,5 +20,14 @@ span.wave {
  40% { transform: rotate(  9.0deg); }
  50% { transform: rotate(  0.0deg); }
 100% { transform: rotate(  0.0deg); }
+}
+
+@keyframes beat {
+  0% { transform: scale(1.0); }
+ 10% { transform: scale(1.25); }
+ 20% { transform: scale(1.0); }
+ 30% { transform: scale(1.25); }
+ 40% { transform: scale(1.0); }
+100% { transform: scale(1.0); }
 }
 // stylelint-enable indentation

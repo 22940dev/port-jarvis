@@ -29,4 +29,4 @@ $base-url: "{{ strings.TrimRight "/" .Site.BaseURL }}/";   // consistent trailin
 
 // Miscellaneous
 @import 'components/syntax';
-@import 'components/wave';
+@import 'components/magic';

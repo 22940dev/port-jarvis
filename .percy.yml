@@ -12,6 +12,9 @@ snapshot:
     div.highlight {
       border: 0;  /* no clue why this bugs out... */
     }
+    .wave, .beat {
+      animation: none;
+    }
 static-snapshots:
   path: public/
   snapshot-files: '**/index.html'
