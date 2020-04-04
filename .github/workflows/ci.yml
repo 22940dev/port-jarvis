@@ -81,6 +81,7 @@ jobs:
     - run: |
         yarn install --no-ignore-optional --frozen-lockfile
         yarn build:preview
+        yarn optimize:emoji
     - run: yarn lint
       continue-on-error: true
     - name: Include .percy.yml in artifact
