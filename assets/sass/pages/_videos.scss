@@ -29,7 +29,8 @@ main#video {
   }
 
   video {
-    width: $responsive-width;
+    width: 100%;
+    max-width: 975px;
     height: auto;
   }
 }

@@ -2,7 +2,7 @@
 <main id="single">
   <article>
     <div id="meta">
-      <a class="no-underline" id="date" href="{{ .Permalink }}" title="{{ .Date.Format "Mon, Jan 2 2006 3:04:05 PM MST" }}">{{ .Date.Format "January 2, 2006" }}</a>{{ with .Site.Params.gitRepo }}<span id="edit"><span class="dash">—</span><a class="no-underline" href="{{ . }}/blob/master/content/{{ $.File.Path }}" title="Edit this post on GitHub" target="_blank" rel="noopener">Improve This Post</a></span>{{ end }}
+      <a class="no-underline" href="{{ .Permalink }}" title="{{ .Date.Format "Mon, Jan 2 2006 3:04:05 PM MST" }}">{{ .Date.Format "January 2, 2006" }}</a>{{ with .Site.Params.gitRepo }}<span class="dash">—</span><a class="no-underline" href="{{ . }}/blob/master/content/{{ $.File.Path }}" title="Edit this post on GitHub" target="_blank" rel="noopener">Improve This Post</a>{{ end }}
     </div>
 
     <h1 id="title"><a class="no-underline" href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>

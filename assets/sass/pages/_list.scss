@@ -3,7 +3,7 @@
 // Archive/List Styles
 main#list {
   max-width: 980px;
-  padding: 1.5em 2em;
+  padding: 1.5em 1.5em 0.25em 1.5em;
   margin: 0 auto;
 
   section.year {
@@ -12,11 +12,13 @@ main#list {
     h2 {
       font-size: 2.25em;
       letter-spacing: -0.025em;
-      margin: 0;
+      margin-top: 0;
+      margin-bottom: 0.4em;
     }
 
     ul {
       list-style-type: none;
+      margin: 0;
       padding-left: 0;
       display: block;
     }
@@ -25,6 +27,7 @@ main#list {
       display: flex;
       letter-spacing: -0.011em;
       line-height: 1.75;
+      margin-bottom: 1em;
 
       div.date {
         color: $color-medium;
@@ -32,12 +35,8 @@ main#list {
         flex-shrink: 0;
       }
 
-      + li {
-        margin-top: 1em;
-      }
-
       &:last-child {
-        margin-bottom: 1.8em;
+        margin-bottom: 1.6em;
       }
     }
   }
@@ -47,7 +46,7 @@ main#list {
 // Responsive
 @mixin responsive--list() {
   main#list {
-    padding: 1em 1.25em;
+    padding: 1em 1em 0.25em 1em;
 
     section.year {
       font-size: 1em;

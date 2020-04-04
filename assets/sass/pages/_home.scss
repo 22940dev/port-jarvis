@@ -4,7 +4,7 @@
 main#home {
   font-size: 1.1em;
   max-width: 980px;
-  padding: 1.5em 1.75em 0.5em 1.75em;
+  padding: 1.5em 1.5em 0.5em 1.5em;
   margin: 0 auto;
 
   h2 {
@@ -40,7 +40,8 @@ main#home {
 
   img#me {
     float: right;
-    margin: 0 0 0.5em 1em;
+    margin-bottom: 0.5em;
+    margin-left: 1em;
     padding: 4px;
     border: 1px solid $color-light;
     border-radius: 50%;
