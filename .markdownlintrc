@@ -14,6 +14,5 @@
   "no-multiple-blanks": false,
   "no-trailing-punctuation": false,
   "single-h1": false,
-  "whitespace": false,
-  "emphasis-style": false
+  "whitespace": false
 }

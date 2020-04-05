@@ -26,13 +26,12 @@
     "optimize:img": "find ./public -type d ! -path './public/vendor*' | xargs -n1 -P8 -I{} imagemin {}/* --plugin=jpegoptim --plugin.jpegoptim.progressive --plugin.jpegoptim.stripAll --plugin=pngquant --plugin.pngquant.speed=5 --plugin.pngquant.strip --plugin=optipng --plugin.optipng.optimizationLevel=2 --plugin=gifsicle --plugin=svgo --out-dir={}",
     "lint": "run-s lint:**",
     "lint:scss": "stylelint assets/sass/**/* --syntax scss",
-    "lint:md": "markdownlint --rules markdownlint-rule-emphasis-style content/**/*.md content/**/**/*.md",
+    "lint:md": "markdownlint content/**/*.md content/**/**/*.md",
     "index": "run-s clean hugo index:** clean",
-    "index:algolia": "atomic-algolia"
+    "index:algolia": "npx atomic-algolia"
   },
   "dependencies": {},
   "devDependencies": {
-    "atomic-algolia": "^0.3.17",
     "autoprefixer": "^9.7.5",
     "cross-env": "^7.0.2",
     "html-minifier": "^4.0.0",
@@ -47,7 +46,6 @@
     "imagemin-svgo": "^7.1.0",
     "lint-staged": "^10.1.2",
     "markdownlint-cli": "~0.22.0",
-    "markdownlint-rule-emphasis-style": "~1.0.1",
     "npm-run-all": "^4.1.5",
     "percy": "^0.26.2",
     "postcss-clean": "^1.1.0",
