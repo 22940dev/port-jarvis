@@ -13,11 +13,11 @@ draft: false
 ---
 
 {{< page-css >}}
-/* disable link underlines in h2's */
-h2 a {
+/* disable link underlines for octocats */
+h2 a:last-child {
   background-image: none !important;
   padding-bottom: 0 !important;
-  margin-right: 8px !important;
+  margin-left: 8px;
 }
 /* align octocat with text */
 h2 img {
@@ -105,7 +105,8 @@ You can [download their software here](https://foldingathome.org/start-folding/)
 
 **Fun fact:** The team behind Folding@home has seen a [**huge** spike in computational power](https://www.reddit.com/r/pcmasterrace/comments/flgm7q/ama_with_the_team_behind_foldinghome_coronavirus/) this month after cryptominers started mining coronavirus proteins instead of boring, old Ethereum with their insanely overpowered GPUs! 👏
 
-{{< youtube NTLU1anxe8c >}}
+<!-- https://www.youtube.com/watch?v=NTLU1anxe8c -->
+{{< video mp4="images/folding.mp4" webm="images/folding.webm" width="365" height="291" poster="images/folding-thumb.png" >}}
 
 ## [Coronavirus Tracker API](https://coronavirus-tracker-api.herokuapp.com/v2/locations) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/ExpDev07/coronavirus-tracker-api "View on GitHub")
 
