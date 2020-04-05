@@ -1,12 +1,11 @@
 # Sensible default security headers
-#  - More info: https://scotthelme.co.uk/hardening-your-http-response-headers/
-#  - Test website: https://securityheaders.com/
 /*
   Referrer-Policy: strict-origin-when-cross-origin
   X-Content-Type-Options: nosniff
   X-Frame-Options: sameorigin
+  X-XSS-Protection: 1; mode=block
 
-# Super long cache for web fonts and Twemojis (one year)
+# Super long cache (one year) for vendored assets: web fonts, emojis, etc.
 /vendor/*
   Cache-Control: max-age=31536000, public, immutable
 
