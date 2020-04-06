@@ -1,0 +1,36 @@
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ .Site.LanguageCode }}">
+  <title>{{ .Site.Title }}</title>
+  <id>{{ "/" | absLangURL }}</id>
+  <author>
+    <name>{{ .Site.Title }}</name>
+    <uri>{{ .Permalink }}</uri>
+  </author>
+  <generator>Hugo -- gohugo.io</generator>
+  {{- with .Site.Params.defaultImage }}
+  <logo>{{ . | absURL }}</logo>
+  {{- end }}
+  <updated>{{ dateFormat "2006-01-02T15:04:05Z" now.UTC | safeHTML }}</updated>
+  {{- with .OutputFormats.Get "ATOM" }}
+  {{ printf `<link rel="self" type="%s" href="%s" />` .MediaType.Type .Permalink $.Site.LanguageCode | safeHTML }}
+  {{- end }}
+  {{- range .AlternativeOutputFormats }}
+  {{ printf `<link rel="alternate" type="%s" href="%s" />` .MediaType.Type .Permalink $.Site.LanguageCode | safeHTML }}
+  {{- end }}
+  {{- range (where .Site.RegularPages "Section" "notes") }}
+  <entry>
+    <title>{{ .Title }}</title>
+    {{- with .Site.Author.name }}
+    <author>
+      <name>{{ . }}</name>
+      <uri>{{ $.Permalink }}</uri>
+    </author>
+    {{- end }}
+    <id>{{ .Permalink }}</id>
+    <published>{{ dateFormat "2006-01-02T15:04:05Z" .Date.UTC | safeHTML }}</published>
+    <content type="html">
+{{ .Content | html }}
+    </content>
+  </entry>
+  {{- end }}
+</feed>

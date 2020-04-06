@@ -9,9 +9,13 @@
 /vendor/*
   Cache-Control: max-age=31536000, public, immutable
 
+# Proper MIME type for Atom feed
+/*.atom
+  Content-Type: application/atom+xml
+
 # Recommended MIME type for PWA manifests
 # https://github.com/w3c/manifest/issues/689
 /manifest.json
-  Content-Type: application/manifest+json; charset=UTF-8
+  Content-Type: application/manifest+json
 /*.webmanifest
-  Content-Type: application/manifest+json; charset=UTF-8
+  Content-Type: application/manifest+json

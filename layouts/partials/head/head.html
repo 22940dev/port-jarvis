@@ -7,7 +7,7 @@
 {{ partialCached "head/favicons" (dict "pngSizes" "192 48 32 16" "icoSizes" "16 32 48") -}}
 <link rel="manifest" href="{{ "site.webmanifest" | absURL }}">
 <link rel="canonical" href="{{ .Permalink }}">
-<link rel="alternate" type="application/rss+xml" href="{{ "feed.xml" | absURL }}" title="{{ .Site.Title }} (RSS)">
+{{ partialCached "head/feeds" . -}}
 {{ partialCached "head/webmention" . -}}
 <link rel="author" href="{{ "humans.txt" | absURL }}">
 {{ if and .IsPage (eq .Type "notes") }}

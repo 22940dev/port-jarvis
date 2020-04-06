@@ -80,17 +80,22 @@ disableAliases = true
     weight = -70
 
 [outputs]
-  home = ["HTML", "RSS", "ALGOLIA", "MANIFEST", "REDIRECTS", "HEADERS"]
+  home = ["HTML", "RSS", "ATOM", "ALGOLIA", "MANIFEST", "REDIRECTS", "HEADERS"]
   section = ["HTML"]
   page = ["HTML", "AMP"]
 
 [mediaTypes]
+  [mediaTypes."application/atom+xml"]
+    suffixes = ["atom"]
   [mediaTypes."text/netlify"]
     delimiter = ""
 
 [outputFormats]
   [outputFormats.RSS]
     mediaType = "application/rss"
+    baseName = "feed"
+  [outputFormats.ATOM]
+    mediaType = "application/atom+xml"
     baseName = "feed"
   [outputFormats.AMP]
     mediaType = "text/html"
