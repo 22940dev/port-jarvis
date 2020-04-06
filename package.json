@@ -31,7 +31,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^9.7.5",
+    "autoprefixer": "^9.7.6",
     "cross-env": "^7.0.2",
     "html-minifier": "^4.0.0",
     "hugo-extended": "0.68.3",
@@ -54,6 +54,9 @@
     "stylelint": "~13.3.0",
     "stylelint-config-sass-guidelines": "~7.0.0",
     "stylelint-scss": "~3.16.0"
+  },
+  "resolutions": {
+    "postcss-clean/postcss": "^7.x"
   },
   "husky": {
     "hooks": {
