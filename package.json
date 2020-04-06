@@ -16,12 +16,11 @@
   "scripts": {
     "clean": "rimraf public/ resources/ builds/",
     "build": "run-s clean hugo optimize",
-    "build:preview": "run-s clean hugo:dev optimize:junk",
+    "build:preview": "run-s clean hugo:dev",
     "hugo": "hugo --gc --cleanDestinationDir --verbose",
     "hugo:dev": "hugo --environment development --baseURL ${DEPLOY_PRIME_URL:-/} --buildDrafts --buildFuture --gc --cleanDestinationDir --verbose",
     "start": "hugo server --disableFastRender --buildDrafts --buildFuture --port 1337 --bind 0.0.0.0 --verbose",
     "optimize": "run-s optimize:**",
-    "optimize:junk": "rimraf public/vendor/emoji/{*.html,72x72} public/*/amp.html",
     "optimize:html": "html-minifier --html5 --collapse-whitespace --collapse-boolean-attributes --preserve-line-breaks --minify-css --file-ext html --input-dir public --output-dir public **/*.html",
     "optimize:img": "find ./public -type d ! -path './public/vendor*' | xargs -n1 -P8 -I{} imagemin {}/* --plugin=jpegoptim --plugin.jpegoptim.progressive --plugin.jpegoptim.stripAll --plugin=pngquant --plugin.pngquant.speed=5 --plugin.pngquant.strip --plugin=optipng --plugin.optipng.optimizationLevel=2 --plugin=gifsicle --plugin=svgo --out-dir={}",
     "lint": "run-s lint:**",

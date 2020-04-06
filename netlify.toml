@@ -146,6 +146,10 @@
   from = "/twemoji/*"
   to = "/vendor/emoji/:splat"
   status = 301
+[[redirects]]
+  from = "/vendor/emoji/twemoji.min.js"
+  to = "/vendor/emoji/emoji.min.js"
+  status = 301
 
 # More miscellaneous mirrors:
 [[redirects]]

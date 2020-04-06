@@ -40,8 +40,8 @@ disableAliases = true
     path = "github.com/twitter/twemoji"
     disabled = false
     [[module.imports.mounts]]
-      source = "v/12.1.5"
-      target = "static/vendor/emoji"
+      source = "assets/svg"
+      target = "static/vendor/emoji/svg"
 
 [author]
   name = "Jake Jarvis"
