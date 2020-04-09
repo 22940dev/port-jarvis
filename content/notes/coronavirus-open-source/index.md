@@ -9,21 +9,19 @@ tags:
   - Public Health
   - GitHub
 image: "covid19dashboards.png"
+css: |
+  /* disable link underlines for octocats */
+  h2 a:last-child {
+    background-image: none !important;
+    padding-bottom: 0 !important;
+    margin-left: 8px;
+  }
+  /* align octocat with text */
+  h2 img {
+    vertical-align: text-bottom;
+  }
 draft: false
 ---
-
-{{< page-css >}}
-/* disable link underlines for octocats */
-h2 a:last-child {
-  background-image: none !important;
-  padding-bottom: 0 !important;
-  margin-left: 8px;
-}
-/* align octocat with text */
-h2 img {
-  vertical-align: text-bottom;
-}
-{{< /page-css >}}
 
 We're all quickly learning that worldwide pandemics can bring out both [the best](https://www.vox.com/culture/2020/3/13/21179293/coronavirus-italy-covid19-music-balconies-sing) and [the worst](https://twitter.com/9NewsAUS/status/1236088663093608448) of humanity. But one thing has become readily apparent to me — outside of the large teams of medical professionals risking their lives right this minute, the open source community stands alone in its ability to rapidly organize in the midst of chaos to give back to the world and, in this case, make it safer for all of us.
 

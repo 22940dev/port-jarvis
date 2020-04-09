@@ -217,8 +217,8 @@
       div.highlight span.gs { font-weight: bold; }
       div.highlight span.lnt { color: #999999; user-select: none; }
 
-      {{/* Page-specific styles set via page-css shortcode */}}
-      {{- with .Page.Scratch.Get "css" }}
+      {{/* Page-specific styles set via front matter */}}
+      {{- with .Params.css }}
         {{- . | safeCSS -}}
       {{ end -}}
     </style>

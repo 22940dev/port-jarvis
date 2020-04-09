@@ -3,7 +3,7 @@
 {{ partial "head/open-graph" . -}}
 {{ partialCached "head/mobile" . -}}
 {{ partial "head/preload" . -}}
-{{ partialCached "head/styles" . -}}
+{{ partial "head/styles" . -}}
 {{ partialCached "head/favicons" (dict "pngSizes" "192 48 32 16" "icoSizes" "16 32 48") -}}
 <link rel="manifest" href="{{ "site.webmanifest" | absURL }}">
 <link rel="canonical" href="{{ .Permalink }}">
@@ -18,11 +18,4 @@
   {{ partial "head/schema-article" . }}
 {{ else }}
   {{ partial "head/schema-person" . }}
-{{ end -}}
-
-{{/* Page-specific styles set via page-css shortcode */}}
-{{- with .Page.Scratch.Get "css" }}
-<style>
-  {{- . | safeCSS -}}
-</style>
 {{ end -}}

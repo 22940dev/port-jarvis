@@ -9,17 +9,15 @@ tags:
   - Internet of Things
   - Dorking
 image: "shodan.png"
+css: |
+  /* disable hover underlines for search links */
+  h3 a:last-child, h4 a:last-child {
+    background-image: none !important;
+    padding-bottom: 0 !important;
+    margin-left: 6px;
+  }
 draft: false
 ---
-
-{{< page-css >}}
-/* disable hover underlines for search links */
-h3 a:last-child, h4 a:last-child {
-  background-image: none !important;
-  padding-bottom: 0 !important;
-  margin-left: 6px;
-}
-{{< /page-css >}}
 
 {{< gh-buttons username="jakejarvis" repo="awesome-shodan-queries" >}}
 
