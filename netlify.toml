@@ -3,10 +3,10 @@
   publish = "public"
 
 [build.environment]
-  NODE_VERSION = "12.16.1"
+  NODE_VERSION = "12.16.2"
   YARN_VERSION = "1.22.4"
   YARN_FLAGS = "--no-ignore-optional --frozen-lockfile"
-  GO_VERSION = "1.14.1"
+  GO_VERSION = "1.14.2"
 
 # Ensure *only* Pretty URLs are enabled, even though this is already set up in
 # the Netlify dashboard.
