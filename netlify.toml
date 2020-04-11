@@ -153,7 +153,7 @@
 
 # More miscellaneous mirrors:
 [[redirects]]
-  from = "/apple-touch-icon-precomposed.png"
+  from = "/apple-touch-icon-*"
   to = "/apple-touch-icon.png"
   status = 200
 [[redirects]]
