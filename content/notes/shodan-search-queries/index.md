@@ -10,10 +10,9 @@ tags:
   - Dorking
 image: "shodan.png"
 css: |
-  /* disable hover underlines for search links */
   h3 a:last-child, h4 a:last-child {
-    background-image: none !important;
-    padding-bottom: 0 !important;
+    background-image: none;
+    padding-bottom: 0;
     margin-left: 6px;
   }
 draft: false

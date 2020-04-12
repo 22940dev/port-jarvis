@@ -10,13 +10,11 @@ tags:
   - GitHub
 image: "covid19dashboards.png"
 css: |
-  /* disable link underlines for octocats */
   h2 a:last-child {
-    background-image: none !important;
-    padding-bottom: 0 !important;
+    background-image: none;
+    padding-bottom: 0;
     margin-left: 8px;
   }
-  /* align octocat with text */
   h2 img {
     vertical-align: text-bottom;
   }

@@ -219,7 +219,7 @@
 
       {{/* Page-specific styles set via front matter */}}
       {{- with .Params.css }}
-        {{- . | safeCSS -}}
+        {{- replace . " !important" "" | safeCSS -}}
       {{ end -}}
     </style>
 
