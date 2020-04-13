@@ -20,7 +20,7 @@
   {{- range .AlternativeOutputFormats }}
   {{ printf `<link rel="alternate" type="%s" href="%s" />` .MediaType.Type .Permalink | safeHTML }}
   {{- end }}
-  {{- range (where .Site.RegularPages "Section" "notes") }}
+  {{- range (where .Site.RegularPages "Section" .Site.Params.mainSection) }}
   <entry>
     <title>{{ .Title }}</title>
     {{- with .Site.Author.name }}

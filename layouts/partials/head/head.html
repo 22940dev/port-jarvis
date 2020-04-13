@@ -10,7 +10,7 @@
 {{ partialCached "head/feeds" . -}}
 {{ partialCached "head/webmention" . -}}
 <link rel="author" href="{{ "humans.txt" | absURL }}">
-{{ if and .IsPage (eq .Type "notes") }}
+{{ if and .IsPage (eq .Type .Site.Params.mainSection) }}
   {{- with .OutputFormats.Get "amp" -}}
   <link rel="amphtml" href="{{ .Permalink }}">
   {{- end }}

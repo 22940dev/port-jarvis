@@ -24,16 +24,16 @@ disableAliases = true
 [params]
   description = "Hi there! I'm a frontend web developer based in Boston, Massachusetts specializing in modern JavaScript frameworks and progressive web apps."
   domain = "jarv.is"
+  mainSection = "notes"
   pageMaxWidth = 910
-  facebookAppID = "3357248167622283"
-  gitRepo = "https://github.com/jakejarvis/jarv.is"
   defaultImage = "/me_large.jpg"
+  github = "jakejarvis/jarv.is"
+  facebookAppID = "3357248167622283"
   copyrightFirstYear = "2001"
   wayback = "https://web.archive.org/web/20010501000000*/jakejarvis.com"
   license = "CC-BY-4.0"
   licenseFull = "Creative Commons Attribution 4.0 International"
   licenseURL = "https://creativecommons.org/licenses/by/4.0/"
-  utterancesRepo = "jakejarvis/jarv.is"
 
 [module]
   [[module.imports]]

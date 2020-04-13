@@ -16,7 +16,7 @@
     </image>{{ end }}{{ with .OutputFormats.Get "RSS" }}
     {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML -}}
     {{ end }}
-    {{- range (where .Site.RegularPages "Section" "notes") }}
+    {{- range (where .Site.RegularPages "Section" .Site.Params.mainSection) }}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>

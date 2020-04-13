@@ -173,6 +173,11 @@
   status = 403
   force = true
 [[redirects]]
+  from = "*/wp-includes/*"
+  to = "/403.html"
+  status = 403
+  force = true
+[[redirects]]
   from = "/login"
   to = "/403.html"
   status = 403
