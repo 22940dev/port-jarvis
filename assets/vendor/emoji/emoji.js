@@ -24,14 +24,14 @@ var twemoji = (function (
     /////////////////////////
 
       // default assets url, by default will be Twitter Inc. CDN
-      base: '/',
+      base: '{{ "vendor/emoji/" | absURL }}',
 
       // default assets file extensions, by default '.png'
       ext: '.svg',
 
       // default assets/folder size, by default "72x72"
       // available via Twitter CDN: 72
-      size: 'vendor/emoji/svg',
+      size: 'svg',
 
       // default class name, by default 'emoji'
       className: 'emoji',
@@ -567,4 +567,4 @@ var twemoji = (function (
 
 }());
 
-twemoji.parse(document.body, {});
+twemoji.parse(document.body);
