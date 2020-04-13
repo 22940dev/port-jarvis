@@ -1,6 +1,6 @@
 {{ if eq hugo.Environment "production" }}
   <link rel="preconnect" href="https://s.jarv.is" crossorigin="anonymous">
-  {{ if and .IsPage (eq .Type "notes") }}
+  {{ if and .IsPage (and (eq .Type "notes") (ne .Params.comments false)) }}
     <link rel="preconnect" href="https://utteranc.es" crossorigin="anonymous">
     <link rel="preconnect" href="https://api.utteranc.es" crossorigin="anonymous">
     <link rel="preconnect" href="https://api.github.com" crossorigin="anonymous">
