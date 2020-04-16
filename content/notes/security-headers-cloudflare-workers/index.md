@@ -8,7 +8,7 @@ tags:
   - Cloudflare
   - Hosting
   - Tutorial
-image: "cf-workers.png"
+image: "images/cf-workers.png"
 draft: false
 ---
 

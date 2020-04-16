@@ -11,7 +11,7 @@ tags:
   - Tutorial
 aliases:
   - /2018/12/10/cool-bash-tricks-for-your-terminal-dotfiles/
-image: "terminal_icon.jpg"
+image: "images/terminal_icon.jpg"
 draft: false
 ---
 

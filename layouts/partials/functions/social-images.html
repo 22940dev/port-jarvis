@@ -8,7 +8,7 @@
 
 {{/* Article image (with fallback to default image */}}
 {{- with .Params.image }}
-  {{- $imagePath := (path.Join "content" $.File.Dir "images/" .) }}
+  {{- $imagePath := (path.Join "content" $.File.Dir .) }}
 
   {{- $.Scratch.Set "socialImage_url" (replace $imagePath "content/" "") }}
   {{- with (imageConfig $imagePath) }}

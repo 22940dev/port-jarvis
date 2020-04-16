@@ -8,7 +8,7 @@ tags:
   - Subdomain Takeover
   - Bug Bounty
   - Tutorial
-image: "hackerone-2.png"
+image: "images/hackerone-2.png"
 draft: false
 ---
 

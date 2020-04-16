@@ -8,7 +8,7 @@ tags:
   - Nostalgia
   - Vintage Code
   - Awesome List
-image: "jbb-screen1.png"
+image: "images/jbb-screen1.png"
 draft: false
 ---
 

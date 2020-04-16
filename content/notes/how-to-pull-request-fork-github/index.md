@@ -9,7 +9,7 @@ tags:
   - Pull Request
   - Open Source
   - GitHub
-image: "step7-2.png"
+image: "images/step7-2.png"
 draft: false
 ---
 

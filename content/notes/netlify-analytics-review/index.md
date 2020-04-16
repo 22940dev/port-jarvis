@@ -9,7 +9,7 @@ tags:
 - Netlify
 - Privacy
 - JAMStack
-image: "overview.png"
+image: "images/overview.png"
 draft: false
 ---
 

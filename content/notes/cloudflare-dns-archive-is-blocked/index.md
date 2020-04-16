@@ -8,7 +8,7 @@ tags:
   - Networking
   - Privacy
   - Temper Tantrums
-image: "archive-is.png"
+image: "images/archive-is.png"
 draft: false
 ---
 

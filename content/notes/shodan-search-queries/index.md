@@ -8,7 +8,7 @@ tags:
   - Shodan
   - Internet of Things
   - Dorking
-image: "shodan.png"
+image: "images/shodan.png"
 css: |
   h3 a:last-child, h4 a:last-child {
     background-image: none;

@@ -3,7 +3,7 @@
   <h1><a class="no-underline" href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
 
   <video
-    {{ with .Resources.GetMatch "images/*.png" }}poster="{{ .Permalink }}"{{ end }}
+    {{ with .Resources.GetMatch "thumb.*" }}poster="{{ .Permalink }}"{{ end }}
     controls crossorigin playsinline preload="none">
     {{ with .Resources.GetMatch "*.webm" }}<source src="{{ .Permalink }}" type="video/webm">{{ end }}
     {{ with .Resources.GetMatch "*.mp4" }}<source src="{{ .Permalink }}" type="video/mp4">{{ end }}

@@ -7,7 +7,7 @@ tags:
   - Campaign 2020
   - Rankings
   - Attempted Humor
-image: "obama-laughing.jpg"
+image: "images/obama-laughing.jpg"
 draft: false
 ---
 

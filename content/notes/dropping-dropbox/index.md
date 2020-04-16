@@ -8,7 +8,7 @@ tags:
   - Apple
   - iCloud Drive
   - Betrayal
-image: "email.png"
+image: "images/email.png"
 draft: false
 ---
 

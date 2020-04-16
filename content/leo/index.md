@@ -9,8 +9,8 @@ layout: video
 resources:
 - src: "leo.mp4"
 - src: "leo.webm"
-- src: "images/thumb.png"
 - src: "subs.en.vtt"
+- src: "thumb.png"
 ---
 
 Video is property of [Leo Laporte](https://leolaporte.com/) and [G4techTV / HOW TO Channel](https://en.wikipedia.org/wiki/G4techTV). &copy; 2007.

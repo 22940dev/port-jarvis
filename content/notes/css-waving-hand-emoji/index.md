@@ -8,7 +8,7 @@ tags:
   - Emoji
   - Keyframes
   - Cool Tricks
-image: "codepen.png"
+image: "images/codepen.png"
 draft: false
 ---
 

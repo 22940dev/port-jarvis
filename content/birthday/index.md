@@ -9,6 +9,5 @@ layout: video
 resources:
 - src: "birthday.mp4"
 - src: "birthday.webm"
-- src: "images/thumb.png"
-- src: "subs.en.vtt"
+- src: "thumb.png"
 ---

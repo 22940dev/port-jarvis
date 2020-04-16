@@ -8,7 +8,7 @@ tags:
   - Coronavirus
   - Public Health
   - GitHub
-image: "covid19dashboards.png"
+image: "images/covid19dashboards.png"
 css: |
   h2 a:last-child {
     background-image: none;
