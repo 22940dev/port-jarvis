@@ -1,9 +1,8 @@
 ---
 title: "/uses 💻"
-description: "Things I use daily."
 date: 2020-01-22 09:51:08-0400
-url: "/uses"
-type: etc
+description: "Things I use daily."
+image: "images/desktop.png"
 layout: etc
 ---
 
