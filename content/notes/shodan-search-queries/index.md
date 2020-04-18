@@ -217,6 +217,16 @@ Secured by default, thankfully, but these 1,700+ machines still [have no busines
 
 ## Network Infrastructure {#network-infrastructure}
 
+### [Weave Scope](https://www.weave.works/oss/scope/) Dashboards [🔎 &#x2192;](https://www.shodan.io/search?query=title%3A%22Weave+Scope%22+http.favicon.hash%3A567176827)
+
+Command-line access inside Kubernetes pods and Docker containers, and real-time visualization/monitoring of the entire infrastructure.
+
+```plaintext {linenos=false}
+title:"Weave Scope" http.favicon.hash:567176827
+```
+
+{{< image src="images/weavescope.png" alt="Example: Weave Scope Dashboards" />}}
+
 ### MongoDB [🔎 &#x2192;](https://www.shodan.io/search?query=product%3AMongoDB+-authentication)
 
 Older versions were insecure by default. [Very scary.](https://krebsonsecurity.com/tag/mongodb/)
@@ -249,6 +259,12 @@ Like the [infamous phpMyAdmin](https://www.cvedetails.com/vulnerability-list/ven
 
 ```plaintext {linenos=false}
 "Docker Containers:" port:2375
+```
+
+### Docker Private Registries [🔎 &#x2192;](https://www.shodan.io/search?query=%22Docker-Distribution-Api-Version%3A+registry%22+%22200+OK%22+-gitlab)
+
+```plaintext {linenos=false}
+"Docker-Distribution-Api-Version: registry" "200 OK" -gitlab
 ```
 
 ### [Pi-hole](https://pi-hole.net/) Open DNS Servers [🔎 &#x2192;](https://www.shodan.io/search?query=%22dnsmasq-pi-hole%22+%22Recursion%3A+enabled%22)
@@ -325,10 +341,10 @@ Telnet Configuration: [🔎 &#x2192;](https://www.shodan.io/search?query=%22Poly
 "Intel(R) Active Management Technology" port:623,664,16992,16993,16994,16995
 ```
 
-### HP iLO 4 [CVE-2017-12542](https://nvd.nist.gov/vuln/detail/CVE-2017-12542) [🔎 &#x2192;](https://www.shodan.io/search?query=HP-ILO-4+%21%22HP-ILO-4%2F2.53%22+%21%22HP-ILO-4%2F2.54%22+%21%22HP-ILO-4%2F2.55%22+%21%22HP-ILO-4%2F2.60%22+%21%22HP-ILO-4%2F2.61%22+%21%22HP-ILO-4%2F2.62%22+port%3A1900)
+### HP iLO 4 [CVE-2017-12542](https://nvd.nist.gov/vuln/detail/CVE-2017-12542) [🔎 &#x2192;](https://www.shodan.io/search?query=HP-ILO-4+%21%22HP-ILO-4%2F2.53%22+%21%22HP-ILO-4%2F2.54%22+%21%22HP-ILO-4%2F2.55%22+%21%22HP-ILO-4%2F2.60%22+%21%22HP-ILO-4%2F2.61%22+%21%22HP-ILO-4%2F2.62%22+%21%22HP-iLO-4%2F2.70%22+port%3A1900)
 
 ```plaintext {linenos=false}
-HP-ILO-4 !"HP-ILO-4/2.53" !"HP-ILO-4/2.54" !"HP-ILO-4/2.55" !"HP-ILO-4/2.60" !"HP-ILO-4/2.61" !"HP-ILO-4/2.62" port:1900
+HP-ILO-4 !"HP-ILO-4/2.53" !"HP-ILO-4/2.54" !"HP-ILO-4/2.55" !"HP-ILO-4/2.60" !"HP-ILO-4/2.61" !"HP-ILO-4/2.62" !"HP-iLO-4/2.70" port:1900
 ```
 
 ### Outlook Web Access:
@@ -379,6 +395,12 @@ Specifically domain controllers: [🔎 &#x2192;](https://www.shodan.io/search?qu
 
 ```plaintext {linenos=false}
 "Authentication: disabled" NETLOGON SYSVOL -unix port:445
+```
+
+Concerning [default network shares of QuickBooks](https://quickbooks.intuit.com/learn-support/en-us/help-articles/set-up-folder-and-windows-access-permissions-to-share-company/01/201880) files: [🔎 &#x2192;](https://www.shodan.io/search?query=%22Authentication%3A+disabled%22+%22Shared+this+folder+to+access+QuickBooks+files+OverNetwork%22+-unix+port%3A445)
+
+```plaintext {linenos=false}
+"Authentication: disabled" "Shared this folder to access QuickBooks files OverNetwork" -unix port:445
 ```
 
 ### FTP Servers with Anonymous Login [🔎 &#x2192;](https://www.shodan.io/search?query=%22220%22+%22230+Login+successful.%22+port%3A21)
@@ -557,6 +579,14 @@ Substitute `.pem` with any extension or a filename like `phpinfo.php`.
 
 ```plaintext {linenos=false}
 http.title:"Index of /" http.html:".pem"
+```
+
+### Misconfigured WordPress [🔎 &#x2192;](https://www.shodan.io/search?query=http.html%3A%22*+The+wp-config.php+creation+script+uses+this+file%22)
+
+Exposed [`wp-config.php`](https://github.com/WordPress/WordPress/blob/master/wp-config-sample.php) files containing database credentials.
+
+```plaintext {linenos=false}
+http.html:"* The wp-config.php creation script uses this file"
 ```
 
 ### Too Many Minecraft Servers [🔎 &#x2192;](https://www.shodan.io/search?query=%22Minecraft+Server%22+%22protocol+340%22+port%3A25565)
