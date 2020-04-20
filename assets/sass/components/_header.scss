@@ -3,7 +3,11 @@
 // Global Header Styles
 header {
   width: 100%;
-  border-bottom: 1px solid $color-kinda-light;
+
+  @include themed() {
+    border-bottom: 1px solid t(color-kinda-light);
+    background-color: t(color-super-duper-light);
+  }
 
   nav {
     width: 100%;
@@ -18,7 +22,10 @@ header {
     a#logo {
       display: flex;
       align-items: center;
-      color: $color-medium-dark;
+
+      @include themed() {
+        color: t(color-medium-dark);
+      }
 
       h1#name {
         margin-left: 0.8em;
@@ -34,7 +41,9 @@ header {
 
       // mix up logo colors on hover
       &:hover {
-        color: $color-links;
+        @include themed() {
+          color: t(color-links);
+        }
 
         svg {
           g#c1 {
@@ -65,12 +74,18 @@ header {
 
         a {
           display: inline-block;
-          color: $color-medium;
           transition: transform 0.15s ease-in-out;
+
+          @include themed() {
+            color: t(color-medium);
+          }
 
           &:hover {
             transform: scale(1.15);
-            color: $color-links;
+
+            @include themed() {
+              color: t(color-links);
+            }
           }
 
           span.icon {
@@ -89,10 +104,22 @@ header {
           margin-left: 0;
         }
       }
+
+      // Dark mode toggle
+      button#dark-mode-toggle {
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        display: block;
+        height: 1.5em;
+        width: 1em;
+        cursor: pointer;
+
+        // hide by default in case user's JS is disabled
+        visibility: hidden;
+      }
     }
   }
 }
-
 
 // Responsive
 @mixin responsive--header() {
@@ -115,7 +142,7 @@ header {
       font-size: 1.7em;
 
       li {
-        margin-left: 1em;
+        margin-left: 0.85em;
 
         a {
           span.icon {
@@ -131,6 +158,14 @@ header {
             transform: scale(1.4);
           }
         }
+      }
+
+      // Dark mode toggle
+      button#dark-mode-toggle {
+        // TODO: figure out need for weird magic numbers here
+        height: 1.025em;
+        width: 0.75em;
+        margin-top: 0.125em;
       }
     }
   }

@@ -5,8 +5,6 @@ body {
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  background-color: $color-super-duper-light;   // really just the color of header & footer
-  color: $color-text;
   font-family: $webfont-sans;
   font-kerning: normal;
   font-feature-settings: "kern", "liga", "calt", "clig", "ss01";
@@ -14,15 +12,24 @@ body {
   box-sizing: border-box;
 }
 
+main {
+  @include themed() {
+    color: t(color-text);
+  }
+}
+
 a {
-  color: $color-links;
   text-decoration: none;
-  background-image: underline-hack($color-links);
   background-position: 0% 100%;
   background-repeat: no-repeat;
   background-size: 0% $link-underline-size;
   padding-bottom: $link-underline-size;
   transition: background-size 0.25s ease-in-out;
+
+  @include themed() {
+    color: t(color-links);
+    background-image: underline-hack(t(color-links));
+  }
 
   &:hover {
     background-size: 100% $link-underline-size;
@@ -39,41 +46,75 @@ strong {
 }
 
 blockquote {
-  border-left: 5px solid $color-links;
   margin-left: 0.5em;
   padding-left: 1em;
+
+  @include themed() {
+    border-left: 5px solid t(color-links);
+  }
 }
 
 hr {
   margin: 1.5em auto;
   height: 2px;
   border: 0;
-  background-color: $color-light;
+
+  @include themed() {
+    background-color: t(color-light);
+  }
+}
+
+// button reset
+button {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+
+  // inherit font & color from ancestor
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+
+  // corrects inability to style clickable `input` types in iOS
+  appearance: none;
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
 }
 
 // all code
 code {
   font-family: $webfont-mono;
-  background: $color-super-duper-light;
   font-size: 0.95em;
   letter-spacing: 0;
   page-break-inside: avoid;
 
   // inline code in paragraphs (single tildes)
-  border: 1px solid $color-light;
   padding: 0.2em;
+
+  @include themed() {
+    background-color: t(color-super-duper-light);
+    border: 1px solid t(color-light);
+  }
 }
 
 // code fences
 div.highlight {
-  background: $color-super-duper-light;
-  border: 1px solid $color-light;
-  border-left: 3px solid $color-links;
   line-height: 1.6;
   max-width: 100%;
   overflow-x: scroll;
   object-fit: scale-down;
   margin: 1em 0;
+
+  @include themed() {
+    border: 1px solid t(color-light);
+    border-left: 3px solid t(color-links);
+    background-color: t(color-super-duper-light);
+  }
 
   pre {
     display: block;
@@ -100,9 +141,31 @@ img.emoji {
 // white background for entire width content area
 div#wrap {
   width: 100%;
-  background-color: $color-background;
+
+  @include themed() {
+    background-color: t(color-background);
+  }
 }
 
+// manually setting light/dark mode backgrounds and bulb icon
+// really just the color of header & footer
+body {
+  &.light {
+    background-color: $color-light-background;
+
+    button#dark-mode-toggle {
+      background-image: url($icon-bulb-on);
+    }
+  }
+
+  &.dark {
+    background-color: $color-dark-background;
+
+    button#dark-mode-toggle {
+      background-image: url($icon-bulb-off);
+    }
+  }
+}
 
 // Responsive
 @mixin responsive--global() {

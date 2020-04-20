@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+// Dark & Light Themes
+$themes: (
+  light: (
+    color-background:   #ffffff,
+    color-text:         #202020,
+    color-medium-dark:  #494949,
+    color-medium:       #5e5e5e,
+    color-medium-light: #757575,
+    color-light:        #d2d2d2,
+    color-kinda-light:  #e3e3e3,
+    color-super-light:  #f4f4f4,
+    color-super-duper-light: #fbfbfb,
+    color-links:        #0e6dc2,
+    syntax-k:           #0e6dc2,
+    syntax-n:           #111111,
+    syntax-na:          #337a15,
+    syntax-err:         #d43d2e,
+    syntax-l:           #8d4eff,
+    syntax-ld:          #bd5500,
+    syntax-c:           #6b6859,
+    syntax-lnt:         #999999
+  ),
+  dark: (
+    color-background:   #292929,
+    color-text:         #efefef,
+    color-medium-dark:  #cfcfcf,
+    color-medium:       #b1b1b1,
+    color-medium-light: #929292,
+    color-light:        #646464,
+    color-kinda-light:  #535353,
+    color-super-light:  #272727,
+    color-super-duper-light: #1f1f1f,
+    color-links:        #85baea,
+    syntax-k:           #3b9dd2,
+    syntax-n:           #cfcfcf,
+    syntax-na:          #78df55,
+    syntax-err:         #f95757,
+    syntax-l:           #d588fb,
+    syntax-ld:          #fd992a,
+    syntax-c:           #929292,
+    syntax-lnt:         #b1b1b1
+  )
+);
+
+$color-light-background: #fbfbfb;
+$color-dark-background: #1f1f1f;
+
+// For nifty color swapping on svg logo hover in components/_header.scss
+$color-logo1: #6fbc4e;
+$color-logo2: #ffb900;
+$color-logo3: #009cdf;
+
+// Colorful Homepage
+$colors-home:(
+  boston:     (light: #fb4d42, dark: #ff5146),
+  javascript: (light: #f48024, dark: #e18431),
+  node:       (light: #6fbc4e, dark: #84d95f),
+  golang:     (light: #00acd7, dark: #2ad1fb),
+  react:      (light: #4fb3cd, dark: #6fcbe3),
+  angular:    (light: #c3002f, dark: #f95757),
+  php:        (light: #8892bf, dark: #a4afe3),
+  ruby:       (light: #d34135, dark: #f95a4d),
+  python:     (light: #fea500, dark: #ffbb3c),
+  java:       (light: #ab6311, dark: #e86a2c),
+  infosec:    (light: #00b81a, dark: #57f06d),
+  server:     (light: #0098ec, dark: #43b9fb),
+  devops:     (light: #ff6200, dark: #f46c16),
+  containers: (light: #c48f49, dark: #ca9249),
+  y2k:        (light: #4169e1, dark: #8ca9ff),
+  jbb:        (light: #9932cc, dark: #d588fb),
+  birthday:   (light: #e40088, dark: #fd40b1),
+  github:     (light: #8d4eff, dark: #a379f0),
+  linkedin:   (light: #0073b1, dark: #3b9dd2),
+  twitter:    (light: #00acee, dark: #3bc9ff),
+  dm:         (light: #00acee, dark: #3bc9ff),
+  facebook:   (light: #4267b2, dark: #5f8dec),
+  instagram:  (light: #a37754, dark: #c49169),
+  mastodon:   (light: #6d8ca7, dark: #87b0d5),
+  resume:     (light: #d54b3d, dark: #f46151),
+  email:      (light: #de0c0c, dark: #ff5050),
+  pgp:        (light: #757575, dark: #979797),
+  sms:        (light: #6fcc01, dark: #8edb34),
+  news-1:     (light: #ff1b1b, dark: #f06060),
+  news-2:     (light: #f78200, dark: #fd992a),
+  news-3:     (light: #f2b702, dark: #ffcc2e),
+  news-4:     (light: #5ebd3e, dark: #78df55),
+  news-5:     (light: #009cdf, dark: #29bfff),
+  news-6:     (light: #3e49bb, dark: #7b87ff),
+  news-7:     (light: #973999, dark: #db60dd)
+);
+$color-serverless: #87cef7;
+
+// Icons (modified twemojis)
+// lightbulb on
+$icon-bulb-on: "data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjIgMzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSJub25lIj48cGF0aCBkPSJNMjIgMTEuMDZjMCA2LjQ0LTUgNy40NC01IDEzLjQ0IDAgMy4xLTMuMTIgMy4zNi01LjUgMy4zNi0yLjA1IDAtNi41OS0uNzgtNi41OS0zLjM2IDAtNi00LjkxLTctNC45MS0xMy40NEMwIDUuMDMgNS4yOS4xNCAxMS4wOC4xNCAxNi44OC4xNCAyMiA1LjAzIDIyIDExLjA2eiIgZmlsbD0iI0ZGRDk4MyIvPjxwYXRoIGQ9Ik0xNS4xNyAzMi41YzAgLjgzLTIuMjQgMi41LTQuMTcgMi41LTEuOTMgMC00LjE3LTEuNjctNC4xNy0yLjUgMC0uODMgMi4yNC0uNSA0LjE3LS41IDEuOTMgMCA0LjE3LS4zMyA0LjE3LjV6IiBmaWxsPSIjQ0NENkREIi8+PHBhdGggZD0iTTE1LjcgMTAuM2ExIDEgMCAwMC0xLjQgMEwxMSAxMy41OGwtMy4zLTMuM2ExIDEgMCAxMC0xLjQgMS40MmwzLjcgMy43VjI2YTEgMSAwIDEwMiAwVjE1LjQxbDMuNy0zLjdhMSAxIDAgMDAwLTEuNDJ6IiBmaWxsPSIjRkZDQzREIi8+PHBhdGggZD0iTTE3IDMxYTIgMiAwIDAxLTIgMkg3YTIgMiAwIDAxLTItMnYtNmgxMnY2eiIgZmlsbD0iIzk5QUFCNSIvPjxwYXRoIGQ9Ik01IDMyYTEgMSAwIDAxLS4xNi0xLjk5bDEyLTJhMSAxIDAgMTEuMzMgMS45N2wtMTIgMkEuOTMuOTMgMCAwMTUgMzJ6bTAtNGExIDEgMCAwMS0uMTYtMS45OWwxMi0yYTEgMSAwIDExLjMzIDEuOTdsLTEyIDJBLjkzLjkzIDAgMDE1IDI4eiIgZmlsbD0iI0NDRDZERCIvPjwvZz48L3N2Zz4K";
+// lightbulb off
+$icon-bulb-off: "data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjIgMzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSJub25lIj48cGF0aCBkPSJNMjIgMTEuMDZjMCA2LjQ0LTUgNy40NC01IDEzLjQ0IDAgMy4xLTMuMTIgMy4zNi01LjUgMy4zNi0yLjA1IDAtNi41OS0uNzgtNi41OS0zLjM2IDAtNi00LjkxLTctNC45MS0xMy40NEMwIDUuMDMgNS4yOS4xNCAxMS4wOC4xNCAxNi44OC4xNCAyMiA1LjAzIDIyIDExLjA2eiIgZmlsbD0iI0NDQ0JDQiIvPjxwYXRoIGQ9Ik0xNS4xNyAzMi41YzAgLjgzLTIuMjQgMi41LTQuMTcgMi41LTEuOTMgMC00LjE3LTEuNjctNC4xNy0yLjUgMC0uODMgMi4yNC0uNSA0LjE3LS41IDEuOTMgMCA0LjE3LS4zMyA0LjE3LjV6IiBmaWxsPSIjQ0NENkREIi8+PHBhdGggZD0iTTE1LjcgMTAuM2ExIDEgMCAwMC0xLjQgMEwxMSAxMy41OGwtMy4zLTMuM2ExIDEgMCAxMC0xLjQgMS40MmwzLjcgMy43VjI2YTEgMSAwIDEwMiAwVjE1LjQxbDMuNy0zLjdhMSAxIDAgMDAwLTEuNDJ6IiBmaWxsPSIjN0Q3QTcyIi8+PHBhdGggZD0iTTE3IDMxYTIgMiAwIDAxLTIgMkg3YTIgMiAwIDAxLTItMnYtNmgxMnY2eiIgZmlsbD0iIzk5QUFCNSIvPjxwYXRoIGQ9Ik01IDMyYTEgMSAwIDAxLS4xNi0xLjk5bDEyLTJhMSAxIDAgMTEuMzMgMS45N2wtMTIgMkEuOTMuOTMgMCAwMTUgMzJ6bTAtNGExIDEgMCAwMS0uMTYtMS45OWwxMi0yYTEgMSAwIDExLjMzIDEuOTdsLTEyIDJBLjkzLjkzIDAgMDE1IDI4eiIgZmlsbD0iI0NDRDZERCIvPjwvZz48L3N2Zz4K";
+
+// https://medium.com/@katiemctigue/how-to-create-a-dark-mode-in-sass-609f131a3995
+@mixin themed() {
+  @each $theme, $map in $themes {
+    body.#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}

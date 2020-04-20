@@ -4,13 +4,13 @@
   <head>
 {{ partial "head/head" . }}
   </head>
-  <body>
+  <body class="light">
 {{ partialCached "page/header" . }}
 <div id="wrap">
 {{ block "main" . }}{{ end }}
 </div>
 {{ partialCached "page/footer" . }}
-{{ partial "scripts/twemoji" . }}
+{{ partial "scripts/bundle" . }}
 {{ partial "scripts/shortcodes" . }}
 {{ if eq hugo.Environment "production" }}
   {{ partialCached "scripts/simple_analytics" . }}

@@ -43,21 +43,16 @@ main#home {
     margin-bottom: 0.5em;
     margin-left: 1em;
     padding: 4px;
-    border: 1px solid $color-light;
     border-radius: 50%;
     width: 160px;
     height: 160px;
+
+    @include themed() {
+      border: 1px solid t(color-light);
+    }
   }
 
   a {
-    // Loop through $colors-home (see abstracts/_variables)
-    @each $id, $color in $colors-home {
-      &##{$id} {
-        color: $color;
-        background-image: underline-hack($color);
-      }
-    }
-
     &#blog {
       font-size: 0.9em;
       margin-bottom: 0;
@@ -83,11 +78,22 @@ main#home {
     }
 
     &#shh {
-      color: $color-medium-light;
+      @include themed() {
+        color: t(color-medium-light);
+      }
     }
   }
 }
 
+// Loop through $colors-home (see abstracts/_variables)
+@each $id, $colors in $colors-home {
+  @each $theme, $color in $colors {
+    body.#{$theme} main#home a##{$id} {
+      color: $color;
+      background-image: underline-hack($color);
+    }
+  }
+}
 
 // Responsive
 @mixin responsive--home() {
