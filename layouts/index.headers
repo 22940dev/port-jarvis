@@ -8,13 +8,7 @@
 # Super long cache (one year) for vendored assets:
 # web fonts, emojis, etc.
 /vendor/*
-  Cache-Control: max-age=31536000, public, immutable
-
-# Kinda long cache (one day) for CSS, JS:
-/css/*
-  Cache-Control: max-age=86400, public, immutable
-/js/*
-  Cache-Control: max-age=86400, public, immutable
+  Cache-Control: public, max-age=31536000, immutable
 
 # Proper MIME type for Atom feed
 /*.atom
