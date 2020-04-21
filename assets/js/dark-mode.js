@@ -14,19 +14,14 @@ let pref = localStorage.getItem('dark_mode_pref');
 const isSystemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 const isSystemLight = window.matchMedia("(prefers-color-scheme: light)").matches;
 
-// keep track of current state, no matter how we get there...
-let currentlyDark = false;
-
 const activateDarkMode = function() {
   document.body.classList.remove('light');
   document.body.classList.add('dark');
-  currentlyDark = true;
 };
 
 const activateLightMode = function() {
   document.body.classList.remove('dark');
   document.body.classList.add('light');
-  currentlyDark = false;
 };
 
 // if user already explicitly enabled dark mode in the past, turn it back on.
