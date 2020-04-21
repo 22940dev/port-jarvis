@@ -1,10 +1,13 @@
 ---
 title: "Jake Jarvis – Front-End Web Developer in Boston, MA"
-date: 2020-04-21 11:46:51-0400
+date: 2020-04-21 12:50:17-0400
 type: home
 ---
 
-<img id="me" src="/me.jpg" width="160" height="160" alt="Photo of Jake Jarvis">
+{{< portrait.inline >}}
+{{ $photoImg := resources.Get "img/me.jpg" }}
+<img id="me" src="{{ $photoImg.Permalink }}" width="{{ div $photoImg.Width 2 }}" height="{{ div $photoImg.Height 2 }}" alt="Photo of Jake Jarvis">
+{{</ portrait.inline >}}
 
 <h2>Hi there! I'm Jake. <span class="wave">&#x1F44B;</span></h2>
 <h3>I'm a frontend web developer based in <a href="https://www.youtube-nocookie.com/embed/rLwbzGyC6t4?hl=en&amp;fs=1&amp;showinfo=1&amp;rel=0&amp;iv_load_policy=3" title="&quot;Boston Accent Trailer - Late Night with Seth Meyers&quot; on YouTube" id="boston" target="_blank" rel="noopener">Boston</a>.</h3>

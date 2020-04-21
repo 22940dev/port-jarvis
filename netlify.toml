@@ -150,22 +150,45 @@
   to = "/vendor/emoji/emoji.min.js"
   status = 301
 
-# More miscellaneous mirrors:
+# More miscellaneous mirrors/redirects:
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/img/favicon.ico"
+  status = 200
+[[redirects]]
+  from = "/favicon-*"
+  to = "/img/favicon-:splat"
+  status = 301
 [[redirects]]
   from = "/apple-touch-icon-*"
-  to = "/apple-touch-icon.png"
-  status = 200
+  to = "/img/apple-touch-icon.png"
+  status = 301
+[[redirects]]
+  from = "/safari-pinned-tab.svg"
+  to = "/img/safari-pinned-tab.svg"
+  status = 301
+[[redirects]]
+  from = "/android-chrome-*"
+  to = "/img/android-chrome-:splat"
+  status = 301
 [[redirects]]
   from = "/me_lg.jpg"
-  to = "/me_large.jpg"
-  status = 200
+  to = "/img/me_large.jpg"
+  status = 301
+[[redirects]]
+  from = "/me_large.jpg"
+  to = "/img/me_large.jpg"
+  status = 301
+[[redirects]]
+  from = "/me.jpg"
+  to = "/img/me.jpg"
+  status = 301
+[[redirects]]
+  from = "/logo.png"
+  to = "/img/logo.png"
+  status = 301
 
 # H A C K E R M A N ( ͡° ͜ʖ ͡°)
-[[redirects]]
-  from = "*/wp-login.php"
-  to = "/403.html"
-  status = 403
-  force = true
 [[redirects]]
   from = "*/wp-admin/*"
   to = "/403.html"
@@ -177,12 +200,12 @@
   status = 403
   force = true
 [[redirects]]
-  from = "/login"
+  from = "*/wp-login.php*"
   to = "/403.html"
   status = 403
   force = true
 [[redirects]]
-  from = "*/login.php"
+  from = "*/login.php*"
   to = "/403.html"
   status = 403
   force = true

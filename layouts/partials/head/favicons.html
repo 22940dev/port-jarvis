@@ -1,10 +1,16 @@
-<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}" sizes="180x180">
-<link rel="mask-icon" href="{{ "safari-pinned-tab.svg" | absURL }}" color="#009cdf">
+{{- $appleIcon := resources.Get "img/apple-touch-icon.png" }}
+<link rel="apple-touch-icon" href="{{ $appleIcon.Permalink }}" sizes="{{ $appleIcon.Width }}x{{ $appleIcon.Height }}">
 
-{{ range (split .pngSizes " ") -}}
-<link rel="icon" href="{{ (printf "favicon-%v.png" .) | absURL }}" sizes="{{ . }}x{{ . }}">
-{{ end -}}
+{{- $safariIcon := resources.Get "img/safari-pinned-tab.svg" }}
+<link rel="mask-icon" href="{{ $safariIcon.Permalink }}" color="#009cdf">
 
-{{ $s := slice -}}
-{{ range (split .icoSizes " ") }}{{ $s = $s | append (printf "%vx%v" . .) }}{{ end -}}
-<link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}" sizes="{{ delimit $s " " }}">
+{{/* TODO: automate shrinking to given sizes based on one super big favicon */}}
+{{- range (split .pngSizes " ") }}
+  {{- $faviconPng := resources.Get (printf "img/favicon-%v.png" .) }}
+  <link rel="icon" href="{{ $faviconPng.Permalink }}" sizes="{{ . }}x{{ . }}">
+{{- end }}
+
+{{- $s := slice }}
+{{- range (split .icoSizes " ") }}{{ $s = $s | append (printf "%vx%v" . .) }}{{ end }}
+{{- $faviconIco := resources.Get "img/favicon.ico" }}
+<link rel="shortcut icon" href="{{ $faviconIco.Permalink }}" sizes="{{ delimit $s " " }}">

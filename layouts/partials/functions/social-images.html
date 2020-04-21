@@ -1,32 +1,24 @@
 {{/* Default image */}}
-{{- $defaultImagePath := (path.Join "content" $.Site.Params.defaultImage) }}
-{{ $.Scratch.Set "defaultImage_url" (replace $defaultImagePath "content/" "") }}
-{{ with (imageConfig $defaultImagePath) }}
-  {{- $.Scratch.Set "defaultImage_width" .Width }}
-  {{- $.Scratch.Set "defaultImage_height" .Height }}
-{{ end -}}
+{{- $defaultImage := resources.Get $.Site.Params.defaultImage }}
+{{- $.Scratch.Set "defaultImage_url" $defaultImage.Permalink }}
+{{- $.Scratch.Set "defaultImage_width" $defaultImage.Width }}
+{{- $.Scratch.Set "defaultImage_height" $defaultImage.Height }}
 
-{{/* Article image (with fallback to default image */}}
+{{/* Article image */}}
 {{- with .Params.image }}
-  {{- $imagePath := (path.Join "content" $.File.Dir .) }}
-
-  {{- $.Scratch.Set "socialImage_url" (replace $imagePath "content/" "") }}
-  {{- with (imageConfig $imagePath) }}
-    {{- $.Scratch.Set "socialImage_width" .Width }}
-    {{- $.Scratch.Set "socialImage_height" .Height }}
-  {{- end }}
+  {{- $socialImage := $.Page.Resources.GetMatch . }}
+  {{- $.Scratch.Set "socialImage_url" $socialImage.Permalink }}
+  {{- $.Scratch.Set "socialImage_width" $socialImage.Width }}
+  {{- $.Scratch.Set "socialImage_height" $socialImage.Height }}
 {{ else }}
-  {{- $.Scratch.Set "socialImage_url" (replace $defaultImagePath "content/" "") }}
-  {{- with (imageConfig $defaultImagePath) }}
-    {{- $.Scratch.Set "socialImage_width" .Width }}
-    {{- $.Scratch.Set "socialImage_height" .Height }}
-  {{- end }}
+  {{/* fallback to default image set above */}}
+  {{- $.Scratch.Set "socialImage_url" $defaultImage.Permalink }}
+  {{- $.Scratch.Set "socialImage_width" $defaultImage.Width }}
+  {{- $.Scratch.Set "socialImage_height" $defaultImage.Height }}
 {{ end -}}
 
 {{/* Site logo */}}
-{{- $logoImagePath := (path.Join "content" "logo.png") }}
-{{ $.Scratch.Set "logoImage_url" (replace $logoImagePath "content/" "") }}
-{{ with (imageConfig $logoImagePath) }}
-  {{- $.Scratch.Set "logoImage_width" .Width }}
-  {{- $.Scratch.Set "logoImage_height" .Height }}
-{{ end -}}
+{{- $logoImage := resources.Get "img/logo.png" }}
+{{- $.Scratch.Set "logoImage_url" $logoImage.Permalink }}
+{{- $.Scratch.Set "logoImage_width" $logoImage.Width }}
+{{- $.Scratch.Set "logoImage_height" $logoImage.Height }}

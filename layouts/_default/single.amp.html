@@ -206,12 +206,12 @@
         display: block;
         margin-left: 1.5em;
       }
-      div.highlight span.k, div.highlight span.kc, div.highlight span.kd, div.highlight span.kp, div.highlight span.kr, div.highlight span.kt, div.highlight span.no { color: #03748a; }
+      div.highlight span.k, div.highlight span.kc, div.highlight span.kd, div.highlight span.kp, div.highlight span.kr, div.highlight span.kt, div.highlight span.no { color: #0e6dc2; }
       div.highlight span.n, div.highlight span.bp, div.highlight span.nb, div.highlight span.ni, div.highlight span.fm, div.highlight span.nl, div.highlight span.nn, div.highlight span.py, div.highlight span.nv, div.highlight span.vc, div.highlight span.vg, div.highlight span.vi, div.highlight span.vm, div.highlight span.p { color: #111111; }
-      div.highlight span.na, div.highlight span.nc, div.highlight span.nd, div.highlight span.ne, div.highlight span.nf, div.highlight span.nx { color: #068200; }
-      div.highlight span.err, div.highlight span.nt, div.highlight span.o, div.highlight span.ow, div.highlight span.kn { color: #e8003d; }
-      div.highlight span.l, div.highlight span.se, div.highlight span.m, div.highlight span.mb, div.highlight span.mf, div.highlight span.mh, div.highlight span.mi, div.highlight span.il, div.highlight span.mo { color: #8145ec; }
-      div.highlight span.ld, div.highlight span.s, div.highlight span.sa, div.highlight span.sb, div.highlight span.sc, div.highlight span.dl, div.highlight span.sd, div.highlight span.s2, div.highlight span.sh, div.highlight span.si, div.highlight span.sx, div.highlight span.sr, div.highlight span.s1, div.highlight span.ss { color: #b35c00; }
+      div.highlight span.na, div.highlight span.nc, div.highlight span.nd, div.highlight span.ne, div.highlight span.nf, div.highlight span.nx { color: #337a15; }
+      div.highlight span.err, div.highlight span.nt, div.highlight span.o, div.highlight span.ow, div.highlight span.kn { color: #d43d2e; }
+      div.highlight span.l, div.highlight span.se, div.highlight span.m, div.highlight span.mb, div.highlight span.mf, div.highlight span.mh, div.highlight span.mi, div.highlight span.il, div.highlight span.mo { color: #8d4eff; }
+      div.highlight span.ld, div.highlight span.s, div.highlight span.sa, div.highlight span.sb, div.highlight span.sc, div.highlight span.dl, div.highlight span.sd, div.highlight span.s2, div.highlight span.sh, div.highlight span.si, div.highlight span.sx, div.highlight span.sr, div.highlight span.s1, div.highlight span.ss { color: #bd5500; }
       div.highlight span.c, div.highlight span.ch, div.highlight span.cm, div.highlight span.c1, div.highlight span.cs, div.highlight span.cp, div.highlight span.cpf { color: #6b6859; }
       div.highlight span.ge { font-style: italic; }
       div.highlight span.gs { font-weight: bold; }
@@ -224,10 +224,8 @@
     </style>
 
     {{ partialCached "head/favicons" (dict "pngSizes" "192 48 32 16" "icoSizes" "16 32 48") }}
-
+    {{ partialCached "head/feeds" . }}
     <link rel="manifest" href="{{ "site.webmanifest" | absURL }}">
-    <link rel="alternate" type="application/rss+xml" href="{{ "feed.xml" | absURL }}" title="{{ .Site.Title }} (RSS)">
-
     {{ partial "head/schema-person" . }}
     {{ partial "head/schema-article" . }}
   </head>

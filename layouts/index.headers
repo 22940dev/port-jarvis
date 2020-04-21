@@ -10,6 +10,10 @@
 /vendor/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Kinda long cache (one week) for favicons, etc.
+/img/*
+  Cache-Control: public, max-age=604800, immutable
+
 # Proper MIME type for Atom feed
 /*.atom
   Content-Type: application/atom+xml

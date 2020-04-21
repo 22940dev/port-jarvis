@@ -11,6 +11,7 @@ pygmentsUseClasses = true
 pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = false
 
+enableInlineShortcodes = true
 enableRobotsTXT = true
 
 disableKinds = ["taxonomy", "taxonomyTerm"]
@@ -26,7 +27,7 @@ disableAliases = true
   domain = "jarv.is"
   mainSection = "notes"
   pageMaxWidth = 910
-  defaultImage = "/me_large.jpg"
+  defaultImage = "img/me_large.jpg"
   github = "jakejarvis/jarv.is"
   facebookAppID = "3357248167622283"
   copyrightFirstYear = "2001"
