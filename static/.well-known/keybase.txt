@@ -1,0 +1,86 @@
+==================================================================
+https://keybase.io/jakejarvis
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://jarv.is
+  * I am jakejarvis (https://keybase.io/jakejarvis) on keybase.
+  * I have a public key with fingerprint 3BC6 E577 6BF3 79D3 6F67  1480 2B0C 9CF2 51E6 9A39
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101c35f512403602f2353b2007b186f926ace0c88dcd774f31a89399cf399a949910a",
+      "fingerprint": "3bc6e5776bf379d36f6714802b0c9cf251e69a39",
+      "host": "keybase.io",
+      "key_id": "2b0c9cf251e69a39",
+      "kid": "0101647946d36fa5b52f5d33ebf8ca2006b04b125339ad2639bce117eaf25b498d680a",
+      "uid": "1b34b49ba13d00b2fc9da2037f06ba00",
+      "username": "jakejarvis"
+    },
+    "merkle_root": {
+      "ctime": 1587566135,
+      "hash_meta": "6bc62e2c9a9a5e7f78686b1b32edb4bf1b7931d8dc75daf7013532edd31bf8cc",
+      "seqno": 16013053
+    },
+    "revoke": {
+      "sig_ids": [
+        "14141cc1757985590676873dc8fc028a2131c1ca2b08d2f021d3d005a5a607270f"
+      ]
+    },
+    "service": {
+      "hostname": "jarv.is",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1587566142,
+  "expire_in": 157680000,
+  "prev": "ea3b24adc64f0ae994067910e75be3e9ff232a75e17e8b72d32b469467efd398",
+  "seqno": 130,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owFtU3tsFEUYv2IhUIu0YkB5s4hgOcrMzu7MbpGXj1KQRBAKAtpjZne2PY7enXvb
+wuVSBEpRbEGgpSYFDQEFFApKH0pLy1MIKIkBEyiPKg1txAhYqcRICs42osY4f+xk
+v/l9v+/3/eabDb0f8fSMG5O49ddZbRV63Nc3mCdr29yMmMRCZlRKi0kB3rXxJSaP
+OL6A35TSJAABNJBqqVBWAMJAtmSkIiYDQBjUsKXLmBocGJpmGiYhioUg1XSk64Yl
+PlRXdB0CKnklyx/M5nbY9gcdQYuYgblKCGYWIrqJsIUJVDQgM2CIVFmFHOsU6SIx
+JxRxM4Q4RiM81R8SMfHj65L3P/h/dGOF6Ap2yanKVNlSTYQ4szSDCvmYAYVBWUVI
+p6aMkc4MDiHhVJAxRddMrHXpzuuigwwpIsooRCYATLYM3RQsiFiCiALgAiPcDtJc
+LtCLaYAvpna+PyIVeKVcbgeWcJ8dCjmuvYbjd0FQ1YiKMUSqaJFGcny53KEiFwtn
+ZC4bwjuqcmIRDWuYifoyN5nCLMiIjqAp7CaqSS0CBIN7ZiLotmYIJRH+ZjAkKmBx
+BlQkJNg8PxTgbvWIP1s4F5HSFkrwSL4CFWgYkKhE11RVB5hgjSDT0CwDyBqVIYIG
+FHYxoJmyBWRouu2rVKUYEJkAS3qjwK0nWjW66N3L+tsEOz9VOOCVwnbICRmhJSKY
+4zjhSJrrihMNu6ilnPn+yvcxf9AUUyIy8rkd8YeCogeB/I9hiuyV+LKw3+Y+v4tQ
+hWYglluH5wtKTsV8KtQ0sGIBynVdEX2JKeREZRxx3RIjLFOicnHbGiOyiWSmYDEp
+hFsm0rV/OYgEq0OzBanwLUidPJtLBQlru6F4T1xPz+B+w+PHn2xdGrgTPR/KfmLF
+w6fVvZv7rjwJvZIeRuq+7fNgWuO8pcr15h0Z6Tk/aVvmXDrV1jw5+mGRGf/YiO6x
+V/YnSpHOnotS7UI8/4sL+39ZfqSkrEa9+uWgnYVFD1KPdfSfV/L23ier/iha1nrs
+6K6Eq53TD9+uUVY/Tdesnf/qvsLtzafzh0VfO1fS0pS8qGPggkDttPtNm8riVtXX
+zUgtH5s+NvbVLPnCjwsvTx+52jP8+oFjQ6cer8+7W31i2+P9q1sumTWNysVYw6iV
+E6ZI319pmdbkeS9lzZDgz1l6vyun2/ennCnM9n7glFe3v6jNPl4c3/DOzKGVG7tl
+J91sW91j8LPjJtGzxS/kXrdr1v7et2oA2IxKD/SBpfvC5uHDhXsaB1lwwNy8H+4W
+vUwm7bj3yfhctjtDGlhZNHJiYumNaM7yiycye7XS2e1m7a1FZ2+pw94/+Eztwi0r
+A58Ny8x47tGUTcGZA08dre7Rvuel1pb0zti8QzdS+ky+Vn5mfdvQhoTyWeM+b28p
+PVSZjLa9tTcr+lvCqJtHr2T12DA23IGTvut9bnft1HcrNldNMGbcPbIgfVf3HXvq
+z1fha/ZGb2aH98yAm+uLe10uq5z/1Oj7r88pO31HK5lxb+fK50FOrGDdp7HqdSM6
+Z05Mqj1f19T4zdm6FU0XOpNvabVR5xrtu/jgR7e3nmyYMLJoyKkKZ/vuwbFLpRBn
+4nMTiysmOasONNdf/HgKGTNndNb0vslZiYE/AQ==
+=AIK/
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jakejarvis
+
+==================================================================
