@@ -28,7 +28,7 @@ Hopefully we can all look back at our first projects and be proud of how far we'
 ---
 
 
-{{< image src="images/jbb-logo.png" width="640" >}}[Jake's Bulletin Board](https://github.com/jakejarvis/jbb){{< /image >}}
+{{< image src="images/jbb-logo.png" width="640" link="https://github.com/jakejarvis/jbb" >}}[Jake's Bulletin Board](https://github.com/jakejarvis/jbb){{< /image >}}
 
 
 Aside from my [first HTML creation](/y2k/) (circa 2001), my first real coding project was in 2003: a PHP 4 masterpiece creatively titled **Jake's Bulletin Board**. I've published the [source code in full on GitHub](https://github.com/jakejarvis/jbb) for your viewing pleasure and highlighted the best/worst parts below.

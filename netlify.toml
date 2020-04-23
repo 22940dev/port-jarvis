@@ -160,7 +160,7 @@
   to = "/img/favicon-:splat"
   status = 301
 [[redirects]]
-  from = "/apple-touch-icon-*"
+  from = "/apple-touch-icon*"
   to = "/img/apple-touch-icon.png"
   status = 301
 [[redirects]]

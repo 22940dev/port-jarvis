@@ -1,9 +1,3 @@
->= 1%,
-last 4 major versions,
-not dead,
-chrome >= 54,
-firefox >= 49,
-ie 11,
-android >= 5,
-ios_saf >= 9.3,
-not ie_mob <= 11
+>= 0.5%
+last 2 versions
+not dead

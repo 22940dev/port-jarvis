@@ -60,11 +60,15 @@ Others have noted that web-based organizing tools like BERN have been used by ca
 
 But the latter category of databases — like [NationBuilder](https://nationbuilder.com/) and, more notably, [NGP VAN's VoteBuilder](https://act.ngpvan.com/votebuilder) software based on the Obama campaign's inventions and now used by almost all Democratic campaigns across the United States — are secured and strictly guarded. Volunteer accounts need to be created and approved by paid campaign organizers and are locked down to provide the bare minimum amount of information necessary for one to canvass or phone bank a shortlist of voters. Every single click is also recorded in a [detailed log](sanders-campaign-audit.pdf) down to the millisecond. (This is how [Bernie's organizers got busted](http://time.com/4155185/bernie-sanders-hillary-clinton-data/) snooping around Hillary's VoteBuilder data last cycle, by the way.)
 
-{{< image src="images/votebuilder-audit.png" width="750" >}}[NGP VAN's audit of the Sanders campaign's VoteBuilder activity](sanders-campaign-audit.pdf){{< /image >}}
+{{< image src="images/votebuilder-audit.png" width="750" link="/notes/bernie-sanders-bern-app-data/sanders-campaign-audit.pdf" >}}
+[NGP VAN's audit of the Sanders campaign's VoteBuilder activity](/notes/bernie-sanders-bern-app-data/sanders-campaign-audit.pdf)
+{{< /image >}}
 
 BERN is taking this to an unprecedented level. Allowing anybody on the internet to sign up and add others' personal information to the campaign's database without their knowledge is troubling, especially when you consider the gamified "points" system they've added as an incentive to report as much information on as many people as possible.
 
-{{< image src="images/reddit-bros.png" width="600" alt="Reddit comments on BERN">}}[BERN discussion on /r/SandersForPresident thread](https://www.reddit.com/r/SandersForPresident/comments/bi15la/new_get_the_official_bernie_sanders_2020_app_bern/elxi85m/){{< /image >}}
+{{< image src="images/reddit-bros.png" width="600" alt="Reddit comments on BERN">}}
+[BERN discussion on /r/SandersForPresident thread](https://www.reddit.com/r/SandersForPresident/comments/bi15la/new_get_the_official_bernie_sanders_2020_app_bern/elxi85m/)
+{{< /image >}}
 
 In addition to the points system, it was revealed in the webinar mentioned above that the campaign is planning on giving out shiny rewards based on how many friends one adds, setting expectations at 50+ contacts to reach the "Bernie Super Bundler" tier — whatever that means.
 
@@ -79,7 +83,3 @@ The [Privacy Policy link](https://berniesanders.com/privacy-policy/) at the bott
 Without getting too political — everyone who knows me already knows [what I think of Bernie](/notes/millenial-with-hillary-clinton/) — it's hard to refute that his "bros" are [notorious for harassment](https://www.washingtonpost.com/news/the-fix/wp/2016/06/07/the-bernie-bros-are-out-in-full-force-harassing-female-reporters/?utm_term=.795f3a6a6ac9) and internet trolling. Giving them any additional information beyond the Twitter handles of their targets is surely not going to help detoxify the discourse this time around.
 
 Count me out of feeling the Bern and the BERN. Just regular old heartburn for me. 🤢
-
-
-
-<!-- {{< video mp4="images/community-canvass.mp4" webm="images/community-canvass.webm" width="250" height="450" poster="images/poster-community-canvass.png" >}} -->

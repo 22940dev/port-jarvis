@@ -31,7 +31,7 @@ Now that Americans are *finally* starting to get tested for the coronavirus, inf
 
 The maintainers are also [fully transparent](https://covidtracking.com/about-tracker/) about their process and take great care to annotate individual figures with the methodology used to arrive at each, which has earned them the [trust](https://covidtracking.com/#press) of even the largest national news organizations reporting on COVID-19.
 
-{{< image src="images/covidtracking.png" width="680" alt="The COVID Tracking Project" />}}
+{{< image src="images/covidtracking.png" width="680" alt="The COVID Tracking Project" link="https://covidtracking.com/" />}}
 
 ## [#findthemasks](https://findthemasks.com/) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/r-pop/findthemasks "View on GitHub")
 
@@ -39,7 +39,7 @@ This one might be my favorite, simply because of its laser-like focus on solving
 
 *Please* look up your local hospitals on [#findthemasks](https://findthemasks.com/#sites) and follow their instructions to donate anything you have hoarded — it's likely the single most impactful thing you can do at this point. If you don't see your local hospital, or don't feel comfortable shipping equipment to any hospital listed, you can also visit [PPE Link](https://ppelink.org/ppe-donations/) and they will connect you with hospitals in your area.
 
-{{< image src="images/findthemasks.png" width="600" alt="#findthemasks" />}}
+{{< image src="images/findthemasks.png" width="600" alt="#findthemasks" link="https://findthemasks.com/" />}}
 
 ## [#StayTheFuckHome](https://staythefuckhome.com/) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/flore2003/staythefuckhome "View on GitHub")
 
@@ -47,37 +47,37 @@ I figured I'd throw in this cheeky website broadcasting a simple but serious mes
 
 The [GitHub community](https://github.com/flore2003/staythefuckhome/pulls?q=is%3Apr) has translated the instructional essay into over a dozen different languages — including a [safe-for-work version](https://staythefuckhome.com/sfw/), if that helps — and they're [looking for more translators](https://github.com/flore2003/staythefuckhome#contributing) if you're multilingual and need something besides Netflix to fill your time with while you ***stay the fuck home!*** 😉
 
-{{< image src="images/staythefuckhome.png" width="600" alt="#StayTheFuckHome" />}}
+{{< image src="images/staythefuckhome.png" width="600" alt="#StayTheFuckHome" link="https://staythefuckhome.com/" />}}
 
 ## [COVID-19 Dashboards](https://covid19dashboards.com/) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/github/covid19-dashboard "View on GitHub")
 
 This collection of various visualizations is fascinating (and sobering) to look at. If you're smarter than I am and have experience in data analysis, their team (led by a [GitHub engineer](https://github.com/hamelsmu)) would be more than happy to [add your contribution](https://github.com/github/covid19-dashboard/blob/master/CONTRIBUTING.md) to the site — they're using [Jupyter Notebooks](https://jupyter.org/) and [fastpages](https://github.com/fastai/fastpages).
 
-{{< image src="images/covid19dashboards.png" width="580" alt="COVID-19 Dashboards" />}}
+{{< image src="images/covid19dashboards.png" width="580" alt="COVID-19 Dashboards" link="https://covid19dashboards.com/" />}}
 
 ## [CoronaTracker](https://coronatracker.samabox.com/) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/MhdHejazi/CoronaTracker "View on GitHub")
 
 CoronaTracker is a _beautiful_ cross-platform app for iOS and macOS with intuitive maps and charts fed by reputable live data. Apple is [being justifiably picky](https://developer.apple.com/news/?id=03142020a) about "non-official" Coronavirus apps in their App Store ([so is Google](https://blog.google/inside-google/company-announcements/coronavirus-covid19-response/), by the way) but you can still [download the macOS app directly](https://coronatracker.samabox.com/) or [compile the iOS source code](https://github.com/MhdHejazi/CoronaTracker#1-ios-app) yourself using Xcode if you wish.
 
-{{< image src="images/coronatracker.png" alt="CoronaTracker" />}}
+{{< image src="images/coronatracker.png" alt="CoronaTracker" link="https://coronatracker.samabox.com/" />}}
 
 ## [Staying Home Club](https://stayinghome.club/) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/phildini/stayinghomeclub "View on GitHub")
 
 A bit more family-friendly than [#StayTheFuckHome](https://staythefuckhome.com/), the [Staying Home Club](https://stayinghome.club/) is maintaining a running list of over a thousand companies and universities mandating that employees and students work from home, as well as events that have been canceled or moved online. Quarantining yourself might feel lonely, but here's solid proof that you're far from alone right now.
 
-{{< image src="images/stayinghome.png" width="600" alt="Staying Home Club" />}}
+{{< image src="images/stayinghome.png" width="600" alt="Staying Home Club" link="https://stayinghome.club/" />}}
 
 ## [Nextstrain for nCoV](https://nextstrain.org/ncov) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/nextstrain/ncov "View on GitHub")
 
 This one is a bit over my head, but apparently [Nextstrain](https://nextstrain.org/) is a pretty impressive open-source service targeted at genome data analysis and visualization of different pathogens. Their [COVID-19 page](https://nextstrain.org/ncov) is still awe-inspiring to look at for a layman like me, but probably a thousand times more so if you're an actual scientist — in which case, the [genome data they've open-sourced](https://github.com/nextstrain/ncov) might be of interest to you.
 
-{{< image src="images/nextstrain.png" alt="Nextstrain for nCOV" />}}
+{{< image src="images/nextstrain.png" alt="Nextstrain for nCOV" link="https://nextstrain.org/ncov" />}}
 
 ## [Johns Hopkins 2019-nCoV Data](https://systems.jhu.edu/research/public-health/ncov/) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/CSSEGISandData/COVID-19 "View on GitHub")
 
 Johns Hopkins University's [visual COVID-19 global dashboard](https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6) has been bookmarked as my go-to source of information since the beginning of this crisis earlier this year. Now, JHU's [Center for Systems Science and Engineering](https://systems.jhu.edu/) has open-sourced [their data and analysis](https://github.com/CSSEGISandData/COVID-19) for anybody to use.
 
-{{< image src="images/hopkins.png" alt="Johns Hopkins 2019-nCoV Data" />}}
+{{< image src="images/hopkins.png" alt="Johns Hopkins 2019-nCoV Data" link="https://systems.jhu.edu/research/public-health/ncov/" />}}
 
 ## [COVID-19 Scenarios](https://neherlab.org/covid19/) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/neherlab/covid19_scenarios "View on GitHub")
 
@@ -85,13 +85,13 @@ COVID-19 Scenarios will probably hit everyone in a different way, depending on y
 
 The maintainers at the [Neher Lab in Basel, Switzerland](https://neherlab.org/) even have a [discussion thread](https://github.com/neherlab/covid19_scenarios/issues/18) and an [open chatroom](https://spectrum.chat/covid19-scenarios/general/questions-discussions~8d49f461-a890-4beb-84f7-2d6ed0ae503a) set up for both scientists and non-scientists to ask questions and post ideas, which I find really nice of them!
 
-{{< image src="images/scenarios.png" width="740" alt="COVID-19 Scenarios" />}}
+{{< image src="images/scenarios.png" width="740" alt="COVID-19 Scenarios" link="https://neherlab.org/covid19/" />}}
 
 ## [Corona Data Scraper](https://coronadatascraper.com/#home) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/lazd/coronadatascraper "View on GitHub")
 
 Similar to the [COVID Tracking Project](https://covidtracking.com/) above, the [Corona Data Scraper](https://coronadatascraper.com/#home) has set up an automated process to scrape verified data from across the web to form massive CSV spreadsheets and JSON objects. They even [rate the quality](https://github.com/lazd/coronadatascraper#source-rating) of each source to prioritize data accordingly.
 
-{{< image src="images/coronadatascraper.png" width="750" alt="Corona Data Scraper" />}}
+{{< image src="images/coronadatascraper.png" width="750" alt="Corona Data Scraper" link="https://coronadatascraper.com/#home" />}}
 
 ## [Folding@home](https://foldingathome.org/covid19/) [<img src="/notes/coronavirus-open-source/images/github.svg" width="30" height="30" alt="View on GitHub">](https://github.com/FoldingAtHome/coronavirus "View on GitHub")
 
@@ -108,6 +108,6 @@ You can [download their software here](https://foldingathome.org/start-folding/)
 
 To wrap this list up, I thought I'd include [yet another API](https://github.com/ExpDev07/coronavirus-tracker-api) fed by multiple data sources that you can use to create your own open-source project if any of these inspired you. This one is incredibly flexible in terms of [query parameters and endpoints](https://github.com/ExpDev07/coronavirus-tracker-api#api-endpoints) but they all return simple JSON responses like we all know and love.
 
-{{< image src="images/tracker-api.png" width="712" alt="Coronavirus Tracker API" />}}
+{{< image src="images/tracker-api.png" width="712" alt="Coronavirus Tracker API" link="https://coronavirus-tracker-api.herokuapp.com/v2/locations" />}}
 
 ### Stay safe (and [home](https://staythefuckhome.com/ "One last time...")), friends! ❤️

@@ -22,13 +22,14 @@ div#content {
     }
   }
 
-  p.image img,
-  figure img {
-    height: auto;
-    max-width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  p.image,
+  figure {
+    text-align: center;
+
+    img {
+      height: auto;
+      max-width: 100%;
+    }
   }
 
   figure {
@@ -42,6 +43,7 @@ div#content {
     figcaption {
       font-size: 0.95em;
       text-align: center;
+      margin-top: -0.4em;
 
       @include themed() {
         color: t(color-medium);
