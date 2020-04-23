@@ -23,7 +23,7 @@ disableHugoGeneratorInject = true
 disableAliases = true
 
 [params]
-  description = "Hi there! I'm a frontend web developer based in Boston, Massachusetts specializing in modern JavaScript frameworks and progressive web apps."
+  description = "Hi there! I'm a frontend web developer based in Boston, Massachusetts specializing in the JAMstack, modern JavaScript frameworks, and progressive web apps."
   domain = "jarv.is"
   mainSection = "notes"
   pageMaxWidth = 910
