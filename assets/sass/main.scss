@@ -7,8 +7,8 @@ $base-url: "{{ strings.TrimRight "/" .Site.BaseURL }}/";   // consistent trailin
 // stylelint-enable
 
 // Variables & Functions
+@import 'abstracts/settings';
 @import 'abstracts/themes';
-@import 'abstracts/variables';
 @import 'abstracts/functions';
 
 // Global Styles
@@ -30,4 +30,4 @@ $base-url: "{{ strings.TrimRight "/" .Site.BaseURL }}/";   // consistent trailin
 
 // Miscellaneous
 @import 'components/syntax';
-@import 'components/magic';
+@import 'components/animation';

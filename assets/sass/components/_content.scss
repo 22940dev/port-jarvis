@@ -35,15 +35,9 @@ div#content {
   figure {
     margin: 1em auto;
 
-    img {
-      margin-bottom: 0.4em;
-    }
-
     // image captions
     figcaption {
       font-size: 0.95em;
-      text-align: center;
-      margin-top: -0.4em;
 
       @include themed() {
         color: t(color-medium);
