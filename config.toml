@@ -133,8 +133,9 @@ disableAliases = true
 [imaging]
   # options for resampling filters:
   # https://github.com/disintegration/imaging#image-resizing
-  resampleFilter = "Linear"
-  quality = 75
+  resampleFilter = "Lanczos"
+  # let imagemin do all the heavy lifting post-build
+  quality = 100
 
 [markup]
   defaultMarkdownHandler = "goldmark"
