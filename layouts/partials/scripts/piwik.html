@@ -1,7 +1,7 @@
 {{ if .Site.Params.PiwikServer }}
-<script type="text/javascript">
+<script>
   var _paq = window._paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  // tracker methods like "setCustomDimension" should be called before "trackPageView"
   _paq.push(['setRequestMethod', 'POST']);
   _paq.push(['setSecureCookie', true]);
   _paq.push(['trackPageView']);
@@ -15,5 +15,5 @@
     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
-<noscript><p><img src="{{ .Site.Params.PiwikServer }}/send?idsite={{ .Site.Params.PiwikSiteId }}&amp;rec={{ .Site.Params.PiwikSiteId }}" style="border:0;" alt="" /></p></noscript>
+<noscript><img src="{{ .Site.Params.PiwikServer }}/send?idsite={{ .Site.Params.PiwikSiteId }}&amp;rec={{ .Site.Params.PiwikSiteId }}" alt=""></noscript>
 {{ end }}

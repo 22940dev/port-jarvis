@@ -10,7 +10,7 @@
 {{ block "main" . }}{{ end }}
 </div>
 {{ partialCached "page/footer" . }}
-{{ partial "scripts/bundle" . }}
+{{ partial "scripts/_bundle" . }}
 {{ partial "scripts/shortcodes" . }}
 {{ if eq hugo.Environment "production" }}
   {{ partialCached "scripts/simple_analytics" . }}
