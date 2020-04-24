@@ -1,4 +1,4 @@
-# Sensible default security headers
+# Sensible default security headers:
 /*
   Referrer-Policy: strict-origin-when-cross-origin
   X-Content-Type-Options: nosniff
@@ -10,17 +10,13 @@
 /vendor/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Kinda long cache (one week) for favicons, etc.
-/img/*
-  Cache-Control: public, max-age=604800, immutable
-
-# Proper MIME type for Atom feed
-/*.atom
+# Proper MIME type for Atom feed:
+/feed.atom
   Content-Type: application/atom+xml
 
-# Recommended MIME type for PWA manifests
+# Recommended MIME type for PWA manifests:
 # https://github.com/w3c/manifest/issues/689
 /manifest.json
   Content-Type: application/manifest+json
-/*.webmanifest
+/site.webmanifest
   Content-Type: application/manifest+json
