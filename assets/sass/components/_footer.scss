@@ -22,7 +22,7 @@ footer {
 
   div#row {
     width: 100%;
-    max-width: 978px;
+    max-width: $max-width;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;

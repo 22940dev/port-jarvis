@@ -3,6 +3,8 @@
 // Global Header Styles
 header {
   width: 100%;
+  padding: 0.25em 1.7em;
+  box-sizing: border-box;
 
   @include themed() {
     border-bottom: 1px solid t(color-kinda-light);
@@ -11,8 +13,7 @@ header {
 
   nav {
     width: 100%;
-    max-width: 1032px;
-    padding: 0.25em 1.75em;
+    max-width: $max-width;
     margin: 0 auto;
     box-sizing: border-box;
     display: flex;
@@ -123,49 +124,51 @@ header {
 
 // Responsive
 @mixin responsive--header() {
-  header nav {
+  header {
     padding: 0.1em 1.25em;
 
-    a#logo {
-      img,
-      svg {
-        width: 40px;
-        height: 60px;
-      }
+    nav {
+      a#logo {
+        img,
+        svg {
+          width: 40px;
+          height: 60px;
+        }
 
-      h1#name {
-        display: none;
-      }
-    }
-
-    ul {
-      font-size: 1.7em;
-
-      li {
-        margin-left: 0.85em;
-
-        a {
-          span.icon {
-            font-size: 0.9em;
-          }
-
-          // hide text next to emojis on mobile
-          span.text {
-            display: none;
-          }
-
-          &:hover {
-            transform: scale(1.4);
-          }
+        h1#name {
+          display: none;
         }
       }
 
-      // Dark mode toggle
-      button#dark-mode-toggle {
-        // TODO: figure out need for weird magic numbers here
-        height: 1.025em;
-        width: 0.75em;
-        margin-top: 0.125em;
+      ul {
+        font-size: 1.7em;
+
+        li {
+          margin-left: 0.85em;
+
+          a {
+            span.icon {
+              font-size: 0.9em;
+            }
+
+            // hide text next to emojis on mobile
+            span.text {
+              display: none;
+            }
+
+            &:hover {
+              transform: scale(1.4);
+            }
+          }
+        }
+
+        // Dark mode toggle
+        button#dark-mode-toggle {
+          // TODO: figure out need for weird magic numbers here
+          height: 1.025em;
+          width: 0.75em;
+          margin-top: 0.125em;
+        }
       }
     }
   }
