@@ -31,7 +31,6 @@ disableAliases = true
   github = "jakejarvis/jarv.is"
   facebookAppID = "3357248167622283"
   copyrightFirstYear = "2001"
-  wayback = "https://web.archive.org/web/20010501000000*/jakejarvis.com"
   license = "CC-BY-4.0"
   licenseFull = "Creative Commons Attribution 4.0 International"
   licenseURL = "https://creativecommons.org/licenses/by/4.0/"

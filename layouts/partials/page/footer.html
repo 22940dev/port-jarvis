@@ -1,6 +1,6 @@
 <footer>
   <div id="row">
-    <div id="copyright">Content licensed under <a class="no-underline" href="{{ .Site.Params.licenseURL }}" {{ with .Site.Params.licenseFull }} title="{{ . }}" {{ end }}target="_blank" rel="noopener">{{ .Site.Params.license }}</a>, {{ with .Site.Params.copyrightFirstYear }}{{ if $.Site.Params.wayback }}<a class="no-underline" href="{{ $.Site.Params.wayback }}" title="View Old Versions on Wayback Machine" id="wayback" target="_blank" rel="noopener">{{ end }}{{ . }}{{ if $.Site.Params.wayback }}</a>{{ end }} &ndash;{{ end }} {{ now.Format "2006" }}.</div>
+    <div id="copyright">Content licensed under <a class="no-underline" href="{{ .Site.Params.licenseURL }}" {{ with .Site.Params.licenseFull }} title="{{ . }}" {{ end }}target="_blank" rel="noopener">{{ .Site.Params.license }}</a>, {{ with .Site.Params.copyrightFirstYear }}<a class="no-underline" href="{{ "previously/" | absURL }}" title="Previously on...">{{ . }} &ndash;</a>{{ end }} {{ now.Format "2006" }}.</div>
 
     <div id="panda"><a class="no-underline" href="https://nationalzoo.si.edu/webcams/panda-cam" title="Live Panda Party!!!11" target="_blank" rel="noopener"><span>&#x1F43C;</span></a></div>
 
