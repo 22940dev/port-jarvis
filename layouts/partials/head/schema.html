@@ -1,0 +1,6 @@
+{{ if and .IsPage (eq .Type .Site.Params.mainSection) }}
+  {{ partial "head/schema/person" . }}
+  {{ partial "head/schema/article" . }}
+{{ else }}
+  {{ partial "head/schema/person" . }}
+{{ end -}}

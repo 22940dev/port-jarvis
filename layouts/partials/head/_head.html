@@ -1,0 +1,11 @@
+{{ partial "head/meta" . -}}
+{{ partial "functions/social-images" . -}}
+{{ partial "head/open-graph" . -}}
+{{ partialCached "head/mobile" . -}}
+{{ partial "head/preload" . -}}
+{{ partial "head/styles" . -}}
+{{ partialCached "head/favicons" (dict "pngSizes" "192 48 32 16" "icoSizes" "16 32 48") -}}
+{{ partialCached "head/feeds" . -}}
+{{ partialCached "head/webmention" . -}}
+{{ partial "head/canonical" . -}}
+{{ partial "head/schema" . -}}

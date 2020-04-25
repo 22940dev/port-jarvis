@@ -1,5 +1,5 @@
 {{ $darkmode := resources.Get "js/dark-mode.js" }}
 {{ $twemoji := resources.Get "vendor/emoji/emoji.js" | resources.ExecuteAsTemplate "vendor/emoji/emoji.min.js" . }}
 
-{{ $js := slice $darkmode $twemoji | resources.Concat "/js/main.js" }}
-<script src="{{ $js.Permalink }}"></script>
+{{ $js := slice $darkmode $twemoji | resources.Concat "/js/main.js" | resources.Minify | resources.Fingerprint "sha256" }}
+<script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>

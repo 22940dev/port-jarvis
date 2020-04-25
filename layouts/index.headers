@@ -5,18 +5,10 @@
   X-Frame-Options: sameorigin
   X-XSS-Protection: 1; mode=block
 
-# Super long cache (one year) for vendored assets:
-# web fonts, emojis, etc.
+# Long cache (one week) for vendored and fingerprinted assets:
+/css/*
+  Cache-Control: public, max-age=604800, immutable
+/js/*
+  Cache-Control: public, max-age=604800, immutable
 /vendor/*
-  Cache-Control: public, max-age=31536000, immutable
-
-# Proper MIME type for Atom feed:
-/feed.atom
-  Content-Type: application/atom+xml
-
-# Recommended MIME type for PWA manifests:
-# https://github.com/w3c/manifest/issues/689
-/manifest.json
-  Content-Type: application/manifest+json
-/site.webmanifest
-  Content-Type: application/manifest+json
+  Cache-Control: public, max-age=604800, immutable

@@ -78,9 +78,8 @@ jobs:
         key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-yarn-
-    - run: |
-        yarn install --no-ignore-optional --frozen-lockfile
-        yarn build:preview
+    - run: yarn install --no-ignore-optional --frozen-lockfile
+    - run: yarn build:preview
     - run: yarn lint
       continue-on-error: true
     - name: Include .percy.yml in artifact

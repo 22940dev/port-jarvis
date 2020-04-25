@@ -226,14 +226,13 @@
     {{ partialCached "head/favicons" (dict "pngSizes" "192 48 32 16" "icoSizes" "16 32 48") }}
     {{ partialCached "head/feeds" . }}
     <link rel="manifest" href="{{ "site.webmanifest" | absURL }}">
-    {{ partial "head/schema-person" . }}
-    {{ partial "head/schema-article" . }}
+    {{ partial "head/schema" . }}
   </head>
   <body>
     <header>
       <nav>
         <a id="logo" href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}">
-          {{ partialCached "page/logo" . }}
+          {{ partialCached "svg/logo.svg" (dict "width" 30 "height" 45) }}
           <span id="name">{{ .Site.Title }}</span>
         </a>
 

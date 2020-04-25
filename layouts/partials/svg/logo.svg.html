@@ -1,0 +1,14 @@
+{{ $svg := resources.Get "img/logo.svg" -}}
+{{ $html := $svg.Content -}}
+
+{{/* remove unneeded tags/attributes when SVG is inlined versus a .svg file */}}
+{{ $html = replaceRE "<\\?xml.+\\?>" "" $html -}}
+{{ $html = replaceRE " version=\"(.*?)\"" "" $html -}}
+{{ $html = replaceRE " xmlns=\"(.*?)\"" "" $html -}}
+
+{{ $wxh := printf "<svg width=\"%d\" height=\"%d\"" .width .height }}
+
+{{ $html = replace $html "<svg" $wxh -}}
+
+{{ printf "<!-- auto-inlined from: %s -->" $svg.Permalink | safeHTML }}
+{{ $html | safeHTML -}}

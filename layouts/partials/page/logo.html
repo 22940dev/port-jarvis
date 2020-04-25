@@ -1,7 +1,0 @@
-{{ $logo := resources.Get "img/logo.svg" -}}
-{{ $svg := $logo.Content -}}
-{{ $svg = replaceRE "<\\?xml.+\\?>" "" $svg -}}
-{{ $svg = replace $svg "<svg" "<svg width=\"30\" height=\"45\"" -}}
-
-{{ printf "<!-- inlined: %s -->" $logo.Permalink | safeHTML }}
-{{ $svg | safeHTML -}}

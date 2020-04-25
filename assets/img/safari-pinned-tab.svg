@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1364px" height="2048px" viewBox="0 0 1364 2048" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
-    <title>safari-pinned-tab</title>
-    <desc>Created with Sketch.</desc>
-    <g id="export" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="safari-pinned-tab" fill="#000000" fill-rule="nonzero">
-            <polygon id="Path" points="546.103321 158.142388 1091.36777 472.216732 1364 314.502099 818.735547 0"></polygon>
-            <polygon id="Path" points="546.103321 473.986721 819.154982 630.305926 819.154982 1260.50123 1092.20664 1418.64362 1091.36777 472.216732 546.103321 158.142388"></polygon>
-            <polygon id="Path" points="273.051661 1260.50123 0 1101.99509 0 1732.19084 546.103321 2048 546.103321 1733.56002 273.051661 1574.99754"></polygon>
-            <polygon id="Path" points="0 1101.99509 273.051661 1260.50123 546.103321 1101.99509 273.051661 946.004914"></polygon>
-            <polygon id="Path" points="273.051661 1574.99754 546.103321 1733.56002 1092.20664 1418.64362 819.154982 1260.50123"></polygon>
-        </g>
-    </g>
+<svg viewBox="0 0 96 144" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <g fill="#000000">
+    <polygon points="57.6 0 38.4 11.1 38.4 11.1 76.8 33.2 96 22.1 96 22.1 57.6 0 57.6 0"/>
+    <polygon points="19.2 66.5 0 77.6 0 77.6 19.2 88.7 38.4 77.6 38.4 77.6 19.2 66.5 19.2 66.5"/>
+    <polygon points="57.6 88.7 19.2 110.9 19.2 110.9 38.4 121.9 76.8 99.8 76.8 99.8 57.6 88.7 57.6 88.7"/>
+    <polygon points="38.4 11.1 38.4 33.3 57.6 44.3 57.6 88.7 76.8 99.8 76.8 33.2 38.4 11.1 38.4 11.1"/>
+    <polygon points="19.2 110.9 19.2 110.8 19.2 88.7 0 77.6 0 121.9 38.4 144.1 38.4 121.9 19.2 110.9 19.2 110.9"/>
+  </g>
 </svg>

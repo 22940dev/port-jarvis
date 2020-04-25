@@ -4,7 +4,6 @@
 {{- $safariIcon := resources.Get "img/safari-pinned-tab.svg" }}
 <link rel="mask-icon" href="{{ $safariIcon.Permalink }}" color="#009cdf">
 
-{{/* TODO: automate shrinking to given sizes based on one super big favicon */}}
 {{- range (split .pngSizes " ") }}
   {{- $faviconPng := resources.Get (printf "img/favicon-%v.png" .) }}
   <link rel="icon" href="{{ $faviconPng.Permalink }}" sizes="{{ . }}x{{ . }}">

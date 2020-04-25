@@ -90,6 +90,8 @@ disableAliases = true
 [mediaTypes]
   [mediaTypes."application/atom+xml"]
     suffixes = ["atom"]
+  [mediaTypes."application/manifest+json"]
+    suffixes = ["webmanifest"]
   [mediaTypes."text/netlify"]
     delimiter = ""
 
@@ -112,8 +114,8 @@ disableAliases = true
     isPlainText = true
     notAlternative = true
   [outputFormats.MANIFEST]
-    mediaType = "application/json"
-    baseName = "manifest"
+    mediaType = "application/manifest+json"   # https://github.com/w3c/manifest/issues/689
+    baseName = "site"   # /site.webmanifest
     isPlainText = true
     notAlternative = true
   [outputFormats.REDIRECTS]

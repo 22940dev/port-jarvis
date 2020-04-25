@@ -1,7 +1,10 @@
-/*jslint indent: 2, browser: true, bitwise: true, plusplus: true */
+/* jshint indent: 2, browser: true, bitwise: true, plusplus: true */
 
-/*! Copyright Twitter Inc. and other contributors. Licensed under MIT *//*
-    https://github.com/twitter/twemoji/blob/gh-pages/LICENSE
+/*!
+*
+*  Copyright Twitter Inc. and other contributors. Licensed under MIT.
+*  https://github.com/twitter/twemoji/blob/gh-pages/LICENSE
+*
 */
 
 var emoji = (function (
@@ -14,7 +17,7 @@ var emoji = (function (
 ) {
   'use strict';
 
-  /*jshint maxparams:4 */
+  /* jshint maxparams:4 */
 
   var
     // the exported module object
