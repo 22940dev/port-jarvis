@@ -37,8 +37,8 @@ if (!pref) {
   // real-time switching if supported by OS/browser
   // TODO: stop listening when the parent condition becomes false,
   //       right now these keep listening even if pref is set.
-  window.matchMedia('(prefers-color-scheme: dark)').addListener(e => e.matches && activateDarkMode());
-  window.matchMedia('(prefers-color-scheme: light)').addListener(e => e.matches && activateLightMode());
+  window.matchMedia('(prefers-color-scheme: dark)').addListener(function(e) { if (e.matches) activateDarkMode(); });
+  window.matchMedia('(prefers-color-scheme: light)').addListener(function(e) { if (e.matches) activateLightMode(); });
 }
 
 // handle lightbulb click
