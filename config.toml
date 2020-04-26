@@ -67,7 +67,7 @@ disableAliases = true
     weight = -100
   [[menu.main]]
     name = "Notes"
-    pre = "&#x1F4DD;"
+    pre = "&#x1F5D2;"
     url = "/notes/"
     weight = -90
   [[menu.main]]
