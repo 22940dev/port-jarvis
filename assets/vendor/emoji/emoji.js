@@ -7,7 +7,7 @@
 *
 */
 
-var emoji = (function (
+(function (
 
   // WARNING:   this file is generated automatically via
   //            `node scripts/build.js`
@@ -570,6 +570,4 @@ var emoji = (function (
     return r.join(sep || '-');
   }
 
-}());
-
-emoji.parse(document.body);
+}()).parse(document.body);
