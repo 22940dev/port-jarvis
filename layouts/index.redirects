@@ -6,7 +6,3 @@
 {{- . | printf "%-35s" }}    {{ $p.RelPermalink }}    301
 {{ end -}}
 {{- end }}
-
-# Rewrite generated manifest.json to site.webmanifest
-# https://github.com/w3c/manifest/issues/689
-/site.webmanifest          /manifest.json      200!

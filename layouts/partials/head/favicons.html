@@ -13,3 +13,5 @@
 {{- range (split .icoSizes " ") }}{{ $s = $s | append (printf "%vx%v" . .) }}{{ end }}
 {{- $faviconIco := resources.Get "img/favicon.ico" }}
 <link rel="shortcut icon" href="{{ $faviconIco.Permalink }}" sizes="{{ delimit $s " " }}">
+
+<link rel="manifest" href="{{ "site.webmanifest" | absURL }}">

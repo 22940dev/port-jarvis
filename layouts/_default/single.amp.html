@@ -225,7 +225,6 @@
 
     {{ partialCached "head/favicons" (dict "pngSizes" "192 48 32 16" "icoSizes" "16 32 48") }}
     {{ partialCached "head/feeds" . }}
-    <link rel="manifest" href="{{ "site.webmanifest" | absURL }}">
     {{ partial "head/schema" . }}
   </head>
   <body>

@@ -5,17 +5,17 @@
   "short_name": "{{ .Site.Params.domain }}",
   "icons": [
     {
-      "src": "{{ $android512.Permalink }}",
+      "src": "{{ $android512.Permalink | safeJS }}",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "{{ $android192.Permalink }}",
+      "src": "{{ $android192.Permalink | safeJS }}",
       "sizes": "192x192",
       "type": "image/png"
     }
   ],
-  "start_url": "{{ .Site.BaseURL }}",
+  "start_url": "{{ .Site.BaseURL | safeJS }}",
   "display": "browser",
   "background_color": "#ffffff",
   "theme_color": "#0e6dc2"
