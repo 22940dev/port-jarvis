@@ -10,10 +10,11 @@ tags:
   - Dorking
 image: "images/shodan.png"
 css: |
-  h3 a:last-child, h4 a:last-child {
+  div#content h3 a:last-child, h4 a:last-child {
     background-image: none;
     padding-bottom: 0;
     margin-left: 6px;
+    text-decoration: none;
   }
 draft: false
 ---

@@ -250,7 +250,9 @@
         on <a class="date" href="{{ (.OutputFormats.Get "html").Permalink }}">{{ .Date.Format "January 2, 2006" }}</a>
       </p>
 
-      {{ .Content }}
+      <div id="content">
+        {{ .Content }}
+      </div>
     </article>
 
     <footer>

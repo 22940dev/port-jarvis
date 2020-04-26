@@ -6,7 +6,9 @@ tags:
   - 
 image: ""
 css: |
-  
+  div#content {
+    
+  }
 aliases:
   - 
 draft: true

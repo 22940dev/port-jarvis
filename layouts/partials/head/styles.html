@@ -3,10 +3,9 @@
 
 {{/* Page-specific styles set via front matter, scoped via SCSS */}}
 {{ with .Params.css }}
-  {{- $sass := printf "div#content { %s }" . }}
   {{- $target := path.Join $.File.Dir "css/inline.min.scss" }}
 
-  {{- $css := $sass | resources.FromString $target | resources.ToCSS | resources.PostCSS (dict "config" "postcss.config.js") | resources.Fingerprint "sha256" -}}
+  {{- $css := . | resources.FromString $target | resources.ToCSS | resources.PostCSS (dict "config" "postcss.config.js") | resources.Fingerprint "sha256" -}}
 
   <link rel="stylesheet" href="{{ $css.Permalink }}">
 {{ end }}
