@@ -2,4 +2,4 @@
 {{ $twemoji := resources.Get "vendor/emoji/emoji.js" | resources.ExecuteAsTemplate "vendor/emoji/emoji.min.js" . }}
 
 {{ $js := slice $darkmode $twemoji | resources.Concat "/js/main.js" | resources.Minify | resources.Fingerprint "sha256" }}
-<script defer src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+<script async defer {{ printf "src=%q integrity=%q" $js.Permalink $js.Data.Integrity | safeHTMLAttr }}></script>
