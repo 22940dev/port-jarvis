@@ -13,32 +13,31 @@
   let pref = localStorage.getItem('dark_mode_pref');
 
   // keep track of current state (light by default)
-  let activated = false;
+  let dark = false;
 
-  // dynamically switch utteranc.es's theme
-  let utterancesInit = false;
-  const setUtterances = function() {
-    let theme = activated ? 'github-dark' : 'github-light';
+  // load utteranc.es with proper theme and dynamically switch it
+  let utterancesLoaded = false;
+  const setUtterancesTheme = function(theme) {
     const container = document.querySelector('div#comments');
 
     // don't do any of this if we're not on a page with comments enabled
     if (container) {
-      if (!utterancesInit) {
+      if (!utterancesLoaded) {
         const script = document.createElement('script');
         script.type = 'text/javascript';
         script.async = true;
         script.defer = true;
         script.src = 'https://utteranc.es/client.js';
-        script.crossorigin = true;
+        script.crossOrigin = 'anonymous';
         script.setAttribute('data-repo', '{{ .Site.Params.github | safeJS }}');
+        script.setAttribute('data-label', 'comments');
         script.setAttribute('data-issue-term', 'og:title');
         script.setAttribute('data-theme', theme);
-        script.setAttribute('data-label', 'comments');
         container.appendChild(script);
 
-        utterancesInit = true;
+        utterancesLoaded = true;
       } else {
-        const frame = document.querySelector('.utterances-frame');
+        const frame = document.querySelector('iframe.utterances-frame');
 
         // be extra sure frame exists
         if (frame) {
@@ -46,7 +45,7 @@
           frame.contentWindow.postMessage({
             type: 'set-theme',
             theme: theme
-          }, '*');
+          }, 'https://utteranc.es');
         }
       }
     }
@@ -56,18 +55,18 @@
     document.body.classList.remove('light');
     document.body.classList.add('dark');
 
-    activated = true;
+    dark = true;
 
-    setUtterances();
+    setUtterancesTheme('github-dark');
   };
 
   const activateLightMode = function() {
     document.body.classList.remove('dark');
     document.body.classList.add('light');
 
-    activated = false;
+    dark = false;
 
-    setUtterances();
+    setUtterancesTheme('github-light');
   };
 
   // if user already explicitly toggled in the past, restore their preference.
@@ -93,7 +92,7 @@
   // handle lightbulb click
   toggle.addEventListener('click', function() {
     // switch to the opposite theme & save preference in local storage
-    if (!activated) {
+    if (!dark) {
       activateDarkMode();
       localStorage.setItem('dark_mode_pref', 'true');
     } else {

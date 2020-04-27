@@ -30,6 +30,7 @@ disableAliases = true
   defaultImage = "img/me_large.jpg"
   github = "jakejarvis/jarv.is"
   facebookAppID = "3357248167622283"
+  webmention = "jarv.is"
   copyrightFirstYear = "2001"
   license = "CC-BY-4.0"
   licenseFull = "Creative Commons Attribution 4.0 International"
@@ -157,9 +158,3 @@ disableAliases = true
     lineNumbersInTable = true
     noClasses = true
     tabWidth = 4
-
-[server]
-  [[server.headers]]
-    for = "/**"
-    [server.headers.values]
-      Access-Control-Allow-Origin = "*"

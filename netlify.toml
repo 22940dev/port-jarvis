@@ -44,10 +44,7 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    # Needed to fix utteranc.es + CORS issues.
-    # Cringey but not a huge deal for this site.
-    Access-Control-Allow-Origin = "*"
-    # 🐄🐄🐄
+    # 🐄
     X-Got-Milk = "2%"
 
 # PGP file: open in browser, download correctly
