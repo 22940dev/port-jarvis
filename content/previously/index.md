@@ -21,11 +21,31 @@ css: |
          url('/vendor/comic-neue/comic-neue-bold.woff') format('woff');
   }
   body {
-    font-family: "Comic Neue", "Comic Sans MS", "Comic Sans", cursive;
-    font-weight: 700;
+    font-family: "Comic Neue", "Comic Sans MS", "Comic Sans", "Inter", sans-serif;
   }
   div#content figure figcaption {
     font-size: 1.1em;
+  }
+  div#content code {
+    font-size: 0.85em;
+  }
+  div#content iframe#y2k {
+    width: 100%;
+    height: 485px;
+    border: 2px solid #e3d18c;
+  }
+  div#content span.limegreen {
+    color: #32cd32;
+  }
+  header nav {
+    a#logo h1#name {
+      font-size: 1.5em;
+      line-height: 1.2;
+    }
+    ul li a span.text {
+      font-size: 0.9em;
+      line-height: 1.2;
+    }
   }
   footer div#copyright, footer div#poweredby {
     font-size: 0.95em;
@@ -39,8 +59,11 @@ css: |
 ---
 
 <figure>
-<iframe src="/y2k/" style="width: 100%; height: 485px; border: 2px solid #e3d18c;"></iframe>
-<figcaption><strong>🚨 Trigger warning:</strong> marquees, Comic Sans MS, popup windows, <code>color: <span style="color: #32cd32">limegreen</span></code>... <a href="/y2k/">Click to experience fullscreen anyway.</a></figcaption>
+  <iframe id="y2k" src="/y2k/"></iframe>
+  <figcaption>
+    <strong>🚨 Trigger warning:</strong> marquees, Comic Sans MS, popup windows, <code>color: <span class="limegreen">limegreen</span></code>...
+    <a href="/y2k/">Click to experience fullscreen anyway.</a>
+  </figcaption>
 </figure>
 
 ---
