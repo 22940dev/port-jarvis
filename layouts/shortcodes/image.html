@@ -2,12 +2,13 @@
 
 {{- with .Inner }}
 <figure>
+  {{ with $.Get "link" }}<a class="no-underline" href="{{ . }}"{{ if strings.HasPrefix . "http" }} target="_blank" rel="noopener"{{ end }}>{{ end }}
   <picture>
-    {{ with $.Get "link" }}<a class="no-underline" href="{{ . }}"{{ if strings.HasPrefix . "http" }} target="_blank" rel="noopener"{{ end }}>{{ end }}
     <img src="{{ $optimized.Permalink }}" width="{{ $optimized.Width }}" height="{{ $optimized.Height }}"
          alt="{{ . | $.Page.RenderString | plainify | safeHTML }}" title="{{ . | $.Page.RenderString | plainify | safeHTML }}">
-    {{ if $.Get "link" }}</a>{{ end }}
   </picture>
+  {{ if $.Get "link" }}</a>{{ end }}
+
   <figcaption>{{ . | $.Page.RenderString | safeHTML }}</figcaption>
 </figure>
 {{- else -}}

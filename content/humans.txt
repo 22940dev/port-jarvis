@@ -63,3 +63,9 @@
     Authors. Licensed under the MIT License:
 
         https://sourcefoundry.org/hack/
+
+    Comic Neue: Copyright (c) 2014 The Comic Neue
+    Project Authors. Licensed under the SIL Open
+    Font License, Version 1.1:
+
+        http://comicneue.com/
