@@ -14,7 +14,7 @@
     "url": "git+https://github.com/jakejarvis/jarv.is.git"
   },
   "scripts": {
-    "clean": "rimraf public/ resources/ builds/",
+    "clean": "rimraf public/ resources/ builds/ && hugo mod clean",
     "build": "run-s clean hugo optimize",
     "build:preview": "run-s clean hugo:dev",
     "hugo": "hugo --gc --cleanDestinationDir --verbose",
