@@ -133,7 +133,6 @@
   var scrolled = 0;
   /** endif **/
 
-  var mode;
   var hostname = loc.hostname;
   var functionName = "sa_event";
 

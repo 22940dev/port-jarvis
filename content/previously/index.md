@@ -40,11 +40,11 @@ css: |
   header nav {
     a#logo h1#name {
       font-size: 1.5em;
-      line-height: 1.2;
+      line-height: 1.15;
     }
     ul li a span.text {
       font-size: 0.9em;
-      line-height: 1.2;
+      line-height: 1.15;
     }
   }
   footer div#copyright, footer div#poweredby {
