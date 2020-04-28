@@ -261,7 +261,7 @@
     </footer>
 
     {{ if eq hugo.Environment "production" }}
-    <amp-pixel src="https://s.jarv.is/image.gif" layout="nodisplay"></amp-pixel>
+    <amp-pixel src="{{ "sa/noscript.gif" | absURL }}?hostname=CANONICAL_HOSTNAME&path=CANONICAL_PATH&referrer=DOCUMENT_REFERRER&https=true&ua=USER_AGENT&width=SCREEN_WIDTH&type=pageview" layout="nodisplay"></amp-pixel>
     {{ end }}
   </body>
 </html>

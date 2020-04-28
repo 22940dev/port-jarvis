@@ -1,10 +1,6 @@
 /* jshint browser: true, laxbreak:true, -W080 */
 
-/*!
- *  Copyright (c) 2018-2020 Simple Analytics. Licensed under MIT.
- *  https://github.com/simpleanalytics/scripts/blob/master/LICENSE
- */
-
+/*! Simple Analytics - Privacy friendly analytics (docs.simpleanalytics.com/script; 2020-03-02; 21e2) */
 // https://github.com/simpleanalytics/scripts/blob/3918189e9137b55522a2dbeb3d7cb4bc2c26c52a/src/default.js
 
 (function(window, baseUrl, apiUrlPrefix, version, saGlobal) {
@@ -90,7 +86,7 @@
     data = assign(payload, data);
     new Image().src =
       fullApiUrl +
-      "/s.gif?" +
+      "/send.gif?" +
       Object.keys(data)
         .filter(function(key) {
           return data[key] != undefinedVar;
@@ -128,11 +124,6 @@
     false
   );
 
-  /** if spa **/
-  var pushState = "pushState";
-  var dis = window.dispatchEvent;
-  /** endif **/
-
   /** if duration **/
   var duration = "duration";
   var start = now();
@@ -150,8 +141,8 @@
 
   // Don't track when localhost
   /** unless testing **/
-  //if (loc.hostname.indexOf(".") == -1)
-  //  return warn(notSending + "from " + loc.localhost);
+  if (loc.hostname.indexOf(".") == -1)
+    return warn(notSending + "from " + loc.localhost);
   /** endunless **/
 
   try {
@@ -288,11 +279,6 @@
       // Obfuscate personal data in URL by dropping the search and hash
       var path = decodeURIComponentFunc(loc.pathname);
 
-      /** if hash **/
-      // Add hash to path when script is put in to hash mode
-      if (mode == "hash" && loc.hash) path += loc.hash.split("?")[0];
-      /** endif **/
-
       // Don't send the last path again (this could happen when pushState is used to change the path hash or search)
       if (lastSendPath == path) return;
 
@@ -335,64 +321,6 @@
 
       sendPageView(isPushState, isPushState || userNavigated);
     };
-
-    /** if spa **/
-    var his = window.history;
-    var hisPushState = his ? his.pushState : undefinedVar;
-
-    // Overwrite history pushState function to
-    // allow listening on the pushState event
-    if (hisPushState && Event && dis) {
-      var stateListener = function(type) {
-        var orig = his[type];
-        return function() {
-          var rv = orig.apply(this, arguments);
-          var event;
-          if (typeof Event == "function") {
-            event = new Event(type);
-          } else {
-            // Fix for IE
-            event = doc.createEvent("Event");
-            event.initEvent(type, true, true);
-          }
-          event.arguments = arguments;
-          dis(event);
-          return rv;
-        };
-      };
-
-      his.pushState = stateListener(pushState);
-
-      addEventListenerFunc(
-        pushState,
-        function() {
-          pageview(1);
-        },
-        false
-      );
-
-      addEventListenerFunc(
-        "popstate",
-        function() {
-          pageview(1);
-        },
-        false
-      );
-    }
-    /** endif **/
-
-    /** if hash **/
-    // When in hash mode, we record a pageview based on the onhashchange function
-    if (mode == "hash" && "onhashchange" in window) {
-      addEventListenerFunc(
-        "hashchange",
-        function() {
-          pageview(1);
-        },
-        false
-      );
-    }
-    /** endif **/
 
     pageview();
 
@@ -445,4 +373,4 @@
   } catch (e) {
     sendError(e);
   }
-})(window, "{{ (urls.Parse .Site.BaseURL).Host }}");
+})(window, "{{ (urls.Parse .Site.BaseURL).Host }}/sa");

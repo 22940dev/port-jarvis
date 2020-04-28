@@ -1,9 +1,8 @@
 /* jshint indent: 2, browser: true, bitwise: true, plusplus: true */
 
-/*!
- *  Copyright (c) 2018 Twitter, Inc. and other contributors. Licensed under MIT.
- *  https://github.com/twitter/twemoji/blob/gh-pages/LICENSE
- */
+/*! Copyright Twitter Inc. and other contributors. Licensed under MIT *//*
+    https://github.com/twitter/twemoji/blob/gh-pages/LICENSE
+  */
 
 (function (
 
