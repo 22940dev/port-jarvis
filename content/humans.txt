@@ -29,16 +29,14 @@
 
 # TECHNOLOGY
 
-    Hugo extended
+    Hugo Extended
     Netlify
     Simple Analytics
-    utteranc.es
-    Twemoji
     ...and much more: https://jarv.is/uses/
 
 # VIEW SOURCE
 
-    https://go.jarv.is/source
+    https://jrvs.io/source
 
 # LICENSES
 

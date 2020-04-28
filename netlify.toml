@@ -84,22 +84,18 @@
   from = "/sa/send.gif*"
   to = "https://queue.simpleanalyticscdn.com/simple.gif:splat"
   status = 200
-  force = true
 [[redirects]]
   from = "/sa/noscript.gif*"
   to = "https://queue.simpleanalyticscdn.com/noscript.gif:splat"
   status = 200
-  force = true
 [[redirects]]
   from = "/sa/append"
   to = "https://queue.simpleanalyticscdn.com/append"
   status = 200
-  force = true
 [[redirects]]
   from = "/sa/post"
   to = "https://api.simpleanalytics.io/post"
   status = 200
-  force = true
 
 # Support ancient RSS subscriptions and links from WordPress era:
 [[redirects]]

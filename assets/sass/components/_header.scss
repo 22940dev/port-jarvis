@@ -108,7 +108,7 @@ header {
       }
 
       // Dark mode toggle
-      button#dark-mode-toggle {
+      button.dark-mode-toggle {
         background-repeat: no-repeat;
         background-size: 100% 100%;
         display: block;
@@ -164,7 +164,7 @@ header {
         }
 
         // Dark mode toggle
-        button#dark-mode-toggle {
+        button.dark-mode-toggle {
           // TODO: figure out need for weird magic numbers here
           height: 1.025em;
           width: 0.75em;

@@ -10,10 +10,6 @@
     <div id="content">
       {{ .Content }}
     </div>
-
-    {{ if and (ne .Params.comments false) (eq hugo.Environment "production") }}
-    <div id="comments"></div>
-    {{ end }}
   </article>
 </main>
 {{ end }}

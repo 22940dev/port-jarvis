@@ -618,6 +618,6 @@ port:17 product:"Windows qotd"
 
 ---
 
-If you've found any other juicy Shodan gems, whether it's a search query or a specific example, definitely drop a comment below or [open an issue/PR on GitHub](https://github.com/jakejarvis/awesome-shodan-queries)!
+If you've found any other juicy Shodan gems, whether it's a search query or a specific example, [open an issue/PR on GitHub!](https://github.com/jakejarvis/awesome-shodan-queries)
 
 Bon voyage, fellow penetrators! 😉

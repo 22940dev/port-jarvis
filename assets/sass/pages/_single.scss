@@ -37,19 +37,6 @@ main#single {
       color: inherit;
     }
   }
-
-  div#comments {
-    margin-top: 1.5em;
-    padding-top: 0.5em;
-
-    @include themed() {
-      border-top: 2px solid t(color-light);
-    }
-
-    div.utterances {
-      max-width: unset;
-    }
-  }
 }
 
 // Responsive

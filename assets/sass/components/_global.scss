@@ -159,7 +159,7 @@ body {
   &.light {
     background-color: $color-light-background;
 
-    button#dark-mode-toggle {
+    button.dark-mode-toggle {
       background-image: url($icon-bulb-on);
     }
   }
@@ -167,7 +167,7 @@ body {
   &.dark {
     background-color: $color-dark-background;
 
-    button#dark-mode-toggle {
+    button.dark-mode-toggle {
       background-image: url($icon-bulb-off);
     }
   }

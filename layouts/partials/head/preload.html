@@ -1,11 +1,3 @@
-{{ if eq hugo.Environment "production" }}
-  {{ if and .IsPage (and (eq .Type .Site.Params.mainSection) (ne .Params.comments false)) }}
-    <link rel="preconnect" href="https://utteranc.es" crossorigin>
-    <link rel="preconnect" href="https://api.utteranc.es" crossorigin>
-    <link rel="preconnect" href="https://api.github.com" crossorigin>
-  {{ end }}
-{{ end }}
-
 <link rel="preload" href="{{ "vendor/inter/inter-regular-subset.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{ "vendor/inter/inter-medium-subset.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{ "vendor/inter/inter-bold-subset.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>

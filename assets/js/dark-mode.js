@@ -1,72 +1,34 @@
 /* jshint esversion: 6, indent: 2, browser: true, quotmark: single */
 
-// inspired by https://codepen.io/kevinpowell/pen/EMdjOV
+/*! Dark Mode Switcheroo | MIT License | jrvs.io/bWMz */
 
 (function() {
   'use strict';
 
-  // lightbulb toggle re-appears now that we know user has JS enabled
-  const toggle = document.querySelector('button#dark-mode-toggle');
-  toggle.style.visibility = 'visible';
+  // improve variable mangling
+  const win = window;
+  const doc = win.document;
+  const bod = doc.body;
+  const cls = bod.classList;
+  const sto = localStorage;
 
   // check for preset `dark_mode_pref` in localStorage
-  let pref = localStorage.getItem('dark_mode_pref');
+  const pref_key = 'dark_mode_pref';
+  let pref = sto.getItem(pref_key);
 
   // keep track of current state (light by default)
   let dark = false;
 
-  // load utteranc.es with proper theme and dynamically switch it
-  let utterancesLoaded = false;
-  const setUtterancesTheme = function(theme) {
-    const container = document.querySelector('div#comments');
-
-    // don't do any of this if we're not on a page with comments enabled
-    if (container) {
-      if (!utterancesLoaded) {
-        const script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.async = true;
-        script.defer = true;
-        script.src = 'https://utteranc.es/client.js';
-        script.crossOrigin = 'anonymous';
-        script.setAttribute('data-repo', '{{ .Site.Params.github | safeJS }}');
-        script.setAttribute('data-label', 'comments');
-        script.setAttribute('data-issue-term', 'og:title');
-        script.setAttribute('data-theme', theme);
-        container.appendChild(script);
-
-        utterancesLoaded = true;
-      } else {
-        const frame = document.querySelector('iframe.utterances-frame');
-
-        // be extra sure frame exists
-        if (frame) {
-          // https://github.com/utterance/utterances/blob/4d9823c6c4f9a58365f06e2aa76c51b8cf5d5478/src/configuration-component.ts#L160
-          frame.contentWindow.postMessage({
-            type: 'set-theme',
-            theme: theme
-          }, 'https://utteranc.es');
-        }
-      }
-    }
-  };
-
   const activateDarkMode = function() {
-    document.body.classList.remove('light');
-    document.body.classList.add('dark');
-
+    cls.remove('light');
+    cls.add('dark');
     dark = true;
-
-    setUtterancesTheme('github-dark');
   };
 
   const activateLightMode = function() {
-    document.body.classList.remove('dark');
-    document.body.classList.add('light');
-
+    cls.remove('dark');
+    cls.add('light');
     dark = false;
-
-    setUtterancesTheme('github-light');
   };
 
   // if user already explicitly toggled in the past, restore their preference.
@@ -77,7 +39,7 @@
   if (!pref) {
     // check for OS dark mode setting and switch accordingly
     // https://gist.github.com/Gioni06/eb5b28343bcf5793a70f6703004cf333#file-darkmode-js-L47
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches)
+    if (win.matchMedia('(prefers-color-scheme: dark)').matches)
       activateDarkMode();
     else
       activateLightMode();
@@ -85,19 +47,27 @@
     // real-time switching if supported by OS/browser
     // TODO: stop listening when the parent condition becomes false,
     //       right now these keep listening even if pref is set.
-    window.matchMedia('(prefers-color-scheme: dark)').addListener(function(e) { if (e.matches) activateDarkMode(); });
-    window.matchMedia('(prefers-color-scheme: light)').addListener(function(e) { if (e.matches) activateLightMode(); });
+    win.matchMedia('(prefers-color-scheme: dark)').addListener(function(e) { if (e.matches) activateDarkMode(); });
+    win.matchMedia('(prefers-color-scheme: light)').addListener(function(e) { if (e.matches) activateLightMode(); });
   }
 
-  // handle lightbulb click
-  toggle.addEventListener('click', function() {
-    // switch to the opposite theme & save preference in local storage
-    if (!dark) {
-      activateDarkMode();
-      localStorage.setItem('dark_mode_pref', 'true');
-    } else {
-      activateLightMode();
-      localStorage.setItem('dark_mode_pref', 'false');
-    }
-  }, true);
+  const toggle = doc.querySelector('.dark-mode-toggle');
+
+  // don't freak out if page happens not to have a toggle button
+  if (toggle) {
+   // lightbulb toggle re-appears now that we know user has JS enabled
+   toggle.style.visibility = 'visible';
+
+    // handle lightbulb click
+    toggle.addEventListener('click', function() {
+      // switch to the opposite theme & save preference in local storage
+      if (!dark) {
+        activateDarkMode();
+        sto.setItem(pref_key, 'true');
+      } else {
+        activateLightMode();
+        sto.setItem(pref_key, 'false');
+      }
+    }, true);
+  }
 })();
