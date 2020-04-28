@@ -5,14 +5,6 @@
   X-Frame-Options: sameorigin
   X-XSS-Protection: 1; mode=block
 
-# Long cache (one week) for vendored and fingerprinted assets:
-/css/*
-  Cache-Control: public, max-age=604800, immutable
-/js/*
-  Cache-Control: public, max-age=604800, immutable
-/vendor/*
-  Cache-Control: public, max-age=604800, immutable
-
 # Recommended MIME type for PWA manifests:
 # https://github.com/w3c/manifest/issues/689
 /site.webmanifest

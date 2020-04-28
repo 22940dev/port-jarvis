@@ -79,6 +79,13 @@
   status = 301
   force = true
 
+# Proxy data to Simple Analytics endpoint
+[[redirects]]
+  from = "/s.gif*"
+  to = "https://queue.simpleanalyticscdn.com/simple.gif:splat"
+  status = 200
+  force = true
+
 # Support ancient RSS subscriptions and links from WordPress era:
 [[redirects]]
   from = "/feed"

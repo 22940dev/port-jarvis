@@ -1,5 +1,13 @@
-{{ $darkmode := resources.Get "js/dark-mode.js" | resources.ExecuteAsTemplate "vendor/emoji/dark-mode.js" . }}
+{{ $darkmode := resources.Get "js/dark-mode.js" | resources.ExecuteAsTemplate "js/dark-mode.js" . }}
 {{ $twemoji := resources.Get "vendor/emoji/emoji.js" | resources.ExecuteAsTemplate "vendor/emoji/emoji.min.js" . }}
+{{ $analytics := resources.Get "js/simple-analytics.js" | resources.ExecuteAsTemplate "js/simple-analytics.js" . }}
 
-{{ $js := slice $darkmode $twemoji | resources.Concat "/js/main.js" | resources.Minify | resources.Fingerprint "sha256" }}
-<script async defer {{ printf "src=%q integrity=%q" $js.Permalink $js.Data.Integrity | safeHTMLAttr }}></script>
+{{ $bundle := "" }}
+{{ if eq hugo.Environment "development" }}
+  {{ $bundle = slice $darkmode $twemoji }}
+{{ else }}
+  {{ $bundle = slice $darkmode $twemoji $analytics }}
+{{ end }}
+
+{{ $js := $bundle | resources.Concat "/js/app.js" }}
+<script async defer src="{{ $js.Permalink }}"></script>
