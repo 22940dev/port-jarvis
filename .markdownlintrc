@@ -11,7 +11,7 @@
   "no-blanks-blockquote": true,
   "no-empty-links": false,
   "no-hard-tabs": false,
-  "no-inline-html": { "allowed_elements": [ "p", "a", "strong", "em", "img", "svg", "path", "h2", "h3", "code", "span", "sup", "figure", "figcaption", "iframe" ] },
+  "no-inline-html": { "allowed_elements": [ "p", "a", "strong", "em", "img", "svg", "path", "polygon", "circle", "g", "h2", "h3", "code", "span", "sup", "figure", "figcaption", "iframe" ] },
   "no-multiple-blanks": false,
   "no-trailing-punctuation": false,
   "single-h1": false,

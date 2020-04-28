@@ -171,6 +171,18 @@
 
 # More miscellaneous mirrors/redirects:
 [[redirects]]
+  from = "/resume"
+  to = "/resume.pdf"
+  status = 302
+[[redirects]]
+  from = "/license.txt"
+  to = "/license/"
+  status = 301
+[[redirects]]
+  from = "/privacy.html"
+  to = "/privacy/"
+  status = 301
+[[redirects]]
   from = "/favicon.ico"
   to = "/img/favicon.ico"
   status = 200

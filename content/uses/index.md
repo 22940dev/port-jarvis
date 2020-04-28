@@ -4,6 +4,8 @@ date: 2020-01-22 09:51:08-0400
 description: "Things I use daily."
 image: "images/desktop.png"
 layout: etc
+sitemap:
+  priority: 0.4
 ---
 
 ~~I regularly get messages asking about specific things I use.~~ Nobody has asked me what I use. Ever. But here's a list of my daily requirements anyways, mostly revolving around my Apple sheep-ness. Inspired by [many, many others](https://uses.tech/). 😊

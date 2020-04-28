@@ -34,7 +34,6 @@ disableAliases = true
   copyrightFirstYear = "2001"
   license = "CC-BY-4.0"
   licenseFull = "Creative Commons Attribution 4.0 International"
-  licenseURL = "https://creativecommons.org/licenses/by/4.0/"
 
 [author]
   name = "Jake Jarvis"
@@ -132,6 +131,7 @@ disableAliases = true
 
 [sitemap]
   filename = "sitemap.xml"
+  priority = 0.5
 
 [imaging]
   # options for resampling filters:

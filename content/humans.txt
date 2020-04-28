@@ -36,14 +36,18 @@
 
 # VIEW SOURCE
 
-    https://jrvs.io/source
+    https://github.com/jakejarvis/jarv.is
+
+# PRIVACY POLICY
+
+    https://jarv.is/privacy/
 
 # LICENSES
 
     All content is licensed under CC-BY-4.0, an
     open & permissive Creative Commons license:
 
-        https://jarv.is/license.txt
+        https://jarv.is/license/
 
     Twemoji: Licensed under Creative Commons
     Attribution 4.0 International by Twitter, Inc.

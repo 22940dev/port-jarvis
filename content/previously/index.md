@@ -4,6 +4,8 @@ date: 2020-04-22 10:50:04-0400
 description: "An incredibly embarrassing and somewhat painful walkthrough of this site's long history..."
 image: "images/2001_12.png"
 layout: etc
+sitemap:
+  priority: 0.3
 css: |
   /*!
    *  Comic Neue typeface v2.5 - http://comicneue.com/

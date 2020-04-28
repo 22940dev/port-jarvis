@@ -256,7 +256,7 @@
     </article>
 
     <footer>
-      <div class="left">Content by <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>, licensed under <a class="no-underline" href="{{ .Site.Params.licenseURL }}" {{ with .Site.Params.licenseFull }} title="{{ . }}" {{ end }}target="_blank" rel="noopener">{{ .Site.Params.license }}</a>.</div>
+      <div class="left">Content by <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>, licensed under <a class="no-underline" href="{{ "license/" | absURL }}"{{ with .Site.Params.licenseFull }} title="{{ . }}"{{ end }}>{{ .Site.Params.license }}</a>.</div>
       <div class="right"><a class="back-to-top" href="#top">↑ Back to top.</a></div>
     </footer>
 

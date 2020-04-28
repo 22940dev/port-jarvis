@@ -22,6 +22,12 @@ div#content {
     }
   }
 
+  p {
+    &.center {
+      text-align: center;
+    }
+  }
+
   p.image,
   figure {
     text-align: center;
