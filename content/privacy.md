@@ -1,6 +1,5 @@
 ---
 title: "Privacy Policy 🕵️"
-date: 2020-01-01 00:00:00-0400
 url: /privacy
 layout: etc
 sitemap:
@@ -18,6 +17,6 @@ This website uses [**Simple Analytics**](https://simpleanalytics.com/?ref=jarv.i
 - User agent (browser name and version)
 - Browser window size
 
-[📈 Stats can be viewed on a publicly-accessible dashboard.](https://simpleanalytics.com/jarv.is?ref=jarv.is)
+**📈 Stats for this site are public! [View them here.](/stats/)**
 
 Pages and first-party assets on this website are served by [**Netlify**](https://www.netlify.com/). Refer to their [privacy policy](https://www.netlify.com/privacy/) and [GDPR statement](https://www.netlify.com/privacy/) for more information.

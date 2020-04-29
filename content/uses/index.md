@@ -158,7 +158,7 @@ I've been making recent efforts to [de-Google](https://www.reddit.com/r/degoogle
 - ~~Google Analytics~~ → both of these are awesome, privacy-aware "visitor counters" rather than trackers:
   - [**Netlify Analytics**](https://www.netlify.com/products/analytics/) [(my review)](/notes/netlify-analytics-review/)
   - [**Simple Analytics**](https://simpleanalytics.com/) [(referral link)](https://referral.simpleanalytics.com/jake-jarvis)
-    - My [stats are public](https://simpleanalytics.com/jarv.is?ref=jarv.is), by the way!
+    - This website's [stats are public](/stats/), by the way!
 - [**Netlify**](https://www.netlify.com/) for static sites.
 - [**Linode**](https://www.linode.com/) for virtual servers.
 - [**Backblaze**](https://www.backblaze.com/) [(referral link)](https://secure.backblaze.com/r/00x84e)

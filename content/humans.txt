@@ -38,6 +38,10 @@
 
     https://github.com/jakejarvis/jarv.is
 
+# ANALYTICS
+
+    https://jarv.is/stats/
+
 # PRIVACY POLICY
 
     https://jarv.is/privacy/

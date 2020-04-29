@@ -1,6 +1,5 @@
 ---
 title: "License 📜"
-date: 2020-01-01 00:00:00-0400
 url: /license
 layout: etc
 sitemap:
