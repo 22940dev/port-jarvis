@@ -1,31 +1,29 @@
 /* jshint esversion: 6, indent: 2, browser: true, quotmark: single */
 
-/*! Dark Mode Switcheroo | MIT License | jrvs.io/bWMz */
+/*! Dark mode switcheroo | MIT License | jrvs.io/bWMz */
 
 (function() {
-  'use strict';
-
   // improve variable mangling
-  const win = window;
-  const doc = win.document;
-  const bod = doc.body;
-  const cls = bod.classList;
-  const sto = localStorage;
+  var win = window;
+  var doc = win.document;
+  var bod = doc.body;
+  var cls = bod.classList;
+  var sto = localStorage;
 
   // check for preset `dark_mode_pref` in localStorage
-  const pref_key = 'dark_mode_pref';
-  let pref = sto.getItem(pref_key);
+  var pref_key = 'dark_mode_pref';
+  var pref = sto.getItem(pref_key);
 
   // keep track of current state (light by default)
-  let dark = false;
+  var dark = false;
 
-  const activateDarkMode = function() {
+  var activateDarkMode = function() {
     cls.remove('light');
     cls.add('dark');
     dark = true;
   };
 
-  const activateLightMode = function() {
+  var activateLightMode = function() {
     cls.remove('dark');
     cls.add('light');
     dark = false;
@@ -51,7 +49,7 @@
     win.matchMedia('(prefers-color-scheme: light)').addListener(function(e) { if (e.matches) activateLightMode(); });
   }
 
-  const toggle = doc.querySelector('.dark-mode-toggle');
+  var toggle = doc.querySelector('.dark-mode-toggle');
 
   // don't freak out if page happens not to have a toggle button
   if (toggle) {
