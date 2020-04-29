@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    if: (!contains(github.event.head_commit.message, '[skip ci]'))
     env:
       NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
       NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -19,7 +19,7 @@ jobs:
 
   lighthouse:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    if: (!contains(github.event.head_commit.message, '[skip ci]'))
     needs: deploy
     env:
       LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
@@ -54,7 +54,9 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    if: (!contains(github.actor, '[bot]')) || (!contains(github.event.head_commit.message, '[skip ci]'))
+    env:
+      PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
     steps:
     - uses: actions/checkout@v2
       with:
@@ -78,27 +80,14 @@ jobs:
         key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-yarn-
-    - run: yarn install --no-ignore-optional --frozen-lockfile
-    - run: yarn build:preview
-    - run: yarn lint
+    - name: Install
+      run: yarn install --no-ignore-optional --frozen-lockfile
+    - name: Build preview
+      run: yarn build:preview
+    - name: Lint
+      run: yarn lint
       continue-on-error: true
-    - name: Include .percy.yml in artifact
-      run: cp .percy.yml public/
-    - uses: actions/upload-artifact@v1
+    - name: Percy snapshots
+      uses: percy/snapshot-action@v0.1.0
       with:
-        name: public
-        path: './public'
-
-  percy:
-    runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
-    needs: build
-    env:
-      PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-    steps:
-    - uses: actions/download-artifact@v1
-      with:
-        name: public
-    - uses: percy/snapshot-action@v0.1.0
-      with:
-        flags: --config public/.percy.yml
+        flags: --config ./.percy.yml
