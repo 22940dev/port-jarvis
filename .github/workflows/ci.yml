@@ -55,8 +55,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     if: (!contains(github.actor, '[bot]')) || (!contains(github.event.head_commit.message, '[skip ci]'))
-    env:
-      PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
     steps:
     - uses: actions/checkout@v2
       with:
@@ -89,5 +87,5 @@ jobs:
       continue-on-error: true
     - name: Percy snapshots
       uses: percy/snapshot-action@v0.1.0
-      with:
-        flags: --config ./.percy.yml
+      env:
+        PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}

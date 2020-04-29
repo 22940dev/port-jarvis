@@ -1,23 +1,27 @@
 version: 1
 snapshot:
-  widths: [375, 1280] # px
+  widths: [450, 1050] # px
   enable-javascript: true
   percy-css: |
-    video {
-      display: none;
-    }
     div.embed {
       display: none;
     }
-    div.highlight {
+    video {
+      display: none;
+    }
+    iframe#sa-graph {
+      display: none;  /* analytics graph will change every time, obviously */
+    }
+    code, div.highlight {
       border: 0 !important;  /* no clue why this bugs out... */
     }
     .wave, .beat {
-      animation: none !important;
+      animation: none;
     }
 static-snapshots:
   path: public/
   snapshot-files: '**/index.html'
+  ignore-files: '**/license/*.html,**/privacy/*.html,**/leo/*.html,**/birthday/*.html,**/hillary/*.html'
 agent:
   asset-discovery:
-    network-idle-timeout: 10000 # ms
+    network-idle-timeout: 2000 # ms
