@@ -9,7 +9,7 @@ sitemap:
 
 Okay, this is an easy one. 😉
 
-This website uses [**Simple Analytics**](https://simpleanalytics.com/?ref=jarv.is) to track pageviews without collecting any personally identifiable information, including IP addresses and browser fingerprints. Only the following [information](https://docs.simpleanalytics.com/what-we-collect?ref=jarv.is) is collected and recorded by them:
+This website uses [**Simple Analytics**](https://simpleanalytics.com/?ref=jarv.is) to track pageviews **without collecting any personally identifiable information,** including IP addresses, cookies, and browser fingerprints. Only the following [information](https://docs.simpleanalytics.com/what-we-collect?ref=jarv.is) is collected and recorded by them:
 
 - URL visited
 - Timestamp of visit

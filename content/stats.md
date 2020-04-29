@@ -18,7 +18,7 @@ sitemap:
 
 <p class="center"><a class="no-underline" href="https://simpleanalytics.com/jarv.is?utm_source=jarv.is&utm_content=badge" target="_blank" rel="noopener"><img src="https://simpleanalyticsbadge.com/jarv.is?counter=true" referrerpolicy="no-referrer" crossorigin="anonymous"></a></p>
 
-This website uses [**Simple Analytics**](https://simpleanalytics.com/?ref=jarv.is) to track pageviews [without collecting](https://docs.simpleanalytics.com/what-we-collect?ref=jarv.is) any personally identifiable information, including IP addresses and browser fingerprints.
+This website uses [**Simple Analytics**](https://simpleanalytics.com/?ref=jarv.is) to track pageviews **without collecting any personally identifiable information,** including IP addresses, cookies, and browser fingerprints.
 
 In that case, why not share them? 😊 Pageviews for the past month are graphed below and more information (top pages, referrers, etc.) can be found [on a publicly-accessible dashboard.](https://simpleanalytics.com/jarv.is?utm_source=jarv.is&utm_content=badge)
 
