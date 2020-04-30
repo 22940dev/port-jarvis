@@ -9,7 +9,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: (!contains(github.event.head_commit.message, '[skip ci]'))
+    # "[skip ci]" also causes Netlify to skip, so these are automatically in harmony
+    # https://docs.netlify.com/site-deploys/manage-deploys/#skip-a-deploy
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     env:
       NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
       NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -19,7 +21,6 @@ jobs:
 
   lighthouse:
     runs-on: ubuntu-latest
-    if: (!contains(github.event.head_commit.message, '[skip ci]'))
     needs: deploy
     env:
       LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
@@ -27,7 +28,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
       with:
-        node-version: '12.x'
+        node-version: 12.x
     - name: Install LHCI
       run: npm install -g @lhci/cli
     - name: Audit deploy preview
@@ -50,11 +51,11 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: lhci-results
-        path: './.lighthouseci'
+        path: ./.lighthouseci
 
-  build:
+  percy:
     runs-on: ubuntu-latest
-    if: (!contains(github.actor, '[bot]')) || (!contains(github.event.head_commit.message, '[skip ci]'))
+    if: "!contains(github.actor, '[bot]') && !contains(github.event.head_commit.message, '[skip ci]')"
     steps:
     - uses: actions/checkout@v2
       with:
@@ -62,10 +63,10 @@ jobs:
         lfs: false
     - uses: actions/setup-node@v1
       with:
-        node-version: '12.x'
+        node-version: 12.x
     - uses: actions/setup-go@v2-beta
       with:
-        go-version: '1.14.x'
+        go-version: 1.14.x
     # https://github.com/actions/cache/blob/master/examples.md#node---yarn
     # https://github.com/actions/cache/issues/60
     - name: Get yarn cache location
@@ -78,13 +79,13 @@ jobs:
         key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-yarn-
-    - name: Install
+    - name: Install deps
       run: yarn install --no-ignore-optional --frozen-lockfile
-    - name: Build preview
+    - name: Build site preview
       run: yarn build:preview
     - name: Lint
-      run: yarn lint
       continue-on-error: true
+      run: yarn lint
     - name: Percy snapshots
       uses: percy/snapshot-action@v0.1.0
       env:

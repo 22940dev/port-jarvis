@@ -9,4 +9,6 @@
 {{ partialCached "head/webmention" . -}}
 {{ partial "head/canonical" . -}}
 {{ partial "head/schema" . -}}
-{{ partial "scripts/simple_analytics_events" . -}}
+{{ if eq hugo.Environment "production" }}
+  {{ partial "scripts/simple_analytics_events" . -}}
+{{ end }}

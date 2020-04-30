@@ -10,6 +10,7 @@
         "frame-title": "warn",
         "link-text": "warn",
         "total-byte-weight": ["warn", {"minScore": 0.9}],
+        "unminified-javascript": "warn",
         "unused-css-rules": "warn",
         "uses-rel-preconnect": "warn",
         "is-crawlable": "off",

@@ -19,7 +19,6 @@
   var loc = window.location;
   var doc = window.document;
   var notSending = "Not sending requests ";
-  var localhost = "localhost";
   var encodeURIComponentFunc = encodeURIComponent;
   var decodeURIComponentFunc = decodeURIComponent;
   var stringify = JSON.stringify;
@@ -27,10 +26,14 @@
   var addEventListenerFunc = window.addEventListener;
   var fullApiUrl = protocol + baseUrl;
   var undefinedVar = undefined;
+  var hostname = loc.hostname;
+  var functionName = "sa_event";
 
   var payload = {
     version: 2
   };
+
+  payload.hostname = hostname;
 
   // A simple log function so the user knows why a request is not being send
   var warn = function(message) {
@@ -133,15 +136,10 @@
   var scrolled = 0;
   /** endif **/
 
-  var hostname = loc.hostname;
-  var functionName = "sa_event";
-
-  payload.hostname = hostname;
-
   // Don't track when localhost
   /** unless testing **/
   if (loc.hostname.indexOf(".") == -1)
-    return warn(notSending + "from " + loc.localhost);
+    return warn(notSending + "from localhost");
   /** endunless **/
 
   try {
