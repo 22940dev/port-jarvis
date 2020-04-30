@@ -62,9 +62,13 @@
       if (!active) {
         activateTheme(dark);
         sto.setItem(pref_key, dark);
+        // send click event to analytics
+        sa_event('triggered_dark_mode');
       } else {
         activateTheme(light);
         sto.setItem(pref_key, light);
+        // send click event to analytics
+        sa_event('triggered_light_mode');
       }
     }, true);
   }
