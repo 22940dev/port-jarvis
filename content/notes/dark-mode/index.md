@@ -1,7 +1,7 @@
 ---
 title: "How To: Add Dark Mode to a Website 🌓"
 date: 2020-04-29 12:14:09-0400
-description: "Simple dark mode switching with local storage & OS setting detection."
+description: "Simple dark mode switching using local storage, OS preference detection, and minimal JavaScript."
 tags:
   - CSS
   - JavaScript
@@ -13,8 +13,9 @@ css: |
     height: 200px;
     width: 100%;
     max-width: 650px;
-    margin: 0 auto;
     display: block;
+    box-sizing: border-box;
+    margin: 0 auto;
     border: 2px solid #cccccc;
   }
 ---
@@ -25,14 +26,14 @@ It _is_ possible to use [pure CSS3 media queries to do this](https://css-tricks.
 
 I've written a simple implementation below, which...
 
-- Defaults to a user's system preference (until they press your toggle and set it themselves)
-- Remembers this setting between visits using the [local storage](https://www.w3schools.com/html/html5_webstorage.asp) of the user's browser (not cookies, please don't use cookies!)
-- Listens for clicks on an element of your choosing --- just set the class to `dark-mode-toggle`. For example:
+- Defaults to a user's system preference, until they press your toggle to set it themselves
+- Listens for clicks on any element of your choosing --- just set the class to `dark-mode-toggle`. For example:
 
 ```html {linenos=false}
 <button class="dark-mode-toggle">💡 Switch Themes</button>
 ```
 
+- Remembers the visitor's preference between visits using the [local storage](https://www.w3schools.com/html/html5_webstorage.asp) of the their browser (not cookies, please don't use cookies!)
 - Switches your `<body>`'s class between `light` and `dark`...
 
 ...meaning that any CSS selectors beginning with `body.dark` or `body.light` will only apply when the respective mode is active. A good place to start is by separating any color rules --- your background, text, links, etc. --- into a different section of your CSS. Using [SASS or SCSS](https://sass-lang.com/) makes this a whole lot [easier with nesting](https://sass-lang.com/guide#topic-3) but is not required; this was written with a [KISS](https://getyarn.io/yarn-clip/embed/eed08f4f-d1c9-4cc0-b041-f280a5dbf0a5?autoplay=false) mentality.
@@ -43,17 +44,17 @@ A _very_ barebones example is embedded above ([view the source here](https://git
 
 ---
 
-### Minified JS:
+### Minified JS (392 bytes gzipped 📦):
 
 ```js
-/*! Dark mode switcheroo | MIT License | jrvs.io/bWMz */
-(function(){var e=window,t=e.document,i=t.body.classList,a=localStorage,r="dark_mode_pref",c="true",d="false",o=a.getItem(r),s=!1,n="light",m="dark",l=function(){i.remove(n);i.add(m);s=!0},f=function(){i.remove(m);i.add(n);s=!1};o===c&&l();o===d&&f();if(!o){var h="(prefers-color-scheme: dark)",u="(prefers-color-scheme: light)";e.matchMedia(h).matches?l():f();e.matchMedia(h).addListener((function(e){e.matches&&l()}));e.matchMedia(u).addListener((function(e){e.matches&&f()}))}var v=t.querySelector(".dark-mode-toggle");if(v){v.style.visibility="visible";v.addEventListener("click",(function(){if(s){f();a.setItem(r,d)}else{l();a.setItem(r,c)}}),!0)}})();
+/*! Dark mode switcheroo | MIT License | jrvs.io/darkmode */
+(function(){var e=window,t=e.document,i=t.body.classList,a=localStorage,c="dark_mode_pref",d=a.getItem(c),r="dark",o="light",s=t.querySelector(".dark-mode-toggle"),n=!1,m=function(e){i.remove(r,o);i.add(e);n=e===r};d===r&&m(r);d===o&&m(o);if(!d){var l="(prefers-color-scheme: dark)",f="(prefers-color-scheme: light)";e.matchMedia(l).matches?m(r):m(o);e.matchMedia(l).addListener((function(e){e.matches&&m(r)}));e.matchMedia(f).addListener((function(e){e.matches&&m(o)}))}if(s){s.style.visibility="visible";s.addEventListener("click",(function(){if(n){m(o);a.setItem(c,o)}else{m(r);a.setItem(c,r)}}),!0)}})();
 ```
 
 ### Full JS:
 
 ```js
-/*! Dark mode switcheroo | MIT License | jrvs.io/bWMz */
+/*! Dark mode switcheroo | MIT License | jrvs.io/darkmode */
 
 (function() {
   // improve variable mangling when minifying
@@ -65,30 +66,28 @@ A _very_ barebones example is embedded above ([view the source here](https://git
 
   // check for preset `dark_mode_pref` preference in localStorage
   var pref_key = 'dark_mode_pref';
-  var pref_on = 'true';
-  var pref_off = 'false';
   var pref = sto.getItem(pref_key);
 
-  // keep track of current state (light by default) no matter how we got there
-  var dark = false;
+  // change CSS via these <body> classes:
+  var dark = 'dark';
+  var light = 'light';
 
-  // change CSS via these body classes:
-  var cls_light = 'light';
-  var cls_dark = 'dark';
-  var activateDarkMode = function() {
-    cls.remove(cls_light);
-    cls.add(cls_dark);
-    dark = true;
-  };
-  var activateLightMode = function() {
-    cls.remove(cls_dark);
-    cls.add(cls_light);
-    dark = false;
+  // use an element with class `dark-mode-toggle` to trigger swap when clicked
+  var toggle = doc.querySelector('.dark-mode-toggle');
+
+  // keep track of current state (light by default) no matter how we got there
+  var active = false;
+
+  // receives a class name and switches <body> to it
+  var activateTheme = function(theme) {
+    cls.remove(dark, light);
+    cls.add(theme);
+    active = (theme === dark);
   };
 
   // if user already explicitly toggled in the past, restore their preference
-  if (pref === pref_on) activateDarkMode();
-  if (pref === pref_off) activateLightMode();
+  if (pref === dark) activateTheme(dark);
+  if (pref === light) activateTheme(light);
 
   // user has never clicked the button, so go by their OS preference until/if they do so
   if (!pref) {
@@ -97,17 +96,14 @@ A _very_ barebones example is embedded above ([view the source here](https://git
     var prefers_light = '(prefers-color-scheme: light)';
 
     if (win.matchMedia(prefers_dark).matches)
-      activateDarkMode();
+      activateTheme(dark);
     else
-      activateLightMode();
+      activateTheme(light);
 
     // real-time switching if supported by OS/browser
-    win.matchMedia(prefers_dark).addListener(function(e) { if (e.matches) activateDarkMode(); });
-    win.matchMedia(prefers_light).addListener(function(e) { if (e.matches) activateLightMode(); });
+    win.matchMedia(prefers_dark).addListener(function(e) { if (e.matches) activateTheme(dark); });
+    win.matchMedia(prefers_light).addListener(function(e) { if (e.matches) activateTheme(light); });
   }
-
-  // use an element with class `dark-mode-toggle` to trigger swap
-  var toggle = doc.querySelector('.dark-mode-toggle');
 
   // don't freak out if page happens not to have a toggle
   if (toggle) {
@@ -117,12 +113,12 @@ A _very_ barebones example is embedded above ([view the source here](https://git
     // handle toggle click
     toggle.addEventListener('click', function() {
       // switch to the opposite theme & save preference in local storage
-      if (!dark) {
-        activateDarkMode();
-        sto.setItem(pref_key, pref_on);
+      if (!active) {
+        activateTheme(dark);
+        sto.setItem(pref_key, dark);
       } else {
-        activateLightMode();
-        sto.setItem(pref_key, pref_off);
+        activateTheme(light);
+        sto.setItem(pref_key, light);
       }
     }, true);
   }
@@ -158,22 +154,22 @@ A _very_ barebones example is embedded above ([view the source here](https://git
       color: #222;
     }
     body.light a {
-      color: blue;
+      color: #06f;
     }
     body.dark {
       background-color: #222;
       color: #fff;
     }
     body.dark a {
-      color: limegreen;
+      color: #fe0;
     }
   </style>
 </head>
 <body class="light">
-  <h1>Welcome to the dark side</h1>
+  <h1>Welcome to the dark side 🌓</h1>
   <p><a href="https://github.com/jakejarvis/dark-mode-example">View the source code.</a></p>
 
-  <button class="dark-mode-toggle">💡 You know you want to click this</button>
+  <button class="dark-mode-toggle">💡 You know you want to click this...</button>
 
   <script async defer src="dark-mode.min.js"></script>
 </body>
