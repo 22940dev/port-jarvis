@@ -13,7 +13,7 @@ image: "images/step7-2.png"
 draft: false
 ---
 
-{{< image src="images/forks.png" alt="Git Forks Visualization" />}}
+<svg width="150" height="150" viewBox="0 0 40 40" style="float:right;margin:0 0 6px 12px"><path d="M6.5 35v-4.8c0-5.4 4.3-9.7 9.7-9.7h7.6c5.4 0 9.7-4.3 9.7-9.7V6M6.5 32.5v-26" fill="none" stroke="#a3b7cc" stroke-miterlimit="10"/><path d="M6.5 10.5a4 4 0 110-8 4 4 0 010 8z" fill="#8bb7f0"/><path d="M6.5 3a3.5 3.5 0 110 7 3.5 3.5 0 010-7m0-1a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" fill="#4e7ab5"/><path d="M33.5 10.5a4 4 0 110-8 4 4 0 010 8z" fill="#8bb7f0"/><path d="M33.5 3a3.5 3.5 0 110 7 3.5 3.5 0 010-7m0-1a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" fill="#4e7ab5"/><g><path d="M6.5 37.5a4 4 0 110-8 4 4 0 010 8z" fill="#8bb7f0"/><path d="M6.5 30a3.5 3.5 0 110 7 3.5 3.5 0 010-7m0-1a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" fill="#4e7ab5"/></g></svg>
 
 Contributing to an open-source project can be intimidating at first. The convoluted process of submitting your improvements for approval via a [**pull request**](https://help.github.com/en/articles/about-pull-requests) certainly doesn't help.
 
