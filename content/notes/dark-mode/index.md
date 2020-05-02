@@ -10,7 +10,7 @@ tags:
   - Tutorial
 css: |
   div#content div.embed iframe {
-    height: 200px;
+    height: 190px;
     width: 100%;
     max-width: 650px;
     display: block;
@@ -38,7 +38,7 @@ I've written a simple implementation below, which...
 
 ...meaning that any CSS selectors beginning with `body.dark` or `body.light` will only apply when the respective mode is active. A good place to start is by separating any color rules --- your background, text, links, etc. --- into a different section of your CSS. Using [SASS or SCSS](https://sass-lang.com/) makes this a whole lot [easier with nesting](https://sass-lang.com/guide#topic-3) but is not required; this was written with a [KISS](https://getyarn.io/yarn-clip/embed/eed08f4f-d1c9-4cc0-b041-f280a5dbf0a5?autoplay=false) mentality.
 
-{{< iframe src="https://jakejarvis.github.io/dark-mode-example/" width="650" height="200" >}}
+{{< iframe src="https://jakejarvis.github.io/dark-mode-example/" width="650" height="275" title="Dark Mode Example" >}}
 
 A _very_ barebones example is embedded above ([view the source here](https://github.com/jakejarvis/dark-mode-example)) or you can try it out on this site by clicking the 💡 lightbulb in the upper right corner of this page. You'll notice that the dark theme sticks when refreshing this page, navigating between other pages, or if you were to return to this example weeks from now.
 
@@ -167,9 +167,10 @@ A _very_ barebones example is embedded above ([view the source here](https://git
 </head>
 <body class="light">
   <h1>Welcome to the dark side 🌓</h1>
+
   <p><a href="https://github.com/jakejarvis/dark-mode-example">View the source code.</a></p>
 
-  <button class="dark-mode-toggle">💡 You know you want to click this...</button>
+  <button class="dark-mode-toggle">💡 Click to see the light... or not.</button>
 
   <script async defer src="dark-mode.min.js"></script>
 </body>

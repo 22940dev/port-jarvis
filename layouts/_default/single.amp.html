@@ -89,24 +89,35 @@
         padding-left: 1em;
       }
       article {
+        max-width: {{ printf "%d%s" .Site.Params.pageMaxWidth "px" }};
+        margin: 0 auto;
+        padding: 0 15px;
         line-height: 1.8;
-        padding: 0 20px;
       }
       h1.title {
-        text-align: center;
         font-size: 2em;
         line-height: 1.3;
-        margin-top: 0.6em;
-        margin-bottom: 0.25em;
+        margin-top: 0.4em;
+        margin-bottom: 0.4em;
+        margin-left: -0.03em;
       }
-      p.meta {
-        text-align: center;
-        margin: 0.25em;
-        color: #757575;
-      }
-      p.meta a {
+      h1.title a {
+        color: inherit;
         text-decoration: none;
-        color: #444444;
+      }
+      div#meta {
+        font-size: 0.9em;
+        line-height: 1.3;
+        letter-spacing: 0.04em;
+        margin-top: 1.5em;
+        color: #5e5e5e;
+      }
+      div#meta a {
+        text-decoration: none;
+        color: inherit;
+      }
+      div#meta span.dash {
+        margin: 0 0.7em;
       }
       p.center, p.image, p.caption {
         text-align: center;
@@ -126,10 +137,12 @@
         border-bottom: 1px solid #e3e3e3;
       }
       nav {
+        max-width: {{ printf "%d%s" .Site.Params.pageMaxWidth "px" }};
+        margin: 0 auto;
+        padding: 0 15px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 5px 20px;
       }
       nav a {
         text-decoration: none;
@@ -138,7 +151,7 @@
         display: flex;
         align-items: center;
         color: #333333;
-        padding: 12px 0;
+        padding: 15px 0;
       }
       nav a#logo svg {
         height: 45px;
@@ -153,18 +166,17 @@
         list-style: none;
         display: flex;
         align-items: center;
-        font-size: 1.5em;
+        font-size: 1.75em;
         line-height: 1;
         padding: 0;
+        margin: 0;
       }
       nav ul li {
-        width: 60px;
+        width: 65px;
         text-align: right;
       }
       footer {
-        display: flex;
-        justify-content: space-between;
-        padding: 20px;
+        padding: 20px 15px;
         border-top: 1px solid #e3e3e3;
         color: #555;
         line-height: 1.8;
@@ -175,6 +187,13 @@
       footer div {
         vertical-align: middle;
         height: 100%;
+      }
+      footer div.row {
+        width: 100%;
+        max-width: {{ printf "%d%s" .Site.Params.pageMaxWidth "px" }};
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
       }
       div.left {
         text-align: left;
@@ -210,7 +229,7 @@
       div.highlight span.n, div.highlight span.bp, div.highlight span.nb, div.highlight span.ni, div.highlight span.fm, div.highlight span.nl, div.highlight span.nn, div.highlight span.py, div.highlight span.nv, div.highlight span.vc, div.highlight span.vg, div.highlight span.vi, div.highlight span.vm, div.highlight span.p { color: #111111; }
       div.highlight span.na, div.highlight span.nc, div.highlight span.nd, div.highlight span.ne, div.highlight span.nf, div.highlight span.nx { color: #337a15; }
       div.highlight span.err, div.highlight span.nt, div.highlight span.o, div.highlight span.ow, div.highlight span.kn { color: #d43d2e; }
-      div.highlight span.l, div.highlight span.se, div.highlight span.m, div.highlight span.mb, div.highlight span.mf, div.highlight span.mh, div.highlight span.mi, div.highlight span.il, div.highlight span.mo { color: #8d4eff; }
+      div.highlight span.l, div.highlight span.se, div.highlight span.m, div.highlight span.mb, div.highlight span.mf, div.highlight span.mh, div.highlight span.mi, div.highlight span.il, div.highlight span.mo { color: #7e3df3; }
       div.highlight span.ld, div.highlight span.s, div.highlight span.sa, div.highlight span.sb, div.highlight span.sc, div.highlight span.dl, div.highlight span.sd, div.highlight span.s2, div.highlight span.sh, div.highlight span.si, div.highlight span.sx, div.highlight span.sr, div.highlight span.s1, div.highlight span.ss { color: #bd5500; }
       div.highlight span.c, div.highlight span.ch, div.highlight span.cm, div.highlight span.c1, div.highlight span.cs, div.highlight span.cp, div.highlight span.cpf { color: #6b6859; }
       div.highlight span.ge { font-style: italic; }
@@ -244,11 +263,13 @@
     </header>
 
     <article>
-      <h1 class="title">{{ .Title | markdownify }}</h1>
-      <p class="meta">
-        by <a class="author" href="{{ .Site.BaseURL }}" rel="me author">{{ .Site.Author.name }}</a>
-        on <a class="date" href="{{ (.OutputFormats.Get "html").Permalink }}">{{ .Date.Format "January 2, 2006" }}</a>
-      </p>
+      <div id="meta">
+        <span title="{{ .Date.Format "Mon, Jan 2 2006 3:04:05 PM MST" }}">{{ .Date.Format "January 2, 2006" }}</span>{{ with .OutputFormats.Get "html" }}<span class="dash">—</span><a href="{{ .Permalink }}" title="View Full Version">View Full Version</a>{{ end }}
+      </div>
+
+      {{ with .OutputFormats.Get "html" }}
+      <h1 class="title"><a href="{{ .Permalink }}">{{ $.Title | markdownify }}</a></h1>
+      {{ end }}
 
       <div id="content">
         {{ .Content }}
@@ -256,12 +277,14 @@
     </article>
 
     <footer>
-      <div class="left">Content by <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>, licensed under <a class="no-underline" href="{{ "license/" | absURL }}"{{ with .Site.Params.licenseFull }} title="{{ . }}"{{ end }}>{{ .Site.Params.license }}</a>.</div>
-      <div class="right"><a class="back-to-top" href="#top">↑ Back to top.</a></div>
+      <div class="row">
+        <div class="left">Content by <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>, licensed under <a class="no-underline" href="{{ "license/" | absURL }}"{{ with .Site.Params.licenseFull }} title="{{ . }}"{{ end }}>{{ .Site.Params.license }}</a>.</div>
+        <div class="right"><a class="back-to-top" href="#top">↑ Back to top.</a></div>
+      </div>
     </footer>
 
     {{ if eq hugo.Environment "production" }}
-    <amp-pixel src="{{ "sa/noscript.gif" | absURL }}?hostname=CANONICAL_HOSTNAME&path=CANONICAL_PATH&referrer=DOCUMENT_REFERRER&https=true&ua=USER_AGENT&width=SCREEN_WIDTH&type=pageview" layout="nodisplay"></amp-pixel>
+    <amp-pixel src="{{ "sa/noscript.gif" | absURL }}?hostname=CANONICAL_HOSTNAME&path=CANONICAL_PATH&referrer=DOCUMENT_REFERRER&https=true&ua=USER_AGENT&width=VIEWPORT_WIDTH&type=pageview" layout="nodisplay"></amp-pixel>
     {{ end }}
   </body>
 </html>

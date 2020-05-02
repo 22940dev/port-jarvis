@@ -1,7 +1,8 @@
 <amp-iframe
-  sandbox="allow-scripts allow-same-origin"
+  sandbox="allow-scripts allow-same-origin allow-popups"
   layout="responsive"
   width="{{ .Get "width" }}"
   height="{{ .Get "height" }}"
-  src="{{ .Get "src" }}">
+  src="{{ .Get "src" }}"
+  {{ with .Get "title" }}title="{{ . }}"{{ end }}>
 </amp-iframe>
