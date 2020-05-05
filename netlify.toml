@@ -131,6 +131,10 @@
   to = "https://modest-jackson-d5516b.netlify.com/y2k/:splat"
   status = 200
 [[redirects]]
+  from = "/hugo-node/*"
+  to = "https://modest-jackson-d5516b.netlify.com/hugo-node/:splat"
+  status = 200
+[[redirects]]
   from = "/ios-trackers/*"
   to = "https://modest-jackson-d5516b.netlify.com/ios-trackers/:splat"
   status = 200
