@@ -87,21 +87,13 @@ disableAliases = true
   section = ["HTML"]
   page = ["HTML", "AMP"]
 
-[mediaTypes]
-  [mediaTypes."application/atom+xml"]
-    suffixes = ["atom"]
-  [mediaTypes."application/manifest+json"]
-    suffixes = ["webmanifest"]
-  [mediaTypes."text/netlify"]
-    delimiter = ""
-
 [outputFormats]
   [outputFormats.RSS]
     mediaType = "application/rss"
-    baseName = "feed"
+    baseName = "feed"   # /feed.xml
   [outputFormats.ATOM]
     mediaType = "application/atom+xml"
-    baseName = "feed"
+    baseName = "feed"   # /feed.atom
   [outputFormats.AMP]
     mediaType = "text/html"
     baseName = "amp"
@@ -128,6 +120,14 @@ disableAliases = true
     baseName = "_headers"
     isPlainText = true
     notAlternative = true
+
+[mediaTypes]
+  [mediaTypes."application/atom+xml"]
+    suffixes = ["atom"]
+  [mediaTypes."application/manifest+json"]
+    suffixes = ["webmanifest"]
+  [mediaTypes."text/netlify"]
+    delimiter = ""
 
 [sitemap]
   filename = "sitemap.xml"
@@ -158,3 +158,9 @@ disableAliases = true
     lineNumbersInTable = true
     noClasses = true
     tabWidth = 4
+
+[server]
+  [[server.headers]]
+    for = "/**"
+    [server.headers.values]
+      Access-Control-Allow-Origin = "*"

@@ -204,7 +204,7 @@ Secured by default, thankfully, but these 1,700+ machines still [have no busines
 
 [Shodan Images](https://images.shodan.io/) is a great supplementary tool to browse screenshots, by the way!  [🔎 &#x2192;](https://images.shodan.io/?query=%22authentication+disabled%22+%21screenshot.label%3Ablank)
 
-{{< image src="images/vnc.png" width="500" alt="Example: Unprotected VNC" caption="The first result right now. 😞" />}}
+{{< image src="images/vnc.png" width="500" alt="Example: Unprotected VNC" >}}The first result right now. 😞{{< /image >}}
 
 ### Windows RDP [🔎 &#x2192;](https://www.shodan.io/search?query=%22%5Cx03%5Cx00%5Cx00%5Cx0b%5Cx06%5Cxd0%5Cx00%5Cx00%5Cx124%5Cx00%22)
 
