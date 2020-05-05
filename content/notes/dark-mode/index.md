@@ -44,11 +44,11 @@ A _very_ barebones example is embedded above ([view the source here](https://git
 
 ---
 
-### Minified JS: (392 bytes gzipped 📦)
+### Minified JS: (410 bytes gzipped 📦)
 
 ```js
 /*! Dark mode switcheroo | MIT License | jrvs.io/darkmode */
-(function(){var e=window,t=e.document,i=t.body.classList,a=localStorage,c="dark_mode_pref",d=a.getItem(c),r="dark",o="light",s=t.querySelector(".dark-mode-toggle"),n=!1,m=function(e){i.remove(r,o);i.add(e);n=e===r};d===r&&m(r);d===o&&m(o);if(!d){var l="(prefers-color-scheme: dark)",f="(prefers-color-scheme: light)";e.matchMedia(l).matches?m(r):m(o);e.matchMedia(l).addListener((function(e){e.matches&&m(r)}));e.matchMedia(f).addListener((function(e){e.matches&&m(o)}))}if(s){s.style.visibility="visible";s.addEventListener("click",(function(){if(n){m(o);a.setItem(c,o)}else{m(r);a.setItem(c,r)}}),!0)}})();
+(function(){var e=window,t=e.document,i=t.body.classList,a=localStorage,c="dark_mode_pref",d=a.getItem(c),n="dark",o="light",r=o,s=t.querySelector(".dark-mode-toggle"),m=r===n,l=function(e){i.remove(n,o);i.add(e);m=e===n};d===n&&l(n);d===o&&l(o);if(!d){var f=function(e){return"(prefers-color-scheme: "+e+")"};e.matchMedia(f(n)).matches?l(n):e.matchMedia(f(o)).matches?l(o):l(r);e.matchMedia(f(n)).addListener((function(e){e.matches&&l(n)}));e.matchMedia(f(o)).addListener((function(e){e.matches&&l(o)}))}if(s){s.style.visibility="visible";s.addEventListener("click",(function(){if(m){l(o);a.setItem(c,o)}else{l(n);a.setItem(c,n)}}),!0)}})();
 ```
 
 ### Full JS:
@@ -56,32 +56,35 @@ A _very_ barebones example is embedded above ([view the source here](https://git
 ```js
 /*! Dark mode switcheroo | MIT License | jrvs.io/darkmode */
 
-(function() {
+(function () {
   // improve variable mangling when minifying
   var win = window;
   var doc = win.document;
-  var bod = doc.body;
-  var cls = bod.classList;
-  var sto = localStorage;
+  var body = doc.body;
+  var classes = body.classList;
+  var storage = localStorage;
 
-  // check for preset `dark_mode_pref` preference in localStorage
+  // check for preset `dark_mode_pref` preference in local storage
   var pref_key = 'dark_mode_pref';
-  var pref = sto.getItem(pref_key);
+  var pref = storage.getItem(pref_key);
 
   // change CSS via these <body> classes:
   var dark = 'dark';
   var light = 'light';
 
+  // which class is <body> set to initially?
+  var default_theme = light;
+
   // use an element with class `dark-mode-toggle` to trigger swap when clicked
   var toggle = doc.querySelector('.dark-mode-toggle');
 
-  // keep track of current state (light by default) no matter how we got there
-  var active = false;
+  // keep track of current state no matter how we got there
+  var active = (default_theme === dark);
 
   // receives a class name and switches <body> to it
-  var activateTheme = function(theme) {
-    cls.remove(dark, light);
-    cls.add(theme);
+  var activateTheme = function (theme) {
+    classes.remove(dark, light);
+    classes.add(theme);
     active = (theme === dark);
   };
 
@@ -91,18 +94,23 @@ A _very_ barebones example is embedded above ([view the source here](https://git
 
   // user has never clicked the button, so go by their OS preference until/if they do so
   if (!pref) {
-    // check for OS dark mode setting and switch accordingly
-    var prefers_dark = '(prefers-color-scheme: dark)';
-    var prefers_light = '(prefers-color-scheme: light)';
+    // returns media query selector syntax
+    var prefers = function (theme) {
+      return '(prefers-color-scheme: ' + theme + ')';
+    };
 
-    if (win.matchMedia(prefers_dark).matches)
+    // check for OS dark/light mode preference and switch accordingly
+    // default to `default_theme` set above if unsupported
+    if (win.matchMedia(prefers(dark)).matches)
       activateTheme(dark);
-    else
+    else if (win.matchMedia(prefers(light)).matches)
       activateTheme(light);
+    else
+      activateTheme(default_theme);
 
     // real-time switching if supported by OS/browser
-    win.matchMedia(prefers_dark).addListener(function(e) { if (e.matches) activateTheme(dark); });
-    win.matchMedia(prefers_light).addListener(function(e) { if (e.matches) activateTheme(light); });
+    win.matchMedia(prefers(dark)).addListener(function (e) { if (e.matches) activateTheme(dark); });
+    win.matchMedia(prefers(light)).addListener(function (e) { if (e.matches) activateTheme(light); });
   }
 
   // don't freak out if page happens not to have a toggle
@@ -111,14 +119,14 @@ A _very_ barebones example is embedded above ([view the source here](https://git
     toggle.style.visibility = 'visible';
 
     // handle toggle click
-    toggle.addEventListener('click', function() {
+    toggle.addEventListener('click', function () {
       // switch to the opposite theme & save preference in local storage
-      if (!active) {
-        activateTheme(dark);
-        sto.setItem(pref_key, dark);
-      } else {
+      if (active) {
         activateTheme(light);
-        sto.setItem(pref_key, light);
+        storage.setItem(pref_key, light);
+      } else {
+        activateTheme(dark);
+        storage.setItem(pref_key, dark);
       }
     }, true);
   }

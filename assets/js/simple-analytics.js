@@ -1,9 +1,9 @@
 /* jshint browser: true, laxbreak:true, -W080 */
 
-/*! Simple Analytics - Privacy friendly analytics (docs.simpleanalytics.com/script; 2020-03-02; 21e2) */
-// https://github.com/simpleanalytics/scripts/blob/3918189e9137b55522a2dbeb3d7cb4bc2c26c52a/src/default.js
+/*! Simple Analytics - Privacy friendly analytics (docs.simpleanalytics.com/script; 2020-05-03; d98d) */
+// https://github.com/simpleanalytics/scripts/blob/915d98d39868cbb578619f64b5e2374a5af60c2b/src/default.js
 
-(function(window, baseUrl, apiUrlPrefix, version, saGlobal) {
+(function (window, baseUrl) {
   if (!window) return;
 
   // Generate the needed variables, this seems like a lot of repetition, but it
@@ -17,6 +17,7 @@
   var slash = "/";
   var nav = window.navigator;
   var loc = window.location;
+  var hostname = loc.hostname;
   var doc = window.document;
   var notSending = "Not sending requests ";
   var encodeURIComponentFunc = encodeURIComponent;
@@ -26,42 +27,46 @@
   var addEventListenerFunc = window.addEventListener;
   var fullApiUrl = protocol + baseUrl;
   var undefinedVar = undefined;
-  var hostname = loc.hostname;
   var functionName = "sa_event";
 
   var payload = {
-    version: 2
+    version: 2,
   };
 
-  payload.hostname = hostname;
+  var options = {
+    hostname: hostname,
+    functionName: functionName,
+  };
+
+  payload.hostname = options.hostname;
 
   // A simple log function so the user knows why a request is not being send
-  var warn = function(message) {
+  var warn = function (message) {
     if (con && con.warn) con.warn("Simple Analytics:", message);
   };
 
   var now = Date.now;
 
-  var uuid = function() {
+  var uuid = function () {
     var cryptoObject = window.crypto || window.msCrypto;
     var emptyUUID = [1e7] + -1e3 + -4e3 + -8e3 + -1e11;
 
-    if (!cryptoObject)
-      return emptyUUID.replace(/[018]/g, function(c) {
-        var r = (Math.random() * 16) | 0,
-          v = c < 2 ? r : (r & 0x3) | 0x8;
-        return v.toString(16);
+    if (cryptoObject && cryptoObject.getRandomValues)
+      return emptyUUID.replace(/[018]/g, function (c) {
+        return (
+          c ^
+          (cryptoObject.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+        ).toString(16);
       });
 
-    return emptyUUID.replace(/[018]/g, function(c) {
-      return (
-        c ^
-        (cryptoObject.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
-      ).toString(16);
+    return emptyUUID.replace(/[018]/g, function (c) {
+      var r = (Math.random() * 16) | 0,
+        v = c < 2 ? r : (r & 0x3) | 0x8;
+      return v.toString(16);
     });
   };
 
-  var assign = function() {
+  var assign = function () {
     var to = {};
     for (var index = 0; index < arguments.length; index++) {
       var nextSource = arguments[index];
@@ -84,17 +89,22 @@
     /* Do nothing */
   }
 
-  // Send data via image of XHR request
-  function sendData(data) {
+  // Send data via image
+  function sendData(data, callback) {
     data = assign(payload, data);
-    new Image().src =
+    var image = new Image();
+    if (callback) {
+      image.onerror = callback;
+      image.onload = callback;
+    }
+    image.src =
       fullApiUrl +
       "/send.gif?" +
       Object.keys(data)
-        .filter(function(key) {
+        .filter(function (key) {
           return data[key] != undefinedVar;
         })
-        .map(function(key) {
+        .map(function (key) {
           return (
             encodeURIComponentFunc(key) +
             "=" +
@@ -111,7 +121,7 @@
     sendData({
       type: errorText,
       error: errorOrMessage,
-      url: hostname + loc.pathname
+      url: options.hostname + loc.pathname,
     });
   }
 
@@ -119,7 +129,7 @@
   // from our script (checked by filename) to our server.
   addEventListenerFunc(
     errorText,
-    function(event) {
+    function (event) {
       if (event.filename && event.filename.indexOf(baseUrl) > -1) {
         sendError(event.message);
       }
@@ -136,20 +146,23 @@
   var scrolled = 0;
   /** endif **/
 
+  // When a customer overwrites the hostname, we need to know what the original
+  // hostname was to hide that domain from referrer traffic
+  if (options.hostname !== hostname) payload.hostname_original = hostname;
+
   // Don't track when localhost
   /** unless testing **/
-  if (loc.hostname.indexOf(".") == -1)
-    return warn(notSending + "from localhost");
+  if (hostname.indexOf(".") == -1) return warn(notSending + "from " + hostname);
   /** endunless **/
 
   try {
-    var getParams = function(regex) {
+    var getParams = function (regex) {
       // From the search we grab the utm_source and ref and save only that
       var matches = loc.search.match(
         new RegExp("[?&](" + regex + ")=([^?&]+)", "gi")
       );
       var match = matches
-        ? matches.map(function(m) {
+        ? matches.map(function (m) {
             return m.split("=")[1];
           })
         : [];
@@ -166,10 +179,12 @@
       source: getParams(utmRegexPrefix + "source|source|ref"),
       medium: getParams(utmRegexPrefix + "medium"),
       campaign: getParams(utmRegexPrefix + "campaign"),
+      term: getParams(utmRegexPrefix + "term"),
+      content: getParams(utmRegexPrefix + "content"),
       referrer:
         (doc.referrer || "")
           .replace(/^https?:\/\/((m|l|w{2,3}([0-9]+)?)\.)?([^?#]+)(.*)$/, "$4")
-          .replace(/^([^/]+)\/$/, "$1") || undefinedVar
+          .replace(/^([^/]+)\/$/, "$1") || undefinedVar,
     };
 
     // We don't put msHidden in if duration block, because it's used outside of that functionality
@@ -179,7 +194,7 @@
     var hiddenStart;
     window.addEventListener(
       "visibilitychange",
-      function() {
+      function () {
         if (doc.hidden) hiddenStart = now();
         else msHidden += now() - hiddenStart;
       },
@@ -189,7 +204,7 @@
 
     var sendBeaconText = "sendBeacon";
 
-    var sendOnLeave = function(id, push) {
+    var sendOnLeave = function (id, push) {
       var append = { type: "append", original_id: push ? id : lastPageId };
 
       /** if duration **/
@@ -218,7 +233,7 @@
     var scroll = "scroll";
     var body = doc.body || {};
     var documentElement = doc.documentElement || {};
-    var position = function() {
+    var position = function () {
       try {
         var Height = "Height";
         var scrollHeight = scroll + Height;
@@ -245,11 +260,11 @@
       }
     };
 
-    addEventListenerFunc("load", function() {
+    addEventListenerFunc("load", function () {
       scrolled = position();
       addEventListenerFunc(
         scroll,
-        function() {
+        function () {
           if (scrolled < position()) scrolled = position();
         },
         false
@@ -257,7 +272,7 @@
     });
     /** endif **/
 
-    var sendPageView = function(isPushState, deleteSourceInfo) {
+    var sendPageView = function (isPushState, deleteSourceInfo) {
       if (isPushState) sendOnLeave("" + lastPageId, true);
       lastPageId = uuid();
       page.id = lastPageId;
@@ -267,12 +282,12 @@
           https: loc.protocol == https,
           timezone: timezone,
           width: window.innerWidth,
-          type: pageviewsText
+          type: pageviewsText,
         })
       );
     };
 
-    var pageview = function(isPushState) {
+    var pageview = function (isPushState) {
       // Obfuscate personal data in URL by dropping the search and hash
       var path = decodeURIComponentFunc(loc.pathname);
 
@@ -282,7 +297,7 @@
       lastSendPath = path;
 
       var data = {
-        path: path
+        path: path,
       };
 
       // If a user does refresh we need to delete the referrer because otherwise it count double
@@ -310,7 +325,7 @@
         isPushState || userNavigated
           ? false
           : doc.referrer
-          ? doc.referrer.split(slash)[2] != loc.hostname
+          ? doc.referrer.split(slash)[2] != hostname
           : true;
       /** endif **/
 
@@ -323,46 +338,60 @@
 
     /** if events **/
     var sessionId = uuid();
+    var validTypes = ["string", "number"];
 
-    var sendEvent = function(event) {
+    var endEvent = function () {};
+
+    var sendEvent = function (event, callbackRaw) {
       var isFunction = event instanceof Function;
-      if (["string", "number"].indexOf(typeof event) < 0 && !isFunction)
-        return warn("event is not a string: " + event);
+      var callback =
+        callbackRaw instanceof Function ? callbackRaw : function () {};
+
+      if (validTypes.indexOf(typeof event) < 0 && !isFunction) {
+        warn("event is not a string: " + event);
+        return callback();
+      }
 
       try {
         if (isFunction) {
           event = event();
-          if (["string", "number"].indexOf(typeof event) < 0)
-            return warn("event function output is not a string: " + event);
+          if (validTypes.indexOf(typeof event) < 0) {
+            warn("event function output is not a string: " + event);
+            return callback();
+          }
         }
       } catch (error) {
-        return warn("in your event function: " + error.message);
+        warn("in your event function: " + error.message);
+        return callback();
       }
+
       event = ("" + event).replace(/[^a-z0-9]+/gi, "_").replace(/(^_|_$)/g, "");
       if (event)
         sendData(
           assign(source, {
             type: "event",
             event: event,
-            session_id: sessionId
-          })
+            session_id: sessionId,
+          }),
+          callback
         );
     };
 
-    var defaultEventFunc = function(event) {
-      sendEvent(event);
+    var defaultEventFunc = function (event, callback) {
+      sendEvent(event, callback);
     };
 
     // Set default function if user didn't define a function
-    if (!window[functionName]) window[functionName] = defaultEventFunc;
+    if (!window[options.functionName])
+      window[options.functionName] = defaultEventFunc;
 
-    var eventFunc = window[functionName];
+    var eventFunc = window[options.functionName];
 
     // Read queue of the user defined function
     var queue = eventFunc && eventFunc.q ? eventFunc.q : [];
 
     // Overwrite user defined function
-    window[functionName] = defaultEventFunc;
+    window[options.functionName] = defaultEventFunc;
 
     // Post events from the queue of the user defined function
     for (var event in queue) sendEvent(queue[event]);

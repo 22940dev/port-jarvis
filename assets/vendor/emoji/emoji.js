@@ -4,14 +4,7 @@
     https://github.com/twitter/twemoji/blob/gh-pages/LICENSE
   */
 
-(function (
-
-  // WARNING:   this file is generated automatically via
-  //            `node scripts/build.js`
-  //            please update its `createTwemoji` function
-  //            at the bottom of the same file instead.
-
-) {
+(function () {
   'use strict';
 
   /* jshint maxparams:4 */

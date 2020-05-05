@@ -19,4 +19,4 @@ This website uses [**Simple Analytics**](https://simpleanalytics.com/?ref=jarv.i
 
 **📈 Stats for this site are public! [View them here.](/stats/)**
 
-Pages and first-party assets on this website are served by [**Netlify**](https://www.netlify.com/). Refer to their [privacy policy](https://www.netlify.com/privacy/) and [GDPR statement](https://www.netlify.com/privacy/) for more information.
+Pages and first-party assets on this website are served by [**Netlify**](https://www.netlify.com/). Refer to their [privacy policy](https://www.netlify.com/privacy/) and [GDPR statement](https://www.netlify.com/gdpr/) for more information.
