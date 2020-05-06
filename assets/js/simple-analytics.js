@@ -1,5 +1,3 @@
-/* jshint browser: true, laxbreak:true, -W080 */
-
 /*! Simple Analytics - Privacy friendly analytics (docs.simpleanalytics.com/script; 2020-05-03; d98d) */
 // https://github.com/simpleanalytics/scripts/blob/915d98d39868cbb578619f64b5e2374a5af60c2b/src/default.js
 
@@ -339,8 +337,6 @@
     /** if events **/
     var sessionId = uuid();
     var validTypes = ["string", "number"];
-
-    var endEvent = function () {};
 
     var sendEvent = function (event, callbackRaw) {
       var isFunction = event instanceof Function;
