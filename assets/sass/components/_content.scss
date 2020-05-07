@@ -16,9 +16,10 @@ div#content {
 
   h2 {
     padding-bottom: 0.25em;
+    border-bottom: 1px solid;
 
     @include themed() {
-      border-bottom: 1px solid t(color-kinda-light);
+      border-color: t(color-kinda-light);
     }
   }
 

@@ -3,11 +3,12 @@
 // Global Header Styles
 header {
   width: 100%;
-  padding: 0 1.7em;
+  padding: 0 1.5em;
   box-sizing: border-box;
+  border-bottom: 1px solid;
 
   @include themed() {
-    border-bottom: 1px solid t(color-kinda-light);
+    border-color: t(color-kinda-light);
     background-color: t(color-super-duper-light);
   }
 

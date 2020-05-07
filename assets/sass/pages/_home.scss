@@ -2,9 +2,9 @@
 
 // Home Styles
 main#home {
-  font-size: 1.1em;
+  font-size: 1.025em;
   padding-top: 1.5em;
-  padding-bottom: 0.5em;
+  padding-bottom: 0.75em;
 
   h2 {
     margin: 0 0 0.6em 0;
@@ -12,6 +12,7 @@ main#home {
     font-weight: 500;
     letter-spacing: -0.014em;
     line-height: 1.1;
+    margin-left: -0.03em; // TODO: why is this indented slightly?
   }
 
   h3 {
@@ -23,50 +24,40 @@ main#home {
   }
 
   p {
-    margin: 0.8em 0;
-    letter-spacing: -0.015em;
+    margin: 0.85em 0;
+    letter-spacing: -0.009em;
     line-height: 1.6;
   }
 
   sup {
-    top: -0.5em;
-    font-size: 0.54em;
+    font-size: 0.6em;
     letter-spacing: -0.005em;
     line-height: 0;
     position: relative;
+    top: -0.5em;
     vertical-align: middle;
   }
 
   img#me {
     float: right;
-    margin-bottom: 0.5em;
-    margin-left: 1em;
+    margin-bottom: 0.6em;
+    margin-left: 1.6em;
     padding: 4px;
-    border-radius: 50%;
     width: 160px;
     height: 160px;
+    border: 1px solid;
+    border-radius: 50%;
 
     @include themed() {
-      border: 1px solid t(color-light);
+      border-color: t(color-light);
     }
   }
 
-  a {
-    &#blog {
-      font-size: 0.9em;
-      margin-bottom: 0;
-
-      span {
-        margin-right: 0.1em;
-      }
-    }
-
-    // easter egg emoji cursor
-    &#birthday {
-      // prettier-ignore
-      &:hover {
-        cursor: url(data:image/svg+xml;utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzNiIgdmlld3BvcnQ9IjAgMCAxMDAgMTAwIiBzdHlsZT0iZm9udC1zaXplOjE4cHgiPjx0ZXh0IHk9IjUwJSI+8J+nmjwvdGV4dD48L3N2Zz4=) 5 5, auto;
-      }
+  // easter egg emoji cursor
+  a#birthday {
+    // prettier-ignore
+    &:hover {
+      cursor: url(data:image/svg+xml;utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzNiIgdmlld3BvcnQ9IjAgMCAxMDAgMTAwIiBzdHlsZT0iZm9udC1zaXplOjE4cHgiPjx0ZXh0IHk9IjUwJSI+8J+nmjwvdGV4dD48L3N2Zz4=) 5 5, auto;
     }
   }
 
@@ -80,6 +71,10 @@ main#home {
       @include themed() {
         color: t(color-medium-light);
       }
+    }
+
+    &.wave {
+      margin-left: 2px;
     }
   }
 }
@@ -97,28 +92,31 @@ main#home {
 // Responsive
 @mixin responsive--home() {
   main#home {
-    font-size: 1em;
-    padding: 1.2em 1.2em 0.2em 1.2em;
+    font-size: 0.975em;
+    padding: 1.2em 1.2em 0.4em 1.2em;
 
     h2 {
-      font-size: 1.45em;
+      font-size: 1.5em;
+      letter-spacing: -0.014em;
       line-height: 1.4;
     }
 
     h3 {
-      font-size: 1.25em;
-      line-height: 1.4;
+      font-size: 1.185em;
+      letter-spacing: -0.017em;
+      line-height: 1.55;
+    }
+
+    p {
+      line-height: 1.65;
+      letter-spacing: -0.012em;
     }
 
     img#me {
-      width: 85px;
-      height: 85px;
+      width: 90px;
+      height: 90px;
       margin: 0 0 0.3em 0.6em;
       padding: 2px;
-    }
-
-    a#blog {
-      font-size: 1em;
     }
   }
 }

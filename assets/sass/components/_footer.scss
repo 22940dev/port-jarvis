@@ -5,12 +5,13 @@ footer {
   width: 100%;
   letter-spacing: -0.005em;
   line-height: 1.7;
-  padding: 1.25em 1.75em;
+  padding: 1.25em 1.5em;
   box-sizing: border-box;
+  border-top: 1px solid;
 
   @include themed() {
     color: t(color-medium);
-    border-top: 1px solid t(color-kinda-light);
+    border-color: t(color-kinda-light);
     background-color: t(color-super-duper-light);
   }
 
@@ -45,9 +46,10 @@ footer {
 
       a#source {
         padding-bottom: 2px;
+        border-bottom: 1px solid;
 
         @include themed() {
-          border-bottom: 1px solid t(color-light);
+          border-color: t(color-light);
         }
       }
     }

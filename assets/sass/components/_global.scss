@@ -54,9 +54,10 @@ strong {
 blockquote {
   margin-left: 0.5em;
   padding-left: 1em;
+  border-left: 5px solid;
 
   @include themed() {
-    border-left: 5px solid t(color-links);
+    border-color: t(color-links);
   }
 }
 
@@ -98,13 +99,14 @@ code {
   font-size: 0.95em;
   letter-spacing: 0;
   page-break-inside: avoid;
+  border: 1px solid;
 
   // inline code in paragraphs (single tildes)
   padding: 0.2em;
 
   @include themed() {
     background-color: t(color-super-duper-light);
-    border: 1px solid t(color-light);
+    border-color: t(color-light);
   }
 }
 
@@ -115,10 +117,12 @@ div.highlight {
   overflow-x: scroll;
   object-fit: scale-down;
   margin: 1em 0;
+  border: 1px solid;
+  border-left: 3px solid;
 
   @include themed() {
-    border: 1px solid t(color-light);
-    border-left: 3px solid t(color-links);
+    border-color: t(color-light);
+    border-left-color: t(color-links);
     background-color: t(color-super-duper-light);
   }
 
