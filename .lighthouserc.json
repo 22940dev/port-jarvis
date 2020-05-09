@@ -1,11 +1,12 @@
 {
   "ci": {
     "collect": {
-      "numberOfRuns": 1
+      "numberOfRuns": 3
     },
     "assert": {
       "preset": "lighthouse:no-pwa",
       "assertions": {
+        "color-contrast": "warn",
         "errors-in-console": "warn",
         "frame-title": "warn",
         "link-text": "warn",
