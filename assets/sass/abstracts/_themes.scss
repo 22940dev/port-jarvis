@@ -3,54 +3,32 @@
 // Dark & Light Themes
 $themes: (
   light: (
-    color-background: #ffffff,
-    color-text: #202020,
-    color-medium-dark: #494949,
-    color-medium: #5e5e5e,
-    color-medium-light: #757575,
-    color-light: #d2d2d2,
-    color-kinda-light: #e3e3e3,
-    color-super-light: #f4f4f4,
-    color-super-duper-light: #fbfbfb,
-    color-links: #0e6dc2,
-    syntax-k: #0e6dc2,
-    syntax-n: #111111,
-    syntax-na: #337a15,
-    syntax-err: #d43d2e,
-    syntax-l: #8d4eff,
-    syntax-ld: #bd5500,
-    syntax-c: #6b6859,
-    syntax-lnt: #999999,
+    background: #ffffff,
+    background-top: #fcfcfc,
+    text: #202020,
+    medium-dark: #515151,
+    medium: #5e5e5e,
+    medium-light: #757575,
+    light: #d2d2d2,
+    kinda-light: #e3e3e3,
+    super-light: #f4f4f4,
+    super-duper-light: #fbfbfb,
+    links: #0e6dc2,
   ),
   dark: (
-    color-background: #292929,
-    color-text: #efefef,
-    color-medium-dark: #cfcfcf,
-    color-medium: #b1b1b1,
-    color-medium-light: #929292,
-    color-light: #646464,
-    color-kinda-light: #535353,
-    color-super-light: #272727,
-    color-super-duper-light: #1f1f1f,
-    color-links: #85baea,
-    syntax-k: #3b9dd2,
-    syntax-n: #cfcfcf,
-    syntax-na: #78df55,
-    syntax-err: #f95757,
-    syntax-l: #d588fb,
-    syntax-ld: #fd992a,
-    syntax-c: #929292,
-    syntax-lnt: #b1b1b1,
+    background: #292929,
+    background-top: #202020,
+    text: #efefef,
+    medium-dark: #d0d0d0,
+    medium: #b1b1b1,
+    medium-light: #929292,
+    light: #646464,
+    kinda-light: #535353,
+    super-light: #272727,
+    super-duper-light: #1f1f1f,
+    links: #85baea,
   ),
 );
-
-$color-light-background: #fbfbfb;
-$color-dark-background: #1f1f1f;
-
-// For nifty color swapping on svg logo hover in components/_header.scss
-$color-logo1: #6fbc4e;
-$color-logo2: #ffb900;
-$color-logo3: #009cdf;
 
 // Colorful Homepage
 $colors-home: (
@@ -200,6 +178,11 @@ $colors-home: (
   ),
 );
 $color-serverless: #87cef7;
+
+// For nifty color swapping on svg logo hover in components/_header.scss
+$color-logo1: #6fbc4e;
+$color-logo2: #ffb900;
+$color-logo3: #009cdf;
 
 // Icons (modified twemojis)
 // lightbulb on

@@ -21,7 +21,7 @@ main#video {
     margin: 1.25em 1em 0 1em;
 
     @include themed() {
-      color: t(color-medium-light);
+      color: t(medium-light);
     }
 
     a {

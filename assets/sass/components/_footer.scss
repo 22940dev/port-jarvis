@@ -10,14 +10,13 @@ footer {
   border-top: 1px solid;
 
   @include themed() {
-    color: t(color-medium);
-    border-color: t(color-kinda-light);
-    background-color: t(color-super-duper-light);
+    color: t(medium-dark);
+    border-color: t(kinda-light);
   }
 
   a {
     @include themed() {
-      color: t(color-medium);
+      color: t(medium-dark);
     }
   }
 
@@ -49,7 +48,7 @@ footer {
         border-bottom: 1px solid;
 
         @include themed() {
-          border-color: t(color-light);
+          border-color: t(light);
         }
       }
     }

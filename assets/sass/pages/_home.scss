@@ -49,7 +49,7 @@ main#home {
     border-radius: 50%;
 
     @include themed() {
-      border-color: t(color-light);
+      border-color: t(light);
     }
   }
 
@@ -69,7 +69,7 @@ main#home {
 
     &#shh {
       @include themed() {
-        color: t(color-medium-light);
+        color: t(medium-light);
       }
     }
 

@@ -19,7 +19,7 @@ div#content {
     border-bottom: 1px solid;
 
     @include themed() {
-      border-color: t(color-kinda-light);
+      border-color: t(kinda-light);
     }
   }
 
@@ -47,7 +47,7 @@ div#content {
       font-size: 0.95em;
 
       @include themed() {
-        color: t(color-medium);
+        color: t(medium);
       }
     }
   }

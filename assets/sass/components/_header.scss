@@ -8,8 +8,7 @@ header {
   border-bottom: 1px solid;
 
   @include themed() {
-    border-color: t(color-kinda-light);
-    background-color: t(color-super-duper-light);
+    border-color: t(kinda-light);
   }
 
   nav {
@@ -26,7 +25,7 @@ header {
       align-items: center;
 
       @include themed() {
-        color: t(color-medium);
+        color: t(medium-dark);
       }
 
       h1#name {
@@ -44,7 +43,7 @@ header {
       // mix up logo colors on hover
       &:hover {
         @include themed() {
-          color: t(color-links);
+          color: t(links);
         }
 
         svg {
@@ -80,14 +79,14 @@ header {
           transition: transform 0.15s ease-in-out;
 
           @include themed() {
-            color: t(color-medium);
+            color: t(medium-dark);
           }
 
           &:hover {
             transform: scale(1.15);
 
             @include themed() {
-              color: t(color-links);
+              color: t(links);
             }
           }
 

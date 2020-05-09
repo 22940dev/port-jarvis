@@ -12,7 +12,7 @@ main#single {
     margin-top: 0.8em;
 
     @include themed() {
-      color: t(color-medium);
+      color: t(medium);
     }
 
     a {

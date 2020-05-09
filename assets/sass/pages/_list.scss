@@ -33,7 +33,7 @@ main#list {
         flex-shrink: 0;
 
         @include themed() {
-          color: t(color-medium);
+          color: t(medium);
         }
       }
 

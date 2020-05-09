@@ -31,3 +31,4 @@ $unicode-subset: U+0000-00FF, U+2000-206F, U+20A0-20CF, U+2190-21FF, U+2200-22FF
  *  https://github.com/source-foundry/Hack/blob/v3.003/LICENSE.md
  */
 @include font-face("Hack", "vendor/hack/hack-regular-subset", 400);
+@include font-face("Hack", "vendor/hack/hack-italic-subset", 400, italic);

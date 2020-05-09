@@ -10,6 +10,24 @@ body {
   font-feature-settings: "kern", "liga", "calt", "clig", "ss01";
   line-height: 1.5;
   box-sizing: border-box;
+
+  // manually setting light/dark mode backgrounds and bulb icon
+  // really just the color of header & footer
+  &.light {
+    background-color: map-get(map-get($themes, "light"), "background-top");
+
+    button.dark-mode-toggle {
+      background-image: url($icon-bulb-on);
+    }
+  }
+
+  &.dark {
+    background-color: map-get(map-get($themes, "dark"), "background-top");
+
+    button.dark-mode-toggle {
+      background-image: url($icon-bulb-off);
+    }
+  }
 }
 
 main {
@@ -20,7 +38,7 @@ main {
   display: block; // https://stackoverflow.com/questions/28794718/max-width-not-working-for-ie-11
 
   @include themed() {
-    color: t(color-text);
+    color: t(text);
   }
 }
 
@@ -33,8 +51,8 @@ a {
   transition: background-size 0.25s ease-in-out;
 
   @include themed() {
-    color: t(color-links);
-    background-image: underline-hack(t(color-links));
+    color: t(links);
+    background-image: underline-hack(t(links));
   }
 
   &:hover {
@@ -52,12 +70,13 @@ strong {
 }
 
 blockquote {
-  margin-left: 0.5em;
-  padding-left: 1em;
-  border-left: 5px solid;
+  margin-left: 0;
+  padding-left: 1.5em;
+  border-left: 3px solid;
 
   @include themed() {
-    border-color: t(color-links);
+    color: t(medium-dark);
+    border-color: t(links);
   }
 }
 
@@ -67,7 +86,7 @@ hr {
   border: 0;
 
   @include themed() {
-    background-color: t(color-light);
+    background-color: t(light);
   }
 }
 
@@ -93,51 +112,6 @@ button {
   }
 }
 
-// all code
-code {
-  font-family: $webfont-mono;
-  font-size: 0.95em;
-  letter-spacing: 0;
-  page-break-inside: avoid;
-  border: 1px solid;
-
-  // inline code in paragraphs (single tildes)
-  padding: 0.2em;
-
-  @include themed() {
-    background-color: t(color-super-duper-light);
-    border-color: t(color-light);
-  }
-}
-
-// code fences
-div.highlight {
-  line-height: 1.6;
-  max-width: 100%;
-  overflow-x: scroll;
-  object-fit: scale-down;
-  margin: 1em 0;
-  border: 1px solid;
-  border-left: 3px solid;
-
-  @include themed() {
-    border-color: t(color-light);
-    border-left-color: t(color-links);
-    background-color: t(color-super-duper-light);
-  }
-
-  pre {
-    display: block;
-    margin-left: 1.5em;
-  }
-
-  // overrides inline code styles
-  code {
-    border: 0;
-    padding: 0;
-  }
-}
-
 // make SVG twemojis relative to surrounding text
 // https://github.com/twitter/twemoji#inline-styles
 img.emoji {
@@ -153,27 +127,7 @@ div#wrap {
   width: 100%;
 
   @include themed() {
-    background-color: t(color-background);
-  }
-}
-
-// manually setting light/dark mode backgrounds and bulb icon
-// really just the color of header & footer
-body {
-  &.light {
-    background-color: $color-light-background;
-
-    button.dark-mode-toggle {
-      background-image: url($icon-bulb-on);
-    }
-  }
-
-  &.dark {
-    background-color: $color-dark-background;
-
-    button.dark-mode-toggle {
-      background-image: url($icon-bulb-off);
-    }
+    background-color: t(background);
   }
 }
 
