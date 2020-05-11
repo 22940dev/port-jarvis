@@ -51,10 +51,7 @@
 
     if (cryptoObject && cryptoObject.getRandomValues)
       return emptyUUID.replace(/[018]/g, function (c) {
-        return (
-          c ^
-          (cryptoObject.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
-        ).toString(16);
+        return (c ^ (cryptoObject.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16);
       });
 
     return emptyUUID.replace(/[018]/g, function (c) {
@@ -103,11 +100,7 @@
           return data[key] != undefinedVar;
         })
         .map(function (key) {
-          return (
-            encodeURIComponentFunc(key) +
-            "=" +
-            encodeURIComponentFunc(data[key])
-          );
+          return encodeURIComponentFunc(key) + "=" + encodeURIComponentFunc(data[key]);
         })
         .join("&");
   }
@@ -156,9 +149,7 @@
   try {
     var getParams = function (regex) {
       // From the search we grab the utm_source and ref and save only that
-      var matches = loc.search.match(
-        new RegExp("[?&](" + regex + ")=([^?&]+)", "gi")
-      );
+      var matches = loc.search.match(new RegExp("[?&](" + regex + ")=([^?&]+)", "gi"));
       var match = matches
         ? matches.map(function (m) {
             return m.split("=")[1];
@@ -218,10 +209,7 @@
       if (push || !(sendBeaconText in nav)) {
         sendData(append);
       } else {
-        nav[sendBeaconText](
-          fullApiUrl + "/append",
-          stringify(assign(payload, append))
-        );
+        nav[sendBeaconText](fullApiUrl + "/append", stringify(assign(payload, append)));
       }
     };
 
@@ -247,11 +235,7 @@
         );
         return Math.min(
           100,
-          Math.round(
-            (100 * ((documentElement.scrollTop || 0) + documentClientHeight)) /
-              height /
-              5
-          ) * 5
+          Math.round((100 * ((documentElement.scrollTop || 0) + documentClientHeight)) / height / 5) * 5
         );
       } catch (error) {
         return 0;
@@ -308,23 +292,15 @@
         perf.getEntriesByType &&
         perf.getEntriesByType(navigation)[0] &&
         perf.getEntriesByType(navigation)[0].type
-          ? ["reload", "back_forward"].indexOf(
-              perf.getEntriesByType(navigation)[0].type
-            ) > -1
+          ? ["reload", "back_forward"].indexOf(perf.getEntriesByType(navigation)[0].type) > -1
           : // Check if back, forward or reload buttons are being use in older browsers
             // 1: TYPE_RELOAD, 2: TYPE_BACK_FORWARD
-            perf &&
-            perf[navigation] &&
-            [1, 2].indexOf(perf[navigation].type) > -1;
+            perf && perf[navigation] && [1, 2].indexOf(perf[navigation].type) > -1;
 
       /** if uniques **/
       // We set unique variable based on pushstate or back navigation, if no match we check the referrer
       data.unique =
-        isPushState || userNavigated
-          ? false
-          : doc.referrer
-          ? doc.referrer.split(slash)[2] != hostname
-          : true;
+        isPushState || userNavigated ? false : doc.referrer ? doc.referrer.split(slash)[2] != hostname : true;
       /** endif **/
 
       page = data;
@@ -340,8 +316,7 @@
 
     var sendEvent = function (event, callbackRaw) {
       var isFunction = event instanceof Function;
-      var callback =
-        callbackRaw instanceof Function ? callbackRaw : function () {};
+      var callback = callbackRaw instanceof Function ? callbackRaw : function () {};
 
       if (validTypes.indexOf(typeof event) < 0 && !isFunction) {
         warn("event is not a string: " + event);
@@ -378,8 +353,7 @@
     };
 
     // Set default function if user didn't define a function
-    if (!window[options.functionName])
-      window[options.functionName] = defaultEventFunc;
+    if (!window[options.functionName]) window[options.functionName] = defaultEventFunc;
 
     var eventFunc = window[options.functionName];
 

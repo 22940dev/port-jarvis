@@ -3,10 +3,10 @@
 // Gradient hack to get our custom underline to wrap:
 // https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/
 @function underline-hack($color) {
-  // Calculate lighter underline color compared to text color by
-  // mix()'ing with background (#fff) to give the impression of
-  // opacity but with MUCH better compatibility.
-  $color-opaque-hex: mix($color, $link-opacity-color, $link-underline-opacity);
+  // [deprecated] Calculate lighter underline color compared to text
+  // color by mix()'ing with background (#fff) to give the impression
+  // of opacity but with MUCH better compatibility.
+  // $color-opaque-hex: mix($color, $link-opacity-color, $link-underline-opacity);
 
   // Less compatible but better for light/dark mode switching.
   $color-opaque-alpha: rgba($color, $link-underline-opacity / 100%);
@@ -16,22 +16,47 @@
 }
 
 // Web fonts (see components/_fonts.scss)
-@mixin font-face(
-  $family,
-  $src,
-  $weight: normal,
-  $style: normal,
-  $display: swap
-) {
+@mixin font-face($family, $src, $weight: normal, $style: normal, $display: swap) {
   @font-face {
     font-family: $family;
     font-style: $style;
     font-weight: $weight;
     font-display: $display;
-    src: url($base-url + $src + ".woff2") format("woff2"),
-      url($base-url + $src + ".woff") format("woff");
+    src: url($base-url + $src + ".woff2") format("woff2"), url($base-url + $src + ".woff") format("woff");
 
-    // Allow additional declarations to be passed in:
+    // Allow additional rules to be passed in:
     @content;
   }
+}
+
+// Simple dark/light theme switching via <body> class and $themes map in abstracts/_themes.scss
+// https://medium.com/@katiemctigue/how-to-create-a-dark-mode-in-sass-609f131a3995
+@mixin themed() {
+  @each $theme, $map in $themes {
+    body.#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+// Just @include themed() and call t() when a rule depends on which theme is active, eg:
+//    a {
+//      text-decoration: none;
+//      @include themed() {
+//        color: t(links);
+//      }
+//    }
+@function t($key) {
+  @return map-get($theme-map, $key);
 }
