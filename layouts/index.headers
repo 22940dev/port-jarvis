@@ -1,10 +1,3 @@
-# Sensible default security headers:
-/*
-  Referrer-Policy: strict-origin-when-cross-origin
-  X-Content-Type-Options: nosniff
-  X-Frame-Options: sameorigin
-  X-XSS-Protection: 1; mode=block
-
 # Recommended MIME type for PWA manifests:
 # https://github.com/w3c/manifest/issues/689
 /site.webmanifest
