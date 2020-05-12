@@ -30,7 +30,8 @@
     "lint:md": "markdownlint content/**/*.md content/**/**/*.md",
     "lint:prettier": "prettier --check .",
     "index": "run-s clean hugo index:**",
-    "index:algolia": "npx atomic-algolia"
+    "index:algolia": "npx atomic-algolia",
+    "live": "netlify dev --live"
   },
   "dependencies": {},
   "devDependencies": {
