@@ -82,6 +82,10 @@
   to = "/feed.xml"
   status = 301
 [[redirects]]
+  from = "/index.xml"
+  to = "/feed.xml"
+  status = 301
+[[redirects]]
   from = "/index.php*"
   to = "/"
   status = 301
@@ -99,6 +103,14 @@
   from = "/resume"
   to = "/resume.pdf"
   status = 302
+[[redirects]]
+  from = "/me.jpg"
+  to = "/img/me.jpg"
+  status = 301
+[[redirects]]
+  from = "/me_large.jpg"
+  to = "/img/me_large.jpg"
+  status = 301
 [[redirects]]
   from = "/favicon.ico"
   to = "/img/favicon.ico"
@@ -173,7 +185,7 @@
   status = 403
   force = true
 [[redirects]]
-  from = "*/wp-includes/*"
+  from = "*/admin/*"
   to = "/403.html"
   status = 403
   force = true
