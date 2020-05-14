@@ -250,7 +250,7 @@
     <header>
       <nav>
         <a id="logo" href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}">
-          {{ partial "svg/logo.svg" (dict "width" 30 "height" 45) }}
+          {{ partial "functions/inline-svg" (dict "src" "img/logo.svg" "width" 30 "height" 45) }}
           <span id="name">{{ .Site.Title }}</span>
         </a>
 

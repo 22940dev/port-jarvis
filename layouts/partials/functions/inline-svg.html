@@ -1,4 +1,4 @@
-{{ $svg := resources.Get "img/logo.svg" -}}
+{{ $svg := resources.Get .src -}}
 {{ $html := $svg.Content -}}
 
 {{/* remove unneeded tags/attributes when SVG is inlined versus a .svg file */}}
@@ -10,5 +10,6 @@
 
 {{ $html = replace $html "<svg" $wxh -}}
 
+{{/* bit of a hack: calling .Permalink so that the SVG file is published too */}}
 {{ printf "<!-- auto-inlined from: %s -->" $svg.Permalink | safeHTML }}
 {{ $html | safeHTML -}}

@@ -7,8 +7,6 @@
       "preset": "lighthouse:no-pwa",
       "assertions": {
         "color-contrast": "warn",
-        "errors-in-console": "warn",
-        "frame-title": "warn",
         "link-text": "warn",
         "total-byte-weight": ["warn", {"minScore": 0.9}],
         "unminified-javascript": "warn",
