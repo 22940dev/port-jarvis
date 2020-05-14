@@ -20,7 +20,7 @@ Below are the code snippets you can grab and customize to make your own ["waving
 
 {{< codepen username="jakejarvis" id="pBZWZw" left-tab="css" right-tab="result" >}}
 
-### CSS:
+## CSS:
 
 <!-- prettier-ignore -->
 ```css
@@ -43,7 +43,7 @@ span.wave {
 }
 ```
 
-### HTML:
+## HTML:
 
 <!-- prettier-ignore -->
 ```html {linenos=false}

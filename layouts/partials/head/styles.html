@@ -1,9 +1,12 @@
 {{ $style := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "sass/main.scss" . | resources.ToCSS (dict "targetPath" "css/main.css") | resources.PostCSS (dict "config" "postcss.config.js") }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
 
-{{/* Page-specific styles set via front matter, scoped via SCSS */}}
+{{/* Page-specific styles set via front matter, scoped via SCSS and inlined */}}
 {{ with .Params.css }}
   {{- $target := path.Join $.File.Dir "css/inline.scss" }}
   {{- $css := . | resources.FromString $target | resources.ToCSS | resources.PostCSS (dict "config" "postcss.config.js") -}}
-  <link rel="stylesheet" href="{{ $css.Permalink }}">
+
+  <style>
+    {{ $css.Content | safeCSS }}
+  </style>
 {{ end }}

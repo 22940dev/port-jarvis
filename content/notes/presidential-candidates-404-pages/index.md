@@ -21,7 +21,7 @@ More recently, though, little-known hidden Easter eggs on ["404 Not Found"](http
 
 # 1. Elizabeth Warren — [elizabethwarren.com](https://elizabethwarren.com/asdfasdf404) {#warren}
 
-I'm a _huge_ sucker for Kate McKinnon's spot-on impression of Warren on Saturday Night Live. And [unfortunately](https://twitter.com/realdonaldtrump/status/1097116612279316480), seeing a campaign embrace SNL is like a breath of fresh air these days. [Watch all of the Kate McWarren videos so far here; you won't regret it.](http://www.nbc.com/saturday-night-live/cast/kate-mckinnon-15056/impersonation/elizabeth-warren-287903)
+I'm a _huge_ sucker for Kate McKinnon's spot-on impression of Warren on Saturday Night Live. And [unfortunately](https://twitter.com/realdonaldtrump/status/1097116612279316480), seeing a campaign embrace SNL is like a breath of fresh air these days. [Watch all of the Kate McWarren videos so far here; you won't regret it.](https://www.nbc.com/saturday-night-live/cast/kate-mckinnon-15056/impersonation/elizabeth-warren-287903)
 
 {{< image src="images/warren.png" alt="Elizabeth Warren" />}}
 

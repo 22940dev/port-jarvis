@@ -14,4 +14,4 @@ resources:
   - src: "thumb.png"
 ---
 
-Video is property of [Hillary for America](https://www.hillaryclinton.com/), the [Democratic National Committee](https://democrats.org/), and [CNN / WarnerMedia](http://cnnpressroom.blogs.cnn.com/). &copy; 2016.
+Video is property of [Hillary for America](https://www.hillaryclinton.com/), the [Democratic National Committee](https://democrats.org/), and [CNN / WarnerMedia](https://cnnpressroom.blogs.cnn.com/). &copy; 2016.
