@@ -4,6 +4,10 @@ module.exports = {
   },
   plugins: [
     require("autoprefixer")(),
+    require("postcss-focus")(),
+    require("postcss-color-rgba-fallback")({
+      properties: [ "background-image" ]
+    }),
     require("postcss-clean")({
       compatibility: "*",
       level: 0,

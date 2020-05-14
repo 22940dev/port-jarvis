@@ -54,6 +54,8 @@
     "postcss": "^7.x",
     "postcss-clean": "^1.1.0",
     "postcss-cli": "^7.1.1",
+    "postcss-color-rgba-fallback": "^4.0.0",
+    "postcss-focus": "^4.0.0",
     "postcss-reporter": "^6.0.1",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
