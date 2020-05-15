@@ -19,8 +19,8 @@ css: |
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('/vendor/comic-neue/comic-neue-bold.woff2') format('woff2'),
-         url('/vendor/comic-neue/comic-neue-bold.woff') format('woff');
+    src: url('https://jarv.is/vendor/comic-neue/comic-neue-bold.woff2') format('woff2'),
+         url('https://jarv.is/vendor/comic-neue/comic-neue-bold.woff') format('woff');
   }
   body {
     font-family: "Comic Neue", "Comic Sans MS", "Comic Sans", "Inter", sans-serif;

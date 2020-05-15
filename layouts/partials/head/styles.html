@@ -6,7 +6,9 @@
   {{- $target := path.Join $.File.Dir "css/inline.scss" }}
   {{- $css := . | resources.FromString $target | resources.ToCSS | resources.PostCSS (dict "config" "postcss.config.js") -}}
 
-  <style>
-    {{ $css.Content | safeCSS }}
-  </style>
+{{ printf "<!-- htmlmin:ignore -->" | safeHTML -}}
+<style>
+{{ $css.Content | safeCSS }}
+</style>
+{{- printf "<!-- htmlmin:ignore -->" | safeHTML }}
 {{ end }}
