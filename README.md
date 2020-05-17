@@ -19,17 +19,18 @@ I keep an ongoing list of [blog post ideas](https://github.com/jakejarvis/jarv.i
 
 ## Running a local testing server
 
-#### Using Yarn/NPM:
+### Using Yarn/NPM:
 
 Run `yarn install` ([Yarn must be installed](https://yarnpkg.com/en/docs/install) first, or use `npm install` if you insist) and `yarn start` (or `npm start`), then open [http://localhost:1337/](http://localhost:1337/). Pages will live-refresh when source files are changed.
 
-#### Using Docker:
+### Using Docker:
 
-To ensure consistency and compatibility, the [`Dockerfile`](Dockerfile) in this repository will download the Hugo Extended binary and its dependencies, and start a live testing server.
+To ensure consistency and compatibility, the [`Dockerfile`](Dockerfile) in this repository will download the correct versino of the Hugo Extended binary and its dependencies, and start a live testing server in the temporary container.
+
+Using Docker doesn't require Node or Yarn, but you can also use `yarn start:docker` which simply runs:
 
 ```bash
-docker build -t jarv.is -f Dockerfile .
-docker run -v $(pwd):/src -p 1337:1337 jarv.is
+docker run --rm -v $(pwd):/src -p 1337:1337 $(docker build --no-cache -q .)
 ```
 
 ...then open [http://localhost:1337/](http://localhost:1337/).

@@ -20,6 +20,7 @@
     "hugo": "hugo --gc --cleanDestinationDir --verbose",
     "hugo:dev": "hugo --environment development --baseURL ${DEPLOY_PRIME_URL:-/} --buildDrafts --buildFuture --gc --cleanDestinationDir --verbose",
     "start": "hugo server --disableFastRender --buildDrafts --buildFuture --port 1337 --bind 0.0.0.0 --verbose",
+    "start:docker": "docker run --rm -v $(pwd):/src -p 1337:1337 $(docker build --no-cache -q .)",
     "minify": "run-s minify:**",
     "minify:html": "html-minifier --html5 --collapse-whitespace --collapse-boolean-attributes --preserve-line-breaks --minify-css --remove-comments --file-ext html --input-dir public --output-dir public **/*.html",
     "minify:js": "terser --compress passes=3,negate_iife=false,keep_fargs=false,sequences=false,reduce_vars=false --mangle reserved=['sa','sa_event'] --output public/js/app.js -- public/js/app.js",
