@@ -64,7 +64,7 @@ css: |
   <iframe id="y2k" src="/y2k/"></iframe>
   <figcaption>
     <strong>🚨 Trigger warning:</strong> marquees, Comic Sans MS, popup windows, <code>color: <span class="limegreen">limegreen</span></code>...
-    <a href="/y2k/">Click to experience fullscreen anyway.</a>
+    <a href="https://y2k.lol/" target="_blank" rel="noopener">Click to experience anyway.</a>
   </figcaption>
 </figure>
 
