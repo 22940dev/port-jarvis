@@ -7,7 +7,7 @@
   "hr-style": { "style": "---" },
   "line-length": false,
   "no-empty-links": false,
-  "no-inline-html": { "allowed_elements": [ "p", "a", "strong", "em", "img", "svg", "path", "polygon", "circle", "g", "code", "span", "sup", "figure", "figcaption", "iframe" ] },
+  "no-inline-html": { "allowed_elements": [ "a", "strong", "em", "img", "svg", "path", "polygon", "circle", "g", "code", "span", "sup", "figure", "figcaption", "iframe" ] },
   "no-trailing-punctuation": false,
   "single-h1": false,
   "whitespace": false

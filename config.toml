@@ -46,7 +46,7 @@ disableAliases = true
   facebookID = "1329090853"
   instagram = "jakejarvis"
   linkedin = "jakejarvis"
-  mastodon = "pogge.rs/@jake"
+  mastodon = "mastodon.social/@jakejarvis"
 
 [module]
   [[module.imports]]
