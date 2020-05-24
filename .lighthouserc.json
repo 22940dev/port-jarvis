@@ -11,15 +11,13 @@
         "total-byte-weight": ["warn", {"minScore": 0.9}],
         "unminified-javascript": "warn",
         "unused-css-rules": "warn",
+        "unused-javascript": "warn",
+        "uses-optimized-images": "warn",
         "uses-rel-preconnect": "warn",
         "is-crawlable": "off",
         "offscreen-images": "off",
-        "redirects-http": "off",
-        "uses-http2": "off",
         "uses-long-cache-ttl": "off",
-        "uses-optimized-images": "off",
         "uses-responsive-images": "off",
-        "uses-text-compression": "off",
         "uses-webp-images": "off"
       }
     },
