@@ -2,32 +2,32 @@
 
 .wave {
   display: inline-block;
-  animation: wave 2.5s infinite;
+  animation: wave 5s infinite;
   transform-origin: 70% 70%;
 }
 
 .beat {
   display: inline-block;
-  animation: beat 2s infinite; // 30 bpm, call 911 if you see this please.
+  animation: beat 20s infinite; // 3 bpm, call 911 if you see this please.
 }
 
 @keyframes wave {
   0% {
     transform: rotate(0deg);
   }
+  5% {
+    transform: rotate(-10deg);
+  }
   10% {
+    transform: rotate(12deg);
+  }
+  15% {
     transform: rotate(-10deg);
   }
   20% {
-    transform: rotate(12deg);
-  }
-  30% {
-    transform: rotate(-10deg);
-  }
-  40% {
     transform: rotate(9deg);
   }
-  50% {
+  25% {
     transform: rotate(0deg);
   }
   100% {
@@ -39,18 +39,19 @@
   0% {
     transform: scale(1);
   }
-  10% {
+  1% {
     transform: scale(1.25);
   }
-  20% {
+  2% {
     transform: scale(1);
   }
-  30% {
+  3% {
     transform: scale(1.25);
   }
-  40% {
+  4% {
     transform: scale(1);
   }
+  // pause for ~19 out of 20 seconds
   100% {
     transform: scale(1);
   }
