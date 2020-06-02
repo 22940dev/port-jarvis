@@ -4,6 +4,8 @@ name: Code scanning
 
 on:
   push:
+    branches:
+    - master
   pull_request:
   schedule:
   - cron: '0 10 * * 3'   # every Wednesday at 10 AM UTC == 6 AM EDT
@@ -15,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     # Allow skipping with [skip ci] (doesn't apply to PRs and crons)
-    if: "github.event_name == 'push' && !contains(github.event.head_commit.message, '[skip ci]')"
+    if: "!contains(github.event.head_commit.message, '[skip ci]') || github.event_name != 'push'"
 
     steps:
     - name: Checkout repository
