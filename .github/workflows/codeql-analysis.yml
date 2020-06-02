@@ -1,19 +1,21 @@
-name: "Code scanning"
+# https://github.com/github/codeql-action/blob/master/README.md#usage
+
+name: Code scanning
 
 on:
   push:
   pull_request:
   schedule:
-    - cron: '0 21 * * 0'
+  - cron: '0 10 * * 3'   # every Wednesday at 10 AM UTC == 6 AM EDT
 
 jobs:
   CodeQL-Build:
 
-    strategy:
-      fail-fast: false
-
     # CodeQL runs on ubuntu-latest and windows-latest
     runs-on: ubuntu-latest
+
+    # Allow skipping with [skip ci] (doesn't apply to PRs and crons)
+    if: "github.event_name == 'push' && !contains(github.event.head_commit.message, '[skip ci]')"
 
     steps:
     - name: Checkout repository
@@ -27,7 +29,7 @@ jobs:
     # the head of the pull request instead of the merge commit.
     - run: git checkout HEAD^2
       if: ${{ github.event_name == 'pull_request' }}
-      
+
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v1
