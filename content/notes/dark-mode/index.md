@@ -44,7 +44,7 @@ A _very_ barebones example is embedded above ([view the source here](https://git
 
 ---
 
-### Minified JS: (410 bytes gzipped 📦)
+### [Minified JS](https://raw.githubusercontent.com/jakejarvis/dark-mode-example/gh-pages/dark-mode.min.js) (410 bytes gzipped! 📦):
 
 <!-- prettier-ignore -->
 ```js

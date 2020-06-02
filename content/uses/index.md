@@ -148,7 +148,7 @@ I've been making recent efforts to [de-Google](https://www.reddit.com/r/degoogle
   - [Read why.](/notes/dropping-dropbox/)
 - ~~Google Docs~~ → [**Microsoft Office**](https://products.office.com/en-us/mac/microsoft-office-for-mac) (hey, it works 🤷)
 - ~~Google Photos~~ → [**iCloud Photos**](https://www.icloud.com/photos/)
-- ~~Google DNS~~ → [**Cloudflare 1.1.1.1**](https://1.1.1.1/)
+- ~~Google DNS~~ → [**Cloudflare 1.1.1.1 DNS**](https://1.1.1.1/dns/)
 - ~~Google Analytics~~ → both of these are awesome, privacy-aware "visitor counters" rather than trackers:
   - [**Netlify Analytics**](https://www.netlify.com/products/analytics/) [(my review)](/notes/netlify-analytics-review/)
   - [**Simple Analytics**](https://simpleanalytics.com/) [(referral link)](https://referral.simpleanalytics.com/jake-jarvis)

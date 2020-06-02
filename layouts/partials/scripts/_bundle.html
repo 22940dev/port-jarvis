@@ -1,13 +1,20 @@
 {{ $darkmode := resources.Get "js/dark-mode.js" | resources.ExecuteAsTemplate "js/dark-mode.js" . }}
 {{ $twemoji := resources.Get "vendor/emoji/emoji.js" | resources.ExecuteAsTemplate "vendor/emoji/emoji.min.js" . }}
-{{ $analytics := resources.Get "js/simple-analytics.js" | resources.ExecuteAsTemplate "js/simple-analytics.js" . }}
 
-{{ $bundle := "" }}
-{{ if eq hugo.Environment "development" }}
-  {{ $bundle = slice $darkmode $twemoji }}
-{{ else }}
+{{ $bundle := slice $darkmode $twemoji }}
+
+{{/* only parse and append analytics script on production site */}}
+{{ $useAnalytics := eq hugo.Environment "production" }}
+
+{{ if $useAnalytics }}
+  {{ $analytics := resources.Get "js/simple-analytics.js" | resources.ExecuteAsTemplate "js/simple-analytics.js" . }}
   {{ $bundle = slice $darkmode $twemoji $analytics }}
 {{ end }}
 
 {{ $js := $bundle | resources.Concat "/js/app.js" }}
 <script async defer src="{{ $js.Permalink }}"></script>
+
+{{/* proxy to simple analytics noscript on production */}}
+{{ if $useAnalytics }}
+  <noscript><img src="{{ "sa/noscript.gif" | absURL }}" alt=""></noscript>
+{{ end }}

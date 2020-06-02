@@ -63,10 +63,10 @@ css: |
 
 ---
 
-**🚨 Trigger warning:** marquees, Comic Sans MS, popup windows, <code>color: <span class="limegreen">limegreen</span></code>... [Click for the full experience anyway.](https://y2k.lol/)
+**🚨 Trigger warning:** marquees, Comic Sans MS, popup windows, <code>color: <span class="limegreen">limegreen</span></code>... [Click for the **_FULL_** experience anyway.](https://y2k.lol/)
 
 <figure>
-  <iframe id="y2k" src="https://jarv.is/y2k/"></iframe>
+  <iframe id="y2k" src="https://jarv.is/y2k/" title="My Terrible, Horrible, No Good, Very Bad First Website"></iframe>
   <figcaption>
     November 2001 (<a href="https://github.com/jakejarvis/my-first-website" target="_blank" rel="noopener">archived source</a>)
   </figcaption>

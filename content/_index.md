@@ -1,6 +1,6 @@
 ---
 title: "Jake Jarvis – Front-End Web Developer in Boston, MA"
-date: 2020-05-24 09:08:21-0400
+date: 2020-06-02 11:19:44-0400
 type: home
 sitemap:
   changefreq: weekly
@@ -22,7 +22,7 @@ My current focus is on <a href="https://jamstack.wtf/" title="WTF is JAMstack?" 
 
 Whenever possible, I prioritize my interest in <a href="https://bugcrowd.com/jakejarvis" title="Jake Jarvis on Bugcrowd" id="infosec" target="_blank" rel="me noopener">information security</a>, <a href="https://martinfowler.com/articles/serverless.html" title="&quot;Serverless Architectures&quot; by Mike Roberts" id="server" target="_blank" rel="noopener">server<span id="serverless">(less)</span> architecture</a>, <a href="https://xkcd.com/1319/" title="&quot;Automation&quot; on xkcd" id="devops" target="_blank" rel="noopener">efficient DevOps &amp; CI</a>, and the <a href="https://blog.jessfraz.com/post/docker-containers-on-the-desktop/" title="&quot;Docker Containers on the Desktop&quot; by Jessie Frazelle" id="containers" target="_blank" rel="noopener">containerization of everything</a>.
 
-I fell in love with <a href="/previously/" title="My Terrible, Horrible, No Good, Very Bad First Websites" id="y2k">frontend web design</a> and <a href="/notes/my-first-code/" title="Jake's Bulletin Board, circa 2003" id="jbb">backend programming</a> when my only source of income was <a href="/birthday/" title="🎉 Cranky Birthday Boy on VHS Tape 📼" id="birthday">the Tooth Fairy</a>. <span id="shh">(I've improved a bit since then...)</span>
+I fell in love with <a href="/previously/" title="My Terrible, Horrible, No Good, Very Bad First Websites" id="frontend">frontend web design</a> and <a href="/notes/my-first-code/" title="Jake's Bulletin Board, circa 2003" id="backend">backend programming</a> when my only source of income was <a href="/birthday/" title="🎉 Cranky Birthday Boy on VHS Tape 📼" id="birthday">the Tooth Fairy</a>. <span id="shh">(I've improved a bit since then...)</span>
 
 Over the years, my side projects
 <a href="https://tuftsdaily.com/news/2012/04/06/student-designs-iphone-joeytracker-app/" title="&quot;Student designs iPhone JoeyTracker app&quot; on The Tufts Daily" id="news-1" target="_blank" rel="noopener">have</a>

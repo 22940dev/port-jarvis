@@ -5,7 +5,7 @@
 [build.environment]
   YARN_VERSION = "1.22.4"
   YARN_FLAGS = "--no-ignore-optional --frozen-lockfile"
-  GO_VERSION = "1.14.3"
+  GO_VERSION = "1.14.4"
 
 # Ensure *only* Pretty URLs are enabled, even though this is already set up in
 # the Netlify dashboard.
@@ -44,7 +44,6 @@
 [[headers]]
   for = "/jarvis.asc"
   [headers.values]
-    Cache-Control = "max-age=0, no-cache, no-store"
     Content-Type = "text/plain; charset=UTF-8"
     Content-Disposition = "inline; filename=\"jarvis.asc\""
 
@@ -86,7 +85,7 @@
   to = "/feed.xml"
   status = 301
 [[redirects]]
-  from = "/index.php*"
+  from = "/index.php"
   to = "/"
   status = 301
 [[redirects]]
@@ -134,12 +133,12 @@
   to = "https://queue.simpleanalyticscdn.com/noscript.gif:splat"
   status = 200
 [[redirects]]
-  from = "/sa/append"
-  to = "https://queue.simpleanalyticscdn.com/append"
+  from = "/sa/append*"
+  to = "https://queue.simpleanalyticscdn.com/append:splat"
   status = 200
 [[redirects]]
-  from = "/sa/post"
-  to = "https://api.simpleanalytics.io/post"
+  from = "/sa/post*"
+  to = "https://api.simpleanalytics.io/post:splat"
   status = 200
 
 # Mirror these directories from elsewhere to mimic GitHub Pages behavior and
@@ -183,19 +182,25 @@
   from = "*/wp-admin/*"
   to = "/403.html"
   status = 403
-  force = true
 [[redirects]]
   from = "*/admin/*"
   to = "/403.html"
   status = 403
-  force = true
 [[redirects]]
-  from = "*/wp-login.php*"
+  from = "*/wp-login.php"
   to = "/403.html"
   status = 403
-  force = true
 [[redirects]]
-  from = "*/login.php*"
+  from = "*/login.php"
   to = "/403.html"
   status = 403
-  force = true
+[[redirects]]
+  from = "*/wlwmanifest.xml"
+  to = "/403.html"
+  status = 403
+# not sure if these xmlrpc requests are malicious but forward them to
+# webmention.io anyway
+[[redirects]]
+  from = "/xmlrpc.php"
+  to = "https://webmention.io/jarv.is/xmlrpc"
+  status = 302

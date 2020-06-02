@@ -18,7 +18,7 @@ sitemap:
 ---
 
 <!-- markdownlint-disable MD033 -->
-<p class="center"><a class="no-underline" href="https://simpleanalytics.com/jarv.is?utm_source=jarv.is&utm_content=badge" target="_blank" rel="noopener"><img src="https://simpleanalyticsbadge.com/jarv.is?counter=true" alt="Powered by Simple Analytics" referrerpolicy="no-referrer" crossorigin="anonymous"></a></p>
+<p class="center"><a class="no-underline" href="https://simpleanalytics.com/jarv.is?utm_source=jarv.is&amp;utm_content=badge" target="_blank" rel="noopener"><img src="https://simpleanalyticsbadge.com/jarv.is?counter=true" alt="Powered by Simple Analytics" referrerpolicy="no-referrer" crossorigin="anonymous"></a></p>
 
 This website uses [**Simple Analytics**](https://simpleanalytics.com/?ref=jarv.is) to track pageviews **without collecting any personally identifiable information,** including IP addresses, cookies, and browser fingerprints.
 
