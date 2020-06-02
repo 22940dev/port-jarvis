@@ -25,7 +25,10 @@ css: |
   body {
     font-family: "Comic Neue", "Comic Sans MS", "Comic Sans", "Inter", sans-serif;
   }
-  div#content figure figcaption {
+  div#content {
+    text-align: center;
+  }
+  div#content p, div#content figure figcaption {
     font-size: 1.1em;
   }
   div#content code {
@@ -33,7 +36,7 @@ css: |
   }
   div#content iframe#y2k {
     width: 100%;
-    height: 485px;
+    height: 500px;
     border: 2px solid #e3d18c;
   }
   div#content span.limegreen {
@@ -50,7 +53,7 @@ css: |
     }
   }
   footer div#copyright, footer div#poweredby {
-    font-size: 0.95em;
+    font-size: 1.1em;
   }
 ---
 
@@ -60,11 +63,12 @@ css: |
 
 ---
 
+**🚨 Trigger warning:** marquees, Comic Sans MS, popup windows, <code>color: <span class="limegreen">limegreen</span></code>... [Click for the full experience anyway.](https://y2k.lol/)
+
 <figure>
-  <iframe id="y2k" src="/y2k/"></iframe>
+  <iframe id="y2k" src="https://jarv.is/y2k/"></iframe>
   <figcaption>
-    <strong>🚨 Trigger warning:</strong> marquees, Comic Sans MS, popup windows, <code>color: <span class="limegreen">limegreen</span></code>...
-    <a href="https://y2k.lol/" target="_blank" rel="noopener">Click to experience anyway.</a>
+    November 2001 (<a href="https://github.com/jakejarvis/my-first-website" target="_blank" rel="noopener">archived source</a>)
   </figcaption>
 </figure>
 
