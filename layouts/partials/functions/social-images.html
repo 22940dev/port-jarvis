@@ -3,6 +3,7 @@
 {{- $.Scratch.Set "defaultImage_url" $defaultImage.Permalink }}
 {{- $.Scratch.Set "defaultImage_width" $defaultImage.Width }}
 {{- $.Scratch.Set "defaultImage_height" $defaultImage.Height }}
+{{- $.Scratch.Set "defaultImage_type" $defaultImage.MediaType }}
 
 {{/* Article image */}}
 {{- with .Params.image }}
@@ -10,11 +11,13 @@
   {{- $.Scratch.Set "socialImage_url" $socialImage.Permalink }}
   {{- $.Scratch.Set "socialImage_width" $socialImage.Width }}
   {{- $.Scratch.Set "socialImage_height" $socialImage.Height }}
+  {{- $.Scratch.Set "socialImage_type" $socialImage.MediaType }}
 {{ else }}
   {{/* fallback to default image set above */}}
   {{- $.Scratch.Set "socialImage_url" $defaultImage.Permalink }}
   {{- $.Scratch.Set "socialImage_width" $defaultImage.Width }}
   {{- $.Scratch.Set "socialImage_height" $defaultImage.Height }}
+  {{- $.Scratch.Set "socialImage_type" $defaultImage.MediaType }}
 {{ end -}}
 
 {{/* Site logo */}}
@@ -22,3 +25,4 @@
 {{- $.Scratch.Set "logoImage_url" $logoImage.Permalink }}
 {{- $.Scratch.Set "logoImage_width" $logoImage.Width }}
 {{- $.Scratch.Set "logoImage_height" $logoImage.Height }}
+{{- $.Scratch.Set "logoImage_type" $logoImage.MediaType }}
