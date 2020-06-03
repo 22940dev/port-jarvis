@@ -63,6 +63,8 @@ css: |
 
 ---
 
+<!-- markdownlint-disable MD033 -->
+
 **🚨 Trigger warning:** marquees, Comic Sans MS, popup windows, <code>color: <span class="limegreen">limegreen</span></code>... [Click for the **_FULL_** experience anyway.](https://y2k.lol/)
 
 <figure>

@@ -31,7 +31,7 @@
 # https://github.com/netlify/cli/blob/master/docs/netlify-dev.md#netlifytoml-dev-block
 [dev]
   framework = "#custom"
-  command = "yarn start --baseURL / --appendPort=false"
+  command = "yarn start --baseURL=/ --appendPort=false"
   port = 1338
   targetPort = 1337
   publish = "public"
