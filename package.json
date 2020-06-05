@@ -14,9 +14,9 @@
     "url": "git+https://github.com/jakejarvis/jarv.is.git"
   },
   "scripts": {
-    "clean": "rimraf public/ builds/",
-    "build": "run-s clean hugo minify",
-    "build:preview": "run-s clean hugo:dev",
+    "clean": "rimraf public/ resources/ builds/ && hugo mod clean",
+    "build": "run-s hugo minify",
+    "build:preview": "run-s hugo:dev",
     "hugo": "hugo --gc --cleanDestinationDir --verbose",
     "hugo:dev": "hugo --environment development --baseURL ${DEPLOY_PRIME_URL:-/} --buildDrafts --buildFuture --gc --cleanDestinationDir --verbose",
     "start": "hugo server --disableFastRender --buildDrafts --buildFuture --port 1337 --bind 0.0.0.0 --verbose",

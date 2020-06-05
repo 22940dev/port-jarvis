@@ -1,4 +1,5 @@
 name: netlify-plugin-cache
 inputs:
 - name: paths
-  description: Array of directories to cache between builds.
+  description: Array of files and/or directories to cache between builds.
+  required: true
