@@ -29,11 +29,16 @@ jobs:
       with:
         fetch-depth: 1
         lfs: false
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: Install LHCI
+      run: npm install -g @lhci/cli
     - name: Audit deploy preview
       if: github.event_name == 'pull_request'
       continue-on-error: true
       run: |
-        npx @lhci/cli autorun --config=./.lighthouserc.json \
+        lhci autorun --config=./.lighthouserc.json \
           --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.com/ \
           --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.com/notes/how-to-pull-request-fork-github/ \
           --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.com/notes/how-to-pull-request-fork-github/amp.html
@@ -41,7 +46,7 @@ jobs:
       if: github.event_name == 'push' && github.ref == 'refs/heads/master'
       continue-on-error: true
       run: |
-        npx @lhci/cli autorun --config=./.lighthouserc.json \
+        lhci autorun --config=./.lighthouserc.json \
           --collect.url=https://jarv.is/ \
           --collect.url=https://jarv.is/notes/how-to-pull-request-fork-github/ \
           --collect.url=https://jarv.is/notes/how-to-pull-request-fork-github/amp.html
