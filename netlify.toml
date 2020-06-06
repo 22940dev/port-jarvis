@@ -39,6 +39,8 @@
 
 # Cache resoures between builds, see plugins/netlify-plugin-cache/index.js
 [[plugins]]
+  package = "@netlify/plugin-local-install-core"
+[[plugins]]
   package = "./plugins/netlify-plugin-cache"
   [plugins.inputs]
     paths = ["resources", "_vendor"]
