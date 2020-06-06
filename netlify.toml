@@ -41,7 +41,7 @@
 [[plugins]]
   package = "@netlify/plugin-local-install-core"
 [[plugins]]
-  package = "./plugins/netlify-plugin-cache"
+  package = "netlify-plugin-cache"
   [plugins.inputs]
     paths = ["resources", "_vendor"]
 [[plugins]]
