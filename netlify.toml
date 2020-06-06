@@ -39,9 +39,9 @@
 
 # Cache resoures between builds, see plugins/netlify-plugin-cache/index.js
 [[plugins]]
-  package = "netlify-plugin-cache"
-  [plugins.inputs]
-    paths = ["resources", "_vendor"]
+  package = "./plugins/netlify-plugin-cache"
+#  [plugins.inputs]
+#    paths = ["resources", "_vendor"]
 [[plugins]]
   package = "netlify-plugin-debug-cache"
 
