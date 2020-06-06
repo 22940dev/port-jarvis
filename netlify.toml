@@ -37,11 +37,12 @@
   publish = "public"
   autoLaunch = false
 
-# Cache resoures between builds, see plugins/netlify-plugin-cache/index.js
+# Cache resoures between builds:
+# https://github.com/jakejarvis/netlify-plugin-cache
 [[plugins]]
   package = "@netlify/plugin-local-install-core"
 [[plugins]]
-  package = "netlify-plugin-cache"
+  package = "./plugins/netlify-plugin-cache"
   [plugins.inputs]
     paths = ["resources", "_vendor"]
 [[plugins]]
