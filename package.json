@@ -15,10 +15,11 @@
   },
   "scripts": {
     "clean": "rimraf public/ resources/ builds/ && hugo mod clean",
-    "build": "run-s hugo minify",
-    "build:preview": "run-s hugo:dev",
+    "build": "run-s hugo:mods hugo minify",
+    "build:preview": "run-s hugo:mods hugo:dev",
     "hugo": "hugo --gc --cleanDestinationDir --verbose",
     "hugo:dev": "hugo --environment development --baseURL ${DEPLOY_PRIME_URL:-/} --buildDrafts --buildFuture --gc --cleanDestinationDir --verbose",
+    "hugo:mods": "hugo mod vendor",
     "start": "hugo server --disableFastRender --buildDrafts --buildFuture --port 1337 --bind 0.0.0.0 --verbose",
     "start:docker": "docker run --rm -v $(pwd):/src -p 1337:1337 $(docker build --no-cache -q .)",
     "minify": "run-s minify:**",

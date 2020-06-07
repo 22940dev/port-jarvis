@@ -44,7 +44,7 @@
 [[plugins]]
   package = "./plugins/netlify-plugin-cache"
   [plugins.inputs]
-    paths = ["resources", "_vendor"]
+    paths = ["resources", "public", "_vendor"]
 [[plugins]]
   package = "netlify-plugin-debug-cache"
 
