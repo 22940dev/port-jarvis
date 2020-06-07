@@ -1,7 +1,9 @@
 <footer>
   <div class="row">
     <div id="copyright">Content <a class="no-underline" href="{{ "license/" | absURL }}"{{ with .Site.Params.licenseFull }} title="{{ . }}"{{ end }}>licensed under {{ .Site.Params.license }}</a>, {{ with .Site.Params.copyrightFirstYear }}<a class="no-underline" href="{{ "previously/" | absURL }}" title="Previously on...">{{ . }} &ndash;</a>{{ end }} {{ now.Format "2006" }}.</div>
-    <div id="y2k"><a class="no-underline" href="https://y2k.land/" title="Made for Internet Explorer&reg;" target="_blank" rel="noopener"><img src="{{ "img/ie.gif" | absURL }}" width="88" alt="Made for Internet Explorer&reg;"></a></div>
+    <!-- adblock hides images with width="88" and height="31", for some reason? using style="..." gets around it. -->
+    <!-- TODO: ask about this..? https://github.com/AdguardTeam/AdguardFilters/blob/ba4db91022dbebe48967a447b5f818064ee60167/SpywareFilter/sections/general_elemhide.txt#L18 -->
+    <div id="y2k"><a class="no-underline" href="https://y2k.land/" title="Made for Internet Explorer&reg;" target="_blank" rel="noopener"><img src="{{ "img/ie.gif" | absURL }}" style="width: 88px; height: 31px;" alt="Made for Internet Explorer&reg;"></a></div>
     <div id="poweredby">
       <a class="no-underline" href="https://gohugo.io/" title="Powered by Hugo" id="hugo" target="_blank" rel="noopener">Made with <span class="beat">&#x2764;</span> and Hugo.</a>
       {{ with .Site.Params.github }}<a class="no-underline" href="https://github.com/{{ . }}" title="View Source on GitHub" id="source" target="_blank" rel="noopener">View source.</a>{{ end }}

@@ -23,7 +23,7 @@ The backend is powered by [**QEMU**](https://www.qemu.org/) (as a Pentium III em
 
 I must give credit to both [charlie.bz](https://charlie.bz/) and [benjojo.co.uk](https://benjojo.co.uk/), similar websites I was enamored with when they were posted on Hacker News a few years ago. Think we'll see some websites like these with Windows 29 in a decade?
 
-{{< image src="images/windows-me.png" width="320" alt="Windows Millennium Edition®" >}}**@microsoft** Please don't sue me.{{</ image >}}
+{{< image src="images/windows-me.png" width="320" >}}**@microsoft** Please don't sue me.{{</ image >}}
 
 Feel free to [open an issue on GitHub](https://github.com/jakejarvis/y2k/issues) if you run into connection glitches or have any inspiration for nostalgic stuff you think would be cool to install persistently on the OS image. I certainly can't help with any actual Windows Me crashes, though — it was beyond help a long, long time ago. Like, [the day it came out](https://books.google.com/books?id=Jbft8HXJZwQC&lpg=PP1&pg=PA76#v=onepage&q&f=false). But it will always have a soft spot in my heart.
 
