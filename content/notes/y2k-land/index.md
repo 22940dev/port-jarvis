@@ -19,7 +19,7 @@ Introducing [**y2k.land**](https://y2k.land/) — with fully-featured, fully-is
 
 {{< image src="images/screenshot.png" link="https://y2k.land/" >}}[**Enter Y2K Land, at your own risk.**](https://y2k.land/){{< /image >}}
 
-The backend is powered by [**QEMU**](https://www.qemu.org/) (as a Pentium III emulator), [**websocketd**](https://github.com/joewalnes/websocketd) (an **_awesome_** lightweight WebSockets server written in Go), [**Cloudflare Tunnels**](https://www.cloudflare.com/products/argo-tunnel/) (for some protection), and embarrassingly messy Ruby and shell scripts. I'll push those up to GitHub [next to the frontend code](https://github.com/jakejarvis/y2k) — which is based on [**noVNC**](https://github.com/novnc/noVNC), a JavaScript VNC client — once I have a chance to untangle the spaghetti code. 🍝
+The backend is powered by [**QEMU**](https://www.qemu.org/) (as a Pentium III emulator) inside isolated **Docker** containers, [**websocketd**](https://github.com/joewalnes/websocketd) (an **_awesome_** lightweight WebSockets server written in Go), [**Cloudflare Tunnels**](https://www.cloudflare.com/products/argo-tunnel/) (for some protection), and embarrassingly messy Ruby and shell scripts. I'll push those up to GitHub [next to the frontend code](https://github.com/jakejarvis/y2k) — which is based on [**noVNC**](https://github.com/novnc/noVNC), a JavaScript VNC client — once I have a chance to untangle the spaghetti code. 🍝
 
 I must give credit to both [charlie.bz](https://charlie.bz/) and [benjojo.co.uk](https://benjojo.co.uk/), similar websites I was enamored with when they were posted on Hacker News a few years ago. Think we'll see some websites like these with Windows 29 in a decade?
 
