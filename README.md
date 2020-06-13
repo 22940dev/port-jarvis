@@ -12,18 +12,18 @@ Personal website of [@jakejarvis](https://github.com/jakejarvis), created and de
 - [Hugo Extended](https://github.com/gohugoio/hugo)
 - [Netlify](https://www.netlify.com/)
 - [Simple Analytics](https://referral.simpleanalytics.com/jake-jarvis) (referral link)
-  - My [stats are public](https://jarv.is/stats/), by the way!
+  - 📈 My [stats are public](https://jarv.is/stats/), by the way!
 - [...and more.](https://jarv.is/uses/)
 
 I keep an ongoing list of [blog post ideas](https://github.com/jakejarvis/jarv.is/issues/1) and [coding to-dos](https://github.com/jakejarvis/jarv.is/issues/11) as issues in this repo.
 
-## Running a local testing server
+## 💾 Running a local testing server
 
-### Using Yarn/NPM:
+### 🧶 Using Yarn/NPM:
 
 Run `yarn install` ([Yarn must be installed](https://yarnpkg.com/en/docs/install) first, or use `npm install` if you insist) and `yarn start` (or `npm start`), then open [http://localhost:1337/](http://localhost:1337/). Pages will live-refresh when source files are changed.
 
-### Using Docker:
+### 🐳 Using Docker:
 
 To ensure consistency and compatibility, the [`Dockerfile`](Dockerfile) in this repository will download the correct versino of the Hugo Extended binary and its dependencies, and start a live testing server in the temporary container.
 
@@ -35,7 +35,11 @@ docker run --rm -v $(pwd):/src -p 1337:1337 $(docker build --no-cache -q .)
 
 ...then open [http://localhost:1337/](http://localhost:1337/).
 
-## Licenses
+### 🤯 Why does this sound _way_ more complex than it needs to be?!
+
+[Because it is.](https://www.jvt.me/talks/overengineering-your-personal-website/)
+
+## 📜 Licenses
 
 ![Creative Commons Attribution 4.0 International License](https://raw.githubusercontent.com/creativecommons/cc-cert-core/master/images/cc-by-88x31.png "CC BY")
 
