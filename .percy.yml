@@ -3,11 +3,11 @@ snapshot:
   widths: [450, 1050] # px
   enable-javascript: true
   percy-css: |
-    div.embed, iframe, video {
+    div.embed, iframe, video, img[src$=".gif"] {
       display: none;
     }
     code, div.highlight {
-      border: 0 !important;  /* no clue why this bugs out... */
+      border: 0 !important; /* no clue why this bugs out... */
     }
     .wave, .beat {
       animation: none;

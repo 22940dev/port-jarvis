@@ -116,11 +116,10 @@ button {
 // make SVG twemojis relative to surrounding text
 // https://github.com/twitter/twemoji#inline-styles
 img.emoji {
-  height: 1.1em !important;
-  width: 1.1em !important;
-  margin: 0 0.09em !important;
-  vertical-align: -0.18em !important;
-  display: inline !important;
+  height: 1.1em;
+  width: 1.1em;
+  margin: 0 0.09em;
+  vertical-align: -0.18em;
 }
 
 // white background for entire width content area
