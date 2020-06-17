@@ -40,10 +40,10 @@ sitemap:
   - [Oh My ZSH](https://ohmyz.sh/)
     - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
     - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-- [**Visual Studio Code** (Insiders build)](https://code.visualstudio.com/insiders/)
+- [**Visual Studio Code**](https://code.visualstudio.com/insiders/)
   - [All of my settings](https://gist.github.com/jakejarvis/80a04530e0142ff5b7b77c92d5c6f526) via [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync).
   - Themes:
-    - [Slime Theme](https://marketplace.visualstudio.com/items?itemName=smlombardi.slime)
+    - [GitHub Theme](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme)
     - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
     - [Source Code Pro font](https://github.com/adobe-fonts/source-code-pro)
   - Extensions:
@@ -55,9 +55,12 @@ sitemap:
     - [Duplicate action](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-duplicate)
     - [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
     - [GitHub Pull Requests](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
+    - [Hugo Language and Syntax Support](https://marketplace.visualstudio.com/items?itemName=budparr.language-hugo-vscode)
     - [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
+    - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
     - [Remote Development Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
     - [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
+    - [Test Explorer UI](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer)
     - [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
 - [**Homebrew**](https://brew.sh/)
   - [View my messy `Brewfile` dump](https://github.com/jakejarvis/dotfiles/blob/master/Brewfile) with all of my installed packages.
@@ -88,12 +91,12 @@ sitemap:
     - [Decentraleyes](https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/)
     - [Facebook Container](https://addons.mozilla.org/en-US/firefox/addon/facebook-container/)
     - [Firefox Multi-Account Containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)
-    - [Hide Private Mode](https://addons.mozilla.org/en-US/firefox/addon/hide-private-mode/)
     - [HTTP Header Spy](https://addons.mozilla.org/en-US/firefox/addon/http-header-spy/)
     - [HTTPS Everywhere](https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/)
     - [Mailvelope](https://addons.mozilla.org/en-US/firefox/addon/mailvelope/)
     - [React Developer Tools](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
     - [OctoLinker](https://addons.mozilla.org/en-US/firefox/addon/octolinker/)
+    - [Privacy Badger](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/)
     - [Save Image to Downloads](https://addons.mozilla.org/en-US/firefox/addon/save-image-2-downloads/)
     - [Search by Image on Google](https://addons.mozilla.org/en-US/firefox/addon/search-by-image-on-google/)
     - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
@@ -107,7 +110,7 @@ sitemap:
 
 - [**1Password**](https://1password.com/)
 - [**Little Snitch**](https://www.obdev.at/products/littlesnitch/index.html) and [**Micro Snitch**](https://www.obdev.at/products/microsnitch/index.html)
-- [~~VLC~~](https://www.videolan.org/vlc/index.html) → [**IINA**](https://iina.io/)
+- ~~VLC~~ → [**IINA**](https://iina.io/)
 - [**Backblaze**](https://www.backblaze.com/) [(referral link)](https://secure.backblaze.com/r/00x84e)
 - [**Transmission**](https://transmissionbt.com/)
 - [**Unshaky**](https://unshaky.nestederror.com/) ⌨️
@@ -131,11 +134,12 @@ I have far too many apps to count, but here the essentials that have earned a sp
 - [**Google Maps**](https://apps.apple.com/us/app/google-maps-transit-food/id585027354)
 - [**Dark Sky**](https://apps.apple.com/us/app/dark-sky-weather/id517329357)
 - [**Xfinity Stream**](https://apps.apple.com/us/app/xfinity-stream/id731629156)
-- [**Pocket Casts**](https://apps.apple.com/us/app/pocket-casts/id414834813)
-- [**Audible**](https://apps.apple.com/us/app/audible-audiobooks-originals/id379693831)
 - [**SiriusXM**](https://apps.apple.com/us/app/siriusxm-music-comedy-sports/id317951436)
+- [**Audible**](https://apps.apple.com/us/app/audible-audiobooks-originals/id379693831)
+- [**Pocket Casts**](https://apps.apple.com/us/app/pocket-casts/id414834813)
+- [**Sonos**](https://apps.apple.com/us/app/sonos/id1488977981)
 - [**Plex** (beta)](https://apps.apple.com/us/app/plex-movies-tv-music-more/id383457673)
-- [**Wunderlist**](https://apps.apple.com/us/app/wunderlist-to-do-list-tasks/id406644151)
+- [**Microsoft To-Do**](https://apps.apple.com/us/app/microsoft-to-do/id1212616790) (RIP Wunderlist 🙏)
 - [**Reeder 4**](https://apps.apple.com/us/app/reeder-4/id1449412357)
 - [**Blink Shell**](https://apps.apple.com/us/app/blink-shell-mosh-ssh-client/id1156707581)
 
@@ -144,7 +148,7 @@ I have far too many apps to count, but here the essentials that have earned a sp
 I've been making recent efforts to [de-Google](https://www.reddit.com/r/degoogle/) my life, with mixed results...
 
 - ~~Gmail~~ → [**Fastmail**](https://www.fastmail.com/) [(referral link)](https://ref.fm/u20274504)
-- ~~Google Drive~~ → [~~Dropbox~~](https://www.dropbox.com/) → [**iCloud Drive**](https://www.icloud.com/iclouddrive)
+- ~~Google Drive~~ → ~~Dropbox~~ → [**iCloud Drive**](https://www.icloud.com/iclouddrive)
   - [Read why.](/notes/dropping-dropbox/)
 - ~~Google Docs~~ → [**Microsoft Office**](https://products.office.com/en-us/mac/microsoft-office-for-mac) (hey, it works 🤷)
 - ~~Google Photos~~ → [**iCloud Photos**](https://www.icloud.com/photos/)
@@ -152,10 +156,12 @@ I've been making recent efforts to [de-Google](https://www.reddit.com/r/degoogle
 - ~~Google Analytics~~ → both of these are awesome, privacy-aware "visitor counters" rather than trackers:
   - [**Netlify Analytics**](https://www.netlify.com/products/analytics/) [(my review)](/notes/netlify-analytics-review/)
   - [**Simple Analytics**](https://simpleanalytics.com/) [(referral link)](https://referral.simpleanalytics.com/jake-jarvis)
-    - This website's [stats are public](/stats/), by the way!
+    - 📈 This website's [stats are public](/stats/), by the way!
+- ~~GoDaddy~~ → ~~Google Domains~~ → [**Cloudflare Registrar**](https://www.cloudflare.com/products/registrar/)
+- [**DNSimple**](https://dnsimple.com/) [(referral link)](https://dnsimple.com/r/eb6ced548f1e0a) & [**Cloudflare**](https://www.cloudflare.com/) for DNS.
 - [**Netlify**](https://www.netlify.com/) for static sites.
-- [**Linode**](https://www.linode.com/) for virtual servers.
-- [**Backblaze**](https://www.backblaze.com/) [(referral link)](https://secure.backblaze.com/r/00x84e)
+- [**Linode**](https://www.linode.com/) [(referral link)](https://www.linode.com/?r=0c5aeace9bd591be9fbf32f96f58470295f1ee05) for virtual Linux servers.
+- [**Backblaze**](https://www.backblaze.com/) [(referral link)](https://secure.backblaze.com/r/00x84e) for off-site MacBook backups.
 - [**Plex**](https://www.plex.tv/) + [**Sonarr**](https://sonarr.tv/) + [**Radarr**](https://radarr.video/)
 
 ## 🏠&nbsp; Internet of ~~Things~~ [Crap](/notes/shodan-search-queries/) {#home}
