@@ -1,152 +1,107 @@
-/*! Simple Analytics - Privacy friendly analytics (docs.simpleanalytics.com/script; 2020-05-03; d98d) */
-// https://github.com/simpleanalytics/scripts/blob/915d98d39868cbb578619f64b5e2374a5af60c2b/src/default.js
+/*! Simple Analytics - Privacy friendly analytics (docs.simpleanalytics.com/script; 2020-06-17; dfcf) */
+// https://github.com/simpleanalytics/scripts/blob/6bf58f785134134196cde293d6c9e215a670a4d1/src/default.js
 
 (function (window, baseUrl) {
   if (!window) return;
 
-  // Generate the needed variables, this seems like a lot of repetition, but it
-  // makes our script availble for multple destination which prevents us to
-  // need multiple scripts. The minified version stays small.
-  var https = "https:";
-  var pageviewsText = "pageview";
-  var errorText = "error";
-  var protocol = https + "//";
-  var con = window.console;
-  var slash = "/";
-  var nav = window.navigator;
-  var loc = window.location;
-  var hostname = loc.hostname;
-  var doc = window.document;
-  var notSending = "Not sending requests ";
-  var encodeURIComponentFunc = encodeURIComponent;
-  var decodeURIComponentFunc = decodeURIComponent;
-  var stringify = JSON.stringify;
-  var thousand = 1000;
-  var addEventListenerFunc = window.addEventListener;
-  var fullApiUrl = protocol + baseUrl;
-  var undefinedVar = undefined;
-  var functionName = "sa_event";
+  try {
+    // Generate the needed variables, this seems like a lot of repetition, but it
+    // makes our script availble for multple destination which prevents us to
+    // need multiple scripts. The minified version stays small.
+    var https = "https:";
+    var pageviewsText = "pageview";
+    var errorText = "error";
+    var protocol = https + "//";
+    var con = window.console;
+    var slash = "/";
+    var nav = window.navigator;
+    var loc = window.location;
+    var locationHostname = loc.hostname;
+    var doc = window.document;
+    var userAgent = nav.userAgent;
+    var notSending = "Not sending requests ";
+    var encodeURIComponentFunc = encodeURIComponent;
+    var decodeURIComponentFunc = decodeURIComponent;
+    var stringify = JSON.stringify;
+    var thousand = 1000;
+    var addEventListenerFunc = window.addEventListener;
+    var fullApiUrl = protocol + baseUrl;
+    var undefinedVar = undefined;
+    var functionName = "sa_event";
+    var documentElement = doc.documentElement || {};
+    var language = "language";
+    var Height = "Height";
+    var Width = "Width";
+    var scroll = "scroll";
+    var scrollHeight = scroll + Height;
+    var offsetHeight = "offset" + Height;
+    var clientHeight = "client" + Height;
+    var clientWidth = "client" + Width;
+    var screen = window.screen;
 
-  var payload = {
-    version: 2,
-  };
+    var bot =
+      nav.webdriver ||
+      window.__nightmare ||
+      "callPhantom" in window ||
+      "_phantom" in window ||
+      "phantom" in window ||
+      /(bot|spider|crawl)/i.test(userAgent) ||
+      (window.chrome && (nav.languages === "" || !nav.plugins.length || !(nav.plugins instanceof PluginArray)));
 
-  var options = {
-    hostname: hostname,
-    functionName: functionName,
-  };
+    var payload = {
+      version: 3,
+    };
+    if (bot) payload.bot = true;
 
-  payload.hostname = options.hostname;
+    var options = {
+      hostname: locationHostname,
+      functionName: functionName,
+    };
 
-  // A simple log function so the user knows why a request is not being send
-  var warn = function (message) {
-    if (con && con.warn) con.warn("Simple Analytics:", message);
-  };
+    payload.hostname = options.hostname;
 
-  var now = Date.now;
+    // A simple log function so the user knows why a request is not being send
+    var warn = function (message) {
+      if (con && con.warn) con.warn("Simple Analytics:", message);
+    };
 
-  var uuid = function () {
-    var cryptoObject = window.crypto || window.msCrypto;
-    var emptyUUID = [1e7] + -1e3 + -4e3 + -8e3 + -1e11;
+    var now = Date.now;
 
-    if (cryptoObject && cryptoObject.getRandomValues)
+    var uuid = function () {
+      var cryptoObject = window.crypto || window.msCrypto;
+      var emptyUUID = [1e7] + -1e3 + -4e3 + -8e3 + -1e11;
+
+      if (cryptoObject && cryptoObject.getRandomValues)
+        return emptyUUID.replace(/[018]/g, function (c) {
+          return (c ^ (cryptoObject.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16);
+        });
+
       return emptyUUID.replace(/[018]/g, function (c) {
-        return (c ^ (cryptoObject.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16);
+        var r = (Math.random() * 16) | 0,
+          v = c < 2 ? r : (r & 0x3) | 0x8;
+        return v.toString(16);
       });
+    };
 
-    return emptyUUID.replace(/[018]/g, function (c) {
-      var r = (Math.random() * 16) | 0,
-        v = c < 2 ? r : (r & 0x3) | 0x8;
-      return v.toString(16);
-    });
-  };
-
-  var assign = function () {
-    var to = {};
-    for (var index = 0; index < arguments.length; index++) {
-      var nextSource = arguments[index];
-      if (nextSource) {
-        for (var nextKey in nextSource) {
-          if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
-            to[nextKey] = nextSource[nextKey];
+    var assign = function () {
+      var to = {};
+      for (var index = 0; index < arguments.length; index++) {
+        var nextSource = arguments[index];
+        if (nextSource) {
+          for (var nextKey in nextSource) {
+            if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+              to[nextKey] = nextSource[nextKey];
+            }
           }
         }
       }
-    }
-    return to;
-  };
+      return to;
+    };
 
-  // This code could error on not having resolvedOptions in the Android Webview, that's why we use try...catch
-  var timezone;
-  try {
-    timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  } catch (e) {
-    /* Do nothing */
-  }
+    var isBoolean = function (value) {
+      return !!value === value;
+    };
 
-  // Send data via image
-  function sendData(data, callback) {
-    data = assign(payload, data);
-    var image = new Image();
-    if (callback) {
-      image.onerror = callback;
-      image.onload = callback;
-    }
-    image.src =
-      fullApiUrl +
-      "/send.gif?" +
-      Object.keys(data)
-        .filter(function (key) {
-          return data[key] != undefinedVar;
-        })
-        .map(function (key) {
-          return encodeURIComponentFunc(key) + "=" + encodeURIComponentFunc(data[key]);
-        })
-        .join("&");
-  }
-
-  // Send errors
-  function sendError(errorOrMessage) {
-    errorOrMessage = errorOrMessage.message || errorOrMessage;
-    warn(errorOrMessage);
-    sendData({
-      type: errorText,
-      error: errorOrMessage,
-      url: options.hostname + loc.pathname,
-    });
-  }
-
-  // We listen for the error events and only send errors that are
-  // from our script (checked by filename) to our server.
-  addEventListenerFunc(
-    errorText,
-    function (event) {
-      if (event.filename && event.filename.indexOf(baseUrl) > -1) {
-        sendError(event.message);
-      }
-    },
-    false
-  );
-
-  /** if duration **/
-  var duration = "duration";
-  var start = now();
-  /** endif **/
-
-  /** if scroll **/
-  var scrolled = 0;
-  /** endif **/
-
-  // When a customer overwrites the hostname, we need to know what the original
-  // hostname was to hide that domain from referrer traffic
-  if (options.hostname !== hostname) payload.hostname_original = hostname;
-
-  // Don't track when localhost
-  /** unless testing **/
-  if (hostname.indexOf(".") == -1) return warn(notSending + "from " + hostname);
-  /** endunless **/
-
-  try {
     var getParams = function (regex) {
       // From the search we grab the utm_source and ref and save only that
       var matches = loc.search.match(new RegExp("[?&](" + regex + ")=([^?&]+)", "gi"));
@@ -158,22 +113,97 @@
       if (match && match[0]) return match[0];
     };
 
+    // Send data via image
+    function sendData(data, callback) {
+      data = assign(payload, data);
+      var image = new Image();
+      if (callback) {
+        image.onerror = callback;
+        image.onload = callback;
+      }
+      image.src =
+        fullApiUrl +
+        "/send.gif?" +
+        Object.keys(data)
+          .filter(function (key) {
+            return data[key] != undefinedVar;
+          })
+          .map(function (key) {
+            return encodeURIComponentFunc(key) + "=" + encodeURIComponentFunc(data[key]);
+          })
+          .join("&");
+    }
+
+    // Send errors
+    function sendError(errorOrMessage) {
+      errorOrMessage = errorOrMessage.message || errorOrMessage;
+      warn(errorOrMessage);
+      sendData({
+        type: errorText,
+        error: errorOrMessage,
+        url: options.hostname + loc.pathname,
+      });
+    }
+
+    // We listen for the error events and only send errors that are
+    // from our script (checked by filename) to our server.
+    addEventListenerFunc(
+      errorText,
+      function (event) {
+        if (event.filename && event.filename.indexOf(baseUrl) > -1) {
+          sendError(event.message);
+        }
+      },
+      false
+    );
+
+    /** if duration **/
+    var duration = "duration";
+    var start = now();
+    /** endif **/
+
+    /** if scroll **/
+    var scrolled = 0;
+    /** endif **/
+
+    // This code could error on not having resolvedOptions in the Android Webview, that's why we use try...catch
+    var timezone;
+    try {
+      timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    } catch (e) {
+      /* Do nothing */
+    }
+
+    // When a customer overwrites the hostname, we need to know what the original
+    // hostname was to hide that domain from referrer traffic
+    if (options.hostname !== locationHostname) payload.hostname_original = locationHostname;
+
+    /** unless testing **/
+    // Don't track when localhost or when it's an IP address
+    // if (locationHostname.indexOf(".") == -1 || /^[0-9]+$/.test(locationHostname.replace(/\./g, "")))
+    //   return warn(notSending + "from " + locationHostname);
+    /** endunless **/
+
     var page = {};
     var lastPageId = uuid();
     var lastSendPath;
 
     // We don't want to end up with sensitive data so we clean the referrer URL
+    var referrer =
+      (doc.referrer || "")
+        .replace(locationHostname, locationHostname)
+        .replace(/^https?:\/\/((m|l|w{2,3}([0-9]+)?)\.)?([^?#]+)(.*)$/, "$4")
+        .replace(/^([^/]+)$/, "$1") || undefinedVar;
+
+    // The prefix utm_ is optional
     var utmRegexPrefix = "(utm_)?";
     var source = {
-      source: getParams(utmRegexPrefix + "source|source|ref"),
+      source: getParams(utmRegexPrefix + "source|ref"),
       medium: getParams(utmRegexPrefix + "medium"),
       campaign: getParams(utmRegexPrefix + "campaign"),
       term: getParams(utmRegexPrefix + "term"),
       content: getParams(utmRegexPrefix + "content"),
-      referrer:
-        (doc.referrer || "")
-          .replace(/^https?:\/\/((m|l|w{2,3}([0-9]+)?)\.)?([^?#]+)(.*)$/, "$4")
-          .replace(/^([^/]+)\/$/, "$1") || undefinedVar,
+      referrer: referrer,
     };
 
     // We don't put msHidden in if duration block, because it's used outside of that functionality
@@ -216,15 +246,9 @@
     addEventListenerFunc("unload", sendOnLeave, false);
 
     /** if scroll **/
-    var scroll = "scroll";
     var body = doc.body || {};
-    var documentElement = doc.documentElement || {};
     var position = function () {
       try {
-        var Height = "Height";
-        var scrollHeight = scroll + Height;
-        var offsetHeight = "offset" + Height;
-        var clientHeight = "client" + Height;
         var documentClientHeight = documentElement[clientHeight] || 0;
         var height = Math.max(
           body[scrollHeight] || 0,
@@ -254,24 +278,43 @@
     });
     /** endif **/
 
-    var sendPageView = function (isPushState, deleteSourceInfo) {
+    var getPath = function (overwrite) {
+      var path = overwrite || decodeURIComponentFunc(loc.pathname);
+
+      return path;
+    };
+
+    // Send page view and append data to it
+    var sendPageView = function (isPushState, deleteSourceInfo, sameSite) {
       if (isPushState) sendOnLeave("" + lastPageId, true);
       lastPageId = uuid();
       page.id = lastPageId;
 
+      var currentPage = locationHostname + getPath();
+
       sendData(
-        assign(page, deleteSourceInfo ? null : source, {
-          https: loc.protocol == https,
-          timezone: timezone,
-          width: window.innerWidth,
-          type: pageviewsText,
-        })
+        assign(
+          page,
+          deleteSourceInfo
+            ? {
+                referrer: sameSite ? referrer : null,
+              }
+            : source,
+          {
+            https: loc.protocol == https,
+            timezone: timezone,
+            width: window.innerWidth,
+            type: pageviewsText,
+          }
+        )
       );
+
+      referrer = currentPage;
     };
 
-    var pageview = function (isPushState) {
+    var pageview = function (isPushState, pathOverwrite) {
       // Obfuscate personal data in URL by dropping the search and hash
-      var path = decodeURIComponentFunc(loc.pathname);
+      var path = getPath(pathOverwrite);
 
       // Don't send the last path again (this could happen when pushState is used to change the path hash or search)
       if (lastSendPath == path) return;
@@ -280,7 +323,16 @@
 
       var data = {
         path: path,
+        viewport_width: Math.max(documentElement[clientWidth] || 0, window.innerWidth || 0) || null,
+        viewport_height: Math.max(documentElement[clientHeight] || 0, window.innerHeight || 0) || null,
       };
+
+      if (nav[language]) data[language] = nav[language];
+
+      if (screen) {
+        data.screen_width = screen.width;
+        data.screen_height = screen.height;
+      }
 
       // If a user does refresh we need to delete the referrer because otherwise it count double
       var perf = window.performance;
@@ -297,15 +349,17 @@
             // 1: TYPE_RELOAD, 2: TYPE_BACK_FORWARD
             perf && perf[navigation] && [1, 2].indexOf(perf[navigation].type) > -1;
 
+      // Check if referrer is the same as current hostname
+      var sameSite = referrer ? referrer.split(slash)[0] == locationHostname : false;
+
       /** if uniques **/
       // We set unique variable based on pushstate or back navigation, if no match we check the referrer
-      data.unique =
-        isPushState || userNavigated ? false : doc.referrer ? doc.referrer.split(slash)[2] != hostname : true;
+      data.unique = isPushState || userNavigated ? false : !sameSite;
       /** endif **/
 
       page = data;
 
-      sendPageView(isPushState, isPushState || userNavigated);
+      sendPageView(isPushState, isPushState || userNavigated, sameSite);
     };
 
     pageview();
@@ -337,11 +391,13 @@
       }
 
       event = ("" + event).replace(/[^a-z0-9]+/gi, "_").replace(/(^_|_$)/g, "");
+
       if (event)
         sendData(
           assign(source, {
             type: "event",
             event: event,
+            page_id: page.id,
             session_id: sessionId,
           }),
           callback

@@ -284,12 +284,10 @@
     </footer>
 
     {{ if eq hugo.Environment "production" }}
-    <amp-pixel src="{{ "sa/noscript.gif" | absURL }}?hostname=CANONICAL_HOSTNAME&path=CANONICAL_PATH&referrer=DOCUMENT_REFERRER&https=true&ua=USER_AGENT&width=VIEWPORT_WIDTH&type=pageview" layout="nodisplay"></amp-pixel>
+    <!-- https://docs.simpleanalytics.com/without-javascript -->
+    <amp-pixel src="{{ "sa/noscript.gif" | absURL }}?ignore-dnt=true&hostname=CANONICAL_HOSTNAME&path=CANONICAL_PATH&referrer=DOCUMENT_REFERRER&https=true&ua=USER_AGENT&width=VIEWPORT_WIDTH&type=pageview" layout="nodisplay"></amp-pixel>
     {{ end }}
   </body>
 </html>
 
-{{ printf "<!-- htmlmin:ignore -->" | safeHTML -}}
-{{ printf "<!-- %s -->" hugo.Environment | safeHTML }}
-{{ printf "<!-- %s -->" hugo.Version | safeHTML }}
-{{- printf "<!-- htmlmin:ignore -->" | safeHTML }}
+{{ partialCached "functions/debug" . }}
