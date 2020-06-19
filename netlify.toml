@@ -31,7 +31,7 @@
 # https://github.com/netlify/cli/blob/master/docs/netlify-dev.md#netlifytoml-dev-block
 [dev]
   framework = "#custom"
-  command = "yarn start --baseURL=/ --appendPort=false"
+  command = "yarn start --baseURL=/ --appendPort=false --disableLiveReload"
   port = 1338
   targetPort = 1337
   publish = "public"
@@ -133,15 +133,15 @@
   from = "/keybase.txt"
   to = "/.well-known/keybase.txt"
   status = 301
+[[redirects]]
+  from = "/twemoji/svg/*"
+  to = "/vendor/emoji/svg/:splat"
+  status = 301
 
-# Proxy data to Simple Analytics endpoint:
+# Proxy data to Simple Analytics endpoints:
 [[redirects]]
-  from = "/sa/send.gif*"
+  from = "/sa/send*"
   to = "https://queue.simpleanalyticscdn.com/simple.gif:splat"
-  status = 200
-[[redirects]]
-  from = "/sa/noscript.gif*"
-  to = "https://queue.simpleanalyticscdn.com/noscript.gif:splat"
   status = 200
 [[redirects]]
   from = "/sa/append*"
@@ -150,6 +150,17 @@
 [[redirects]]
   from = "/sa/post*"
   to = "https://api.simpleanalytics.io/post:splat"
+  status = 200
+[[redirects]]
+  # this noscript pixel needs to pass unknown arguments along for AMP pages
+  # https://amp.dev/documentation/components/amp-pixel/
+  from = "/sa/noscript.gif*"
+  to = "https://queue.simpleanalyticscdn.com/noscript.gif:splat"
+  status = 200
+[[redirects]]
+  # same noscript img as above but with no arguments, except `ignore-dnt`
+  from = "/sa/manual.gif"
+  to = "https://queue.simpleanalyticscdn.com/noscript.gif?ignore-dnt=true"
   status = 200
 
 # Mirror these directories from elsewhere to mimic GitHub Pages behavior and

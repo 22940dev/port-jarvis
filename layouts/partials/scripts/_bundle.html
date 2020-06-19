@@ -4,9 +4,9 @@
 {{ $bundle := slice $darkmode $twemoji }}
 
 {{/* only parse and append analytics script on production site */}}
-{{ $useAnalytics := eq hugo.Environment "production" }}
+{{ $includeAnalytics := eq hugo.Environment "production" }}
 
-{{ if $useAnalytics }}
+{{ if $includeAnalytics }}
   {{ $analytics := resources.Get "js/simple-analytics.js" | resources.ExecuteAsTemplate "js/simple-analytics.js" . }}
   {{ $bundle = slice $darkmode $twemoji $analytics }}
 {{ end }}
@@ -15,6 +15,6 @@
 <script async defer src="{{ $js.Permalink }}"></script>
 
 {{/* proxy to simple analytics noscript on production */}}
-{{ if $useAnalytics }}
-  <noscript><img src="{{ "sa/noscript.gif" | absURL }}" alt=""></noscript>
+{{ if $includeAnalytics }}
+  <noscript><img src="{{ "sa/manual.gif" | absURL }}" alt=""></noscript>
 {{ end }}

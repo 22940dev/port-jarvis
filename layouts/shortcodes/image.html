@@ -15,7 +15,7 @@
 <p class="image">
   {{ with .Get "link" }}<a class="no-underline" href="{{ . }}"{{ if strings.HasPrefix . "http" }} target="_blank" rel="noopener"{{ end }}>{{ end }}
   <img src="{{ $optimized.Permalink }}" width="{{ $optimized.Width }}" height="{{ $optimized.Height }}"
-                    {{- with .Get "alt" }} alt="{{ . | safeHTML }}" title="{{ . | safeHTML }}"{{ end }}>
+       {{- with .Get "alt" }} alt="{{ . | safeHTML }}" title="{{ . | safeHTML }}"{{ end }}>
   {{ if .Get "link" }}</a>{{ end }}
 </p>
 {{- end }}

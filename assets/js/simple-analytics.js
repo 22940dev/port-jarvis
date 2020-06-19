@@ -1,5 +1,5 @@
-/*! Simple Analytics - Privacy friendly analytics (docs.simpleanalytics.com/script; 2020-06-17; dfcf) */
-// https://github.com/simpleanalytics/scripts/blob/6bf58f785134134196cde293d6c9e215a670a4d1/src/default.js
+/*! Simple Analytics - Privacy friendly analytics (docs.simpleanalytics.com/script; 2020-06-19; 8601) */
+// https://github.com/simpleanalytics/scripts/blob/eac9823da1fe92c0bca65a041df1f005ff860f1f/src/default.js
 
 (function (window, baseUrl) {
   if (!window) return;
@@ -10,7 +10,6 @@
     // need multiple scripts. The minified version stays small.
     var https = "https:";
     var pageviewsText = "pageview";
-    var errorText = "error";
     var protocol = https + "//";
     var con = window.console;
     var slash = "/";
@@ -27,7 +26,6 @@
     var addEventListenerFunc = window.addEventListener;
     var fullApiUrl = protocol + baseUrl;
     var undefinedVar = undefined;
-    var functionName = "sa_event";
     var documentElement = doc.documentElement || {};
     var language = "language";
     var Height = "Height";
@@ -38,15 +36,9 @@
     var clientHeight = "client" + Height;
     var clientWidth = "client" + Width;
     var screen = window.screen;
+    var functionName = "sa_event";
 
-    var bot =
-      nav.webdriver ||
-      window.__nightmare ||
-      "callPhantom" in window ||
-      "_phantom" in window ||
-      "phantom" in window ||
-      /(bot|spider|crawl)/i.test(userAgent) ||
-      (window.chrome && (nav.languages === "" || !nav.plugins.length || !(nav.plugins instanceof PluginArray)));
+    var bot = /(bot|spider|crawl)/i.test(userAgent);
 
     var payload = {
       version: 3,
@@ -123,7 +115,7 @@
       }
       image.src =
         fullApiUrl +
-        "/send.gif?" +
+        "/send?" +
         Object.keys(data)
           .filter(function (key) {
             return data[key] != undefinedVar;
@@ -133,29 +125,6 @@
           })
           .join("&");
     }
-
-    // Send errors
-    function sendError(errorOrMessage) {
-      errorOrMessage = errorOrMessage.message || errorOrMessage;
-      warn(errorOrMessage);
-      sendData({
-        type: errorText,
-        error: errorOrMessage,
-        url: options.hostname + loc.pathname,
-      });
-    }
-
-    // We listen for the error events and only send errors that are
-    // from our script (checked by filename) to our server.
-    addEventListenerFunc(
-      errorText,
-      function (event) {
-        if (event.filename && event.filename.indexOf(baseUrl) > -1) {
-          sendError(event.message);
-        }
-      },
-      false
-    );
 
     /** if duration **/
     var duration = "duration";
@@ -180,8 +149,8 @@
 
     /** unless testing **/
     // Don't track when localhost or when it's an IP address
-    // if (locationHostname.indexOf(".") == -1 || /^[0-9]+$/.test(locationHostname.replace(/\./g, "")))
-    //   return warn(notSending + "from " + locationHostname);
+    if (locationHostname.indexOf(".") == -1 || /^[0-9]+$/.test(locationHostname.replace(/\./g, "")))
+      return warn(notSending + "from " + locationHostname);
     /** endunless **/
 
     var page = {};
@@ -303,7 +272,6 @@
           {
             https: loc.protocol == https,
             timezone: timezone,
-            width: window.innerWidth,
             type: pageviewsText,
           }
         )
@@ -394,7 +362,7 @@
 
       if (event)
         sendData(
-          assign(source, {
+          assign(source, bot ? { bot: true } : {}, {
             type: "event",
             event: event,
             page_id: page.id,
@@ -423,6 +391,6 @@
     for (var event in queue) sendEvent(queue[event]);
     /** endif **/
   } catch (e) {
-    sendError(e);
+    warn(e);
   }
 })(window, "{{ (urls.Parse .Site.BaseURL).Host }}/sa");
