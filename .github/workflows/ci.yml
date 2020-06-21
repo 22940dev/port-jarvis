@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-    - master
+    - main
   pull_request:
 
 jobs:
@@ -43,7 +43,7 @@ jobs:
           --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.com/notes/how-to-pull-request-fork-github/ \
           --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.com/notes/how-to-pull-request-fork-github/amp.html
     - name: Audit jarv.is
-      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       continue-on-error: true
       run: |
         lhci autorun --config=./.lighthouserc.json \
