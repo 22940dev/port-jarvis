@@ -16,7 +16,7 @@ yarn-error.log*
 
 # here be secrets
 .env
-.env.production
+.env.prod*
 
 # macOS/iCloud junk
 .DS_Store
@@ -27,5 +27,7 @@ yarn-error.log*
 *.icloud
 .nosync
 
-# Local Netlify folder
-.netlify
+# local Netlify/Zeit config
+.netlify/
+.now/
+.vercel/

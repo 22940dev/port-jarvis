@@ -37,11 +37,12 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^9.8.3",
+    "autoprefixer": "^9.8.4",
     "cross-env": "^7.0.2",
     "eslint": "~7.3.1",
     "eslint-config-prettier": "~6.11.0",
     "eslint-plugin-prettier": "~3.1.4",
+    "gifsicle": "jakejarvis/gifsicle-bin#master",
     "html-minifier": "^4.0.0",
     "hugo-extended": "0.68.3",
     "husky": "^4.2.5",
@@ -71,6 +72,7 @@
     "terser": "^4.8.0"
   },
   "resolutions": {
+    "imagemin-gifsicle/gifsicle": "jakejarvis/gifsicle-bin#master",
     "postcss-clean/postcss": "^7.x"
   },
   "husky": {

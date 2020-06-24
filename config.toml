@@ -96,13 +96,13 @@ disableAliases = true
     baseName = "feed"   # /feed.atom
   [outputFormats.AMP]
     mediaType = "text/html"
-    baseName = "amp"
-    path = "."
+    baseName = "amp"   # amp.html
+    path = "."   # put in same directory as original post
     permalinkable = true
     isHTML = true
   [outputFormats.ALGOLIA]
     mediaType = "application/json"
-    baseName = "algolia"
+    baseName = "algolia"   # /algolia.json
     isPlainText = true
     notAlternative = true
   [outputFormats.MANIFEST]
@@ -127,7 +127,7 @@ disableAliases = true
   [mediaTypes."application/manifest+json"]
     suffixes = ["webmanifest"]
   [mediaTypes."text/netlify"]
-    delimiter = ""
+    delimiter = ""   # no extension for _headers & _redirects files
 
 [sitemap]
   filename = "sitemap.xml"

@@ -20,5 +20,7 @@ postcss.config.js
 .github/
 .lighthouseci/
 .netlify/
+.now/
+.vercel/
 .vscode/
 LICENSE.md
