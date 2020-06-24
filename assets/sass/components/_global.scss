@@ -106,11 +106,6 @@ button {
 
   // corrects inability to style clickable `input` types in iOS
   appearance: none;
-
-  &::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-  }
 }
 
 // make SVG twemojis relative to surrounding text
@@ -118,8 +113,17 @@ button {
 img.emoji {
   height: 1.1em;
   width: 1.1em;
-  margin: 0 0.09em;
+  padding: 0 0.09em;
   vertical-align: -0.18em;
+
+  // have cursor act like it's a regular unicode emoji, especially
+  // since twemojis can still be copied-and-pasted
+  cursor: text;
+}
+// manually set pointer cursor when emoji within link, otherwise it'll
+// keep text cursor above
+a img.emoji {
+  cursor: pointer;
 }
 
 // white background for entire width content area

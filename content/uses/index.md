@@ -4,18 +4,24 @@ date: 2020-01-22 09:51:08-0400
 description: "Things I use daily."
 image: "images/desktop.png"
 layout: etc
+css: |
+  h2 img.emoji {
+    margin-right: 2px;
+  }
 sitemap:
   priority: 0.4
 ---
 
-~~I regularly get messages asking about specific things I use.~~ Nobody has asked me what I use. Ever. But here's a list of my daily requirements anyways, mostly revolving around my Apple sheep-ness. Inspired by [many, many others](https://uses.tech/). 😊
+~~I regularly get messages asking about which tools I use to work.~~
+
+Nobody has asked me what I use. Ever. But here's a list of my daily drivers and necessities anyways, mostly revolving around my Apple sheepy-ness. Inspired by [many, many others](https://github.com/wesbos/awesome-uses#readme). ❤️
 
 {{< image src="images/desktop.png" alt="My mess of a desktop." />}}
 
-## 🍎&nbsp; Hardware {#hardware}
+## 🍎 Hardware {#hardware}
 
 - [**MacBook Pro 15"** (Mid-2018)](https://browser.geekbench.com/v5/cpu/1074682)
-  - Core i9 @ 2.9 GHZ 🔥 🚒
+  - Core i9 @ 2.9 GHZ 🔥 🧯 🚒
   - 32 GB RAM
   - 1 TB SSD
   - Radeon Pro 560X – 4 GB
@@ -33,7 +39,7 @@ sitemap:
   - I also have incredibly weird ears, apparently, so my AirPods went right back to the store when they came out. 😢
   - ...but these are a great alternative with the [same pairing and continuity features](https://www.soundguys.com/how-does-apple-w1-chip-work-21049/) between all of my 🍎 devices.
 
-## 💾&nbsp; Development {#development}
+## 💾 Development {#development}
 
 - [**iTerm 2**](https://iterm2.com/)
   - My various [ZSH aliases](https://github.com/jakejarvis/dotfiles/blob/master/zsh/aliases.zsh) and [functions](https://github.com/jakejarvis/dotfiles/blob/master/zsh/functions.zsh) are in [my `.dotfiles` repository.](https://github.com/jakejarvis/dotfiles)
@@ -66,20 +72,22 @@ sitemap:
   - [View my messy `Brewfile` dump](https://github.com/jakejarvis/dotfiles/blob/master/Brewfile) with all of my installed packages.
 - [**Xcode**](https://developer.apple.com/xcode/)
 - [**Docker Desktop**](https://www.docker.com/products/docker-desktop)
-- [**VMware Fusion**](https://www.vmware.com/products/fusion.html)
+- [**VMware Fusion Pro**](https://www.vmware.com/products/fusion.html)
   - Microsoft's [free Windows 7 & 10 virtual machines](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/) for developers are super convenient and shockingly generous.
+  - Also used as a driver for [minikube](https://minikube.sigs.k8s.io/) and [Vagrant](https://www.vagrantup.com/).
 - [**Sketch**](https://www.sketch.com/)
 - [**Adobe Creative Cloud**](https://www.adobe.com/creativecloud.html)
-  - Still on the \$20/month [Student Plan](https://www.adobe.com/creativecloud/buy/students.html), somehow. Will need to re-evaulate once I'm kicked off; it's hard to justify spending almost 3x that...
+  - Still on the \$20/month [Student Plan](https://www.adobe.com/creativecloud/buy/students.html), somehow. 🤫 Will need to re-evaulate once I'm kicked off; it's hard to justify spending almost 3x that...
 - [**Transmit**](https://panic.com/transmit/)
 - [**Postman**](https://www.getpostman.com/)
 - [**BrowserStack**](https://www.browserstack.com/)
 - [~~Sequel Pro~~](https://www.sequelpro.com/) → [**TablePlus**](https://tableplus.com/)
 - [~~Robo 3T~~](https://robomongo.org/) → [**TablePlus**](https://tableplus.com/)
 - [**ImageOptim**](https://imageoptim.com/mac)
-- [**Local by Flywheel**](https://localbyflywheel.com/)
+- [**Sip**](https://sipapp.io/)
+- [**Local**](https://localwp.com/) for WordPress development.
 
-## 🌎&nbsp; Browsing {#browsing}
+## 🌎 Browsing {#browsing}
 
 - [**Firefox Developer Edition**](https://www.mozilla.org/en-US/firefox/developer/) 🦊
   - [My default `user.js` settings.](https://github.com/jakejarvis/dotfiles/blob/master/firefox/user.js)
@@ -87,45 +95,44 @@ sitemap:
     - [1Password](https://1password.com/browsers/firefox/)
     - [BetterTTV](https://addons.mozilla.org/en-US/firefox/addon/betterttv/)
     - [Cookie Editor](https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/)
-    - [Country Flag & IP Whois](https://addons.mozilla.org/en-US/firefox/addon/country-flags-ip-whois/)
     - [Decentraleyes](https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/)
     - [Facebook Container](https://addons.mozilla.org/en-US/firefox/addon/facebook-container/)
     - [Firefox Multi-Account Containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)
-    - [HTTP Header Spy](https://addons.mozilla.org/en-US/firefox/addon/http-header-spy/)
     - [HTTPS Everywhere](https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/)
     - [Mailvelope](https://addons.mozilla.org/en-US/firefox/addon/mailvelope/)
     - [React Developer Tools](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
     - [OctoLinker](https://addons.mozilla.org/en-US/firefox/addon/octolinker/)
     - [Privacy Badger](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/)
-    - [Save Image to Downloads](https://addons.mozilla.org/en-US/firefox/addon/save-image-2-downloads/)
-    - [Search by Image on Google](https://addons.mozilla.org/en-US/firefox/addon/search-by-image-on-google/)
     - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
-    - [View Image](https://addons.mozilla.org/en-US/firefox/addon/view-image/)
-    - [Wappalyzer](https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/)
-- [**Google Chrome** (Dev Channel)](https://www.google.com/chrome/browser/?extra=devchannel) — for testing **only!**
-  - [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?h1=en)
-  - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+- [**Google Chrome**](https://www.google.com/chrome/browser/?extra=devchannel) 😈
+  - **For testing only!** See more of [my de-Googling efforts below](#cloud).
+  - Add-ons:
+    - [AMP Validator](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc?hl=en)
+    - [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?h1=en)
+    - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 
-## 💻&nbsp; macOS {#macos}
+## 💻 macOS {#macos}
 
 - [**1Password**](https://1password.com/)
-- [**Little Snitch**](https://www.obdev.at/products/littlesnitch/index.html) and [**Micro Snitch**](https://www.obdev.at/products/microsnitch/index.html)
+- [**Little Snitch**](https://www.obdev.at/products/littlesnitch/index.html)
 - ~~VLC~~ → [**IINA**](https://iina.io/)
 - [**Backblaze**](https://www.backblaze.com/) [(referral link)](https://secure.backblaze.com/r/00x84e)
+- [**Keybase**](https://keybase.io/jakejarvis) & [**GPG Suite**](https://gpgtools.org/)
 - [**Transmission**](https://transmissionbt.com/)
 - [**Unshaky**](https://unshaky.nestederror.com/) ⌨️
-  - Toooo &nbsp;lzy too vist &nbsp;&nbsp;the&nbsp; Aple Stre geeniusses oonce &nbsp;agin&nbsp; to fiix.
+  - Toooo &nbsp;lzy too vist &nbsp;&nbsp;the&nbsp; Aple Stre geeniusses oonce &nbsp;agin&nbsp; to fiix tthe&nbsp; keeybbbboord. 😒 🦋
 - [**DaisyDisk**](https://daisydiskapp.com/)
 - [**CleanMyMac X**](https://macpaw.com/cleanmymac)
 - [**Paragon NTFS**](https://www.paragon-software.com/us/home/ntfs-mac/#)
 - [**The Unarchiver**](https://theunarchiver.com/)
+- [**Duet Display**](https://www.duetdisplay.com/)
 - [**iStat Menus**](https://bjango.com/mac/istatmenus/)
 - [**Beamer**](https://beamer-app.com/)
 - [**Amphetamine**](https://roaringapps.com/app/amphetamine)
 - [**NVIDIA GeForce NOW** (beta)](https://www.nvidia.com/en-us/geforce-now/)
 - [**Microsoft Office**](https://products.office.com/en-us/mac/microsoft-office-for-mac)
 
-## 📱&nbsp; iOS {#ios}
+## 📱 iOS {#ios}
 
 I have far too many apps to count, but here the essentials that have earned a spot on my home screen:
 
@@ -141,9 +148,11 @@ I have far too many apps to count, but here the essentials that have earned a sp
 - [**Plex** (beta)](https://apps.apple.com/us/app/plex-movies-tv-music-more/id383457673)
 - [**Microsoft To-Do**](https://apps.apple.com/us/app/microsoft-to-do/id1212616790) (RIP Wunderlist 🙏)
 - [**Reeder 4**](https://apps.apple.com/us/app/reeder-4/id1449412357)
+- [**AdGuard Pro**](https://apps.apple.com/us/app/adguard-pro-adblock-privacy/id1126386264)
 - [**Blink Shell**](https://apps.apple.com/us/app/blink-shell-mosh-ssh-client/id1156707581)
+- [**Working Copy**](https://apps.apple.com/us/app/working-copy-git-client/id896694807)
 
-## ☁️&nbsp; Cloud {#cloud}
+## ☁️ Cloud {#cloud}
 
 I've been making recent efforts to [de-Google](https://www.reddit.com/r/degoogle/) my life, with mixed results...
 
@@ -164,7 +173,7 @@ I've been making recent efforts to [de-Google](https://www.reddit.com/r/degoogle
 - [**Backblaze**](https://www.backblaze.com/) [(referral link)](https://secure.backblaze.com/r/00x84e) for off-site MacBook backups.
 - [**Plex**](https://www.plex.tv/) + [**Sonarr**](https://sonarr.tv/) + [**Radarr**](https://radarr.video/)
 
-## 🏠&nbsp; Internet of ~~Things~~ [Crap](/notes/shodan-search-queries/) {#home}
+## 🏠 Internet of ~~Things~~ [Crap](/notes/shodan-search-queries/) {#home}
 
 - [**Synology RT2600ac**](https://www.synology.com/en-us/products/RT2600ac)
 - [**Synology DiskStation DS218+**](https://www.synology.com/en-us/products/DS218+)
