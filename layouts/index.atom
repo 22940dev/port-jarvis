@@ -1,3 +1,4 @@
+{{- $img := partial "functions/social-images" . -}}
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ .Site.Title }}</title>
@@ -10,8 +11,8 @@
   {{- with .Site.Copyright }}
   <rights>{{ . }}</rights>
   {{- end }}
-  {{- with .Site.Params.defaultImage }}
-  <logo>{{ . | absURL }}</logo>
+  {{- with .Scratch.Get "authorImage" }}
+  <logo>{{ .Permalink }}</logo>
   {{- end }}
   <updated>{{ .Date.Format "2006-01-02T15:04:05Z" | safeHTML }}</updated>
   {{- with .OutputFormats.Get "ATOM" }}

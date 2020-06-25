@@ -17,19 +17,19 @@
   "publisher": {
     "@type": "Organization",
     "name": {{ .Site.Title }},
-    "url": {{ .Site.BaseURL }},
+    "url": {{ .Site.BaseURL }}{{ with .Scratch.Get "logoImage" }},
     "logo": {
       "@type": "ImageObject",
-      "url": {{ .Scratch.Get "logoImage_url" | absURL }},
-      "width": "{{ .Scratch.Get "logoImage_width" }}",
-      "height": "{{ .Scratch.Get "logoImage_height" }}"
-    }
-  },
+      "url": {{ .Permalink }},
+      "width": "{{ .Width }}",
+      "height": "{{ .Height }}"
+    }{{ end }}
+  }{{ with .Scratch.Get "pageImage" }},
   "image": {
     "@type": "ImageObject",
-    "url": {{ .Scratch.Get "socialImage_url" | absURL }},
-    "width": "{{ .Scratch.Get "socialImage_width" }}",
-    "height": "{{ .Scratch.Get "socialImage_height" }}"
-  }
+    "url": {{ .Permalink }},
+    "width": "{{ .Width }}",
+    "height": "{{ .Height }}"
+  }{{ end }}
 }
 </script>

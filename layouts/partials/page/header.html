@@ -1,13 +1,13 @@
 <header>
   <nav>
     <a class="no-underline" href="{{ .Site.BaseURL }}" id="logo" rel="me author" aria-label="{{ .Site.Title }}">
-      {{ partial "functions/inline-svg" (dict "src" "img/logo.svg" "width" 28 "height" 40) }}
+      {{ if fileExists "assets/img/logo.svg" }}{{ partial "functions/inline-svg" (dict "src" "img/logo.svg" "width" 28 "height" 40) }}{{ end }}
       <h1 id="name">{{ .Site.Title }}</h1>
     </a>
     <ul>
       {{- range .Site.Menus.main }}
       <li><a class="no-underline" {{ printf "href=%q" .URL | safeHTMLAttr }} aria-label="{{ .Name }}"{{ if strings.HasPrefix .URL "http" }} target="_blank" rel="me noopener"{{ end }}><span class="icon">{{ .Pre }}</span><span class="text">{{ .Name }}</span></a></li>
-      {{ end -}}
+      {{- end }}
       <li><button class="dark-mode-toggle" title="Toggle Dark Mode" aria-label="Toggle Dark Mode"></button></li>
     </ul>
   </nav>

@@ -59,7 +59,7 @@
     Content-Type = "text/plain; charset=UTF-8"
     Content-Disposition = "inline; filename=\"jarvis.asc\""
 
-# AMP cache invalidation key requirements
+# AMP cache invalidation key requirements:
 # https://developers.google.com/amp/cache/update-cache#update-cache-guidelines
 [[headers]]
   for = "/.well-known/amphtml/apikey.pub"
@@ -108,6 +108,37 @@
   from = "/archives/*"
   to = "/notes/"
   status = 301
+[[redirects]]
+  # Not sure if these XML-RPC requests are malicious but forward them to
+  # webmention.io anyway.
+  from = "/xmlrpc.php"
+  to = "https://webmention.io/jarv.is/xmlrpc"
+  status = 302
+
+# Proxy data to Simple Analytics endpoints:
+[[redirects]]
+  from = "/sa/send*"
+  to = "https://queue.simpleanalyticscdn.com/simple.gif:splat"
+  status = 200
+[[redirects]]
+  from = "/sa/append*"
+  to = "https://queue.simpleanalyticscdn.com/append:splat"
+  status = 200
+[[redirects]]
+  from = "/sa/post*"
+  to = "https://api.simpleanalytics.io/post:splat"
+  status = 200
+[[redirects]]
+  # This noscript pixel needs to pass unknown arguments along for AMP pages:
+  # https://amp.dev/documentation/components/amp-pixel/
+  from = "/sa/noscript.gif*"
+  to = "https://queue.simpleanalyticscdn.com/noscript.gif:splat"
+  status = 200
+[[redirects]]
+  # Same noscript.gif as above but with no arguments, except `ignore-dnt`.
+  from = "/sa/manual.gif"
+  to = "https://queue.simpleanalyticscdn.com/noscript.gif?ignore-dnt=true"
+  status = 200
 
 # More miscellaneous mirrors/redirects:
 [[redirects]]
@@ -131,6 +162,10 @@
   to = "/img/apple-touch-icon.png"
   status = 200
 [[redirects]]
+  from = "/safari-pinned-tab.svg"
+  to = "/img/safari-pinned-tab.svg"
+  status = 200
+[[redirects]]
   from = "/keybase.txt"
   to = "/.well-known/keybase.txt"
   status = 301
@@ -138,31 +173,6 @@
   from = "/twemoji/svg/*"
   to = "/vendor/emoji/svg/:splat"
   status = 301
-
-# Proxy data to Simple Analytics endpoints:
-[[redirects]]
-  from = "/sa/send*"
-  to = "https://queue.simpleanalyticscdn.com/simple.gif:splat"
-  status = 200
-[[redirects]]
-  from = "/sa/append*"
-  to = "https://queue.simpleanalyticscdn.com/append:splat"
-  status = 200
-[[redirects]]
-  from = "/sa/post*"
-  to = "https://api.simpleanalytics.io/post:splat"
-  status = 200
-[[redirects]]
-  # this noscript pixel needs to pass unknown arguments along for AMP pages
-  # https://amp.dev/documentation/components/amp-pixel/
-  from = "/sa/noscript.gif*"
-  to = "https://queue.simpleanalyticscdn.com/noscript.gif:splat"
-  status = 200
-[[redirects]]
-  # same noscript img as above but with no arguments, except `ignore-dnt`
-  from = "/sa/manual.gif"
-  to = "https://queue.simpleanalyticscdn.com/noscript.gif?ignore-dnt=true"
-  status = 200
 
 # Mirror these directories from elsewhere to mimic GitHub Pages behavior and
 # keep this main repository squeaky clean.
@@ -221,9 +231,3 @@
   from = "*/wlwmanifest.xml"
   to = "/403.html"
   status = 403
-# not sure if these xmlrpc requests are malicious but forward them to
-# webmention.io anyway
-[[redirects]]
-  from = "/xmlrpc.php"
-  to = "https://webmention.io/jarv.is/xmlrpc"
-  status = 302

@@ -2,7 +2,7 @@
 {{- $android192 := resources.Get "img/android-chrome-192x192.png" -}}
 {
   "name": "{{ .Site.Title }}",
-  "short_name": "{{ .Site.Params.domain }}",
+  "short_name": "{{ (urls.Parse .Site.BaseURL).Host }}",
   "icons": [
     {
       "src": "{{ $android512.Permalink | safeJS }}",

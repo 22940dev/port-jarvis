@@ -1,28 +1,27 @@
-{{/* Default image */}}
-{{- $defaultImage := resources.Get $.Site.Params.defaultImage }}
-{{- $.Scratch.Set "defaultImage_url" $defaultImage.Permalink }}
-{{- $.Scratch.Set "defaultImage_width" $defaultImage.Width }}
-{{- $.Scratch.Set "defaultImage_height" $defaultImage.Height }}
-{{- $.Scratch.Set "defaultImage_type" $defaultImage.MediaType }}
+{{/* Chooses and initializes various images for use by JSON schema & open graph tags */}}
+
+{{/* Author image (default) */}}
+{{- with .Site.Author.image -}}
+  {{- with resources.Get . -}}
+    {{- $.Scratch.Set "authorImage" . -}}
+  {{- end -}}
+{{- end -}}
 
 {{/* Article image */}}
-{{- with .Params.image }}
-  {{- $socialImage := $.Page.Resources.GetMatch . }}
-  {{- $.Scratch.Set "socialImage_url" $socialImage.Permalink }}
-  {{- $.Scratch.Set "socialImage_width" $socialImage.Width }}
-  {{- $.Scratch.Set "socialImage_height" $socialImage.Height }}
-  {{- $.Scratch.Set "socialImage_type" $socialImage.MediaType }}
-{{ else }}
-  {{/* fallback to default image set above */}}
-  {{- $.Scratch.Set "socialImage_url" $defaultImage.Permalink }}
-  {{- $.Scratch.Set "socialImage_width" $defaultImage.Width }}
-  {{- $.Scratch.Set "socialImage_height" $defaultImage.Height }}
-  {{- $.Scratch.Set "socialImage_type" $defaultImage.MediaType }}
-{{ end -}}
+{{- with .Params.image -}}
+  {{- with $.Page.Resources.GetMatch . -}}
+    {{- $.Scratch.Set "pageImage" . -}}
+  {{- end -}}
+{{- else -}}
+  {{/* Fallback to author image set above */}}
+  {{- with $.Scratch.Get "authorImage" -}}
+    {{- $.Scratch.Set "pageImage" . -}}
+  {{- end -}}
+{{- end -}}
 
 {{/* Site logo */}}
-{{- $logoImage := resources.Get "img/logo.png" }}
-{{- $.Scratch.Set "logoImage_url" $logoImage.Permalink }}
-{{- $.Scratch.Set "logoImage_width" $logoImage.Width }}
-{{- $.Scratch.Set "logoImage_height" $logoImage.Height }}
-{{- $.Scratch.Set "logoImage_type" $logoImage.MediaType }}
+{{- with .Site.Params.image -}}
+  {{- with resources.Get . -}}
+    {{- $.Scratch.Set "logoImage" . -}}
+  {{- end -}}
+{{- end -}}

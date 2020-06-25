@@ -7,13 +7,13 @@
   "name": {{ .name }},
   "url": {{ $.Site.BaseURL }},
   "description": {{ $.Site.Params.description }},
-  {{ with .jobtitle }}"jobTitle": {{ . }},{{ end }}
+  {{ with .jobtitle }}"jobTitle": {{ . }},{{ end }}{{ with $.Scratch.Get "authorImage" }}
   "image": {
     "@type": "ImageObject",
-    "url": {{ $.Scratch.Get "defaultImage_url" | absURL }},
-    "width": "{{ $.Scratch.Get "defaultImage_width" }}",
-    "height": "{{ $.Scratch.Get "defaultImage_height" }}"
-  },
+    "url": {{ .Permalink }},
+    "width": "{{ .Width }}",
+    "height": "{{ .Height }}"
+  },{{ end }}
   "sameAs": [
     {{ $.Site.BaseURL }},
     {{ with .github }}{{ printf "%s%s" "https://github.com/" . }},{{ end }}

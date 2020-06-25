@@ -24,19 +24,19 @@ disableAliases = true
 
 [params]
   description = "Hi there! I'm a frontend web developer based in Boston, Massachusetts specializing in the JAMstack, modern JavaScript frameworks, and progressive web apps."
-  domain = "jarv.is"
-  mainSection = "notes"
-  pageMaxWidth = 940
-  defaultImage = "img/me_large.jpg"
-  github = "jakejarvis/jarv.is"
+  image = "img/logo.png"  # must be in assetDir
+  mainSection = "notes"  # reflected in RSS, Atom, AMP
+  maxWidth = 940  # px
+  githubRepo = "jakejarvis/jarv.is"
   facebookAppID = "3357248167622283"
-  webmention = "jarv.is"
+  webmentionIO = "jarv.is"  # webmention.io username
   copyrightFirstYear = "2001"
   license = "CC-BY-4.0"
   licenseFull = "Creative Commons Attribution 4.0 International"
 
 [author]
   name = "Jake Jarvis"
+  image = "img/me_large.jpg"  # must be in assetDir
   jobTitle = "Front-End Web Developer"
   email = "jake@jarv.is"
   twitter = "jakejarvis"
@@ -51,7 +51,6 @@ disableAliases = true
 [module]
   [[module.imports]]
     path = "github.com/twitter/twemoji"
-    disable = false
     [[module.imports.mounts]]
       source = "assets/svg"
       target = "static/vendor/emoji/svg"

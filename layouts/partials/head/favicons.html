@@ -7,10 +7,10 @@
 {{- range (split .pngSizes " ") }}
   {{- $faviconPng := resources.Get (printf "img/favicon-%v.png" .) }}
   <link rel="icon" href="{{ $faviconPng.Permalink }}" sizes="{{ . }}x{{ . }}">
-{{- end }}
+{{- end -}}
 
-{{- $s := slice }}
-{{- range (split .icoSizes " ") }}{{ $s = $s | append (printf "%vx%v" . .) }}{{ end }}
+{{- $s := slice -}}
+{{- range (split .icoSizes " ") }}{{ $s = $s | append (printf "%vx%v" . .) }}{{ end -}}
 {{- $faviconIco := resources.Get "img/favicon.ico" }}
 <link rel="shortcut icon" href="{{ $faviconIco.Permalink }}" sizes="{{ delimit $s " " }}">
 

@@ -90,7 +90,7 @@
         padding-left: 1em;
       }
       article {
-        max-width: {{ printf "%d%s" .Site.Params.pageMaxWidth "px" }};
+        max-width: {{ printf "%d%s" .Site.Params.maxWidth "px" }};
         margin: 0 auto;
         padding: 0 15px;
         line-height: 1.75;
@@ -147,7 +147,7 @@
         text-decoration: none;
       }
       nav {
-        max-width: {{ printf "%d%s" .Site.Params.pageMaxWidth "px" }};
+        max-width: {{ printf "%d%s" .Site.Params.maxWidth "px" }};
         margin: 0 auto;
         padding: 0 15px;
         display: flex;
@@ -198,7 +198,7 @@
       }
       footer div.row {
         width: 100%;
-        max-width: {{ printf "%d%s" .Site.Params.pageMaxWidth "px" }};
+        max-width: {{ printf "%d%s" .Site.Params.maxWidth "px" }};
         margin: 0 auto;
         display: flex;
         justify-content: space-between;

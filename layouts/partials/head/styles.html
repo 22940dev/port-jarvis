@@ -2,9 +2,9 @@
 <link rel="stylesheet" href="{{ $style.Permalink }}">
 
 {{/* Page-specific styles set via front matter, scoped via SCSS and inlined */}}
-{{ with .Params.css }}
+{{- with .Params.css -}}
   {{/* NOTE: This file doesn't end up getting published (which is good) */}}
-  {{- $target := path.Join $.File.Dir "css/inline.scss" }}
+  {{- $target := path.Join $.File.Dir "css/inline.scss" -}}
   {{- $css := . | resources.FromString $target | resources.ToCSS | resources.PostCSS (dict "config" "postcss.config.js") -}}
 
 {{/* Already being minified to my taste by PostCSS above */}}
@@ -13,4 +13,4 @@
 {{ $css.Content | safeCSS }}
 </style>
 {{- printf "<!-- htmlmin:ignore -->" | safeHTML }}
-{{ end }}
+{{ end -}}

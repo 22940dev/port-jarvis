@@ -3,7 +3,7 @@
 {{ $original := .Page.Resources.GetMatch (.Get "src") }}
 {{ .Scratch.Set "image" $original }}
 
-{{ $setWidth := .Site.Params.pageMaxWidth }}
+{{ $setWidth := .Site.Params.maxWidth }}
 
 {{ if .Get "width" }}
   {{ $setWidth = (int (.Get "width")) }}
@@ -22,4 +22,4 @@
 {{ $displayWidth := $setWidth }}
 {{ $displayHeight := (math.Ceil (mul $origRatio $setWidth)) }}
 
-{{ return (dict "Permalink" $image.Permalink "Width" $displayWidth "Height" $displayHeight) }}
+{{ return (dict "Permalink" $image.Permalink "Width" $displayWidth "Height" $displayHeight "MediaType" $image.MediaType) }}

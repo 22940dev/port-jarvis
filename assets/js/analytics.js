@@ -8,25 +8,28 @@
     // Generate the needed variables, this seems like a lot of repetition, but it
     // makes our script availble for multple destination which prevents us to
     // need multiple scripts. The minified version stays small.
-    var https = "https:";
+    var version = 3;
+    var functionName = "sa_event";
     var pageviewsText = "pageview";
+    var https = "https:";
     var protocol = https + "//";
-    var con = window.console;
     var slash = "/";
+    var fullApiUrl = protocol + baseUrl;
+    var doc = window.document;
+    var con = window.console;
     var nav = window.navigator;
+    var screen = window.screen;
     var loc = window.location;
     var locationHostname = loc.hostname;
-    var doc = window.document;
     var userAgent = nav.userAgent;
-    var notSending = "Not sending requests ";
+    var documentElement = doc.documentElement || {};
+    var addEventListenerFunc = window.addEventListener;
     var encodeURIComponentFunc = encodeURIComponent;
     var decodeURIComponentFunc = decodeURIComponent;
     var stringify = JSON.stringify;
     var thousand = 1000;
-    var addEventListenerFunc = window.addEventListener;
-    var fullApiUrl = protocol + baseUrl;
     var undefinedVar = undefined;
-    var documentElement = doc.documentElement || {};
+    var notSending = "Not sending requests ";
     var language = "language";
     var Height = "Height";
     var Width = "Width";
@@ -35,14 +38,12 @@
     var offsetHeight = "offset" + Height;
     var clientHeight = "client" + Height;
     var clientWidth = "client" + Width;
-    var screen = window.screen;
-    var functionName = "sa_event";
-
-    var bot = /(bot|spider|crawl)/i.test(userAgent);
 
     var payload = {
-      version: 3,
+      version: version,
     };
+
+    var bot = /(bot|spider|crawl)/i.test(userAgent);
     if (bot) payload.bot = true;
 
     var options = {
