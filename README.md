@@ -1,11 +1,4 @@
-# 🏡&nbsp; [jarv.is](https://jarv.is/)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a7403a53-fd9d-44c0-a708-a84d9fc1454d/deploy-status)](https://app.netlify.com/sites/jakejarvis/deploys)
-[![View website](https://img.shields.io/badge/open%20site-jarv.is-green)](https://jarv.is/)
-[![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/jakejarvis/jarv.is)
-[![Hugo v0.68.3](https://img.shields.io/badge/hugo-v0.68.3-orange)](https://github.com/gohugoio/hugo)
-[![License](https://img.shields.io/github/license/jakejarvis/jarv.is?color=red)](LICENSE.md)
-[![Twitter Follow](https://img.shields.io/twitter/follow/jakejarvis?label=Follow&style=social)](https://twitter.com/intent/user?screen_name=jakejarvis)
+# 🏡&nbsp; [jarv.is](https://jarv.is/)&nbsp; [![Netlify](https://img.shields.io/netlify/a7403a53-fd9d-44c0-a708-a84d9fc1454d?logo=netlify&logoColor=white)](https://app.netlify.com/sites/jakejarvis/deploys) [![Hugo v0.68.3](https://img.shields.io/badge/hugo-v0.68.3-ff4088?logo=hugo&logoColor=white)](https://github.com/gohugoio/hugo) [![Licensed under CC-BY-4.0](https://img.shields.io/github/license/jakejarvis/jarv.is?color=fb7828&logo=creative-commons&logoColor=white)](LICENSE.md) [![Twitter Follow](https://img.shields.io/twitter/follow/jakejarvis?label=Follow&style=social)](https://twitter.com/intent/user?screen_name=jakejarvis)
 
 Personal website of [@jakejarvis](https://github.com/jakejarvis), created and deployed using the following:
 
