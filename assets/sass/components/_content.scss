@@ -71,12 +71,9 @@ div#content {
     }
 
     &.tweet {
-      // stylelint-disable-next-line selector-type-no-unknown
-      twitter-widget,
-      iframe.twitter-tweet {
-        margin: 0 auto;
+      .twitter-tweet-rendered {
+        margin: 1em auto;
         display: block;
-        border: 0;
       }
     }
 
