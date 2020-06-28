@@ -16,7 +16,6 @@
     var slash = "/";
     var fullApiUrl = protocol + baseUrl;
     var doc = window.document;
-    var con = window.console;
     var nav = window.navigator;
     var screen = window.screen;
     var loc = window.location;
@@ -53,10 +52,10 @@
 
     payload.hostname = options.hostname;
 
-    // A simple log function so the user knows why a request is not being send
-    var warn = function (message) {
-      if (con && con.warn) con.warn("Simple Analytics:", message);
-    };
+    // A simple log function so the user knows why a request is not being sent, uncomment for debugging
+    // var warn = function (message) {
+    //   if (console && console.warn) console.warn("Simple Analytics:", message);
+    // };
 
     var now = Date.now;
 
@@ -145,12 +144,6 @@
     // When a customer overwrites the hostname, we need to know what the original
     // hostname was to hide that domain from referrer traffic
     if (options.hostname !== locationHostname) payload.hostname_original = locationHostname;
-
-    /** unless testing **/
-    // Don't track when localhost or when it's an IP address
-    if (locationHostname.indexOf(".") == -1 || /^[0-9]+$/.test(locationHostname.replace(/\./g, "")))
-      return warn(notSending + "from " + locationHostname);
-    /** endunless **/
 
     var page = {};
     var lastPageId = uuid();
@@ -340,7 +333,7 @@
       var callback = callbackRaw instanceof Function ? callbackRaw : function () {};
 
       if (validTypes.indexOf(typeof event) < 0 && !isFunction) {
-        warn("event is not a string: " + event);
+        // warn("event is not a string: " + event);
         return callback();
       }
 
@@ -348,12 +341,12 @@
         if (isFunction) {
           event = event();
           if (validTypes.indexOf(typeof event) < 0) {
-            warn("event function output is not a string: " + event);
+            // warn("event function output is not a string: " + event);
             return callback();
           }
         }
       } catch (error) {
-        warn("in your event function: " + error.message);
+        // warn("in your event function: " + error.message);
         return callback();
       }
 
@@ -390,6 +383,6 @@
     for (var event in queue) sendEvent(queue[event]);
     /** endif **/
   } catch (e) {
-    warn(e);
+    console.warn(e);
   }
 })(window, "{{ (urls.Parse .Site.BaseURL).Host }}/sa");
