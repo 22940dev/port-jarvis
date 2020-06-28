@@ -24,7 +24,7 @@ Decisions made by the top folks at Dropbox gave me an increasingly sour taste in
 - Adding a [3-device limit](https://help.dropbox.com/account/computer-limit) for free accounts, triggering another hostage negotiation resulting in me upgrading to Pro.
 - Continuously forcing [bloated updates](https://www.theverge.com/2019/6/11/18661673/new-dropbox-desktop-app-google-docs-slack-atlassian) to their once-simple macOS app down users' throats, to the point where ["the new Dropbox"](https://blog.dropbox.com/topics/product-tips/new-dropbox) was consistently eating up _over a gigabyte of RAM_ and a non-negligible chunk of CPU usage thanks to an entire web browser being embedded into it:
 
-{{< tweet 1138686582859239425 >}}
+{{< tweet "https://twitter.com/sandofsky/status/1138686582859239425" >}}
 
 - Explicitly [dropping support for symlinking](https://news.ycombinator.com/item?id=20844363) (aka making aliases to) files outside of the literal `~/Dropbox` folder, which was incredibly helpful for nerds — once their main audience and biggest cheerleaders — with things like [dotfiles](https://github.com/jakejarvis/dotfiles) and Git repositories.
 - ...and as a bonus, making the process of canceling Dropbox Pro incredibly convoluted, annoying, and sketchy. Here's a video demonstration via [Justin Dunham](https://twitter.com/jwyattd):

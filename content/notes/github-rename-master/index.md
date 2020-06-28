@@ -19,7 +19,7 @@ In the midst of this year's long-overdue support of the [**Black Lives Matter**]
 
 When somebody pointed out the negative connotations of Git projects being created with a branch named `master` by default, and the possibility of this making minorities feel even more unwelcome in an industry already [lacking diversity](https://www.informationisbeautiful.net/visualizations/diversity-in-tech/), GitHub CEO [Nat Friedman](https://github.com/nat) quietly [announced a plan](https://twitter.com/natfriedman/status/1271253144442253312) to change this on Twitter:
 
-{{< tweet 1271253144442253312 >}}
+{{< tweet "https://twitter.com/natfriedman/status/1271253144442253312" >}}
 
 I think many people misunderstood this tweet to mean GitHub will forcefully rename the `master` branch of all existing projects, which would break _millions_ of programmers' workflows. If anything, it's more likely a name such as `main` will replace `master` as **the default when creating a new repository**, but that change hasn't been made yet. [GitLab is also discussing](https://gitlab.com/gitlab-org/gitlab/-/issues/222204) a similar switch to `main` as the default name. (Ideally, these changes would be made in tandem with the actual Git codebase, too. [But this doesn't seem likely.](https://lore.kernel.org/git/CAOAHyQwyXC1Z3v7BZAC+Bq6JBaM7FvBenA-1fcqeDV==apdWDg@mail.gmail.com/t/))
 

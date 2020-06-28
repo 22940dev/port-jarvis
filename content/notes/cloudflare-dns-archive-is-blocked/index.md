@@ -24,7 +24,7 @@ A [recent post on Hacker News](https://news.ycombinator.com/item?id=19828317) po
 
 In other words, Archive.is's nameservers throw a hissy fit and return a bogus IP when Cloudflare **doesn't** leak your geolocation info to them via the optional [EDNS client subnet feature](https://tools.ietf.org/html/rfc7871). The owner of Archive.is has plainly admitted this with [a questionable claim](https://twitter.com/archiveis/status/1018691421182791680) (in my opinion) about the lack of EDNS information causing him "so many troubles."
 
-{{< tweet 1018691421182791680 >}}
+{{< tweet "https://twitter.com/archiveis/status/1018691421182791680" >}}
 
 He's even gone as far as [replying to support requests](https://community.cloudflare.com/t/archive-is-error-1001/18227/7) by telling people to switch to Google's DNS, which — surprise! — offers your location to nameservers [with pleasure](https://developers.google.com/speed/public-dns/docs/ecs).
 
