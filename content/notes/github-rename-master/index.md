@@ -39,11 +39,14 @@ git branch -m master main
 
 ### 2. Push the new branch to GitHub:
 
-This one should be familiar. `-u` sets the new branch as the default locally at the same time.
+The first command should be familiar. `-u` sets the new branch as the local default at the same time, and the second line ensures our local `HEAD` points to our new branch on GitHub.
 
 ```bash {linenos=false}
 git push -u origin main
+git remote set-head origin main
 ```
+
+You can verify this worked by running `git branch -r`. You should see something like `origin/HEAD -> origin/main`.
 
 ### 3. Change the default branch in your repository's settings:
 
@@ -83,6 +86,6 @@ git config --global alias.new '!git init && git symbolic-ref HEAD refs/heads/mai
 
 ---
 
-This may be a small gesture, but anything we can do to make even one more volunteer feel more welcome in the OSS community will **always** be worth the extra 10 to 15 minutes of inconvenience on my end. ✊🏾
+This may be a small gesture, but anything we can do to make even one more volunteer feel more welcome in the OSS community will _always_ be worth the extra 10 to 15 minutes of inconvenience on my end. ✊🏾
 
 And while we're at it, Nat... **It's time to finally [#DropICE](https://github.com/drop-ice/dear-github-2.0).** 🧊
