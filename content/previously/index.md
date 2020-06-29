@@ -74,6 +74,8 @@ css: |
   </figcaption>
 </figure>
 
+<!-- markdownlint-enable MD033 -->
+
 ---
 
 {{< image src="images/2002_02.png">}}

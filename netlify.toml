@@ -125,19 +125,10 @@
   to = "https://queue.simpleanalyticscdn.com/append:splat"
   status = 200
 [[redirects]]
-  from = "/sa/post*"
-  to = "https://api.simpleanalytics.io/post:splat"
-  status = 200
-[[redirects]]
   # This noscript pixel needs to pass unknown arguments along for AMP pages:
   # https://amp.dev/documentation/components/amp-pixel/
   from = "/sa/noscript.gif*"
   to = "https://queue.simpleanalyticscdn.com/noscript.gif:splat"
-  status = 200
-[[redirects]]
-  # Same noscript.gif as above but with no arguments, except `ignore-dnt`.
-  from = "/sa/manual.gif"
-  to = "https://queue.simpleanalyticscdn.com/noscript.gif?ignore-dnt=true"
   status = 200
 
 # More miscellaneous mirrors/redirects:

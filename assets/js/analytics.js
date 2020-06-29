@@ -1,5 +1,5 @@
-/*! Simple Analytics - Privacy friendly analytics (docs.simpleanalytics.com/script; 2020-06-22; 3cf3) */
-// https://github.com/simpleanalytics/scripts/blob/eac9823da1fe92c0bca65a041df1f005ff860f1f/src/default.js
+/*! Simple Analytics - Privacy friendly analytics (docs.simpleanalytics.com/script; 2020-06-29; bb25) */
+// https://github.com/simpleanalytics/scripts/blob/21632405db31416d07006226cfb52cd348f73691/src/default.js
 
 (function (window, baseUrl) {
   if (!window) return;
@@ -8,7 +8,7 @@
     // Generate the needed variables, this seems like a lot of repetition, but it
     // makes our script availble for multple destination which prevents us to
     // need multiple scripts. The minified version stays small.
-    var version = 3;
+    var version = 4;
     var functionName = "sa_event";
     var pageviewsText = "pageview";
     var https = "https:";
@@ -28,7 +28,6 @@
     var stringify = JSON.stringify;
     var thousand = 1000;
     var undefinedVar = undefined;
-    var notSending = "Not sending requests ";
     var language = "language";
     var Height = "Height";
     var Width = "Width";
@@ -42,13 +41,13 @@
       version: version,
     };
 
-    var bot = /(bot|spider|crawl)/i.test(userAgent);
-    if (bot) payload.bot = true;
-
     var options = {
       hostname: locationHostname,
       functionName: functionName,
     };
+
+    var bot = /(bot|spider|crawl)/i.test(userAgent);
+    if (bot) payload.bot = true;
 
     payload.hostname = options.hostname;
 

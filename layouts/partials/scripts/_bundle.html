@@ -1,10 +1,10 @@
+{{/* only parse and append analytics script on production site */}}
+{{- $includeAnalytics := eq hugo.Environment "production" -}}
+
 {{- $darkmode := resources.Get "js/dark-mode.js" | resources.ExecuteAsTemplate "js/dark-mode.js" . -}}
 {{- $twemoji := resources.Get "js/vendor/twemoji.js" | resources.ExecuteAsTemplate "js/vendor/twemoji.js" . -}}
 
 {{- $bundle := slice $darkmode $twemoji -}}
-
-{{/* only parse and append analytics script on production site */}}
-{{- $includeAnalytics := eq hugo.Environment "production" -}}
 
 {{- if $includeAnalytics }}
   {{- $analytics := resources.Get "js/analytics.js" | resources.ExecuteAsTemplate "js/analytics.js" . }}
@@ -13,8 +13,3 @@
 
 {{- $js := $bundle | resources.Concat "/js/app.js" -}}
 <script async defer src="{{ $js.Permalink }}"></script>
-
-{{/* proxy to simple analytics noscript on production */}}
-{{- if $includeAnalytics }}
-  <noscript><img src="{{ "sa/manual.gif" | absURL }}" alt=""></noscript>
-{{ end -}}

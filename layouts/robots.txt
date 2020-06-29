@@ -1,14 +1,10 @@
 User-Agent: *
 {{- if eq hugo.Environment "production" }}
 Allow: /.well-known/amphtml/apikey.pub
-Disallow: /privacy/
-Disallow: /license/
-Disallow: /humans.txt
 Disallow: /403.html
 Disallow: /404.html
+Disallow: /sa/
 Disallow: /y2k/
-Disallow: /candies/
-Disallow: /comp20/
 Sitemap: {{ "sitemap.xml" | absURL }}
 {{- else }}
 Disallow: /

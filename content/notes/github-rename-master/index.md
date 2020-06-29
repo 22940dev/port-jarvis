@@ -17,7 +17,7 @@ draft: false
 
 In the midst of this year's long-overdue support of the [**Black Lives Matter**](https://blacklivesmatters.carrd.co/) movement and calls to action in the US and around the world, a [new spotlight](https://mail.gnome.org/archives/desktop-devel-list/2019-May/msg00066.html) has been placed on unchecked invocations of racially charged language in the computer science world, no matter how big or small — like the long-standing and, until recently, widely accepted terms ["master" and "slave"](https://tools.ietf.org/id/draft-knodel-terminology-00.html#master-slave) as an oppressive metaphor for ownership/importance.
 
-When somebody pointed out the negative connotations of Git projects being created with a branch named `master` by default, and the possibility of this making minorities feel even more unwelcome in an industry already [lacking diversity](https://www.informationisbeautiful.net/visualizations/diversity-in-tech/), GitHub CEO [Nat Friedman](https://github.com/nat) quietly [announced a plan](https://twitter.com/natfriedman/status/1271253144442253312) to change this on Twitter:
+When somebody pointed out the negative connotations of Git projects being created with a branch named `master` by default, and the possibility of this making minorities feel even more unwelcome in an industry already [lacking diversity](https://www.informationisbeautiful.net/visualizations/diversity-in-tech/), GitHub CEO [Nat Friedman](https://github.com/nat) quietly [announced a plan](https://twitter.com/natfriedman/status/1271253144442253312) to change this on Twitter (ignore the replies for your sanity):
 
 {{< tweet "https://twitter.com/natfriedman/status/1271253144442253312" >}}
 
@@ -75,7 +75,7 @@ Unfortunately, GitHub won't redirect links containing `master` to the new branch
 
 None of this will work on a brand new repository with zero commits. But we can hack around this limitation pretty easily...
 
-You can create a [Git alias](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases) in your local environment's `.gitconfig` to make `main` the default branch name for new repositories. Git doesn't let you override native commands like `git init`, so we'll create our own `git new` command instead ([h/t @johnsyweb](https://twitter.com/johnsyweb/status/1269881549056438272)):
+You can create a [Git alias](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases) in your local environment's `.gitconfig` to make `main` the default branch name for new repositories. Git doesn't let you override some native commands like `git init`, so we'll create our own `git new` command instead ([h/t @johnsyweb](https://twitter.com/johnsyweb/status/1269881549056438272)):
 
 ```bash {linenos=false}
 git config --global alias.new '!git init && git symbolic-ref HEAD refs/heads/main'

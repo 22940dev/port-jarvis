@@ -1,5 +1,5 @@
 ---
-title: "Privacy Policy 🕵️"
+title: "🕵️ Privacy Policy"
 url: /privacy
 layout: etc
 sitemap:
