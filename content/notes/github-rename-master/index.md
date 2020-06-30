@@ -89,3 +89,14 @@ git config --global alias.new '!git init && git symbolic-ref HEAD refs/heads/mai
 This may be a small gesture, but anything we can do to make even one more volunteer feel more welcome in the OSS community will _always_ be worth the extra 10 to 15 minutes of inconvenience on my end. ✊🏾
 
 And while we're at it, Nat... **It's time to finally [#DropICE](https://github.com/drop-ice/dear-github-2.0).** 🧊
+
+---
+
+### Further reading:
+
+- [_Master/slave (technology)_ on Wikipedia](<https://en.wikipedia.org/wiki/Master/slave_(technology)>)
+- [History of "master" in BitKeeper → Git](https://mail.gnome.org/archives/desktop-devel-list/2019-May/msg00066.html)
+- [More great research into context of "master/slave" in BitKeeper](https://twitter.com/jpaulreed/status/1272038656799211521)
+- [Proposal to change "master" default on Git mailing list](https://lore.kernel.org/git/CAOAHyQwyXC1Z3v7BZAC+Bq6JBaM7FvBenA-1fcqeDV==apdWDg@mail.gmail.com/t/) (it did **not** go well...)
+- [Django removes "master/slave" terminology (2014)](https://github.com/django/django/pull/2692)
+- [Black Tech for Black Lives](https://www.blacktechforblacklives.com/)
