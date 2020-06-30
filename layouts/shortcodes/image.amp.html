@@ -13,4 +13,4 @@
   {{ if .Get "link" }}</a>{{ end }}
 </p>
 
-{{- with .Inner }}<p class="caption">{{ . | $.Page.RenderString | safeHTML }}</p>{{ end -}}
+{{ with .Inner }}<p class="caption">{{ . | $.Page.RenderString | safeHTML }}</p>{{ end }}

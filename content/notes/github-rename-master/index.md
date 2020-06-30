@@ -1,5 +1,5 @@
 ---
-title: "How To: Safely Rename 'master' Branch on GitHub ✊🏾"
+title: "How To: Safely Rename `master` Branch on GitHub ✊🏾"
 date: 2020-06-28 09:28:52-0400
 description: 'Some of the most popular open-source projects are renaming their default branch from "master" on GitHub. Here''s how to do so, and safely.'
 tags:
@@ -39,7 +39,7 @@ git branch -m master main
 
 ### 2. Push the new branch to GitHub:
 
-The first command should be familiar. `-u` sets the new branch as the local default at the same time, and the second line ensures our local `HEAD` points to our new branch on GitHub.
+The first command is probably familiar. `-u` sets the new branch as the local default at the same time, and the second line ensures our local `HEAD` points to our new branch on GitHub.
 
 ```bash {linenos=false}
 git push -u origin main
