@@ -30,12 +30,23 @@ main#home {
   }
 
   sup {
-    font-size: 0.6em;
-    letter-spacing: -0.005em;
+    letter-spacing: normal;
     line-height: 0;
     position: relative;
     top: -0.5em;
-    vertical-align: middle;
+    vertical-align: baseline; // required for same position in chrome vs. firefox
+
+    &#key {
+      font-family: $webfont-mono;
+      font-size: 0.65em;
+      word-spacing: -0.3em;
+      margin-right: 0.1em;
+
+      img.emoji {
+        vertical-align: -0.15em; // magic number to align with text :\
+        padding: 0;
+      }
+    }
   }
 
   img#me {
