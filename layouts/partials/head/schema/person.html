@@ -17,7 +17,9 @@
   "sameAs": [
     {{ $.Site.BaseURL }},
     {{ with .github }}{{ printf "%s%s" "https://github.com/" . }},{{ end }}
+    {{ with .keybase }}{{ printf "%s%s" "https://keybase.io/" . }},{{ end }}
     {{ with .twitter }}{{ printf "%s%s" "https://twitter.com/" . }},{{ end }}
+    {{ with .medium }}{{ printf "%s%s" "https://medium.com/@" . }},{{ end }}
     {{ with .linkedin }}{{ printf "%s%s%s" "https://www.linkedin.com/in/" . "/" }},{{ end }}
     {{ with .facebook }}{{ printf "%s%s" "https://www.facebook.com/" . }},{{ end }}
     {{ with .instagram }}{{ printf "%s%s%s" "https://www.instagram.com/" . "/" }},{{ end }}

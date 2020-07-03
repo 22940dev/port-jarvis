@@ -4,7 +4,7 @@ url: /license
 layout: etc
 sitemap:
   changefreq: never
-  priority: 0.1
+  priority: 0.0
 ---
 
 Unless otherwise noted, content on this website is published under the [**Creative Commons Attribution 4.0 International License**](https://creativecommons.org/licenses/by/4.0/) (CC-BY-4.0), which means that you can copy, redistribute, remix, transform, and build upon the content for any purpose as long as you give appropriate credit.

@@ -39,13 +39,15 @@ disableAliases = true
   image = "img/me_large.jpg"  # must be in assetDir
   jobTitle = "Front-End Web Developer"
   email = "jake@jarv.is"
+  github = "jakejarvis"
+  keybase = "jakejarvis"
   twitter = "jakejarvis"
   twitterID = "229769022"
-  github = "jakejarvis"
+  medium = "jakejarvis"
+  linkedin = "jakejarvis"
   facebook = "jakejarvis"
   facebookID = "1329090853"
   instagram = "jakejarvis"
-  linkedin = "jakejarvis"
   mastodon = "mastodon.social/@jakejarvis"
 
 [module]
@@ -130,7 +132,7 @@ disableAliases = true
 
 [sitemap]
   filename = "sitemap.xml"
-  priority = 0.5
+  priority = 0.7
 
 [imaging]
   # options for resampling filters:

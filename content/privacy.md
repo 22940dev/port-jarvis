@@ -4,7 +4,7 @@ url: /privacy
 layout: etc
 sitemap:
   changefreq: never
-  priority: 0.1
+  priority: 0.0
 ---
 
 Okay, this is an easy one. 😉

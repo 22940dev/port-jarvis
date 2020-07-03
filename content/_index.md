@@ -1,10 +1,10 @@
 ---
 title: "Jake Jarvis – Front-End Web Developer in Boston, MA"
-date: 2020-06-30 09:12:37-0400
+date: 2020-07-03 10:34:05-0400
 type: home
 sitemap:
   changefreq: weekly
-  priority: 0.9
+  priority: 1.0
 ---
 
 {{< portrait.inline >}}
@@ -35,4 +35,4 @@ Over the years, my side projects
 
 You can find some of my work on <a href="https://github.com/jakejarvis" title="Jake Jarvis on GitHub" id="github" target="_blank" rel="me noopener">GitHub</a> or <a href="https://www.linkedin.com/in/jakejarvis/" title="Jake Jarvis on LinkedIn" id="linkedin" target="_blank" rel="me noopener">LinkedIn</a>, my adventures on <a href="https://twitter.com/jakejarvis" title="Jake Jarvis on Twitter" id="twitter" target="_blank" rel="me noopener">Twitter</a>, <a href="https://www.facebook.com/jakejarvis" title="Jake Jarvis on Facebook" id="facebook" target="_blank" rel="me noopener">Facebook</a>, <a href="https://www.instagram.com/jakejarvis/" title="Jake Jarvis on Instagram" id="instagram" target="_blank" rel="me noopener">Instagram</a>, or <a href="https://mastodon.social/@jakejarvis" title="Jake Jarvis on Mastodon" id="mastodon" target="_blank" rel="me noopener">Mastodon</a>, and my old-school <a href="/resume.pdf" title="View PDF Resume" id="resume">PDF resume here</a>.
 
-I'd love to hear from you via <a href="&#x6D;&#x61;&#x69;&#x6C;&#x74;&#x6F;&#x3A;&#x6A;&#x61;&#x6B;&#x65;&#x40;&#x6A;&#x61;&#x72;&#x76;&#x2E;&#x69;&#x73;" title="Send Email" id="email">email</a> <sup id="key"><a class="no-underline" href="/jarvis.asc" title="My Public PGP Key" id="pgp" target="_blank" rel="pgpkey authn noopener">🔐 2B0C 9CF2 51E6 9A39</a></sup>, <a href="https://twitter.com/messages/compose?recipient_id=229769022" title="Send Direct Message on Twitter" id="dm" target="_blank" rel="noopener">DM</a>, or <a href="sms:+1-617-917-3737" title="Send SMS: +1 (617) 917-3737" id="sms">text</a>!
+I'd love to hear from you via <a href="&#x6D;&#x61;&#x69;&#x6C;&#x74;&#x6F;&#x3A;&#x6A;&#x61;&#x6B;&#x65;&#x40;&#x6A;&#x61;&#x72;&#x76;&#x2E;&#x69;&#x73;" title="Send Email" id="email">email</a> <sup id="key"><a class="no-underline" href="https://keybase.io/jakejarvis/pgp_keys.asc?fingerprint=3bc6e5776bf379d36f6714802b0c9cf251e69a39" title="My Public Key" id="pgp" target="_blank" rel="pgpkey authn noopener">🔐 2B0C 9CF2 51E6 9A39</a></sup>, <a href="https://twitter.com/messages/compose?recipient_id=229769022" title="Send Direct Message on Twitter" id="dm" target="_blank" rel="noopener">DM</a>, or <a href="sms:+1-617-917-3737" title="Send SMS: +1 (617) 917-3737" id="sms">text</a>!
