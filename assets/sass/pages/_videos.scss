@@ -20,8 +20,8 @@ main#video {
     line-height: 1.5;
     margin: 1.25em 1em 0 1em;
 
-    @include themed() {
-      color: t(medium-light);
+    @include colors() {
+      color: c(medium-light);
     }
 
     a {

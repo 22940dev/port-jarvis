@@ -140,6 +140,7 @@ A _very_ barebones example is embedded above ([view the source here](https://git
 <!-- prettier-ignore -->
 ```html
 <!doctype html>
+<html>
 <head>
   <style>
     /* rules that apply globally */
@@ -178,12 +179,11 @@ A _very_ barebones example is embedded above ([view the source here](https://git
 </head>
 <body class="light">
   <h1>Welcome to the dark side 🌓</h1>
-
   <p><a href="https://github.com/jakejarvis/dark-mode-example">View the source code.</a></p>
 
   <button class="dark-mode-toggle">💡 Click to see the light... or not.</button>
 
-  <script async defer src="dark-mode.min.js"></script>
+  <script src="dark-mode.min.js"></script>
 </body>
 </html>
 ```

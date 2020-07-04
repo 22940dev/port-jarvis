@@ -7,8 +7,8 @@ header {
   box-sizing: border-box;
   border-bottom: 1px solid;
 
-  @include themed() {
-    border-color: t(kinda-light);
+  @include colors() {
+    border-color: c(kinda-light);
   }
 
   nav {
@@ -24,8 +24,8 @@ header {
       display: flex;
       align-items: center;
 
-      @include themed() {
-        color: t(medium-dark);
+      @include colors() {
+        color: c(medium-dark);
       }
 
       h1#name {
@@ -42,8 +42,8 @@ header {
 
       // mix up logo colors on hover
       &:hover {
-        @include themed() {
-          color: t(links);
+        @include colors() {
+          color: c(links);
         }
 
         svg {
@@ -78,15 +78,15 @@ header {
           display: inline-block;
           transition: transform 0.15s ease-in-out;
 
-          @include themed() {
-            color: t(medium-dark);
+          @include colors() {
+            color: c(medium-dark);
           }
 
           &:hover {
             transform: scale(1.15);
 
-            @include themed() {
-              color: t(links);
+            @include colors() {
+              color: c(links);
             }
           }
 
@@ -102,7 +102,10 @@ header {
           }
         }
 
-        &:first-child {
+        // no margin on the first child to make more room on narrow windows (before responsiveness kicks in).
+        // last child is the dark mode toggle -- margin is set directly on it in case it's hidden (if JS is disabled).
+        &:first-child,
+        &:last-child {
           margin-left: 0;
         }
       }
@@ -111,13 +114,13 @@ header {
       button.dark-mode-toggle {
         background-repeat: no-repeat;
         background-size: 100% 100%;
-        display: block;
         height: 1.5em;
         width: 1em;
+        margin-left: 1.7em;
         cursor: pointer;
 
-        // hide by default in case user's JS is disabled
-        visibility: hidden;
+        // hidden by default in case user's JS is disabled, switches to `block` onload in dark-mode.js
+        display: none;
       }
     }
   }
@@ -169,6 +172,7 @@ header {
           height: 1.025em;
           width: 0.75em;
           margin-top: 0.15em;
+          margin-left: 1.15em;
         }
       }
     }

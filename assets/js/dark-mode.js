@@ -61,7 +61,7 @@
   // don't freak out if page happens not to have a toggle
   if (toggle) {
     // toggle re-appears now that we know user has JS enabled
-    toggle.style.visibility = "visible";
+    toggle.style.display = "block";
 
     // handle toggle click
     toggle.addEventListener(

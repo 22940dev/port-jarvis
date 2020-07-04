@@ -6,7 +6,9 @@ module.exports = {
     require("autoprefixer")(),
     require("postcss-focus")(),
     require("postcss-color-rgba-fallback")({
-      properties: [ "background-image" ]
+      properties: [
+        "background-image"
+      ]
     }),
     require("postcss-clean")({
       compatibility: "*",

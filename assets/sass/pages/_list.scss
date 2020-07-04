@@ -32,8 +32,8 @@ main#list {
         width: 5.25em;
         flex-shrink: 0;
 
-        @include themed() {
-          color: t(medium);
+        @include colors() {
+          color: c(medium);
         }
       }
 

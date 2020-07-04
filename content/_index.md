@@ -12,7 +12,7 @@ sitemap:
 <img id="me" src="{{ $photoImg.Permalink }}" width="{{ div $photoImg.Width 2 }}" height="{{ div $photoImg.Height 2 }}" alt="Photo of Jake Jarvis">
 {{</ portrait.inline >}}
 
-## Hi there! I'm Jake. <span class="wave">&#x1F44B;</span>
+## Hi there! I'm Jake. <span class="wave">👋</span>
 
 ### I'm a frontend web developer based in <a href="https://www.youtube-nocookie.com/embed/rLwbzGyC6t4?hl=en&amp;fs=1&amp;showinfo=1&amp;rel=0&amp;iv_load_policy=3" title="&quot;Boston Accent Trailer - Late Night with Seth Meyers&quot; on YouTube" id="boston" target="_blank" rel="noopener">Boston</a>.
 

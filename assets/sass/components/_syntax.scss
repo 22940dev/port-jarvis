@@ -5,13 +5,14 @@ code {
   font-family: $webfont-mono;
   font-size: 0.95em;
   letter-spacing: 0;
-  page-break-inside: avoid;
+  page-break-inside: avoid; // stylelint-disable-line plugin/no-unsupported-browser-features
 }
 
 // inline code in paragraphs/elsewhere (single backticks)
 :not(pre) > code {
   padding: 0.15em 0.3em;
   margin: 0 0.1em;
+  border: 1px solid;
 }
 
 // allow for inline code in post/page titles -- override above styles and match title
@@ -28,7 +29,6 @@ div.highlight {
   line-height: 1.7;
   max-width: 100%;
   overflow-x: scroll;
-  object-fit: scale-down;
   margin: 1em 0;
   border: 1px solid;
 
@@ -58,7 +58,7 @@ div.highlight {
   // line numbers
   .ln,
   .lnt {
-    user-select: none;
+    user-select: none; // stylelint-disable-line plugin/no-unsupported-browser-features
   }
   .gh,
   .gi,
@@ -86,7 +86,7 @@ body.light {
   :not(pre) > code {
     color: #313131;
     background-color: #fbfbfb;
-    border: 1px solid #d5d5d5;
+    border-color: #d5d5d5;
   }
 
   .chroma {
@@ -161,7 +161,7 @@ body.dark {
   :not(pre) > code {
     color: #dfdfdf;
     background-color: #1e1e1e;
-    border: 1px solid #535353;
+    border-color: #535353;
   }
 
   .chroma {

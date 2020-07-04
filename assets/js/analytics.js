@@ -65,7 +65,7 @@
 
       try {
         return emptyUUID.replace(uuidRegex, function (c) {
-          return (c ^ (cryptoObject.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16);
+          return (c ^ (cryptoObject.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16); // eslint-disable-line compat/compat
         });
       } catch (error) {
         return emptyUUID.replace(uuidRegex, function (c) {
@@ -135,7 +135,7 @@
     // This code could error on not having resolvedOptions in the Android Webview, that's why we use try...catch
     var timezone;
     try {
-      timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      timezone = Intl.DateTimeFormat().resolvedOptions().timeZone; // eslint-disable-line compat/compat
     } catch (e) {
       /* Do nothing */
     }
@@ -294,7 +294,7 @@
       }
 
       // If a user does refresh we need to delete the referrer because otherwise it count double
-      var perf = window.performance;
+      var perf = window.performance; // eslint-disable-line compat/compat
       var navigation = "navigation";
 
       // Check if back, forward or reload buttons are being used in modern browsers

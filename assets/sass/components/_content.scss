@@ -19,8 +19,8 @@ div#content {
     padding-bottom: 0.25em;
     border-bottom: 1px solid;
 
-    @include themed() {
-      border-color: t(kinda-light);
+    @include colors() {
+      border-color: c(kinda-light);
     }
   }
 
@@ -45,8 +45,8 @@ div#content {
     figcaption {
       font-size: 0.95em;
 
-      @include themed() {
-        color: t(medium);
+      @include colors() {
+        color: c(medium);
       }
     }
   }
