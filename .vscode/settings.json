@@ -15,10 +15,17 @@
   "prettier.printWidth": 120,
   "prettier.requireConfig": true,
   "prettier.useEditorConfig": false,
-  "scss.lint.important": "ignore",
-  "scss.lint.universalSelector": "ignore",
   "[markdown]": {
-    "editor.wordWrap": "on",
-    "editor.quickSuggestions": false
-  }
+    "editor.quickSuggestions": false,
+    "editor.trimAutoWhitespace": false,
+    "editor.wordWrap": "on"
+  },
+  "stylelint.packageManager": "yarn",
+  "stylelint.validate": [
+    "css",
+    "html",
+    "postcss",
+    "sass",
+    "scss"
+  ]
 }

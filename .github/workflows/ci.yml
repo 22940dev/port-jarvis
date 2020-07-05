@@ -87,7 +87,7 @@ jobs:
     - name: Install dependencies
       run: yarn install --no-ignore-optional --frozen-lockfile
     - name: Audit dependencies
-      run: yarn audit
+      run: yarn audit || true
       continue-on-error: true
     - name: Lint
       run: yarn lint

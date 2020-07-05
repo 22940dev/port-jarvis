@@ -18,38 +18,43 @@ If you examine [my homepage](/) long enough, you might notice the 👋 hand emoj
 
 Below are the code snippets you can grab and customize to make your own ["waving hand" 👋](https://emojipedia.org/waving-hand-sign/) emojis **_actually wave_**, and a [CodePen playground](https://codepen.io/jakejarvis/pen/pBZWZw) for live testing.
 
+## Demo
+
 {{< codepen username="jakejarvis" id="pBZWZw" left-tab="css" right-tab="result" >}}
 
-## CSS:
+## CSS
 
 <!-- prettier-ignore -->
 ```css
-span.wave {
-  animation-name: wave-animation;    /* Refers to the name of your @keyframes element below */
-  animation-duration: 2.5s;          /* Change to speed up or slow down */
-  animation-iteration-count: infinite;    /* Never stop waving :) */
-  transform-origin: 70% 70%;         /* Pivot around the bottom-left palm */
+.wave {
+  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
   display: inline-block;
 }
 
 @keyframes wave-animation {
-    0% { transform: rotate(  0.0deg) }
-   10% { transform: rotate(-10.0deg) }    /* The following four values can be played with to make the waving more or less extreme */
-   20% { transform: rotate( 12.0deg) }
-   30% { transform: rotate(-10.0deg) }
-   40% { transform: rotate(  9.0deg) }
-   50% { transform: rotate(  0.0deg) }    /* Reset for the last half to pause */
-  100% { transform: rotate(  0.0deg) }
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
 }
 ```
 
-## HTML:
+## HTML
 
 <!-- prettier-ignore -->
 ```html {linenos=false}
-<span class="wave">👋</span>
+<h1>Hi there! <span class="wave">👋</span></h1>
 ```
 
-That's it! More skin tones can be [found on 📕Emojipedia](https://emojipedia.org/search/?q=waving+hand).
+---
+
+That's it! More hands and skin tones can be [found on 📕 Emojipedia](https://emojipedia.org/search/?q=waving+hand).
 
 ### <span class="wave">👋🏼</span> Toodles!
