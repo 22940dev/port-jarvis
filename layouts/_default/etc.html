@@ -1,9 +1,9 @@
 {{ define "main" }}
-<main id="etc">
+<section class="page" id="etc">
   <h1><a class="no-underline" href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
 
   <div id="content">
-{{ .Content }}
+    {{ .Content }}
   </div>
-</main>
+</section>
 {{ end }}

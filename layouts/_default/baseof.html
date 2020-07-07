@@ -6,11 +6,11 @@
   <head>
 {{ partial "head/_head" . }}
   </head>
-  <body class="light">
+  <body class="{{ .Page.Kind }} light">
 {{ partialCached "page/header" . }}
-<div id="wrap">
+<main>
 {{ block "main" . }}{{ end }}
-</div>
+</main>
 {{ partial "page/footer" . }}
 {{ partial "scripts/_bundle" . -}}
 {{ partial "scripts/shortcodes" . -}}

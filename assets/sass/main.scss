@@ -16,7 +16,8 @@ $max-width: unquote($max-width);
 @import "abstracts/themes";
 
 // Global Styles
-@import "components/fonts";
+@import "components/reset";
+@import "components/typography";
 @import "components/global";
 @import "components/header";
 @import "components/footer";

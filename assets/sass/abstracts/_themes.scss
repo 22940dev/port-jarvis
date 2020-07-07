@@ -3,8 +3,8 @@
 // Dark & Light Themes
 $themes: (
   light: (
-    background: #ffffff,
-    background-top: #fcfcfc,
+    background-inner: #ffffff,
+    background-outer: #fcfcfc,
     text: #202020,
     medium-dark: #515151,
     medium: #5e5e5e,
@@ -16,8 +16,8 @@ $themes: (
     links: #0e6dc2,
   ),
   dark: (
-    background: #272727,
-    background-top: #1e1e1e,
+    background-inner: #272727,
+    background-outer: #1e1e1e,
     text: #f7f7f7,
     medium-dark: #d7d7d7,
     medium: #b1b1b1,

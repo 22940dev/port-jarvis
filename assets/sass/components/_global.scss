@@ -14,7 +14,7 @@ body {
   // manually setting light/dark mode backgrounds and bulb icon
   // really just the color of header & footer
   &.light {
-    background-color: map-get(map-get($themes, "light"), "background-top");
+    background-color: map-get(map-get($themes, "light"), "background-outer");
 
     button.dark-mode-toggle {
       background-image: url($icon-bulb-on);
@@ -22,7 +22,7 @@ body {
   }
 
   &.dark {
-    background-color: map-get(map-get($themes, "dark"), "background-top");
+    background-color: map-get(map-get($themes, "dark"), "background-outer");
 
     button.dark-mode-toggle {
       background-image: url($icon-bulb-off);
@@ -30,7 +30,16 @@ body {
   }
 }
 
+// stretch background for entire width of content area
 main {
+  width: 100%;
+
+  @include colors() {
+    background-color: c(background-inner);
+  }
+}
+
+section.page {
   max-width: $max-width;
   margin: 0 auto;
   padding-left: 1.5em;
@@ -118,6 +127,7 @@ img.emoji {
   padding: 0 0.09em;
   vertical-align: -0.18em;
   border: 0;
+  display: inline-block;
 
   // have cursor act like it's hovering a regular unicode emoji, especially since twemojis can still be copied/pasted
   cursor: text;
@@ -125,15 +135,6 @@ img.emoji {
 // manually unset cursor when emoji's in a link, otherwise it'll keep text cursor set above
 a img.emoji {
   cursor: inherit;
-}
-
-// white background for entire width content area
-div#wrap {
-  width: 100%;
-
-  @include colors() {
-    background-color: c(background);
-  }
 }
 
 // Responsive

@@ -12,7 +12,7 @@ module.exports = {
     }),
     require("postcss-clean")({
       compatibility: "*",
-      level: 0,
+      level: 1,
       format: {
         breaks: {
           afterAtRule: true,

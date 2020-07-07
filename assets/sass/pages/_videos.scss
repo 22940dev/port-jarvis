@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // Video Styles
-main#video {
+section#video {
   padding: 1.5em 0;
   text-align: center;
 
@@ -39,7 +39,7 @@ main#video {
 
 // Responsive
 @mixin responsive--videos() {
-  main#video {
+  section#video {
     padding: 1em 0;
 
     h1 {

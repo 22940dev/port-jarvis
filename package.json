@@ -35,7 +35,11 @@
     "index": "run-s clean hugo index:**",
     "index:algolia": "npx atomic-algolia"
   },
-  "dependencies": {},
+  "dependencies": {
+    "normalize.css": "8.0.1",
+    "twemoji": "13.0.0",
+    "twemoji-parser": "13.0.0"
+  },
   "devDependencies": {
     "autoprefixer": "^9.8.4",
     "cross-env": "^7.0.2",
