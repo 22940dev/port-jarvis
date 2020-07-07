@@ -30,7 +30,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        fetch-depth: 1
+        fetch-depth: 2
         lfs: false
     - uses: actions/setup-node@v1
       with:
@@ -44,9 +44,9 @@ jobs:
       continue-on-error: true
       run: |
         lhci autorun \
-          --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.com/ \
-          --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.com/notes/netlify-analytics-review/ \
-          --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.com/notes/how-to-pull-request-fork-github/amp.html
+          --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.app/ \
+          --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.app/notes/netlify-analytics-review/ \
+          --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.app/notes/how-to-pull-request-fork-github/amp.html
     - name: Audit jarv.is
       if: "github.event_name == 'push' && github.ref == 'refs/heads/main'"
       continue-on-error: true
