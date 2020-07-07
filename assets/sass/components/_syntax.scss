@@ -1,9 +1,14 @@
 @charset "UTF-8";
 
-// all code
-code {
+code,
+pre {
   font-family: $webfont-mono;
   font-size: 0.95em;
+  letter-spacing: normal;
+}
+
+// all code
+code {
   letter-spacing: 0;
   page-break-inside: avoid; // stylelint-disable-line plugin/no-unsupported-browser-features
 }
@@ -25,15 +30,15 @@ code {
 
 // code fences
 div.highlight {
-  font-size: 0.975em;
-  line-height: 1.7;
+  line-height: 1.6;
   max-width: 100%;
   overflow-x: scroll;
   margin: 1em 0;
   border: 1px solid;
 
   pre {
-    padding-left: 1.7em;
+    padding-left: 1.5em;
+    margin: 1em 0;
   }
 }
 

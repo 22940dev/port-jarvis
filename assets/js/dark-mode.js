@@ -17,7 +17,8 @@
   var light = "light";
 
   // which class is <body> set to initially?
-  var default_theme = light;
+  // eslint-disable-next-line
+  var default_theme = "{{ .Site.Params.defaultTheme }}";
 
   // use an element with class `dark-mode-toggle` to trigger swap when clicked
   var toggle = doc.querySelector(".dark-mode-toggle");

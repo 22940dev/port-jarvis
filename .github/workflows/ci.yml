@@ -34,15 +34,17 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 12.x
-    - name: Install LHCI
-      run: npm install -g @lhci/cli
+    - name: Install Lighthouse CI
+      run: |
+        npm install -g @lhci/cli
+        lhci --version
     - name: Audit deploy preview
       if: "github.event_name == 'pull_request'"
       continue-on-error: true
       run: |
         lhci autorun --config=./.lighthouserc.json \
           --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.com/ \
-          --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.com/notes/how-to-pull-request-fork-github/ \
+          --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.com/notes/netlify-analytics-review/ \
           --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.com/notes/how-to-pull-request-fork-github/amp.html
     - name: Audit jarv.is
       if: "github.event_name == 'push' && github.ref == 'refs/heads/main'"
@@ -50,7 +52,7 @@ jobs:
       run: |
         lhci autorun --config=./.lighthouserc.json \
           --collect.url=https://jarv.is/ \
-          --collect.url=https://jarv.is/notes/how-to-pull-request-fork-github/ \
+          --collect.url=https://jarv.is/notes/netlify-analytics-review/ \
           --collect.url=https://jarv.is/notes/how-to-pull-request-fork-github/amp.html
     - name: Upload results as artifact
       uses: actions/upload-artifact@v1

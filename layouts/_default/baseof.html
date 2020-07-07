@@ -6,7 +6,7 @@
   <head>
 {{ partial "head/_head" . }}
   </head>
-  <body class="{{ .Page.Kind }} light">
+  <body class="{{ .Page.Kind }} {{ .Site.Params.defaultTheme }}">
 {{ partialCached "page/header" . }}
 <main>
 {{ block "main" . }}{{ end }}
