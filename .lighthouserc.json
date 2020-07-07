@@ -22,7 +22,8 @@
       }
     },
     "upload": {
-      "target": "temporary-public-storage"
+      "target": "lhci",
+      "serverBaseUrl": "https://powerful-falls-79142.herokuapp.com"
     }
   }
 }
