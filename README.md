@@ -18,15 +18,15 @@ I keep an ongoing list of [blog post ideas](https://github.com/jakejarvis/jarv.i
 
 ## 💾&nbsp;&nbsp;Running a local testing server
 
-### 🧶&nbsp;&nbsp;Using Yarn/NPM:
+### 🧶&nbsp;&nbsp;Using Yarn:
 
-Run `yarn install` ([Yarn must be installed](https://yarnpkg.com/en/docs/install) first, or use `npm install` if you insist) and `yarn start` (or `npm start`), then open [http://localhost:1337/](http://localhost:1337/). Pages will live-refresh when source files are changed.
+Run `yarn install` ([Yarn must be installed](https://yarnpkg.com/en/docs/install) first; NPM _should_ work at your own risk) and `yarn start`, then open [http://localhost:1337/](http://localhost:1337/). Pages will live-refresh when source files are changed.
 
 ### 🐳&nbsp;&nbsp;Using Docker:
 
 To ensure consistency and compatibility, the [`Dockerfile`](Dockerfile) in this repository will download the correct version of the Hugo Extended binary and its dependencies, and start a live testing server in a temporary container.
 
-Using Docker doesn't require Node or Yarn, but you can also use `yarn start:docker` (or `npm run start:docker`) which is simply an alias for:
+Using Docker doesn't require Node or Yarn, but you can also use `yarn start:docker` which is simply an alias for:
 
 ```bash
 docker run --rm -v $(pwd):/src -p 1337:1337 $(docker build --no-cache -q .)

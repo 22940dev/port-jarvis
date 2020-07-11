@@ -166,3 +166,8 @@ disableAliases = true
     for = "/**"
     [server.headers.values]
       Access-Control-Allow-Origin = "*"
+  # TODO: Proxy /api requests to netlify-lambda's local server for each function
+  [[server.redirects]]
+    from = "/api/**"
+    to = "http://localhost:9000/"
+    status = 200

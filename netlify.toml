@@ -1,6 +1,7 @@
 [build]
   command = "yarn build"
   publish = "public"
+  functions = ".netlify/functions"
 
 [build.environment]
   YARN_VERSION = "1.22.4"
@@ -23,19 +24,17 @@
     compress = false
 
 [context.deploy-preview]
-  command = "yarn build:preview"
-  # ignore = "git log -1 --pretty=format:'%an' | grep 'dependabot'"
+  command = "yarn build:hugo --environment development --baseURL $DEPLOY_PRIME_URL --buildDrafts --buildFuture"
 
 [context.branch-deploy]
-  command = "yarn build:preview"
+  command = "yarn build:hugo --environment development --baseURL $DEPLOY_PRIME_URL --buildDrafts --buildFuture"
 
 # https://github.com/netlify/cli/blob/master/docs/netlify-dev.md#netlifytoml-dev-block
 [dev]
   framework = "#custom"
-  command = "yarn start --baseURL=/ --appendPort=false --disableLiveReload"
-  port = 1338
+  command = "yarn start:hugo --baseURL=/ --appendPort=false --disableLiveReload"
   targetPort = 1337
-  publish = "public"
+  port = 1338
   autoLaunch = false
 
 # Cache resoures between builds:
@@ -118,18 +117,31 @@
 
 # Proxy data to Simple Analytics endpoints:
 [[redirects]]
-  from = "/sa/send*"
+  from = "/api/views/send*"
   to = "https://queue.simpleanalyticscdn.com/simple.gif:splat"
   status = 200
+  force = true
 [[redirects]]
-  from = "/sa/append*"
+  from = "/api/views/append*"
   to = "https://queue.simpleanalyticscdn.com/append:splat"
   status = 200
+  force = true
 [[redirects]]
   # This noscript pixel needs to pass unknown arguments along for AMP pages:
   # https://amp.dev/documentation/components/amp-pixel/
-  from = "/sa/noscript.gif*"
+  from = "/api/views/noscript.gif*"
   to = "https://queue.simpleanalyticscdn.com/noscript.gif:splat"
+  status = 200
+  force = true
+# TEMPORARY: Moved analytics endpoints above into /api/views
+[[redirects]]
+  from = "/sa/*"
+  to = "/api/views/:splat"
+  status = 301
+# Prettier URLs for Netlify Functions (must come after /api/views rules above)
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
   status = 200
 
 # More miscellaneous mirrors/redirects:

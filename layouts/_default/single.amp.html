@@ -297,7 +297,7 @@
 
     {{ if eq hugo.Environment "production" }}
     <!-- https://docs.simpleanalytics.com/without-javascript -->
-    <amp-pixel src="{{ "sa/noscript.gif" | absURL }}?ignore-dnt=true&hostname=CANONICAL_HOSTNAME&path=CANONICAL_PATH&referrer=DOCUMENT_REFERRER&https=true&ua=USER_AGENT&width=VIEWPORT_WIDTH&type=pageview" layout="nodisplay"></amp-pixel>
+    <amp-pixel src="{{ "api/views/noscript.gif" | absURL }}?ignore-dnt=true&hostname=CANONICAL_HOSTNAME&path=CANONICAL_PATH&referrer=DOCUMENT_REFERRER&https=true&ua=USER_AGENT&width=VIEWPORT_WIDTH&type=pageview" layout="nodisplay"></amp-pixel>
     {{ end }}
   </body>
 </html>

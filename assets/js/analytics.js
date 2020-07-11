@@ -384,4 +384,4 @@
   } catch (e) {
     console.warn(e);
   }
-})(window, "{{ (urls.Parse .Site.BaseURL).Host }}/sa");
+})(window, "{{ (urls.Parse .Site.BaseURL).Host }}/api/views");

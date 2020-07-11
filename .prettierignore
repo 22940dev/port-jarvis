@@ -1,5 +1,6 @@
 # Hugo stuff that doesn't play well with Prettier
 assets/**/vendor/
+data/
 layouts/
 static/
 

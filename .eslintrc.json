@@ -10,5 +10,12 @@
     "browser": true,
     "es6": true
   },
+  "overrides": [{
+    "files": ["functions/**.js"],
+    "parserOptions": {
+      "ecmaVersion": 8,
+      "sourceType": "module"
+    }
+  }],
   "rules": {}
 }

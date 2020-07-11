@@ -96,7 +96,7 @@ jobs:
       run: yarn lint
       continue-on-error: true
     - name: Build
-      run: yarn build:preview
+      run: yarn build:hugo --environment development --baseURL / --buildDrafts --buildFuture
     - name: Percy snapshots
       # don't run for all of dependabot's PRs -- I'm using the free plan...
       if: "!contains(github.actor, '[bot]')"
