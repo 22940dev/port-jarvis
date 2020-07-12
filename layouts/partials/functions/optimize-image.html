@@ -3,7 +3,7 @@
 {{ $original := .Page.Resources.GetMatch (.Get "src") }}
 {{ .Scratch.Set "image" $original }}
 
-{{ $setWidth := .Site.Params.maxWidth }}
+{{ $setWidth := .Site.Params.Theme.maxWidth }}
 
 {{ if .Get "width" }}
   {{ $setWidth = (int (.Get "width")) }}

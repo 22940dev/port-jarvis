@@ -6,8 +6,7 @@
   "@id": {{ path.Join $.Site.BaseURL "#author" }},
   "name": {{ .name }},
   "url": {{ $.Site.BaseURL }},
-  "description": {{ $.Site.Params.description }},
-  {{ with .jobtitle }}"jobTitle": {{ . }},{{ end }}{{ with $.Scratch.Get "authorImage" }}
+  "description": {{ $.Site.Params.description }},{{ with $.Scratch.Get "authorImage" }}
   "image": {
     "@type": "ImageObject",
     "url": {{ .Permalink }},
@@ -15,7 +14,7 @@
     "height": "{{ .Height }}"
   },{{ end }}
   "sameAs": [
-    {{ $.Site.BaseURL }},
+    {{ $.Site.BaseURL }},{{ with .social }}
     {{ with .github }}{{ printf "%s%s" "https://github.com/" . }},{{ end }}
     {{ with .keybase }}{{ printf "%s%s" "https://keybase.io/" . }},{{ end }}
     {{ with .twitter }}{{ printf "%s%s" "https://twitter.com/" . }},{{ end }}
@@ -23,7 +22,7 @@
     {{ with .linkedin }}{{ printf "%s%s%s" "https://www.linkedin.com/in/" . "/" }},{{ end }}
     {{ with .facebook }}{{ printf "%s%s" "https://www.facebook.com/" . }},{{ end }}
     {{ with .instagram }}{{ printf "%s%s%s" "https://www.instagram.com/" . "/" }},{{ end }}
-    {{ with .mastodon }}{{ printf "%s%s" "https://" . }}{{ end }}
+    {{ with .mastodon }}{{ printf "%s%s" "https://" . }}{{ end }}{{ end }}
   ]
 }
 </script>

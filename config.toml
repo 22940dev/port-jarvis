@@ -24,32 +24,35 @@ disableAliases = true
 
 [params]
   description = "Hi there! I'm a frontend web developer based in Boston, Massachusetts specializing in the JAMstack, modern JavaScript frameworks, and progressive web apps."
-  image = "img/logo.png"  # must be in assetDir
-  mainSection = "notes"  # reflected in RSS, Atom, AMP
-  defaultTheme = "light"  # "light" or "dark" theme
-  maxWidth = 940  # px
-  githubRepo = "jakejarvis/jarv.is"
-  facebookAppID = 3357248167622283
-  webmentionIO = "jarv.is"  # webmention.io username
-  copyrightFirstYear = 2001
-  license = "CC-BY-4.0"
-  licenseFull = "Creative Commons Attribution 4.0 International"
+  image = "img/logo.png"  # relative to assetDir root
+  mainSection = "notes"  # content that appears in feeds
+  [params.social]
+    githubRepo = "jakejarvis/jarv.is"  # user/repo
+    webmentionIO = "jarv.is"  # webmention.io username
+    facebookAppID = 3357248167622283
+  [params.license]
+    name = "CC-BY-4.0"
+    nameLong = "Creative Commons Attribution 4.0 International"
+    copyrightFirstYear = 2001
+  [params.theme]
+    maxWidth = 940  # px
+    defaultTheme = "light"  # light or dark?
 
 [author]
   name = "Jake Jarvis"
-  image = "img/me_large.jpg"  # must be in assetDir
-  jobTitle = "Front-End Web Developer"
+  image = "img/me_large.jpg"  # relative to assetDir root
   email = "jake@jarv.is"
-  github = "jakejarvis"
-  keybase = "jakejarvis"
-  twitter = "jakejarvis"
-  twitterID = 229769022
-  medium = "jakejarvis"
-  linkedin = "jakejarvis"
-  facebook = "jakejarvis"
-  facebookID = 1329090853
-  instagram = "jakejarvis"
-  mastodon = "mastodon.social/@jakejarvis"
+  [author.social]
+    github = "jakejarvis"
+    keybase = "jakejarvis"
+    twitter = "jakejarvis"
+    twitterID = 229769022
+    medium = "jakejarvis"
+    linkedin = "jakejarvis"
+    facebook = "jakejarvis"
+    facebookID = 1329090853
+    instagram = "jakejarvis"
+    mastodon = "mastodon.social/@jakejarvis"
 
 [module]
   [[module.imports]]

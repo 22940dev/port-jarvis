@@ -90,7 +90,7 @@
         padding-left: 1em;
       }
       article {
-        max-width: {{ printf "%d%s" .Site.Params.maxWidth "px" }};
+        max-width: {{ printf "%d%s" .Site.Params.Theme.maxWidth "px" }};
         margin: 0 auto;
         padding: 0 15px;
         line-height: 1.75;
@@ -147,7 +147,7 @@
         text-decoration: none;
       }
       nav {
-        max-width: {{ printf "%d%s" .Site.Params.maxWidth "px" }};
+        max-width: {{ printf "%d%s" .Site.Params.Theme.maxWidth "px" }};
         margin: 0 auto;
         padding: 0 15px;
         display: flex;
@@ -198,7 +198,7 @@
       }
       footer div.row {
         width: 100%;
-        max-width: {{ printf "%d%s" .Site.Params.maxWidth "px" }};
+        max-width: {{ printf "%d%s" .Site.Params.Theme.maxWidth "px" }};
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
@@ -290,7 +290,7 @@
 
     <footer>
       <div class="row">
-        <div class="left">Content by <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>, licensed under <a class="no-underline" href="{{ "license/" | absURL }}"{{ with .Site.Params.licenseFull }} title="{{ . }}"{{ end }}>{{ .Site.Params.license }}</a>.</div>
+        <div class="left">Content by <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>, licensed under <a class="no-underline" href="{{ "license/" | absURL }}"{{ with .Site.Params.license.nameLong }} title="{{ . }}"{{ end }}>{{ .Site.Params.license.name }}</a>.</div>
         <div class="right"><a class="back-to-top" href="#top">↑ Back to top.</a></div>
       </div>
     </footer>

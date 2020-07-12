@@ -2,7 +2,7 @@
 
 // NOTE: all variables set by Hugo's config.toml MUST go here:
 // prettier-ignore
-$max-width: "{{ printf "%d%s" .Site.Params.maxWidth "px" }}";
+$max-width: "{{ printf "%d%s" .Site.Params.Theme.maxWidth "px" }}";
 $base-url: "{{ strings.TrimRight "/" .Site.BaseURL }}" + "/";
 
 // those values need quotes because, even though prettier & stylelint are correct
