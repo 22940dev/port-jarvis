@@ -14,8 +14,7 @@ snapshot:
     }
 static-snapshots:
   path: public/
-  snapshot-files: '**/index.html'
-  ignore-files: '**/license/*.html,**/privacy/*.html,**/stats/*.html,**/leo/*.html,**/birthday/*.html,**/hillary/*.html'
+  snapshot-files: 'index.html,notes/**/index.html,uses/index.html,previously/index.html'
 agent:
   asset-discovery:
     network-idle-timeout: 2000 # ms

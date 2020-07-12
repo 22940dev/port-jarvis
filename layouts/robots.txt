@@ -4,7 +4,6 @@ Allow: /.well-known/amphtml/apikey.pub
 Disallow: /403.html
 Disallow: /404.html
 Disallow: /api/
-Disallow: /y2k/
 Sitemap: {{ "sitemap.xml" | absURL }}
 {{- else }}
 Disallow: /

@@ -13,7 +13,7 @@ draft: false
 
 {{< gh-buttons username="jakejarvis" repo="y2k" >}}
 
-A few months ago, I stumbled upon [my first website ever](/y2k/) on an old floppy disk. Despite the instant cringing, I [uploaded it](https://github.com/jakejarvis/my-first-website) to GitHub, [collected other iterations](/previously/), and made an [#awesome-list](https://github.com/jakejarvis/awesome-first-code) of others who were brave and/or shameless enough to do the same. But why not take that ~~one~~ 1,000 steps further?
+A few months ago, I stumbled upon [my first website ever](https://jakejarvis.github.io/my-first-website/) on an old floppy disk. Despite the instant cringing, I [uploaded it](https://github.com/jakejarvis/my-first-website) to GitHub, [collected other iterations](/previously/), and made an [#awesome-list](https://github.com/jakejarvis/awesome-first-code) of others who were brave and/or shameless enough to do the same. But why not take that ~~one~~ 1,000 steps further?
 
 Introducing [**y2k.land**](https://y2k.land/) — with fully-featured, fully-isolated, on-demand [**Windows Millennium Edition®**](https://www.youtube.com/watch?v=CaNDeyYP98A) virtual machines, simply to experience my first website in its natural Internet Explorer 5 habitat. And maybe play some [3D Pinball: Space Cadet](https://en.wikipedia.org/wiki/Full_Tilt!_Pinball#3D_Pinball_for_Windows_%E2%80%93_Space_Cadet). Oh, and [Microsoft Bob](https://en.wikipedia.org/wiki/Microsoft_Bob) is there too if you want to say hello and catch up. 🤓
 

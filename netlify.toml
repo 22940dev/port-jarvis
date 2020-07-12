@@ -178,41 +178,36 @@
   to = "/vendor/emoji/svg/:splat"
   status = 301
 
-# Mirror these directories from elsewhere to mimic GitHub Pages behavior and
-# keep this main repository squeaky clean.
-# https://github.com/jakejarvis/random-sites (private)
+# Moved these random sites/projects elsewhere (mostly GitHub Pages) to keep
+# this repo and domain squeaky clean:
 [[redirects]]
   from = "/y2k/*"
-  to = "https://modest-jackson-d5516b.netlify.com/y2k/:splat"
-  status = 200
-[[redirects]]
-  from = "/hugo-node/*"
-  to = "https://modest-jackson-d5516b.netlify.com/hugo-node/:splat"
-  status = 200
-[[redirects]]
-  from = "/cli/*"
-  to = "https://modest-jackson-d5516b.netlify.com/cli/:splat"
-  status = 200
+  to = "https://jakejarvis.github.io/my-first-website/:splat"
+  status = 302
 [[redirects]]
   from = "/ios-trackers/*"
-  to = "https://modest-jackson-d5516b.netlify.com/ios-trackers/:splat"
-  status = 200
+  to = "https://jakejarvis.github.io/ios-trackers/:splat"
+  status = 302
 [[redirects]]
-  from = "/scrabble/*"
-  to = "https://modest-jackson-d5516b.netlify.com/scrabble/:splat"
-  status = 200
+  from = "/hugo-node/*"
+  to = "https://github.com/jakejarvis/hugo-extended"
+  status = 302
 [[redirects]]
   from = "/awesome/*"
-  to = "https://modest-jackson-d5516b.netlify.com/awesome/:splat"
-  status = 200
+  to = "https://synonymsforawesome.com/:splat"
+  status = 302
+[[redirects]]
+  from = "/scrabble/*"
+  to = "https://scrabble.io/:splat"
+  status = 302
 [[redirects]]
   from = "/candies/*"
-  to = "https://modest-jackson-d5516b.netlify.com/candies/:splat"
-  status = 200
+  to = "https://jakejarvis.github.io/candies/:splat"
+  status = 302
 [[redirects]]
   from = "/comp20/*"
-  to = "https://modest-jackson-d5516b.netlify.com/comp20/:splat"
-  status = 200
+  to = "https://jakejarvis.github.io/comp20/:splat"
+  status = 302
 
 # H A C K E R M A N ( ͡° ͜ʖ ͡°)
 [[redirects]]
