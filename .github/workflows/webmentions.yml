@@ -13,10 +13,11 @@ jobs:
         fetch-depth: 1
         lfs: false
     - name: Get webmentions data
-      run: |
-        wget -nv -O data/webmentions.json "https://webmention.io/api/mentions.json?domain=jarv.is&token=$WEBMENTIONS_TOKEN"
+      run: wget -nv -O data/webmentions.json "https://webmention.io/api/mentions.json?domain=jarv.is&token=$WEBMENTIONS_TOKEN"
       env:
         WEBMENTIONS_TOKEN: ${{ secrets.WEBMENTIONS_TOKEN }}
+    - name: Format JSON
+      run: npx prettier --write data/webmentions.json
     - name: Push changes
       run: |
         git config --global user.name "github-actions[bot]"
