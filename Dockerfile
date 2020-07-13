@@ -9,7 +9,7 @@
 # much easier to install Node on the Go base image than vice-versa.
 FROM golang:1.14-alpine
 
-ENV HUGO_VERSION 0.68.3
+ENV HUGO_VERSION 0.74.1
 # remove/comment the following line completely to build with vanilla Hugo:
 ENV HUGO_EXTENDED 1
 

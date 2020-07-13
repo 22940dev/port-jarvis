@@ -15,7 +15,7 @@
   },
   "scripts": {
     "clean": "hugo mod clean && rimraf public/ resources/ builds/ _vendor/ .netlify/functions/ $TMPDIR/hugo_cache/ || true",
-    "build": "run-s build:** minify",
+    "build": "run-s build:hugo build:functions minify",
     "build:hugo": "hugo --gc --cleanDestinationDir --verbose",
     "build:functions": "netlify-lambda build functions",
     "start": "run-p start:hugo start:functions",
