@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // Home Styles
-section#home {
+div#layout--home {
   font-size: 1.025em;
   padding-top: 1.5em;
   padding-bottom: 0.75em;
@@ -93,7 +93,7 @@ section#home {
 // Loop through $colors-home (see abstracts/_variables)
 @each $id, $colors in $colors-home {
   @each $theme, $color in $colors {
-    body.#{$theme} section#home a##{$id} {
+    body.#{$theme} div#layout--home a##{$id} {
       color: $color;
       background-image: underline-hack($color);
     }
@@ -102,7 +102,7 @@ section#home {
 
 // Responsive
 @mixin responsive--home() {
-  section#home {
+  div#layout--home {
     font-size: 0.975em;
     padding: 1.2em 1.2em 0.4em 1.2em;
 

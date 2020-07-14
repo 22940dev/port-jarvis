@@ -14,7 +14,7 @@
   {{- with .Scratch.Get "authorImage" }}
   <logo>{{ .Permalink }}</logo>
   {{- end }}
-  <updated>{{ .Date.Format "2006-01-02T15:04:05Z" | safeHTML }}</updated>
+  <updated>{{ .Site.LastChange.Format "2006-01-02T15:04:05Z" | safeHTML }}</updated>
   {{- with .OutputFormats.Get "ATOM" }}
   {{ printf `<link rel="self" type="%s" href="%s" />` .MediaType.Type .Permalink | safeHTML }}
   {{- end }}

@@ -1,5 +1,5 @@
 {{ define "main" }}
-<section class="page" id="video">
+<div class="layout" id="layout--video">
   <h1><a class="no-underline" href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
 
   <video
@@ -15,5 +15,5 @@
   </video>
 
   {{ .Content }}
-</section>
+</div>
 {{ end }}

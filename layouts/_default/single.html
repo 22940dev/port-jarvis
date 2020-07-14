@@ -1,5 +1,5 @@
 {{ define "main" }}
-<section class="page" id="single">
+<div class="layout" id="layout--single">
   <article>
     <div id="meta">
       <a class="no-underline" href="{{ .Permalink }}" title="{{ .Date.Format "Mon, Jan 2 2006 3:04:05 PM MST" }}">{{ .Date.Format "January 2, 2006" }}</a>{{ with .Scratch.Get "sourceURL" }}<span class="dash">—</span><a class="no-underline" href="{{ . | safeURL }}" title="Edit this post on GitHub" target="_blank" rel="noopener">Improve This Post</a>{{ end }}
@@ -11,5 +11,5 @@
       {{ .Content }}
     </div>
   </article>
-</section>
+</div>
 {{ end }}

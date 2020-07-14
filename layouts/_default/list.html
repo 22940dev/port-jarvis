@@ -1,5 +1,5 @@
 {{ define "main" }}
-<section class="page" id="list">
+<div class="layout" id="layout--list">
   {{- with .Pages }}
   {{- range .GroupByDate "2006" }}
   <section class="year">
@@ -17,5 +17,5 @@
   </section>
   {{- end }}
   {{- end }}
-</section>
+</div>
 {{ end }}

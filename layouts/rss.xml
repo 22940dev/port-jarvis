@@ -8,8 +8,8 @@
     <language>{{ . }}</language>{{ end }}{{ with .Site.Author.email }}
     <managingEditor>{{ . }}{{ with $.Site.Author.name }} ({{ . }}){{ end }}</managingEditor>{{ end }}{{ with .Site.Author.email }}
     <webMaster>{{ . }}{{ with $.Site.Author.name }} ({{ . }}){{ end }}</webMaster>{{ end }}{{ with .Site.Copyright }}
-    <copyright>{{ . }}</copyright>{{ end }}{{ if not .Date.IsZero }}
-    <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}{{ with .Scratch.Get "authorImage" }}
+    <copyright>{{ . }}</copyright>{{ end }}
+    <lastBuildDate>{{ .Site.LastChange.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ with .Scratch.Get "authorImage" }}
     <image>
       <url>{{ .Permalink }}</url>
       <title>{{ $.Site.Title }}</title>
