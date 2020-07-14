@@ -112,8 +112,15 @@ header {
 
       // Dark mode toggle
       button.dark-mode-toggle {
+        // native button reset
+        border: 0;
+        padding: 0;
+
+        // prepare for lightbulb symbol depending on active theme (set in components/_global)
+        background-color: transparent;
         background-repeat: no-repeat;
         background-size: 100% 100%;
+
         height: 1.5em;
         width: 1em;
         margin-left: 1.7em;

@@ -31,10 +31,7 @@ div#layout--home {
 
   sup {
     letter-spacing: normal;
-    line-height: 0;
     position: relative;
-    top: -0.5em;
-    vertical-align: baseline; // required for same position in chrome vs. firefox
 
     &#key {
       font-family: $webfont-mono;

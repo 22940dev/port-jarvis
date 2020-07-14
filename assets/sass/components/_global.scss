@@ -36,19 +36,17 @@ main {
 
   @include colors() {
     background-color: c(background-inner);
+    color: c(text);
   }
 }
 
+// this is what's extended by different layouts (in ../pages)
 div.layout {
   max-width: $max-width;
   margin: 0 auto;
   padding-left: 1.5em;
   padding-right: 1.5em;
   display: block; // https://stackoverflow.com/questions/28794718/max-width-not-working-for-ie-11
-
-  @include colors() {
-    color: c(text);
-  }
 }
 
 /*! Credit for cool link underlines: https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
@@ -100,24 +98,6 @@ hr {
   }
 }
 
-// button reset
-button {
-  border: 0;
-  margin: 0;
-  padding: 0;
-  overflow: visible;
-  background: transparent;
-
-  // inherit font & color from ancestor
-  color: inherit;
-  font: inherit;
-  line-height: normal;
-
-  // corrects inability to style clickable `input` types on iOS
-  // stylelint-disable-next-line plugin/no-unsupported-browser-features
-  appearance: none;
-}
-
 // make SVG twemojis relative to surrounding text
 // https://github.com/twitter/twemoji#inline-styles
 img.emoji {
@@ -132,7 +112,8 @@ img.emoji {
   // have cursor act like it's hovering a regular unicode emoji, especially since twemojis can still be copied/pasted
   cursor: text;
 }
-// manually unset cursor when emoji's in a link, otherwise it'll keep text cursor set above
+
+// need to manually unset text cursor above when emoji's within a link
 a img.emoji {
   cursor: inherit;
 }
@@ -143,13 +124,8 @@ a img.emoji {
     // Safari iOS menu bar reappears below 44px:
     // https://www.eventbrite.com/engineering/mobile-safari-why/
     padding-bottom: 45px !important;
+
     // Allows you to scroll below the viewport; default value is visible
     overflow-y: scroll;
-
-    // Fix weird font size behavior on iOS Safari: https://github.com/jakejarvis/jarv.is/issues/18
-    // https://stackoverflow.com/questions/3226001/some-font-sizes-rendered-larger-on-safari-iphone
-    // https://www.456bereastreet.com/archive/201011/beware_of_-webkit-text-size-adjustnone/
-    // stylelint-disable-next-line plugin/no-unsupported-browser-features
-    text-size-adjust: 100%;
   }
 }
