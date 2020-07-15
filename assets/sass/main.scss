@@ -14,14 +14,15 @@ $max-width: unquote($max-width);
 @import "abstracts/functions";
 @import "abstracts/settings";
 @import "abstracts/themes";
+@import "abstracts/reset";
 
 // Global Styles
-@import "components/reset";
 @import "components/typography";
 @import "components/global";
 @import "components/header";
 @import "components/footer";
 @import "components/content";
+@import "components/embeds";
 
 // Pages
 @import "pages/home";

@@ -7,7 +7,7 @@
   {{- end -}}
 {{- end -}}
 
-{{/* Article image */}}
+{{/* Page image (via frontmatter) */}}
 {{- with .Params.image -}}
   {{- with $.Page.Resources.GetMatch . -}}
     {{- $.Scratch.Set "pageImage" . -}}
