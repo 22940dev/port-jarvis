@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // Post Styles
-div#layout--single {
+div.layout-single {
   padding-top: 1em;
   padding-bottom: 1em;
 
@@ -41,7 +41,7 @@ div#layout--single {
 
 // Responsive
 @mixin responsive--single() {
-  div#layout--single {
+  div.layout-single {
     padding: 0.8em 1.1em;
 
     h1.title {

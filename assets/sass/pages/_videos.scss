@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // Video Styles
-div#layout--video {
+div.layout-video {
   padding: 1.5em 0;
   text-align: center;
 
@@ -18,7 +18,7 @@ div#layout--video {
     font-size: 0.85em;
     letter-spacing: -0.005em;
     line-height: 1.5;
-    margin: 1.25em 1em 0 1em;
+    margin: 1.25em 1em 0.5em 1em;
 
     @include colors() {
       color: c(medium-light);
@@ -39,7 +39,7 @@ div#layout--video {
 
 // Responsive
 @mixin responsive--videos() {
-  div#layout--video {
+  div.layout-video {
     padding: 1em 0;
 
     h1 {

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // Archive/List Styles
-div#layout--list {
+div.layout-list {
   padding-top: 1.5em;
   padding-bottom: 0.25em;
 
@@ -46,7 +46,7 @@ div#layout--list {
 
 // Responsive
 @mixin responsive--list() {
-  div#layout--list {
+  div.layout-list {
     padding: 1em 1em 0.25em 1em;
 
     section.year {

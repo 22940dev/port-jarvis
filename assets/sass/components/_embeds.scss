@@ -1,12 +1,9 @@
 @charset "UTF-8";
 
 div.embed {
-  &.video {
-    video {
-      display: block;
-      margin: 1em auto;
-      max-width: 100%;
-      height: auto;
+  &.tweet {
+    .twitter-tweet-rendered iframe {
+      margin: 0.5em 0;
     }
   }
 
@@ -25,6 +22,15 @@ div.embed {
       height: 100%;
       display: inline-block;
       border: 0;
+    }
+  }
+
+  &.video {
+    video {
+      display: block;
+      margin: 1em auto;
+      max-width: 100%;
+      height: auto;
     }
   }
 

@@ -42,7 +42,7 @@ disableAliases = true
 
 [author]
   name = "Jake Jarvis"
-  image = "img/me_large.jpg"  # relative to assetDir root
+  image = "img/me.jpg"  # relative to assetDir root
   email = "jake@jarv.is"
   [author.social]
     github = "jakejarvis"
@@ -83,7 +83,7 @@ disableAliases = true
     url = "https://github.com/jakejarvis"
     weight = -80
   [[menu.main]]
-    name = "Email"
+    name = "Contact"
     pre = "📬"
     # encode my email address like it's 2005 ( ͡° ͜ʖ ͡°)
     url = "&#x6D;&#x61;&#x69;&#x6C;&#x74;&#x6F;&#x3A;&#x6A;&#x61;&#x6B;&#x65;&#x40;&#x6A;&#x61;&#x72;&#x76;&#x2E;&#x69;&#x73;"

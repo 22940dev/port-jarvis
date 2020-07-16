@@ -7,7 +7,7 @@
   NODE_VERSION = "14"
   YARN_VERSION = "1.22.4"
   YARN_FLAGS = "--no-ignore-optional --frozen-lockfile"
-  GO_VERSION = "1.14.4"
+  GO_VERSION = "1.14.5"
 
 # Ensure *only* Pretty URLs are enabled, even though this is already set up in
 # the Netlify dashboard.
@@ -156,7 +156,11 @@
   status = 301
 [[redirects]]
   from = "/me_large.jpg"
-  to = "/img/me_large.jpg"
+  to = "/img/me.jpg"
+  status = 301
+[[redirects]]
+  from = "/img/me_large.jpg"
+  to = "/img/me.jpg"
   status = 301
 [[redirects]]
   from = "/favicon.ico"
