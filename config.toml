@@ -98,9 +98,13 @@ disableAliases = true
   [outputFormats.RSS]
     mediaType = "application/rss"
     baseName = "feed"   # /feed.xml
+    isPlainText = false
+    isHTML = false
   [outputFormats.ATOM]
     mediaType = "application/atom+xml"
     baseName = "feed"   # /feed.atom
+    isPlainText = false
+    isHTML = false
   [outputFormats.AMP]
     mediaType = "text/html"
     baseName = "amp"   # amp.html
