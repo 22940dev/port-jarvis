@@ -28,17 +28,17 @@ disableAliases = true
   description = "Hi there! I'm a frontend web developer based in Boston, Massachusetts specializing in the JAMstack, modern JavaScript frameworks, and progressive web apps."
   image = "img/logo.png"  # relative to assetDir root
   mainSection = "notes"  # content that appears in feeds
-  [params.social]
-    githubRepo = "jakejarvis/jarv.is"  # user/repo
-    webmentionIO = "jarv.is"  # webmention.io username
-    facebookAppID = 3357248167622283
+  [params.theme]
+    maxWidth = 940  # px
+    defaultTheme = "light"  # light or dark?
   [params.license]
     name = "CC-BY-4.0"
     nameLong = "Creative Commons Attribution 4.0 International"
     copyrightFirstYear = 2001
-  [params.theme]
-    maxWidth = 940  # px
-    defaultTheme = "light"  # light or dark?
+  [params.social]
+    githubRepo = "jakejarvis/jarv.is"  # user/repo
+    webmentionIO = "jarv.is"  # webmention.io username
+    facebookAppID = 3357248167622283
 
 [author]
   name = "Jake Jarvis"
@@ -90,7 +90,7 @@ disableAliases = true
     weight = -70
 
 [outputs]
-  home = ["HTML", "RSS", "ATOM", "ALGOLIA", "MANIFEST", "REDIRECTS", "HEADERS"]
+  home = ["HTML", "RSS", "ATOM", "MANIFEST", "REDIRECTS", "HEADERS"]
   section = ["HTML"]
   page = ["HTML", "AMP"]
 
@@ -138,7 +138,7 @@ disableAliases = true
   [mediaTypes."application/manifest+json"]
     suffixes = ["webmanifest"]
   [mediaTypes."text/netlify"]
-    delimiter = ""   # no extension for _headers & _redirects files
+    delimiter = ""   # no dot/extension for _headers & _redirects files
 
 [sitemap]
   filename = "sitemap.xml"

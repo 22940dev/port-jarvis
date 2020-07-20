@@ -9,9 +9,6 @@ builds/
 resources/
 _vendor/
 
-# Netlify plugins
-plugins/
-
 # dotfiles/config
 .*
 postcss.config.js

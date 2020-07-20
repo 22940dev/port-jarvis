@@ -14,7 +14,7 @@
     "url": "git+https://github.com/jakejarvis/jarv.is.git"
   },
   "scripts": {
-    "clean": "hugo mod clean && rimraf public/ resources/ builds/ _vendor/ .netlify/functions/ $TMPDIR/hugo_cache/ || true",
+    "clean": "hugo mod clean && rimraf public/ resources/ builds/ _vendor/ .netlify/{cache,functions}/ $TMPDIR/hugo_cache/ || true",
     "build": "run-s build:hugo build:functions minify",
     "build:hugo": "hugo --gc --cleanDestinationDir --verbose",
     "build:functions": "netlify-lambda build functions",
@@ -30,9 +30,7 @@
     "lint:scss": "stylelint 'assets/sass/**/*.scss' --syntax scss",
     "lint:js": "eslint 'assets/js/**/*.js' 'functions/**/*.js'",
     "lint:md": "markdownlint 'content/**/*.md'",
-    "lint:prettier": "prettier --check .",
-    "index": "run-s clean build:hugo index:**",
-    "index:algolia": "npx atomic-algolia"
+    "lint:prettier": "prettier --check ."
   },
   "dependencies": {
     "normalize.css": "8.0.1",
