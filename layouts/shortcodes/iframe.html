@@ -1,3 +1,3 @@
-<div class="embed iframe">
+<div class="embed {{ .Name }}">
 <iframe src="{{ .Get "src" }}" {{ with .Get "title" }}title="{{ . }}"{{ end }}></iframe>
 </div>

@@ -1,7 +1,7 @@
 {{- $url := printf "https://www.facebook.com/plugins/post/oembed.json/?omitscript=1&url=%s" (.Get "url" | urlize) -}}
 {{- $json := getJSON $url -}}
 
-<div class="embed facebook">
+<div class="embed {{ .Name }}">
 {{ $json.html | safeHTML }}
 </div>
 

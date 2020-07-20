@@ -1,6 +1,6 @@
 {{- $optimized := partial "functions/optimize-image" . -}}
 
-<p style="text-align: center;">
+<p align="center">
 {{ with .Get "link" }}<a href="{{ . }}">{{ end }}
 <img src="{{ $optimized.Permalink }}" width="{{ $optimized.Width }}" height="{{ $optimized.Height }}"
      {{- with .Get "alt" }} alt="{{ . | safeHTML }}" title="{{ . | safeHTML }}"{{ end }}

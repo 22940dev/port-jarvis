@@ -1,4 +1,4 @@
-<div class="embed video">
+<div class="embed {{ .Name }}">
   <video {{- with .Get "width" }} width="{{ . }}"{{ end }}
         {{- with .Get "height" }} height="{{ . }}"{{ end }}
         {{- with .Page.Resources.GetMatch (.Get "poster") }} poster="{{ .Permalink }}"{{ end }}

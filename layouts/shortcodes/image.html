@@ -11,7 +11,7 @@
 
   <figcaption>{{ . | $.Page.RenderString | safeHTML }}</figcaption>
 </figure>
-{{- else -}}
+{{- else }}
 <p class="image">
   {{ with .Get "link" }}<a class="no-underline" href="{{ . }}"{{ if strings.HasPrefix . "http" }} target="_blank" rel="noopener"{{ end }}>{{ end }}
   <img src="{{ $optimized.Permalink }}" width="{{ $optimized.Width }}" height="{{ $optimized.Height }}"
