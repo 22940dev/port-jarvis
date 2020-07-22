@@ -33,7 +33,7 @@ The world and its devices are quickly becoming more connected through the shiny 
 
 ---
 
-### **Table of Contents:**
+### Table of Contents:
 
 - [Industrial Control Systems](#industrial-control-systems)
 - [Remote Desktop](#remote-desktop)

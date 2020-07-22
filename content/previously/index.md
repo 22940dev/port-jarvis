@@ -41,6 +41,9 @@ css: |
     height: 500px;
     border: 2px solid #e3d18c;
   }
+  div#content code {
+    font-weight: 400;
+  }
   div#content span.limegreen {
     color: #32cd32;
   }

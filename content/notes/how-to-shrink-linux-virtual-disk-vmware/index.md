@@ -44,7 +44,7 @@ Thank you to [commenter Susanna](https://jake.wordpress.com/2018/12/04/how-to-sh
 
 ---
 
-## **Step 1:** Clean up time
+## Step 1: Clean up time
 
 Boot up your Linux virtual machine. We'll start by optimizing the OS as much as possible before shrinking it. In addition to manually deleting files you no longer use, running this command in your terminal can free up a little more space by removing some installation caches left behind by old versions of software you've installed and updated:
 
@@ -52,7 +52,7 @@ Boot up your Linux virtual machine. We'll start by optimizing the OS as much as 
 sudo apt-get clean
 ```
 
-## **Step 2:** Make "empty" space actually empty
+## Step 2: Make "empty" space actually empty
 
 This step is the crucial one. In order for VMware to detect the newly free space, we need to free it up ourselves using a little trickery. We're going to have Linux overwrite the free space with a file full of zeros — the size of this file will be the size of however much space we're freeing up (5 GB, in the example above) — and then delete it. These commands will create the file, wait a moment, and then delete the file:
 
@@ -66,7 +66,7 @@ rm -f zero.fill
 
 Depending on how much space we're freeing, this could take a while. Let it finish or else you'll be left with an actual, real file that will occupy a ton of space — the opposite of what we're trying to accomplish!
 
-## **Step 3:** Letting VMware know we've done its dirty work
+## Step 3: Letting VMware know we've done its dirty work
 
 The final step is to tell VMware we've done this, and manually trigger the clean up function that works so well on Windows VMs. You'll do this step **outside** of the virtual machine, so shut it down fully and exit VMware. These directions are for macOS hosts specifically — if you're on a Linux host, I'll assume you are able to find the VMDK file, but [here's some help if you need](https://www.howtogeek.com/112674/how-to-find-files-and-folders-in-linux-using-the-command-line/).
 
@@ -98,7 +98,7 @@ After the defragmentation completes, we need to finally shrink the image. We do 
 /Applications/VMware\ Fusion.app/Contents/Library/vmware-vdiskmanager -k <path to the same .VMDK file>
 ```
 
-## **Step 4:** Storage Profit!
+## Step 4: Storage Profit!
 
 Obviously, this is a really annoying way to perform a feature that only takes one click to execute on Windows virtual machines. I don't recommend going through this entire process every time you delete a few random files. However, if you notice the free space on your host OS is mysteriously lower than it should be, the time this takes can be well worth it.
 
