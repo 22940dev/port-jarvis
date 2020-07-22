@@ -19,11 +19,13 @@ css: |
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('https://jarv.is/vendor/comic-neue/comic-neue-bold.woff2') format('woff2'),
-         url('https://jarv.is/vendor/comic-neue/comic-neue-bold.woff') format('woff');
+    src: url('https://jarv.is/vendor/comic-neue/comic-neue-bold-subset.woff2') format('woff2'),
+         url('https://jarv.is/vendor/comic-neue/comic-neue-bold-subset.woff') format('woff');
+    unicode-range: U+0000-00FF,U+2000-206F,U+20A0-20CF,U+2190-21FF,U+2200-22FF,U+2122;
   }
   body {
     font-family: "Comic Neue", "Comic Sans MS", "Comic Sans", "Inter", sans-serif;
+    font-weight: 700;
   }
   div#content {
     text-align: center;

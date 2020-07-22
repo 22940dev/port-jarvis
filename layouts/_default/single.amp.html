@@ -19,50 +19,12 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
     {{ partial "head/open-graph" . }}
 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Roboto+Mono&amp;display=swap" rel="stylesheet">
+
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <style amp-custom>
-      @font-face {
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url("{{ "vendor/inter/inter-regular-subset.woff2" | absURL }}") format("woff2"),
-             url("{{ "vendor/inter/inter-regular-subset.woff" | absURL }}") format("woff");
-        unicode-range: U+0000-00FF, U+2000-206F, U+20A0-20CF,
-                       U+2190-21FF, U+2200-22FF, U+2122;
-      }
-      @font-face {
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 500;
-        font-display: swap;
-        src: url("{{ "vendor/inter/inter-medium-subset.woff2" | absURL }}") format("woff2"),
-             url("{{ "vendor/inter/inter-medium-subset.woff" | absURL }}") format("woff");
-        unicode-range: U+0000-00FF, U+2000-206F, U+20A0-20CF,
-                       U+2190-21FF, U+2200-22FF, U+2122;
-      }
-      @font-face {
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 700;
-        font-display: swap;
-        src: url("{{ "vendor/inter/inter-bold-subset.woff2" | absURL }}") format("woff2"),
-             url("{{ "vendor/inter/inter-bold-subset.woff" | absURL }}") format("woff");
-        unicode-range: U+0000-00FF, U+2000-206F, U+20A0-20CF,
-                       U+2190-21FF, U+2200-22FF, U+2122;
-      }
-      @font-face {
-        font-family: "Hack";
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url("{{ "vendor/hack/hack-regular-subset.woff2" | absURL }}") format("woff2"),
-             url("{{ "vendor/hack/hack-regular-subset.woff" | absURL }}") format("woff");
-      }
-
       body {
         font-family: "Inter", sans-serif;
-        font-feature-settings: "kern", "liga", "calt", "clig", "ss01";
         font-kerning: normal;
         font-variant-ligatures: normal;
         font-size: 0.92em;
@@ -210,15 +172,14 @@
         text-align: right;
       }
       div.highlight, code {
-        font-family: "Hack", monospace;
-        font-size: 0.95em;
+        font-family: "Roboto Mono", monospace;
         letter-spacing: 0;
         page-break-inside: avoid;
         margin: 0 0.1em;
       }
       p code {
         border: 1px solid #dddddd;
-        padding: 0.2em;
+        padding: 0.1em 0.25em;
         background-color: #fbfbfb;
       }
       div.highlight {
@@ -297,7 +258,7 @@
 
     {{ if eq hugo.Environment "production" }}
     <!-- https://docs.simpleanalytics.com/without-javascript -->
-    <amp-pixel src="{{ "api/views/noscript.gif" | absURL }}?ignore-dnt=true&hostname=CANONICAL_HOSTNAME&path=CANONICAL_PATH&referrer=DOCUMENT_REFERRER&https=true&ua=USER_AGENT&width=VIEWPORT_WIDTH&type=pageview" layout="nodisplay"></amp-pixel>
+    <amp-pixel src="{{ "api/views/noscript.gif" | absURL }}?ignore-dnt=true&amp;hostname=CANONICAL_HOSTNAME&amp;path=CANONICAL_PATH&amp;referrer=DOCUMENT_REFERRER&amp;https=true&amp;ua=USER_AGENT&amp;width=VIEWPORT_WIDTH&amp;type=pageview" layout="nodisplay"></amp-pixel>
     {{ end }}
   </body>
 </html>

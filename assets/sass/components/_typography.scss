@@ -12,13 +12,32 @@ $unicode-subset: U+0000-00FF, U+2000-206F, U+20A0-20CF, U+2190-21FF, U+2200-22FF
  *  Licensed under the SIL Open Font License, Version 1.1:
  *  https://github.com/rsms/inter/blob/v3.13/LICENSE.txt
  */
+
+// Variable
+@include font-face("Inter var", "vendor/inter/inter-subset.var", 100 900) {
+  unicode-range: $unicode-subset;
+}
+@include font-face("Inter var", "vendor/inter/inter-italic-subset.var", 100 900, italic) {
+  unicode-range: $unicode-subset;
+}
+
+// Legacy
 @include font-face("Inter", "vendor/inter/inter-regular-subset", 400) {
+  unicode-range: $unicode-subset;
+}
+@include font-face("Inter", "vendor/inter/inter-regular-italic-subset", 400, italic) {
   unicode-range: $unicode-subset;
 }
 @include font-face("Inter", "vendor/inter/inter-medium-subset", 500) {
   unicode-range: $unicode-subset;
 }
+@include font-face("Inter", "vendor/inter/inter-medium-italic-subset", 500, italic) {
+  unicode-range: $unicode-subset;
+}
 @include font-face("Inter", "vendor/inter/inter-bold-subset", 700) {
+  unicode-range: $unicode-subset;
+}
+@include font-face("Inter", "vendor/inter/inter-bold-italic-subset", 700, italic) {
   unicode-range: $unicode-subset;
 }
 
@@ -29,5 +48,6 @@ $unicode-subset: U+0000-00FF, U+2000-206F, U+20A0-20CF, U+2190-21FF, U+2200-22FF
  *  Licensed under the MIT License:
  *  https://github.com/source-foundry/Hack/blob/v3.003/LICENSE.md
  */
+
 @include font-face("Hack", "vendor/hack/hack-regular-subset", 400);
 @include font-face("Hack", "vendor/hack/hack-italic-subset", 400, italic);

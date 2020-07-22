@@ -5,14 +5,26 @@ body {
   width: 100%;
   height: 100%;
   margin: 0 auto;
+
   font-family: $webfont-sans;
   font-kerning: normal;
+  font-variant-ligatures: normal;
   font-feature-settings: "kern", "liga", "calt", "clig", "ss01";
   line-height: 1.5;
-  box-sizing: border-box;
+}
 
-  // manually setting light/dark mode backgrounds and bulb icon
-  // really just the color of header & footer
+// override above font-family if browser supports variable fonts
+// https://caniuse.com/#feat=variable-fonts
+// stylelint-disable-next-line plugin/no-unsupported-browser-features
+@supports (font-variation-settings: normal) {
+  body {
+    font-family: $webfont-sans-variable, $webfont-sans;
+  }
+}
+
+// manually setting light/dark mode backgrounds and bulb icon
+// really just the color of header & footer
+body {
   &.light {
     background-color: map-get(map-get($themes, "light"), "background-outer");
 
@@ -49,7 +61,8 @@ div.layout {
   display: block; // https://stackoverflow.com/questions/28794718/max-width-not-working-for-ie-11
 }
 
-/*! Credit for cool link underlines: https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
+// cool link underlines:
+// https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/
 a {
   text-decoration: none;
   background-position: 0% 100%;
