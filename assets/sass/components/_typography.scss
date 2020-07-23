@@ -14,10 +14,12 @@ $unicode-subset: U+0000-00FF, U+2000-206F, U+20A0-20CF, U+2190-21FF, U+2200-22FF
  */
 
 // Variable
-@include font-face("Inter var", "vendor/inter/inter-subset.var", 100 900) {
+@include font-face("Inter var", "vendor/inter/inter-subset.var", 100 900, $variable: true) {
+  font-named-instance: "Regular"; // stylelint-disable-line property-no-unknown
   unicode-range: $unicode-subset;
 }
-@include font-face("Inter var", "vendor/inter/inter-italic-subset.var", 100 900, italic) {
+@include font-face("Inter var", "vendor/inter/inter-italic-subset.var", 100 900, italic, $variable: true) {
+  font-named-instance: "Italic"; // stylelint-disable-line property-no-unknown
   unicode-range: $unicode-subset;
 }
 

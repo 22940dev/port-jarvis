@@ -19,6 +19,7 @@ body {
 @supports (font-variation-settings: normal) {
   body {
     font-family: $webfont-sans-variable;
+    font-optical-sizing: auto;
   }
 }
 

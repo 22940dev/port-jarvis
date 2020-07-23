@@ -17,13 +17,20 @@
 }
 
 // Web fonts (see components/_typography.scss)
-@mixin font-face($family, $src, $weight: normal, $style: normal, $display: swap) {
+@mixin font-face($family, $src, $weight: normal, $style: normal, $display: swap, $variable: false) {
   @font-face {
     font-family: $family;
     font-style: $style;
     font-weight: $weight;
     font-display: $display;
-    src: url($base-url + $src + ".woff2") format("woff2"), url($base-url + $src + ".woff") format("woff");
+
+    @if $variable {
+      // all browsers that support variable fonts also support woff2, so a woff file is unncessary
+      // draft spec for formats: https://www.w3.org/TR/css-fonts-4/#src-desc
+      src: url($base-url + $src + ".woff2") format("woff2-variations"), url($base-url + $src + ".woff2") format("woff2");
+    } @else {
+      src: url($base-url + $src + ".woff2") format("woff2"), url($base-url + $src + ".woff") format("woff");
+    }
 
     // Allow additional rules to be passed in:
     @content;
