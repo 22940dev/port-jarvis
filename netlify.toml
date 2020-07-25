@@ -3,39 +3,42 @@
   publish = "public"
   functions = ".netlify/functions"
 
-[build.environment]
-  NODE_VERSION = "14"
-  YARN_VERSION = "1.22.4"
-  YARN_FLAGS = "--no-ignore-optional --frozen-lockfile"
-  GO_VERSION = "1.14.6"
+  [build.environment]
+    NODE_VERSION = "14"
+    YARN_VERSION = "1.22.4"
+    YARN_FLAGS = "--no-ignore-optional --frozen-lockfile"
+    GO_VERSION = "1.14.6"
 
-# Ensure *only* Pretty URLs are enabled, even though this is already set up in
-# the Netlify dashboard.
-[build.processing]
-  skip_processing = false
-  [build.processing.css]
-    bundle = false
-    minify = false
-  [build.processing.js]
-    bundle = false
-    minify = false
-  [build.processing.html]
-    pretty_urls = true
-  [build.processing.images]
-    compress = false
+  # Ensure *only* Pretty URLs are enabled, even though this is already set up in
+  # the Netlify dashboard.
+  [build.processing]
+    skip_processing = false
+    [build.processing.css]
+      bundle = false
+      minify = false
+    [build.processing.js]
+      bundle = false
+      minify = false
+    [build.processing.html]
+      pretty_urls = true
+    [build.processing.images]
+      compress = false
 
 [context.deploy-preview]
-  command = "yarn build:hugo --environment development --baseURL $DEPLOY_PRIME_URL --buildDrafts --buildFuture"
+  command = "yarn build:functions && yarn build:hugo --environment development --baseURL $DEPLOY_PRIME_URL --buildDrafts --buildFuture"
 
 [context.branch-deploy]
-  command = "yarn build:hugo --environment development --baseURL $DEPLOY_PRIME_URL --buildDrafts --buildFuture"
+  command = "yarn build:functions && yarn build:hugo --environment development --baseURL $DEPLOY_PRIME_URL --buildDrafts --buildFuture"
 
 # https://github.com/netlify/cli/blob/master/docs/netlify-dev.md#netlifytoml-dev-block
 [dev]
   framework = "#custom"
-  command = "yarn start:hugo --baseURL=/ --appendPort=false --disableLiveReload"
-  targetPort = 1337
-  port = 1338
+  # only start Hugo, `netlify dev` builds/serves functions itself
+  command = "yarn start:hugo --port 1338 --baseURL=/ --appendPort=false --disableLiveReload"
+  # swap ports to keep consistent w/ normal local server
+  targetPort = 1338
+  port = 1337
+  # don't launch browser automatically
   autoLaunch = false
 
 # Cache resoures between builds:
@@ -132,11 +135,6 @@
   to = "https://queue.simpleanalyticscdn.com/noscript.gif:splat"
   status = 200
   force = true
-# TEMPORARY: Moved analytics endpoints above into /api/views
-[[redirects]]
-  from = "/sa/*"
-  to = "/api/views/:splat"
-  status = 301
 # Prettier URLs for Netlify Functions (must come after /api/views rules above)
 [[redirects]]
   from = "/api/*"
@@ -165,7 +163,15 @@
   to = "/img/favicon.ico"
   status = 200
 [[redirects]]
+  from = "/favicon-*"
+  to = "/img/favicon-:splat"
+  status = 301
+[[redirects]]
   from = "/apple-touch-icon.png"
+  to = "/img/apple-touch-icon.png"
+  status = 200
+[[redirects]]
+  from = "/apple-touch-icon-precomposed.png"
   to = "/img/apple-touch-icon.png"
   status = 200
 [[redirects]]
@@ -175,10 +181,6 @@
 [[redirects]]
   from = "/keybase.txt"
   to = "/.well-known/keybase.txt"
-  status = 301
-[[redirects]]
-  from = "/twemoji/svg/*"
-  to = "/vendor/emoji/svg/:splat"
   status = 301
 
 # Moved these random sites/projects elsewhere (mostly GitHub Pages) to keep
@@ -192,24 +194,20 @@
   to = "https://jakejarvis.github.io/ios-trackers/:splat"
   status = 302
 [[redirects]]
+  from = "/awesome/*"
+  to = "https://synonymsforawesome.com/"
+  status = 302
+[[redirects]]
   from = "/hugo-node/*"
   to = "https://github.com/jakejarvis/hugo-extended"
   status = 302
 [[redirects]]
-  from = "/awesome/*"
-  to = "https://synonymsforawesome.com/:splat"
+  from = "/comp20/*"
+  to = "https://jakejarvis.github.io/comp20/"
   status = 302
 [[redirects]]
   from = "/scrabble/*"
-  to = "https://scrabble.io/:splat"
-  status = 302
-[[redirects]]
-  from = "/candies/*"
-  to = "https://jakejarvis.github.io/candies/:splat"
-  status = 302
-[[redirects]]
-  from = "/comp20/*"
-  to = "https://jakejarvis.github.io/comp20/:splat"
+  to = "https://jakejarvis.github.io/scrabble/"
   status = 302
 
 # H A C K E R M A N ( ͡° ͜ʖ ͡°)

@@ -12,7 +12,7 @@ sitemap:
 
 > The [Jake Jarvis](https://jarv.is/) CLI (aka the most useless Node module ever published, in history, by anyone, ever).
 
-{{< image src="images/screenshot.png" width="700" alt="Terminal Screenshot" />}}
+{{< image src="images/screenshot.png" width="850" alt="Terminal Screenshot" />}}
 
 ## Usage
 

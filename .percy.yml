@@ -3,18 +3,24 @@ snapshot:
   widths: [450, 1050] # px
   enable-javascript: true
   percy-css: |
-    div.embed, iframe, video, img[src$=".gif"] {
-      display: none;
+    div.embed,
+    iframe,
+    video,
+    img[src$=".gif"],
+    .i-amphtml-element {
+      display: none;  /* don't worry about third-party content/embeds */
     }
-    code, div.highlight {
-      border: 0 !important; /* no clue why this bugs out... */
+    code,
+    div.highlight {
+      border: 0 !important;  /* no clue why this bugs out... */
     }
-    .wave, .beat {
+    .wave,
+    .beat {
       animation: none;
     }
 static-snapshots:
   path: public/
-  snapshot-files: 'index.html,notes/**/index.html,uses/index.html,previously/index.html'
+  snapshot-files: 'index.html,uses/index.html,notes/{netlify-analytics-review,shodan-search-queries,dropping-dropbox,coronavirus-open-source}/*.html'
 agent:
   asset-discovery:
     network-idle-timeout: 2000 # ms
