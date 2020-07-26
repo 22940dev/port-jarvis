@@ -99,7 +99,7 @@ jobs:
       run: yarn build:hugo --environment development --baseURL / --buildDrafts --buildFuture
     - name: Percy snapshots
       # don't run for all of dependabot's PRs -- I'm using the free plan...
-      if: "!contains(github.actor, '[bot]')"
+      # if: "!contains(github.actor, '[bot]')"
       uses: percy/snapshot-action@v0.1.0
       env:
         PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
