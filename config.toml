@@ -148,7 +148,9 @@ disableAliases = true
   # options for resampling filters:
   # https://github.com/disintegration/imaging#image-resizing
   resampleFilter = "Lanczos"
-  # let imagemin do all the heavy lifting post-build
+  # let imagemin do all the heavy lifting post-build.
+  # can be overridden (overrode?) inline for individual JPEGs:
+  # https://gohugo.io/content-management/image-processing/#jpeg-quality
   quality = 100
 
 [markup]
@@ -169,6 +171,12 @@ disableAliases = true
     lineNumbersInTable = true
     noClasses = true
     tabWidth = 4
+
+# commit things like oEmbed JSON (tweets, etc.) next to resources in this repo
+[caches]
+  [caches.getjson]
+    dir = ":resourceDir/_gen"
+    maxAge = -1
 
 [server]
   [[server.headers]]

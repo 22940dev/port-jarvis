@@ -8,8 +8,9 @@ sitemap:
 ---
 
 {{< portrait.inline >}}
-{{ $photoImg := resources.Get "img/me_sm.jpg" }}
-<img id="me" src="{{ $photoImg.Permalink }}" width="{{ div $photoImg.Width 2 }}" height="{{ div $photoImg.Height 2 }}" alt="Photo of Jake Jarvis">
+{{ $meImg := resources.Get .Site.Author.image }}
+{{ $meImgSm := $meImg.Resize "320x320 q90 jpg" }}
+<img id="me" src="{{ $meImgSm.Permalink }}" width="{{ div $meImgSm.Width 2 }}" height="{{ div $meImgSm.Height 2 }}" alt="Photo of Jake Jarvis">
 {{</ portrait.inline >}}
 
 ## Hi there! I'm Jake. <span class="wave">👋</span>

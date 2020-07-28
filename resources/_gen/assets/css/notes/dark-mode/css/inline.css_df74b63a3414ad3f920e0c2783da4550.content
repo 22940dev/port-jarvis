@@ -1,0 +1,1 @@
+div#content div.embed iframe {height:190px;width:100%;max-width:650px;display:block;box-sizing:border-box;margin:0 auto;border:2px solid #ccc;}

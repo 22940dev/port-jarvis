@@ -9,6 +9,7 @@ css: |
     margin-right: 2px;
   }
 sitemap:
+  changefreq: monthly
   priority: 0.4
 ---
 
@@ -154,23 +155,24 @@ I have far too many apps to count, but here the essentials that have earned a sp
 
 ## ☁️ Cloud {#cloud}
 
-I've been making recent efforts to [de-Google](https://www.reddit.com/r/degoogle/) my life, with mixed results...
+I've been making recent efforts to [de-Google](https://www.stallman.org/google.html) my life, with mixed results...
 
 - ~~Gmail~~ → [**Fastmail**](https://www.fastmail.com/) [(referral link)](https://ref.fm/u20274504)
 - ~~Google Drive~~ → ~~Dropbox~~ → [**iCloud Drive**](https://www.icloud.com/iclouddrive)
   - [Read why.](/notes/dropping-dropbox/)
 - ~~Google Docs~~ → [**Microsoft Office**](https://products.office.com/en-us/mac/microsoft-office-for-mac) (hey, it works 🤷)
 - ~~Google Photos~~ → [**iCloud Photos**](https://www.icloud.com/photos/)
-- ~~Google DNS~~ → [**Cloudflare 1.1.1.1 DNS**](https://1.1.1.1/dns/)
-- ~~Google Analytics~~ → both of these are awesome, privacy-aware "visitor counters" rather than trackers:
+- ~~Google Analytics~~ → both of these are awesome, privacy-aware "visitor counters" rather than invasive trackers:
   - [**Netlify Analytics**](https://www.netlify.com/products/analytics/) [(my review)](/notes/netlify-analytics-review/)
   - [**Simple Analytics**](https://simpleanalytics.com/) [(referral link)](https://referral.simpleanalytics.com/jake-jarvis)
     - 📈 This website's [stats are public](/stats/), by the way!
-- ~~GoDaddy~~ → ~~Google Domains~~ → [**Cloudflare Registrar**](https://www.cloudflare.com/products/registrar/)
-- [**DNSimple**](https://dnsimple.com/) [(referral link)](https://dnsimple.com/r/eb6ced548f1e0a) & [**Cloudflare**](https://www.cloudflare.com/) for DNS.
+- ~~Google Public DNS~~ → [**Cloudflare's 1.1.1.1**](https://1.1.1.1/dns/) on my home network.
+- ~~GoDaddy~~ → ~~Google Domains~~ → [**Cloudflare Registrar**](https://www.cloudflare.com/products/registrar/) (and [**ISNIC**](https://isnic.is/en/) of course 🇮🇸)
+- [**DNSimple**](https://dnsimple.com/) [(referral link)](https://dnsimple.com/r/eb6ced548f1e0a) & [**Cloudflare**](https://www.cloudflare.com/) for domain DNS.
 - [**Netlify**](https://www.netlify.com/) for static sites.
 - [**Linode**](https://www.linode.com/) [(referral link)](https://www.linode.com/?r=0c5aeace9bd591be9fbf32f96f58470295f1ee05) for virtual Linux servers.
 - [**Backblaze**](https://www.backblaze.com/) [(referral link)](https://secure.backblaze.com/r/00x84e) for off-site MacBook backups.
+- [**Gitea**](https://gitea.io/en-us/) as a [self-hosted](https://code.jarv.is/) Git backup/mirror.
 - [**Plex**](https://www.plex.tv/) + [**Sonarr**](https://sonarr.tv/) + [**Radarr**](https://radarr.video/)
 
 ## 🏠 Internet of ~~Things~~ [Crap](/notes/shodan-search-queries/) {#home}
@@ -178,6 +180,6 @@ I've been making recent efforts to [de-Google](https://www.reddit.com/r/degoogle
 - [**Synology RT2600ac**](https://www.synology.com/en-us/products/RT2600ac)
 - [**Synology DiskStation DS218+**](https://www.synology.com/en-us/products/DS218+)
 - [**Dell Inspiron 3647**](https://www.amazon.com/dp/B00HWML468/) running [**VMware ESXi**](https://www.vmware.com/products/esxi-and-esx.html) as a really, _really_ crappy home server.
-- [**Philips Hue**](https://www2.meethue.com/en-us) — color bulbs, dimmer switches, etc.
+- [**Philips Hue**](https://www2.meethue.com/en-us) color bulbs, dimmer switches, etc.
 - 2x [**Sonos One**](https://www.sonos.com/en-us/shop/one.html) (with Alexa turned off...allegedly.)
 - [**Petcube Play**](https://petcube.com/play/) 😻

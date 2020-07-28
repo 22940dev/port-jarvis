@@ -1,7 +1,6 @@
 # Hugo artifacts
 public/
 builds/
-resources/
 _vendor/
 
 # node/npm/yarn
