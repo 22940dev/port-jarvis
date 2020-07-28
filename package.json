@@ -25,7 +25,7 @@
     "minify": "run-s minify:**",
     "minify:html": "html-minifier --html5 --collapse-whitespace --collapse-boolean-attributes --preserve-line-breaks --minify-css --remove-comments --file-ext html --input-dir public --output-dir public **/*.html",
     "minify:js": "terser --compress passes=3,negate_iife=false,keep_fargs=false,sequences=false,reduce_vars=false --mangle reserved=['sa','sa_event'] --output public/js/app.js -- public/js/app.js",
-    "minify:img": "find './public' -type d ! -path './public/vendor*' | xargs -n1 -P8 -I{} imagemin '{}/*' --plugin=jpegoptim --plugin.jpegoptim.progressive --plugin.jpegoptim.stripAll --plugin=pngquant --plugin.pngquant.quality={0.1,0.3} --plugin.pngquant.speed=1 --plugin.pngquant.strip --plugin=gifsicle --plugin=svgo --out-dir='{}'",
+    "minify:img": "find './public' -type d ! -path './public/vendor*' | xargs -n1 -P8 -I{} imagemin '{}/*' --plugin=jpegoptim --plugin.jpegoptim.progressive --plugin.jpegoptim.stripAll --plugin=pngquant --plugin.pngquant.quality={0.1,0.3} --plugin.pngquant.speed=1 --plugin.pngquant.strip --plugin=gifsicle --plugin=svgo --out-dir='{}' > /dev/null 2>&1 || true",
     "lint": "run-s lint:**",
     "lint:scss": "stylelint 'assets/sass/**/*.scss' --syntax scss",
     "lint:js": "eslint 'assets/js/**/*.js' 'functions/**/*.js'",
@@ -44,15 +44,10 @@
     "eslint-config-prettier": "~6.11.0",
     "eslint-plugin-compat": "~3.8.0",
     "eslint-plugin-prettier": "~3.1.4",
-    "gifsicle": "jakejarvis/gifsicle-bin#master",
     "html-minifier": "^4.0.0",
     "hugo-extended": "0.74.3",
     "husky": "^4.2.5",
     "imagemin-cli": "^6.0.0",
-    "imagemin-gifsicle": "^7.0.0",
-    "imagemin-jpegoptim": "^7.0.0",
-    "imagemin-pngquant": "^9.0.0",
-    "imagemin-svgo": "^8.0.0",
     "lint-staged": "^10.2.11",
     "markdownlint-cli": "~0.23.2",
     "netlify-lambda": "^2.0.1",
@@ -74,6 +69,13 @@
     "stylelint-prettier": "~1.1.2",
     "stylelint-scss": "~3.18.0",
     "terser": "^4.8.0"
+  },
+  "optionalDependencies": {
+    "gifsicle": "jakejarvis/gifsicle-bin#master",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-jpegoptim": "^7.0.0",
+    "imagemin-pngquant": "^9.0.0",
+    "imagemin-svgo": "^8.0.0"
   },
   "resolutions": {
     "imagemin-gifsicle/gifsicle": "jakejarvis/gifsicle-bin#master",

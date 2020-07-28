@@ -147,18 +147,6 @@
   to = "/resume.pdf"
   status = 302
 [[redirects]]
-  from = "/me.jpg"
-  to = "/img/me.jpg"
-  status = 301
-[[redirects]]
-  from = "/me_large.jpg"
-  to = "/img/me.jpg"
-  status = 301
-[[redirects]]
-  from = "/img/me_large.jpg"
-  to = "/img/me.jpg"
-  status = 301
-[[redirects]]
   from = "/favicon.ico"
   to = "/img/favicon.ico"
   status = 200
