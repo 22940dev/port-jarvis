@@ -60,7 +60,7 @@ disableAliases = true
   # we're grabbing Twemoji SVGs from a pseudo NPM package on GitHub:
   # https://github.com/jakejarvis/twemoji-svg
   [[module.mounts]]
-    source = "node_modules/twemoji-svg/svg"
+    source = "node_modules/twemoji-assets/vendor/svg"
     target = "static/vendor/emoji/svg"
   # this is required, or else the Twemoji mount completely takes over /static:
   # https://discourse.gohugo.io/t/can-hugo-copy-files-from-one-dir-to-another/24085/4

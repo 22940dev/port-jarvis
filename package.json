@@ -35,7 +35,7 @@
   "dependencies": {
     "normalize.css": "8.0.1",
     "twemoji": "13.0.1",
-    "twemoji-svg": "jakejarvis/twemoji-svg#13.0.1"
+    "twemoji-assets": "jakejarvis/twemoji-assets#13.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.5",
