@@ -21,7 +21,9 @@ When somebody pointed out the negative connotations of Git projects being create
 
 {{< tweet "https://twitter.com/natfriedman/status/1271253144442253312" >}}
 
-I think many people misunderstood this tweet to mean GitHub will forcefully rename the `master` branch of all existing projects, which would break _millions_ of programmers' workflows. If anything, it's more likely a name such as `main` will replace `master` as **the default when creating a new repository**, but that change hasn't been made yet. [GitLab is also discussing](https://gitlab.com/gitlab-org/gitlab/-/issues/222204) a similar switch to `main` as the default name. (Ideally, these changes would be made in tandem with the actual Git codebase, too. [But this doesn't seem likely.](https://lore.kernel.org/git/CAOAHyQwyXC1Z3v7BZAC+Bq6JBaM7FvBenA-1fcqeDV==apdWDg@mail.gmail.com/t/))
+I think many people misunderstood this tweet to mean GitHub will forcefully rename the `master` branch of all existing projects, which would break _millions_ of programmers' workflows. If anything, it's more likely a name such as `main` will replace `master` as **the default when creating a new repository**, but that change hasn't been made yet. [GitLab is also discussing](https://gitlab.com/gitlab-org/gitlab/-/issues/221164) a similar switch to `main` as the default name. (Ideally, these changes would be made in tandem with the actual Git codebase, too. [~~But this doesn't seem likely.~~](https://lore.kernel.org/git/CAOAHyQwyXC1Z3v7BZAC+Bq6JBaM7FvBenA-1fcqeDV==apdWDg@mail.gmail.com/t/))
+
+> **Update:** GitHub has [published more details about their plan](https://github.com/github/renaming) to move from `master` to `main` and it will indeed be voluntary and configurable. To my surprise, the Git maintainers have [also agreed to add](https://sfconservancy.org/news/2020/jun/23/gitbranchname/) a `init.defaultBranch` setting to customize the default branch for new repositories in Git 2.28.
 
 But this means in the meantime, project owners are free to rename their branches as they please — and it's pretty simple to do so, usually with minimal disruption. [Some](https://github.com/desktop/desktop/issues/6478) [of](https://github.com/cli/cli/issues/929) [the](https://github.com/sindresorhus/awesome/issues/1793) [biggest](https://github.com/rust-lang/rustlings/issues/437) [OSS](https://github.com/twbs/bootstrap/pull/31050) [projects](https://github.com/ohmyzsh/ohmyzsh/issues/9015) have already voluntarily done so. Here's how to join them.
 
@@ -72,7 +74,9 @@ Pay attention to CI files — `.travis.yml`, `.github/workflows/`, `.circleci/c
 
 {{< image src="images/netlify-deploy.png" width="720" alt="Netlify auto-deployment branch setting" />}}
 
-Unfortunately, GitHub won't redirect links containing `master` to the new branch (as of now), so look for any [github.com](https://github.com/) URLs as well.
+~~Unfortunately, GitHub won't redirect links containing `master` to the new branch (as of now), so look for any [github.com](https://github.com/) URLs as well.~~
+
+> **Update:** GitHub is now [redirecting deleted branches](https://github.blog/changelog/2020-07-17-links-to-deleted-branches-now-redirect-to-the-default-branch/) to the default branch!
 
 ### Bonus points:
 
