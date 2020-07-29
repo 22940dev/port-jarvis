@@ -14,7 +14,7 @@
     "url": "git+https://github.com/jakejarvis/jarv.is.git"
   },
   "scripts": {
-    "clean": "hugo mod clean && rimraf public/ resources/ builds/ _vendor/ .netlify/{cache,functions}/ $TMPDIR/hugo_cache/ || true",
+    "clean": "rimraf public/ resources/ builds/ _vendor/ .netlify/{cache,functions}/ $TMPDIR/hugo_cache/ || true",
     "build": "run-s build:hugo build:functions minify",
     "build:hugo": "hugo --gc --cleanDestinationDir --verbose",
     "build:functions": "netlify-lambda build functions",
@@ -35,7 +35,7 @@
   "dependencies": {
     "normalize.css": "8.0.1",
     "twemoji": "13.0.1",
-    "twemoji-parser": "13.0.0"
+    "twemoji-svg": "jakejarvis/twemoji-svg#13.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.5",
@@ -71,14 +71,12 @@
     "terser": "^4.8.0"
   },
   "optionalDependencies": {
-    "gifsicle": "jakejarvis/gifsicle-bin#master",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-jpegoptim": "^7.0.0",
     "imagemin-pngquant": "^9.0.0",
     "imagemin-svgo": "^8.0.0"
   },
   "resolutions": {
-    "imagemin-gifsicle/gifsicle": "jakejarvis/gifsicle-bin#master",
     "postcss-clean/postcss": "^7.x"
   },
   "husky": {

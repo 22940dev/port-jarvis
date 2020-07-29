@@ -57,11 +57,16 @@ disableAliases = true
     mastodon = "mastodon.social/@jakejarvis"
 
 [module]
-  [[module.imports]]
-    path = "github.com/twitter/twemoji"
-    [[module.imports.mounts]]
-      source = "assets/svg"
-      target = "static/vendor/emoji/svg"
+  # we're grabbing Twemoji SVGs from a pseudo NPM package on GitHub:
+  # https://github.com/jakejarvis/twemoji-svg
+  [[module.mounts]]
+    source = "node_modules/twemoji-svg/svg"
+    target = "static/vendor/emoji/svg"
+  # this is required, or else the Twemoji mount completely takes over /static:
+  # https://discourse.gohugo.io/t/can-hugo-copy-files-from-one-dir-to-another/24085/4
+  [[module.mounts]]
+    source = "static"
+    target = "static"
 
 [frontmatter]
   lastmod = ["date", "publishDate", ":default"]
