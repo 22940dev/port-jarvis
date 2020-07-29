@@ -2,3 +2,8 @@
 # https://github.com/w3c/manifest/issues/689
 /site.webmanifest
   Content-Type: application/manifest+json
+
+# AMP cache invalidation key requirements:
+# https://developers.google.com/amp/cache/update-cache#update-cache-guidelines
+/.well-known/amphtml/apikey.pub
+  Content-Type: text/plain; charset=UTF-8

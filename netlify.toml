@@ -61,13 +61,6 @@
     Content-Type = "text/plain; charset=UTF-8"
     Content-Disposition = "inline; filename=\"jarvis.asc\""
 
-# AMP cache invalidation key requirements:
-# https://developers.google.com/amp/cache/update-cache#update-cache-guidelines
-[[headers]]
-  for = "/.well-known/amphtml/apikey.pub"
-  [headers.values]
-    Content-Type = "text/plain; charset=UTF-8"
-
 # Redirect Netlify and www subdomains to primary domain:
 [[redirects]]
   from = "https://jakejarvis.netlify.com/*"
@@ -84,38 +77,6 @@
   to = "https://jarv.is/:splat"
   status = 301
   force = true
-
-# Support ancient RSS subscriptions and links from WordPress era:
-[[redirects]]
-  from = "/feed"
-  to = "/feed.xml"
-  status = 301
-[[redirects]]
-  from = "/rss"
-  to = "/feed.xml"
-  status = 301
-[[redirects]]
-  from = "/index.xml"
-  to = "/feed.xml"
-  status = 301
-[[redirects]]
-  from = "/index.php"
-  to = "/"
-  status = 301
-[[redirects]]
-  from = "/blog/*"
-  to = "/notes/"
-  status = 301
-[[redirects]]
-  from = "/archives/*"
-  to = "/notes/"
-  status = 301
-[[redirects]]
-  # Not sure if these XML-RPC requests are malicious but forward them to
-  # webmention.io anyway.
-  from = "/xmlrpc.php"
-  to = "https://webmention.io/jarv.is/xmlrpc"
-  status = 302
 
 # Proxy data to Simple Analytics endpoints:
 [[redirects]]
@@ -143,29 +104,17 @@
 
 # More miscellaneous mirrors/redirects:
 [[redirects]]
+  from = "/blog/*"
+  to = "/notes/"
+  status = 301
+[[redirects]]
+  from = "/archives/*"
+  to = "/notes/"
+  status = 301
+[[redirects]]
   from = "/resume"
   to = "/resume.pdf"
   status = 302
-[[redirects]]
-  from = "/favicon.ico"
-  to = "/img/favicon.ico"
-  status = 200
-[[redirects]]
-  from = "/favicon-*"
-  to = "/img/favicon-:splat"
-  status = 301
-[[redirects]]
-  from = "/apple-touch-icon.png"
-  to = "/img/apple-touch-icon.png"
-  status = 200
-[[redirects]]
-  from = "/apple-touch-icon-precomposed.png"
-  to = "/img/apple-touch-icon.png"
-  status = 200
-[[redirects]]
-  from = "/safari-pinned-tab.svg"
-  to = "/img/safari-pinned-tab.svg"
-  status = 200
 [[redirects]]
   from = "/keybase.txt"
   to = "/.well-known/keybase.txt"

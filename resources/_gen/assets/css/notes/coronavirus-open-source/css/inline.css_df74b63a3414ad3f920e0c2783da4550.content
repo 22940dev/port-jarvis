@@ -1,3 +1,0 @@
-div#content a#octocat {margin-left:.25em;text-decoration:none;}
-div#content a#octocat svg {vertical-align:text-bottom;}
-body.dark div#content a#octocat svg path {fill:#d3d3d3;}

@@ -71,23 +71,23 @@ disableAliases = true
     name = "Home"
     pre = "🏡"
     url = "/"
-    weight = -100
+    weight = 1
   [[menu.main]]
     name = "Notes"
     pre = "🗒"
     url = "/notes/"
-    weight = -90
+    weight = 2
   [[menu.main]]
     name = "Projects"
     pre = "👨‍💻"
     url = "https://github.com/jakejarvis"
-    weight = -80
+    weight = 3
   [[menu.main]]
     name = "Contact"
     pre = "📬"
     # encode my email address like it's 2005 ( ͡° ͜ʖ ͡°)
     url = "&#x6D;&#x61;&#x69;&#x6C;&#x74;&#x6F;&#x3A;&#x6A;&#x61;&#x6B;&#x65;&#x40;&#x6A;&#x61;&#x72;&#x76;&#x2E;&#x69;&#x73;"
-    weight = -70
+    weight = 4
 
 [outputs]
   home = ["HTML", "RSS", "ATOM", "MANIFEST", "REDIRECTS", "HEADERS"]
@@ -174,9 +174,20 @@ disableAliases = true
 
 # commit things like oEmbed JSON (tweets, etc.) next to resources in this repo
 [caches]
+  [caches.assets]
+    dir = ":cacheDir/:project"  # default: :resourceDir/_gen
+  [caches.getcsv]
+    dir = ":resourceDir/_gen"   # default: :cacheDir/:project
   [caches.getjson]
+    dir = ":resourceDir/_gen"   # default: :cacheDir/:project
+  [caches.images]
     dir = ":resourceDir/_gen"
-    maxAge = -1
+  [caches.modules]
+    dir = ":cacheDir/modules"
+
+[build]
+  # don't use cache for SCSS compilation, better to throw error than be stale
+  useResourceCacheWhen = "never"
 
 [server]
   [[server.headers]]
