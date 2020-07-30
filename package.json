@@ -47,7 +47,6 @@
     "html-minifier": "^4.0.0",
     "hugo-extended": "0.74.3",
     "husky": "^4.2.5",
-    "imagemin-cli": "^6.0.0",
     "lint-staged": "^10.2.11",
     "markdownlint-cli": "~0.23.2",
     "netlify-lambda": "^2.0.1",
@@ -71,6 +70,7 @@
     "terser": "^4.8.0"
   },
   "optionalDependencies": {
+    "imagemin-cli": "^6.0.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-jpegoptim": "^7.0.0",
     "imagemin-pngquant": "^9.0.0",
