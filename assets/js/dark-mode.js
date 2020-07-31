@@ -72,13 +72,9 @@
         if (active) {
           activateTheme(light);
           storage.setItem(pref_key, light);
-          // send event to SA
-          sa_event("triggered_light_mode"); // eslint-disable-line no-undef
         } else {
           activateTheme(dark);
           storage.setItem(pref_key, dark);
-          // send event to SA
-          sa_event("triggered_dark_mode"); // eslint-disable-line no-undef
         }
       },
       true

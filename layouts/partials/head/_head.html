@@ -9,6 +9,3 @@
 {{ partialCached "head/webmention" . -}}
 {{ partial "head/canonical" . -}}
 {{ partial "head/schema" . -}}
-{{ if eq hugo.Environment "production" -}}
-  {{ partialCached "scripts/simple_analytics_events" . -}}
-{{ end -}}
