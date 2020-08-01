@@ -26,35 +26,17 @@ footer {
     margin: 0 auto;
     justify-content: space-between;
     font-size: 0.85em;
-  }
-
-  div#copyright,
-  div#poweredby {
-    width: 40%;
     line-height: 2.3;
   }
 
-  div#copyright {
-    text-align: left;
-  }
+  // underline View Source link
+  a#source {
+    padding-bottom: 2px;
+    border-bottom: 1px solid;
 
-  div#poweredby {
-    text-align: right;
-
-    a#source {
-      padding-bottom: 2px;
-      border-bottom: 1px solid;
-
-      @include colors() {
-        border-color: c(light);
-      }
+    @include colors() {
+      border-color: c(light);
     }
-  }
-
-  div#y2k {
-    width: 20%;
-    text-align: center;
-    line-height: 1;
   }
 }
 
@@ -63,20 +45,10 @@ footer {
   footer {
     padding: 1em 1.25em 0 1.25em;
 
+    // stack columns on left instead of flexboxing across
     div.row {
       display: block;
-    }
-
-    div#copyright,
-    div#poweredby {
-      width: 100%;
-      text-align: left;
       line-height: 2;
-    }
-
-    // no more room at the inn :(
-    div#y2k {
-      display: none;
     }
   }
 }

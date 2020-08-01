@@ -1,10 +1,6 @@
 <footer>
   <div class="row">
     <div id="copyright">Content <a class="no-underline" href="{{ "license/" | absURL }}"{{ with .Site.Params.license.nameLong }} title="{{ . }}"{{ end }}>licensed under {{ .Site.Params.license.name }}</a>, {{ with .Site.Params.license.copyrightFirstYear }}<a class="no-underline" href="{{ "previously/" | absURL }}" title="Previously on...">{{ . }} &ndash;</a>{{ end }} {{ now.Format "2006" }}.</div>
-
-    {{ $ieGif := resources.Get "img/ie.gif" -}}
-    <div id="y2k"><a class="no-underline" href="https://y2k.land/" title="This site works best with Internet Explorer&reg;" target="_blank" rel="noopener"><img src="{{ $ieGif.Permalink }}" style="width: {{ $ieGif.Width }}px; height: {{ $ieGif.Height }}px;" alt="This site works best with Internet Explorer&reg;"></a></div>
-
     <div id="poweredby">Made with <span class="beat">❤️</span> and <a class="no-underline" href="https://gohugo.io/" title="Powered by Hugo" id="hugo" target="_blank" rel="noopener">Hugo</a>. {{ with .Scratch.Get "sourceURL" }}<a class="no-underline" href="{{ . | safeURL }}" title="View Source on GitHub" id="source" target="_blank" rel="noopener">View source.</a>{{ end }}</div>
   </div>
 </footer>
