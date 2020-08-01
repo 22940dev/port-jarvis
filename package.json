@@ -35,12 +35,12 @@
   "dependencies": {
     "normalize.css": "8.0.1",
     "twemoji": "13.0.1",
-    "twemoji-assets": "jakejarvis/twemoji-assets#13.0.1"
+    "twemoji-emojis": "13.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.6",
     "cross-env": "^7.0.2",
-    "eslint": "~7.5.0",
+    "eslint": "~7.6.0",
     "eslint-config-prettier": "~6.11.0",
     "eslint-plugin-compat": "~3.8.0",
     "eslint-plugin-prettier": "~3.1.4",
