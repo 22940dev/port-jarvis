@@ -4,9 +4,6 @@ date: 2016-07-25 00:00:00-0400
 description: "My brief apperance in one of Hillary Clinton's 2016 DNC convention videos on substance abuse."
 image: "thumb.png"
 layout: video
-sitemap:
-  changefreq: yearly
-  priority: 0.2
 resources:
   - src: "convention-720p.mp4"
   - src: "convention-720p.webm"

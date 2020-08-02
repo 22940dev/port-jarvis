@@ -13,8 +13,6 @@ css: |
     border: 0;
     overflow: hidden;
   }
-sitemap:
-  priority: 0.3
 ---
 
 This website uses [**Simple Analytics**](https://simpleanalytics.com/?ref=jarv.is) to track pageviews **without collecting any personally identifiable information,** including IP addresses, cookies, and browser fingerprints.

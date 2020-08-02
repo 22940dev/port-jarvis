@@ -4,8 +4,6 @@ date: 2020-04-22 10:50:04-0400
 description: "AKA, the most useless Node module ever published, in history, by anyone, ever."
 image: "images/screenshot.png"
 layout: etc
-sitemap:
-  priority: 0.5
 ---
 
 {{< gh-buttons username="jakejarvis" repo="cli" >}}

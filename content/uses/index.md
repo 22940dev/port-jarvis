@@ -8,9 +8,6 @@ css: |
   h2 img.emoji {
     margin-right: 2px;
   }
-sitemap:
-  changefreq: monthly
-  priority: 0.4
 ---
 
 ~~I regularly get messages asking about which tools I use to work.~~

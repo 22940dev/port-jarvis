@@ -12,7 +12,6 @@ image: "images/1_b41ztscbaxqi60snwsswfw.jpg"
 aliases:
   - /2013/11/21/no-homo-still-raps-motto/
 draft: false
-comments: false
 ---
 
 {{< image src="images/1_b41ztscbaxqi60snwsswfw.jpg" >}}This essay was written for Professor [David Valdes-Greenwood](http://www.davidvaldesgreenwood.com/)'s "Love & Sexuality" class at [Tufts University](https://www.tufts.edu/) in April 2012.{{< /image >}}

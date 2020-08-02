@@ -147,7 +147,6 @@ disableAliases = true
 
 [sitemap]
   filename = "sitemap.xml"
-  priority = 0.7
 
 [imaging]
   # options for resampling filters:

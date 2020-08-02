@@ -18,6 +18,7 @@ css: |
     margin: 0 auto;
     border: 2px solid #cccccc;
   }
+draft: false
 ---
 
 Love it or hate it, it seems that the [dark mode fad](https://en.wikipedia.org/wiki/Light-on-dark_color_scheme) is here to stay, especially now that more and more devices have [OLED screens](https://www.macrumors.com/2019/10/21/ios-13-dark-mode-extends-iphone-battery-life/) that display true blacks... which means that these trendsetters might go blind from your site's insanely white background if you're behind the curve and don't offer your own dark mode.
