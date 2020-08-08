@@ -181,7 +181,7 @@
     );
     /** endif **/
 
-    var sendBeaconText = "sendBeacon";
+    // var sendBeaconText = "sendBeacon";
 
     var sendOnLeave = function (id, push) {
       var append = { type: "append", original_id: push ? id : lastPageId };
