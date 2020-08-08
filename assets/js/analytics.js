@@ -25,7 +25,7 @@
     var addEventListenerFunc = window.addEventListener;
     var encodeURIComponentFunc = encodeURIComponent;
     var decodeURIComponentFunc = decodeURIComponent;
-    var stringify = JSON.stringify;
+    // var stringify = JSON.stringify;
     var thousand = 1000;
     var undefinedVar = undefined;
     var language = "language";
@@ -112,7 +112,7 @@
       }
       image.src =
         fullApiUrl +
-        "/send?" +
+        "?" +
         Object.keys(data)
           .filter(function (key) {
             return data[key] != undefinedVar;
@@ -196,11 +196,11 @@
       append.scrolled = Math.max(0, scrolled, position());
       /** endif **/
 
-      if (push || !(sendBeaconText in nav)) {
-        sendData(append);
-      } else {
-        nav[sendBeaconText](fullApiUrl + "/append", stringify(assign(payload, append)));
-      }
+      // if (push || !(sendBeaconText in nav)) {
+      sendData(append);
+      // } else {
+      //   nav[sendBeaconText](fullApiUrl + "/append", stringify(assign(payload, append)));
+      // }
     };
 
     addEventListenerFunc("unload", sendOnLeave, false);
@@ -384,4 +384,4 @@
   } catch (e) {
     console.warn(e);
   }
-})(window, "{{ (urls.Parse .Site.BaseURL).Host }}/api/views");
+})(window, "{{ (urls.Parse .Site.BaseURL).Host }}/api/send_view");

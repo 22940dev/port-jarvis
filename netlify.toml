@@ -78,25 +78,7 @@
   status = 301
   force = true
 
-# Proxy data to Simple Analytics endpoints:
-[[redirects]]
-  from = "/api/views/send*"
-  to = "https://queue.simpleanalyticscdn.com/simple.gif:splat"
-  status = 200
-  force = true
-[[redirects]]
-  from = "/api/views/append*"
-  to = "https://queue.simpleanalyticscdn.com/append:splat"
-  status = 200
-  force = true
-[[redirects]]
-  # This noscript pixel needs to pass unknown arguments along for AMP pages:
-  # https://amp.dev/documentation/components/amp-pixel/
-  from = "/api/views/noscript.gif*"
-  to = "https://queue.simpleanalyticscdn.com/noscript.gif:splat"
-  status = 200
-  force = true
-# Prettier URLs for Netlify Functions (must come after /api/views rules above)
+# Prettier URLs for Netlify Functions
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
