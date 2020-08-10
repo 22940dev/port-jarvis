@@ -1,3 +1,9 @@
+{{/* Strip any markdown styling from page title for use in meta tags */}}
+
+{{- with .Title -}}
+  {{- $.Scratch.Set "plainTitle" (. | markdownify | htmlUnescape | plainify) -}}
+{{- end -}}
+
 {{/* Chooses and initializes various images for use by JSON schema & open graph tags */}}
 
 {{/* Author image (default) */}}

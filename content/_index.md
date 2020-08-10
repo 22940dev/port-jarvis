@@ -1,6 +1,6 @@
 ---
-title: "Jake Jarvis – Front-End Web Developer in Boston, MA"
-date: 2020-08-01 17:56:45-0400
+title: "Jake Jarvis – Front-End Web Developer in Boston, MA 👨‍💻"
+date: 2020-08-10 10:17:58-0400
 type: home
 sitemap:
   priority: 1.0

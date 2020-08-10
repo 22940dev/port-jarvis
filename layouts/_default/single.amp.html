@@ -1,6 +1,7 @@
 <!doctype html>
 <html ⚡ lang="en">
   <head>
+    {{ partial "functions/meta-scratch" . }}
     <meta charset="utf-8">
     {{ hugo.Generator }}
     <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -12,7 +13,7 @@
     {{ if .HasShortcode "gist" }}<script async custom-element="amp-gist" src="https://cdn.ampproject.org/v0/amp-gist-0.1.js"></script>{{ end }}
     {{ if .HasShortcode "instagram" }}<script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>{{ end }}
     {{ if .HasShortcode "vimeo" }}<script async custom-element="amp-vimeo" src="https://cdn.ampproject.org/v0/amp-vimeo-0.1.js"></script>{{ end }}
-    <title>{{ .Title }} – {{ .Site.Title }}</title>
+    <title>{{ .Scratch.Get "plainTitle" }} – {{ .Site.Title }}</title>
     {{ with .OutputFormats.Get "html" }}<link rel="canonical" href="{{ .Permalink }}">{{ end }}
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     {{ with .Site.Author.name }}<meta name="author" content="{{ . }}">{{ end }}

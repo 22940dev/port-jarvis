@@ -1,4 +1,4 @@
-{{- $img := partial "functions/social-images" . -}}
+{{- $img := partial "functions/meta-scratch" . -}}
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ .Site.Title }}</title>
@@ -23,7 +23,7 @@
   {{- end }}
   {{- range (where .Site.RegularPages "Section" .Site.Params.mainSection) }}
   <entry>
-    <title>{{ .Title }}</title>
+    <title>{{ .Title | markdownify | htmlUnescape | plainify }}</title>
     {{- with .Site.Author.name }}
     <author>
       <name>{{ . }}</name>
