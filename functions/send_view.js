@@ -23,6 +23,7 @@ exports.handler = function (event, context, callback) {
     url: endpointUrl,
     headers: reqHeaders,
     params: reqQuery,
+    responseType: "arraybuffer",
     timeout: 3000,
   };
 
@@ -44,7 +45,8 @@ exports.handler = function (event, context, callback) {
       callback(null, {
         statusCode: response.status,
         headers: resHeaders,
-        body: response.body,
+        body: response.data.toString("base64"),
+        isBase64Encoded: true,
       });
     })
     .catch(function (error) {
