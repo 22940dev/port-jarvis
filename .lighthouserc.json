@@ -23,7 +23,7 @@
     },
     "upload": {
       "target": "lhci",
-      "serverBaseUrl": "https://powerful-falls-79142.herokuapp.com"
+      "serverBaseUrl": "https://lhci.jrvs.io"
     }
   }
 }
