@@ -22,3 +22,4 @@ devcontainer.json
 .vercel/
 .vscode/
 LICENSE.md
+content/notes/dark-mode/example.html
