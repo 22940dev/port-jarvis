@@ -1,0 +1,19 @@
+{
+  "name": "jarv.is",
+  "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:0-14",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/zsh"
+  },
+  "extensions": [
+    "budparr.language-hugo-vscode",
+    "bungcip.better-toml",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint"
+  ],
+  "forwardPorts": [
+    1337,
+    9337
+  ],
+  "postCreateCommand": "yarn install"
+}
