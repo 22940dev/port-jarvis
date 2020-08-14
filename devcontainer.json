@@ -2,7 +2,13 @@
   "name": "jarv.is",
   "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:0-14",
   "settings": {
-    "terminal.integrated.shell.linux": "/bin/zsh"
+    "editor.fontFamily": "'Source Code Pro', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    "editor.letterSpacing": 0.2,
+    "editor.lineHeight": 23,
+    "editor.minimap.enabled": false,
+    "terminal.integrated.shell.linux": "/bin/zsh",
+    "workbench.colorTheme": "GitHub Dark"
   },
   "extensions": [
     "budparr.language-hugo-vscode",
@@ -12,8 +18,7 @@
     "stylelint.vscode-stylelint"
   ],
   "forwardPorts": [
-    1337,
-    9337
+    1337
   ],
   "postCreateCommand": "yarn install"
 }
