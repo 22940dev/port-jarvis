@@ -12,6 +12,7 @@ _vendor/
 # dotfiles/config
 .*
 postcss.config.js
+devcontainer.json
 
 # miscellaneous
 .github/
