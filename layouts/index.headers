@@ -1,3 +1,7 @@
+# Cache static assets (webfonts, emojis, etc.) for a long time (1 month)
+/vendor/*
+  Cache-Control: max-age=2628000
+
 # Recommended MIME type for PWA manifests:
 # https://github.com/w3c/manifest/issues/689
 /site.webmanifest

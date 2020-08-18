@@ -6,7 +6,7 @@ body {
   height: 100%;
   margin: 0 auto;
 
-  font-family: $webfont-sans;
+  font-family: $font-stack-static;
   font-kerning: normal;
   font-variant-ligatures: normal;
   font-feature-settings: "kern", "liga", "calt", "clig", "ss01";
@@ -18,7 +18,7 @@ body {
 // stylelint-disable-next-line plugin/no-unsupported-browser-features
 @supports (font-variation-settings: normal) {
   body {
-    font-family: $webfont-sans-variable;
+    font-family: $font-stack-var;
     font-optical-sizing: auto;
   }
 }
@@ -90,6 +90,14 @@ a {
 b,
 strong {
   letter-spacing: 0.008em; // not sure why the discrepancy between weights
+}
+
+code,
+pre,
+.monospace {
+  font-family: $font-stack-mono;
+  font-size: 0.95em;
+  letter-spacing: normal;
 }
 
 blockquote {
