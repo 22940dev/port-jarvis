@@ -11,7 +11,7 @@ exports.handler = function (event, context, callback) {
       });
 
       instance.interceptors.response.use((response) => {
-        response.elapsedTime = Number(Date.now() - response.config.startTime).toFixed();
+        response.elapsedTime = Number((Date.now() - response.config.startTime) / 1000);
         return response;
       });
     })(axios);
@@ -61,6 +61,7 @@ exports.handler = function (event, context, callback) {
             "Cache-Control": "private, no-cache, no-store, must-revalidate",
             Expires: "0",
             Pragma: "no-cache",
+            "x-api-endpoint": endpointHost,
             "x-api-response": shortFeedback,
             "x-api-latency": response.elapsedTime,
           },
@@ -71,13 +72,11 @@ exports.handler = function (event, context, callback) {
       .catch(function (error) {
         // this indicates a request error, NOT an error in the endpoint's reponse
         console.error(error.message);
-
         callback(Error(error));
       });
   } catch (error) {
     // something went VERY wrong...
     console.error(error.message);
-
     callback(Error(error));
   }
 };
