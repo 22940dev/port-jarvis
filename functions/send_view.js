@@ -1,4 +1,5 @@
 const axios = require("axios");
+const { v4: uuidv4 } = require("uuid");
 
 exports.handler = function (event, context, callback) {
   try {
@@ -64,6 +65,7 @@ exports.handler = function (event, context, callback) {
             "x-api-endpoint": endpointHost,
             "x-api-response": shortFeedback,
             "x-api-latency": response.elapsedTime,
+            "x-api-id": uuidv4(),
           },
           body: response.data.toString("base64"),
           isBase64Encoded: true,
