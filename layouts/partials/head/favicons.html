@@ -1,9 +1,6 @@
 {{- $appleIcon := resources.Get "img/apple-touch-icon.png" }}
 <link rel="apple-touch-icon" href="{{ $appleIcon.Permalink }}" sizes="{{ $appleIcon.Width }}x{{ $appleIcon.Height }}">
 
-{{- $safariIcon := resources.Get "img/safari-pinned-tab.svg" }}
-<link rel="mask-icon" href="{{ $safariIcon.Permalink }}" color="#009cdf">
-
 {{- range (split .pngSizes " ") }}
   {{- $faviconPng := resources.Get (printf "img/favicon-%v.png" .) }}
   <link rel="icon" href="{{ $faviconPng.Permalink }}" sizes="{{ . }}x{{ . }}">

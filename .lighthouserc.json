@@ -16,6 +16,7 @@
         "uses-rel-preconnect": "warn",
         "is-crawlable": "off",
         "offscreen-images": "off",
+        "unsized-images": "warn",
         "uses-long-cache-ttl": "off",
         "uses-responsive-images": "off",
         "uses-webp-images": "off"
