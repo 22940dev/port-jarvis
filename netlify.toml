@@ -5,7 +5,7 @@
 
   [build.environment]
     NODE_VERSION = "14"
-    YARN_VERSION = "1.22.4"
+    YARN_VERSION = "1.22.5"
     YARN_FLAGS = "--no-ignore-optional --frozen-lockfile"
 
   # Ensure *only* Pretty URLs are enabled, even though this is already set up in
@@ -98,13 +98,27 @@
   to = "/resume.pdf"
   status = 302
 [[redirects]]
+  from = "/stats/badge.svg"
+  to = "https://simpleanalyticsbadge.com/jarv.is?counter=true"
+  status = 200
+
+# Fix some 404s after moving files around somewhat recklessly:
+[[redirects]]
   from = "/keybase.txt"
   to = "/.well-known/keybase.txt"
   status = 301
 [[redirects]]
-  from = "/stats/badge.svg"
-  to = "https://simpleanalyticsbadge.com/jarv.is?counter=true"
-  status = 200
+  from = "/img/me_large.jpg"
+  to = "/img/me.jpg"
+  status = 301
+[[redirects]]
+  from = "/me.jpg"
+  to = "/img/me.jpg"
+  status = 301
+[[redirects]]
+  from = "/me_large.jpg"
+  to = "/img/me.jpg"
+  status = 301
 
 # Moved these random sites/projects elsewhere (mostly GitHub Pages) to keep
 # this repo and domain squeaky clean:
