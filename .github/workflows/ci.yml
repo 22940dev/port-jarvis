@@ -35,10 +35,12 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 14.x
-    - name: Install Lighthouse CI
+    - name: Install LHCI
+      run: npm install -g @lhci/cli
+    - name: Check LHCI
       run: |
-        npm install -g @lhci/cli
         lhci --version
+        lhci healthcheck
     - name: Audit deploy preview
       if: "github.event_name == 'pull_request'"
       continue-on-error: true
@@ -47,7 +49,7 @@ jobs:
           --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.app/ \
           --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.app/notes/netlify-analytics-review/ \
           --collect.url=https://deploy-preview-${{ github.event.number }}--jakejarvis.netlify.app/notes/how-to-pull-request-fork-github/amp.html
-    - name: Audit jarv.is
+    - name: Audit production site
       if: "github.event_name == 'push' && github.ref == 'refs/heads/main'"
       continue-on-error: true
       run: |
@@ -72,13 +74,13 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 14.x
-    - name: Get Yarn cache location
+    - name: Get Yarn cache path
       # https://github.com/actions/cache/blob/master/examples.md#node---yarn
       # https://github.com/actions/cache/issues/60
       id: yarn-cache
       run: echo "::set-output name=dir::$(yarn cache dir)"
     - name: Cache dependencies
-      uses: actions/cache@v1
+      uses: actions/cache@v2
       with:
         path: ${{ steps.yarn-cache.outputs.dir }}
         key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
@@ -95,7 +97,7 @@ jobs:
     - name: Build
       run: yarn build:hugo --environment development --baseURL / --buildDrafts --buildFuture
     - name: Percy snapshots
-      # don't run for all of dependabot's PRs -- I'm using the free plan...
+      # uncomment to disable all bot PRs (eg. dependabot) -- I'm using the free plan...
       # if: "!contains(github.actor, '[bot]')"
       uses: percy/snapshot-action@v0.1.0
       env:
