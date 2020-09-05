@@ -49,6 +49,6 @@ All original code in this repository (like my [Hugo theme](layouts/)) is publish
 External assets include:
 
 - [**Twemoji**](https://twemoji.twitter.com/): Copyright (c) 2020 Twitter, Inc. and other contributors. [Licensed under CC-BY-4.0.](https://github.com/twitter/twemoji/blob/v13.0.1/LICENSE-GRAPHICS)
-- [**Inter**](https://rsms.me/inter/): Copyright (c) 2016-2020 The Inter Project Authors. [Licensed under the SIL Open Font License, Version 1.1.](https://github.com/rsms/inter/blob/v3.14/LICENSE.txt)
+- [**Inter**](https://rsms.me/inter/): Copyright (c) 2016-2020 The Inter Project Authors. [Licensed under the SIL Open Font License, Version 1.1.](https://github.com/rsms/inter/blob/v3.15/LICENSE.txt)
 - [**Hack**](https://sourcefoundry.org/hack/): Copyright (c) 2018 Source Foundry Authors. [Licensed under the MIT License.](https://github.com/source-foundry/Hack/blob/v3.003/LICENSE.md)
 - [**Comic Neue**](http://comicneue.com/): Copyright (c) 2014 The Comic Neue Project Authors. [Licensed under the SIL Open Font License, Version 1.1.](https://github.com/crozynski/comicneue/blob/v2.5/OFL.txt)
