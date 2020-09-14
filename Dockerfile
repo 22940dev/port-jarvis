@@ -1,7 +1,6 @@
 # pulls from pre-built Hugo base image:
-# https://github.com/jakejarvis/hugo-docker/blob/master/Dockerfile
-# https://hub.docker.com/r/jakejarvis/hugo-extended
-FROM jakejarvis/hugo-extended:0.74.3
+# https://github.com/jakejarvis/hugo-docker/blob/master/Dockerfile  
+FROM ghcr.io/jakejarvis/hugo-extended:0.74.3
 
 # expose live-refresh server (on custom port)
 EXPOSE 1337
