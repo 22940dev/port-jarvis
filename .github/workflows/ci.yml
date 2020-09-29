@@ -58,7 +58,8 @@ jobs:
           --collect.url=https://jarv.is/notes/netlify-analytics-review/ \
           --collect.url=https://jarv.is/notes/how-to-pull-request-fork-github/amp.html
     - name: Upload results as artifact
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v2
+      if: success()
       with:
         name: lhci-results
         path: ./.lighthouseci
