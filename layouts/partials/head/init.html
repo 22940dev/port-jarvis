@@ -1,18 +1,25 @@
 {{/* Strip any markdown styling from page title for use in meta tags */}}
-
 {{- with .Title -}}
   {{- $.Scratch.Set "plainTitle" (. | markdownify | htmlUnescape | plainify) -}}
 {{- end -}}
 
-{{/* Chooses and initializes various images for use by JSON schema & open graph tags */}}
+{{/* If this is a page/post, link View Source to specific file on GitHub; otherwise, just link to repo homepage */}}
+{{- with .Site.Params.social.githubRepo }}
+  {{- $githubURL := printf "https://github.com/%s" . }}
+  {{- if not $.IsPage }}
+    {{- $.Scratch.Set "sourceURL" $githubURL }}
+  {{- else }}
+    {{- $.Scratch.Set "sourceURL" (printf "%s/blob/main/content/%s" $githubURL $.File.Path) }}
+  {{- end }}
+{{- end }}
 
+{{/* Chooses and initializes various images for use by JSON schema & open graph tags */}}
 {{/* Author image (default) */}}
 {{- with .Site.Author.image -}}
   {{- with resources.Get . -}}
     {{- $.Scratch.Set "authorImage" . -}}
   {{- end -}}
 {{- end -}}
-
 {{/* Page image (via frontmatter) */}}
 {{- with .Params.image -}}
   {{- with $.Page.Resources.GetMatch . -}}
@@ -24,7 +31,6 @@
     {{- $.Scratch.Set "pageImage" . -}}
   {{- end -}}
 {{- end -}}
-
 {{/* Site logo */}}
 {{- with .Site.Params.image -}}
   {{- with resources.Get . -}}
