@@ -1,5 +1,4 @@
 const axios = require("axios");
-const { v4: uuidv4 } = require("uuid");
 
 exports.handler = function (event, context, callback) {
   try {
@@ -43,15 +42,13 @@ exports.handler = function (event, context, callback) {
         timeout: 2000,
       })
       .then(function (response) {
-        console.info(
-          `${response.status} ${response.statusText} | ${response.elapsedTime}ms | ${response.headers["simple-analytics-feedback"]}`
-        );
-
         // parse the feedback message from endpoint
         const apiFeedback = response.headers["simple-analytics-feedback"] || "No feedback from Simple Analytics.";
         const shortFeedback = apiFeedback.toLowerCase().includes("thanks for sending ")
           ? "OK"
           : `ERROR: ${apiFeedback}`;
+
+        console.info(`${response.status} ${response.statusText} | ${response.elapsedTime}ms | ${apiFeedback}`);
 
         // reasoning for base64 encoding:
         // https://community.netlify.com/t/debugging-a-function-returns-502/429/12
@@ -62,10 +59,8 @@ exports.handler = function (event, context, callback) {
             "Cache-Control": "private, no-cache, no-store, must-revalidate",
             Expires: "0",
             Pragma: "no-cache",
-            "x-api-endpoint": endpointHost,
-            "x-api-response": shortFeedback,
+            "x-api-feedback": shortFeedback,
             "x-api-latency": response.elapsedTime,
-            "x-api-id": uuidv4(),
           },
           body: response.data.toString("base64"),
           isBase64Encoded: true,
