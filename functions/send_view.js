@@ -22,8 +22,8 @@ exports.handler = function (event, context, callback) {
 
     // pass these optional headers along to endpoint
     const reqHeaders = {
-      referer: event.headers["referer"] || "",
-      "user-agent": event.headers["user-agent"] || "",
+      referer: event.headers["referer"] || event.headers["Referer"] || "",
+      "user-agent": event.headers["user-agent"] || event.headers["User-Agent"] || "",
     };
 
     // if triggered as an image without JS (i.e. from AMP pages) set `?noscript=true`

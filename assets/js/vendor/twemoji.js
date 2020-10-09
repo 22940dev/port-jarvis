@@ -365,6 +365,7 @@
           img = new Image();
           img.onerror = options.onerror;
           img.setAttribute('draggable', 'false');
+          img.setAttribute('loading', 'eager');
           attrib = options.attributes(rawText, iconId);
           for (attrname in attrib) {
             if (

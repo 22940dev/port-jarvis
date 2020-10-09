@@ -11,6 +11,8 @@ body {
   font-variant-ligatures: normal;
   font-feature-settings: "kern", "liga", "calt", "clig", "ss01";
   line-height: 1.5;
+
+  scroll-behavior: smooth;
 }
 
 // override above font-family if browser supports variable fonts
