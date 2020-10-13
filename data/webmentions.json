@@ -1,6 +1,32 @@
 {
   "links": [
     {
+      "source": "https://a2m1n.com/index.php/2020/10/12/branch-agnostic-git-aliases/",
+      "verified": true,
+      "verified_date": "2020-10-12T14:14:24+00:00",
+      "id": 873136,
+      "private": false,
+      "data": {
+        "author": {
+          "name": "jp-admin",
+          "url": "https://a2m1n.com/index.php/author/jp-admin/",
+          "photo": "https://webmention.io/avatar/secure.gravatar.com/c6d56f8cdef052a7d17726f28428d67ba5fc76cd473b8b3198c7ae4bca139122.jpg"
+        },
+        "url": "https://a2m1n.com/index.php/2020/10/12/branch-agnostic-git-aliases/",
+        "name": "Branch Agnostic Git Aliases",
+        "content": "<p>Github and others have recently changed the name of the default branch in git from <code>master</code> to <code>main</code>, you can read more about the change <a href=\"https://www.zdnet.com/article/github-to-replace-master-with-main-starting-next-month/\">here</a>. If you are like me you likely had a few git aliases that were hard coded to assume the default branch in a repository was <code>master</code>, however there is a better way of writing git aliases that will work no matter what the default is set to.</p>\n<p>Git aliases allow you to create custom shortcuts to make your git workflow easier and more intuitive, you can find a full list of the git aliases I use <a href=\"https://github.com/ajorgensen/dotfiles/blob/master/.gitconfig#L40\">here</a>. To outline the problem lets looks at a few example aliases that someone might have.</p>\n\n<pre>\n<code>[alias]\n  diff = diff master\n  pom = push origin master\n  merged-branches = \"!git branch --merged master\"\n  sync = \"!git fetch -p &amp;&amp; git rebase origin/master\"\n</code>\n</pre>\n\n<p>With the change to the default branch being up to the repository maintainer you may be in a scenario where some repositories you work with will have different default branch names. One solution to this is to duplicate any aliases you want to work with each of the defaults but that can get tedious and error prone, what if someone chooses to go old school and use <code>trunk</code> instead?</p>\n<p>Fortunately there is a way to write your git aliases in a branch agnostic way using <code>git symbolic-ref</code>. First the <strong>tl;dr</strong></p>\n\n<pre>\n<code>[alias]\n  default-branch = \"!git symbolic-ref refs/remotes/origin/HEAD | cut -f4 -d/\"\n  diff = diff $(git default-branch)\n  pom = push origin $(git default-branch)\n  merged-branches = \"!git branch --merged $(git default-branch)\"\n  sync = \"!git fetch -p &amp;&amp; git rebase origin/$(git default-branch)\"\n</code>\n</pre>\n\n<p>If you want to rename the branch for your own repositories you can find steps <a href=\"https://jarv.is/notes/github-rename-master/\">here</a>.</p>\n<p>In git there is a reference stored at the <code>.git/HEAD</code> that tells git what the default branch is. There is a similar reference on the remote side as well. One thing to note is that actually charging the default branch on the remote side, each client should also sync their local state as well to match using <code>git remote set-head origin --auto</code>.</p>\n<p>Once this value is synchronized, it should be updated locally as well and we can use <code>git symbolic-ref</code> to get the branch that <code>HEAD</code>. Fortunately this gives as a way to create git aliases and scripts that are agnostic to what the remote has set the default branch to be.</p>",
+        "published": "2020-10-12T14:13:42+00:00",
+        "published_ts": 1602512022
+      },
+      "activity": {
+        "type": "link",
+        "sentence": "jp-admin posted 'Github and others have recently changed the name of the default branch in git fr...' linking to https://jarv.is/notes/github-rename-master/",
+        "sentence_html": "<a href=\"https://a2m1n.com/index.php/author/jp-admin/\">jp-admin</a> posted 'Github and others have recently changed the name of the default branch in git fr...' linking to <a href=\"https://jarv.is/notes/github-rename-master/\">https://jarv.is/notes/github-rename-master/</a>"
+      },
+      "rels": { "canonical": "https://aj.codes/post/branch-agnostic-git-aliases/" },
+      "target": "https://jarv.is/notes/github-rename-master/"
+    },
+    {
       "source": "https://onrede.com/this-week-in-google-554-space-force-onrede/",
       "verified": true,
       "verified_date": "2020-04-09T10:58:27+00:00",
