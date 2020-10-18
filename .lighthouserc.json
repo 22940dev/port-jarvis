@@ -9,6 +9,7 @@
         "color-contrast": "warn",
         "link-text": "warn",
         "long-tasks": "warn",
+        "non-composited-animations": "warn",
         "total-byte-weight": ["warn", {"minScore": 0.9}],
         "unminified-javascript": "warn",
         "unsized-images": "warn",
