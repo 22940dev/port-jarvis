@@ -1,9 +1,10 @@
 <!doctype html>
 <html ⚡ lang="en">
   <head>
-    {{ partial "head/init" . }}
+    {{ partial "functions/init" . }}
     <meta charset="utf-8">
     {{ hugo.Generator }}
+    {{ if ne hugo.Environment "production" }}<meta name="robots" content="noindex, nofollow">{{ end }}
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     {{ if .HasShortcode "video" }}<script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>{{ end }}

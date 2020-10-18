@@ -3,7 +3,7 @@ module.exports = {
     map: false,
   },
   plugins: [
-    require("postcss-import"),
+    require("postcss-import")(),
     require("autoprefixer")(),
     require("postcss-svgo")({
       encode: true,
