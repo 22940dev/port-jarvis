@@ -1,6 +1,6 @@
 ---
 title: "Jake Jarvis – Front-End Web Developer in Boston, MA 👨‍💻"
-date: 2020-09-05 11:13:43-0400
+date: 2020-10-29 14:09:40-0400
 type: home
 sitemap:
   priority: 1.0
@@ -18,7 +18,7 @@ sitemap:
 
 My current focus is on <a href="https://jamstack.wtf/" title="WTF is JAMstack?" id="jamstack" target="_blank" rel="noopener">the JAMstack</a> and <a href="https://stackoverflow.blog/2018/01/11/brutal-lifecycle-javascript-frameworks/" title="&quot;The Brutal Lifecycle of JavaScript Frameworks&quot; by Ian Allen" id="javascript" target="_blank" rel="noopener">modern JavaScript frameworks</a> like <a href="https://reactjs.org/" title="React Official Website" id="react" target="_blank" rel="noopener">React</a> and <a href="https://angular.io/" title="Angular Official Website" id="angular" target="_blank" rel="noopener">Angular</a> in front of <a href="https://nodejs.org/en/" title="Node.js Official Website" id="node" target="_blank" rel="noopener">Node</a> and <a href="https://golang.org/" title="Golang Official Website" id="golang" target="_blank" rel="noopener">Go</a> backends...
 
-...but I'm fluent in classics like <a href="https://stitcher.io/blog/php-in-2019" title="&quot;PHP in 2019&quot; by Brent Roose" id="php" target="_blank" rel="noopener">PHP</a>, <a href="https://www.ruby-lang.org/en/" title="Ruby Official Website" id="ruby" target="_blank" rel="noopener">Ruby</a>, <a href="https://www.python.org/" title="Python Official Website" id="python" target="_blank" rel="noopener">Python</a>, and <a href="https://go.java/index.html" title="Java Official Website" id="java" target="_blank" rel="noopener">Java</a> as well.
+...but I'm fluent in classics like <a href="https://stitcher.io/blog/php-in-2020" title="&quot;PHP in 2020&quot; by Brent Roose" id="php" target="_blank" rel="noopener">PHP</a>, <a href="https://www.ruby-lang.org/en/" title="Ruby Official Website" id="ruby" target="_blank" rel="noopener">Ruby</a>, <a href="https://www.python.org/" title="Python Official Website" id="python" target="_blank" rel="noopener">Python</a>, and <a href="https://go.java/index.html" title="Java Official Website" id="java" target="_blank" rel="noopener">Java</a> as well.
 
 Whenever possible, I also apply my passion for <a href="https://bugcrowd.com/jakejarvis" title="Jake Jarvis on Bugcrowd" id="infosec" target="_blank" rel="me noopener">information security</a>, <a href="https://martinfowler.com/articles/serverless.html" title="&quot;Serverless Architectures&quot; by Mike Roberts" id="server" target="_blank" rel="noopener">server<span id="serverless">(less)</span> architecture</a>, <a href="https://xkcd.com/1319/" title="&quot;Automation&quot; on xkcd" id="devops" target="_blank" rel="noopener">efficient DevOps automation</a>, and the <a href="https://blog.jessfraz.com/post/docker-containers-on-the-desktop/" title="&quot;Docker Containers on the Desktop&quot; by Jessie Frazelle" id="containers" target="_blank" rel="noopener">containerization of everything</a>.
 

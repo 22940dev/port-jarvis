@@ -1,4 +1,4 @@
-{{ with .Site.Params.social.webmentionIO }}
-<link rel="pingback" href="https://webmention.io/{{ . }}/xmlrpc">
-<link rel="webmention" href="https://webmention.io/{{ . }}/webmention">
+{{ if .Site.Params.social.webmentionIO }}
+<link rel="pingback" href="{{ "api/ping" | absURL }}">
+<link rel="webmention" href="{{ "api/mention" | absURL }}">
 {{ end }}

@@ -78,7 +78,39 @@
   status = 301
   force = true
 
-# Prettier URLs for Netlify Functions
+# External API redirects/mirrors:
+# Must set `force = true` and wildcard /api/* rule goes last.
+## Report URI
+[[redirects]]
+  from = "/api/report"
+  to = "https://jarvis.report-uri.com/a/d/g"
+  status = 200
+  force = true
+[[headers]]
+  for = "/*"
+  [headers.values]
+    NEL = '''
+    {"report_to":"default","max_age":604800}'''
+    Report-To = '''
+    {"group":"default","max_age":604800,"endpoints":[{"url":"https://jarv.is/api/report"}],"include_subdomains":false}'''
+    # More security headers:
+    Referrer-Policy = "no-referrer-when-downgrade"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    X-Xss-Protection = "1; mode=block"
+    X-Got-Milk = "2%"
+## Webmention.io
+[[redirects]]
+  from = "/api/mention"
+  to = "https://webmention.io/jarv.is/webmention"
+  status = 307  # like temporary 302 redirect but retains POST data
+  force = true
+[[redirects]]
+  from = "/api/ping"
+  to = "https://webmention.io/jarv.is/xmlrpc"
+  status = 307
+  force = true
+## Prettier URLs for Netlify Functions
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
