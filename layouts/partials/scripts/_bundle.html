@@ -1,14 +1,15 @@
 {{/* only parse and append analytics script on production site */}}
-{{- $includeAnalytics := eq hugo.Environment "production" -}}
+{{- $includeProdScripts := eq hugo.Environment "production" -}}
 
 {{- $darkmode := resources.Get "js/dark-mode.js" | resources.ExecuteAsTemplate "js/dark-mode.js" . -}}
 {{- $twemoji := resources.Get "js/vendor/twemoji.js" | resources.ExecuteAsTemplate "js/vendor/twemoji.js" . -}}
 
 {{- $bundle := slice $darkmode $twemoji -}}
 
-{{- if $includeAnalytics }}
+{{- if $includeProdScripts }}
+  {{- $instant := resources.Get "js/vendor/instantpage.js" -}}
   {{- $analytics := resources.Get "js/analytics.js" | resources.ExecuteAsTemplate "js/analytics.js" . }}
-  {{- $bundle = slice $darkmode $twemoji $analytics }}
+  {{- $bundle = slice $darkmode $instant $twemoji $analytics }}
 {{- end }}
 
 {{- $js := $bundle | resources.Concat "/js/app.js" -}}
