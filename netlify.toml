@@ -80,26 +80,36 @@
 
 # External API redirects/mirrors:
 # Must set `force = true` and wildcard /api/* rule goes last.
-## Report URI
+## Report URI endpoints
 [[redirects]]
   from = "/api/report"
   to = "https://jarvis.report-uri.com/a/d/g"
   status = 200
   force = true
+[[redirects]]
+  from = "/api/csp_wizard"
+  to = "https://jarvis.report-uri.com/r/d/csp/wizard"
+  status = 200
+  force = true
 [[headers]]
   for = "/*"
   [headers.values]
+    Content-Security-Policy-Report-Only = '''
+    default-src 'none';
+    form-action 'none';
+    frame-ancestors 'none';
+    report-uri https://jarv.is/api/csp_wizard'''
     NEL = '''
     {"report_to":"default","max_age":604800}'''
     Report-To = '''
     {"group":"default","max_age":604800,"endpoints":[{"url":"https://jarv.is/api/report"}],"include_subdomains":false}'''
-    # More security headers:
+    # More generic security headers:
     Referrer-Policy = "no-referrer-when-downgrade"
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "SAMEORIGIN"
     X-Xss-Protection = "1; mode=block"
     X-Got-Milk = "2%"
-## Webmention.io
+## Webmention.io endpoints
 [[redirects]]
   from = "/api/mention"
   to = "https://webmention.io/jarv.is/webmention"
