@@ -88,26 +88,34 @@
   force = true
 [[redirects]]
   from = "/api/csp_wizard"
-  to = "https://jarvis.report-uri.com/r/d/csp/wizard"
+  to = "https://jarvis.report-uri.com/r/d/csp/reportOnly"
   status = 200
   force = true
 [[headers]]
   for = "/*"
   [headers.values]
     Content-Security-Policy-Report-Only = '''
-    default-src 'none';
+    default-src 'self';
+    connect-src 'self' *.ampproject.net api.github.com platform.twitter.com;
+    font-src 'self' fonts.gstatic.com;
     form-action 'none';
-    frame-ancestors 'none';
+    frame-ancestors 'self';
+    frame-src 'self' *.ampproject.net cdn.ampproject.org codepen.io jakejarvis.github.io platform.twitter.com player.vimeo.com simpleanalytics.com www.youtube-nocookie.com;
+    img-src 'self' data: https:;
+    media-src 'self' data: https:;
+    script-src 'self' 'unsafe-inline' buttons.github.io cdn.ampproject.org gist.github.com platform.twitter.com player.vimeo.com syndication.twitter.com;
+    style-src 'self' 'unsafe-inline' fonts.googleapis.com github.githubassets.com;
     report-uri https://jarv.is/api/csp_wizard'''
     NEL = '''
     {"report_to":"default","max_age":604800}'''
     Report-To = '''
     {"group":"default","max_age":604800,"endpoints":[{"url":"https://jarv.is/api/report"}],"include_subdomains":false}'''
     # More generic security headers:
+    Feature-Policy = "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'"
     Referrer-Policy = "no-referrer-when-downgrade"
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "SAMEORIGIN"
-    X-Xss-Protection = "1; mode=block"
+    X-XSS-Protection = "1; mode=block"
     X-Got-Milk = "2%"
 ## Webmention.io endpoints
 [[redirects]]
