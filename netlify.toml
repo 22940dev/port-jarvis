@@ -105,7 +105,6 @@
     manifest-src 'self';
     media-src 'self' data: https:;
     object-src 'none';
-    prefetch-src 'self';
     script-src 'self' buttons.github.io cdn.ampproject.org gist.github.com platform.twitter.com player.vimeo.com;
     style-src 'self' 'unsafe-inline' fonts.googleapis.com github.githubassets.com;
     worker-src 'self';
@@ -117,6 +116,7 @@
     {"group":"default","max_age":604800,"endpoints":[{"url":"https://jarv.is/api/report"}],"include_subdomains":false}'''
     # More generic security headers:
     Feature-Policy = "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'"
+    Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
     Referrer-Policy = "no-referrer-when-downgrade"
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "SAMEORIGIN"
