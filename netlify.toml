@@ -88,13 +88,13 @@
   force = true
 [[redirects]]
   from = "/api/csp_wizard"
-  to = "https://jarvis.report-uri.com/r/d/csp/reportOnly"
+  to = "https://jarvis.report-uri.com/r/d/csp/enforce"
   status = 200
   force = true
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy-Report-Only = '''
+    Content-Security-Policy = '''
     default-src 'self';
     connect-src 'self' *.ampproject.net api.github.com platform.twitter.com;
     font-src 'self' fonts.gstatic.com;
@@ -102,8 +102,10 @@
     frame-ancestors 'self';
     frame-src 'self' *.ampproject.net buttons.github.io cdn.ampproject.org codepen.io jakejarvis.github.io platform.twitter.com player.vimeo.com simpleanalytics.com www.youtube-nocookie.com;
     img-src 'self' data: https:;
+    manifest-src 'self';
     media-src 'self' data: https:;
     object-src 'none';
+    prefetch-src 'self';
     script-src 'self' buttons.github.io cdn.ampproject.org gist.github.com platform.twitter.com player.vimeo.com;
     style-src 'self' 'unsafe-inline' fonts.googleapis.com github.githubassets.com;
     worker-src 'self';

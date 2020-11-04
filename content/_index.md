@@ -1,6 +1,6 @@
 ---
 title: "Jake Jarvis – Front-End Web Developer in Boston, MA 👨‍💻"
-date: 2020-10-29 14:09:40-0400
+date: 2020-11-04 08:26:10-0400
 type: home
 sitemap:
   priority: 1.0
@@ -27,7 +27,7 @@ I fell in love with <a href="/previously/" title="My Terrible, Horrible, No Good
 Over the years, some of these side projects
 <a href="https://tuftsdaily.com/news/2012/04/06/student-designs-iphone-joeytracker-app/" title="&quot;Student designs iPhone JoeyTracker app&quot; on The Tufts Daily" id="news-1" target="_blank" rel="noopener">have</a>
 <a href="/leo/" title="Powncer segment on The Lab with Leo Laporte (G4techTV)" id="news-2">been</a>
-<a href="https://books.google.com/books?id=RRUkLhyGZVgC&amp;lpg=PA226&amp;dq=%22jake%20jarvis%22&amp;pg=PA226#v=onepage&amp;q=%22jake%20jarvis%22&amp;f=false" title="&quot;The Facebook Effect&quot; by David Kirkpatrick (Google Books)" id="news-3" target="_blank" rel="noopener">featured</a>
+<a href="https://www.google.com/books/edition/The_Facebook_Effect/RRUkLhyGZVgC?hl=en&gbpv=1&dq=%22jake%20jarvis%22&pg=PA226&printsec=frontcover&bsq=%22jake%20jarvis%22" title="&quot;The Facebook Effect&quot; by David Kirkpatrick (Google Books)" id="news-3" target="_blank" rel="noopener">featured</a>
 <a href="https://money.cnn.com/2007/06/01/technology/facebookplatform.fortune/index.htm" title="&quot;The new Facebook is on a roll&quot; on CNN Money" id="news-4" target="_blank" rel="noopener">by</a>
 <a href="https://www.wired.com/2007/04/our-web-servers/" title="&quot;Middio: A YouTube Scraper for Major Label Music Videos&quot; on Wired" id="news-5" target="_blank" rel="noopener">various</a>
 <a href="https://gigaom.com/2009/10/06/fresh-faces-in-tech-10-kid-entrepreneurs-to-watch/6/" title="&quot;Fresh Faces in Tech: 10 Kid Entrepreneurs to Watch&quot; on Gigaom" id="news-6" target="_blank" rel="noopener">media</a>
