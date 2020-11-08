@@ -3,8 +3,9 @@ title: "📈 Analytics"
 description: "Public visitor stats for this website."
 url: /stats
 layout: etc
+amp: false
 css: |
-  div#content iframe#sa-graph {
+  div#content iframe {
     display: block;
     margin: 0 auto;
     height: 327px;
@@ -23,6 +24,6 @@ In that case, why not share them? 😊 Pageviews for the past month are graphed 
 
 <!-- markdownlint-disable MD033 -->
 <p class="center"><a class="no-underline" href="https://simpleanalytics.com/jarv.is?utm_source=jarv.is&amp;utm_content=badge" target="_blank" rel="noopener"><img src="/stats/badge.svg" width="210" height="50" alt="Powered by Simple Analytics"></a></p>
-
-<iframe id="sa-graph" src="https://simpleanalytics.com/jarv.is?color=FF4F64&amp;embed=true" scrolling="no" title="Simple Analytics graph"></iframe>
 <!-- markdownlint-enable MD033 -->
+
+{{< iframe src="https://simpleanalytics.com/jarv.is?color=FF4F64&embed=true" title="Simple Analytics graph" width="654" height="327" sandbox="allow-same-origin allow-scripts allow-popups" >}}

@@ -1,9 +1,9 @@
 <link rel="canonical" href="{{ .Permalink }}">
 
-{{ if and .IsPage (eq .Type .Site.Params.mainSection) -}}
+{{ if and .IsPage (ne .Params.amp false) -}}
   {{- with .OutputFormats.Get "amp" -}}
     <link rel="amphtml" href="{{ .Permalink }}">
-  {{- end -}}
+  {{- end }}
 {{- end }}
 
 <link rel="author" href="{{ "humans.txt" | absURL }}">

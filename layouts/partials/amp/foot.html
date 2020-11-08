@@ -1,0 +1,15 @@
+    <footer>
+      <div class="row">
+        <div class="left">Content by <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>, licensed under <a class="no-underline" href="{{ "license/" | absURL }}"{{ with .Site.Params.license.nameLong }} title="{{ . }}"{{ end }}>{{ .Site.Params.license.name }}</a>.</div>
+        <div class="right"><a class="back-to-top" href="#top">↑ Back to top.</a></div>
+      </div>
+    </footer>
+
+    {{ if eq hugo.Environment "production" }}
+    <!-- https://docs.simpleanalytics.com/without-javascript -->
+    <amp-pixel src="{{ "api/send_view" | absURL }}?noscript=true&amp;type=pageview&amp;hostname=CANONICAL_HOSTNAME&amp;path=CANONICAL_PATH&amp;referrer=DOCUMENT_REFERRER&amp;https=true&amp;ua=USER_AGENT&amp;width=VIEWPORT_WIDTH" layout="nodisplay"></amp-pixel>
+    {{ end }}
+  </body>
+</html>
+
+{{ partialCached "functions/debug" . }}
