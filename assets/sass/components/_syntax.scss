@@ -33,6 +33,11 @@ div.highlight {
     padding-left: 1.5em;
     margin: 1em 0;
   }
+
+  // code fences without syntax highlighting
+  > pre > code {
+    padding-right: 1.5em;
+  }
 }
 
 // global table styles for line numbers and font styles
@@ -52,6 +57,11 @@ div.highlight {
     padding: 0;
     margin: 0;
     border: 0;
+
+    // add right padding to second column (the code) when fence overflows
+    &:nth-of-type(2) {
+      padding-right: 1em;
+    }
   }
   // line numbers
   .ln,
