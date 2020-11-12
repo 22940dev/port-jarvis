@@ -1,0 +1,22 @@
+{
+  "name": "netlify-plugin-amp-optimizer",
+  "version": "1.0.0",
+  "description": "Render your AMP pages, server-side.",
+  "license": "MIT",
+  "author": {
+    "name": "Martin Bean",
+    "url": "https://martinbean.dev"
+  },
+  "files": [
+    "manifest.yml",
+    "index.js"
+  ],
+  "main": "index.js",
+  "dependencies": {
+    "@ampproject/toolbox-optimizer": "^2.x",
+    "glob": "^7.x"
+  },
+  "engines": {
+    "node": ">=10.0"
+  }
+}
