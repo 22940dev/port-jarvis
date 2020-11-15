@@ -28,20 +28,15 @@ div#content {
     text-align: center;
   }
 
-  p.image,
   figure {
+    margin: 1em auto;
     text-align: center;
 
     img {
       height: auto;
       max-width: 100%;
     }
-  }
 
-  figure {
-    margin: 1em auto;
-
-    // image captions
     figcaption {
       font-size: 0.95em;
 
