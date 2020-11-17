@@ -31,6 +31,7 @@ div#content {
   figure {
     margin: 1em auto;
     text-align: center;
+    line-height: 1;
 
     img {
       height: auto;
@@ -39,6 +40,8 @@ div#content {
 
     figcaption {
       font-size: 0.95em;
+      line-height: 1.5;
+      margin-top: 0.5em;
 
       @include colors() {
         color: c(medium);
