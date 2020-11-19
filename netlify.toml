@@ -204,11 +204,11 @@
   status = 302
 [[redirects]]
   from = "/comp20/*"
-  to = "https://jakejarvis.github.io/comp20/"
+  to = "https://jakejarvis.github.io/comp20/:splat"
   status = 302
 [[redirects]]
   from = "/scrabble/*"
-  to = "https://jakejarvis.github.io/scrabble/"
+  to = "https://jakejarvis.github.io/scrabble/:splat"
   status = 302
 
 # H A C K E R M A N ( ͡° ͜ʖ ͡°)

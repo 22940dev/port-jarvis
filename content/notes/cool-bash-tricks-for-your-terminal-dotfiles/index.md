@@ -15,7 +15,7 @@ image: "images/terminal.png"
 draft: false
 ---
 
-{{< image src="images/terminal.png" width="240" alt="Terminal.app on macOS" />}}
+{{< image src="images/terminal.png" width="320" alt="Terminal.app on macOS" />}}
 
 You may have noticed the recent trend of techies [posting their "dotfiles" on GitHub](https://github.com/topics/dotfiles) for the world to see. These usually contain shortcuts compatible with Bash terminals to automate convoluted commands that, I'll admit, I needed to Google every single time.
 

@@ -18,7 +18,6 @@
         "uses-optimized-images": "warn",
         "uses-rel-preconnect": "warn",
         "is-crawlable": "off",
-        "no-unload-listeners": "off",
         "offscreen-images": "off",
         "uses-long-cache-ttl": "off",
         "uses-responsive-images": "off",

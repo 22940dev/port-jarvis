@@ -203,7 +203,10 @@
       // }
     };
 
-    addEventListenerFunc("unload", sendOnLeave, false);
+    // https://developers.google.com/web/updates/2018/07/page-lifecycle-api#the-unload-event
+    var terminationEvent = "onpagehide" in self ? "pagehide" : "unload";
+    addEventListenerFunc(terminationEvent, sendOnLeave, false);
+    // addEventListenerFunc("unload", sendOnLeave, false);
 
     /** if scroll **/
     var body = doc.body || {};
