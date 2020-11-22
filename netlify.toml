@@ -116,8 +116,8 @@
   [headers.values]
     Content-Security-Policy = '''
     default-src 'self';
-    connect-src 'self' *.ampproject.net api.github.com platform.twitter.com;
-    font-src 'self' fonts.gstatic.com;
+    connect-src 'self' *.ampproject.net api.github.com platform.twitter.com queue.simpleanalyticscdn.com;
+    font-src 'self' fonts.googleapis.com fonts.gstatic.com;
     form-action 'none';
     frame-ancestors 'self';
     frame-src 'self' *.ampproject.net buttons.github.io cdn.ampproject.org codepen.io jakejarvis.github.io platform.twitter.com player.vimeo.com simpleanalytics.com www.youtube-nocookie.com;
@@ -125,7 +125,7 @@
     manifest-src 'self';
     media-src 'self' data: https:;
     object-src 'none';
-    script-src 'self' buttons.github.io cdn.ampproject.org gist.github.com platform.twitter.com player.vimeo.com;
+    script-src 'self' buttons.github.io cdn.ampproject.org gist.github.com platform.twitter.com player.vimeo.com scripts.simpleanalyticscdn.com syndication.twitter.com;
     style-src 'self' 'unsafe-inline' fonts.googleapis.com github.githubassets.com;
     worker-src 'self';
     block-all-mixed-content;
@@ -141,6 +141,8 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1; mode=block"
+    X-XSS-Pwnage = "<script>alert('oops!');</script>"
+    X-View-Source = "https://jrvs.io/src"
     X-Got-Milk = "2%"
 ## Prettier URLs for Netlify Functions
 [[redirects]]
