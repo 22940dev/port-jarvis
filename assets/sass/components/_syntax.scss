@@ -2,6 +2,7 @@
 
 // all code
 code {
+  font-size: 0.95em;
   letter-spacing: 0;
   page-break-inside: avoid; // stylelint-disable-line plugin/no-unsupported-browser-features
 }
@@ -15,7 +16,7 @@ code {
 
 // allow for inline code in post/page titles -- override above styles and match title
 .title code {
-  font-size: 1.05em;
+  font-size: 1em;
   background: none !important;
   border: 0 !important;
   margin: 0 0.075em !important;

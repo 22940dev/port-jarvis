@@ -172,11 +172,15 @@
       div.right {
         text-align: right;
       }
-      div.highlight, code {
+      code {
         font-family: "Roboto Mono", monospace;
+        font-size: 0.95em;
         letter-spacing: 0;
         page-break-inside: avoid;
+      }
+      div.highlight, code {
         margin: 0 0.1em;
+        line-height: 1.6;
       }
       :not(pre) > code {
         border: 1px solid #dddddd;
@@ -184,7 +188,7 @@
         background-color: #fbfbfb;
       }
       h1.title code {
-        font-size: 1.05em;
+        font-size: 1em;
         font-weight: 600;
         background: none;
         border: 0;

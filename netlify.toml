@@ -130,7 +130,8 @@
     style-src 'self' 'unsafe-inline' https://cdn.ampproject.org/rtv/ https://fonts.googleapis.com https://github.githubassets.com;
     worker-src 'self';
     block-all-mixed-content;
-    report-uri https://jarv.is/api/csp_wizard'''
+    report-uri https://jarv.is/api/csp_wizard;
+    report-to default'''
     NEL = '''
     {"report_to":"default","max_age":604800}'''
     Report-To = '''
