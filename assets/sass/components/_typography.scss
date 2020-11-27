@@ -1,9 +1,11 @@
 @charset "UTF-8";
 
-// Note to self: got this list after subsetting Inter with glyphhanger:
+// Note to self: got this list after subsetting Inter with glyphhanger or pyftsubset:
 // https://github.com/filamentgroup/glyphhanger
+// https://github.com/fonttools/fonttools
 // ex: glyphhanger --whitelist="" --family="Inter" --formats=woff2,woff --subset="*.woff"
-$unicode-subset: U+0000-00FF, U+2000-206F, U+20A0-20CF, U+2190-21FF, U+2200-22FF, U+2122;
+// ex: pyftsubset --unicodes="" --layout-features=kern,liga,calt,clig,ss01 --flavor=woff --with-zopfli inter.ttf
+$unicode-subset: U+0000-00FF, U+2000-206F, U+2200-22FF, U+2122;
 
 /*!
  *  Inter typeface v3.15 - https://rsms.me/inter/
@@ -44,12 +46,53 @@ $unicode-subset: U+0000-00FF, U+2000-206F, U+20A0-20CF, U+2190-21FF, U+2200-22FF
 }
 
 /*!
- *  Hack typeface v3.003 - https://sourcefoundry.org/hack/
+ *  Roboto Mono typeface v3.000 - https://fonts.google.com/specimen/Roboto+Mono
  *
- *  Copyright (c) 2018 Source Foundry Authors.
- *  Licensed under the MIT License:
- *  https://github.com/source-foundry/Hack/blob/v3.003/LICENSE.md
+ *  Copyright (c) 2015 The Roboto Mono Project Authors.
+ *  Licensed under the Apache License, Version 2.0:
+ *  https://github.com/google/fonts/blob/4df0b673c9b316ad5e8de8fa70b0768ab66c87d6/apache/robotomono/LICENSE.txt
  */
 
-@include font-face("Hack", "vendor/fonts/hack-regular-subset", 400);
-@include font-face("Hack", "vendor/fonts/hack-italic-subset", 400, italic);
+// Variable
+@include font-face("Roboto Mono var", "vendor/fonts/roboto-mono-subset.var", 100 700, $variable: true) {
+  font-named-instance: "Regular"; // stylelint-disable-line property-no-unknown
+}
+@include font-face("Roboto Mono var", "vendor/fonts/roboto-mono-italic-subset.var", 100 700, italic, $variable: true) {
+  font-named-instance: "Italic"; // stylelint-disable-line property-no-unknown
+}
+
+// Legacy
+@include font-face("Roboto Mono", "vendor/fonts/roboto-mono-regular-subset", 400);
+@include font-face("Roboto Mono", "vendor/fonts/roboto-mono-italic-subset", 400, italic);
+
+/* --------- */
+
+body {
+  font-family: $font-stack-sans;
+  font-kerning: normal;
+  font-variant-ligatures: normal;
+  font-feature-settings: "kern", "liga", "calt", "clig", "ss01";
+  line-height: 1.5;
+}
+
+code,
+pre,
+.monospace {
+  font-family: $font-stack-mono;
+}
+
+// override above font-family if browser supports variable fonts
+// https://caniuse.com/#feat=variable-fonts
+// stylelint-disable-next-line plugin/no-unsupported-browser-features
+@supports (font-variation-settings: normal) {
+  body {
+    font-family: $font-stack-variable;
+    font-optical-sizing: auto;
+  }
+
+  code,
+  pre,
+  .monospace {
+    font-family: $font-stack-mono-variable;
+  }
+}

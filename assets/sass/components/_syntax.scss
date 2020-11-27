@@ -8,17 +8,22 @@ code {
 
 // inline code in paragraphs/elsewhere (single backticks)
 :not(pre) > code {
-  padding: 0.15em 0.3em;
+  padding: 0.075em 0.325em;
   margin: 0 0.1em;
   border: 1px solid;
 }
 
 // allow for inline code in post/page titles -- override above styles and match title
 .title code {
+  font-size: 1.05em;
   background: none !important;
   border: 0 !important;
+  margin: 0 0.075em !important;
   padding: 0 !important;
   color: inherit !important;
+}
+h1.title code {
+  font-weight: 600;
 }
 
 // code fences

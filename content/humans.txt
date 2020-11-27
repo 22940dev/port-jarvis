@@ -65,10 +65,11 @@
 
         https://rsms.me/inter/
 
-    Hack: Copyright (c) 2018 Source Foundry
-    Authors. Licensed under the MIT License:
+    Roboto Mono: Copyright (c) 2015 The Roboto Mono
+    Project Authors. Licensed under the the Apache
+    License, Version 2.0.
 
-        https://sourcefoundry.org/hack/
+        https://fonts.google.com/specimen/Roboto+Mono
 
     Comic Neue: Copyright (c) 2014 The Comic Neue
     Project Authors. Licensed under the SIL Open

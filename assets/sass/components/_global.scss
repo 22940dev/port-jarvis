@@ -5,24 +5,7 @@ body {
   width: 100%;
   height: 100%;
   margin: 0 auto;
-
-  font-family: $font-stack-static;
-  font-kerning: normal;
-  font-variant-ligatures: normal;
-  font-feature-settings: "kern", "liga", "calt", "clig", "ss01";
-  line-height: 1.5;
-
   scroll-behavior: smooth;
-}
-
-// override above font-family if browser supports variable fonts
-// https://caniuse.com/#feat=variable-fonts
-// stylelint-disable-next-line plugin/no-unsupported-browser-features
-@supports (font-variation-settings: normal) {
-  body {
-    font-family: $font-stack-var;
-    font-optical-sizing: auto;
-  }
 }
 
 // manually setting light/dark mode backgrounds and bulb icon
@@ -97,8 +80,6 @@ strong {
 code,
 pre,
 .monospace {
-  font-family: $font-stack-mono;
-  font-size: 0.95em;
   letter-spacing: normal;
 }
 
