@@ -4,9 +4,9 @@
   {{ with .Get "link" }}<a class="no-underline" href="{{ . }}"{{ if strings.HasPrefix . "http" }} target="_blank" rel="noopener"{{ end }}>{{ end }}
   <img src="{{ $optimized.Permalink }}" width="{{ $optimized.Width }}" height="{{ $optimized.Height }}"
     {{- with .Inner }}
-      alt="{{ . | $.Page.RenderString | plainify | safeHTML }}" title="{{ . | $.Page.RenderString | plainify | safeHTML }}"
+      alt="{{ . | $.Page.RenderString | plainify | safeHTML }}"
     {{- else }}
-      {{ with .Get "alt" }} alt="{{ . | safeHTML }}" title="{{ . | safeHTML }}"{{ end }}
+      {{ with .Get "alt" }} alt="{{ . | safeHTML }}"{{ end }}
     {{- end -}}
   >
   {{ if .Get "link" }}</a>{{ end }}

@@ -236,3 +236,7 @@
   from = "*/wlwmanifest.xml"
   to = "/403.html"
   status = 403
+[[redirects]]
+  from = "*/.git/*"
+  to = "/403.html"
+  status = 403
