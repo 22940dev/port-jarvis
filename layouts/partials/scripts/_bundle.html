@@ -7,9 +7,8 @@
 {{- $bundle := slice $darkmode $twemoji -}}
 
 {{- if $includeProdScripts }}
-  {{- $instant := resources.Get "js/vendor/instantpage.js" -}}
   {{- $analytics := resources.Get "js/analytics.js" | resources.ExecuteAsTemplate "js/analytics.js" . }}
-  {{- $bundle = slice $darkmode $instant $twemoji $analytics }}
+  {{- $bundle = slice $darkmode $twemoji $analytics }}
 {{- end }}
 
 {{- $js := $bundle | resources.Concat "/js/app.js" -}}
