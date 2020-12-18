@@ -3,6 +3,8 @@ title: "📈 Analytics"
 description: "Public visitor stats for this website."
 url: /stats
 layout: etc
+sitemap:
+  changefreq: never
 amp: false
 css: |
   div#content iframe {

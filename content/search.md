@@ -1,12 +1,13 @@
 ---
-title: "Search"
+title: "🔍 Search"
 url: /search
 layout: etc
+sitemap:
+  changefreq: never
+  priority: 0.0
 amp: false
 ---
 
 <!-- markdownlint-disable -->
-<script type="text/javascript" src="/js/search.js"></script>
-
 <div id="search"></div>
 <!-- markdownlint-enable -->

@@ -3,6 +3,7 @@ name: Fetch Webmentions
 on:
   schedule:
   - cron: '0 */12 * * *'   # run every twelve hours at top of hour
+  workflow_dispatch:
 
 jobs:
   fetch:

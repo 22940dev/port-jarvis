@@ -14,6 +14,8 @@
 {{- $js := $bundle | resources.Concat "/js/app.js" -}}
 <script async defer src="{{ $js.Permalink }}"></script>
 
-{{- $algolia := resources.Get "js/vendor/algolia.js" -}}
-{{- $searchJS := slice $algolia | resources.Concat "/js/search.js" -}}
-<!-- {{ $searchJS.Permalink }} -->
+{{ if eq .Page.RelPermalink "/search/" }}
+  {{- $algolia := resources.Get "js/vendor/algolia.js" -}}
+  {{- $searchJS := slice $algolia | resources.Concat "/js/search.js" -}}
+  <script async defer src="{{ $searchJS.Permalink }}"></script>
+{{ end }}
