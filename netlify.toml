@@ -5,7 +5,7 @@
 
   [build.environment]
     NODE_VERSION = "14"
-    YARN_VERSION = "1.22.5"
+    YARN_VERSION = "1.22.10"
     YARN_FLAGS = "--no-ignore-optional --frozen-lockfile"
 
   # Ensure *only* Pretty URLs are enabled, even though this is already set up in

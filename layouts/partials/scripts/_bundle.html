@@ -16,6 +16,7 @@
 
 {{ if eq .Page.RelPermalink "/search/" }}
   {{- $algolia := resources.Get "js/vendor/algolia.js" -}}
-  {{- $searchJS := slice $algolia | resources.Concat "/js/search.js" -}}
+  {{- $algoliaConfig := resources.Get "js/search.js" -}}
+  {{- $searchJS := slice $algolia $algoliaConfig | resources.Concat "/js/search.js" -}}
   <script async defer src="{{ $searchJS.Permalink }}"></script>
 {{ end }}
