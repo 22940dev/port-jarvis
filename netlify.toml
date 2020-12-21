@@ -123,7 +123,7 @@
     # https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/secure-pages/
     Content-Security-Policy = '''
     default-src 'self';
-    connect-src 'self' https://*.algolia.net https://*.algolianet.com https://*.algolia.io https://*.algolianet.com https://*.ampproject.net https://csp-collector.appspot.com/csp/amp https://api.github.com https://queue.simpleanalyticscdn.com https://platform.twitter.com;
+    connect-src 'self' https://manatee.jarv.is https://*.algolia.net https://*.algolianet.com https://*.algolia.io https://*.algolianet.com https://*.ampproject.net https://csp-collector.appspot.com/csp/amp https://api.github.com https://queue.simpleanalyticscdn.com https://platform.twitter.com;
     font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;
     form-action 'none';
     frame-ancestors 'self';
@@ -132,7 +132,7 @@
     manifest-src 'self';
     media-src 'self' data: https:;
     object-src 'none';
-    script-src 'self' 'unsafe-eval' https://cdn.ampproject.org/v0.js https://cdn.ampproject.org/v0/ https://cdn.ampproject.org/viewer/ https://cdn.ampproject.org/rtv/ https://3p.ampproject.net https://buttons.github.io https://scripts.simpleanalyticscdn.com https://gist.github.com https://syndication.twitter.com https://platform.twitter.com https://player.vimeo.com;
+    script-src 'self' 'unsafe-eval' https://manatee.jarv.is https://cdn.ampproject.org/v0.js https://cdn.ampproject.org/v0/ https://cdn.ampproject.org/viewer/ https://cdn.ampproject.org/rtv/ https://3p.ampproject.net https://buttons.github.io https://scripts.simpleanalyticscdn.com https://gist.github.com https://syndication.twitter.com https://platform.twitter.com https://player.vimeo.com;
     style-src 'self' 'unsafe-inline' https://cdn.ampproject.org/rtv/ https://fonts.googleapis.com https://github.githubassets.com;
     worker-src 'self';
     block-all-mixed-content;

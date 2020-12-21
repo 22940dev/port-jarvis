@@ -20,3 +20,7 @@
   {{- $searchJS := slice $algolia $algoliaConfig | resources.Concat "/js/search.js" -}}
   <script async defer src="{{ $searchJS.Permalink }}"></script>
 {{ end }}
+
+{{- if $includeProdScripts }}
+<script async defer src="https://manatee.jarv.is/script.js" data-site="PPSQZUDY"></script>
+{{ end }}
