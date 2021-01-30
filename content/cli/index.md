@@ -6,11 +6,11 @@ image: "images/screenshot.png"
 layout: etc
 ---
 
-{{< gh-buttons username="jakejarvis" repo="cli" >}}
+{{< gh-buttons username="jakejarvis" repo="jakejarvis" >}}
 
 > The [Jake Jarvis](https://jarv.is/) CLI (aka the most useless Node module ever published, in history, by anyone, ever).
 
-{{< image src="images/screenshot.png" width="850" alt="Terminal Screenshot" />}}
+{{< image src="images/screenshot.png" width="850" alt="Terminal Screenshot" link="https://www.npmjs.com/package/@jakejarvis/cli" />}}
 
 ## Usage
 
