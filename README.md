@@ -10,7 +10,7 @@ Personal website of [@jakejarvis](https://github.com/jakejarvis), created and de
 
 - [Hugo Extended](https://github.com/gohugoio/hugo)
 - [Netlify](https://www.netlify.com/)
-- [Simple Analytics](https://referral.simpleanalytics.com/jake-jarvis) (referral link)
+- [Fathom Analytics](https://usefathom.com/ref/ZEYG0O) (referral link)
   - 📈 My [stats are public](https://jarv.is/stats/), by the way!
 - [...and more.](https://jarv.is/uses/)
 

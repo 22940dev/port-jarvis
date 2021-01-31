@@ -31,7 +31,7 @@
 
     Hugo Extended
     Netlify
-    Simple Analytics
+    Fathom Analytics
     ...and much more: https://jarv.is/uses/
 
 # VIEW SOURCE

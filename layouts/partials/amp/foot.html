@@ -6,8 +6,7 @@
     </footer>
 
     {{ if eq hugo.Environment "production" }}
-    <!-- https://docs.simpleanalytics.com/without-javascript -->
-    <amp-pixel src="{{ "api/send_view" | absURL }}?noscript=true&amp;type=pageview&amp;hostname=CANONICAL_HOSTNAME&amp;path=CANONICAL_PATH&amp;referrer=DOCUMENT_REFERRER&amp;https=true&amp;ua=USER_AGENT&amp;width=VIEWPORT_WIDTH" layout="nodisplay"></amp-pixel>
+    <amp-pixel src="{{ "api/count_view" | absURL }}?p=CANONICAL_PATH&amp;h=SOURCE_URL&amp;r=DOCUMENT_REFERRER&amp;sid=PPSQZUDY" layout="nodisplay"></amp-pixel>
     {{ end }}
   </body>
 </html>

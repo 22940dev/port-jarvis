@@ -163,7 +163,7 @@ I've been making recent efforts to [de-Google](https://www.stallman.org/google.h
 - ~~Google Photos~~ → [**iCloud Photos**](https://www.icloud.com/photos/)
 - ~~Google Analytics~~ → both of these are awesome, privacy-aware "visitor counters" rather than invasive trackers:
   - [**Netlify Analytics**](https://www.netlify.com/products/analytics/) [(my review)](/notes/netlify-analytics-review/)
-  - [**Simple Analytics**](https://simpleanalytics.com/) [(referral link)](https://referral.simpleanalytics.com/jake-jarvis)
+  - [**Fathom Analytics**](https://usefathom.com/) [(referral link)](https://usefathom.com/ref/ZEYG0O)
     - 📈 This website's [stats are public](/stats/), by the way!
 - ~~Google Public DNS~~ → [**Cloudflare's 1.1.1.1**](https://1.1.1.1/dns/) on my home network.
 - ~~GoDaddy~~ → ~~Google Domains~~ → [**Cloudflare Registrar**](https://www.cloudflare.com/products/registrar/) (and [**ISNIC**](https://isnic.is/en/) of course 🇮🇸)

@@ -7,8 +7,8 @@
 {{- $bundle := slice $darkmode $twemoji -}}
 
 {{- if $includeProdScripts }}
-  {{- $analytics := resources.Get "js/analytics.js" | resources.ExecuteAsTemplate "js/analytics.js" . }}
-  {{- $bundle = slice $darkmode $twemoji $analytics }}
+  {{- $fathom := resources.Get "js/fathom.js" | resources.ExecuteAsTemplate "js/fathom.js" . }}
+  {{- $bundle = slice $darkmode $twemoji $fathom }}
 {{- end }}
 
 {{- $js := $bundle | resources.Concat "/js/app.js" -}}
@@ -19,8 +19,4 @@
   {{- $algoliaConfig := resources.Get "js/search.js" -}}
   {{- $searchJS := slice $algolia $algoliaConfig | resources.Concat "/js/search.js" -}}
   <script async defer src="{{ $searchJS.Permalink }}"></script>
-{{ end }}
-
-{{- if $includeProdScripts }}
-<script async defer src="https://manatee.jarv.is/script.js" data-site="PPSQZUDY"></script>
 {{ end }}
