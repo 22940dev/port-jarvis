@@ -19,7 +19,7 @@
     "build:hugo": "hugo --gc --cleanDestinationDir --verbose",
     "build:functions": "netlify-lambda build functions",
     "start": "run-p start:hugo start:functions",
-    "start:hugo": "hugo server --disableFastRender --buildDrafts --buildFuture --port 1337 --bind 0.0.0.0 --verbose",
+    "start:hugo": "hugo server --disableFastRender --buildDrafts --buildFuture --port=1337 --baseURL=/ --appendPort=false --bind=0.0.0.0 --verbose",
     "start:functions": "netlify-lambda serve --port 9337 functions",
     "start:docker": "docker run --rm -v $(pwd):/src -p 1337:1337 $(docker build --no-cache -q .)",
     "minify": "run-s minify:**",
