@@ -165,11 +165,6 @@
 
 # More miscellaneous mirrors/redirects:
 [[redirects]]
-  from = "/stats"
-  to = "https://app.usefathom.com/share/ppsqzudy/jarv.is"
-  status = 302
-  force = true
-[[redirects]]
   from = "/blog/*"
   to = "/notes/"
   status = 301
@@ -181,10 +176,6 @@
   from = "/resume"
   to = "/resume.pdf"
   status = 302
-[[redirects]]
-  from = "/stats/badge.svg"
-  to = "https://simpleanalyticsbadge.com/jarv.is?counter=true"
-  status = 200
 
 # Fix some 404s after moving files around somewhat recklessly:
 [[redirects]]
