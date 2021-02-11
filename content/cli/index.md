@@ -20,7 +20,7 @@ npx @jakejarvis/cli
 
 ## Inspired by
 
-- [@sindresorhus/sindresorhus](https://github.com/sindresorhus/sindresorhus)
+- [@sindresorhus/sindresorhus-cli](https://github.com/sindresorhus/sindresorhus-cli)
 - [@yg/ygcodes](https://github.com/yg/ygcodes)
 
 ## Built with
