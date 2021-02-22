@@ -6,7 +6,7 @@
     </footer>
 
     {{ if eq hugo.Environment "production" }}
-    <amp-pixel src="{{ "api/count_view" | absURL }}?p=CANONICAL_PATH&amp;h=SOURCE_URL&amp;r=DOCUMENT_REFERRER&amp;sid=PPSQZUDY" layout="nodisplay"></amp-pixel>
+    <amp-pixel src="{{ "api/count_view" | absURL }}?p=CANONICAL_PATH&amp;h=SOURCE_URL&amp;r=EXTERNAL_REFERRER&amp;sid=PPSQZUDY" layout="nodisplay"></amp-pixel>
     {{ end }}
   </body>
 </html>

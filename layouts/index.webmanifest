@@ -1,16 +1,14 @@
-{{- $android512 := resources.Get "img/android-chrome-512x512.png" -}}
-{{- $android192 := resources.Get "img/android-chrome-192x192.png" -}}
 {
   "name": "{{ .Site.Title }}",
   "short_name": "{{ (urls.Parse .Site.BaseURL).Host }}",
   "icons": [
     {
-      "src": "{{ $android512.Permalink | safeJS }}",
+      "src": "{{ (resources.Get "img/android-chrome-512x512.png").Permalink | safeJS }}",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "{{ $android192.Permalink | safeJS }}",
+      "src": "{{ (resources.Get "img/android-chrome-192x192.png").Permalink | safeJS }}",
       "sizes": "192x192",
       "type": "image/png"
     }
