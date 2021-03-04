@@ -66,7 +66,7 @@ You can say good riddance to `master` [through the GitHub UI](https://help.githu
 git push origin --delete master
 ```
 
-### 4. Scan your code, scripts, automation, etc. for references to `master`:
+### 5. Scan your code, scripts, automation, etc. for references to `master`:
 
 Do a quick search of your codebase for `master` to manually replace any dead references to it.
 
