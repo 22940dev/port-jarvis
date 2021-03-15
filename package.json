@@ -35,6 +35,7 @@
   "dependencies": {
     "@algolia/algoliasearch-netlify-frontend": "1.0.5",
     "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
     "normalize.css": "8.0.1",
     "twemoji": "13.0.2",
     "twemoji-emojis": "13.0.2"
@@ -50,6 +51,7 @@
     "html-minifier": "^4.0.0",
     "hugo-extended": "0.79.1",
     "husky": "^4.3.8",
+    "imagemin-cli": "^6.0.0",
     "lint-staged": "^10.5.4",
     "markdownlint-cli": "~0.27.1",
     "netlify-lambda": "^2.0.3",
@@ -75,7 +77,6 @@
     "terser": "^5.6.0"
   },
   "optionalDependencies": {
-    "imagemin-cli": "^6.0.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-jpegoptim": "^7.0.0",
     "imagemin-pngquant": "^9.0.2",
