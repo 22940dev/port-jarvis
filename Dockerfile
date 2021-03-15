@@ -5,4 +5,4 @@ FROM ghcr.io/jakejarvis/hugo-extended:0.79.1
 # expose live-refresh server (on custom port)
 EXPOSE 1337
 
-CMD ["server", "--disableFastRender", "--buildDrafts", "--buildFuture", "--port", "1337", "--baseURL", "/", "--appendPort", "false", "--bind", "0.0.0.0", "--verbose"]
+CMD ["server", "--disableFastRender", "--buildDrafts", "--buildFuture", "--port=1337", "--baseURL=/", "--appendPort=false", "--bind=0.0.0.0", "--verbose"]
