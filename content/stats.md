@@ -5,7 +5,6 @@ url: /stats
 layout: etc
 sitemap:
   changefreq: never
-amp: false
 css: |
   div#content iframe {
     display: block;
@@ -21,4 +20,4 @@ This website uses [**Fathom Analytics**](https://usefathom.com/ref/ZEYG0O) to ta
 
 In that case, why not share them? 😊 Pageviews for the past month are graphed below and more information (top pages, referrers, etc.) can be found [on a publicly-accessible dashboard](https://app.usefathom.com/share/ppsqzudy/jarv.is).
 
-{{< iframe src="https://app.usefathom.com/share/ppsqzudy/jarv.is#/?range=last_7_days&site=49569" title="Fathom Analytics dashboard" width="100%" height="600" sandbox="allow-same-origin allow-scripts allow-popups" >}}
+{{< iframe src="https://app.usefathom.com/share/ppsqzudy/jarv.is#/?range=last_7_days&site=49569" title="Fathom Analytics dashboard" width="850" height="600" sandbox="allow-same-origin allow-scripts allow-popups" >}}
