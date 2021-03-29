@@ -7,6 +7,7 @@
     NODE_VERSION = "14"
     YARN_VERSION = "1.22.10"
     YARN_FLAGS = "--no-ignore-optional --frozen-lockfile"
+    PYTHON_VERSION="3.7"
 
   # Ensure *only* Pretty URLs are enabled, even though this is already set up in
   # the Netlify dashboard.
@@ -132,7 +133,7 @@
     font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;
     form-action 'none';
     frame-ancestors 'self';
-    frame-src 'self' https://jakejarvis.github.io https://*.ampproject.net https://cdn.ampproject.org https://app.usefathom.com https://buttons.github.io https://codepen.io https://cdpn.io https://platform.twitter.com https://player.vimeo.com https://www.youtube-nocookie.com;
+    frame-src 'self' https://jakejarvis.github.io https://*.ampproject.net https://cdn.ampproject.org https://app.usefathom.com https://buttons.github.io https://codepen.io https://cdpn.io https://platform.twitter.com https://player.vimeo.com https://www.youtube-nocookie.com https://site.y2k.app;
     img-src 'self' data: https:;
     manifest-src 'self';
     media-src 'self' data: https:;
@@ -199,7 +200,7 @@
 # this repo and domain squeaky clean:
 [[redirects]]
   from = "/y2k/*"
-  to = "https://jakejarvis.github.io/my-first-website/:splat"
+  to = "https://site.y2k.app/:splat"
   status = 302
 [[redirects]]
   from = "/ios-trackers/*"
