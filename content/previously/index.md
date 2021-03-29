@@ -66,7 +66,7 @@ css: |
 
 <!-- markdownlint-disable MD033 -->
 
-**🚨 Trigger warning:** marquees, Comic Sans MS, popup windows, <code>color: <span class="limegreen">limegreen</span></code>... [Click for the **_FULL_** experience anyway.](https://y2k.jarv.is/)
+**🚨 Trigger warning:** marquees, Comic Sans MS, popup windows, <code>color: <span class="limegreen">limegreen</span></code>... [Click for the **_FULL_** experience anyway.](https://y2k.app/)
 
 <figure>
   {{< iframe src="https://jakejarvis.github.io/my-first-website/" width="850" height="500" title="My Terrible, Horrible, No Good, Very Bad First Website" >}}

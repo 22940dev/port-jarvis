@@ -21,5 +21,8 @@
     1337,
     9337
   ],
-  "postCreateCommand": "yarn install"
+  "postCreateCommand": "yarn install",
+  "containerEnv": {
+    "DISABLE_NODEJS_BUILD": "true"
+  }
 }
