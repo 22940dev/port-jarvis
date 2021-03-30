@@ -83,7 +83,7 @@ header {
           }
 
           &:hover {
-            transform: scale(1.15);
+            transform: scale(1.1);
 
             @include colors() {
               color: c(links);
@@ -167,8 +167,9 @@ header {
               display: none;
             }
 
+            // disable hover scale effect
             &:hover {
-              transform: scale(1.4);
+              transform: none;
             }
           }
         }
