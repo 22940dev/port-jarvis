@@ -116,11 +116,6 @@ disableAliases = true
     path = "."   # put in same directory as original post
     permalinkable = true
     isHTML = true
-  [outputFormats.ALGOLIA]
-    mediaType = "application/json"
-    baseName = "algolia"   # /algolia.json
-    isPlainText = true
-    notAlternative = true
   [outputFormats.MANIFEST]
     mediaType = "application/manifest+json"   # https://github.com/w3c/manifest/issues/689
     baseName = "site"   # /site.webmanifest

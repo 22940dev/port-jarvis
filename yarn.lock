@@ -2,18 +2,6 @@
 # yarn lockfile v1
 
 
-"@algolia/algoliasearch-netlify-frontend@1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@algolia/algoliasearch-netlify-frontend/-/algoliasearch-netlify-frontend-1.0.6.tgz#21c94b3370dcb608a8c591ca0305c82d4522b10b"
-  integrity sha512-Q3V2USxRMDfvAQwUIHJ/HKzg0GKZQ8flBHBH5LriXYhV5YCtvsF3eVghYZ0FKE+SchnRc2MtaFRhBjU41VQ7XA==
-
-"@algolia/netlify-plugin-crawler@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@algolia/netlify-plugin-crawler/-/netlify-plugin-crawler-1.0.6.tgz#35ac26aea8ee5491a8a0ceb85a8c4d586072a9bc"
-  integrity sha512-p6qfBYvOGZwu1i+C3peqUtTJsPkB4HMO+vQNPocdnKqLj3Emr/3yX3f8YmrAOOpDvgQsHaZ0frW/B1yzYdFYvA==
-  dependencies:
-    node-fetch "2.6.1"
-
 "@babel/code-frame@7.12.11":
   version "7.12.11"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.11.tgz#f4ad435aa263db935b8f10f2c552d23fb716a63f"
@@ -3495,11 +3483,6 @@ no-case@^2.2.0:
   integrity sha512-rmTZ9kz+f3rCvK2TD1Ue/oZlns7OGoIWP4fc3llxxRXlOkHKoWPPWJOfFYpITabSow43QJbRIoHQXtt10VldyQ==
   dependencies:
     lower-case "^1.1.1"
-
-node-fetch@2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
-  integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
 node-releases@^1.1.70:
   version "1.1.71"
