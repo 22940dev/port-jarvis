@@ -29,7 +29,7 @@ disableAliases = true
   image = "img/logo.png"  # relative to assetDir root
   mainSection = "notes"  # content that appears in feeds
   [params.theme]
-    maxWidth = 940  # px
+    maxWidth = 865  # px
     defaultTheme = "light"  # light or dark?
   [params.license]
     name = "CC-BY-4.0"

@@ -29,9 +29,10 @@ header {
       }
 
       h1#name {
-        margin: 0.95em 0 0.95em 0.725em;
+        margin: 1.1em 0 1.1em 0.725em;
         font-size: 1.35em;
         font-weight: 500;
+        line-height: 1;
         letter-spacing: -0.01em;
       }
 
@@ -67,12 +68,10 @@ header {
       align-items: center;
       margin: 0;
       padding: 0;
-      font-size: 1.2em;
-      letter-spacing: -0.002em;
 
       li {
         text-align: right;
-        margin-left: 1.7em;
+        margin-left: 2em;
 
         a {
           display: inline-block;
@@ -83,7 +82,7 @@ header {
           }
 
           &:hover {
-            transform: scale(1.1);
+            transform: scale(1.15);
 
             @include colors() {
               color: c(links);
@@ -91,14 +90,15 @@ header {
           }
 
           span.icon {
-            font-size: 1.15em;
+            font-size: 1.35em;
             vertical-align: -0.075em;
           }
 
           span.text {
-            font-size: 0.8em;
+            font-size: 0.95em;
             font-weight: 500;
-            margin-left: 0.5em;
+            letter-spacing: -0.002em;
+            margin-left: 0.55em;
           }
         }
 
@@ -123,7 +123,7 @@ header {
 
         height: 1.5em;
         width: 1em;
-        margin-left: 1.7em;
+        margin-left: 2em;
         cursor: pointer;
 
         // hidden by default in case user's JS is disabled, switches to `block` onload in dark-mode.js

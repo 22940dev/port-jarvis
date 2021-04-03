@@ -7,7 +7,7 @@
 
   <amp-video
     layout="responsive"
-    width="940"
+    width="{{ .Site.Params.Theme.maxWidth }}"
     height="530"
     {{ with .Resources.GetMatch "thumb.*" }}poster="{{ .Permalink }}"{{ end }}
     controls>
