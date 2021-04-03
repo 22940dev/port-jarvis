@@ -1,7 +1,6 @@
 [build]
   command = "yarn build"
   publish = "public"
-  functions = ".netlify/functions"
 
   [build.environment]
     NODE_VERSION = "14"
@@ -25,16 +24,15 @@
       compress = false
 
 [context.deploy-preview]
-  command = "yarn build:functions && yarn build:hugo --environment development --baseURL $DEPLOY_PRIME_URL --buildDrafts --buildFuture"
+  command = "yarn build:hugo --environment development --baseURL $DEPLOY_PRIME_URL --buildDrafts --buildFuture"
 
 [context.branch-deploy]
-  command = "yarn build:functions && yarn build:hugo --environment development --baseURL $DEPLOY_PRIME_URL --buildDrafts --buildFuture"
+  command = "yarn build:hugo --environment development --baseURL $DEPLOY_PRIME_URL --buildDrafts --buildFuture"
 
 # https://github.com/netlify/cli/blob/master/docs/netlify-dev.md#netlifytoml-dev-block
 [dev]
   framework = "#custom"
-  # only start Hugo, `netlify dev` builds/serves functions itself
-  command = "yarn start:hugo --port 1338 --baseURL=/ --appendPort=false --disableLiveReload"
+  command = "yarn start --port 1338 --baseURL=/ --appendPort=false --disableLiveReload"
   # swap ports to keep consistent w/ normal local server
   targetPort = 1338
   port = 1337
@@ -158,11 +156,6 @@
     X-XSS-Pwnage = "<script>alert('oops!');</script>"
     X-View-Source = "https://jrvs.io/src"
     X-Got-Milk = "2%"
-## Prettier URLs for Netlify Functions
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
 
 # More miscellaneous mirrors/redirects:
 [[redirects]]
