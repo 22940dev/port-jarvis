@@ -69,7 +69,7 @@ css: |
 **🚨 Trigger warning:** marquees, Comic Sans MS, popup windows, <code>color: <span class="limegreen">limegreen</span></code>... [Click for the **_FULL_** experience anyway.](https://y2k.app/)
 
 <figure>
-  {{< iframe src="https://site.y2k.app/" width="850" height="500" title="My Terrible, Horrible, No Good, Very Bad First Website" >}}
+  {{< iframe src="https://jakejarvis.github.io/my-first-website/" width="850" height="500" title="My Terrible, Horrible, No Good, Very Bad First Website" >}}
   <figcaption>
     November 2001 (<a href="https://github.com/jakejarvis/my-first-website" target="_blank" rel="noopener">archived source</a>)
   </figcaption>

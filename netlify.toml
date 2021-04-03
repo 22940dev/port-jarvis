@@ -121,16 +121,16 @@
     # https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/secure-pages/
     Content-Security-Policy = '''
     default-src 'self';
-    connect-src 'self' https://*.ampproject.net https://csp-collector.appspot.com/csp/amp https://api.github.com https://starman.fathomdns.com https://platform.twitter.com;
+    connect-src 'self' https://*.ampproject.net https://csp-collector.appspot.com/csp/amp https://api.github.com https://platform.twitter.com;
     font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;
     form-action 'none';
     frame-ancestors 'self';
-    frame-src 'self' https://jakejarvis.github.io https://*.ampproject.net https://cdn.ampproject.org https://app.usefathom.com https://buttons.github.io https://codepen.io https://cdpn.io https://platform.twitter.com https://player.vimeo.com https://www.youtube-nocookie.com https://site.y2k.app;
+    frame-src 'self' https://jakejarvis.github.io https://*.ampproject.net https://cdn.ampproject.org https://app.usefathom.com https://buttons.github.io https://codepen.io https://cdpn.io https://platform.twitter.com https://player.vimeo.com https://www.youtube-nocookie.com;
     img-src 'self' data: https:;
     manifest-src 'self';
     media-src 'self' data: https:;
     object-src 'none';
-    script-src 'self' 'unsafe-eval' https://cdn.ampproject.org/v0.js https://cdn.ampproject.org/v0/ https://cdn.ampproject.org/viewer/ https://cdn.ampproject.org/rtv/ https://3p.ampproject.net https://buttons.github.io https://starman.fathomdns.com https://gist.github.com https://syndication.twitter.com https://platform.twitter.com https://player.vimeo.com;
+    script-src 'self' 'unsafe-eval' https://cdn.ampproject.org/v0.js https://cdn.ampproject.org/v0/ https://cdn.ampproject.org/viewer/ https://cdn.ampproject.org/rtv/ https://3p.ampproject.net https://buttons.github.io https://gist.github.com https://syndication.twitter.com https://platform.twitter.com https://player.vimeo.com;
     style-src 'self' 'unsafe-inline' https://cdn.ampproject.org/rtv/ https://fonts.googleapis.com https://github.githubassets.com;
     worker-src 'self';
     block-all-mixed-content;
@@ -187,7 +187,7 @@
 # this repo and domain squeaky clean:
 [[redirects]]
   from = "/y2k/*"
-  to = "https://site.y2k.app/:splat"
+  to = "https://jakejarvis.github.io/my-first-website/:splat"
   status = 302
 [[redirects]]
   from = "/ios-trackers/*"
