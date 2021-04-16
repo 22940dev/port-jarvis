@@ -11,4 +11,4 @@ resources:
   - src: "thumb.png"
 ---
 
-Video is property of [Leo Laporte](https://leolaporte.com/) and [G4techTV / HOW TO Channel](https://en.wikipedia.org/wiki/G4techTV). &copy; 2007.
+Video is property of [G4techTV Canada](https://web.archive.org/web/20070511004304/http://www.g4techtv.ca/) & [Leo Laporte](https://leolaporte.com/). &copy; 2007 G4 Media, Inc.
