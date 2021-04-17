@@ -45,13 +45,13 @@ css: |
   div#content span.limegreen {
     color: #32cd32;
   }
-  header nav a#logo h1#name {
+  header nav a#logo span#name {
     font-size: 1.5em;
-    line-height: 1.15;
+    margin: 0.93em 0 0.93em 0.7em;
   }
   header nav ul li a span.text {
-    font-size: 0.9em;
-    line-height: 1.15;
+    font-size: 1.05em;
+    line-height: 1.05;
   }
   footer div#copyright, footer div#poweredby {
     font-size: 1.1em;

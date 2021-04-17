@@ -1,6 +1,6 @@
 ---
 title: "Jake Jarvis – Front-End Web Developer in Boston, MA 👨‍💻"
-date: 2021-03-30 08:48:15-0400
+date: 2021-04-17 09:22:54-0400
 type: home
 sitemap:
   priority: 1.0
@@ -13,9 +13,9 @@ amp: false
 <img id="me" src="{{ $meImgSm.Permalink }}" width="{{ div $meImgSm.Width 2 }}" height="{{ div $meImgSm.Height 2 }}" alt="Photo of Jake Jarvis">
 {{</ portrait.inline >}}
 
-## Hi there! I'm Jake. <span class="wave">👋</span>
+# Hi there! I'm Jake. <span class="wave">👋</span>
 
-### I'm a frontend web developer based in <a href="https://www.youtube-nocookie.com/embed/rLwbzGyC6t4?hl=en&amp;fs=1&amp;showinfo=1&amp;rel=0&amp;iv_load_policy=3" title="&quot;Boston Accent Trailer - Late Night with Seth Meyers&quot; on YouTube" id="boston" target="_blank" rel="noopener">Boston, MA</a>.
+## I'm a frontend web developer based in <a href="https://www.youtube-nocookie.com/embed/rLwbzGyC6t4?hl=en&amp;fs=1&amp;showinfo=1&amp;rel=0&amp;iv_load_policy=3" title="&quot;Boston Accent Trailer - Late Night with Seth Meyers&quot; on YouTube" id="boston" target="_blank" rel="noopener">Boston, MA</a>.
 
 My current focus is on <a href="https://jamstack.wtf/" title="WTF is JAMstack?" id="jamstack" target="_blank" rel="noopener">the JAMstack</a> and <a href="https://stackoverflow.blog/2018/01/11/brutal-lifecycle-javascript-frameworks/" title="&quot;The Brutal Lifecycle of JavaScript Frameworks&quot; by Ian Allen" id="javascript" target="_blank" rel="noopener">modern JavaScript frameworks</a> like <a href="https://reactjs.org/" title="React Official Website" id="react" target="_blank" rel="noopener">React</a> and <a href="https://angular.io/" title="Angular Official Website" id="angular" target="_blank" rel="noopener">Angular</a> in front of <a href="https://nodejs.org/en/" title="Node.js Official Website" id="node" target="_blank" rel="noopener">Node</a> and <a href="https://golang.org/" title="Golang Official Website" id="golang" target="_blank" rel="noopener">Go</a> backends, but I'm fluent in classics like <a href="https://stitcher.io/blog/php-in-2020" title="&quot;PHP in 2020&quot; by Brent Roose" id="php" target="_blank" rel="noopener">PHP</a>, <a href="https://www.ruby-lang.org/en/" title="Ruby Official Website" id="ruby" target="_blank" rel="noopener">Ruby</a>, and <a href="https://www.python.org/" title="Python Official Website" id="python" target="_blank" rel="noopener">Python</a> too.
 

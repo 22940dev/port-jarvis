@@ -28,7 +28,7 @@ header {
         color: c(medium-dark);
       }
 
-      h1#name {
+      span#name {
         margin: 1.1em 0 1.1em 0.725em;
         font-size: 1.35em;
         font-weight: 500;
@@ -146,7 +146,7 @@ header {
           height: 54px;
         }
 
-        h1#name {
+        span#name {
           display: none;
         }
       }

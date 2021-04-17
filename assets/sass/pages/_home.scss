@@ -6,7 +6,7 @@ div.layout-home {
   padding-top: 1.5em;
   padding-bottom: 0.75em;
 
-  h2 {
+  h1 {
     margin: 0 0 0.6em 0;
     font-size: 1.8em;
     font-weight: 500;
@@ -15,7 +15,7 @@ div.layout-home {
     margin-left: -0.03em; // TODO: why is this indented slightly?
   }
 
-  h3 {
+  h2 {
     margin: 0.6em 0;
     font-size: 1.35em;
     font-weight: 400;
@@ -101,13 +101,13 @@ div.layout-home {
     font-size: 0.975em;
     padding: 1.2em 1.2em 0.4em 1.2em;
 
-    h2 {
+    h1 {
       font-size: 1.5em;
       letter-spacing: -0.014em;
       line-height: 1.4;
     }
 
-    h3 {
+    h2 {
       font-size: 1.185em;
       letter-spacing: -0.017em;
       line-height: 1.55;
