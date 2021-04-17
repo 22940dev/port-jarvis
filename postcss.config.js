@@ -7,19 +7,6 @@ module.exports = {
     require("autoprefixer")(),
     require("postcss-svgo")({
       encode: true,
-      plugins: [
-        {
-          sortAttrs: true,
-        },
-        {
-          mergePaths: true,
-        },
-        {
-          cleanupNumericValues: {
-            floatPrecision: 2,
-          },
-        },
-      ],
     }),
     require("postcss-focus")(),
     require("postcss-color-rgba-fallback")({
