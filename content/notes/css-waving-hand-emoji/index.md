@@ -12,9 +12,9 @@ image: "images/codepen.png"
 draft: false
 ---
 
-# Howdy, friends! <span class="wave">👋</span>
+## Howdy, friends! <span class="wave">👋</span>
 
-If you examine [my homepage](/) long enough, you might notice the 👋 hand emoji at the top subtly waving at you. This was easily accomplished using a few lines of CSS with a feature called [`@keyframes`](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) — no bulky GIFs involved, and no JS mess or jQuery overkill required.
+If you examine [my homepage](/) long enough, you might notice the <span class="wave">👋</span> hand emoji at the top subtly waving at you. This was easily accomplished using a few lines of CSS with a feature called [`@keyframes`](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) — no bulky GIFs involved, and no JS mess or jQuery overkill required.
 
 Below are the code snippets you can grab and customize to make your own ["waving hand" 👋](https://emojipedia.org/waving-hand-sign/) emojis **_actually wave_**, and a [CodePen playground](https://codepen.io/jakejarvis/pen/pBZWZw) for live testing.
 
