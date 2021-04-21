@@ -2,7 +2,7 @@
 
 [![Netlify](https://img.shields.io/netlify/a7403a53-fd9d-44c0-a708-a84d9fc1454d?logo=netlify&logoColor=white)](https://app.netlify.com/sites/jakejarvis/deploys)
 [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/jakejarvis/jarv.is/CI/main?label=build&logo=github&logoColor=white)](https://github.com/jakejarvis/jarv.is/actions?query=workflow%3ACI+branch%3Amain)
-[![Hugo v0.79.1](https://img.shields.io/badge/hugo-0.79.1-ff4088?logo=hugo&logoColor=white)](https://github.com/gohugoio/hugo)
+[![Hugo v0.82.1](https://img.shields.io/badge/hugo-0.82.1-ff4088?logo=hugo&logoColor=white)](https://github.com/gohugoio/hugo)
 [![Licensed under CC-BY-4.0](https://img.shields.io/badge/license-CC--BY--4.0-fb7828?logo=creative-commons&logoColor=white)](LICENSE.md)
 [![GitHub repo size](https://img.shields.io/github/repo-size/jakejarvis/jarv.is?color=009cdf&label=repo%20size&logo=git&logoColor=white)](https://github.com/jakejarvis/jarv.is)
 
