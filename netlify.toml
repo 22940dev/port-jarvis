@@ -52,7 +52,7 @@
 [[plugins]]
   package = "./plugins/netlify-plugin-cache"
   [plugins.inputs]
-    paths = ["resources", "public", "_vendor"]
+    paths = ["public", "builds", "_vendor"]
 # List cached resources for debugging:
 # [[plugins]]
 #   package = "netlify-plugin-debug-cache"
