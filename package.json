@@ -22,7 +22,7 @@
     "minify": "run-s minify:**",
     "minify:html": "html-minifier --html5 --collapse-whitespace --collapse-boolean-attributes --preserve-line-breaks --minify-css --remove-comments --file-ext html --input-dir public --output-dir public **/*.html",
     "minify:js": "terser --compress passes=3,negate_iife=false,keep_fargs=false,sequences=false,reduce_vars=false --mangle reserved=['sa','sa_event'] --output public/js/app.js -- public/js/app.js",
-    "minify:img": "glob-exec --parallel --foreach 'public/**/{img,images}/' -- imagemin '{{file.path}}*' --plugin=jpegoptim --plugin.jpegoptim.progressive --plugin.jpegoptim.stripAll --plugin=pngquant --plugin.pngquant.quality={0.1,0.3} --plugin.pngquant.speed=1 --plugin.pngquant.strip --plugin=gifsicle --plugin=svgo --out-dir='{{file.path}}' || true",
+    "minify:img": "glob-exec --parallel --foreach 'public/**/{img,images}/' -- imagemin '{{file.path}}*' --plugin=mozjpeg --plugin.mozjpeg.progressive --plugin.mozjpeg.quality=85 --plugin=pngquant --plugin.pngquant.quality={0.1,0.3} --plugin.pngquant.speed=1 --plugin.pngquant.strip --plugin=gifsicle --plugin=svgo --out-dir='{{file.path}}'",
     "lint": "run-s lint:**",
     "lint:scss": "stylelint 'assets/sass/**/*.scss' --syntax scss",
     "lint:js": "eslint '**/*.js'",
@@ -40,8 +40,8 @@
   "devDependencies": {
     "autoprefixer": "^10.2.5",
     "cross-env": "^7.0.3",
-    "eslint": "~7.24.0",
-    "eslint-config-prettier": "~8.2.0",
+    "eslint": "~7.25.0",
+    "eslint-config-prettier": "~8.3.0",
     "eslint-plugin-compat": "~3.9.0",
     "eslint-plugin-prettier": "~3.4.0",
     "glob-exec": "^0.1.1",
@@ -62,7 +62,7 @@
     "postcss-svgo": "^5.0.0",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
-    "stylelint": "~13.12.0",
+    "stylelint": "~13.13.0",
     "stylelint-config-prettier": "~8.0.2",
     "stylelint-config-sass-guidelines": "~8.0.0",
     "stylelint-no-unsupported-browser-features": "~4.1.4",
@@ -72,7 +72,7 @@
   },
   "optionalDependencies": {
     "imagemin-gifsicle": "^7.0.0",
-    "imagemin-jpegoptim": "^7.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
     "imagemin-pngquant": "^9.0.2",
     "imagemin-svgo": "^9.0.0"
   },
