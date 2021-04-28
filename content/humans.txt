@@ -51,28 +51,8 @@
     All content is licensed under CC-BY-4.0, an
     open & permissive Creative Commons license:
 
-        https://jarv.is/license/
+      https://jarv.is/license/
 
-    Twemoji: Licensed under Creative Commons
-    Attribution 4.0 International by Twitter, Inc.
-    and other contributors:
+    Third-party dependencies and their licenses:
 
-        https://twemoji.twitter.com/
-
-    Inter: Copyright (c) 2016-2020 The Inter
-    Project Authors. Licensed under the SIL Open
-    Font License, Version 1.1:
-
-        https://rsms.me/inter/
-
-    Roboto Mono: Copyright (c) 2015 The Roboto Mono
-    Project Authors. Licensed under the the Apache
-    License, Version 2.0.
-
-        https://fonts.google.com/specimen/Roboto+Mono
-
-    Comic Neue: Copyright (c) 2014 The Comic Neue
-    Project Authors. Licensed under the SIL Open
-    Font License, Version 1.1:
-
-        http://comicneue.com/
+      https://github.com/jakejarvis/jarv.is/blob/main/README.md#licenses

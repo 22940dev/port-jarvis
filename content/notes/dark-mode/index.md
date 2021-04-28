@@ -28,7 +28,7 @@ It _is_ possible to use [pure CSS3 media queries to do this](https://css-tricks.
 I've written a simple implementation below, which...
 
 - Defaults to a user's system preference, until they press your toggle to set it themselves
-- Listens for clicks on any element of your choosing --- just set the class to `dark-mode-toggle`. For example:
+- Listens for clicks on any element of your choosing — just set the class to `dark-mode-toggle`. For example:
 
 ```html {linenos=false}
 <button class="dark-mode-toggle">💡 Switch Themes</button>
@@ -37,7 +37,7 @@ I've written a simple implementation below, which...
 - Remembers the visitor's preference between visits using the [local storage](https://www.w3schools.com/html/html5_webstorage.asp) of the their browser (not cookies, please don't use cookies!)
 - Switches your `<body>`'s class between `light` and `dark`...
 
-...meaning that any CSS selectors beginning with `body.dark` or `body.light` will only apply when the respective mode is active. A good place to start is by separating any color rules --- your background, text, links, etc. --- into a different section of your CSS. Using [SASS or SCSS](https://sass-lang.com/) makes this a whole lot [easier with nesting](https://sass-lang.com/guide#topic-3) but is not required; this was written with a [KISS](https://getyarn.io/yarn-clip/embed/eed08f4f-d1c9-4cc0-b041-f280a5dbf0a5?autoplay=false) mentality.
+...meaning that any CSS selectors beginning with `body.dark` or `body.light` will only apply when the respective mode is active. A good place to start is by separating any color rules — your background, text, links, etc. — into a different section of your CSS. Using [SASS or SCSS](https://sass-lang.com/) makes this a whole lot [easier with nesting](https://sass-lang.com/guide#topic-3) but is not required; this was written with a [KISS](https://getyarn.io/yarn-clip/embed/eed08f4f-d1c9-4cc0-b041-f280a5dbf0a5?autoplay=false) mentality.
 
 {{< iframe src="/notes/dark-mode/example.html" width="650" height="275" title="Dark Mode Example" sandbox="allow-same-origin allow-scripts allow-popups" >}}
 
