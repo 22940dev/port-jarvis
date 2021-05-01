@@ -41,10 +41,10 @@
 // https://medium.com/@katiemctigue/how-to-create-a-dark-mode-in-sass-609f131a3995
 //
 // Note: ONLY color rules should go in here (eg: just `border-color`, not the whole `border` rule)
+$theme-map: (); // now declaring global variables this way: https://sass-lang.com/documentation/variables#scope
 @mixin colors() {
   @each $theme, $map in $themes {
     body.#{$theme} & {
-      $theme-map: () !global;
       @each $key, $submap in $map {
         $value: map-get(map-get($themes, $theme), "#{$key}");
         $theme-map: map-merge(
@@ -55,7 +55,6 @@
         ) !global;
       }
       @content;
-      $theme-map: null !global;
     }
   }
 }
