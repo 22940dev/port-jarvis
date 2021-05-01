@@ -2,6 +2,7 @@
 public/
 builds/
 _vendor/
+hugo_stats.json
 
 # node/npm/yarn
 node_modules/

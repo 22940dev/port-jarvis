@@ -11,5 +11,6 @@
 {{- $html = replace $html "<svg " $wxh -}}
 
 {{/* bit of a hack: calling .Permalink so that the SVG file is published too, comment will be removed when minified */}}
+{{/* https://gohugo.io/hugo-pipes/introduction/#asset-publishing */}}
 {{- printf "<!-- auto-inlined from: %s -->" $svg.Permalink | safeHTML }}
 {{- $html | safeHTML -}}

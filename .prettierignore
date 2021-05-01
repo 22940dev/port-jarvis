@@ -2,6 +2,7 @@
 assets/**/vendor/
 layouts/
 static/
+hugo_stats.json
 
 # output from Hugo
 public/

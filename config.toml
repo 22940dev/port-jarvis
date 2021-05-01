@@ -185,6 +185,7 @@ disableAliases = true
     dir = ":cacheDir/modules"
 
 [build]
+  writeStats = true
   # don't use cache for SCSS compilation, better to throw error than be stale
   useResourceCacheWhen = "never"
 
