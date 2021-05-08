@@ -183,6 +183,11 @@
   from = "/me_large.jpg"
   to = "/img/me.jpg"
   status = 301
+[[redirects]]
+  from = "/twemoji/svg/*"
+  to = "/vendor/emoji/svg/:splat"
+  status = 301
+  force = true
 
 # Moved these random sites/projects elsewhere (mostly GitHub Pages) to keep
 # this repo and domain squeaky clean:

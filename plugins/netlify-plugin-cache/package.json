@@ -19,22 +19,13 @@
     "build": "netlify build",
     "test": "xo"
   },
-  "dependencies": {},
   "devDependencies": {
     "netlify-cli": "*",
-    "xo": "~0.32.0"
+    "xo": "~0.39.1"
   },
   "engines": {
     "node": ">=10.18"
   },
-  "keywords": [
-    "netlify",
-    "netlify-plugin",
-    "cache",
-    "ci",
-    "build",
-    "plugin"
-  ],
   "xo": {
     "semicolon": false,
     "space": 2,
