@@ -77,7 +77,7 @@
     manifest-src 'self';
     media-src 'self' data: https:;
     object-src 'none';
-    script-src 'self' 'unsafe-eval' https://cdn.ampproject.org/v0.js https://cdn.ampproject.org/v0/ https://cdn.ampproject.org/viewer/ https://cdn.ampproject.org/rtv/ https://3p.ampproject.net https://buttons.github.io https://gist.github.com https://syndication.twitter.com https://platform.twitter.com https://player.vimeo.com 'sha256-y3Xr/40/KQnUvqk/kZO5us6t3i/I49BsbYjsH8ELhVg=' 'sha256-JGG0npUp+0ABq/NY1azjpQ0WBtm+m5gU58mzF+2DCXY=';
+    script-src 'self' 'unsafe-eval' https://cdn.ampproject.org/lts/v0.js https://cdn.ampproject.org/lts/v0/ https://cdn.ampproject.org/viewer/ https://cdn.ampproject.org/rtv/ https://3p.ampproject.net https://buttons.github.io https://gist.github.com https://syndication.twitter.com https://platform.twitter.com https://player.vimeo.com 'sha256-y3Xr/40/KQnUvqk/kZO5us6t3i/I49BsbYjsH8ELhVg=' 'sha256-JGG0npUp+0ABq/NY1azjpQ0WBtm+m5gU58mzF+2DCXY=';
     style-src 'self' 'unsafe-inline' https://cdn.ampproject.org/rtv/ https://fonts.googleapis.com https://github.githubassets.com;
     worker-src 'self';
     block-all-mixed-content;
@@ -187,7 +187,6 @@
   from = "/twemoji/svg/*"
   to = "/vendor/emoji/svg/:splat"
   status = 301
-  force = true
 
 # Moved these random sites/projects elsewhere (mostly GitHub Pages) to keep
 # this repo and domain squeaky clean:
