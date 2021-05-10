@@ -6,19 +6,56 @@ updates:
   schedule:
     interval: daily
   versioning-strategy: increase
-  open-pull-requests-limit: 99
+  commit-message:
+    prefix: "npm:"
+  labels:
+    - "npm"
+    - "dependencies"
+
+- package-ecosystem: npm
+  directory: "/plugins/netlify-plugin-amp-optimizer"
+  schedule:
+    interval: daily
+  versioning-strategy: increase
+  commit-message:
+    prefix: "plugin(amp):"
+  labels:
+    - "build plugins"
+    - "npm"
+    - "dependencies"
+
+- package-ecosystem: npm
+  directory: "/plugins/netlify-plugin-cache"
+  schedule:
+    interval: daily
+  versioning-strategy: increase
+  commit-message:
+    prefix: "plugin(cache):"
+  labels:
+    - "plugins"
+    - "npm"
+    - "dependencies"
 
 - package-ecosystem: docker
   directory: "/"
   schedule:
     interval: daily
+  commit-message:
+    prefix: "docker:"
+  rebase-strategy: disabled
 
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
     interval: daily
+  commit-message:
+    prefix: "ci:"
+  rebase-strategy: disabled
 
 - package-ecosystem: pip
   directory: "/"
   schedule:
     interval: weekly
+  commit-message:
+    prefix: "pip:"
+  rebase-strategy: disabled
