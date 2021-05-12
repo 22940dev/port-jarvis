@@ -15,7 +15,7 @@ updates:
 - package-ecosystem: npm
   directory: "/plugins/netlify-plugin-amp-optimizer"
   schedule:
-    interval: daily
+    interval: weekly
   versioning-strategy: increase
   commit-message:
     prefix: "📦 build(amp):"
@@ -23,12 +23,11 @@ updates:
     - "build plugins"
     - "npm"
     - "dependencies"
-  rebase-strategy: disabled
 
 - package-ecosystem: npm
   directory: "/plugins/netlify-plugin-cache"
   schedule:
-    interval: daily
+    interval: weekly
   versioning-strategy: increase
   commit-message:
     prefix: "📦 build(cache):"
@@ -36,7 +35,6 @@ updates:
     - "build plugins"
     - "npm"
     - "dependencies"
-  rebase-strategy: disabled
 
 - package-ecosystem: docker
   directory: "/"
@@ -44,15 +42,13 @@ updates:
     interval: daily
   commit-message:
     prefix: "📦 docker:"
-  rebase-strategy: disabled
 
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
-    interval: daily
+    interval: weekly
   commit-message:
     prefix: "📦 ci:"
-  rebase-strategy: disabled
 
 - package-ecosystem: pip
   directory: "/"
@@ -60,4 +56,3 @@ updates:
     interval: weekly
   commit-message:
     prefix: "📦 pip:"
-  rebase-strategy: disabled
