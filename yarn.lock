@@ -719,9 +719,9 @@ camelcase@^5.0.0, camelcase@^5.3.1:
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
 caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001166, caniuse-lite@^1.0.30001179, caniuse-lite@^1.0.30001196, caniuse-lite@^1.0.30001219:
-  version "1.0.30001227"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001227.tgz#437fe8b514ac4512d9bdb4ea79f20c400bd0b4d1"
-  integrity sha512-HHZT4QpUw4Pf45IE3xxKAPgAN3q2aRai/x5TSHP8lrrKzARoH0IeBviwStcRi5lsFlscTkBbXC7gXyms43151A==
+  version "1.0.30001228"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001228.tgz#bfdc5942cd3326fa51ee0b42fbef4da9d492a7fa"
+  integrity sha512-QQmLOGJ3DEgokHbMSA8cj2a+geXqmnpyOFT0lhQV6P3/YOJvGDEwoedcwxEQ30gJIwIIunHIicunJ2rzK5gB2A==
 
 caw@^2.0.0, caw@^2.0.1:
   version "2.0.1"
@@ -1329,10 +1329,10 @@ domutils@^2.4.3:
     domelementtype "^2.2.0"
     domhandler "^4.2.0"
 
-dotenv@^9.0.1:
-  version "9.0.1"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-9.0.1.tgz#a889a28a3a515812dde1e7f8183ef5cdf3186b97"
-  integrity sha512-W8FNeNnnvJoYfgkFRKzp8kTgz0T2YY4TJ9xy1Ma0hSebPTK8iquRtpG12TUrSTX5zIN9D/wSLEEuI+Ad35tlyw==
+dotenv@^9.0.2:
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-9.0.2.tgz#dacc20160935a37dea6364aa1bef819fb9b6ab05"
+  integrity sha512-I9OvvrHp4pIARv4+x9iuewrWycX6CcZtoAu1XrzPxc5UygMJXJZYmBsynku8IkrJwgypE5DGNjDPmPRhDCptUg==
 
 download-cli@^1.x:
   version "1.1.1"
@@ -3457,10 +3457,10 @@ mute-stream@0.0.8:
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.8.tgz#1630c42b2251ff81e2a283de96a5497ea92e5e0d"
   integrity sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==
 
-nanoid@^3.1.22:
-  version "3.1.22"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.22.tgz#b35f8fb7d151990a8aebd5aa5015c03cf726f844"
-  integrity sha512-/2ZUaJX2ANuLtTvqTlgqBQNJoQO398KyJgZloL0PZkC0dpysjncRUPsFe3DUPzz/y3h+u7C46np8RMuvF3jsSQ==
+nanoid@^3.1.23:
+  version "3.1.23"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.23.tgz#f744086ce7c2bc47ee0a8472574d5c78e4183a81"
+  integrity sha512-FiB0kzdP0FFVGDKlRLEQ1BgDzU87dy5NnzjeW9YZNt+/c3+q82EQDUwniSAUxp/F0gFNI1ZhKU1FqYsMuqZVnw==
 
 natural-compare@^1.4.0:
   version "1.4.0"
@@ -4037,10 +4037,10 @@ postcss-html@^0.36.0:
   dependencies:
     htmlparser2 "^3.10.0"
 
-postcss-import@^14.0.1:
-  version "14.0.1"
-  resolved "https://registry.yarnpkg.com/postcss-import/-/postcss-import-14.0.1.tgz#6a3f8f2ce74a95fc7c72ecfe3eddfa0e9124e677"
-  integrity sha512-Xn2+z++vWObbEPhiiKO1a78JiyhqipyrXHBb3AHpv0ks7Cdg+GxQQJ24ODNMTanldf7197gSP3axppO9yaG0lA==
+postcss-import@^14.0.2:
+  version "14.0.2"
+  resolved "https://registry.yarnpkg.com/postcss-import/-/postcss-import-14.0.2.tgz#60eff77e6be92e7b67fe469ec797d9424cae1aa1"
+  integrity sha512-BJ2pVK4KhUyMcqjuKs9RijV5tatNzNa73e/32aBVE/ejYPe37iH+6vAu9WvqUkB5OAYgLHzbSvzHnorybJCm9g==
   dependencies:
     postcss-value-parser "^4.0.0"
     read-cache "^1.0.0"
@@ -4140,12 +4140,12 @@ postcss-value-parser@^4.0.0, postcss-value-parser@^4.0.2, postcss-value-parser@^
   integrity sha512-97DXOFbQJhk71ne5/Mt6cOu6yxsSfM0QGQyl0L25Gca4yGWEGJaig7l7gbCX623VqTBNGLRLaVUCnNkcedlRSQ==
 
 postcss@^6.x, postcss@^8.1.4, postcss@^8.2.4, postcss@^8.x:
-  version "8.2.14"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.14.tgz#dcf313eb8247b3ce8078d048c0e8262ca565ad2b"
-  integrity sha512-+jD0ZijcvyCqPQo/m/CW0UcARpdFylq04of+Q7RKX6f/Tu+dvpUI/9Sp81+i6/vJThnOBX09Quw0ZLOVwpzX3w==
+  version "8.2.15"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.15.tgz#9e66ccf07292817d226fc315cbbf9bc148fbca65"
+  integrity sha512-2zO3b26eJD/8rb106Qu2o7Qgg52ND5HPjcyQiK2B98O388h43A448LCslC0dI2P97wCAQRJsFvwTRcXxTKds+Q==
   dependencies:
     colorette "^1.2.2"
-    nanoid "^3.1.22"
+    nanoid "^3.1.23"
     source-map "^0.6.1"
 
 postcss@^7.0.14, postcss@^7.0.17, postcss@^7.0.2, postcss@^7.0.21, postcss@^7.0.26, postcss@^7.0.31, postcss@^7.0.32, postcss@^7.0.35, postcss@^7.0.6:
@@ -5265,9 +5265,9 @@ uc.micro@^1.0.1, uc.micro@^1.0.5:
   integrity sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==
 
 uglify-js@^3.5.1:
-  version "3.13.5"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.13.5.tgz#5d71d6dbba64cf441f32929b1efce7365bb4f113"
-  integrity sha512-xtB8yEqIkn7zmOyS2zUNBsYCBRhDkvlNxMMY2smuJ/qA8NCHeQvKCF3i9Z4k8FJH4+PJvZRtMrPynfZ75+CSZw==
+  version "3.13.6"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.13.6.tgz#6815ac7fdd155d03c83e2362bb717e5b39b74013"
+  integrity sha512-rRprLwl8RVaS+Qvx3Wh5hPfPBn9++G6xkGlUupya0s5aDmNjI7z3lnRLB3u7sN4OmbB0pWgzhM9BEJyiWAwtAA==
 
 unbox-primitive@^1.0.0:
   version "1.0.1"
