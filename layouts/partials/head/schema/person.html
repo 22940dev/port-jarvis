@@ -3,7 +3,7 @@
 {
   "@context": "http://schema.org",
   "@type": "Person",
-  "@id": {{ path.Join $.Site.BaseURL "#author" }},
+  "@id": {{ print (absURL "/") "#author" }},
   "name": {{ .name }},
   "url": {{ $.Site.BaseURL }},
   "description": {{ $.Site.Params.description }},{{ with $.Scratch.Get "authorImage" }}
