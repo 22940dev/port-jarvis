@@ -12,15 +12,15 @@
 /.well-known/amphtml/apikey.pub
   Content-Type: text/plain; charset=UTF-8
 
-# Set Source and Onion-Location headers based on each URL
+# Set Onion-Location headers based on each URL
 {{- range $page := .Site.Pages }}
+{{ $onion := print .Site.Params.baseOnionURL $page.RelPermalink }}
+
 {{ $page.RelPermalink }}
-  Onion-Location: {{ print .Site.Params.baseOnionURL $page.RelPermalink }}
-  X-View-Source: {{ .Scratch.Get "sourceURL" }}
+  Onion-Location: {{ $onion }}
 
 {{ if and .IsPage (ne .Params.amp false) -}}
 {{ print $page.RelPermalink "amp.html" }}
-  Onion-Location: {{ print .Site.Params.baseOnionURL $page.RelPermalink "amp.html" }}
-  X-View-Source: {{ .Scratch.Get "sourceURL" }}
+  Onion-Location: {{ print $onion "amp.html" }}
 {{- end }}
 {{ end -}}

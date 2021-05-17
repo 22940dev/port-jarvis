@@ -95,6 +95,7 @@
     X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1; mode=block"
     X-Got-Milk = "2%"
+    X-View-Source = "https://github.com/jakejarvis/jarv.is"
 # PGP key: open in browser, download correctly
 [[headers]]
   for = "/jarvis.asc"

@@ -46,6 +46,10 @@
 
     https://jarv.is/privacy/
 
+# TOR MIRROR
+
+    http://jarvis2i2vp4j4tbxjogsnqdemnte5xhzyi7hziiyzxwge3hzmh57zad.onion
+
 # LICENSES
 
     All content is licensed under CC-BY-4.0, an

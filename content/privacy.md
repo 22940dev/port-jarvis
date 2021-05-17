@@ -27,6 +27,8 @@ This website uses [**Fathom Analytics**](https://usefathom.com/ref/ZEYG0O) to co
 
 Pages and first-party assets on this website are served by [**Netlify**](https://www.netlify.com/). Refer to their [privacy policy](https://www.netlify.com/privacy/) and [GDPR statement](https://www.netlify.com/gdpr/) for more information.
 
+For a likely excessive level of privacy and security, this website is also mirrored on the [🧅 Tor network](https://www.torproject.org/) at: [**jarvis2i2vp4j4tbxjogsnqdemnte5xhzyi7hziiyzxwge3hzmh57zad.onion**](http://jarvis2i2vp4j4tbxjogsnqdemnte5xhzyi7hziiyzxwge3hzmh57zad.onion).
+
 ## Third-Party Content
 
 Occasionally, embedded content from third-party services is included in posts, and some may contain tracking code that is outside of my control. Please refer to their privacy policies for more information:
