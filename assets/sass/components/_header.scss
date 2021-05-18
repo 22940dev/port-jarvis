@@ -29,7 +29,7 @@ header {
       }
 
       span#name {
-        margin: 1.1em 0 1.1em 0.725em;
+        margin: 1.1em 0 1.1em 0.8em;
         font-size: 1.35em;
         font-weight: 500;
         line-height: 1;
@@ -76,6 +76,7 @@ header {
         a {
           display: inline-block;
           transition: transform 0.15s ease-in-out;
+          will-change: transform; // stylelint-disable-line plugin/no-unsupported-browser-features
 
           @include colors() {
             color: c(medium-dark);
@@ -98,7 +99,7 @@ header {
             font-size: 0.95em;
             font-weight: 500;
             letter-spacing: -0.002em;
-            margin-left: 0.55em;
+            margin-left: 0.6em;
           }
         }
 
