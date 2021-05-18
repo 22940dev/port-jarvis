@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: jarv.is
+Token: 3df670b7cdb7d0442ec98aa7f0f68e19fd67a5559e6f6202eae1ea1a7fa633e4
