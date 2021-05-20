@@ -65,3 +65,11 @@
     transform: scale(1);
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0s !important;
+    transition-duration: 0s !important;
+    will-change: unset !important; // stylelint-disable-line plugin/no-unsupported-browser-features
+  }
+}

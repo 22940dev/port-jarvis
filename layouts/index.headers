@@ -12,15 +12,10 @@
 /.well-known/amphtml/apikey.pub
   Content-Type: text/plain; charset=UTF-8
 
-# Set Onion-Location headers based on each URL
+# Set matching Onion-Location headers for each permalink
 {{- range $page := .Site.Pages }}
-{{ $onion := print .Site.Params.baseOnionURL $page.RelPermalink }}
-
-{{ $page.RelPermalink }}
-  Onion-Location: {{ $onion }}
-
-{{ if and .IsPage (ne .Params.amp false) -}}
-{{ print $page.RelPermalink "amp.html" }}
-  Onion-Location: {{ print $onion "amp.html" }}
-{{- end }}
+{{- range .AlternativeOutputFormats }}
+{{ .RelPermalink }}
+  Onion-Location: {{ $.Site.Params.baseOnionURL }}{{ .RelPermalink }}
+{{ end }}
 {{ end -}}

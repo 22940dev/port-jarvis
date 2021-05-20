@@ -5,11 +5,11 @@
 
 {{/* If this is a page/post, link View Source to specific file on GitHub; otherwise, just link to repo homepage */}}
 {{- with .Site.Params.social.githubRepo }}
-  {{- $githubURL := printf "https://github.com/%s" . }}
+  {{- $githubURL := print "https://github.com/" . }}
   {{- if not $.IsPage }}
     {{- $.Scratch.Set "sourceURL" $githubURL }}
   {{- else }}
-    {{- $.Scratch.Set "sourceURL" (printf "%s/blob/main/content/%s" $githubURL $.File.Path) }}
+    {{- $.Scratch.Set "sourceURL" (print $githubURL "/blob/main/content/" $.File.Path) }}
   {{- end }}
 {{- end }}
 

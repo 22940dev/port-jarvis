@@ -255,6 +255,7 @@
 
     {{ partialCached "head/favicons" (dict "pngSizes" "192 48 32 16" "icoSizes" "16 32 48") }}
     {{ partialCached "head/feeds" . }}
+    {{ partialCached "head/webmention" . }}
     {{ partial "head/schema" . }}
   </head>
   <body>

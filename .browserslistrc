@@ -2,10 +2,13 @@
 last 2 major versions
 not dead
 Firefox ESR
-ie >= 10
+ie >= 11
 edge 16-18  # pre-chromium (then jumps to 79)
-ios_saf >= 8.1
+ios_saf >= 10.3
 not op_mini all
 not op_mob >= 0
 not ie_mob >= 0
+not and_qq >= 0
+not and_uc >= 0
 not baidu >= 0
+not kaios >= 0

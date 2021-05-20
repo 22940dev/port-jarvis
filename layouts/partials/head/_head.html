@@ -6,6 +6,7 @@
 {{ partial "head/styles" . -}}
 {{ partialCached "head/favicons" (dict "pngSizes" "192 48 32 16" "icoSizes" "16 32 48") -}}
 {{ partialCached "head/feeds" . -}}
-{{ partialCached "head/webmention" . -}}
 {{ partial "head/canonical" . -}}
+{{ partialCached "head/webmention" . -}}
+{{ partialCached "head/indieauth" . -}}
 {{ partial "head/schema" . -}}

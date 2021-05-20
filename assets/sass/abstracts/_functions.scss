@@ -73,3 +73,15 @@ $theme-map: (); // now declaring global variables this way: https://sass-lang.co
 @function c($key) {
   @return map-get($theme-map, $key);
 }
+
+@mixin hyphenate() {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+@mixin truncate() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
