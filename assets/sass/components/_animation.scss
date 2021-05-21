@@ -66,10 +66,15 @@
   }
 }
 
+// https://web.dev/prefers-reduced-motion/#(bonus)-forcing-reduced-motion-on-all-websites
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0s !important;
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0s !important;
-    will-change: unset !important; // stylelint-disable-line plugin/no-unsupported-browser-features
+    transition-delay: 0s !important;
   }
 }
