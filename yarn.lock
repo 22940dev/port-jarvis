@@ -799,10 +799,17 @@ chokidar@^3.3.0:
   optionalDependencies:
     fsevents "~2.3.1"
 
-clean-css@^4.2.1, clean-css@^4.x:
+clean-css@^4.2.1:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.2.3.tgz#507b5de7d97b48ee53d84adb0160ff6216380f78"
   integrity sha512-VcMWDN54ZN/DS+g58HYL5/n4Zrqe8vHJpGA8KdgUXFU4fuP/aHNw8eld9SyEIyabIMJX/0RaY/fplOo5hYLSFA==
+  dependencies:
+    source-map "~0.6.0"
+
+clean-css@^5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-5.1.2.tgz#6ea0da7286b4ddc2469a1b776e2461a5007eed54"
+  integrity sha512-QcaGg9OuMo+0Ds933yLOY+gHPWbxhxqF0HDexmToPf8pczvmvZGYzd+QqWp9/mkucAOKViI+dSFOqoZIvXbeBw==
   dependencies:
     source-map "~0.6.0"
 
@@ -1245,7 +1252,7 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-doiuse@^4.3.1:
+doiuse@^4.4.1:
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/doiuse/-/doiuse-4.4.1.tgz#efea4ecb6b04ed3228de28f5c6ad704f2c578c80"
   integrity sha512-TUpr1/YNg20IB09tZmwGCTsTQoxj8jUld/hUZprZMj8vj0VpAJySXEWCr8WMvqvgzk0/kG/FxeSMGKode4UjPg==
@@ -1380,9 +1387,9 @@ duplexer3@^0.1.4:
   integrity sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=
 
 electron-to-chromium@^1.3.723:
-  version "1.3.735"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.735.tgz#fa1a8660f2790662291cb2136f0e446a444cdfdc"
-  integrity sha512-cp7MWzC3NseUJV2FJFgaiesdrS+A8ZUjX5fLAxdRlcaPDkaPGFplX930S5vf84yqDp4LjuLdKouWuVOTwUfqHQ==
+  version "1.3.736"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.736.tgz#f632d900a1f788dab22fec9c62ec5c9c8f0c4052"
+  integrity sha512-DY8dA7gR51MSo66DqitEQoUMQ0Z+A2DSXFi7tK304bdTVqczCAfUuyQw6Wdg8hIoo5zIxkU1L24RQtUce1Ioig==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -1887,9 +1894,9 @@ flatted@^3.1.0:
   integrity sha512-zAoAQiudy+r5SvnSw3KJy5os/oRJYHzrzja/tBDqrZtNhUw8bt6y8OBzMWcjWr+8liV8Eb6yOhw8WZ7VFZ5ZzA==
 
 fraction.js@^4.0.13:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.1.0.tgz#229ec1cedc8c3c7e5d2d20688ba64f0a43af5830"
-  integrity sha512-o9lSKpK0TDqDwTL24Hxqi6I99s942l6TYkfl6WvGWgLOIFz/YonSGKfiSeMadoiNvTfqnfOa9mjb5SGVbBK9/w==
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.1.1.tgz#ac4e520473dae67012d618aab91eda09bcb400ff"
+  integrity sha512-MHOhvvxHTfRFpF1geTK9czMIZ6xclsEor2wkIGYYq+PxcQqT7vStJqjhe6S1TenZrMZzo+wlqOufBDVepUEgPg==
 
 from2@^2.1.1:
   version "2.3.0"
@@ -3933,13 +3940,11 @@ pngquant-bin@^6.0.0:
     execa "^4.0.0"
     logalot "^2.0.0"
 
-postcss-clean@^1.2.2:
+postcss-clean@jakejarvis/postcss-clean#master:
   version "1.2.2"
-  resolved "https://registry.yarnpkg.com/postcss-clean/-/postcss-clean-1.2.2.tgz#7b44303dcecbc2b29a70ed18d22af427203fa256"
-  integrity sha512-DpuMWW19Dd2K9KY4wknMz3khq9q2yZYa2U37bnhzdtBdBv0ggIfUj5T2XD3ir6gKVlDkb5OtOqw1iQJWq6qvpw==
+  resolved "https://codeload.github.com/jakejarvis/postcss-clean/tar.gz/ed61f3c3fa4f409cfef904ac212a9b1e6c031949"
   dependencies:
-    clean-css "^4.x"
-    postcss "^6.x"
+    clean-css "^5.1.2"
 
 postcss-cli@^8.3.1:
   version "8.3.1"
@@ -4082,15 +4087,6 @@ postcss-value-parser@^4.0.0, postcss-value-parser@^4.0.2, postcss-value-parser@^
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.1.0.tgz#443f6a20ced6481a2bda4fa8532a6e55d789a2cb"
   integrity sha512-97DXOFbQJhk71ne5/Mt6cOu6yxsSfM0QGQyl0L25Gca4yGWEGJaig7l7gbCX623VqTBNGLRLaVUCnNkcedlRSQ==
 
-postcss@^6.x, postcss@^8.1.4, postcss@^8.2.4, postcss@^8.x:
-  version "8.3.0"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.3.0.tgz#b1a713f6172ca427e3f05ef1303de8b65683325f"
-  integrity sha512-+ogXpdAjWGa+fdYY5BQ96V/6tAo+TdSSIMP5huJBIygdWwKtVoB5JWZ7yUd4xZ8r+8Kvvx4nyg/PQ071H4UtcQ==
-  dependencies:
-    colorette "^1.2.2"
-    nanoid "^3.1.23"
-    source-map-js "^0.6.2"
-
 postcss@^7.0.14, postcss@^7.0.17, postcss@^7.0.2, postcss@^7.0.21, postcss@^7.0.26, postcss@^7.0.31, postcss@^7.0.32, postcss@^7.0.35, postcss@^7.0.6:
   version "7.0.35"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.35.tgz#d2be00b998f7f211d8a276974079f2e92b970e24"
@@ -4099,6 +4095,15 @@ postcss@^7.0.14, postcss@^7.0.17, postcss@^7.0.2, postcss@^7.0.21, postcss@^7.0.
     chalk "^2.4.2"
     source-map "^0.6.1"
     supports-color "^6.1.0"
+
+postcss@^8.1.4, postcss@^8.2.4, postcss@^8.3.0:
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.3.0.tgz#b1a713f6172ca427e3f05ef1303de8b65683325f"
+  integrity sha512-+ogXpdAjWGa+fdYY5BQ96V/6tAo+TdSSIMP5huJBIygdWwKtVoB5JWZ7yUd4xZ8r+8Kvvx4nyg/PQ071H4UtcQ==
+  dependencies:
+    colorette "^1.2.2"
+    nanoid "^3.1.23"
+    source-map-js "^0.6.2"
 
 prelude-ls@^1.2.1:
   version "1.2.1"
@@ -4840,12 +4845,12 @@ stylelint-config-sass-guidelines@~8.0.0:
     stylelint-order "^4.0.0"
     stylelint-scss "^3.18.0"
 
-stylelint-no-unsupported-browser-features@~4.1.4:
-  version "4.1.4"
-  resolved "https://registry.yarnpkg.com/stylelint-no-unsupported-browser-features/-/stylelint-no-unsupported-browser-features-4.1.4.tgz#14c58167ba101ab5f1d26b98dd1a0d75c9e0a423"
-  integrity sha512-GORR+/z4KkWP9SWO4fLmC5WAIjDClShSfwCYTuAB9cT8GE+rtOXeAqw5RyXuN9BLIBAPjeO2W7LFIrWUH8x7FA==
+stylelint-no-unsupported-browser-features@~5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/stylelint-no-unsupported-browser-features/-/stylelint-no-unsupported-browser-features-5.0.1.tgz#a72460f3e537a4eb88ee4232924d5a17e4ee15bd"
+  integrity sha512-eI/MPD/DSJrSGufhEZe46iIhNn0W1bHVZjFFMvkbEqTz8wwkPA5UwghuUtqzjMypYyGQw3U47eruv+AeXjP54A==
   dependencies:
-    doiuse "^4.3.1"
+    doiuse "^4.4.1"
     lodash "^4.17.15"
     postcss "^8.1.4"
 
