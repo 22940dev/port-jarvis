@@ -1,14 +1,17 @@
-{{- $appleIcon := resources.Get "img/apple-touch-icon.png" }}
-<link rel="apple-touch-icon" href="{{ $appleIcon.Permalink }}" sizes="{{ $appleIcon.Width }}x{{ $appleIcon.Height }}">
-
 {{- range (split .pngSizes " ") }}
   {{- $faviconPng := resources.Get (printf "img/favicon-%v.png" .) }}
-  <link rel="icon" href="{{ $faviconPng.Permalink }}" sizes="{{ . }}x{{ . }}">
+  <!-- <link rel="icon" href="{{ $faviconPng.Permalink }}" sizes="{{ . }}x{{ . }}"> -->
 {{- end -}}
 
 {{- $s := slice -}}
 {{- range (split .icoSizes " ") }}{{ $s = $s | append (printf "%vx%v" . .) }}{{ end -}}
 {{- $faviconIco := resources.Get "img/favicon.ico" }}
-<link rel="shortcut icon" href="{{ $faviconIco.Permalink }}" sizes="{{ delimit $s " " }}">
+<link rel="icon" href="{{ $faviconIco.Permalink }}"> <!-- sizes="{{ delimit $s " " }}" -->
+
+{{- $faviconSvg := resources.Get "img/favicon.svg" }}
+<link rel="icon" href="{{ $faviconSvg.Permalink }}" type="image/svg+xml">
+
+{{- $appleIcon := resources.Get "img/apple-touch-icon.png" }}
+<link rel="apple-touch-icon" href="{{ $appleIcon.Permalink }}" sizes="{{ $appleIcon.Width }}x{{ $appleIcon.Height }}">
 
 <link rel="manifest" href="{{ "site.webmanifest" | absURL }}">
