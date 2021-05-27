@@ -196,6 +196,10 @@
   from = "/vendor/inter/*"
   to = "/vendor/fonts/:splat"
   status = 301
+[[redirects]]
+  from = "/img/logo.svg"
+  to = "/img/favicon.svg"
+  status = 302
 
 # Moved these random sites/projects elsewhere (mostly GitHub Pages) to keep
 # this repo and domain squeaky clean:

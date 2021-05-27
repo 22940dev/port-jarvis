@@ -124,14 +124,16 @@
         display: flex;
         align-items: center;
         color: #515151;
-        padding: 16px 0;
+        padding: 10px 0;
       }
-      nav a#logo svg {
-        height: 40px;
-        width: 28px;
+      nav a#logo img#selfie {
+        height: 50px;
+        width: 50px;
+        border: 1px solid #d2d2d2;
+        border-radius: 50%;
       }
       nav a#logo span {
-        margin-left: 15px;
+        margin-left: 12px;
         font-size: 1.45em;
         font-weight: 500;
       }
@@ -262,7 +264,10 @@
     <header>
       <nav>
         <a id="logo" href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}">
-          {{ partial "functions/inline-svg" (dict "src" "img/logo.svg" "width" 30 "height" 45) }}
+          {{ $meImg := resources.Get .Site.Author.image }}
+          {{ $meImgSm := $meImg.Resize "320x320 q90 jpg" }}
+          <img id="selfie" src="{{ $meImgSm.Permalink }}" width="50" height="50" alt="Photo of Jake Jarvis">
+
           <span id="name">{{ .Site.Title }}</span>
         </a>
 
