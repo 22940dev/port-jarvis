@@ -1,8 +1,8 @@
 ---
 title: "/uses 💻"
-date: 2020-01-22 09:51:08-0400
+date: 2021-05-27 08:25:17-0400
 description: "Things I use daily."
-image: "images/desktop.png"
+image: "images/bigsur.png"
 layout: etc
 css: |
   h2 img.emoji {
@@ -14,15 +14,20 @@ css: |
 
 Nobody has asked me what I use. Ever. But here's a list of my daily drivers and necessities anyways, mostly revolving around my Apple sheepy-ness. Inspired by [many, many others](https://github.com/wesbos/awesome-uses#readme). ❤️
 
-{{< image src="images/desktop.png" alt="My mess of a desktop." />}}
+{{< image src="images/bigsur.png" alt="My mess of a desktop." link="/uses/images/bigsur.png" />}}
 
 ## 🍎 Hardware {#hardware}
 
+- [**MacBook Air** (2020)](https://browser.geekbench.com/v5/cpu/8124907)
+  - Apple M1 (8‑core CPU, 8‑core GPU) 🏎️
+  - 16 GB RAM
+  - 1 TB SSD
 - [**MacBook Pro 15"** (Mid-2018)](https://browser.geekbench.com/v5/cpu/1074682)
   - Core i9 @ 2.9 GHZ 🔥 🧯 🚒
   - 32 GB RAM
   - 1 TB SSD
   - Radeon Pro 560X – 4 GB
+  - Most importantly, I literally haven't touched it since M1 stole my heart. 💔
 - **iPhone 12 Pro**
   - 512 GB in Graphite 😎
   - [Deep Navy](https://www.apple.com/shop/product/MHL43ZM/A/iphone-12-12-pro-silicone-case-with-magsafe-deep-navy) Silicone Case
@@ -115,48 +120,47 @@ Nobody has asked me what I use. Ever. But here's a list of my daily drivers and 
 
 - [**1Password**](https://1password.com/)
 - [**Little Snitch**](https://www.obdev.at/products/littlesnitch/index.html)
-- ~~VLC~~ → [**IINA**](https://iina.io/)
+- [**iStat Menus**](https://bjango.com/mac/istatmenus/)
 - [**Backblaze**](https://www.backblaze.com/) [(referral link)](https://secure.backblaze.com/r/00x84e)
-- [**Keybase**](https://keybase.io/jakejarvis) & [**GPG Suite**](https://gpgtools.org/)
-- [**Transmission**](https://transmissionbt.com/)
+- [**Silicon Info**](https://github.com/billycastelli/Silicon-Info)
+- [**MacUpdater**](https://www.corecode.io/macupdater/)
 - [**Unshaky**](https://unshaky.nestederror.com/) ⌨️
   - Toooo &nbsp;lzy too vist &nbsp;&nbsp;the&nbsp; Aple Stre geeniusses oonce &nbsp;agin&nbsp; to fiix tthe&nbsp; keeybbbboord. 😒 🦋
 - [**DaisyDisk**](https://daisydiskapp.com/)
-- [**CleanMyMac X**](https://macpaw.com/cleanmymac)
+- [**AppCleaner**](https://freemacsoft.net/appcleaner/)
+- [**GPG Suite**](https://gpgtools.org/)
+- ~~VLC~~ → [**IINA**](https://iina.io/)
+- [**Transmission**](https://transmissionbt.com/)
 - [**Paragon NTFS**](https://www.paragon-software.com/us/home/ntfs-mac/#)
-- [**The Unarchiver**](https://theunarchiver.com/)
-- [**Duet Display**](https://www.duetdisplay.com/)
-- [**iStat Menus**](https://bjango.com/mac/istatmenus/)
-- [**Beamer**](https://beamer-app.com/)
 - [**Amphetamine**](https://roaringapps.com/app/amphetamine)
-- [**NVIDIA GeForce NOW** (beta)](https://www.nvidia.com/en-us/geforce-now/)
-- [**Microsoft Office**](https://products.office.com/en-us/mac/microsoft-office-for-mac)
+- [**coconutBattery**](https://coconut-flavour.com/coconutbattery/)
+- [**The Unarchiver**](https://theunarchiver.com/)
+- [**WiFi Explorer**](https://www.intuitibits.com/products/wifi-explorer/)
 
 ## 📱 iOS {#ios}
 
 I have far too many apps to count, but here the essentials that have earned a spot on my home screen:
 
-- [**1Password** (beta)](https://apps.apple.com/us/app/1password-password-manager/id568903335)
-- [**Waze** (beta)](https://apps.apple.com/us/app/waze-navigation-live-traffic/id323229106)
-- [**Google Maps**](https://apps.apple.com/us/app/google-maps-transit-food/id585027354)
-- [**Dark Sky**](https://apps.apple.com/us/app/dark-sky-weather/id517329357)
-- [**Xfinity Stream**](https://apps.apple.com/us/app/xfinity-stream/id731629156)
-- [**SiriusXM**](https://apps.apple.com/us/app/siriusxm-music-comedy-sports/id317951436)
-- [**Audible**](https://apps.apple.com/us/app/audible-audiobooks-originals/id379693831)
-- [**Pocket Casts**](https://apps.apple.com/us/app/pocket-casts/id414834813)
-- [**Sonos**](https://apps.apple.com/us/app/sonos/id1488977981)
-- [**Plex** (beta)](https://apps.apple.com/us/app/plex-movies-tv-music-more/id383457673)
-- [**Microsoft To-Do**](https://apps.apple.com/us/app/microsoft-to-do/id1212616790) (RIP Wunderlist 🙏)
-- [**Reeder 4**](https://apps.apple.com/us/app/reeder-4/id1449412357)
-- [**AdGuard Pro**](https://apps.apple.com/us/app/adguard-pro-adblock-privacy/id1126386264)
-- [**Blink Shell**](https://apps.apple.com/us/app/blink-shell-mosh-ssh-client/id1156707581)
-- [**Working Copy**](https://apps.apple.com/us/app/working-copy-git-client/id896694807)
+- [**1Password** (beta)](https://apps.apple.com/app/id568903335)
+- [**Waze** (beta)](https://apps.apple.com/app/id323229106)
+- [**Google Maps**](https://apps.apple.com/app/id585027354)
+- [**Dark Sky**](https://apps.apple.com/app/id517329357)
+- [**Xfinity Stream**](https://apps.apple.com/app/id731629156)
+- [**SiriusXM**](https://apps.apple.com/app/id317951436)
+- [**Audible**](https://apps.apple.com/app/id379693831)
+- [**Pocket Casts**](https://apps.apple.com/app/id414834813)
+- [**Sonos**](https://apps.apple.com/app/id1488977981)
+- [**Plex** (beta)](https://apps.apple.com/app/id383457673)
+- [**Microsoft To-Do**](https://apps.apple.com/app/id1212616790) (RIP Wunderlist 🙏)
+- [**Reeder 5**](https://apps.apple.com/app/id1529445840)
+- [**Blink Shell**](https://apps.apple.com/app/id1156707581)
+- [**Working Copy**](https://apps.apple.com/app/id896694807)
 
 ## ☁️ Cloud {#cloud}
 
 I've been making recent efforts to [de-Google](https://www.stallman.org/google.html) my life, with mixed results...
 
-- ~~Gmail~~ → [**Fastmail**](https://www.fastmail.com/) [(referral link)](https://ref.fm/u20274504)
+- ~~Gmail~~ → [**Fastmail**](https://www.fastmail.com/) [(referral link)](https://ref.fm/u20274504) & [**Mail.app**](https://en.wikipedia.org/wiki/Apple_Mail)
 - ~~Google Drive~~ → ~~Dropbox~~ → [**iCloud Drive**](https://www.icloud.com/iclouddrive)
   - [Read why.](/notes/dropping-dropbox/)
 - ~~Google Docs~~ → [**Microsoft Office**](https://products.office.com/en-us/mac/microsoft-office-for-mac) (hey, it works 🤷)

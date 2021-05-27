@@ -14,7 +14,7 @@
     "url": "git+https://github.com/jakejarvis/jarv.is.git"
   },
   "scripts": {
-    "clean": "rimraf public/ resources/ builds/ _vendor/ .netlify/{cache,functions}/ $TMPDIR/hugo_cache/",
+    "clean": "rimraf public/ resources/ builds/ _vendor/ .netlify/{cache,functions}/ $TMPDIR/hugo_cache/ hugo_stats.json",
     "build": "run-s build:hugo minify",
     "build:hugo": "hugo --gc --cleanDestinationDir --verbose",
     "start": "hugo server --disableFastRender --buildDrafts --buildFuture --port=1337 --baseURL=/ --appendPort=false --bind=0.0.0.0 --verbose",
