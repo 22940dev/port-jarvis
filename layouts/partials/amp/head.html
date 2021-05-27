@@ -126,28 +126,28 @@
         color: #515151;
         padding: 10px 0;
       }
-      nav a#logo img#selfie {
-        height: 50px;
-        width: 50px;
+      nav a#logo #selfie {
+        height: 45px;
+        width: 45px;
         border: 1px solid #d2d2d2;
         border-radius: 50%;
       }
       nav a#logo span {
         margin-left: 12px;
-        font-size: 1.45em;
+        font-size: 1.25em;
         font-weight: 500;
       }
       nav ul {
         list-style: none;
         display: flex;
         align-items: center;
-        font-size: 1.75em;
+        font-size: 1.65em;
         line-height: 1;
         padding: 0;
         margin: 0;
       }
       nav ul li {
-        width: 65px;
+        width: 60px;
         text-align: right;
       }
       footer {
@@ -266,7 +266,7 @@
         <a id="logo" href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}">
           {{ $meImg := resources.Get .Site.Author.image }}
           {{ $meImgSm := $meImg.Resize "320x320 q90 jpg" }}
-          <img id="selfie" src="{{ $meImgSm.Permalink }}" width="50" height="50" alt="Photo of Jake Jarvis">
+          <amp-img id="selfie" layout="fixed" src="{{ $meImgSm.Permalink }}" width="45" height="45" alt="Photo of Jake Jarvis"></amp-img>
 
           <span id="name">{{ .Site.Title }}</span>
         </a>
