@@ -215,20 +215,20 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fontsource/comic-neue@4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@fontsource/comic-neue/-/comic-neue-4.3.0.tgz#48e1b8e93183fe16283ebf006ea6ba35ea4a643d"
-  integrity sha512-cbW5cDQGO5VezhoY4xuiHyMqp4NY/VnyjK9+G2x9S+J1bR716d4Cw9g0LN5GAwneLRsaetbT0zaEXM+EkMEv8w==
+"@fontsource/comic-neue@4.4.0":
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/comic-neue/-/comic-neue-4.4.0.tgz#14fcf89f5131a74cf386a2b4e96b367c54fb593f"
+  integrity sha512-+DdEyn5LCODo3GXt6X7Mg88ienZ4vFoF06E1A84/wn6qwgQIz46EqZIvI1jEf3SyP5mN6c3LD7Skb+cuHGooTQ==
 
-"@fontsource/inter@4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-4.3.0.tgz#deb5c5d5d2ce0d8d16173a68ba1e961741ef6d30"
-  integrity sha512-qtUF+Fn9vH4O7V/13kOeemEJpQfhTMxtnOJzJw3kY7SOwl1cbs4fnd9QnQOczU3AVBJEPF1ik639uvaOg7g43A==
+"@fontsource/inter@4.4.0":
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-4.4.0.tgz#1915b559fcaf77c4b23d578f82f75877a960ff41"
+  integrity sha512-w4ACVJpmJeSwpcHR3APAo9lg9Im3fwwz5RqLHlZoelcdxD1sj/muDsluo2dVZYGCmMxmIQkZZK8hUH1cPQGffw==
 
-"@fontsource/roboto-mono@4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@fontsource/roboto-mono/-/roboto-mono-4.3.0.tgz#b443c6cd8b44a37ad4582279771f70e4042d8438"
-  integrity sha512-Driw0cYOvwUONOaWV6PxgUrqjcfsAvp2HxV94wmBZQAYhVQEPRBGbOa01fGX/ZjOsLok4xx94C/dH2pYh933YQ==
+"@fontsource/roboto-mono@4.4.0":
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/roboto-mono/-/roboto-mono-4.4.0.tgz#0d461438028eb89a6d6825267cfb2275fff33fb7"
+  integrity sha512-ms8hLWD3KHJMViM4g69MZ0qOCuOuYLyYMfcziCLLrRd8LPRf59grKXz3oWr0sCjhqGFkqsldj7SZ2JBxKZVPSA==
 
 "@mdn/browser-compat-data@^2.0.7":
   version "2.0.7"
@@ -1387,9 +1387,9 @@ duplexer3@^0.1.4:
   integrity sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=
 
 electron-to-chromium@^1.3.723:
-  version "1.3.739"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.739.tgz#f07756aa92cabd5a6eec6f491525a64fe62f98b9"
-  integrity sha512-+LPJVRsN7hGZ9EIUUiWCpO7l4E3qBYHNadazlucBfsXBbccDFNKUBAgzE68FnkWGJPwD/AfKhSzL+G+Iqb8A4A==
+  version "1.3.740"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.740.tgz#e38b7d2b848f632191b643e6dabca51be2162922"
+  integrity sha512-Mi2m55JrX2BFbNZGKYR+2ItcGnR4O5HhrvgoRRyZQlaMGQULqDhoGkLWHzJoshSzi7k1PUofxcDbNhlFrDZNhg==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -2089,9 +2089,9 @@ globals@^12.1.0:
     type-fest "^0.8.1"
 
 globals@^13.6.0:
-  version "13.8.0"
-  resolved "https://registry.yarnpkg.com/globals/-/globals-13.8.0.tgz#3e20f504810ce87a8d72e55aecf8435b50f4c1b3"
-  integrity sha512-rHtdA6+PDBIjeEvA91rpqzEvk/k3/i7EeNQiryiWuJH0Hw9cpyJMAt2jtbAwUaRdhD+573X4vWw6IcjKPasi9Q==
+  version "13.9.0"
+  resolved "https://registry.yarnpkg.com/globals/-/globals-13.9.0.tgz#4bf2bf635b334a173fb1daf7c5e6b218ecdc06cb"
+  integrity sha512-74/FduwI/JaIrr1H8e71UbDE+5x7pIPs1C2rrwC52SszOo043CsWOZEMW7o2Y58xwm9b+0RBKDxY5n2sUpEFxA==
   dependencies:
     type-fest "^0.20.2"
 

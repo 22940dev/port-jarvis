@@ -31,9 +31,9 @@
     "percy": "npx percy snapshot"
   },
   "dependencies": {
-    "@fontsource/comic-neue": "4.3.0",
-    "@fontsource/inter": "4.3.0",
-    "@fontsource/roboto-mono": "4.3.0",
+    "@fontsource/comic-neue": "4.4.0",
+    "@fontsource/inter": "4.4.0",
+    "@fontsource/roboto-mono": "4.4.0",
     "fathom-client": "3.0.0",
     "modern-normalize": "1.1.0",
     "twemoji": "13.0.2",
