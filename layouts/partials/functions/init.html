@@ -37,3 +37,11 @@
     {{- $.Scratch.Set "logoImage" . -}}
   {{- end -}}
 {{- end -}}
+
+{{/* Page-specific styles set via front matter, piped through PostCSS and inlined */}}
+{{- with .Params.css -}}
+  {{/* NOTE: This file doesn't end up getting published (which is good) */}}
+  {{- $target := path.Join $.File.Dir "css/inline.scss" -}}
+  {{- $css := . | resources.FromString $target | resources.ExecuteAsTemplate $target . | resources.ToCSS (dict "targetPath" $target) | resources.PostCSS (dict "config" "postcss.config.js") -}}
+  {{- $.Scratch.Set "pageCss" $css.Content -}}
+{{- end -}}

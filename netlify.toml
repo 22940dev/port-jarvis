@@ -6,7 +6,7 @@
     NODE_VERSION = "14"
     YARN_VERSION = "1.22.10"
     YARN_FLAGS = "--no-ignore-optional --frozen-lockfile"
-    PYTHON_VERSION="3.7"
+    PYTHON_VERSION = "3.7"
 
   # Ensure *only* Pretty URLs are enabled, even though this is already set up in
   # the Netlify dashboard.

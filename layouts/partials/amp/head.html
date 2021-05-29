@@ -256,10 +256,10 @@
       div.highlight span.gs { font-weight: bold; }
       div.highlight span.lnt { color: #999999; user-select: none; }
 
-      {{/* Page-specific styles set via front matter */}}
-      {{- with .Params.css }}
+      /* Page-specific styles set via front matter */
+      {{ with .Scratch.Get "pageCss" }}
         {{- replace . " !important" "" | safeCSS -}}
-      {{ end -}}
+      {{ end }}
     </style>
 
     {{ partialCached "head/favicons" (dict "pngSizes" "192 48 32 16" "icoSizes" "16 32") }}

@@ -58,8 +58,8 @@ disableAliases = true
     mastodon = "mastodon.social/@jakejarvis"
 
 [module]
-  # we're grabbing Twemoji SVGs from a pseudo NPM package on GitHub:
-  # https://github.com/jakejarvis/twemoji-svg
+  # we're grabbing Twemoji SVGs from an NPM helper package:
+  # https://www.npmjs.com/package/twemoji-emojis
   [[module.mounts]]
     source = "node_modules/twemoji-emojis/vendor/svg"
     target = "static/vendor/emoji/svg"
