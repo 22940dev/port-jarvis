@@ -6,6 +6,8 @@ updates:
   schedule:
     interval: daily
   versioning-strategy: increase
+  ignore:
+    - dependency-name: "@fontsource/*"
   commit-message:
     prefix: "📦 npm:"
   labels:
