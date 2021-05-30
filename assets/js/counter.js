@@ -3,6 +3,7 @@
   var wrapper = document.getElementById("meta-hits");
 
   if (wrapper) {
+    // javascript is enabled so show the loading indicator
     wrapper.style.display = "inline-block";
 
     // deduce a consistent identifier for this page, no matter the URL

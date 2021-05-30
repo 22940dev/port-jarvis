@@ -19,7 +19,8 @@ div.layout-single {
       color: inherit;
     }
 
-    > span {
+    > div {
+      display: inline-block;
       margin-right: 1.25em;
       white-space: nowrap;
 

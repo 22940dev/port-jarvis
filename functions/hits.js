@@ -34,9 +34,13 @@ exports.handler = async (event) => {
     return {
       statusCode: 200,
       headers: {
+        "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "private, no-cache, no-store, must-revalidate",
         Expires: "0",
         Pragma: "no-cache",
+        "Access-Control-Allow-Methods": "GET",
+        "Access-Control-Allow-Origin": "*",
+        "x-fauna-ts": result.ts.toString().slice(0, -3),
       },
       body: JSON.stringify({
         slug: result.data.slug,

@@ -12,7 +12,7 @@
     /////////////////////////
 
       // default assets url, by default will be Twitter Inc. CDN
-      base: '{{ "vendor/emoji/" | absURL }}',
+      base: '/vendor/emoji/',
 
       // default assets file extensions, by default '.png'
       ext: '.svg',
