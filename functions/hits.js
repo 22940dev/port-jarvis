@@ -10,7 +10,7 @@ require("dotenv").config();
 // https://github.com/netlify/netlify-lambda/issues/201
 require("encoding");
 
-exports.handler = async (event, context) => {
+exports.handler = async (event) => {
   // some rudimentary error handling
   const { slug } = event.queryStringParameters;
   if (!slug || slug === "/") {
@@ -27,33 +27,8 @@ exports.handler = async (event, context) => {
       secret: process.env.FAUNADB_SERVER_SECRET,
     });
 
-    const result = await client.query(
-      q.Let(
-        {
-          match: q.Match(q.Index("hits_by_slug"), slug),
-        },
-        q.If(
-          q.Exists(q.Var("match")),
-          q.Let(
-            {
-              ref: q.Select("ref", q.Get(q.Var("match"))),
-              hits: q.ToInteger(q.Select("hits", q.Select("data", q.Get(q.Var("match"))))),
-            },
-            q.Update(q.Var("ref"), {
-              data: {
-                hits: q.Add(q.Var("hits"), 1),
-              },
-            })
-          ),
-          q.Create(q.Collection("hits"), {
-            data: {
-              slug: slug,
-              hits: 1,
-            },
-          })
-        )
-      )
-    );
+    // refer to snippet below for the `hit` function defined in the Fauna cloud
+    const result = await client.query(q.Call(q.Function("hit"), slug));
 
     // send client the new hit count
     return {
@@ -81,3 +56,35 @@ exports.handler = async (event, context) => {
     };
   }
 };
+
+/**
+
+This is the FaunaDB function named `hit` defined in the cloud:
+https://dashboard.fauna.com/functions/hit/@db/global/jarv.is
+https://docs.fauna.com/fauna/current/api/fql/user_defined_functions
+
+{
+  name: "hit",
+  role: null,
+  body: Query(
+    Lambda(
+      "slug",
+      Let(
+        { match: Match(Index("hits_by_slug"), Var("slug")) },
+        If(
+          Exists(Var("match")),
+          Let(
+            {
+              ref: Select("ref", Get(Var("match"))),
+              hits: ToInteger(Select("hits", Select("data", Get(Var("match")))))
+            },
+            Update(Var("ref"), { data: { hits: Add(Var("hits"), 1) } })
+          ),
+          Create(Collection("hits"), { data: { slug: Var("slug"), hits: 1 } })
+        )
+      )
+    )
+  )
+}
+
+*/
