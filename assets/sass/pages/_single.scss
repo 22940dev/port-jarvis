@@ -6,10 +6,10 @@ div.layout-single {
   padding-bottom: 1em;
 
   div#meta {
-    font-size: 0.875em;
-    line-height: 1.3;
+    font-size: 0.825em;
+    line-height: 1.8;
     letter-spacing: 0.04em;
-    margin-top: 0.8em;
+    margin-top: 0.5em;
 
     @include colors() {
       color: c(medium);
@@ -19,8 +19,15 @@ div.layout-single {
       color: inherit;
     }
 
-    span.dash {
-      margin: 0 0.7em;
+    > span {
+      margin-right: 1.25em;
+      white-space: nowrap;
+
+      img.emoji {
+        margin-right: 0.25em;
+        vertical-align: -0.27em;
+        cursor: inherit;
+      }
     }
   }
 
