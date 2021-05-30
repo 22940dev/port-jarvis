@@ -34,9 +34,9 @@
     "percy": "npx percy snapshot"
   },
   "dependencies": {
-    "@fontsource/comic-neue": "4.4.0",
-    "@fontsource/inter": "4.4.0",
-    "@fontsource/roboto-mono": "4.4.0",
+    "@fontsource/comic-neue": "4.4.2",
+    "@fontsource/inter": "4.4.2",
+    "@fontsource/roboto-mono": "4.4.2",
     "dotenv": "^10.0.0",
     "encoding": "^0.1.13",
     "faunadb": "fauna/faunadb-js#master",
