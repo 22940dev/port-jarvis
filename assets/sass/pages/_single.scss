@@ -7,9 +7,9 @@ div.layout-single {
 
   div#meta {
     font-size: 0.825em;
-    line-height: 1.8;
+    line-height: 2.3;
     letter-spacing: 0.04em;
-    margin-top: 0.5em;
+    margin-top: 0.3em;
 
     @include colors() {
       color: c(medium);
@@ -25,7 +25,7 @@ div.layout-single {
 
       img.emoji {
         margin-right: 0.25em;
-        vertical-align: -0.27em;
+        vertical-align: -0.28em;
         cursor: inherit;
       }
     }
