@@ -18,14 +18,22 @@
     fetch("/api/hits?slug=" + slug)
       .then((response) => response.json())
       .then((data) => {
-        // finally inject the hits and hide the loading spinner
-        var spinner = document.getElementById("hit-spinner");
-        var counter = document.getElementById("hit-counter");
+        if (typeof data.hits !== "undefined") {
+          // finally inject the hits and hide the loading spinner
+          var spinner = document.getElementById("hit-spinner");
+          var counter = document.getElementById("hit-counter");
 
-        spinner.style.display = "none";
-        wrapper.title = data.pretty_hits + " " + data.pretty_unit;
-        counter.appendChild(document.createTextNode(data.pretty_hits));
+          spinner.style.display = "none";
+          wrapper.title = data.pretty_hits + " " + data.pretty_unit;
+          counter.appendChild(document.createTextNode(data.pretty_hits));
+        } else {
+          // something went horribly wrong, initiate coverup
+          wrapper.style.display = "none";
+        }
       })
-      .catch((error) => {});
+      .catch((error) => {
+        // something went horribly wrong, initiate coverup
+        wrapper.style.display = "none";
+      });
   }
 })();
