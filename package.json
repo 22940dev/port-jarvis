@@ -43,6 +43,7 @@
     "modern-normalize": "1.1.0",
     "numeral": "^2.0.6",
     "pluralize": "^8.0.0",
+    "rss-parser": "^3.12.0",
     "twemoji": "13.1.0",
     "twemoji-emojis": "13.1.0"
   },
