@@ -44,7 +44,6 @@ header {
         letter-spacing: -0.01em;
       }
 
-      // mix up logo colors on hover
       &:hover {
         @include colors() {
           color: c(links);
