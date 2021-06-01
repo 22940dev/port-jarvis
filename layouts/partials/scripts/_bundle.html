@@ -1,15 +1,10 @@
-{{/* only parse and append analytics script on production site */}}
-{{- $includeProdScripts := eq hugo.Environment "production" -}}
-
 {{- $counter := resources.Get "js/counter.js"  -}}
 {{- $twemoji := resources.Get "js/vendor/twemoji.js" -}}
 
 {{- $bundle := slice $counter $twemoji -}}
-
-{{- if $includeProdScripts -}}
-  {{- $fathom := resources.Get "js/fathom.js" -}}
-  {{- $bundle = $bundle | append $fathom -}}
-{{- end -}}
-
 {{- $js := $bundle | resources.Concat "/js/app.js" -}}
+
+<!-- inline the dark mode script to avoid a blinding flash of white background on loads -->
+<script>(function(d){var u=d.document,f=u.body.classList,e=localStorage,c="dark_mode_pref",t=e.getItem(c),a="dark",n="light",r="{{ .Site.Params.Theme.defaultTheme | safeJS }}",o=u.querySelector(".dark-mode-toggle"),i=r===a,b=function(d){f.remove(a,n);f.add(d);i=d===a};t===a&&b(a);t===n&&b(n);if(!t){var s=function(d){return"(prefers-color-scheme: "+d+")"};d.matchMedia(s(a)).matches?b(a):d.matchMedia(s(n)).matches?b(n):b(r);d.matchMedia(s(a)).addListener((function(d){d.matches&&b(a)}));d.matchMedia(s(n)).addListener((function(d){d.matches&&b(n)}))}if(o){o.style.display="block";o.addEventListener("click",(function(){if(i){b(n);e.setItem(c,n)}else{b(a);e.setItem(c,a)}}),!0)}})(window)</script>
+
 <script async defer src="{{ $js.Permalink }}"></script>

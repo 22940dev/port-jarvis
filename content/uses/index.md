@@ -165,10 +165,7 @@ I've been making recent efforts to [de-Google](https://www.stallman.org/google.h
   - [Read why.](/notes/dropping-dropbox/)
 - ~~Google Docs~~ → [**Microsoft Office**](https://products.office.com/en-us/mac/microsoft-office-for-mac) (hey, it works 🤷)
 - ~~Google Photos~~ → [**iCloud Photos**](https://www.icloud.com/photos/)
-- ~~Google Analytics~~ → both of these are awesome, privacy-aware "visitor counters" rather than invasive trackers:
-  - [**Netlify Analytics**](https://www.netlify.com/products/analytics/) [(my review)](/notes/netlify-analytics-review/)
-  - [**Fathom Analytics**](https://usefathom.com/) [(referral link)](https://usefathom.com/ref/ZEYG0O)
-    - 📈 This website's [stats are public](/stats/), by the way!
+- ~~Google Analytics~~ → [**Netlify Analytics**](https://www.netlify.com/products/analytics/) [(my review)](/notes/netlify-analytics-review/)
 - ~~Google Public DNS~~ → [**Cloudflare's 1.1.1.1**](https://1.1.1.1/dns/) on my home network.
 - ~~GoDaddy~~ → ~~Google Domains~~ → [**Cloudflare Registrar**](https://www.cloudflare.com/products/registrar/) (and [**ISNIC**](https://isnic.is/en/) of course 🇮🇸)
 

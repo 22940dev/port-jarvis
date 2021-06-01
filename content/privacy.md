@@ -11,17 +11,7 @@ Okay, this is an easy one. 😉
 
 ## Analytics
 
-This website uses [**Fathom Analytics**](https://usefathom.com/ref/ZEYG0O) to count pageviews **without collecting any personally identifiable information,** such as IP addresses, cookies, and browser fingerprints. Only the [following information](https://usefathom.com/data) is collected and recorded by them:
-
-- URL visited
-- Timestamp of visit
-- Referrer URL (hostname and path)
-- Language
-- User agent (browser name and version)
-- Screen and window sizes
-- Duration of visit
-
-**📈 Stats for this site are public! [View them here.](/stats/)**
+This website uses a simple hit counter on each post to tally an aggregate number of pageviews. Individual views and identifying details are not stored. [The backend is open-source.](https://github.com/jakejarvis/jarv.is/blob/main/functions/hits.js)
 
 ## Hosting
 

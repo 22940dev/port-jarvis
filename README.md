@@ -7,13 +7,7 @@
 [![GitHub repo size](https://img.shields.io/github/repo-size/jakejarvis/jarv.is?color=009cdf&label=repo%20size&logo=git&logoColor=white)](https://github.com/jakejarvis/jarv.is)
 [![Tor mirror status](https://img.shields.io/uptimerobot/status/m788172098-a4fcb769c8779f9a37a60775?color=7e4798&label=tor%20mirror&logo=tor-project&logoColor=white)](http://jarvis2i2vp4j4tbxjogsnqdemnte5xhzyi7hziiyzxwge3hzmh57zad.onion/)
 
-Personal website of [@jakejarvis](https://github.com/jakejarvis), created and deployed using the following:
-
-- [Hugo Extended](https://github.com/gohugoio/hugo)
-- [Netlify](https://www.netlify.com/)
-- [Fathom Analytics](https://usefathom.com/ref/ZEYG0O) (referral link)
-  - 📈 My [stats are public](https://jarv.is/stats/), by the way!
-- [...and more.](https://jarv.is/uses/)
+Personal website of [@jakejarvis](https://github.com/jakejarvis), created and deployed using [Hugo](https://github.com/gohugoio/hugo), [Netlify](https://www.netlify.com/), [and more](https://jarv.is/uses/).
 
 I keep an ongoing list of [blog post ideas](https://github.com/jakejarvis/jarv.is/issues/1) and [coding to-dos](https://github.com/jakejarvis/jarv.is/issues/11) as issues in this repo.
 

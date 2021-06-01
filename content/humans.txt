@@ -29,18 +29,14 @@
 
 # TECHNOLOGY
 
-    Hugo Extended
+    Hugo
     Netlify
-    Fathom Analytics
+    GitHub Actions
     ...and much more: https://jarv.is/uses/
 
 # VIEW SOURCE
 
     https://github.com/jakejarvis/jarv.is
-
-# ANALYTICS
-
-    https://jarv.is/stats/
 
 # PRIVACY POLICY
 
