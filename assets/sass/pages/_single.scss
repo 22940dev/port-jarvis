@@ -26,8 +26,35 @@ div.layout-single {
 
       img.emoji {
         margin-right: 0.25em;
-        vertical-align: -0.28em;
+        vertical-align: -0.22em;
         cursor: inherit;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+
+    div#meta-tags {
+      white-space: normal;
+
+      span {
+        text-transform: lowercase;
+        white-space: nowrap;
+        margin-right: 0.4em;
+
+        &::before {
+          content: "#"; // cosmetically hashtagify tags
+          padding-right: 0.125em;
+
+          @include colors() {
+            color: c(light);
+          }
+        }
+
+        &:last-of-type {
+          margin-right: 0;
+        }
       }
     }
   }

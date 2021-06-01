@@ -123,9 +123,6 @@ header {
         margin-left: 1.4em;
         margin-right: -0.3em; // weirdness w/ svg ratio
         cursor: pointer;
-
-        // hidden by default in case user's JS is disabled, switches to `block` onload in dark-mode.js
-        display: none;
       }
     }
   }
