@@ -21,7 +21,7 @@ Run `yarn install` ([Yarn must be installed](https://yarnpkg.com/en/docs/install
 
 To ensure consistency and compatibility, the [`Dockerfile`](Dockerfile) in this repository will download the correct version of the Hugo Extended binary and its dependencies, and start a live testing server in a temporary container.
 
-Using Docker doesn't require Node or Yarn, but you can also use `yarn start:docker` which is simply an alias for:
+Using Docker doesn't require Node or Yarn, but you can also use `yarn docker` which is simply an alias for:
 
 ```bash
 docker run --rm -v $(pwd):/src -p 1337:1337 $(docker build --no-cache -q .)

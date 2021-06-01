@@ -11,8 +11,25 @@ require("dotenv").config();
 require("encoding");
 
 exports.handler = async (event) => {
-  // some rudimentary error handling
   const { slug } = event.queryStringParameters;
+
+  // some rudimentary error handling
+  if (!process.env.FAUNADB_SERVER_SECRET) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+        message: "Database credentials are missing.",
+      }),
+    };
+  }
+  if (event.httpMethod !== "GET") {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({
+        message: `Method ${event.httpMethod} not allowed.`,
+      }),
+    };
+  }
   if (!slug || slug === "/") {
     return {
       statusCode: 400,

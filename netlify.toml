@@ -171,6 +171,10 @@
   to = "/pubkey.asc"
   status = 301
 [[redirects]]
+  from = "/img/logo.svg"
+  to = "/img/favicon.svg"
+  status = 302
+[[redirects]]
   from = "/img/me_large.jpg"
   to = "/img/me.jpg"
   status = 301
@@ -183,6 +187,10 @@
   to = "/img/me.jpg"
   status = 301
 [[redirects]]
+  from = "/img/me_hu1c1a997e30e234e83718deb8b3f52283_130509_320x320_resize_q90_lanczos.jpg"
+  to = "/img/me.jpg"
+  status = 301
+[[redirects]]
   from = "/twemoji/svg/*"
   to = "/vendor/emoji/svg/:splat"
   status = 301
@@ -190,10 +198,6 @@
   from = "/vendor/inter/*"
   to = "/vendor/fonts/:splat"
   status = 301
-[[redirects]]
-  from = "/img/logo.svg"
-  to = "/img/favicon.svg"
-  status = 302
 
 # Moved these random sites/projects elsewhere (mostly GitHub Pages) to keep
 # this repo and domain squeaky clean:

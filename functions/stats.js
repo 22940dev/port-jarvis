@@ -8,9 +8,26 @@ const rssParser = require("rss-parser");
 require("dotenv").config();
 
 const baseUrl = "https://jarv.is/";
-const feedUrl = "https://jarv.is/feed.xml";
 
-exports.handler = async () => {
+exports.handler = async (event) => {
+  // some rudimentary error handling
+  if (!process.env.FAUNADB_SERVER_SECRET) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+        message: "Fauna ",
+      }),
+    };
+  }
+  if (event.httpMethod !== "GET") {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({
+        message: `Method ${event.httpMethod} not allowed.`,
+      }),
+    };
+  }
+
   try {
     const parser = new rssParser({
       timeout: 3000,
@@ -19,7 +36,7 @@ exports.handler = async () => {
       secret: process.env.FAUNADB_SERVER_SECRET,
     });
 
-    const feed = await parser.parseURL(feedUrl);
+    const feed = await parser.parseURL(baseUrl + "feed.xml");
     const result = await client.query(
       q.Map(
         q.Paginate(q.Documents(q.Collection("hits"))),

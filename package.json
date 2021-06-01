@@ -15,14 +15,12 @@
   },
   "scripts": {
     "clean": "rimraf public/ resources/ builds/ _vendor/ .netlify/{cache,functions}/ $TMPDIR/hugo_cache/ hugo_stats.json",
-    "build": "run-s build:** minify",
-    "build:hugo": "hugo --gc --cleanDestinationDir --verbose",
-    "build:functions": "netlify-lambda build functions",
-    "start": "run-p start:hugo start:functions",
+    "start": "run-p start:**",
     "start:hugo": "hugo server --disableFastRender --buildDrafts --buildFuture --port=1337 --baseURL=/ --appendPort=false --bind=0.0.0.0 --verbose",
     "start:functions": "netlify-lambda serve --port 9337 functions",
-    "start:docker": "docker run --rm -v $(pwd):/src:ro -p 1337:1337 $(docker build -q .)",
-    "minify": "run-s minify:**",
+    "build": "run-s build:** minify:**",
+    "build:hugo": "hugo --gc --cleanDestinationDir --verbose",
+    "build:functions": "netlify-lambda build functions",
     "minify:html": "html-minifier --html5 --collapse-whitespace --collapse-boolean-attributes --preserve-line-breaks --minify-css --remove-comments --file-ext html --input-dir public --output-dir public **/*.html",
     "minify:js": "terser --compress passes=3,negate_iife=false,keep_fargs=false,sequences=false,reduce_vars=false --mangle reserved=['sa','sa_event'] --output public/js/app.js -- public/js/app.js",
     "minify:img": "glob-exec --parallel --foreach 'public/**/{img,images}/' -- imagemin '{{file.path}}*' --plugin=mozjpeg --plugin.mozjpeg.progressive --plugin.mozjpeg.quality=85 --plugin=pngquant --plugin.pngquant.quality={0.1,0.3} --plugin.pngquant.speed=1 --plugin.pngquant.strip --plugin=gifsicle --plugin=svgo --out-dir='{{file.path}}'",
@@ -31,6 +29,7 @@
     "lint:js": "eslint '**/*.js'",
     "lint:md": "markdownlint 'content/**/*.md'",
     "lint:prettier": "prettier --check .",
+    "docker": "docker run --rm -v $(pwd):/src:ro -p 1337:1337 $(docker build -q .)",
     "percy": "npx percy snapshot"
   },
   "dependencies": {
@@ -82,7 +81,7 @@
     "stylelint-no-unsupported-browser-features": "~5.0.1",
     "stylelint-prettier": "~1.2.0",
     "stylelint-scss": "~3.19.0",
-    "terser": "^5.6.1"
+    "terser": "^5.7.0"
   },
   "optionalDependencies": {
     "imagemin-gifsicle": "^7.0.0",
