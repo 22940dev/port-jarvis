@@ -36,13 +36,16 @@ exports.handler = async (event) => {
       secret: process.env.FAUNADB_SERVER_SECRET,
     });
 
-    const feed = await parser.parseURL(baseUrl + "feed.xml");
-    const result = await client.query(
-      q.Map(
-        q.Paginate(q.Documents(q.Collection("hits"))),
-        q.Lambda((x) => q.Select("data", q.Get(x)))
-      )
-    );
+    // get database and RSS results asynchronously
+    const [feed, result] = await Promise.all([
+      parser.parseURL(baseUrl + "feed.xml"),
+      client.query(
+        q.Map(
+          q.Paginate(q.Documents(q.Collection("hits"))),
+          q.Lambda((x) => q.Select("data", q.Get(x)))
+        )
+      ),
+    ]);
 
     let stats = {
       total: {
