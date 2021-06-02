@@ -10,9 +10,6 @@ updates:
     - dependency-name: "@fontsource/*"
   commit-message:
     prefix: "📦 npm:"
-  labels:
-    - "npm"
-    - "dependencies"
 
 - package-ecosystem: docker
   directory: "/"
