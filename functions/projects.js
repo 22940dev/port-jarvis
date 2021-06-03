@@ -10,7 +10,7 @@ const username = "jakejarvis";
 async function fetchRepos(sort, limit) {
   const client = new GraphQLClient("https://api.github.com/graphql", {
     headers: {
-      Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+      Authorization: `Bearer ${process.env.GH_PUBLIC_TOKEN}`,
       Accept: "application/vnd.github.v3+json",
     },
   });
@@ -77,7 +77,7 @@ exports.handler = async (event) => {
     if (event.httpMethod !== "GET") {
       throw new Error(`Method ${event.httpMethod} not allowed.`);
     }
-    if (!process.env.GITHUB_TOKEN) {
+    if (!process.env.GH_PUBLIC_TOKEN) {
       throw new Error("GitHub API credentials aren't set.");
     }
 
