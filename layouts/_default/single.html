@@ -18,9 +18,11 @@
       </div>
       {{ end }}
 
+      {{ if eq hugo.Environment "production" }}
       <div id="meta-hits" style="display: none;">
         👀&nbsp;<div id="hit-spinner" class="spinner"><div class="spin-bounce1"></div><div class="spin-bounce2"></div><div class="spin-bounce3"></div></div><span id="hit-counter"></span>
       </div>
+      {{ end }}
     </div>
 
     <h1 class="title"><a class="no-underline" href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>

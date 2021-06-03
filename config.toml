@@ -86,7 +86,7 @@ disableAliases = true
   [[menu.main]]
     name = "Projects"
     pre = "👨‍💻"
-    url = "https://github.com/jakejarvis"
+    url = "/projects/"
     weight = 3
   [[menu.main]]
     name = "Contact"

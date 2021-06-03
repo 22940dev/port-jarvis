@@ -1,7 +1,8 @@
 {{- $counter := resources.Get "js/counter.js"  -}}
+{{- $projects := resources.Get "js/projects.js" -}}
 {{- $twemoji := resources.Get "js/vendor/twemoji.js" -}}
 
-{{- $bundle := slice $counter $twemoji -}}
+{{- $bundle := slice $counter $projects $twemoji -}}
 {{- $js := $bundle | resources.Concat "/js/app.js" -}}
 
 <!-- inline the dark mode script to avoid a blinding flash of white background on loads -->

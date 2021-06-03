@@ -30,6 +30,7 @@ $max-width: unquote($max-width);
 @import "pages/single";
 @import "pages/videos";
 @import "pages/etc";
+@import "pages/projects";
 
 // Responsive Mixins
 @import "abstracts/responsive";

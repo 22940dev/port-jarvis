@@ -13,33 +13,18 @@ require("encoding");
 exports.handler = async (event) => {
   const { slug } = event.queryStringParameters;
 
-  // some rudimentary error handling
-  if (!process.env.FAUNADB_SERVER_SECRET) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        message: "Database credentials are missing.",
-      }),
-    };
-  }
-  if (event.httpMethod !== "GET") {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({
-        message: `Method ${event.httpMethod} not allowed.`,
-      }),
-    };
-  }
-  if (!slug || slug === "/") {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({
-        message: "Parameter `slug` is required.",
-      }),
-    };
-  }
-
   try {
+    // some rudimentary error handling
+    if (!process.env.FAUNADB_SERVER_SECRET) {
+      throw new Error("Database credentials aren't set.");
+    }
+    if (event.httpMethod !== "GET") {
+      throw new Error(`Method ${event.httpMethod} not allowed.`);
+    }
+    if (!slug || slug === "/") {
+      throw new Error("Parameter `slug` is required.");
+    }
+
     const client = new faunadb.Client({
       secret: process.env.FAUNADB_SERVER_SECRET,
     });

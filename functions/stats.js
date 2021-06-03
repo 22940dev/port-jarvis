@@ -10,25 +10,15 @@ require("dotenv").config();
 const baseUrl = "https://jarv.is/";
 
 exports.handler = async (event) => {
-  // some rudimentary error handling
-  if (!process.env.FAUNADB_SERVER_SECRET) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        message: "Fauna ",
-      }),
-    };
-  }
-  if (event.httpMethod !== "GET") {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({
-        message: `Method ${event.httpMethod} not allowed.`,
-      }),
-    };
-  }
-
   try {
+    // some rudimentary error handling
+    if (!process.env.FAUNADB_SERVER_SECRET) {
+      throw new Error("Database credentials aren't set.");
+    }
+    if (event.httpMethod !== "GET") {
+      throw new Error(`Method ${event.httpMethod} not allowed.`);
+    }
+
     const parser = new rssParser({
       timeout: 3000,
     });

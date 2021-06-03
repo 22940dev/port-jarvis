@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+// Video Styles
+div.layout-projects {
+  padding-top: 1.5em;
+  padding-bottom: 0.75em;
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 0.4em;
+    text-align: center;
+    letter-spacing: -0.005em;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  div#content > p {
+    text-align: center;
+  }
+
+  div#github-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 100%;
+
+    div.github-card {
+      flex-grow: 1;
+      display: block;
+      width: 416px;
+      padding: 12px 16px;
+      margin: 8px;
+      border: 1px solid;
+      border-radius: 6px;
+      font-size: 0.9em;
+
+      @include colors() {
+        color: c(medium-dark);
+        border-color: c(kinda-light);
+      }
+
+      a.repo-name {
+        font-size: 1.2em;
+        font-weight: 600;
+      }
+
+      p.repo-description {
+        margin: 4px 0 8px 0;
+      }
+
+      div.repo-meta {
+        display: inline-block;
+        margin-right: 12px;
+        font-size: 0.925em;
+
+        @include colors() {
+          color: c(medium);
+        }
+
+        svg {
+          display: inline-block;
+          position: relative;
+          top: 3px;
+          margin-right: 2px;
+          fill: currentColor;
+        }
+
+        span.repo-language-color {
+          display: inline-block;
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          position: relative;
+          top: 2px;
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+@mixin responsive--projects() {
+  div.layout-projects {
+    // stylelint-disable-block block-no-empty
+  }
+}
