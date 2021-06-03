@@ -17,11 +17,9 @@ $unicode-subset: U+0000-00FF, U+2000-206F, U+2200-22FF, U+2122;
 
 // Variable
 @include font-face("Inter var", "vendor/fonts/inter-subset.var", 100 900, $variable: true) {
-  font-named-instance: "Regular"; // stylelint-disable-line property-no-unknown
   unicode-range: $unicode-subset;
 }
 @include font-face("Inter var", "vendor/fonts/inter-italic-subset.var", 100 900, italic, $variable: true) {
-  font-named-instance: "Italic"; // stylelint-disable-line property-no-unknown
   unicode-range: $unicode-subset;
 }
 
@@ -54,12 +52,8 @@ $unicode-subset: U+0000-00FF, U+2000-206F, U+2200-22FF, U+2122;
  */
 
 // Variable
-@include font-face("Roboto Mono var", "vendor/fonts/roboto-mono-subset.var", 100 700, $variable: true) {
-  font-named-instance: "Regular"; // stylelint-disable-line property-no-unknown
-}
-@include font-face("Roboto Mono var", "vendor/fonts/roboto-mono-italic-subset.var", 100 700, italic, $variable: true) {
-  font-named-instance: "Italic"; // stylelint-disable-line property-no-unknown
-}
+@include font-face("Roboto Mono var", "vendor/fonts/roboto-mono-subset.var", 100 700, $variable: true);
+@include font-face("Roboto Mono var", "vendor/fonts/roboto-mono-italic-subset.var", 100 700, italic, $variable: true);
 
 // Legacy
 @include font-face("Roboto Mono", "vendor/fonts/roboto-mono-regular-subset", 400);
@@ -83,7 +77,6 @@ pre,
 
 // override above font-family if browser supports variable fonts
 // https://caniuse.com/#feat=variable-fonts
-// stylelint-disable-next-line plugin/no-unsupported-browser-features
 @supports (font-variation-settings: normal) {
   body {
     font-family: $font-stack-variable;

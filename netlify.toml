@@ -4,7 +4,7 @@
   functions = ".netlify/functions"
 
   [build.environment]
-    NODE_VERSION = "14"
+    NODE_VERSION = "16"
     YARN_VERSION = "1.22.10"
     YARN_FLAGS = "--no-ignore-optional --frozen-lockfile"
 
