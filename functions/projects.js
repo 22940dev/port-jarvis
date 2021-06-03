@@ -1,32 +1,35 @@
 "use strict";
 
-const { GraphQLClient } = require("graphql-request");
+const { GraphQLClient, gql } = require("graphql-request");
 const { escape } = require("html-escaper");
 const numeral = require("numeral");
 const { DateTime } = require("luxon");
 
 const username = "jakejarvis";
+const endpoint = "https://api.github.com/graphql";
 
 async function fetchRepos(sort, limit) {
-  const client = new GraphQLClient("https://api.github.com/graphql", {
+  // https://docs.github.com/en/graphql/guides/forming-calls-with-graphql
+  const client = new GraphQLClient(endpoint, {
     headers: {
       Authorization: `Bearer ${process.env.GH_PUBLIC_TOKEN}`,
       Accept: "application/vnd.github.v3+json",
     },
   });
 
-  const query = `
+  // https://docs.github.com/en/graphql/reference/objects#repository
+  const query = gql`
     query ($sort: String, $limit: Int) {
       user(login: "${username}") {
         repositories(
-          last: $limit,
+          first: $limit,
           isLocked: false,
           isFork: false,
           ownerAffiliations: OWNER,
           privacy: PUBLIC,
           orderBy: {
             field: $sort,
-            direction: ASC
+            direction: DESC
           }
         ) {
           edges {
@@ -35,12 +38,8 @@ async function fetchRepos(sort, limit) {
               url
               description
               pushedAt
-              stargazers {
-                totalCount
-              }
-              forks {
-                totalCount
-              }
+              stargazerCount
+              forkCount
               primaryLanguage {
                 name
                 color
@@ -52,23 +51,17 @@ async function fetchRepos(sort, limit) {
     }
   `;
 
-  const response = await client.request(query, {
-    sort: sort,
-    limit: limit,
-  });
+  const response = await client.request(query, { sort, limit });
 
   const currentRepos = response.user.repositories.edges.map(({ node: repo }) => ({
     ...repo,
     description: escape(repo.description),
-    stargazers: repo.stargazers.totalCount,
-    stargazers_pretty: numeral(repo.stargazers.totalCount).format("0,0"),
-    forks: repo.forks.totalCount,
-    forks_pretty: numeral(repo.forks.totalCount).format("0,0"),
+    stargazerCount_pretty: numeral(repo.stargazerCount).format("0,0"),
+    forkCount_pretty: numeral(repo.forkCount).format("0,0"),
     pushedAt_relative: DateTime.fromISO(repo.pushedAt).toRelative({ locale: "en" }),
   }));
 
-  // reverse hack to get expected sorting
-  return currentRepos.reverse();
+  return currentRepos;
 }
 
 exports.handler = async (event) => {
