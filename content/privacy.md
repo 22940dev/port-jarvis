@@ -15,7 +15,7 @@ This website uses a simple hit counter on each post to tally an aggregate number
 
 ## Hosting
 
-Pages and first-party assets on this website are served by [**Netlify**](https://www.netlify.com/). Refer to their [privacy policy](https://www.netlify.com/privacy/) and [GDPR statement](https://www.netlify.com/gdpr/) for more information.
+Pages and first-party assets on this website are served by [**Vercel**](https://vercel.com/). Refer to their [privacy policy](https://vercel.com/legal/privacy-policy) for more information.
 
 For a likely excessive level of privacy and security, this website is also mirrored on the [🧅 Tor network](https://www.torproject.org/) at: [**jarvis2i2vp4j4tbxjogsnqdemnte5xhzyi7hziiyzxwge3hzmh57zad.onion**](http://jarvis2i2vp4j4tbxjogsnqdemnte5xhzyi7hziiyzxwge3hzmh57zad.onion).
 

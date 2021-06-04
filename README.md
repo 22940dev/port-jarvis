@@ -1,13 +1,12 @@
 # 🏡&nbsp;&nbsp;[jarv.is](https://jarv.is/)
 
-[![Netlify](https://img.shields.io/netlify/a7403a53-fd9d-44c0-a708-a84d9fc1454d?logo=netlify&logoColor=white)](https://app.netlify.com/sites/jakejarvis/deploys)
 [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/jakejarvis/jarv.is/CI/main?label=build&logo=github&logoColor=white)](https://github.com/jakejarvis/jarv.is/actions?query=workflow%3ACI+branch%3Amain)
 [![Hugo v0.83.1](https://img.shields.io/badge/hugo-0.83.1-ff4088?logo=hugo&logoColor=white)](https://github.com/gohugoio/hugo)
 [![Licensed under CC-BY-4.0](https://img.shields.io/badge/license-CC--BY--4.0-fb7828?logo=creative-commons&logoColor=white)](LICENSE.md)
 [![GitHub repo size](https://img.shields.io/github/repo-size/jakejarvis/jarv.is?color=009cdf&label=repo%20size&logo=git&logoColor=white)](https://github.com/jakejarvis/jarv.is)
 [![Tor mirror status](https://img.shields.io/uptimerobot/status/m788172098-a4fcb769c8779f9a37a60775?color=7e4798&label=tor%20mirror&logo=tor-project&logoColor=white)](http://jarvis2i2vp4j4tbxjogsnqdemnte5xhzyi7hziiyzxwge3hzmh57zad.onion/)
 
-Personal website of [@jakejarvis](https://github.com/jakejarvis), created and deployed using [Hugo](https://github.com/gohugoio/hugo), [Netlify](https://www.netlify.com/), [and more](https://jarv.is/uses/).
+Personal website of [@jakejarvis](https://github.com/jakejarvis), created and deployed using [Hugo](https://github.com/gohugoio/hugo), [Vercel](https://vercel.com/), [and more](https://jarv.is/uses/).
 
 I keep an ongoing list of [blog post ideas](https://github.com/jakejarvis/jarv.is/issues/1) and [coding to-dos](https://github.com/jakejarvis/jarv.is/issues/11) as issues in this repo.
 

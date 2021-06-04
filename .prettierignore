@@ -16,9 +16,10 @@ postcss.config.js
 devcontainer.json
 
 # miscellaneous
+vercel.json
+.vercel/
 .github/
 .lighthouseci/
-.netlify/
 .vscode/
 LICENSE.md
 content/notes/dark-mode/example.html

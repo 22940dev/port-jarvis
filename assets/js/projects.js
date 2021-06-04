@@ -3,7 +3,7 @@
   var wrapper = document.getElementById("github-cards");
 
   if (wrapper) {
-    fetch("/api/projects?top")
+    fetch("/api/projects/?top")
       .then((response) => response.json())
       .then((data) => {
         data.forEach((repo) => {

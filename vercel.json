@@ -1,0 +1,110 @@
+{
+  "public": false,
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/favicon.ico", "destination": "/img/favicon.ico" },
+    { "source": "/favicon-(.*)", "destination": "/img/favicon-$1xxxxxxxx" },
+    { "source": "/apple-touch-icon.png", "destination": "/img/apple-touch-icon.png" },
+    { "source": "/apple-touch-icon-precomposed.png", "destination": "/img/apple-touch-icon.png" },
+    { "source": "/safari-pinned-tab.svg", "destination": "/img/safari-pinned-tab.svg" }
+  ],
+  "redirects": [
+    { "source": "/notes/:slug/amp.html", "destination": "/notes/:slug/", "statusCode": 301 },
+    { "source": "/blog/(.*)", "destination": "/notes/" },
+    { "source": "/archives/(.*)", "destination": "/notes/" },
+    { "source": "/feed", "destination": "/feed.xml" },
+    { "source": "/rss", "destination": "/feed.xml" },
+    { "source": "/index.xml", "destination": "/feed.xml" },
+    { "source": "/resume/", "destination": "/resume.pdf" },
+    { "source": "/keybase.txt", "destination": "/.well-known/keybase.txt" },
+    { "source": "/jarvis.asc", "destination": "/pubkey.asc" },
+    { "source": "/img/logo.svg", "destination": "/img/favicon.svg" },
+    { "source": "/img/me_large.jpg", "destination": "/img/me.jpg" },
+    { "source": "/me.jpg", "destination": "/img/me.jpg" },
+    { "source": "/me_large.jpg", "destination": "/img/me.jpg" },
+    { "source": "/img/me_hu1c1a997e30e234e83718deb8b3f52283_130509_320x320_resize_q90_lanczos.jpg", "destination": "/img/me.jpg" },
+    { "source": "/y2k/(.*)", "destination": "https://jakejarvis.github.io/my-first-website/$1" },
+    { "source": "/ios-trackers/(.*)", "destination": "https://jakejarvis.github.io/ios-trackers/$1" },
+    { "source": "/awesome/", "destination": "https://synonymsforawesome.com/" },
+    { "source": "/hugo-node/", "destination": "https://github.com/jakejarvis/hugo-extended" },
+    { "source": "/comp20/(.*)", "destination": "https://jakejarvis.github.io/comp20/$1" },
+    { "source": "/scrabble/(.*)", "destination": "https://jakejarvis.github.io/scrabble/$1" }
+  ],
+  "headers": [
+    {
+      "source": "/vendor/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2628000"
+        }
+      ]
+    },
+    {
+      "source": "/pubkey.asc",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers" : [
+        {
+          "key": "Onion-Location",
+          "value": "http://jarvis2i2vp4j4tbxjogsnqdemnte5xhzyi7hziiyzxwge3hzmh57zad.onion/$1"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; base-uri 'none'; connect-src 'self' api.github.com platform.twitter.com; font-src 'self'; form-action 'none'; frame-ancestors 'self'; frame-src 'self' jakejarvis.github.io buttons.github.io codepen.io cdpn.io platform.twitter.com www.youtube-nocookie.com; img-src 'self' data: https:; manifest-src 'self'; media-src 'self' data: https:; object-src 'none'; script-src 'self' buttons.github.io gist.github.com syndication.twitter.com platform.twitter.com 'sha256-1j1MKfE70TTCp5KmiC2YImxw2RMS52uCH5yXl1heG9U=' 'sha256-y3Xr/40/KQnUvqk/kZO5us6t3i/I49BsbYjsH8ELhVg=' 'sha256-JGG0npUp+0ABq/NY1azjpQ0WBtm+m5gU58mzF+2DCXY='; style-src 'self' 'unsafe-inline' github.githubassets.com; worker-src 'self'; block-all-mixed-content; report-uri https://jarvis.report-uri.com/r/d/csp/enforce; report-to default"
+        },
+        {
+          "key": "Report-To",
+          "value": "{\"group\":\"default\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://jarvis.report-uri.com/a/d/g\"}],\"include_subdomains\":false}"
+        },
+        {
+          "key": "NEL",
+          "value": "{\"report_to\":\"default\",\"max_age\":604800}"
+        },
+        {
+          "key": "Feature-Policy",
+          "value": "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer-when-downgrade"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "x-view-source",
+          "value": "https://github.com/jakejarvis/jarv.is"
+        },
+        {
+          "key" : "x-got-milk",
+          "value" : "2%"
+        }
+      ]
+    }
+  ]
+}

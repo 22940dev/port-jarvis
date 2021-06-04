@@ -64,11 +64,11 @@ async function fetchRepos(sort, limit) {
   return currentRepos;
 }
 
-exports.handler = async (event) => {
+module.exports = async (req, res) => {
   try {
     // some rudimentary error handling
-    if (event.httpMethod !== "GET") {
-      throw new Error(`Method ${event.httpMethod} not allowed.`);
+    if (req.method !== "GET") {
+      throw new Error(`Method ${req.method} not allowed.`);
     }
     if (!process.env.GH_PUBLIC_TOKEN) {
       throw new Error("GitHub API credentials aren't set.");
@@ -77,27 +77,18 @@ exports.handler = async (event) => {
     // default to latest repos
     let sortBy = "PUSHED_AT";
     // get most popular repos (/projects?top)
-    if (typeof event.queryStringParameters.top !== "undefined") sortBy = "STARGAZERS";
+    if (typeof req.query.top !== "undefined") sortBy = "STARGAZERS";
 
     const repos = await fetchRepos(sortBy, 16);
 
-    return {
-      statusCode: 200,
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-        "Access-Control-Allow-Methods": "GET",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify(repos),
-    };
+    // let Vercel edge cache results for 10 mins
+    res.setHeader("Cache-Control", "s-maxage=600, stale-while-revalidate");
+    res.setHeader("Access-Control-Allow-Methods", "GET");
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    return res.json(repos);
   } catch (error) {
     console.error(error);
 
-    return {
-      statusCode: 400,
-      body: JSON.stringify({
-        message: error.message,
-      }),
-    };
+    return res.status(400).json({ message: error.message });
   }
 };

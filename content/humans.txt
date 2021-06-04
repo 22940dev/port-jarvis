@@ -30,8 +30,7 @@
 # TECHNOLOGY
 
     Hugo
-    Netlify
-    GitHub Actions
+    Vercel
     ...and much more: https://jarv.is/uses/
 
 # VIEW SOURCE

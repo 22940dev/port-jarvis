@@ -9,14 +9,14 @@ require("dotenv").config();
 
 const baseUrl = "https://jarv.is/";
 
-exports.handler = async (event) => {
+module.exports = async (req, res) => {
   try {
     // some rudimentary error handling
     if (!process.env.FAUNADB_SERVER_SECRET) {
       throw new Error("Database credentials aren't set.");
     }
-    if (event.httpMethod !== "GET") {
-      throw new Error(`Method ${event.httpMethod} not allowed.`);
+    if (req.method !== "GET") {
+      throw new Error(`Method ${req.method} not allowed.`);
     }
 
     const parser = new rssParser({
@@ -73,23 +73,12 @@ exports.handler = async (event) => {
     stats.total.pretty_hits = numeral(stats.total.hits).format("0,0");
     stats.total.pretty_unit = pluralize("hit", stats.total.hits);
 
-    return {
-      statusCode: 200,
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-        "Access-Control-Allow-Methods": "GET",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify(stats),
-    };
+    res.setHeader("Access-Control-Allow-Methods", "GET");
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    return res.json(stats);
   } catch (error) {
     console.error(error);
 
-    return {
-      statusCode: 400,
-      body: JSON.stringify({
-        message: error.message,
-      }),
-    };
+    return res.status(400).json({ message: error.message });
   }
 };

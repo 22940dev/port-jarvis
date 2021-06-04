@@ -6,20 +6,16 @@ const numeral = require("numeral");
 const pluralize = require("pluralize");
 require("dotenv").config();
 
-// .....??????
-// https://github.com/netlify/netlify-lambda/issues/201
-require("encoding");
-
-exports.handler = async (event) => {
-  const { slug } = event.queryStringParameters;
+module.exports = async (req, res) => {
+  const { slug } = req.query;
 
   try {
     // some rudimentary error handling
     if (!process.env.FAUNADB_SERVER_SECRET) {
       throw new Error("Database credentials aren't set.");
     }
-    if (event.httpMethod !== "GET") {
-      throw new Error(`Method ${event.httpMethod} not allowed.`);
+    if (req.method !== "GET") {
+      throw new Error(`Method ${req.method} not allowed.`);
     }
     if (!slug || slug === "/") {
       throw new Error("Parameter `slug` is required.");
@@ -33,32 +29,21 @@ exports.handler = async (event) => {
     const result = await client.query(q.Call(q.Function("hit"), slug));
 
     // send client the new hit count
-    return {
-      statusCode: 200,
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-        "Cache-Control": "private, no-cache, no-store, must-revalidate",
-        Expires: "0",
-        Pragma: "no-cache",
-        "Access-Control-Allow-Methods": "GET",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify({
-        slug: result.data.slug,
-        hits: result.data.hits,
-        pretty_hits: numeral(result.data.hits).format("0,0"),
-        pretty_unit: pluralize("hit", result.data.hits),
-      }),
-    };
+    res.setHeader("Cache-Control", "private, no-cache, no-store, must-revalidate");
+    res.setHeader("Expires", 0);
+    res.setHeader("Pragma", "no-cache");
+    res.setHeader("Access-Control-Allow-Methods", "GET");
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    return res.json({
+      slug: result.data.slug,
+      hits: result.data.hits,
+      pretty_hits: numeral(result.data.hits).format("0,0"),
+      pretty_unit: pluralize("hit", result.data.hits),
+    });
   } catch (error) {
     console.error(error);
 
-    return {
-      statusCode: 400,
-      body: JSON.stringify({
-        message: error.message,
-      }),
-    };
+    return res.status(400).json({ message: error.message });
   }
 };
 

@@ -21,9 +21,6 @@ disableKinds = ["taxonomy", "term"]
 # don't worry, inserted manually :)
 disableHugoGeneratorInject = true
 
-# prefer Netlify's _redirects file, see outputs below
-disableAliases = true
-
 [params]
   description = "Hi there! I'm a frontend web developer based in Boston, Massachusetts specializing in the JAMstack, modern JavaScript frameworks, and progressive web apps."
   image = "img/logo.png"  # relative to assetDir root
@@ -96,7 +93,7 @@ disableAliases = true
     weight = 4
 
 [outputs]
-  home = ["HTML", "RSS", "ATOM", "MANIFEST", "REDIRECTS", "HEADERS"]
+  home = ["HTML", "RSS", "ATOM", "MANIFEST"]
   section = ["HTML"]
   page = ["HTML"]
 
@@ -116,24 +113,12 @@ disableAliases = true
     baseName = "site"   # /site.webmanifest
     isPlainText = true
     notAlternative = true
-  [outputFormats.REDIRECTS]
-    mediaType = "text/netlify"
-    baseName = "_redirects"
-    isPlainText = true
-    notAlternative = true
-  [outputFormats.HEADERS]
-    mediaType = "text/netlify"
-    baseName = "_headers"
-    isPlainText = true
-    notAlternative = true
 
 [mediaTypes]
   [mediaTypes."application/atom+xml"]
     suffixes = ["atom"]
   [mediaTypes."application/manifest+json"]
     suffixes = ["webmanifest"]
-  [mediaTypes."text/netlify"]
-    delimiter = ""   # no dot/extension for _headers & _redirects files
 
 [sitemap]
   filename = "sitemap.xml"
@@ -183,14 +168,3 @@ disableAliases = true
   writeStats = true
   # don't use cache for SCSS compilation, better to throw error than be stale
   useResourceCacheWhen = "never"
-
-[server]
-# proxy /api requests to netlify-lambda's local server (port 9337) for each function
-  [[server.redirects]]
-    from = "/api/**"
-    to = "http://localhost:9337/"
-    status = 200
-  [[server.headers]]
-    for = "/**"
-    [server.headers.values]
-      Access-Control-Allow-Origin = "*"

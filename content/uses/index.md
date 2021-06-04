@@ -172,7 +172,7 @@ I've been making recent efforts to [de-Google](https://www.stallman.org/google.h
 Other geeky stuff:
 
 - [**DNSimple**](https://dnsimple.com/) [(referral link)](https://dnsimple.com/r/eb6ced548f1e0a) & [**Cloudflare**](https://www.cloudflare.com/) for domain DNS.
-- [**Netlify**](https://www.netlify.com/) for static sites.
+- [**Netlify**](https://www.netlify.com/) and [**Vercel**](https://vercel.com/) for static sites.
 - [**Linode**](https://www.linode.com/) [(referral link)](https://www.linode.com/?r=0c5aeace9bd591be9fbf32f96f58470295f1ee05) and [**DigitalOcean**](https://www.digitalocean.com/) [(referral link)](https://m.do.co/c/afcf288a7dac) for virtual Linux servers.
 - [**Backblaze**](https://www.backblaze.com/) [(referral link)](https://secure.backblaze.com/r/00x84e) for off-site MacBook backups.
 - [**Gitea**](https://gitea.io/en-us/) as a [self-hosted](https://code.jarv.is/) Git backup/mirror.

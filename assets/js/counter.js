@@ -16,7 +16,7 @@
     // this will return an error from the API anyways
     if (!slug || slug === "/") return;
 
-    fetch("/api/hits?slug=" + slug)
+    fetch("/api/hits/?slug=" + slug)
       .then((response) => response.json())
       .then((data) => {
         if (typeof data.hits !== "undefined") {
