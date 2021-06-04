@@ -14,13 +14,16 @@ snapshot:
     div.highlight {
       border: 0 !important;  /* no clue why this bugs out... */
     }
-    .wave,
-    .beat {
-      animation: none;
+    *,
+    ::before,
+    ::after {
+      animation: none !important;
+      transition-duration: 0s !important;
+      transition-delay: 0s !important;
     }
 static-snapshots:
   path: public/
-  snapshot-files: 'index.html,uses/index.html,notes/{netlify-analytics-review,shodan-search-queries,dropping-dropbox,coronavirus-open-source}/index.html'
+  snapshot-files: 'index.html,uses/index.html,notes/{how-to-pull-request-fork-github,shodan-search-queries}/index.html'
 agent:
   asset-discovery:
     network-idle-timeout: 2000 # ms

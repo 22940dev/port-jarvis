@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
+    - uses: actions/setup-node@v2
+      with:
+        node-version: 14.x
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
+    - name: Run linters
+      run: yarn lint
+
+  snapshot:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
+    - uses: actions/setup-node@v2
+      with:
+        node-version: 14.x
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
+    - name: Build preview
+      run: yarn build:hugo --environment=development --baseURL=/ --buildDrafts --buildFuture
+    - name: Percy snapshots
+      uses: percy/snapshot-action@v0.1.2
+      env:
+        PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}

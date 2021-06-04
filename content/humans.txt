@@ -29,9 +29,10 @@
 
 # TECHNOLOGY
 
-    Hugo
+    Hugo extended
     Vercel
-    ...and much more: https://jarv.is/uses/
+    FaunaDB
+    ...and more: https://jarv.is/uses/
 
 # VIEW SOURCE
 

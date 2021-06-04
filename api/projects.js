@@ -81,8 +81,8 @@ module.exports = async (req, res) => {
 
     const repos = await fetchRepos(sortBy, 16);
 
-    // let Vercel edge cache results for 10 mins
-    res.setHeader("Cache-Control", "s-maxage=600, stale-while-revalidate");
+    // let Vercel edge cache results for 15 mins
+    res.setHeader("Cache-Control", "s-maxage=900, stale-while-revalidate");
     res.setHeader("Access-Control-Allow-Methods", "GET");
     res.setHeader("Access-Control-Allow-Origin", "*");
     return res.json(repos);

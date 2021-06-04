@@ -73,6 +73,8 @@ module.exports = async (req, res) => {
     stats.total.pretty_hits = numeral(stats.total.hits).format("0,0");
     stats.total.pretty_unit = pluralize("hit", stats.total.hits);
 
+    // let Vercel edge cache results for 15 mins
+    res.setHeader("Cache-Control", "s-maxage=900, stale-while-revalidate");
     res.setHeader("Access-Control-Allow-Methods", "GET");
     res.setHeader("Access-Control-Allow-Origin", "*");
     return res.json(stats);
