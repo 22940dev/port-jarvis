@@ -3,7 +3,7 @@
   "trailingSlash": true,
   "rewrites": [
     { "source": "/favicon.ico", "destination": "/img/favicon.ico" },
-    { "source": "/favicon-(.*)", "destination": "/img/favicon-$1xxxxxxxx" },
+    { "source": "/favicon-(.*).png", "destination": "/img/favicon-$1.png" },
     { "source": "/apple-touch-icon.png", "destination": "/img/apple-touch-icon.png" },
     { "source": "/apple-touch-icon-precomposed.png", "destination": "/img/apple-touch-icon.png" },
     { "source": "/safari-pinned-tab.svg", "destination": "/img/safari-pinned-tab.svg" }

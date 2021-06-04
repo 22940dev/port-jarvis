@@ -11,9 +11,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local Vercel config
-.vercel/
-
 # Lighthouse CI
 .lighthouseci/
 
@@ -29,3 +26,6 @@ yarn-error.log*
 .Trashes
 *.icloud
 .nosync
+
+# local Vercel config
+.vercel
