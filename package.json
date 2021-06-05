@@ -22,16 +22,17 @@
     "minify:img": "glob-exec --parallel --foreach 'public/**/{img,images}/' -- imagemin '{{file.path}}*' --plugin=mozjpeg --plugin.mozjpeg.progressive --plugin.mozjpeg.quality=85 --plugin=pngquant --plugin.pngquant.quality={0.1,0.3} --plugin.pngquant.speed=1 --plugin.pngquant.strip --plugin=gifsicle --plugin=svgo --out-dir='{{file.path}}'",
     "lint": "run-s lint:**",
     "lint:scss": "stylelint 'assets/sass/**/*.scss' --syntax scss",
-    "lint:js": "eslint '**/*.js'",
+    "lint:js": "eslint --ext .js,.ts '**/*.{js,ts}'",
+    "lint:ts": "tsc --noEmit --esModuleInterop **/*.ts",
     "lint:md": "markdownlint 'content/**/*.md'",
     "lint:prettier": "prettier --check .",
     "docker": "docker run --rm -v $(pwd):/src:ro -p 1337:1337 $(docker build -q .)",
     "percy": "npx percy snapshot"
   },
   "dependencies": {
-    "@fontsource/comic-neue": "4.4.2",
-    "@fontsource/inter": "4.4.2",
-    "@fontsource/roboto-mono": "4.4.2",
+    "@fontsource/comic-neue": "4.4.5",
+    "@fontsource/inter": "4.4.5",
+    "@fontsource/roboto-mono": "4.4.5",
     "dotenv": "^10.0.0",
     "faunadb": "fauna/faunadb-js#master",
     "graphql": "^15.5.0",
@@ -51,6 +52,14 @@
     "@babel/core": "^7.14.3",
     "@babel/eslint-parser": "^7.14.4",
     "@babel/preset-env": "^7.14.4",
+    "@types/html-escaper": "^3.0.0",
+    "@types/luxon": "^1.26.5",
+    "@types/numeral": "^2.0.1",
+    "@types/pluralize": "^0.0.29",
+    "@types/xml2js": "^0.4.8",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "@vercel/node": "^1.11.0",
     "autoprefixer": "^10.2.6",
     "babel-minify": "^0.5.1",
     "cross-env": "^7.0.3",
@@ -83,7 +92,9 @@
     "stylelint-config-sass-guidelines": "~8.0.0",
     "stylelint-no-unsupported-browser-features": "~5.0.1",
     "stylelint-prettier": "~1.2.0",
-    "stylelint-scss": "~3.19.0"
+    "stylelint-scss": "~3.19.0",
+    "typescript": "^4.3.2",
+    "web-vitals": "^2.0.1"
   },
   "optionalDependencies": {
     "imagemin-gifsicle": "^7.0.0",
@@ -97,6 +108,10 @@
   "lint-staged": {
     "*.scss": [
       "stylelint --syntax scss",
+      "prettier --write"
+    ],
+    "*.ts": [
+      "tsc --noEmit --esModuleInterop",
       "prettier --write"
     ],
     "*.js": [

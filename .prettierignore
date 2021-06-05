@@ -14,6 +14,7 @@ _vendor/
 .*
 postcss.config.js
 babel.config.json
+tsconfig.json
 
 # miscellaneous
 vercel.json

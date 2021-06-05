@@ -1,14 +1,18 @@
 "use strict";
 
-const { GraphQLClient, gql } = require("graphql-request");
-const { escape } = require("html-escaper");
-const numeral = require("numeral");
-const { DateTime } = require("luxon");
+import { VercelRequest, VercelResponse } from "@vercel/node";
+import { GraphQLClient, gql } from "graphql-request";
+import { escape } from "html-escaper";
+import numeral from "numeral";
+import { DateTime } from "luxon";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const username = "jakejarvis";
 const endpoint = "https://api.github.com/graphql";
 
-async function fetchRepos(sort, limit) {
+async function fetchRepos(sort: string, limit: number) {
   // https://docs.github.com/en/graphql/guides/forming-calls-with-graphql
   const client = new GraphQLClient(endpoint, {
     headers: {
@@ -64,7 +68,7 @@ async function fetchRepos(sort, limit) {
   return currentRepos;
 }
 
-module.exports = async (req, res) => {
+module.exports = async (req: VercelRequest, res: VercelResponse) => {
   try {
     // some rudimentary error handling
     if (req.method !== "GET") {

@@ -1,12 +1,14 @@
 "use strict";
 
-const faunadb = require("faunadb"),
-  q = faunadb.query;
-const numeral = require("numeral");
-const pluralize = require("pluralize");
-require("dotenv").config();
+import { VercelRequest, VercelResponse } from "@vercel/node";
+import { Client, query as q } from "faunadb";
+import numeral from "numeral";
+import pluralize from "pluralize";
+import dotenv from "dotenv";
 
-module.exports = async (req, res) => {
+dotenv.config();
+
+module.exports = async (req: VercelRequest, res: VercelResponse) => {
   const { slug } = req.query;
 
   try {
@@ -21,12 +23,13 @@ module.exports = async (req, res) => {
       throw new Error("Parameter `slug` is required.");
     }
 
-    const client = new faunadb.Client({
+    const client = new Client({
       secret: process.env.FAUNADB_SERVER_SECRET,
     });
 
     // refer to snippet below for the `hit` function defined in the Fauna cloud
-    const result = await client.query(q.Call(q.Function("hit"), slug));
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const result = await client.query<any>(q.Call(q.Function("hit"), slug));
 
     // send client the new hit count
     res.setHeader("Cache-Control", "private, no-cache, no-store, must-revalidate");

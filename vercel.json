@@ -4,48 +4,31 @@
   "public": false,
   "trailingSlash": true,
   "cleanUrls": false,
-  "functions": {
-    "api/**/*.js": {
-      "runtime": "@vercel/node@1.11.0"
-    }
-  },
   "rewrites": [
     { "source": "/favicon.ico", "destination": "/img/favicon.ico" },
-    { "source": "/favicon-(.*).png", "destination": "/img/favicon-$1.png" },
+    { "source": "/favicon-([0-9]+).png", "destination": "/img/favicon-$1.png" },
     { "source": "/apple-touch-icon.png", "destination": "/img/apple-touch-icon.png" },
     { "source": "/apple-touch-icon-precomposed.png", "destination": "/img/apple-touch-icon.png" },
-    {
-      "source": "/api/csp_wizard/",
-      "destination": "https://jarvis.report-uri.com/r/d/csp/enforce"
-    },
-    {
-      "source": "/api/report/",
-      "destination": "https://jarvis.report-uri.com/a/d/g"
-    },
-    {
-      "source": "/api/mention/",
-      "destination": "https://webmention.io/jarv.is/webmention"
-    },
-    {
-      "source": "/api/ping/",
-      "destination": "https://webmention.io/jarv.is/xmlrpc"
-    }
+    { "source": "/api/csp_wizard/", "destination": "https://jarvis.report-uri.com/r/d/csp/enforce" },
+    { "source": "/api/report/", "destination": "https://jarvis.report-uri.com/a/d/g" },
+    { "source": "/api/mention/", "destination": "https://webmention.io/jarv.is/webmention" },
+    { "source": "/api/ping/", "destination": "https://webmention.io/jarv.is/xmlrpc" }
   ],
   "redirects": [
     { "source": "/notes/:slug/amp.html", "destination": "/notes/:slug/", "statusCode": 301 },
-    { "source": "/blog/(.*)", "destination": "/notes/" },
-    { "source": "/archives/(.*)", "destination": "/notes/" },
-    { "source": "/feed", "destination": "/feed.xml" },
-    { "source": "/rss", "destination": "/feed.xml" },
-    { "source": "/index.xml", "destination": "/feed.xml" },
+    { "source": "/blog/(.*)", "destination": "/notes/", "permanent": true },
+    { "source": "/archives/(.*)", "destination": "/notes/", "permanent": true },
+    { "source": "/feed", "destination": "/feed.xml", "permanent": true },
+    { "source": "/rss", "destination": "/feed.xml", "permanent": true },
+    { "source": "/index.xml", "destination": "/feed.xml", "permanent": true },
     { "source": "/resume/", "destination": "/resume.pdf" },
     { "source": "/keybase.txt", "destination": "/.well-known/keybase.txt" },
     { "source": "/jarvis.asc", "destination": "/pubkey.asc" },
+    { "source": "/me.jpg", "destination": "/img/me.jpg", "permanent": true },
+    { "source": "/me_large.jpg", "destination": "/img/me.jpg", "permanent": true },
+    { "source": "/img/me_large.jpg", "destination": "/img/me.jpg", "permanent": true },
+    { "source": "/img/me_hu1c1a997e30e234e83718deb8b3f52283_130509_320x320_resize_q90_lanczos.jpg", "destination": "/img/me.jpg", "permanent": true },
     { "source": "/img/logo.svg", "destination": "/img/favicon.svg" },
-    { "source": "/img/me_large.jpg", "destination": "/img/me.jpg" },
-    { "source": "/me.jpg", "destination": "/img/me.jpg" },
-    { "source": "/me_large.jpg", "destination": "/img/me.jpg" },
-    { "source": "/img/me_hu1c1a997e30e234e83718deb8b3f52283_130509_320x320_resize_q90_lanczos.jpg", "destination": "/img/me.jpg" },
     { "source": "/y2k/(.*)", "destination": "https://jakejarvis.github.io/my-first-website/$1" },
     { "source": "/ios-trackers/(.*)", "destination": "https://jakejarvis.github.io/ios-trackers/$1" },
     { "source": "/awesome/(.*)", "destination": "https://synonymsforawesome.com/" },
