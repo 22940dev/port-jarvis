@@ -19,7 +19,6 @@
     "build": "run-s build:** minify:**",
     "build:hugo": "hugo --gc --cleanDestinationDir --verbose",
     "minify:html": "html-minifier --html5 --collapse-whitespace --collapse-boolean-attributes --preserve-line-breaks --minify-css --remove-comments --file-ext html --input-dir public --output-dir public **/*.html",
-    "minify:js": "terser --compress passes=3,negate_iife=false,keep_fargs=false,sequences=false,reduce_vars=false --mangle reserved=['sa','sa_event'] --output public/js/app.js -- public/js/app.js",
     "minify:img": "glob-exec --parallel --foreach 'public/**/{img,images}/' -- imagemin '{{file.path}}*' --plugin=mozjpeg --plugin.mozjpeg.progressive --plugin.mozjpeg.quality=85 --plugin=pngquant --plugin.pngquant.quality={0.1,0.3} --plugin.pngquant.speed=1 --plugin.pngquant.strip --plugin=gifsicle --plugin=svgo --out-dir='{{file.path}}'",
     "lint": "run-s lint:**",
     "lint:scss": "stylelint 'assets/sass/**/*.scss' --syntax scss",
@@ -40,6 +39,7 @@
     "html-escaper": "^3.0.3",
     "luxon": "^1.27.0",
     "modern-normalize": "1.1.0",
+    "node-fetch": "^2.6.1",
     "numeral": "^2.0.6",
     "pluralize": "^8.0.0",
     "rss-parser": "^3.12.0",
@@ -47,7 +47,12 @@
     "twemoji-emojis": "13.1.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/eslint-parser": "^7.14.4",
+    "@babel/preset-env": "^7.14.4",
     "autoprefixer": "^10.2.6",
+    "babel-minify": "^0.5.1",
     "cross-env": "^7.0.3",
     "eslint": "~7.28.0",
     "eslint-config-prettier": "~8.3.0",
@@ -55,7 +60,7 @@
     "eslint-plugin-prettier": "~3.4.0",
     "glob-exec": "^0.1.1",
     "html-minifier": "^4.0.0",
-    "hugo-extended": "jakejarvis/hugo-extended#74fc0b50ee731a881d01e2908e31cbde84272629",
+    "hugo-extended": "jakejarvis/hugo-extended#9f615221831632cb3b8879ab3fc420fff921e1fd",
     "imagemin-cli": "^6.0.0",
     "lint-staged": "^11.0.0",
     "markdownlint-cli": "~0.27.1",
@@ -70,7 +75,7 @@
     "postcss-normalize-charset": "^5.0.1",
     "postcss-reporter": "^7.0.2",
     "postcss-svgo": "^5.0.2",
-    "prettier": "^2.3.0",
+    "prettier": "^2.3.1",
     "rimraf": "^3.0.2",
     "simple-git-hooks": "^2.4.1",
     "stylelint": "~13.13.1",
@@ -78,8 +83,7 @@
     "stylelint-config-sass-guidelines": "~8.0.0",
     "stylelint-no-unsupported-browser-features": "~5.0.1",
     "stylelint-prettier": "~1.2.0",
-    "stylelint-scss": "~3.19.0",
-    "terser": "^5.7.0"
+    "stylelint-scss": "~3.19.0"
   },
   "optionalDependencies": {
     "imagemin-gifsicle": "^7.0.0",

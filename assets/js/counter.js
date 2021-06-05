@@ -1,40 +1,37 @@
-(function () {
-  // don't continue if there isn't a span#meta-hits element on this page
-  var wrapper = document.getElementById("meta-hits");
+const fetch = require("node-fetch");
 
-  if (wrapper) {
-    // javascript is enabled so show the loading indicator
-    wrapper.style.display = "inline-block";
+// don't continue if there isn't a span#meta-hits element on this page
+const wrapper = document.getElementById("meta-hits");
 
-    // deduce a consistent identifier for this page, no matter the URL
-    var canonical = document.createElement("a");
-    canonical.href = document.querySelector("link[rel='canonical']").href;
+if (wrapper) {
+  // javascript is enabled so show the loading indicator
+  wrapper.style.display = "inline-block";
 
-    // strip beginning and ending forward slash
-    var slug = canonical.pathname.slice(1, -1);
+  // deduce a consistent identifier for this page, no matter the URL
+  const canonical = document.createElement("a");
+  canonical.href = document.querySelector("link[rel='canonical']").href;
 
-    // this will return an error from the API anyways
-    if (!slug || slug === "/") return;
+  // strip beginning and ending forward slash
+  const slug = canonical.pathname.slice(1, -1);
 
-    fetch("/api/hits/?slug=" + slug)
-      .then((response) => response.json())
-      .then((data) => {
-        if (typeof data.hits !== "undefined") {
-          // finally inject the hits and hide the loading spinner
-          var spinner = document.getElementById("hit-spinner");
-          var counter = document.getElementById("hit-counter");
+  fetch("/api/hits/?slug=" + slug)
+    .then((response) => response.json())
+    .then((data) => {
+      if (typeof data.hits !== "undefined") {
+        // finally inject the hits and hide the loading spinner
+        const spinner = document.getElementById("hit-spinner");
+        const counter = document.getElementById("hit-counter");
 
-          spinner.style.display = "none";
-          wrapper.title = data.pretty_hits + " " + data.pretty_unit;
-          counter.appendChild(document.createTextNode(data.pretty_hits));
-        } else {
-          // something went horribly wrong, initiate coverup
-          wrapper.style.display = "none";
-        }
-      })
-      .catch((error) => {
+        spinner.style.display = "none";
+        wrapper.title = data.pretty_hits + " " + data.pretty_unit;
+        counter.appendChild(document.createTextNode(data.pretty_hits));
+      } else {
         // something went horribly wrong, initiate coverup
         wrapper.style.display = "none";
-      });
-  }
-})();
+      }
+    })
+    .catch((error) => {
+      // something went horribly wrong, initiate coverup
+      wrapper.style.display = "none";
+    });
+}

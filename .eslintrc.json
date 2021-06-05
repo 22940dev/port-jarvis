@@ -4,12 +4,18 @@
     "plugin:prettier/recommended"
   ],
   "parserOptions": {
-    "ecmaVersion": 2015
+    "parser": "@babel/eslint-parser",
+    "ecmaVersion": 2018,
+    "sourceType": "script",
+    "babelOptions": {
+      "configFile": "./babel.config.json"
+    }
   },
   "env": {
     "browser": true,
     "es6": true
   },
+  "rules": {},
   "overrides": [{
     "files": ["api/**/*.js"],
     "parserOptions": {
@@ -23,6 +29,5 @@
       "compat/compat": "off"
     }
   }],
-  "rules": {},
   "ignorePatterns": ["public/**"]
 }

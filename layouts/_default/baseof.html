@@ -12,9 +12,11 @@
 {{ block "main" . }}{{ end }}
 </main>
 {{ partial "page/footer" . }}
-{{ partialCached "scripts/_bundle" . -}}
+{{ template "__body_js" . }}
 {{ partial "scripts/shortcodes" . -}}
   </body>
 </html>
 
+{{ if ne hugo.Environment "production" }}
 {{ partial "functions/debug" . }}
+{{ end }}

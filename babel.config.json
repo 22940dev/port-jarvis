@@ -1,0 +1,18 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "include": ["transform-arrow-functions", "transform-block-scoping", "transform-template-literals"],
+        "useBuiltIns": "entry",
+        "corejs": 3
+      }
+    ],
+    [
+      "minify",
+      {
+        "removeConsole": true
+      }
+    ]
+  ]
+}

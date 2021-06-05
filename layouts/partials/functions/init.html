@@ -1,3 +1,5 @@
+{{- partial "scripts/_bundle" . -}}
+
 {{/* Strip any markdown styling from page title for use in meta tags */}}
 {{- with .Title -}}
   {{- $.Scratch.Set "plainTitle" (. | markdownify | htmlUnescape | plainify) -}}

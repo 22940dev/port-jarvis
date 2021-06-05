@@ -3,7 +3,7 @@
   */
 
 (function () {
-  'use strict';
+  // 'use strict';
 
   // the exported module object
   var emoji = {
