@@ -1,13 +1,11 @@
 "use strict";
 
 import { VercelRequest, VercelResponse } from "@vercel/node";
-import { GraphQLClient, gql } from "graphql-request";
 import { escape } from "html-escaper";
-import numeral from "numeral";
 import { DateTime } from "luxon";
-import dotenv from "dotenv";
-
-dotenv.config();
+import numeral from "numeral";
+import { GraphQLClient } from "graphql-request";
+import gql from "graphql-tag";
 
 const username = "jakejarvis";
 const endpoint = "https://api.github.com/graphql";
@@ -55,20 +53,34 @@ async function fetchRepos(sort: string, limit: number) {
     }
   `;
 
-  const response = await client.request(query, { sort, limit });
+  type Repository = {
+    name: string;
+    url: string;
+    description: string;
+    pushedAt: string;
+    pushedAt_relative?: string;
+    stargazerCount: number;
+    stargazerCount_pretty?: string;
+    forkCount: number;
+    forkCount_pretty?: string;
+    primaryLanguage?: unknown;
+  };
 
-  const currentRepos = response.user.repositories.edges.map(({ node: repo }) => ({
-    ...repo,
-    description: escape(repo.description),
-    stargazerCount_pretty: numeral(repo.stargazerCount).format("0,0"),
-    forkCount_pretty: numeral(repo.forkCount).format("0,0"),
-    pushedAt_relative: DateTime.fromISO(repo.pushedAt).toRelative({ locale: "en" }),
-  }));
+  const response = await client.request(query, { sort, limit });
+  const currentRepos: Array<Repository> = response.user.repositories.edges.map(
+    ({ node: repo }: { [key: string]: Repository }) => ({
+      ...repo,
+      description: escape(repo.description),
+      stargazerCount_pretty: numeral(repo.stargazerCount).format("0,0"),
+      forkCount_pretty: numeral(repo.forkCount).format("0,0"),
+      pushedAt_relative: DateTime.fromISO(repo.pushedAt).toRelative({ locale: "en" }),
+    })
+  );
 
   return currentRepos;
 }
 
-module.exports = async (req: VercelRequest, res: VercelResponse) => {
+export default async (req: VercelRequest, res: VercelResponse): Promise<VercelResponse> => {
   try {
     // some rudimentary error handling
     if (req.method !== "GET") {
@@ -89,6 +101,7 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
     res.setHeader("Cache-Control", "s-maxage=900, stale-while-revalidate");
     res.setHeader("Access-Control-Allow-Methods", "GET");
     res.setHeader("Access-Control-Allow-Origin", "*");
+
     return res.json(repos);
   } catch (error) {
     console.error(error);

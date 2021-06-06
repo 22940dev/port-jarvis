@@ -5,13 +5,10 @@ import { Client, query as q } from "faunadb";
 import numeral from "numeral";
 import pluralize from "pluralize";
 import rssParser from "rss-parser";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const baseUrl = "https://jarv.is/";
 
-module.exports = async (req: VercelRequest, res: VercelResponse) => {
+export default async (req: VercelRequest, res: VercelResponse): Promise<VercelResponse> => {
   try {
     // some rudimentary error handling
     if (!process.env.FAUNADB_SERVER_SECRET) {
@@ -40,45 +37,50 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
       ),
     ]);
 
-    // TODO: make typescript interface/type
-    const stats = {
-      total: {
-        hits: 0,
-        pretty_hits: "",
-        pretty_unit: "",
-      },
-      pages: result.data,
+    type SiteStats = {
+      hits: number;
+      pretty_hits?: string;
+      pretty_unit?: string;
+    };
+    type PageStats = {
+      title: string;
+      url: string;
+      date: string;
+      slug?: string;
+      hits: number;
+      pretty_hits: string;
+      pretty_unit: string;
+    };
+    type OverallStats = {
+      total: SiteStats;
+      pages: Array<PageStats>;
     };
 
-    stats.pages.map(
-      (p: {
-        title: string;
-        url: string;
-        date: string;
-        slug?: string;
-        hits: number;
-        pretty_hits: string;
-        pretty_unit: string;
-      }) => {
-        // match URLs from RSS feed with db to populate some metadata
-        const match = feed.items.find((x: { link: string }) => x.link === baseUrl + p.slug + "/");
-        if (match) {
-          p.title = match.title;
-          p.url = match.link;
-          p.date = match.isoDate;
-          delete p.slug;
-        }
+    const pages: Array<PageStats> = result.data;
+    const stats: OverallStats = {
+      total: { hits: 0 },
+      pages,
+    };
 
-        // it's easier to add comma-separated numbers and proper pluralization here on the backend
-        p.pretty_hits = numeral(p.hits).format("0,0");
-        p.pretty_unit = pluralize("hit", p.hits);
-
-        // add these hits to running tally
-        stats.total.hits += p.hits;
-
-        return p;
+    pages.map((p: PageStats) => {
+      // match URLs from RSS feed with db to populate some metadata
+      const match = feed.items.find((x: { link: string }) => x.link === baseUrl + p.slug + "/");
+      if (match) {
+        p.title = match.title;
+        p.url = match.link;
+        p.date = match.isoDate;
+        delete p.slug;
       }
-    );
+
+      // it's easier to add comma-separated numbers and proper pluralization here on the backend
+      p.pretty_hits = numeral(p.hits).format("0,0");
+      p.pretty_unit = pluralize("hit", p.hits);
+
+      // add these hits to running tally
+      stats.total.hits += p.hits;
+
+      return p;
+    });
 
     // sort by hits (descending)
     stats.pages.sort((a: { hits: number }, b: { hits: number }) => {
@@ -93,6 +95,7 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
     res.setHeader("Cache-Control", "s-maxage=900, stale-while-revalidate");
     res.setHeader("Access-Control-Allow-Methods", "GET");
     res.setHeader("Access-Control-Allow-Origin", "*");
+
     return res.json(stats);
   } catch (error) {
     console.error(error);

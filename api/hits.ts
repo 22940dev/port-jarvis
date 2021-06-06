@@ -4,11 +4,8 @@ import { VercelRequest, VercelResponse } from "@vercel/node";
 import { Client, query as q } from "faunadb";
 import numeral from "numeral";
 import pluralize from "pluralize";
-import dotenv from "dotenv";
 
-dotenv.config();
-
-module.exports = async (req: VercelRequest, res: VercelResponse) => {
+export default async (req: VercelRequest, res: VercelResponse): Promise<VercelResponse> => {
   const { slug } = req.query;
 
   try {
@@ -27,22 +24,32 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
       secret: process.env.FAUNADB_SERVER_SECRET,
     });
 
+    type PageHits = {
+      slug: string;
+      hits: number;
+      pretty_hits?: string;
+      pretty_unit?: string;
+    };
+
     // refer to snippet below for the `hit` function defined in the Fauna cloud
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const result = await client.query<any>(q.Call(q.Function("hit"), slug));
 
-    // send client the new hit count
+    const hits: PageHits = {
+      ...result.data,
+      pretty_hits: numeral(result.data.hits).format("0,0"),
+      pretty_unit: pluralize("hit", result.data.hits),
+    };
+
+    // disable caching on both ends
     res.setHeader("Cache-Control", "private, no-cache, no-store, must-revalidate");
     res.setHeader("Expires", 0);
     res.setHeader("Pragma", "no-cache");
     res.setHeader("Access-Control-Allow-Methods", "GET");
     res.setHeader("Access-Control-Allow-Origin", "*");
-    return res.json({
-      slug: result.data.slug,
-      hits: result.data.hits,
-      pretty_hits: numeral(result.data.hits).format("0,0"),
-      pretty_unit: pluralize("hit", result.data.hits),
-    });
+
+    // send client the *new* hit count
+    return res.json(hits);
   } catch (error) {
     console.error(error);
 
