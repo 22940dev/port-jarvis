@@ -1,4 +1,4 @@
-{{ $js := resources.Get "js/_bundle.js" | js.Build (dict "targetPath" "/js/app.js") | resources.Babel (dict "config" "babel.config.json" "noComments" true) }}
+{{ $js := resources.Get "js/_entry.ts" | js.Build (dict "targetPath" "/js/app.js") | resources.Babel (dict "config" "babel.config.json" "noComments" true) }}
 
 {{- .Scratch.Set "bundlePermalink" $js.Permalink -}}
 

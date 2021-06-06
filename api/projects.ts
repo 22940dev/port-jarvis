@@ -57,13 +57,16 @@ async function fetchRepos(sort: string, limit: number) {
     name: string;
     url: string;
     description: string;
-    pushedAt: string;
-    pushedAt_relative?: string;
+    primaryLanguage?: {
+      color: string;
+      name: string;
+    };
     stargazerCount: number;
     stargazerCount_pretty?: string;
     forkCount: number;
     forkCount_pretty?: string;
-    primaryLanguage?: unknown;
+    pushedAt: string;
+    pushedAt_relative?: string;
   };
 
   const response = await client.request(query, { sort, limit });

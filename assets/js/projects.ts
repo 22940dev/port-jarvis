@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
 // don't continue if there isn't a span#meta-hits element on this page
 const wrapper = document.getElementById("github-cards");
@@ -7,12 +7,28 @@ if (wrapper) {
   fetch("/api/projects/?top")
     .then((response) => response.json())
     .then((data) => {
-      data.forEach((repo) => {
+      type Repository = {
+        name: string;
+        url: string;
+        description: string;
+        primaryLanguage?: {
+          color: string;
+          name: string;
+        };
+        stargazerCount: number;
+        stargazerCount_pretty?: string;
+        forkCount: number;
+        forkCount_pretty?: string;
+        pushedAt: string;
+        pushedAt_relative?: string;
+      };
+
+      data.forEach((repo: Repository) => {
         let html = `
 <a class="repo-name" href="${repo.url}" target="_blank" rel="noopener">${repo.name}</a>
 <p class="repo-description">${repo.description}</p>`;
 
-        if (repo.primaryLanguage !== null) {
+        if (repo.primaryLanguage) {
           html += `
 <div class="repo-meta">
 <span class="repo-language-color" style="background-color: ${repo.primaryLanguage.color}"></span>
@@ -47,7 +63,7 @@ if (wrapper) {
         wrapper.appendChild(div);
       });
     })
-    .catch((error) => {
+    .catch(() => {
       // something went horribly wrong, initiate coverup
       wrapper.style.display = "none";
     });

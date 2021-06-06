@@ -21,9 +21,9 @@
     "minify:html": "html-minifier --html5 --collapse-whitespace --collapse-boolean-attributes --preserve-line-breaks --minify-css --remove-comments --file-ext html --input-dir public --output-dir public **/*.html",
     "minify:img": "glob-exec --parallel --foreach 'public/**/{img,images}/' -- imagemin '{{file.path}}*' --plugin=mozjpeg --plugin.mozjpeg.progressive --plugin.mozjpeg.quality=85 --plugin=pngquant --plugin.pngquant.quality={0.1,0.3} --plugin.pngquant.speed=1 --plugin.pngquant.strip --plugin=gifsicle --plugin=svgo --out-dir='{{file.path}}'",
     "lint": "run-s lint:**",
-    "lint:scss": "stylelint 'assets/sass/**/*.scss' --syntax scss",
-    "lint:js": "eslint --ext .js,.ts .",
     "lint:ts": "tsc --noEmit",
+    "lint:js": "eslint --ext .js,.ts .",
+    "lint:scss": "stylelint 'assets/sass/**/*.scss' --syntax scss",
     "lint:md": "markdownlint 'content/**/*.md'",
     "lint:prettier": "prettier --check .",
     "docker": "docker run --rm -v $(pwd):/src:ro -p 1337:1337 $(docker build -q .)",
@@ -53,8 +53,10 @@
     "@babel/core": "^7.14.3",
     "@babel/eslint-parser": "^7.14.4",
     "@babel/preset-env": "^7.14.4",
+    "@babel/preset-typescript": "^7.13.0",
     "@types/html-escaper": "^3.0.0",
     "@types/luxon": "^1.26.5",
+    "@types/node-fetch": "^2.5.10",
     "@types/numeral": "^2.0.1",
     "@types/pluralize": "^0.0.29",
     "@types/xml2js": "^0.4.8",
@@ -113,10 +115,9 @@
       "prettier --write"
     ],
     "*.ts": [
-      "tsc --noEmit --esModuleInterop",
-      "prettier --write"
+      "tsc --noEmit --esModuleInterop"
     ],
-    "*.js": [
+    "*.{js,ts}": [
       "eslint",
       "prettier --write"
     ],

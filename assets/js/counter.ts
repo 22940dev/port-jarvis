@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
 // don't continue if there isn't a span#meta-hits element on this page
 const wrapper = document.getElementById("meta-hits");
@@ -9,7 +9,7 @@ if (wrapper) {
 
   // deduce a consistent identifier for this page, no matter the URL
   const canonical = document.createElement("a");
-  canonical.href = document.querySelector("link[rel='canonical']").href;
+  canonical.href = (document.querySelector("link[rel='canonical']") as HTMLAnchorElement).href;
 
   // strip beginning and ending forward slash
   const slug = canonical.pathname.slice(1, -1);
@@ -22,15 +22,15 @@ if (wrapper) {
         const spinner = document.getElementById("hit-spinner");
         const counter = document.getElementById("hit-counter");
 
-        spinner.style.display = "none";
+        if (spinner) spinner.style.display = "none";
+        if (counter) counter.appendChild(document.createTextNode(data.pretty_hits));
         wrapper.title = data.pretty_hits + " " + data.pretty_unit;
-        counter.appendChild(document.createTextNode(data.pretty_hits));
       } else {
         // something went horribly wrong, initiate coverup
         wrapper.style.display = "none";
       }
     })
-    .catch((error) => {
+    .catch(() => {
       // something went horribly wrong, initiate coverup
       wrapper.style.display = "none";
     });
