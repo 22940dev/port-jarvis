@@ -5,7 +5,7 @@ import { escape } from "html-escaper";
 import { DateTime } from "luxon";
 import numeral from "numeral";
 import { GraphQLClient } from "graphql-request";
-import gql from "graphql-tag";
+import { gql } from "graphql-tag";
 
 const username = "jakejarvis";
 const endpoint = "https://api.github.com/graphql";
@@ -80,7 +80,8 @@ async function fetchRepos(sort: string, limit: number) {
   return currentRepos;
 }
 
-export default async (req: VercelRequest, res: VercelResponse): Promise<VercelResponse> => {
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export default async (req: VercelRequest, res: VercelResponse) => {
   try {
     // some rudimentary error handling
     if (req.method !== "GET") {
@@ -102,10 +103,10 @@ export default async (req: VercelRequest, res: VercelResponse): Promise<VercelRe
     res.setHeader("Access-Control-Allow-Methods", "GET");
     res.setHeader("Access-Control-Allow-Origin", "*");
 
-    return res.json(repos);
+    res.json(repos);
   } catch (error) {
     console.error(error);
 
-    return res.status(400).json({ message: error.message });
+    res.status(400).json({ message: error.message });
   }
 };

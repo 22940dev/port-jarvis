@@ -5,7 +5,8 @@ import { Client, query as q } from "faunadb";
 import numeral from "numeral";
 import pluralize from "pluralize";
 
-export default async (req: VercelRequest, res: VercelResponse): Promise<VercelResponse> => {
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export default async (req: VercelRequest, res: VercelResponse) => {
   const { slug } = req.query;
 
   try {
@@ -49,11 +50,11 @@ export default async (req: VercelRequest, res: VercelResponse): Promise<VercelRe
     res.setHeader("Access-Control-Allow-Origin", "*");
 
     // send client the *new* hit count
-    return res.json(hits);
+    res.json(hits);
   } catch (error) {
     console.error(error);
 
-    return res.status(400).json({ message: error.message });
+    res.status(400).json({ message: error.message });
   }
 };
 

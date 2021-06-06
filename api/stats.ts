@@ -8,7 +8,8 @@ import rssParser from "rss-parser";
 
 const baseUrl = "https://jarv.is/";
 
-export default async (req: VercelRequest, res: VercelResponse): Promise<VercelResponse> => {
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export default async (req: VercelRequest, res: VercelResponse) => {
   try {
     // some rudimentary error handling
     if (!process.env.FAUNADB_SERVER_SECRET) {
@@ -96,10 +97,10 @@ export default async (req: VercelRequest, res: VercelResponse): Promise<VercelRe
     res.setHeader("Access-Control-Allow-Methods", "GET");
     res.setHeader("Access-Control-Allow-Origin", "*");
 
-    return res.json(stats);
+    res.json(stats);
   } catch (error) {
     console.error(error);
 
-    return res.status(400).json({ message: error.message });
+    res.status(400).json({ message: error.message });
   }
 };

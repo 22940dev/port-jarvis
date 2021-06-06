@@ -1,14 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "lib": [
-      "esnext"
-    ],
+    "target": "es2018",
     "module": "commonjs",
     "moduleResolution": "node",
     "strict": true,
     "allowJs": true,
     "noEmit": true,
+    "noImplicitReturns": true,
     "esModuleInterop": true
   },
   "exclude": [
