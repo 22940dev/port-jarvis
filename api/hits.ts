@@ -50,7 +50,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
 
     // send client the *new* hit count
-    res.json(hits);
+    res.status(200).json(hits);
   } catch (error) {
     console.error(error);
 

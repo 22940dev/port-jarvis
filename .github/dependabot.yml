@@ -7,16 +7,12 @@ updates:
     interval: daily
   versioning-strategy: increase
   ignore:
+    - dependency-name: "faunadb"
+    - dependency-name: "hugo-extended"
+    - dependency-name: "@types/*"
     - dependency-name: "@fontsource/*"
   commit-message:
     prefix: "📦 npm:"
-
-- package-ecosystem: docker
-  directory: "/"
-  schedule:
-    interval: daily
-  commit-message:
-    prefix: "📦 docker:"
 
 - package-ecosystem: github-actions
   directory: "/"

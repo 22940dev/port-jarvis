@@ -38,11 +38,6 @@ export default async (req: VercelRequest, res: VercelResponse) => {
       ),
     ]);
 
-    type SiteStats = {
-      hits: number;
-      pretty_hits?: string;
-      pretty_unit?: string;
-    };
     type PageStats = {
       title: string;
       url: string;
@@ -53,11 +48,15 @@ export default async (req: VercelRequest, res: VercelResponse) => {
       pretty_unit: string;
     };
     type OverallStats = {
-      total: SiteStats;
-      pages: Array<PageStats>;
+      total: {
+        hits: number;
+        pretty_hits?: string;
+        pretty_unit?: string;
+      };
+      pages: PageStats[];
     };
 
-    const pages: Array<PageStats> = result.data;
+    const pages: PageStats[] = result.data;
     const stats: OverallStats = {
       total: { hits: 0 },
       pages,
@@ -97,7 +96,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     res.setHeader("Access-Control-Allow-Methods", "GET");
     res.setHeader("Access-Control-Allow-Origin", "*");
 
-    res.json(stats);
+    res.status(200).json(stats);
   } catch (error) {
     console.error(error);
 

@@ -70,7 +70,7 @@ async function fetchRepos(sort: string, limit: number) {
   };
 
   const response = await client.request(query, { sort, limit });
-  const currentRepos: Array<Repository> = response.user.repositories.edges.map(
+  const currentRepos: Repository[] = response.user.repositories.edges.map(
     ({ node: repo }: { [key: string]: Repository }) => ({
       ...repo,
       description: escape(repo.description),
@@ -96,7 +96,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
 
     // default to latest repos
     let sortBy = "PUSHED_AT";
-    // get most popular repos (/projects?top)
+    // get most popular repos (/projects/?top)
     if (typeof req.query.top !== "undefined") sortBy = "STARGAZERS";
 
     const repos = await fetchRepos(sortBy, 16);
@@ -106,7 +106,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     res.setHeader("Access-Control-Allow-Methods", "GET");
     res.setHeader("Access-Control-Allow-Origin", "*");
 
-    res.json(repos);
+    res.status(200).json(repos);
   } catch (error) {
     console.error(error);
 
