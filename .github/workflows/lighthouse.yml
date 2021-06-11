@@ -11,7 +11,6 @@ jobs:
       LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
       LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
       LHCI_SERVER_BASE_URL: https://lhci.jrvs.io
-      LHCI_BUILD_CONTEXT__CURRENT_BRANCH: ${{ github.event.deployment.ref }}
     steps:
     - uses: actions/checkout@v2
       with:
@@ -22,22 +21,30 @@ jobs:
         node-version: 14.x
     - run: npm install -g @lhci/cli
     - run: |
-        lhci --version
         lhci healthcheck
+        lhci --version
         curl $LHCI_SERVER_BASE_URL/version
-        echo ${{ github.event.deployment_status.target_url }}
+        echo "ref: ${{ github.event.deployment.ref }}"
+        echo "env: ${{ github.event.deployment_status.environment }}"
+        echo "url: ${{ github.event.deployment_status.target_url }}"
     - if: github.event.deployment_status.environment == 'production'
       continue-on-error: true
+      env:
+        BASE_URL: https://jarv.is/
+        LHCI_BUILD_CONTEXT__CURRENT_BRANCH: main
       run: |
         lhci autorun \
-          --collect.url=https://jarv.is/ \
-          --collect.url=https://jarv.is/notes/how-to-pull-request-fork-github/
+          --collect.url=$BASE_URL/ \
+          --collect.url=$BASE_URL/notes/how-to-pull-request-fork-github/
     - if: github.event.deployment_status.environment == 'preview'
       continue-on-error: true
+      env:
+        BASE_URL: ${{ github.event.deployment_status.target_url }}
+        LHCI_BUILD_CONTEXT__CURRENT_BRANCH: ${{ github.event.deployment.ref }}
       run: |
         lhci autorun \
-          --collect.url=${{ github.event.deployment_status.target_url }}/ \
-          --collect.url=${{ github.event.deployment_status.target_url }}/notes/how-to-pull-request-fork-github/
+          --collect.url=$BASE_URL/ \
+          --collect.url=$BASE_URL/notes/how-to-pull-request-fork-github/
     - uses: actions/upload-artifact@v2
       with:
         name: lhci-results
