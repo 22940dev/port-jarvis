@@ -1,6 +1,7 @@
 # 🏡&nbsp;&nbsp;[jarv.is](https://jarv.is/)
 
 [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/jakejarvis/jarv.is/CI/main?label=build&logo=github&logoColor=white)](https://github.com/jakejarvis/jarv.is/actions?query=workflow%3ACI+branch%3Amain)
+[![Vercel deployment](https://img.shields.io/github/deployments/jakejarvis/jarv.is/production?label=vercel&logo=vercel&logoColor=white)](https://vercel.com/deployments/jarv.is)
 [![Hugo v0.83.1](https://img.shields.io/badge/hugo-0.83.1-ff4088?logo=hugo&logoColor=white)](https://github.com/gohugoio/hugo)
 [![Licensed under CC-BY-4.0](https://img.shields.io/badge/license-CC--BY--4.0-fb7828?logo=creative-commons&logoColor=white)](LICENSE.md)
 [![GitHub repo size](https://img.shields.io/github/repo-size/jakejarvis/jarv.is?color=009cdf&label=repo%20size&logo=git&logoColor=white)](https://github.com/jakejarvis/jarv.is)

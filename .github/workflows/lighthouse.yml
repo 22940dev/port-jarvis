@@ -1,0 +1,44 @@
+name: Lighthouse
+
+on:
+  deployment_status
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    if: github.event.deployment_status.state == 'success'
+    env:
+      LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
+      LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+      LHCI_SERVER_BASE_URL: https://lhci.jrvs.io
+      LHCI_BUILD_CONTEXT__CURRENT_BRANCH: ${{ github.event.deployment.ref }}
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 2
+        lfs: false
+    - uses: actions/setup-node@v2
+      with:
+        node-version: 14.x
+    - run: npm install -g @lhci/cli
+    - run: |
+        lhci --version
+        lhci healthcheck
+        curl $LHCI_SERVER_BASE_URL/version
+        echo ${{ github.event.deployment_status.target_url }}
+    - if: github.event.deployment_status.environment == 'production'
+      continue-on-error: true
+      run: |
+        lhci autorun \
+          --collect.url=https://jarv.is/ \
+          --collect.url=https://jarv.is/notes/how-to-pull-request-fork-github/
+    - if: github.event.deployment_status.environment == 'preview'
+      continue-on-error: true
+      run: |
+        lhci autorun \
+          --collect.url=${{ github.event.deployment_status.target_url }}/ \
+          --collect.url=${{ github.event.deployment_status.target_url }}/notes/how-to-pull-request-fork-github/
+    - uses: actions/upload-artifact@v2
+      with:
+        name: lhci-results
+        path: ./.lighthouseci
