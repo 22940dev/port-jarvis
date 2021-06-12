@@ -1,20 +1,20 @@
 {
   "ci": {
     "collect": {
-      "numberOfRuns": 3
+      "numberOfRuns": 3,
+      "settings": {
+        "preset": "desktop",
+        "chromeFlags": "--no-sandbox"
+      }
     },
     "assert": {
       "preset": "lighthouse:no-pwa",
       "assertions": {
         "color-contrast": "warn",
         "csp-xss": "warn",
-        "errors-in-console": "warn",
-        "inspector-issues": "warn",
         "link-text": "warn",
         "long-tasks": "warn",
-        "non-composited-animations": "warn",
         "total-byte-weight": ["warn", {"minScore": 0.9}],
-        "unminified-javascript": "warn",
         "unsized-images": "warn",
         "unused-css-rules": "warn",
         "unused-javascript": "warn",
@@ -25,7 +25,8 @@
         "uses-long-cache-ttl": "off",
         "uses-responsive-images": "off",
         "uses-webp-images": "off"
-      }
+      },
+      "includePassedAssertions": true
     },
     "upload": {
       "target": "lhci",

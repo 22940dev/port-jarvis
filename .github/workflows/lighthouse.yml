@@ -18,10 +18,13 @@ jobs:
         lfs: false
     - uses: actions/setup-node@v2
       with:
-        node-version: 14.x
-    - run: npm install -g @lhci/cli
+        node-version: 12.x
+    - uses: browser-actions/setup-chrome@latest
+      with:
+        chrome-version: stable
+    - run: PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true npm install -g @lhci/cli
     - run: |
-        lhci healthcheck
+        chrome --version
         lhci --version
         curl $LHCI_SERVER_BASE_URL/version
         echo "ref: ${{ github.event.deployment.ref }}"
@@ -30,7 +33,7 @@ jobs:
     - if: github.event.deployment_status.environment == 'production'
       continue-on-error: true
       env:
-        BASE_URL: https://jarv.is/
+        BASE_URL: https://jarv.is
         LHCI_BUILD_CONTEXT__CURRENT_BRANCH: main
       run: |
         lhci autorun \
