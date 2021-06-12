@@ -7,6 +7,7 @@
       "preset": "lighthouse:no-pwa",
       "assertions": {
         "color-contrast": "warn",
+        "csp-xss": "warn",
         "errors-in-console": "warn",
         "inspector-issues": "warn",
         "link-text": "warn",
