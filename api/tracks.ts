@@ -1,5 +1,6 @@
 "use strict";
 
+// Fetches my Spotify most-played tracks or currently playing track.
 // Heavily inspired by @leerob: https://leerob.io/snippets/spotify
 
 import { VercelRequest, VercelResponse } from "@vercel/node";
@@ -32,7 +33,6 @@ type TrackSchema = {
     spotify: string;
   };
 };
-
 type Track = {
   isPlaying: boolean;
   artist?: string;
@@ -40,6 +40,43 @@ type Track = {
   album?: string;
   imageUrl?: string;
   songUrl?: string;
+};
+
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export default async (req: VercelRequest, res: VercelResponse) => {
+  try {
+    // some rudimentary error handling
+    if (req.method !== "GET") {
+      throw new Error(`Method ${req.method} not allowed.`);
+    }
+    if (!process.env.SPOTIFY_CLIENT_ID || !process.env.SPOTIFY_CLIENT_SECRET || !process.env.SPOTIFY_REFRESH_TOKEN) {
+      throw new Error("Spotify API credentials aren't set.");
+    }
+
+    // default to top tracks
+    let response;
+    // get currently playing track (/music/?now), otherwise top 10 tracks
+    if (typeof req.query.now !== "undefined") {
+      response = await getNowPlaying();
+
+      // let Vercel edge and browser cache results for 5 mins
+      res.setHeader("Cache-Control", "public, max-age=300, s-maxage=300, stale-while-revalidate");
+    } else {
+      response = await getTopTracks();
+
+      // let Vercel edge and browser cache results for 3 hours
+      res.setHeader("Cache-Control", "public, max-age=10800, s-maxage=10800, stale-while-revalidate");
+    }
+
+    res.setHeader("Access-Control-Allow-Methods", "GET");
+    res.setHeader("Access-Control-Allow-Origin", "*");
+
+    res.status(200).json(response);
+  } catch (error) {
+    console.error(error);
+
+    res.status(400).json({ message: error.message });
+  }
 };
 
 const getAccessToken = async () => {
@@ -123,41 +160,4 @@ const getTopTracks = async (): Promise<Track[]> => {
   }));
 
   return tracks;
-};
-
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export default async (req: VercelRequest, res: VercelResponse) => {
-  try {
-    // some rudimentary error handling
-    if (req.method !== "GET") {
-      throw new Error(`Method ${req.method} not allowed.`);
-    }
-    if (!process.env.SPOTIFY_CLIENT_ID || !process.env.SPOTIFY_CLIENT_SECRET || !process.env.SPOTIFY_REFRESH_TOKEN) {
-      throw new Error("Spotify API credentials aren't set.");
-    }
-
-    // default to top tracks
-    let response;
-    // get currently playing track (/music/?now), otherwise top 10 tracks
-    if (typeof req.query.now !== "undefined") {
-      response = await getNowPlaying();
-
-      // let Vercel edge cache results for 5 mins
-      res.setHeader("Cache-Control", "public, s-maxage=300, stale-while-revalidate");
-    } else {
-      response = await getTopTracks();
-
-      // let Vercel edge cache results for 3 hours
-      res.setHeader("Cache-Control", "public, s-maxage=10800, stale-while-revalidate");
-    }
-
-    res.setHeader("Access-Control-Allow-Methods", "GET");
-    res.setHeader("Access-Control-Allow-Origin", "*");
-
-    res.status(200).json(response);
-  } catch (error) {
-    console.error(error);
-
-    res.status(400).json({ message: error.message });
-  }
 };
