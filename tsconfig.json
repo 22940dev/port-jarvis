@@ -8,12 +8,16 @@
     ],
     "module": "commonjs",
     "moduleResolution": "node",
-    "strict": true,
-    "allowJs": true,
+    "esModuleInterop": true,
     "isolatedModules": true,
+    "strict": true,
     "noEmit": true,
     "noImplicitReturns": true,
-    "esModuleInterop": true
+    "allowJs": true,
+    "typeRoots": [
+      "./types",
+      "./node_modules/@types"
+    ]
   },
   "exclude": [
     "node_modules"

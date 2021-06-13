@@ -1,4 +1,4 @@
-"use strict";
+/// <reference types="./types/projects" />
 
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import { escape } from "html-escaper";
@@ -9,21 +9,6 @@ import { gql } from "graphql-tag";
 
 const username = "jakejarvis";
 const endpoint = "https://api.github.com/graphql";
-type Repository = {
-  name: string;
-  url: string;
-  description: string;
-  primaryLanguage?: {
-    color: string;
-    name: string;
-  };
-  stargazerCount: number;
-  stargazerCount_pretty?: string;
-  forkCount: number;
-  forkCount_pretty?: string;
-  pushedAt: string;
-  pushedAt_relative?: string;
-};
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default async (req: VercelRequest, res: VercelResponse) => {

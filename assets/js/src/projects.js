@@ -7,23 +7,7 @@ if (wrapper) {
   fetch("/api/projects/?top")
     .then((response) => response.json())
     .then((data) => {
-      type Repository = {
-        name: string;
-        url: string;
-        description: string;
-        primaryLanguage?: {
-          color: string;
-          name: string;
-        };
-        stargazerCount: number;
-        stargazerCount_pretty?: string;
-        forkCount: number;
-        forkCount_pretty?: string;
-        pushedAt: string;
-        pushedAt_relative?: string;
-      };
-
-      data.forEach((repo: Repository) => {
+      data.forEach((repo) => {
         let html = `
 <a class="repo-name" href="${repo.url}" target="_blank" rel="noopener">${repo.name}</a>
 <p class="repo-description">${repo.description}</p>`;

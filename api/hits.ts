@@ -1,4 +1,4 @@
-"use strict";
+/// <reference types="./types/hits" />
 
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import { Client, query as q } from "faunadb";
@@ -7,23 +7,6 @@ import pluralize from "pluralize";
 import rssParser from "rss-parser";
 
 const baseUrl = "https://jarv.is/";
-type PageStats = {
-  title?: string;
-  url?: string;
-  date?: string;
-  slug: string;
-  hits: number;
-  pretty_hits: string;
-  pretty_unit: string;
-};
-type OverallStats = {
-  total: {
-    hits: number;
-    pretty_hits?: string;
-    pretty_unit?: string;
-  };
-  pages: PageStats[];
-};
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default async (req: VercelRequest, res: VercelResponse) => {
@@ -49,8 +32,6 @@ export default async (req: VercelRequest, res: VercelResponse) => {
 
       // let Vercel edge and browser cache results for 15 mins
       res.setHeader("Cache-Control", "public, max-age=900, s-maxage=900, stale-while-revalidate");
-      res.setHeader("Access-Control-Allow-Methods", "GET");
-      res.setHeader("Access-Control-Allow-Origin", "*");
     } else {
       // increment this page's hits
       result = await incrementPageHits(slug, client);

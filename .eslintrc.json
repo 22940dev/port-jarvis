@@ -10,7 +10,7 @@
   "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaVersion": 2018,
-    "sourceType": "script",
+    "sourceType": "module",
     "babelOptions": {
       "configFile": "./babel.config.json"
     }

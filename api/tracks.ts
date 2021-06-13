@@ -1,4 +1,4 @@
-"use strict";
+/// <reference types="./types/tracks" />
 
 // Fetches my Spotify most-played tracks or currently playing track.
 // Heavily inspired by @leerob: https://leerob.io/snippets/spotify
@@ -16,31 +16,6 @@ const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
 // https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-users-top-artists-and-tracks
 const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=10`;
-
-type TrackSchema = {
-  name: string;
-  artists: Array<{
-    name: string;
-  }>;
-  album: {
-    name: string;
-    images: Array<{
-      url: string;
-    }>;
-  };
-  imageUrl?: string;
-  external_urls: {
-    spotify: string;
-  };
-};
-type Track = {
-  isPlaying: boolean;
-  artist?: string;
-  title?: string;
-  album?: string;
-  imageUrl?: string;
-  songUrl?: string;
-};
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default async (req: VercelRequest, res: VercelResponse) => {
@@ -105,11 +80,6 @@ const getNowPlaying = async (): Promise<Track> => {
       "Content-Type": "application/json",
     },
   });
-
-  type Activity = {
-    is_playing: boolean;
-    item?: TrackSchema;
-  };
 
   if (response.status === 204 || response.status > 400) {
     return { isPlaying: false };

@@ -9,7 +9,7 @@ if (wrapper) {
 
   // deduce a consistent identifier for this page, no matter the URL
   const canonical = document.createElement("a");
-  canonical.href = (document.querySelector("link[rel='canonical']") as HTMLAnchorElement).href;
+  canonical.href = document.querySelector("link[rel='canonical']").href;
 
   // strip beginning and ending forward slash
   const slug = canonical.pathname.slice(1, -1);
