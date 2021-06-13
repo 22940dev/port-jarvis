@@ -1,10 +1,10 @@
-name: Lighthouse
+name: Post-Deploy
 
 on:
   deployment_status
 
 jobs:
-  audit:
+  release:
     runs-on: ubuntu-latest
     if: github.event.deployment_status.state == 'success'
     env:
@@ -14,8 +14,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        fetch-depth: 2
-        lfs: false
+        fetch-depth: 0
+    - uses: getsentry/action-release@v1
+      env:
+        SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+        SENTRY_ORG: jakejarvis
+        SENTRY_PROJECT: jarvis
+      with:
+        environment: ${{ github.event.deployment_status.environment }}
     - uses: actions/setup-node@v2
       with:
         node-version: 12.x

@@ -1,5 +1,6 @@
 /// <reference types="./types/hits" />
 
+import * as Sentry from "@sentry/node";
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import { Client, query as q } from "faunadb";
 import numeral from "numeral";
@@ -7,6 +8,12 @@ import pluralize from "pluralize";
 import rssParser from "rss-parser";
 
 const baseUrl = "https://jarv.is/";
+
+Sentry.init({
+  dsn: process.env.SENTRY_DSN || "",
+  environment: process.env.VERCEL_ENV || process.env.NODE_ENV || process.env.SENTRY_ENVIRONMENT || "",
+  tracesSampleRate: 1.0,
+});
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default async (req: VercelRequest, res: VercelResponse) => {
@@ -48,6 +55,8 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     res.status(200).json(result);
   } catch (error) {
     console.error(error);
+    Sentry.captureException(error);
+    await Sentry.flush(2000);
 
     res.status(400).json({ message: error.message });
   }
