@@ -21,6 +21,9 @@ disableKinds = ["taxonomy", "term"]
 # don't worry, inserted manually :)
 disableHugoGeneratorInject = true
 
+# prefer 301 server redirects, see vercel.json
+disableAliases = true
+
 [params]
   description = "Hi there! I'm a frontend web developer based in Boston, Massachusetts specializing in the JAMstack, modern JavaScript frameworks, and progressive web apps."
   image = "img/logo.png"  # relative to assetDir root

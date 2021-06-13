@@ -4,7 +4,7 @@
 
   <video
     {{ with .Resources.GetMatch "thumb.*" }}poster="{{ .Permalink }}"{{ end }}
-    controls crossorigin playsinline preload="none">
+    controls playsinline>
     {{ with .Resources.GetMatch "*.webm" }}<source src="{{ .Permalink }}" type="video/webm">{{ end }}
     {{ with .Resources.GetMatch "*.mp4" }}<source src="{{ .Permalink }}" type="video/mp4">{{ end }}
     {{ with .Resources.GetMatch "*.ogg" }}<source src="{{ .Permalink }}" type="video/ogg">{{ end }}
