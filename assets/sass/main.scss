@@ -1,40 +1,25 @@
 @charset "UTF-8";
 
-// NOTE: all variables set by Hugo's config.toml MUST go here:
-// prettier-ignore
-$max-width: "{{ printf "%d%s" .Site.Params.Theme.maxWidth "px" }}";
-$base-url: "{{ strings.TrimRight "/" .Site.BaseURL }}" + "/";
-
-// those values need quotes because, even though prettier & stylelint are correct
-// in that it's insanely invalid SCSS, they refuse to ignore it. but $max-width is
-// a numerical value that can't have quotes, so let's remove them...
-$max-width: unquote($max-width);
-
-// Variables & Functions
-@import "abstracts/functions";
-@import "abstracts/settings";
-@import "abstracts/themes";
-@import "abstracts/reset";
-
 // Global Styles
-@import "components/typography";
-@import "components/global";
-@import "components/header";
-@import "components/footer";
-@import "components/content";
-@import "components/embeds";
+@use "components/typography";
+@use "components/reset";
+@use "components/global";
+@use "components/header";
+@use "components/footer";
+@use "components/content";
+@use "components/embeds";
 
 // Pages
-@import "pages/home";
-@import "pages/list";
-@import "pages/single";
-@import "pages/videos";
-@import "pages/etc";
-@import "pages/projects";
-
-// Responsive Mixins
-@import "abstracts/responsive";
+@use "pages/home";
+@use "pages/list";
+@use "pages/single";
+@use "pages/videos";
+@use "pages/etc";
+@use "pages/projects";
 
 // Miscellaneous
-@import "components/syntax";
-@import "components/animation";
+@use "components/syntax";
+@use "components/animation";
+
+// Responsive Mixins
+@use "abstracts/responsive";

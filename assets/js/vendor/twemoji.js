@@ -1,4 +1,4 @@
-/*! Copyright Twitter Inc. and other contributors. Licensed under MIT *//*
+/*  Copyright Twitter Inc. and other contributors. Licensed under MIT *//*
     https://github.com/twitter/twemoji/blob/gh-pages/LICENSE
   */
 
@@ -12,7 +12,7 @@
     /////////////////////////
 
       // default assets url, by default will be Twitter Inc. CDN
-      base: '/vendor/emoji/',
+      base: '/assets/emoji/',
 
       // default assets file extensions, by default '.png'
       ext: '.svg',
@@ -265,7 +265,7 @@
    * @return  string    the image source to use
    */
   function defaultImageSrcGenerator(icon, options) {
-    return ''.concat(options.base, options.size, '/', icon, options.ext);
+    return ''.concat(options.base, icon, options.ext);
   }
 
   /**
