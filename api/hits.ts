@@ -1,6 +1,7 @@
 /// <reference types="./types/hits" />
 
 import * as Sentry from "@sentry/node";
+import * as Tracing from "@sentry/tracing"; // eslint-disable-line @typescript-eslint/no-unused-vars
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import { Client, query as q } from "faunadb";
 import numeral from "numeral";
@@ -11,7 +12,7 @@ const baseUrl = "https://jarv.is/";
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN || "",
-  environment: process.env.VERCEL_ENV || process.env.NODE_ENV || process.env.SENTRY_ENVIRONMENT || "",
+  environment: process.env.NODE_ENV || process.env.VERCEL_ENV || process.env.SENTRY_ENVIRONMENT || "",
   tracesSampleRate: 1.0,
 });
 
@@ -55,6 +56,8 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     res.status(200).json(result);
   } catch (error) {
     console.error(error);
+
+    // log error to sentry, give it 2 seconds to finish sending
     Sentry.captureException(error);
     await Sentry.flush(2000);
 

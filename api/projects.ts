@@ -1,5 +1,7 @@
 /// <reference types="./types/projects" />
 
+import * as Sentry from "@sentry/node";
+import * as Tracing from "@sentry/tracing"; // eslint-disable-line @typescript-eslint/no-unused-vars
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import { escape } from "html-escaper";
 import { DateTime } from "luxon";
@@ -9,6 +11,12 @@ import { gql } from "graphql-tag";
 
 const username = "jakejarvis";
 const endpoint = "https://api.github.com/graphql";
+
+Sentry.init({
+  dsn: process.env.SENTRY_DSN || "",
+  environment: process.env.NODE_ENV || process.env.VERCEL_ENV || process.env.SENTRY_ENVIRONMENT || "",
+  tracesSampleRate: 1.0,
+});
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default async (req: VercelRequest, res: VercelResponse) => {
@@ -36,6 +44,10 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     res.status(200).json(repos);
   } catch (error) {
     console.error(error);
+
+    // log error to sentry, give it 2 seconds to finish sending
+    Sentry.captureException(error);
+    await Sentry.flush(2000);
 
     res.status(400).json({ message: error.message });
   }
