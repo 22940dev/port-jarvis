@@ -82,6 +82,8 @@ div.layout-projects {
 // Responsive
 @mixin responsive() {
   div.layout-projects {
-    // stylelint-disable-block block-no-empty
+    h1 {
+      font-size: 1.6em;
+    }
   }
 }
