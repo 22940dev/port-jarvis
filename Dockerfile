@@ -1,6 +1,6 @@
 # pulls from pre-built Hugo base image:
 # https://github.com/jakejarvis/hugo-docker/blob/master/Dockerfile
-FROM ghcr.io/jakejarvis/hugo-extended:0.83.1
+FROM ghcr.io/jakejarvis/hugo-extended:0.84.1
 
 ADD package.json .
 ADD yarn.lock .
