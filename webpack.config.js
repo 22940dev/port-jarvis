@@ -1,8 +1,9 @@
 const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const WebpackAssetsManifest = require("webpack-assets-manifest");
 const SriPlugin = require("webpack-subresource-integrity");
 const CopyPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const isProd = process.env.NODE_ENV === "production";
 
@@ -61,7 +62,28 @@ module.exports = {
         use: [
           { loader: MiniCssExtractPlugin.loader },
           { loader: "css-loader" },
-          { loader: "postcss-loader" },
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                config: false,
+                plugins: [
+                  require("autoprefixer")(),
+                  require("postcss-svgo")({
+                    encode: true,
+                  }),
+                  require("postcss-focus")(),
+                  require("postcss-color-rgba-fallback")({
+                    properties: [
+                      "background-image"
+                    ],
+                  }),
+                  require("postcss-combine-duplicated-selectors")(),
+                  require("postcss-normalize-charset")(),
+                ],
+              },
+            },
+          },
           { loader: "sass-loader" },
         ],
       },
@@ -77,6 +99,33 @@ module.exports = {
           },
         ],
       },
+    ],
+  },
+  optimization: {
+    minimizer: [
+      `...`,
+      new CssMinimizerPlugin({
+        minify: CssMinimizerPlugin.cleanCssMinify,
+        minimizerOptions: {
+          compatibility: "*",
+          level: 1,
+          processImport: false,
+          format: {
+            breaks: {
+              afterAtRule: true,
+              afterBlockBegins: true,
+              afterBlockEnds: true,
+              afterComment: true,
+              afterRuleEnds: true,
+              beforeBlockEnds: true,
+            },
+            spaces: {
+              beforeBlockBegins: true,
+            },
+            semicolonAfterLastProperty: true,
+          },
+        },
+      }),
     ],
   },
   devServer: {

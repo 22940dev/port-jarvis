@@ -38,7 +38,7 @@ function optimizeHtml() {
           collapseWhitespace: true,
           collapseBooleanAttributes: true,
           removeComments: true,
-          minifyCSS: false,
+          minifyCSS: true,
           minifyJS: false,
         }
       )
