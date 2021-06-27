@@ -17,18 +17,6 @@ I keep an ongoing list of [blog post ideas](https://github.com/jakejarvis/jarv.i
 
 Run `yarn install` ([Yarn must be installed](https://yarnpkg.com/en/docs/install) first; NPM _should_ work at your own risk) and `yarn start`, then open [http://localhost:1337/](http://localhost:1337/). Pages will live-refresh when source files are changed.
 
-### 🐳&nbsp;&nbsp;Using Docker:
-
-To ensure consistency and compatibility, the [`Dockerfile`](Dockerfile) in this repository will download the correct version of the Hugo Extended binary and its dependencies, and start a live testing server in a temporary container.
-
-Using Docker doesn't require Node or Yarn, but you can also use `yarn docker` which is simply an alias for:
-
-```bash
-docker run --rm -v $(pwd):/src -p 1337:1337 $(docker build --no-cache -q .)
-```
-
-Once built, these two methods act identically — simply open [http://localhost:1337/](http://localhost:1337/) as above.
-
 ### 🤯&nbsp;&nbsp;Why does this sound _way_ more complex than it needs to be?!
 
 [Because it is.](https://www.jvt.me/talks/overengineering-your-personal-website/)

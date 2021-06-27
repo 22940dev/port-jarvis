@@ -15,6 +15,9 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
+    - uses: actions/setup-node@v2
+      with:
+        node-version: 14.x
     - uses: getsentry/action-release@v1
       if: github.event.deployment_status.environment == 'production'
       env:
@@ -23,9 +26,6 @@ jobs:
         SENTRY_PROJECT: jarvis
       with:
         environment: ${{ github.event.deployment_status.environment }}
-    - uses: actions/setup-node@v2
-      with:
-        node-version: 12.x
     - uses: browser-actions/setup-chrome@latest
       with:
         chrome-version: stable

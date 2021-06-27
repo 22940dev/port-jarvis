@@ -13,7 +13,7 @@ module.exports = {
     path.resolve(__dirname, "assets/sass/main.scss"),
   ],
   mode: isProd ? "production" : "development",
-  devtool: "source-map",
+  devtool: isProd ? "nosources-source-map" : "source-map",
   output: {
     filename: isProd ? "js/[name]-[contenthash:8].js" : "js/[name].js",
     path: path.resolve(__dirname, "static/assets/"),
@@ -60,11 +60,12 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/i,
         use: [
-          { loader: MiniCssExtractPlugin.loader },
-          { loader: "css-loader" },
+          MiniCssExtractPlugin.loader,
+          { loader: "css-loader", options: { sourceMap: true } },
           {
             loader: "postcss-loader",
             options: {
+              sourceMap: true,
               postcssOptions: {
                 config: false,
                 plugins: [
@@ -84,7 +85,7 @@ module.exports = {
               },
             },
           },
-          { loader: "sass-loader" },
+          { loader: "sass-loader", options: { sourceMap: true } },
         ],
       },
       {
@@ -131,7 +132,6 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "public/"),
     publicPath: "/assets/",
-    // host: "0.0.0.0",  // required when inside Docker
     port: process.env.PORT || 1337,
     compress: true,
   },
