@@ -18,6 +18,9 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         node-version: 14.x
+    - run: yarn install --frozen-lockfile
+    # https://docs.sentry.io/platforms/node/typescript/#configuring-typescript-compiler
+    - run: npx -p typescript tsc --esModuleInterop --sourceMap --sourceRoot '/' --inlineSources api/**/*.ts
     - uses: getsentry/action-release@v1
       if: github.event.deployment_status.environment == 'production'
       env:
@@ -26,6 +29,7 @@ jobs:
         SENTRY_PROJECT: jarvis
       with:
         environment: ${{ github.event.deployment_status.environment }}
+        sourcemaps: ./api
     - uses: browser-actions/setup-chrome@latest
       with:
         chrome-version: stable

@@ -21,7 +21,7 @@ exports.default = gulp.series(
 );
 
 exports.serve = gulp.parallel(
-  npx("webpack", ["serve"]),
+  npx("webpack", ["serve", "--progress"]),
   npx("hugo", ["--watch", "--buildDrafts", "--buildFuture", "--verbose"]),
 );
 
@@ -77,6 +77,7 @@ function clean() {
     "_vendor/",
     "static/assets/",
     "data/manifest.json",
+    "api/**/*.js*",
   ]);
 }
 
