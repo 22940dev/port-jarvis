@@ -7,13 +7,9 @@
   "plugins": [
     "prettier"
   ],
-  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaVersion": 2018,
-    "sourceType": "module",
-    "babelOptions": {
-      "configFile": "./babel.config.json"
-    }
+    "sourceType": "module"
   },
   "env": {
     "browser": true,

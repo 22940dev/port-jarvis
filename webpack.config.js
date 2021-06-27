@@ -4,6 +4,7 @@ const SriPlugin = require("webpack-subresource-integrity");
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 const isProd = process.env.NODE_ENV === "production";
 
@@ -15,15 +16,19 @@ module.exports = {
   mode: isProd ? "production" : "development",
   devtool: isProd ? "nosources-source-map" : "source-map",
   output: {
-    filename: isProd ? "js/[name]-[contenthash:8].js" : "js/[name].js",
+    filename: isProd ? "js/[name]-[contenthash:6].js" : "js/[name].js",
     path: path.resolve(__dirname, "static/assets/"),
     publicPath: "/assets/",
     clean: true,
     crossOriginLoading: "anonymous",
+    environment: {
+      // https://github.com/babel/babel-loader#top-level-function-iife-is-still-arrow-on-webpack-5
+      arrowFunction: false,
+    },
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: isProd ? "css/[name]-[contenthash:8].css" : "css/[name].css",
+      filename: isProd ? "css/[name]-[contenthash:6].css" : "css/[name].css",
     }),
     new SriPlugin({
       hashFuncNames: ["sha512"],
@@ -39,11 +44,11 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, "assets/images/"),
-          to: "images/"
+          to: "images/",
         },
         {
           from: path.resolve(__dirname, "node_modules/twemoji-emojis/vendor/svg/"),
-          to: "emoji/"
+          to: "emoji/",
         },
       ],
     }),
@@ -54,11 +59,29 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: [
-          { loader: "babel-loader" }
+          {
+            loader: "babel-loader",
+            options: {
+              presets: [
+                [
+                  "@babel/preset-env",
+                  {
+                    include: [
+                      "transform-arrow-functions",
+                      "transform-block-scoping",
+                      "transform-template-literals",
+                    ],
+                    useBuiltIns: "entry",
+                    corejs: 3,
+                  },
+                ],
+              ],
+            },
+          }
         ],
       },
       {
-        test: /\.(sa|sc|c)ss$/i,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
           { loader: "css-loader", options: { sourceMap: true } },
@@ -89,7 +112,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(woff(2)?|ttf|otf|eot)$/i,
+        test: /\.(woff(2)?|ttf|otf|eot)$/,
         use: [
           {
             loader: "file-loader",
@@ -104,8 +127,19 @@ module.exports = {
   },
   optimization: {
     minimizer: [
-      `...`,
+      new TerserPlugin({
+        test: /\.js$/,
+        terserOptions: {
+          compress: {
+            arrows: false,
+            negate_iife: false,
+            sequences: false,
+          },
+          mangle: true,
+        },
+      }),
       new CssMinimizerPlugin({
+        test: /\.css$/,
         minify: CssMinimizerPlugin.cleanCssMinify,
         minimizerOptions: {
           compatibility: "*",
