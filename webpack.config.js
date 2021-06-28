@@ -14,7 +14,7 @@ module.exports = {
     path.resolve(__dirname, "assets/sass/main.scss"),
   ],
   mode: isProd ? "production" : "development",
-  devtool: isProd ? "nosources-source-map" : "source-map",
+  devtool: isProd ? "hidden-nosources-source-map" : "source-map",
   output: {
     filename: isProd ? "js/[name]-[contenthash:6].js" : "js/[name].js",
     path: path.resolve(__dirname, "static/assets/"),
