@@ -7,8 +7,6 @@ updates:
     interval: daily
   versioning-strategy: increase
   ignore:
-    - dependency-name: "faunadb"
-    - dependency-name: "hugo-extended"
     - dependency-name: "@types/*"
     - dependency-name: "@fontsource/*"
   commit-message:
