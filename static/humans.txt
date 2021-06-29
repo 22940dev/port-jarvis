@@ -29,12 +29,14 @@
 
 # TECHNOLOGY
 
-    Hugo
-    Webpack
-    Gulp
-    Vercel
-    FaunaDB
-    ...and more: https://jarv.is/uses/
+  - Hugo
+  - Vercel
+  - Webpack
+  - Gulp
+  - FaunaDB
+  - Percy
+  - Sentry
+  - ...and more: https://jarv.is/uses/
 
 # VIEW SOURCE
 
