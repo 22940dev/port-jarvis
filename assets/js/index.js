@@ -1,3 +1,5 @@
-require("./src/counter");
-require("./src/projects");
-require("./vendor/twemoji");
+import "./src/counter.js";
+import "./src/projects.js";
+import "./vendor/twemoji.js";
+
+export default () => {};

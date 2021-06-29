@@ -1,14 +1,26 @@
-const path = require("path");
-const WebpackAssetsManifest = require("webpack-assets-manifest");
-const SriPlugin = require("webpack-subresource-integrity");
-const CopyPlugin = require("copy-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
+import path from "path";
+import { fileURLToPath } from 'url';
+import WebpackAssetsManifest from "webpack-assets-manifest";
+import SriPlugin from "webpack-subresource-integrity";
+import CopyPlugin from "copy-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
+import TerserPlugin from "terser-webpack-plugin";
+
+import autoprefixer from "autoprefixer";
+import postcssSvgo from "postcss-svgo";
+import postcssFocus from "postcss-focus";
+import postcssColorRgbaFallback from "postcss-color-rgba-fallback";
+import postcssCombineDuplicatedSelectors from "postcss-combine-duplicated-selectors";
+import postcssNormalizeCharset from "postcss-normalize-charset";
+
+// https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#what-do-i-use-instead-of-__dirname-and-__filename
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const isProd = process.env.NODE_ENV === "production";
 
-module.exports = {
+export default {
   entry: [
     path.resolve(__dirname, "assets/js/index.js"),
     path.resolve(__dirname, "assets/sass/main.scss"),
@@ -92,18 +104,18 @@ module.exports = {
               postcssOptions: {
                 config: false,
                 plugins: [
-                  require("autoprefixer")(),
-                  require("postcss-svgo")({
+                  autoprefixer(),
+                  postcssSvgo({
                     encode: true,
                   }),
-                  require("postcss-focus")(),
-                  require("postcss-color-rgba-fallback")({
+                  postcssFocus(),
+                  postcssColorRgbaFallback({
                     properties: [
                       "background-image"
                     ],
                   }),
-                  require("postcss-combine-duplicated-selectors")(),
-                  require("postcss-normalize-charset")(),
+                  postcssCombineDuplicatedSelectors(),
+                  postcssNormalizeCharset(),
                 ],
               },
             },

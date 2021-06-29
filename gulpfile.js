@@ -1,10 +1,16 @@
-const gulp = require("gulp");
-const execa = require("gulp-execa").task;
-const htmlmin = require("gulp-html-minifier-terser");
-const imagemin = require("gulp-imagemin");
-const del = require("del");
+import gulp from "gulp";
+import { task as execa } from "gulp-execa";
+import htmlmin from "gulp-html-minifier-terser";
+import imagemin from "gulp-imagemin";
+import del from "del";
 
-exports.default = gulp.series(
+// use up-to-date imagemin plugins instead of those bundled with gulp-imagemin:
+import imageminMozjpeg from "imagemin-mozjpeg";
+import imageminPngquant from "imagemin-pngquant";
+import imageminGifsicle from "imagemin-gifsicle";
+import imageminSvgo from "imagemin-svgo";
+
+gulp.task("default", gulp.series(
   clean,
   npx("webpack", ["--mode", "production", "--profile"]),
   npx("hugo"),
@@ -12,14 +18,14 @@ exports.default = gulp.series(
     optimizeHtml,
     optimizeImages,
   ),
-);
+));
 
-exports.serve = gulp.parallel(
+gulp.task("serve", gulp.parallel(
   npx("webpack", ["serve", "--progress"]),
   npx("hugo", ["--watch", "--buildDrafts", "--buildFuture", "--verbose"]),
-);
+));
 
-exports.clean = gulp.task(clean);
+gulp.task("clean", clean);
 
 function optimizeHtml() {
   return gulp
@@ -45,18 +51,17 @@ function optimizeImages() {
     .src(["public/**/*.{gif,jpg,jpeg,png,svg}", "!public/assets/emoji/*"], { base: "./" })
     .pipe(
       imagemin([
-        // use up-to-date imagemin plugins instead of those bundled with gulp-imagemin:
-        require("imagemin-mozjpeg")({
+        imageminMozjpeg({
           quality: 85,
           progressive: true,
         }),
-        require("imagemin-pngquant")({
+        imageminPngquant({
           quality: [0.7, 0.9],
           speed: 1,
           strip: true,
         }),
-        require("imagemin-gifsicle")(),
-        require("imagemin-svgo")(),
+        imageminGifsicle(),
+        imageminSvgo(),
       ],
       {
         verbose: true,
