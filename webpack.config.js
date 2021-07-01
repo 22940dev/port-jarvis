@@ -1,5 +1,5 @@
 import path from "path";
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from "url";
 import WebpackAssetsManifest from "webpack-assets-manifest";
 import SriPlugin from "webpack-subresource-integrity";
 import CopyPlugin from "copy-webpack-plugin";
@@ -26,7 +26,7 @@ export default {
     path.resolve(__dirname, "assets/sass/main.scss"),
   ],
   mode: isProd ? "production" : "development",
-  devtool: isProd ? "hidden-nosources-source-map" : "source-map",
+  devtool: "source-map",
   output: {
     filename: isProd ? "js/[name]-[contenthash:6].js" : "js/[name].js",
     path: path.resolve(__dirname, "static/assets/"),
