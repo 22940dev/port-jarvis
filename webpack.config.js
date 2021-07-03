@@ -42,16 +42,6 @@ export default {
     new MiniCssExtractPlugin({
       filename: isProd ? "css/[name]-[contenthash:6].css" : "css/[name].css",
     }),
-    new SriPlugin({
-      hashFuncNames: ["sha512"],
-      enabled: true,
-    }),
-    new WebpackAssetsManifest({
-      writeToDisk: true,
-      output: path.resolve(__dirname, "data/manifest.json"),
-      publicPath: true,
-      integrity: true,
-    }),
     new CopyPlugin({
       patterns: [
         {
@@ -63,6 +53,16 @@ export default {
           to: "emoji/",
         },
       ],
+    }),
+    new SriPlugin({
+      hashFuncNames: ["sha512"],
+      enabled: true,
+    }),
+    new WebpackAssetsManifest({
+      writeToDisk: true,
+      output: path.resolve(__dirname, "data/manifest.json"),
+      publicPath: true,
+      integrity: true,
     }),
   ],
   module: {
@@ -138,6 +138,7 @@ export default {
     ],
   },
   optimization: {
+    minimize: isProd,
     minimizer: [
       new TerserPlugin({
         test: /\.js$/,

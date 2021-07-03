@@ -28,7 +28,7 @@ disableAliases = true
   description = "Hi there! I'm a frontend web developer based in Boston, Massachusetts specializing in the JAMstack, modern JavaScript frameworks, and progressive web apps."
   image = "images/logo.png"  # relative to assetDir root
   mainSection = "notes"  # content that appears in feeds
-  baseURL = "https://jarv.is"  # different from baseURL above, this is only used where necessary
+  baseURL = "https://jarv.is"  # different from baseURL above, this is only used where necessary (no trailing slash!)
   [params.theme]
     maxWidth = 865  # px
     defaultTheme = "light"  # light or dark?
