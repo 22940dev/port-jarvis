@@ -61,7 +61,7 @@
     "@types/numeral": "^2.0.1",
     "@types/pluralize": "^0.0.29",
     "@types/twemoji": "^12.1.1",
-    "@types/xml2js": "^0.4.8",
+    "@types/xml2js": "^0.4.9",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "@typescript-eslint/parser": "^4.28.1",
     "@vercel/node": "^1.11.1",

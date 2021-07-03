@@ -76,15 +76,13 @@ function clean() {
     "builds/",
     "_vendor/",
     "static/assets/",
-    "data/manifest.json",
-    "api/**/*.js*",
   ]);
 }
 
 // run a locally installed (i.e. ./node_modules/.bin/foo) binary, similar to a package.json script
-function npx(bin, options) {
+function npx(bin, args) {
   // WARNING: MAJOR HACKS AHEAD:
-  const cmd = `${bin} ${options ? options.join(" ") : ""}`.trim();
+  const cmd = `${bin} ${args ? args.join(" ") : ""}`.trim();
   return execa(cmd, {
     preferLocal: true,
     shell: true,
