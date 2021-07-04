@@ -36,10 +36,10 @@
   <script>(function(d){var u=d.document,f=u.body.classList,e=localStorage,c="dark_mode_pref",t=e.getItem(c),a="dark",n="light",r="{{ .Site.Params.Theme.defaultTheme | safeJS }}",o=u.querySelector(".dark-mode-toggle"),i=r===a,b=function(d){f.remove(a,n);f.add(d);i=d===a};t===a&&b(a);t===n&&b(n);if(!t){var s=function(d){return"(prefers-color-scheme: "+d+")"};d.matchMedia(s(a)).matches?b(a):d.matchMedia(s(n)).matches?b(n):b(r);d.matchMedia(s(a)).addListener((function(d){d.matches&&b(a)}));d.matchMedia(s(n)).addListener((function(d){d.matches&&b(n)}))}if(o){o.style.display="block";o.addEventListener("click",(function(){if(i){b(n);e.setItem(c,n)}else{b(a);e.setItem(c,a)}}),!0)}})(window)</script>
 
   {{ with .Site.Data.manifest }}
-    {{ with index . "main.js" }}
+    {{ with index . "main.js" -}}
       <script async defer src="{{ .src | absURL }}" ></script>
-    {{ end }}
-  {{ end }}
+    {{ end -}}
+  {{ end -}}
 {{- end -}}
 
 
@@ -50,20 +50,22 @@
 
 
 {{/* If this is a page/post, link View Source to specific file on GitHub; otherwise, just link to repo homepage */}}
-{{- with .Site.Params.social.githubRepo }}
-  {{- $githubURL := print "https://github.com/" . }}
-  {{- if not $.IsPage }}
-    {{- $.Scratch.Set "sourceURL" $githubURL }}
-  {{- else }}
-    {{- $.Scratch.Set "sourceURL" (print $githubURL "/blob/main/content/" $.File.Path) }}
-  {{- end }}
-{{- end }}
+{{- with .Site.Params.social.githubRepo -}}
+  {{- $githubURL := print "https://github.com/" . -}}
+  {{- if not $.IsPage -}}
+    {{- $.Scratch.Set "sourceURL" $githubURL -}}
+  {{- else -}}
+    {{- $.Scratch.Set "sourceURL" (print $githubURL "/blob/main/content/" $.File.Path) -}}
+  {{- end -}}
+{{- end -}}
 
 
 {{/* Chooses and initializes various images for use by JSON schema & open graph tags */}}
 {{/* Author image (default) */}}
-{{- with index .Site.Data.manifest .Site.Author.image -}}
-  {{- $.Scratch.Set "authorImage" (dict "Permalink" (absURL .src) "Width" 1200 "Height" 1200 "MediaType" "image/jpeg") -}}
+{{- with .Site.Data.manifest -}}
+  {{- with index . $.Site.Author.image -}}
+    {{- $.Scratch.Set "authorImage" (dict "Permalink" (absURL .src) "Width" 1200 "Height" 1200 "MediaType" "image/jpeg") -}}
+  {{- end -}}
 {{- end -}}
 {{/* Page image (via frontmatter) */}}
 {{- with .Params.image -}}
@@ -77,6 +79,8 @@
   {{- end -}}
 {{- end -}}
 {{/* Site logo */}}
-{{- with index .Site.Data.manifest .Site.Params.image -}}
-  {{- $.Scratch.Set "logoImage" (dict "Permalink" (absURL .src) "Width" 2048 "Height" 2048 "MediaType" "image/png") -}}
+{{- with .Site.Data.manifest -}}
+  {{- with index . $.Site.Params.image -}}
+    {{- $.Scratch.Set "logoImage" (dict "Permalink" (absURL .src) "Width" 2048 "Height" 2048 "MediaType" "image/png") -}}
+  {{- end -}}
 {{- end -}}

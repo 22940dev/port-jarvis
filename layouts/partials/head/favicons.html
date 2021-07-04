@@ -1,12 +1,15 @@
-{{- $s := slice -}}
-{{- range (split .icoSizes " ") }}{{ $s = $s | append (printf "%vx%v" . .) }}{{ end -}}
-{{- $faviconIco := index .manifest "images/favicon.ico" }}
-<link rel="icon" href="{{ $faviconIco.src | absURL }}"> <!-- sizes="{{ delimit $s " " }}" -->
+{{ with .Site.Data.manifest }}
+  {{- with index . "images/favicon.ico" }}
+  <link rel="icon" href="{{ .src | absURL }}">
+  {{- end }}
 
-{{- $faviconSvg := index .manifest "images/favicon.svg" }}
-<link rel="icon" href="{{ $faviconSvg.src | absURL }}" type="image/svg+xml">
+  {{- with index . "images/favicon.svg" }}
+  <link rel="icon" href="{{ .src | absURL }}" type="image/svg+xml">
+  {{- end -}}
 
-{{- $appleIcon := index .manifest "images/apple-touch-icon.png" }}
-<link rel="apple-touch-icon" href="{{ $appleIcon.src | absURL }}" sizes="180x180">
+  {{- with index . "images/apple-touch-icon.png" }}
+  <link rel="apple-touch-icon" href="{{ .src | absURL }}" sizes="180x180">
+  {{- end }}
+{{ end }}
 
 <link rel="manifest" href="{{ "site.webmanifest" | absURL }}">

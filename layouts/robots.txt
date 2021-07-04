@@ -2,7 +2,8 @@ User-Agent: *
 {{- if eq hugo.Environment "production" }}
 Disallow: /403.html
 Disallow: /404.html
-Disallow: /api/
+Disallow: /api/mention/
+Disallow: /api/ping/
 Sitemap: {{ print .Site.Params.baseUrl "/sitemap.xml" }}
 {{- else }}
 Disallow: /

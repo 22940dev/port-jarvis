@@ -1,0 +1,7 @@
+{{ if .Site.Params.social.webmentionIO }}
+<link rel="webmention" href="{{ "/api/mention/" | absURL }}">
+<link rel="pingback" href="{{ "/api/ping/" | absURL }}">
+{{ end }}
+
+<link rel="author" href="{{ "humans.txt" | absURL }}">
+<link rel="pgpkey" href="{{ "pubkey.asc" | absURL }}" type="application/pgp-keys">

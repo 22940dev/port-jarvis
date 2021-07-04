@@ -1,9 +1,4 @@
-{{ if .Site.Params.social.webmentionIO }}
-<link rel="webmention" href="{{ "/api/mention/" | absURL }}">
-<link rel="pingback" href="{{ "/api/ping/" | absURL }}">
-{{ end }}
-
 <link rel="canonical" href="{{ print .Site.Params.baseURL .Permalink }}">
 
-<link rel="author" href="{{ "humans.txt" | absURL }}">
-<link rel="pgpkey" href="{{ "pubkey.asc" | absURL }}" type="application/pgp-keys">
+<link rel="alternate" href="{{ "feed.xml" | absURL }}" type="application/rss+xml" title="{{ .Site.Title }} (RSS)">
+<link rel="alternate" href="{{ "feed.atom" | absURL }}" type="application/atom+xml" title="{{ .Site.Title }} (Atom)">
