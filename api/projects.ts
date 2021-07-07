@@ -3,7 +3,7 @@
 import * as Sentry from "@sentry/node";
 import * as Tracing from "@sentry/tracing"; // eslint-disable-line @typescript-eslint/no-unused-vars
 import { VercelRequest, VercelResponse } from "@vercel/node";
-import { escape } from "html-escaper";
+import { encode } from "html-entities";
 import { DateTime } from "luxon";
 import numeral from "numeral";
 import { GraphQLClient } from "graphql-request";
@@ -100,7 +100,7 @@ const fetchRepos = async (sort: string, limit: number): Promise<Repository[]> =>
   const currentRepos: Repository[] = response.user.repositories.edges.map(
     ({ node: repo }: { [key: string]: Repository }) => ({
       ...repo,
-      description: escape(repo.description),
+      description: encode(repo.description),
       stargazerCount_pretty: numeral(repo.stargazerCount).format("0,0"),
       forkCount_pretty: numeral(repo.forkCount).format("0,0"),
       pushedAt_relative: DateTime.fromISO(repo.pushedAt).toRelative({ locale: "en" }),

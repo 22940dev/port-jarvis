@@ -4,9 +4,12 @@ import * as Sentry from "@sentry/node";
 import * as Tracing from "@sentry/tracing"; // eslint-disable-line @typescript-eslint/no-unused-vars
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import { Client, query as q } from "faunadb";
-import numeral from "numeral";
+import fetch from "node-fetch";
 import pluralize from "pluralize";
-import rssParser from "rss-parser";
+import numeral from "numeral";
+import { DateTime } from "luxon";
+import parser from "fast-xml-parser";
+import { decode } from "html-entities";
 
 const baseUrl = "https://jarv.is/";
 
@@ -96,14 +99,10 @@ const incrementPageHits = async (slug: string | string[], client: Client) => {
 };
 
 const getSiteStats = async (client: Client) => {
-  const parser = new rssParser({
-    timeout: 3000,
-  });
-
   // get database and RSS results asynchronously
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [feed, result] = await Promise.all<{ [key: string]: any }, any>([
-    parser.parseURL(baseUrl + "feed.xml"),
+    parser.parse(await (await fetch(baseUrl + "feed.xml")).text()), // this is messy but it works :)
     client.query(
       q.Map(
         q.Paginate(q.Documents(q.Collection("hits"))),
@@ -120,11 +119,11 @@ const getSiteStats = async (client: Client) => {
 
   pages.map((p: PageStats) => {
     // match URLs from RSS feed with db to populate some metadata
-    const match = feed.items.find((x: { link: string }) => x.link === baseUrl + p.slug + "/");
+    const match = feed.rss.channel.item.find((x: { link: string }) => x.link === baseUrl + p.slug + "/");
     if (match) {
-      p.title = match.title;
+      p.title = decode(match.title);
       p.url = match.link;
-      p.date = match.isoDate;
+      p.date = DateTime.fromRFC2822(match.pubDate).toISO();
     }
 
     // it's easier to add comma-separated numbers and proper pluralization here on the backend

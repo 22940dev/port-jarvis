@@ -7,7 +7,7 @@ import * as Sentry from "@sentry/node";
 import * as Tracing from "@sentry/tracing"; // eslint-disable-line @typescript-eslint/no-unused-vars
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import fetch from "node-fetch";
-import querystring from "querystring";
+import * as queryString from "query-string";
 
 const { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN } = process.env;
 
@@ -74,7 +74,7 @@ const getAccessToken = async () => {
       Authorization: `Basic ${basic}`,
       "Content-Type": "application/x-www-form-urlencoded",
     },
-    body: querystring.stringify({
+    body: queryString.stringify({
       grant_type: "refresh_token",
       refresh_token: SPOTIFY_REFRESH_TOKEN,
     }),

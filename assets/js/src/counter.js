@@ -1,4 +1,5 @@
 import fetch from "cross-fetch";
+import * as queryString from "query-string";
 
 // don't continue if there isn't a span#meta-hits element on this page
 const wrapper = document.getElementById("meta-hits");
@@ -14,7 +15,7 @@ if (wrapper) {
   // strip beginning and ending forward slash
   const slug = canonical.pathname.slice(1, -1);
 
-  fetch("/api/hits/?slug=" + slug)
+  fetch(queryString.stringifyUrl({ url: "/api/hits/", query: { slug: slug } }))
     .then((response) => response.json())
     .then((data) => {
       if (typeof data.hits !== "undefined") {
