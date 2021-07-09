@@ -1,4 +1,5 @@
 import fetch from "cross-fetch";
+import numeral from "numeral";
 import * as queryString from "query-string";
 
 // don't continue if there isn't a span#meta-hits element on this page
@@ -18,14 +19,17 @@ if (wrapper) {
   fetch(queryString.stringifyUrl({ url: "/api/hits/", query: { slug: slug } }))
     .then((response) => response.json())
     .then((data) => {
-      if (typeof data.hits !== "undefined") {
+      if (data.hits) {
         // finally inject the hits and hide the loading spinner
         const spinner = document.getElementById("hit-spinner");
         const counter = document.getElementById("hit-counter");
 
+        const hitsComma = numeral(data.hits).format("0,0");
+        const hitsPlural = data.hits === 1 ? "hit" : "hits";
+
         if (spinner) spinner.style.display = "none";
-        if (counter) counter.appendChild(document.createTextNode(data.pretty_hits));
-        wrapper.title = data.pretty_hits + " " + data.pretty_unit;
+        if (counter) counter.appendChild(document.createTextNode(hitsComma));
+        wrapper.title = hitsComma + " " + hitsPlural;
       } else {
         // something went horribly wrong, initiate coverup
         wrapper.style.display = "none";

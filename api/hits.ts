@@ -5,9 +5,6 @@ import * as Tracing from "@sentry/tracing"; // eslint-disable-line @typescript-e
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import { Client, query as q } from "faunadb";
 import fetch from "node-fetch";
-import pluralize from "pluralize";
-import numeral from "numeral";
-import { DateTime } from "luxon";
 import parser from "fast-xml-parser";
 import { decode } from "html-entities";
 
@@ -68,7 +65,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
   }
 };
 
-const incrementPageHits = async (slug: string | string[], client: Client) => {
+const incrementPageHits = async (slug: string | string[], client: Client): Promise<PageStats> => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const result = await client.query<any>(
     q.Let(
@@ -87,18 +84,11 @@ const incrementPageHits = async (slug: string | string[], client: Client) => {
     )
   );
 
-  // add formatted hits with comma and pluralized "hit(s)", simpler to do here than in browser
-  const hits: PageStats = {
-    ...result.data,
-    pretty_hits: numeral(result.data.hits).format("0,0"),
-    pretty_unit: pluralize("hit", result.data.hits),
-  };
-
   // send client the *new* hit count
-  return hits;
+  return result.data;
 };
 
-const getSiteStats = async (client: Client) => {
+const getSiteStats = async (client: Client): Promise<OverallStats> => {
   // get database and RSS results asynchronously
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [feed, result] = await Promise.all<{ [key: string]: any }, any>([
@@ -123,12 +113,8 @@ const getSiteStats = async (client: Client) => {
     if (match) {
       p.title = decode(match.title);
       p.url = match.link;
-      p.date = DateTime.fromRFC2822(match.pubDate).toISO();
+      p.date = new Date(match.pubDate).toISOString();
     }
-
-    // it's easier to add comma-separated numbers and proper pluralization here on the backend
-    p.pretty_hits = numeral(p.hits).format("0,0");
-    p.pretty_unit = pluralize("hit", p.hits);
 
     // add these hits to running tally
     stats.total.hits += p.hits;
@@ -140,10 +126,6 @@ const getSiteStats = async (client: Client) => {
   stats.pages.sort((a: { hits: number }, b: { hits: number }) => {
     return a.hits > b.hits ? -1 : 1;
   });
-
-  // do same prettification as above to totals
-  stats.total.pretty_hits = numeral(stats.total.hits).format("0,0");
-  stats.total.pretty_unit = pluralize("hit", stats.total.hits);
 
   return stats;
 };

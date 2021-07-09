@@ -12,7 +12,7 @@ import imageminSvgo from "imagemin-svgo";
 
 gulp.task("default", gulp.series(
   clean,
-  npx("webpack", ["--mode", "production", "--progress", "profile"]),
+  npx("webpack", ["--mode", "production"]),
   npx("hugo"),
   gulp.parallel(
     optimizeHtml,

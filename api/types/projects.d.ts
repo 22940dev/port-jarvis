@@ -7,9 +7,6 @@ type Repository = {
     name: string;
   };
   stargazerCount: number;
-  stargazerCount_pretty?: string;
   forkCount: number;
-  forkCount_pretty?: string;
   pushedAt: string;
-  pushedAt_relative?: string;
 };
