@@ -105,7 +105,7 @@ const getSiteStats = async (client: Client) => {
     parser.parse(await (await fetch(baseUrl + "feed.xml")).text()), // this is messy but it works :)
     client.query(
       q.Map(
-        q.Paginate(q.Documents(q.Collection("hits"))),
+        q.Paginate(q.Documents(q.Collection("hits")), { size: 99 }),
         q.Lambda((x) => q.Select("data", q.Get(x)))
       )
     ),
