@@ -145,6 +145,7 @@ export default {
         terserOptions: {
           compress: {
             arrows: false,
+            drop_console: true,
             negate_iife: false,
             sequences: false,
           },
