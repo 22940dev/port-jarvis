@@ -26,8 +26,12 @@ if (wrapper) {
         const hitsComma = numeral(data.hits).format("0,0");
         const hitsPlural = data.hits === 1 ? "hit" : "hits";
 
-        if (spinner) spinner.style.display = "none";
-        if (counter) counter.appendChild(document.createTextNode(hitsComma));
+        if (spinner) {
+          spinner.style.display = "none";
+        }
+        if (counter) {
+          counter.appendChild(document.createTextNode(hitsComma));
+        }
         wrapper.title = hitsComma + " " + hitsPlural;
       } else {
         // something went horribly wrong, initiate coverup

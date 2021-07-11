@@ -63,6 +63,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     Sentry.captureException(error);
     await Sentry.flush(2000);
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     res.status(400).json({ message: error.message });
   }
 };
@@ -84,6 +85,7 @@ const getAccessToken = async () => {
 };
 
 const getNowPlaying = async (): Promise<Track> => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { access_token } = await getAccessToken();
 
   const response = await fetch(NOW_PLAYING_ENDPOINT, {
@@ -98,6 +100,7 @@ const getNowPlaying = async (): Promise<Track> => {
     return { isPlaying: false };
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const active: Activity = await response.json();
 
   if (active.is_playing === true && active.item) {
@@ -122,6 +125,7 @@ const getNowPlaying = async (): Promise<Track> => {
 };
 
 const getTopTracks = async (): Promise<Track[]> => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { access_token } = await getAccessToken();
 
   const response = await fetch(TOP_TRACKS_ENDPOINT, {
@@ -132,8 +136,10 @@ const getTopTracks = async (): Promise<Track[]> => {
     },
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { items } = await response.json();
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
   const tracks: Track[] = items.map((track: TrackSchema) => ({
     artist: track.artists.map((_artist) => _artist.name).join(", "),
     title: track.name,

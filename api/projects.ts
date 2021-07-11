@@ -47,6 +47,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     Sentry.captureException(error);
     await Sentry.flush(2000);
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     res.status(400).json({ message: error.message });
   }
 };
@@ -94,7 +95,9 @@ const fetchRepos = async (sort: string, limit: number): Promise<Repository[]> =>
     }
   `;
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const response = await client.request(query, { sort, limit });
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
   const currentRepos: Repository[] = response.user.repositories.edges.map(
     ({ node: repo }: { [key: string]: Repository }) => ({
       ...repo,

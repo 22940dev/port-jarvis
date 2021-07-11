@@ -1,31 +1,46 @@
 {
   "extends": [
+    "eslint:recommended",
     "plugin:compat/recommended",
-    "plugin:prettier/recommended",
-    "prettier"
+    "plugin:import/recommended",
+    "plugin:prettier/recommended"
   ],
   "plugins": [
     "prettier"
   ],
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
-    "ecmaVersion": 2018,
-    "sourceType": "module"
+    "ecmaVersion": 2015,
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": [
+        [
+          "@babel/preset-env"
+        ]
+      ]
+    }
+  },
+  "rules": {
+    "curly": "error",
+    "quotes": ["error", "double"]
   },
   "env": {
     "browser": true,
     "es6": true
   },
-  "rules": {},
   "overrides": [{
     "files": [
-      "**/*.ts"
+      "api/**/*.ts"
     ],
     "extends": [
+      "eslint:recommended",
       "plugin:@typescript-eslint/recommended",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking",
       "plugin:import/recommended",
       "plugin:import/typescript",
-      "plugin:prettier/recommended",
-      "prettier"
+      "plugin:prettier/recommended"
     ],
     "plugins": [
       "@typescript-eslint",
@@ -33,14 +48,18 @@
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-      "ecmaVersion": 2018,
-      "sourceType": "module"
+      "ecmaVersion": 2020,
+      "sourceType": "module",
+      "project": ["./tsconfig.json"]
+    },
+    "rules": {
+      "@typescript-eslint/restrict-template-expressions": "off"
     },
     "env": {
-      "browser": true,
+      "browser": false,
       "node": true,
       "es6": true
     }
   }],
-  "ignorePatterns": ["public/**", "postcss.config.js", "gulpfile.js", "webpack.config.js"]
+  "ignorePatterns": ["public/**", "static/assets/**", "postcss.config.js", "gulpfile.js", "webpack.config.js"]
 }

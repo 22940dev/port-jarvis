@@ -61,12 +61,13 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     Sentry.captureException(error);
     await Sentry.flush(2000);
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     res.status(400).json({ message: error.message });
   }
 };
 
 const incrementPageHits = async (slug: string | string[], client: Client): Promise<PageStats> => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
   const result = await client.query<any>(
     q.Let(
       { match: q.Match(q.Index("hits_by_slug"), slug) },
@@ -85,12 +86,13 @@ const incrementPageHits = async (slug: string | string[], client: Client): Promi
   );
 
   // send client the *new* hit count
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
   return result.data;
 };
 
 const getSiteStats = async (client: Client): Promise<OverallStats> => {
   // get database and RSS results asynchronously
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
   const [feed, result] = await Promise.all<{ [key: string]: any }, any>([
     parser.parse(await (await fetch(baseUrl + "feed.xml")).text()), // this is messy but it works :)
     client.query(
@@ -101,6 +103,7 @@ const getSiteStats = async (client: Client): Promise<OverallStats> => {
     ),
   ]);
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
   const pages: PageStats[] = result.data;
   const stats: OverallStats = {
     total: { hits: 0 },
@@ -109,10 +112,14 @@ const getSiteStats = async (client: Client): Promise<OverallStats> => {
 
   pages.map((p: PageStats) => {
     // match URLs from RSS feed with db to populate some metadata
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
     const match = feed.rss.channel.item.find((x: { link: string }) => x.link === baseUrl + p.slug + "/");
     if (match) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       p.title = decode(match.title);
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
       p.url = match.link;
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       p.date = new Date(match.pubDate).toISOString();
     }
 

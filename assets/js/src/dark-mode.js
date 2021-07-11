@@ -1,3 +1,4 @@
+/* eslint-disable */
 /*! Dark mode switcheroo | MIT License | jrvs.io/darkmode */
 
 // improve variable mangling when minifying
