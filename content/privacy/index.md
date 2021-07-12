@@ -11,13 +11,19 @@ Okay, this is an easy one. 😉
 
 ## Analytics
 
-This website uses a simple hit counter on each post to tally an aggregate number of pageviews. Individual views and identifying details are not stored. [The serverless function is open source.](https://github.com/jakejarvis/jarv.is/blob/main/api/hits.ts)
+A simple hit counter on each page tallies an aggregate number of pageviews (i.e. `hits = hits + 1`). Individual views and identifying (or non-identifying) details are **never stored or logged**.
+
+The [serverless function](https://github.com/jakejarvis/jarv.is/blob/main/api/hits.ts) and [client script](https://github.com/jakejarvis/jarv.is/blob/main/assets/js/src/counter.js) are open source, and [snapshots of the database](https://github.com/jakejarvis/website-stats) are public.
+
+{{< image src="images/fauna_hits.png" alt="The entire database schema." link="/privacy/images/fauna_hits.png" />}}
 
 ## Hosting
 
 Pages and first-party assets on this website are served by [**▲ Vercel**](https://vercel.com/). Refer to their [privacy policy](https://vercel.com/legal/privacy-policy) for more information.
 
-For a likely excessive level of privacy and security, this website is also mirrored on the [🧅 Tor network](https://www.torproject.org/) at: [**jarvis2i2vp4j4tbxjogsnqdemnte5xhzyi7hziiyzxwge3hzmh57zad.onion**](http://jarvis2i2vp4j4tbxjogsnqdemnte5xhzyi7hziiyzxwge3hzmh57zad.onion).
+For a likely excessive level of privacy and security, this website is also mirrored on the [🧅 Tor network](https://www.torproject.org/) at:
+
+> [**jarvis2i2vp4j4tbxjogsnqdemnte5xhzyi7hziiyzxwge3hzmh57zad.onion**](http://jarvis2i2vp4j4tbxjogsnqdemnte5xhzyi7hziiyzxwge3hzmh57zad.onion)
 
 ## Third-Party Content
 
