@@ -1,4 +1,4 @@
-type TrackSchema = {
+export type TrackSchema = {
   name: string;
   artists: Array<{
     name: string;
@@ -15,7 +15,7 @@ type TrackSchema = {
   };
 };
 
-type Track = {
+export type Track = {
   isPlaying: boolean;
   artist?: string;
   title?: string;
@@ -24,7 +24,7 @@ type Track = {
   songUrl?: string;
 };
 
-type Activity = {
+export type Activity = {
   is_playing: boolean;
   item?: TrackSchema;
 };

@@ -3,19 +3,14 @@
     "target": "esnext",
     "lib": [
       "esnext",
-      "es2020"
+      "es2018"
     ],
-    "module": "es2020",
+    "module": "commonjs",
     "moduleResolution": "node",
     "importHelpers": true,
     "esModuleInterop": true,
     "isolatedModules": true,
-    "alwaysStrict": true,
     "strict": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "strictPropertyInitialization": true,
     "noEmit": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,

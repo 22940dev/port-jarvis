@@ -1,13 +1,12 @@
-/// <reference types="./types/tracks" />
-
 // Fetches my Spotify most-played tracks or currently playing track.
 // Heavily inspired by @leerob: https://leerob.io/snippets/spotify
 
 import * as Sentry from "@sentry/node";
-import * as Tracing from "@sentry/tracing"; // eslint-disable-line @typescript-eslint/no-unused-vars
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import fetch from "node-fetch";
 import * as queryString from "query-string";
+
+import type { Track, TrackSchema, Activity } from "./types/tracks";
 
 const { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN } = process.env;
 
@@ -23,7 +22,6 @@ const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks?time_range
 Sentry.init({
   dsn: process.env.SENTRY_DSN || "",
   environment: process.env.NODE_ENV || process.env.VERCEL_ENV || process.env.SENTRY_ENVIRONMENT || "",
-  tracesSampleRate: 1.0,
 });
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -104,20 +102,13 @@ const getNowPlaying = async (): Promise<Track> => {
   const active: Activity = await response.json();
 
   if (active.is_playing === true && active.item) {
-    const isPlaying = active.is_playing;
-    const artist = active.item.artists.map((_artist) => _artist.name).join(", ");
-    const title = active.item.name;
-    const album = active.item.album.name;
-    const imageUrl = active.item.album.images[0].url;
-    const songUrl = active.item.external_urls.spotify;
-
     return {
-      isPlaying,
-      artist,
-      title,
-      album,
-      imageUrl,
-      songUrl,
+      isPlaying: active.is_playing,
+      artist: active.item.artists.map((_artist) => _artist.name).join(", "),
+      title: active.item.name,
+      album: active.item.album.name,
+      imageUrl: active.item.album.images[0].url,
+      songUrl: active.item.external_urls.spotify,
     };
   } else {
     return { isPlaying: false };

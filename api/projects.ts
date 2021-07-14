@@ -1,19 +1,13 @@
-/// <reference types="./types/projects" />
-
 import * as Sentry from "@sentry/node";
-import * as Tracing from "@sentry/tracing"; // eslint-disable-line @typescript-eslint/no-unused-vars
 import { VercelRequest, VercelResponse } from "@vercel/node";
+import { graphql, GraphQlQueryResponseData } from "@octokit/graphql";
 import { encode } from "html-entities";
-import { GraphQLClient } from "graphql-request";
-import { gql } from "graphql-tag";
 
-const username = "jakejarvis";
-const endpoint = "https://api.github.com/graphql";
+import type { Repository } from "./types/projects";
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN || "",
   environment: process.env.NODE_ENV || process.env.VERCEL_ENV || process.env.SENTRY_ENVIRONMENT || "",
-  tracesSampleRate: 1.0,
 });
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -27,19 +21,21 @@ export default async (req: VercelRequest, res: VercelResponse) => {
       throw new Error("GitHub API credentials aren't set.");
     }
 
-    // default to latest repos
-    let sortBy = "PUSHED_AT";
-    // get most popular repos (/projects/?top)
-    if (typeof req.query.top !== "undefined") sortBy = "STARGAZERS";
-
-    const repos = await fetchRepos(sortBy, 16);
+    let result;
+    if (typeof req.query.top !== "undefined") {
+      // get most popular repos (/projects/?top)
+      result = await fetchRepos("STARGAZERS");
+    } else {
+      // default to latest repos
+      result = await fetchRepos("PUSHED_AT");
+    }
 
     // let Vercel edge and browser cache results for 15 mins
     res.setHeader("Cache-Control", "public, max-age=900, s-maxage=900, stale-while-revalidate");
     res.setHeader("Access-Control-Allow-Methods", "GET");
     res.setHeader("Access-Control-Allow-Origin", "*");
 
-    res.status(200).json(repos);
+    res.status(200).json(result);
   } catch (error) {
     console.error(error);
 
@@ -52,58 +48,53 @@ export default async (req: VercelRequest, res: VercelResponse) => {
   }
 };
 
-const fetchRepos = async (sort: string, limit: number): Promise<Repository[]> => {
-  // https://docs.github.com/en/graphql/guides/forming-calls-with-graphql
-  const client = new GraphQLClient(endpoint, {
-    headers: {
-      Authorization: `Bearer ${process.env.GH_PUBLIC_TOKEN}`,
-      Accept: "application/vnd.github.v3+json",
-    },
-  });
-
+const fetchRepos = async (sort: string): Promise<Repository[]> => {
   // https://docs.github.com/en/graphql/reference/objects#repository
-  const query = gql`
-    query ($sort: String, $limit: Int) {
-      user(login: "${username}") {
-        repositories(
-          first: $limit,
-          isLocked: false,
-          isFork: false,
-          ownerAffiliations: OWNER,
-          privacy: PUBLIC,
-          orderBy: {
-            field: $sort,
-            direction: DESC
-          }
-        ) {
-          edges {
-            node {
-              name
-              url
-              description
-              pushedAt
-              stargazerCount
-              forkCount
-              primaryLanguage {
+  const { user } = await graphql<GraphQlQueryResponseData>(
+    `
+      query ($username: String!, $sort: String, $limit: Int) {
+        user(login: $username) {
+          repositories(
+            first: $limit
+            isLocked: false
+            isFork: false
+            ownerAffiliations: OWNER
+            privacy: PUBLIC
+            orderBy: { field: $sort, direction: DESC }
+          ) {
+            edges {
+              node {
                 name
-                color
+                url
+                description
+                pushedAt
+                stargazerCount
+                forkCount
+                primaryLanguage {
+                  name
+                  color
+                }
               }
             }
           }
         }
       }
+    `,
+    {
+      username: "jakejarvis",
+      limit: 16,
+      sort: sort,
+      headers: {
+        authorization: `token ${process.env.GH_PUBLIC_TOKEN}`,
+      },
     }
-  `;
-
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const response = await client.request(query, { sort, limit });
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-  const currentRepos: Repository[] = response.user.repositories.edges.map(
-    ({ node: repo }: { [key: string]: Repository }) => ({
-      ...repo,
-      description: encode(repo.description),
-    })
   );
 
-  return currentRepos;
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+  const repos: Repository[] = user.repositories.edges.map(({ node: repo }: { [key: string]: Repository }) => ({
+    ...repo,
+    description: encode(repo.description),
+  }));
+
+  return repos;
 };

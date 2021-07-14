@@ -1,11 +1,10 @@
-type Repository = {
+import type { Language } from "@octokit/graphql-schema";
+
+export type Repository = {
   name: string;
   url: string;
   description: string;
-  primaryLanguage?: {
-    color: string;
-    name: string;
-  };
+  primaryLanguage?: Language;
   stargazerCount: number;
   forkCount: number;
   pushedAt: string;
