@@ -125,15 +125,10 @@ export default {
       },
       {
         test: /\.(woff(2)?|ttf|otf|eot)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: "fonts/",
-            },
-          },
-        ],
+        type: "asset/resource",
+        generator: {
+          filename: "fonts/[name][ext]",
+        }
       },
     ],
   },
