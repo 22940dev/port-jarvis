@@ -15,7 +15,7 @@ I keep an ongoing list of [post ideas](https://github.com/jakejarvis/jarv.is/iss
 
 ### 🧶&nbsp;&nbsp;Using Yarn:
 
-Run `yarn install` and `yarn start`, then open [http://localhost:1337/](http://localhost:1337/). ([Yarn must be installed](https://yarnpkg.com/en/docs/install) first; NPM _should_ also work at your own risk.) Hugo, [Webpack](https://webpack.js.org/), and [Gulp](https://gulpjs.com/) will automatically work together to build the site, and pages will live-refresh when source files are changed.
+Run `yarn install` and `yarn start`, then open [http://localhost:1337/](http://localhost:1337/). ([Yarn must be installed](https://yarnpkg.com/en/docs/install) first; NPM _should_ also work at your own risk.) Hugo, [Webpack](https://webpack.js.org/), and [Gulp](https://gulpjs.com/) will automatically work together to build the site, and pages will live-refresh via [Browsersync](https://browsersync.io/) when source files are changed.
 
 ### ▲&nbsp;&nbsp;Using [`vercel dev`](https://vercel.com/docs/cli#commands/dev):
 

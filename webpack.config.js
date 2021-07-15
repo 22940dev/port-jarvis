@@ -177,11 +177,4 @@ export default {
       }),
     ],
   },
-  devServer: {
-    port: process.env.PORT || 1337,
-    contentBase: path.join(__dirname, "public/"),
-    watchContentBase: true,
-    publicPath: "/assets/",
-    compress: true,
-  },
 };

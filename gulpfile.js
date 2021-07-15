@@ -1,3 +1,6 @@
+import path from "path";
+import { fileURLToPath } from "url";
+import BrowserSync from "browser-sync";
 import gulp from "gulp";
 import { task as execa } from "gulp-execa";
 import htmlmin from "gulp-html-minifier-terser";
@@ -10,6 +13,10 @@ import imageminPngquant from "imagemin-pngquant";
 import imageminGifsicle from "imagemin-gifsicle";
 import imageminSvgo from "imagemin-svgo";
 
+// https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#what-do-i-use-instead-of-__dirname-and-__filename
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 gulp.task("default", gulp.series(
   clean,
   npx("webpack", ["--mode", "production"]),
@@ -21,27 +28,47 @@ gulp.task("default", gulp.series(
 ));
 
 gulp.task("serve", gulp.parallel(
-  npx("webpack", ["serve", "--mode", "development", "--progress", "profile"]),
+  npx("webpack", ["--watch", "--mode", "development"]),
   npx("hugo", ["--watch", "--buildDrafts", "--buildFuture", "--verbose"]),
+  startServer,
 ));
 
 gulp.task("clean", clean);
+
+function startServer() {
+  const browserSync = BrowserSync.create();
+  const publicDir = path.resolve(__dirname, "public");
+
+  browserSync.init({
+    server: {
+      baseDir: publicDir,
+    },
+    port: process.env.PORT || 1337,
+    reloadDelay: 1000, // delay to prevent double-refresh from hugo & webpack negotiating
+    open: false,
+    ui: false,
+    notify: true,
+    localOnly: true,
+  });
+
+  return gulp
+    .watch("public/**/*")
+    .on("change", browserSync.reload);
+}
 
 function optimizeHtml() {
   return gulp
     .src("public/**/*.html", { base: "./" })
     .pipe(
-      htmlmin(
-        {
-          html5: true,
-          preserveLineBreaks: true,
-          collapseWhitespace: true,
-          collapseBooleanAttributes: true,
-          removeComments: true,
-          minifyCSS: true,
-          minifyJS: false,
-        }
-      )
+      htmlmin({
+        html5: true,
+        preserveLineBreaks: true,
+        collapseWhitespace: true,
+        collapseBooleanAttributes: true,
+        removeComments: true,
+        minifyCSS: true,
+        minifyJS: false,
+      })
     )
     .pipe(gulp.dest(".", { overwrite: true }));
 }

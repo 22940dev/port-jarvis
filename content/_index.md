@@ -1,10 +1,13 @@
 ---
 title: "Jake Jarvis – Front-End Web Developer in Boston, MA 👨‍💻"
-date: 2021-05-26 21:40:49-0400
+date: 2021-06-14 11:07:25-0400
 type: home
 sitemap:
   priority: 1.0
 ---
+
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 
 # Hi there! I'm Jake. <span class="wave">👋</span>
 
@@ -26,3 +29,6 @@ Over the years, some of my side projects
 <a href="https://adage.com/article/small-agency-diary/client-ceo-s-son/116723/" title="&quot;Your Next Client? The CEO&#39;s Son&quot; on Advertising Age" id="news-7" target="_blank" rel="noopener">outlets</a>.
 
 You can find more of my work on <a href="https://github.com/jakejarvis" title="Jake Jarvis on GitHub" id="github" target="_blank" rel="me noopener">GitHub</a> and <a href="https://www.linkedin.com/in/jakejarvis/" title="Jake Jarvis on LinkedIn" id="linkedin" target="_blank" rel="me noopener">LinkedIn</a>, and I'm always open to connect over <a href="&#x6D;&#x61;&#x69;&#x6C;&#x74;&#x6F;&#x3A;&#x6A;&#x61;&#x6B;&#x65;&#x40;&#x6A;&#x61;&#x72;&#x76;&#x2E;&#x69;&#x73;" title="Send Email" id="email">email</a> <sup id="key" class="monospace"><a class="no-underline" href="/pubkey.asc" title="My Public Key" id="pgp" target="_blank" rel="pgpkey authn noopener">🔐 2B0C 9CF2 51E6 9A39</a></sup>, <a href="https://twitter.com/jakejarvis" title="Jake Jarvis on Twitter" id="twitter" target="_blank" rel="me noopener">Twitter</a>, or <a href="sms:+1-617-917-3737" title="Send SMS to +1 (617) 917-3737" id="sms">SMS</a> as well!
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
