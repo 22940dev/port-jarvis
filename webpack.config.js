@@ -96,7 +96,16 @@ export default {
         test: /\.(sa|sc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          { loader: "css-loader", options: { sourceMap: true } },
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+              url: {
+                // TODO: css-loader messes up already utf-8 encoded & inlined SVGs (like the dark mode lightbulb)
+                filter: (url) => !(url.startsWith("data:image/svg+xml")),
+              },
+            },
+          },
           {
             loader: "postcss-loader",
             options: {
@@ -111,7 +120,7 @@ export default {
                   postcssFocus(),
                   postcssColorRgbaFallback({
                     properties: [
-                      "background-image"
+                      "background-image",
                     ],
                   }),
                   postcssCombineDuplicatedSelectors(),
@@ -120,7 +129,12 @@ export default {
               },
             },
           },
-          { loader: "sass-loader", options: { sourceMap: true } },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
         ],
       },
       {
@@ -144,8 +158,12 @@ export default {
             negate_iife: false,
             sequences: false,
           },
+          format: {
+            comments: false,
+          },
           mangle: true,
         },
+        extractComments: false,
       }),
       new CssMinimizerPlugin({
         test: /\.css$/,
