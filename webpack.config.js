@@ -1,5 +1,6 @@
 import path from "path";
 import { fileURLToPath } from "url";
+import webpack from "webpack";
 import WebpackAssetsManifest from "webpack-assets-manifest";
 import SriPlugin from "webpack-subresource-integrity";
 import CopyPlugin from "copy-webpack-plugin";
@@ -41,6 +42,12 @@ export default {
   plugins: [
     new MiniCssExtractPlugin({
       filename: isProd ? "css/[name]-[contenthash:6].css" : "css/[name].css",
+    }),
+    new webpack.BannerPlugin({
+      banner: `Released under the MIT License. Copyright (c) 2017-${new Date().getFullYear()} Jake Jarvis.
+
+Website: https://jarv.is/
+GitHub: https://github.com/jakejarvis/jarv.is`,
     }),
     new CopyPlugin({
       patterns: [
@@ -100,10 +107,6 @@ export default {
             loader: "css-loader",
             options: {
               sourceMap: true,
-              url: {
-                // TODO: css-loader messes up already utf-8 encoded & inlined SVGs (like the dark mode lightbulb)
-                filter: (url) => !(url.startsWith("data:image/svg+xml")),
-              },
             },
           },
           {
@@ -151,6 +154,7 @@ export default {
     minimizer: [
       new TerserPlugin({
         test: /\.js$/,
+        parallel: true,
         terserOptions: {
           compress: {
             arrows: false,
@@ -159,7 +163,7 @@ export default {
             sequences: false,
           },
           format: {
-            comments: false,
+            comments: /^\**!|@preserve|@license/i,
           },
           mangle: true,
         },

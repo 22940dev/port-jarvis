@@ -31,11 +31,4 @@ The [Vercel CLI](https://vercel.com/docs/cli) is not included as a project depen
 
 Site content (everything in [`content/notes`](content/notes/)) is published under the [**Creative Commons Attribution 4.0 International License**](LICENSE.md) (CC-BY-4.0), which means that you can copy, redistribute, remix, transform, and build upon the content for any purpose as long as you give appropriate credit.
 
-All original code in this repository (like my [Hugo theme](layouts/)) is published under the [**MIT License**](https://opensource.org/licenses/MIT).
-
-Third-party dependencies and assets include:
-
-- [**Twemoji**](https://twemoji.twitter.com/): Copyright (c) 2020 Twitter, Inc. and other contributors. [Licensed under CC-BY-4.0.](https://github.com/twitter/twemoji/blob/v13.1.0/LICENSE-GRAPHICS)
-- [**Inter**](https://rsms.me/inter/): Copyright (c) 2016-2020 The Inter Project Authors. [Licensed under the SIL Open Font License, Version 1.1.](https://github.com/rsms/inter/blob/v3.15/LICENSE.txt)
-- [**Roboto Mono**](https://fonts.google.com/specimen/Roboto+Mono): Copyright (c) 2015 The Roboto Mono Project Authors. [Licensed under the Apache License, Version 2.0.](https://github.com/google/fonts/blob/4df0b673c9b316ad5e8de8fa70b0768ab66c87d6/apache/robotomono/LICENSE.txt)
-- [**Comic Neue**](http://comicneue.com/): Copyright (c) 2014 The Comic Neue Project Authors. [Licensed under the SIL Open Font License, Version 1.1.](https://github.com/crozynski/comicneue/blob/v2.5/OFL.txt)
+All original code in this repository is published under the [**MIT License**](https://opensource.org/licenses/MIT).

@@ -9,11 +9,11 @@
 $unicode-subset: U+0000-00FF, U+2000-206F, U+2200-22FF, U+2122;
 
 /*!
- *  Inter typeface v3.15 - https://rsms.me/inter/
+ * Inter typeface v3.15 - https://rsms.me/inter/
  *
- *  Copyright (c) 2016-2020 The Inter Project Authors.
- *  Licensed under the SIL Open Font License, Version 1.1:
- *  https://github.com/rsms/inter/blob/v3.15/LICENSE.txt
+ * Copyright (c) 2016-2020 The Inter Project Authors.
+ * Licensed under the SIL Open Font License, Version 1.1:
+ * https://github.com/rsms/inter/blob/v3.15/LICENSE.txt
  */
 
 // Variable
@@ -45,11 +45,11 @@ $unicode-subset: U+0000-00FF, U+2000-206F, U+2200-22FF, U+2122;
 }
 
 /*!
- *  Roboto Mono typeface v3.000 - https://fonts.google.com/specimen/Roboto+Mono
+ * Roboto Mono typeface v3.000 - https://fonts.google.com/specimen/Roboto+Mono
  *
- *  Copyright (c) 2015 The Roboto Mono Project Authors.
- *  Licensed under the Apache License, Version 2.0:
- *  https://github.com/google/fonts/blob/4df0b673c9b316ad5e8de8fa70b0768ab66c87d6/apache/robotomono/LICENSE.txt
+ * Copyright (c) 2015 The Roboto Mono Project Authors.
+ * Licensed under the Apache License, Version 2.0:
+ * https://github.com/google/fonts/blob/4df0b673c9b316ad5e8de8fa70b0768ab66c87d6/apache/robotomono/LICENSE.txt
  */
 
 // Variable
@@ -61,12 +61,12 @@ $unicode-subset: U+0000-00FF, U+2000-206F, U+2200-22FF, U+2122;
 @include functions.font-face("Roboto Mono", "roboto-mono-italic-subset", 400, italic);
 
 /*!
-  *  Comic Neue typeface v2.5 - http://comicneue.com/
-  *
-  *  Copyright (c) 2014 The Comic Neue Project Authors.
-  *  Licensed under the SIL Open Font License, Version 1.1:
-  *  https://github.com/crozynski/comicneue/blob/v2.5/OFL.txt
-  */
+ * Comic Neue typeface v2.5 - http://comicneue.com/
+ *
+ * Copyright (c) 2014 The Comic Neue Project Authors.
+ * Licensed under the SIL Open Font License, Version 1.1:
+ * https://github.com/crozynski/comicneue/blob/v2.5/OFL.txt
+ */
 @include functions.font-face("Comic Neue", "comic-neue-regular-subset", 400) {
   unicode-range: U+0000-00FF, U+2000-206F, U+20A0-20CF, U+2190-21FF, U+2200-22FF, U+2122;
 }

@@ -50,13 +50,9 @@
 
     http://jarvis2i2vp4j4tbxjogsnqdemnte5xhzyi7hziiyzxwge3hzmh57zad.onion
 
-# LICENSES
+# LICENSE
 
     All content is licensed under CC-BY-4.0, an
     open & permissive Creative Commons license:
 
-      https://jarv.is/license/
-
-    Third-party dependencies and their licenses:
-
-      https://github.com/jakejarvis/jarv.is/blob/main/README.md#licenses
+    https://jarv.is/license/
