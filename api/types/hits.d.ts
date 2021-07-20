@@ -2,8 +2,8 @@ export type PageStats = {
   slug: string;
   hits: number;
   title?: string;
-  url?: string;
-  date?: string;
+  url?: URL;
+  date?: Date;
 };
 
 export type OverallStats = {

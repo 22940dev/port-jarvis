@@ -118,7 +118,7 @@ const getSiteStats = async (client: Client): Promise<OverallStats> => {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
       p.url = match.link;
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      p.date = new Date(match.pubDate).toISOString();
+      p.date = new Date(match.pubDate);
     }
 
     // add these hits to running tally

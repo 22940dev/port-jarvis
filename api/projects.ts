@@ -3,7 +3,7 @@ import { VercelRequest, VercelResponse } from "@vercel/node";
 import { graphql, GraphQlQueryResponseData } from "@octokit/graphql";
 import { encode } from "html-entities";
 
-import type { Repository } from "./types/projects";
+import type { Repository, GHRepoSchema } from "./types/projects";
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN || "",
@@ -91,10 +91,17 @@ const fetchRepos = async (sort: string): Promise<Repository[]> => {
   );
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-  const repos: Repository[] = user.repositories.edges.map(({ node: repo }: { [key: string]: Repository }) => ({
-    ...repo,
-    description: encode(repo.description),
-  }));
+  const repos: Repository[] = user.repositories.edges.map(
+    ({ node: repo }: { [key: string]: Readonly<GHRepoSchema> }) => ({
+      name: repo.name,
+      url: repo.url,
+      description: encode(repo.description),
+      updatedAt: new Date(repo.pushedAt),
+      stars: repo.stargazerCount,
+      forks: repo.forkCount,
+      language: repo.primaryLanguage,
+    })
+  );
 
   return repos;
 };

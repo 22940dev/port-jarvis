@@ -6,7 +6,7 @@ import { VercelRequest, VercelResponse } from "@vercel/node";
 import fetch from "node-fetch";
 import * as queryString from "query-string";
 
-import type { Track, TrackSchema, Activity } from "./types/tracks";
+import type { Track, SpotifyTrackSchema, SpotifyActivitySchema } from "./types/tracks";
 
 const { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN } = process.env;
 
@@ -99,7 +99,7 @@ const getNowPlaying = async (): Promise<Track> => {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const active: Activity = await response.json();
+  const active: SpotifyActivitySchema = await response.json();
 
   if (active.is_playing === true && active.item) {
     return {
@@ -107,7 +107,7 @@ const getNowPlaying = async (): Promise<Track> => {
       artist: active.item.artists.map((_artist) => _artist.name).join(", "),
       title: active.item.name,
       album: active.item.album.name,
-      imageUrl: active.item.album.images[0].url,
+      imageUrl: active.item.album.images ? active.item.album.images[0].url : undefined,
       songUrl: active.item.external_urls.spotify,
     };
   } else {
@@ -131,11 +131,11 @@ const getTopTracks = async (): Promise<Track[]> => {
   const { items } = await response.json();
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-  const tracks: Track[] = items.map((track: TrackSchema) => ({
+  const tracks: Track[] = items.map((track: Readonly<SpotifyTrackSchema>) => ({
     artist: track.artists.map((_artist) => _artist.name).join(", "),
     title: track.name,
     album: track.album.name,
-    imageUrl: track.album.images[0].url,
+    imageUrl: track.album.images ? track.album.images[0].url : undefined,
     songUrl: track.external_urls.spotify,
   }));
 

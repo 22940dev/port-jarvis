@@ -1,11 +1,21 @@
 import type { Language } from "@octokit/graphql-schema";
 
-export type Repository = {
+type BaseRepoInfo = {
   name: string;
-  url: string;
+  url: URL;
   description: string;
+};
+
+export type GHRepoSchema = Required<BaseRepoInfo> & {
   primaryLanguage?: Language;
   stargazerCount: number;
   forkCount: number;
-  pushedAt: string;
+  pushedAt: Date;
+};
+
+export type Repository = Required<BaseRepoInfo> & {
+  language?: Language;
+  stars: number;
+  forks: number;
+  updatedAt: Date;
 };

@@ -1,18 +1,23 @@
-export type TrackSchema = {
+export type SpotifyTrackSchema = {
   name: string;
   artists: Array<{
     name: string;
   }>;
   album: {
     name: string;
-    images: Array<{
-      url: string;
+    images?: Array<{
+      url: URL;
     }>;
   };
-  imageUrl?: string;
+  imageUrl?: URL;
   external_urls: {
-    spotify: string;
+    spotify: URL;
   };
+};
+
+export type SpotifyActivitySchema = {
+  is_playing: boolean;
+  item?: SpotifyTrackSchema;
 };
 
 export type Track = {
@@ -20,11 +25,6 @@ export type Track = {
   artist?: string;
   title?: string;
   album?: string;
-  imageUrl?: string;
-  songUrl?: string;
-};
-
-export type Activity = {
-  is_playing: boolean;
-  item?: TrackSchema;
+  imageUrl?: URL;
+  songUrl?: URL;
 };

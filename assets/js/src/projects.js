@@ -2,6 +2,7 @@ import fetch from "cross-fetch";
 import numeral from "numeral";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime.js";
+import twemoji from "twemoji";
 
 // don't continue if there isn't a span#meta-hits element on this page
 const wrapper = document.getElementById("github-cards");
@@ -20,17 +21,17 @@ if (wrapper) {
           html += `<p class="repo-description">${repo.description}</p>`;
         }
 
-        if (repo.primaryLanguage) {
+        if (repo.language) {
           html += `
 <div class="repo-meta">
-<span class="repo-language-color" style="background-color: ${repo.primaryLanguage.color}"></span>
-<span>${repo.primaryLanguage.name}</span>
+<span class="repo-language-color" style="background-color: ${repo.language.color}"></span>
+<span>${repo.language.name}</span>
 </div>`;
         }
 
-        if (repo.stargazerCount > 0) {
-          const starsComma = numeral(repo.stargazerCount).format("0,0");
-          const starsPlural = repo.stargazerCount === 1 ? "star" : "stars";
+        if (repo.stars > 0) {
+          const starsComma = numeral(repo.stars).format("0,0");
+          const starsPlural = repo.stars === 1 ? "star" : "stars";
 
           html += `
 <div class="repo-meta" title="${starsComma} ${starsPlural}">
@@ -39,9 +40,9 @@ if (wrapper) {
 </div>`;
         }
 
-        if (repo.forkCount > 0) {
-          const forksComma = numeral(repo.forkCount).format("0,0");
-          const forksPlural = repo.forkCount === 1 ? "fork" : "forks";
+        if (repo.forks > 0) {
+          const forksComma = numeral(repo.forks).format("0,0");
+          const forksPlural = repo.forks === 1 ? "fork" : "forks";
 
           html += `
 <div class="repo-meta" title="${forksComma} ${forksPlural}">
@@ -51,14 +52,19 @@ if (wrapper) {
         }
 
         html += `
-<div class="repo-meta" title="${dayjs(repo.pushedAt).format("MMM D, YYYY h:mm A")}">
-<span>Updated ${dayjs(repo.pushedAt).fromNow()}</span>
+<div class="repo-meta" title="${dayjs(repo.updatedAt).format("MMM D, YYYY h:mm A")}">
+<span>Updated ${dayjs(repo.updatedAt).fromNow()}</span>
 </div>`;
 
         const div = document.createElement("div");
         div.classList.add("github-card");
         div.innerHTML = html;
         wrapper.appendChild(div);
+      });
+
+      // these elements were added after the first twemoji parsing
+      twemoji.parse(wrapper, {
+        callback: (icon) => `/assets/emoji/${icon}.svg`,
       });
     })
     .catch(() => {

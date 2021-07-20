@@ -1,0 +1,40 @@
+{{/* Pull in JS processed by Webpack */}}
+
+{{- define "__head_preload" -}}
+  {{ with .Site.Data.manifest }}
+    {{ with index . "fonts/inter-subset.var.woff2" }}
+      <link rel="preload" href="{{ .src | absURL }}" as="font" type="font/woff2" crossorigin>
+    {{ end }}
+    {{ with index . "fonts/roboto-mono-subset.var.woff2" }}
+      <link rel="preload" href="{{ .src | absURL }}" as="font" type="font/woff2" crossorigin>
+    {{ end }}
+    {{ with index . "main.js" }}
+      <link rel="preload" href="{{ .src | absURL }}" as="script">
+    {{ end }}
+  {{ end }}
+{{- end -}}
+
+{{- define "__body_js" -}}
+  {{ with .Site.Data.manifest }}
+    {{ with index . "main.js" -}}
+      <script async defer src="{{ .src | absURL }}"></script>
+    {{ end -}}
+  {{ end -}}
+
+  {{/* Detect shortcodes and append external scripts as needed once per page */}}
+  {{ if .HasShortcode "gh-buttons" -}}
+    {{ template "__shortcode_gh-buttons_js" $ }}
+  {{ end -}}
+  {{ if .HasShortcode "tweet" -}}
+    {{ template "__shortcode_twitter_js" $ }}
+  {{ end -}}
+  {{ if .HasShortcode "facebook" -}}
+    {{ template "__shortcode_facebook_js" $ }}
+  {{ end -}}
+  {{ if .HasShortcode "instagram" -}}
+    {{ template "__shortcode_instagram_js" $ }}
+  {{ end -}}
+  {{ if .HasShortcode "vimeo" -}}
+    {{ template "__shortcode_vimeo_js" $ }}
+  {{ end -}}
+{{- end -}}

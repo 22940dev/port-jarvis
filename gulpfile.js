@@ -27,13 +27,25 @@ gulp.task("default", gulp.series(
   ),
 ));
 
-gulp.task("serve", gulp.parallel(
-  npx("webpack", ["--watch", "--mode", "development"]),
-  npx("hugo", ["--watch", "--buildDrafts", "--buildFuture", "--verbose"]),
-  startServer,
+gulp.task("serve", gulp.series(
+  clean,
+  gulp.parallel(
+    npx("webpack", ["--watch", "--mode", "development"]),
+    npx("hugo", ["--watch", "--buildDrafts", "--buildFuture", "--verbose"]),
+    startServer,
+  ),
 ));
 
 gulp.task("clean", clean);
+
+function clean() {
+  return del([
+    "public/",
+    "builds/",
+    "_vendor/",
+    "static/assets/",
+  ]);
+}
 
 function startServer() {
   const browserSync = BrowserSync.create();
@@ -95,15 +107,6 @@ function optimizeImages() {
       })
     )
     .pipe(gulp.dest(".", { overwrite: true }));
-}
-
-function clean() {
-  return del([
-    "public/",
-    "builds/",
-    "_vendor/",
-    "static/assets/",
-  ]);
 }
 
 // run a locally installed (i.e. ./node_modules/.bin/foo) binary, similar to a package.json script

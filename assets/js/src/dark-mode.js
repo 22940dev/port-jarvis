@@ -1,62 +1,67 @@
-/* eslint-disable */
 /*! Dark mode switcheroo | MIT License | jrvs.io/darkmode */
 
-// improve variable mangling when minifying
-var win = window;
-var doc = win.document;
-var body = doc.body;
-var classes = body.classList;
-var storage = localStorage;
+import { storage } from "local-storage-fallback";
 
 // check for preset `dark_mode_pref` preference in local storage
-var pref_key = "dark_mode_pref";
-var pref = storage.getItem(pref_key);
-
-// change CSS via these <body> classes:
-var dark = "dark";
-var light = "light";
-
-// which class is <body> set to initially?
-// eslint-disable-next-line
-var default_theme = "{{ .Site.Params.Theme.defaultTheme }}";
+const prefKey = "dark_mode_pref";
+const pref = storage.getItem(prefKey);
 
 // use an element with class `dark-mode-toggle` to trigger swap when clicked
-var toggle = doc.querySelector(".dark-mode-toggle");
+const toggle = document.querySelector(".dark-mode-toggle");
+
+// change CSS via these <body> classes:
+const dark = "dark";
+const light = "light";
+
+// which class is <body> set to initially?
+const defaultTheme = light;
 
 // keep track of current state no matter how we got there
-var active = default_theme === dark;
+let active = defaultTheme === dark;
+
+// returns media query selector syntax
+const prefers = function (theme) {
+  return "(prefers-color-scheme: " + theme + ")";
+};
+const queryDark = prefers("dark");
+const queryLight = prefers("light");
 
 // receives a class name and switches <body> to it
-var activateTheme = function (theme) {
-  classes.remove(dark, light);
-  classes.add(theme);
+const activateTheme = function (theme) {
+  document.body.classList.remove(dark, light);
+  document.body.classList.add(theme);
   active = theme === dark;
 };
 
-// if user already explicitly toggled in the past, restore their preference
-if (pref === dark) activateTheme(dark);
-if (pref === light) activateTheme(light);
-
 // user has never clicked the button, so go by their OS preference until/if they do so
 if (!pref) {
-  // returns media query selector syntax
-  var prefers = function (theme) {
-    return "(prefers-color-scheme: " + theme + ")";
-  };
-
   // check for OS dark/light mode preference and switch accordingly
-  // default to `default_theme` set above if unsupported
-  if (win.matchMedia(prefers(dark)).matches) activateTheme(dark);
-  else if (win.matchMedia(prefers(light)).matches) activateTheme(light);
-  else activateTheme(default_theme);
+  // default to `defaultTheme` set above if unsupported
+  if (window.matchMedia(queryDark).matches) {
+    activateTheme(dark);
+  } else if (window.matchMedia(queryLight).matches) {
+    activateTheme(light);
+  } else {
+    activateTheme(defaultTheme);
+  }
 
   // real-time switching if supported by OS/browser
-  win.matchMedia(prefers(dark)).addListener(function (e) {
-    if (e.matches) activateTheme(dark);
+  window.matchMedia(queryDark).addEventListener("change", (e) => {
+    if (e.matches) {
+      activateTheme(dark);
+    }
   });
-  win.matchMedia(prefers(light)).addListener(function (e) {
-    if (e.matches) activateTheme(light);
+  window.matchMedia(queryLight).addEventListener("change", (e) => {
+    if (e.matches) {
+      activateTheme(light);
+    }
   });
+} else if (pref === dark || pref === light) {
+  // if user already explicitly toggled in the past, restore their preference
+  activateTheme(pref);
+} else {
+  // fallback to default theme (this shouldn't happen)
+  activateTheme(defaultTheme);
 }
 
 // don't freak out if page happens not to have a toggle
@@ -71,10 +76,10 @@ if (toggle) {
       // switch to the opposite theme & save preference in local storage
       if (active) {
         activateTheme(light);
-        storage.setItem(pref_key, light);
+        storage.setItem(prefKey, light);
       } else {
         activateTheme(dark);
-        storage.setItem(pref_key, dark);
+        storage.setItem(prefKey, dark);
       }
     },
     true
