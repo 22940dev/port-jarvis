@@ -1,10 +1,8 @@
 /*! Dark mode switcheroo | MIT License | jrvs.io/darkmode */
 
-import { storage } from "local-storage-fallback";
-
 // check for preset `dark_mode_pref` preference in local storage
 const prefKey = "dark_mode_pref";
-const pref = storage.getItem(prefKey);
+const pref = localStorage.getItem(prefKey);
 
 // use an element with class `dark-mode-toggle` to trigger swap when clicked
 const toggle = document.querySelector(".dark-mode-toggle");
@@ -19,13 +17,6 @@ const defaultTheme = light;
 // keep track of current state no matter how we got there
 let active = defaultTheme === dark;
 
-// returns media query selector syntax
-const prefers = function (theme) {
-  return "(prefers-color-scheme: " + theme + ")";
-};
-const queryDark = prefers("dark");
-const queryLight = prefers("light");
-
 // receives a class name and switches <body> to it
 const activateTheme = function (theme) {
   document.body.classList.remove(dark, light);
@@ -35,23 +26,29 @@ const activateTheme = function (theme) {
 
 // user has never clicked the button, so go by their OS preference until/if they do so
 if (!pref) {
+  // returns media query selector syntax
+  const prefers = function (colorScheme) {
+    // https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme
+    return "(prefers-color-scheme: " + colorScheme + ")";
+  };
+
   // check for OS dark/light mode preference and switch accordingly
   // default to `defaultTheme` set above if unsupported
-  if (window.matchMedia(queryDark).matches) {
+  if (window.matchMedia(prefers("dark")).matches) {
     activateTheme(dark);
-  } else if (window.matchMedia(queryLight).matches) {
+  } else if (window.matchMedia(prefers("light")).matches) {
     activateTheme(light);
   } else {
     activateTheme(defaultTheme);
   }
 
   // real-time switching if supported by OS/browser
-  window.matchMedia(queryDark).addEventListener("change", (e) => {
+  window.matchMedia(prefers("dark")).addEventListener("change", function (e) {
     if (e.matches) {
       activateTheme(dark);
     }
   });
-  window.matchMedia(queryLight).addEventListener("change", (e) => {
+  window.matchMedia(prefers("light")).addEventListener("change", function (e) {
     if (e.matches) {
       activateTheme(light);
     }
@@ -70,18 +67,14 @@ if (toggle) {
   toggle.style.display = "block";
 
   // handle toggle click
-  toggle.addEventListener(
-    "click",
-    function () {
-      // switch to the opposite theme & save preference in local storage
-      if (active) {
-        activateTheme(light);
-        storage.setItem(prefKey, light);
-      } else {
-        activateTheme(dark);
-        storage.setItem(prefKey, dark);
-      }
-    },
-    true
-  );
+  toggle.addEventListener("click", function () {
+    // switch to the opposite theme & save preference in local storage
+    if (active) {
+      activateTheme(light);
+      localStorage.setItem(prefKey, light);
+    } else {
+      activateTheme(dark);
+      localStorage.setItem(prefKey, dark);
+    }
+  });
 }
