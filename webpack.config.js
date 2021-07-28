@@ -95,6 +95,23 @@ GitHub: https://github.com/jakejarvis/jarv.is`,
                   },
                 ],
               ],
+              plugins: [
+                [
+                  "template-html-minifier",
+                  {
+                    modules: {
+                      "lit-html": ["html"],
+                      "lit-element": ["html"],
+                    },
+                    htmlMinifier: {
+                      html5: true,
+                      collapseWhitespace: true,
+                      removeComments: false,
+                      caseSensitive: true,
+                    },
+                  },
+                ],
+              ],
             },
           },
         ],

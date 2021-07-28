@@ -1,7 +1,6 @@
 import * as Sentry from "@sentry/node";
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import { graphql, GraphQlQueryResponseData } from "@octokit/graphql";
-import { encode } from "html-entities";
 
 import type { Repository, GHRepoSchema } from "./types/projects";
 
@@ -95,7 +94,7 @@ const fetchRepos = async (sort: string): Promise<Repository[]> => {
     ({ node: repo }: { [key: string]: Readonly<GHRepoSchema> }) => ({
       name: repo.name,
       url: repo.url,
-      description: encode(repo.description),
+      description: repo.description,
       updatedAt: new Date(repo.pushedAt),
       stars: repo.stargazerCount,
       forks: repo.forkCount,

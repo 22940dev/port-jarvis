@@ -3,6 +3,8 @@
     "eslint:recommended",
     "plugin:compat/recommended",
     "plugin:import/recommended",
+    "plugin:no-unsanitized/DOM",
+    "plugin:lit/recommended",
     "plugin:prettier/recommended"
   ],
   "plugins": [
