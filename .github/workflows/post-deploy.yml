@@ -42,23 +42,19 @@ jobs:
         echo "env: ${{ github.event.deployment_status.environment }}"
         echo "url: ${{ github.event.deployment_status.target_url }}"
     - if: github.event.deployment_status.environment == 'production'
-      continue-on-error: true
-      env:
-        BASE_URL: https://jarv.is
-        LHCI_BUILD_CONTEXT__CURRENT_BRANCH: main
       run: |
-        lhci autorun \
-          --collect.url=$BASE_URL/ \
-          --collect.url=$BASE_URL/notes/how-to-pull-request-fork-github/
+        echo "BASE_DEPLOY_URL=https://jarv.is" >> $GITHUB_ENV
+        echo "LHCI_BUILD_CONTEXT__CURRENT_BRANCH=main" >> $GITHUB_ENV
     - if: github.event.deployment_status.environment == 'preview'
-      continue-on-error: true
-      env:
-        BASE_URL: ${{ github.event.deployment_status.target_url }}
-        LHCI_BUILD_CONTEXT__CURRENT_BRANCH: ${{ github.event.deployment.ref }}
+      run: |
+        echo "BASE_DEPLOY_URL=${{ github.event.deployment_status.target_url }}" >> $GITHUB_ENV
+        echo "LHCI_BUILD_CONTEXT__CURRENT_BRANCH=${{ github.event.deployment.ref }}" >> $GITHUB_ENV
+    - continue-on-error: true
       run: |
         lhci autorun \
-          --collect.url=$BASE_URL/ \
-          --collect.url=$BASE_URL/notes/how-to-pull-request-fork-github/
+          --collect.url=${{ env.BASE_DEPLOY_URL }}/ \
+          --collect.url=${{ env.BASE_DEPLOY_URL }}/notes/how-to-pull-request-fork-github/ \
+          --collect.url=${{ env.BASE_DEPLOY_URL }}/projects/
     - uses: actions/upload-artifact@v2
       with:
         name: lhci-results
