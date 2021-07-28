@@ -106,6 +106,7 @@ GitHub: https://github.com/jakejarvis/jarv.is`,
                     htmlMinifier: {
                       html5: true,
                       collapseWhitespace: true,
+                      conservativeCollapse: true,
                       removeComments: false,
                       caseSensitive: true,
                     },

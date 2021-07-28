@@ -34,8 +34,8 @@ if (wrapper) {
           })()}
           ${(() => {
             if (repo.stars > 0) {
-              const starsPlural = repo.stars === 1 ? "star" : "stars";
               const starsComma = numeral(repo.stars).format("0,0");
+              const starsPlural = repo.stars === 1 ? "star" : "stars";
 
               return html`<div class="repo-meta" title="${starsComma} ${starsPlural}">
                 <svg viewBox="0 0 16 16" height="16" width="16">
@@ -50,8 +50,8 @@ if (wrapper) {
           })()}
           ${(() => {
             if (repo.forks > 0) {
-              const forksPlural = repo.forks === 1 ? "fork" : "forks";
               const forksComma = numeral(repo.forks).format("0,0");
+              const forksPlural = repo.forks === 1 ? "fork" : "forks";
 
               return html`<div class="repo-meta" title="${forksComma} ${forksPlural}">
                 <svg viewBox="0 0 16 16" height="16" width="16">
