@@ -8,6 +8,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 import TerserPlugin from "terser-webpack-plugin";
 
+// PostCSS stuff:
 import autoprefixer from "autoprefixer";
 import postcssSvgo from "postcss-svgo";
 import postcssFocus from "postcss-focus";

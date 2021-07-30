@@ -1,13 +1,13 @@
 import path from "path";
 import { fileURLToPath } from "url";
-import BrowserSync from "browser-sync";
+import del from "del";
 import gulp from "gulp";
 import { task as execa } from "gulp-execa";
 import htmlmin from "gulp-html-minifier-terser";
-import imagemin from "gulp-imagemin";
-import del from "del";
+import BrowserSync from "browser-sync";
 
 // use up-to-date imagemin plugins instead of those bundled with gulp-imagemin:
+import imagemin from "gulp-imagemin";
 import imageminMozjpeg from "imagemin-mozjpeg";
 import imageminPngquant from "imagemin-pngquant";
 import imageminGifsicle from "imagemin-gifsicle";
