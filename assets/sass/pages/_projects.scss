@@ -20,6 +20,17 @@ div.layout-projects {
     text-align: center;
   }
 
+  div#loading-spinner {
+    width: 40px;
+    display: block;
+    margin: 1.2em auto 0 auto;
+
+    > div {
+      width: 10px;
+      height: 20px;
+    }
+  }
+
   div#github-cards {
     display: flex;
     flex-direction: row;
@@ -31,11 +42,11 @@ div.layout-projects {
     div.github-card {
       flex-grow: 1;
       display: block;
-      width: 416px;
-      padding: 12px 16px;
-      margin: 8px;
+      width: 416px; // magic number
+      padding: 1em 1.2em;
+      margin: 0.6em;
       border: 1px solid;
-      border-radius: 6px;
+      border-radius: 0.5em;
       font-size: 0.9em;
 
       @include themes.themed(color, "medium-dark");
@@ -47,12 +58,12 @@ div.layout-projects {
       }
 
       p.repo-description {
-        margin: 4px 0 8px 0;
+        margin: 0.3em 0 0.6em 0;
       }
 
       div.repo-meta {
         display: inline-block;
-        margin-right: 12px;
+        margin-right: 1.2em;
         font-size: 0.925em;
 
         @include themes.themed(color, "medium");
@@ -60,19 +71,19 @@ div.layout-projects {
         svg {
           display: inline-block;
           position: relative;
-          top: 3px;
-          margin-right: 2px;
+          top: 0.25em;
+          margin-right: 0.2em;
           fill: currentColor;
         }
 
         span.repo-language-color {
           display: inline-block;
-          width: 14px;
-          height: 14px;
+          width: 1.2em;
+          height: 1.2em;
           border-radius: 50%;
           position: relative;
-          top: 2px;
-          margin-right: 2px;
+          top: 0.235em;
+          margin-right: 0.2em;
         }
       }
     }

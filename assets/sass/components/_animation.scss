@@ -18,13 +18,9 @@
 
 // modified from https://tobiasahlin.com/spinkit/
 .spinner {
-  width: 20px;
   text-align: center;
-  display: inline-block;
 
   > div {
-    width: 5px;
-    height: 10px;
     display: inline-block;
     animation: loader 1.4s infinite ease-in-out both;
 

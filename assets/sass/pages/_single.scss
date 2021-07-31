@@ -53,6 +53,16 @@ div.layout-single {
         }
       }
     }
+
+    div#hit-spinner {
+      display: inline-block;
+      width: 20px;
+
+      > div {
+        width: 5px;
+        height: 10px;
+      }
+    }
   }
 
   h1.title {

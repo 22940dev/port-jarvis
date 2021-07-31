@@ -7,6 +7,7 @@ import twemoji from "twemoji";
 
 // don't continue if there isn't a span#meta-hits element on this page
 const wrapper = document.getElementById("github-cards");
+const spinner = document.getElementById("loading-spinner");
 
 if (wrapper) {
   dayjs.extend(relativeTime); // https://day.js.org/docs/en/plugin/relative-time
@@ -76,7 +77,12 @@ if (wrapper) {
         wrapper.appendChild(div);
       });
 
-      // these elements were added after the first twemoji parsing
+      // we're done, hide the loading spinner
+      if (spinner) {
+        spinner.style.display = "none";
+      }
+
+      // the repo descriptions were added after the first twemoji parsing
       twemoji.parse(wrapper, {
         callback: (icon) => `/assets/emoji/${icon}.svg`,
       });
