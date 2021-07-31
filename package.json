@@ -50,7 +50,8 @@
     "numeral": "2.0.6",
     "query-string": "7.0.1",
     "twemoji": "13.1.0",
-    "twemoji-emojis": "14.1.0"
+    "twemoji-emojis": "14.1.0",
+    "url-parse": "1.5.3"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
@@ -59,6 +60,7 @@
     "@types/node-fetch": "^2.5.12",
     "@types/numeral": "^2.0.1",
     "@types/twemoji": "^12.1.2",
+    "@types/url-parse": "^1.4.3",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",
     "@vercel/node": "^1.11.1",

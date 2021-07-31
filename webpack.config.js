@@ -45,10 +45,8 @@ export default {
       filename: isProd ? "css/[name]-[contenthash:6].css" : "css/[name].css",
     }),
     new webpack.BannerPlugin({
-      banner: `Released under the MIT License. Copyright (c) 2017-${new Date().getFullYear()} Jake Jarvis.
-
-Website: https://jarv.is/
-GitHub: https://github.com/jakejarvis/jarv.is`,
+      banner: `@license MIT <https://opensource.org/licenses/MIT>
+@copyright (c) 2017-${new Date().getFullYear()} Jake Jarvis <https://jarv.is/>`,
     }),
     new CopyPlugin({
       patterns: [
