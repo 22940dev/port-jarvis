@@ -1,8 +1,7 @@
 import fetch from "cross-fetch";
 import { html, render } from "lit-html";
 import numeral from "numeral";
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime.js";
+import { format, formatDistanceToNowStrict, parseJSON } from "date-fns";
 import twemoji from "twemoji";
 
 // don't continue if there isn't a span#meta-hits element on this page
@@ -10,8 +9,6 @@ const wrapper = document.getElementById("github-cards");
 const spinner = document.getElementById("loading-spinner");
 
 if (wrapper) {
-  dayjs.extend(relativeTime); // https://day.js.org/docs/en/plugin/relative-time
-
   // this is a total sh*tshow, but safer than setting one big string via innerHTML :)
   const template = (repo) => html`
     <a class="repo-name" href="${repo.url}" target="_blank" rel="noopener">${repo.name}</a>
@@ -62,8 +59,8 @@ if (wrapper) {
       }
     })()}
 
-    <div class="repo-meta" title="${dayjs(repo.updatedAt).format("MMM D, YYYY h:mm A")}">
-      <span>Updated ${dayjs(repo.updatedAt).fromNow()}</span>
+    <div class="repo-meta" title="${format(parseJSON(repo.updatedAt), "MMM d, yyyy, h:mm aa z")}">
+      <span>Updated ${formatDistanceToNowStrict(parseJSON(repo.updatedAt), { addSuffix: true })}</span>
     </div>
   `;
 

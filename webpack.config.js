@@ -28,7 +28,7 @@ export default {
     path.resolve(__dirname, "assets/sass/main.scss"),
   ],
   mode: isProd ? "production" : "development",
-  devtool: "source-map",
+  devtool: isProd ? "source-map" : "inline-source-map",
   output: {
     filename: isProd ? "js/[name]-[contenthash:6].js" : "js/[name].js",
     path: path.resolve(__dirname, "static/assets/"),
@@ -167,6 +167,7 @@ export default {
     ],
   },
   optimization: {
+    sideEffects: true,
     minimize: isProd,
     minimizer: [
       new TerserPlugin({
