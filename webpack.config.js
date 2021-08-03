@@ -179,6 +179,7 @@ export default {
             drop_console: true,
             negate_iife: false,
             sequences: false,
+            passes: 3,
           },
           format: {
             comments: /^\**!|@preserve|@license/i,
