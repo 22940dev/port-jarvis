@@ -1,19 +1,18 @@
-version: 1
+version: 2
 snapshot:
-  widths: [450, 1050] # px
+  widths:
+    - 450
+    - 1050
   enable-javascript: true
-  percy-css: |
+  percy-css: >
     div.embed,
     iframe,
     video,
     img[src$=".gif"],
     div#meta-hits {
-      display: none !important;  /* don't worry about third-party content/embeds */
+      display: none !important;
     }
-    code,
-    div.highlight {
-      border: 0 !important;  /* no clue why this bugs out... */
-    }
+
     *,
     ::before,
     ::after {
@@ -21,9 +20,11 @@ snapshot:
       transition-duration: 0s !important;
       transition-delay: 0s !important;
     }
-static-snapshots:
-  path: public/
-  snapshot-files: 'index.html,uses/index.html,notes/{how-to-pull-request-fork-github,shodan-search-queries}/index.html'
-agent:
-  asset-discovery:
-    network-idle-timeout: 2000 # ms
+static:
+  files:
+    - "index.html"
+    - "uses/index.html"
+    - "notes/{how-to-pull-request-fork-github,shodan-search-queries}/index.html"
+discovery:
+  network-idle-timeout: 750
+  disable-cache: true

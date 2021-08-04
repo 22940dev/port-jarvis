@@ -33,7 +33,7 @@ jobs:
         node-version: 14.x
         cache: yarn
     - run: yarn install --frozen-lockfile
-    - run: yarn build
-    - uses: percy/snapshot-action@v0.1.2
+    - run: NODE_ENV=production yarn build
+    - run: yarn percy
       env:
         PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}

@@ -26,10 +26,9 @@
     "lint:scss": "stylelint 'assets/sass/**/*.scss' --syntax scss",
     "lint:md": "markdownlint 'content/**/*.md'",
     "lint:prettier": "prettier --check .",
-    "percy": "npx percy snapshot"
+    "percy": "npx percy snapshot ./public --files 'index.html,uses/index.html,notes/{how-to-pull-request-fork-github,shodan-search-queries}/index.html'"
   },
   "dependencies": {
-    "@babel/cli": "^7.14.8",
     "@fontsource/comic-neue": "4.5.0",
     "@fontsource/inter": "4.5.0",
     "@fontsource/roboto-mono": "4.5.0",
@@ -55,9 +54,11 @@
     "url-parse": "1.5.3"
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.8",
     "@babel/core": "^7.14.8",
     "@babel/eslint-parser": "^7.14.9",
     "@babel/preset-env": "^7.14.9",
+    "@percy/cli": "^1.0.0-beta.62",
     "@types/node-fetch": "^2.5.12",
     "@types/numeral": "^2.0.1",
     "@types/twemoji": "^12.1.2",
@@ -105,7 +106,7 @@
     "postcss-svgo": "^5.0.2",
     "prettier": "^2.3.2",
     "pretty-quick": "^3.1.1",
-    "sass": "^1.37.2",
+    "sass": "^1.37.4",
     "sass-loader": "^12.1.0",
     "simple-git-hooks": "^2.5.1",
     "stylelint": "~13.13.1",
