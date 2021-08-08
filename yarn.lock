@@ -949,10 +949,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.0.tgz#87de7af9c231826fdd68ac7258f77c429e0e5fcf"
   integrity sha512-wdppn25U8z/2yiaT6YGquE6X8sSv7hNMWSXYSSU1jGv/yd6XqjXgTDJ8KP4NgjTXfJ3GbRjeeb8RTV7a/VpM+w==
 
-"@jakejarvis/dark-mode@0.6.2":
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/@jakejarvis/dark-mode/-/dark-mode-0.6.2.tgz#f07dd180bd879bc1991f057ee7038edc6c3ce713"
-  integrity sha512-jxLnpr9t/MsxxrYivxC6TJzmba1zTWNRa/YrKY1urPk3vJxPbSWRESjWFQc0XSeM7k0EcMMAceVXFEKsWpe4ug==
+"@jakejarvis/dark-mode@0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@jakejarvis/dark-mode/-/dark-mode-0.6.1.tgz#b82e674bea57fc0aa3ed1450c49a503f2633431c"
+  integrity sha512-jUuZ/LP1eI3WW1zE8fIGw5Jx1ll+GEpP/macHUbKO8C/qCfCDM4h+4mtT5CJAKro8FC5iGeQl+Fsgv9wkg21+g==
 
 "@jest/types@^27.0.6":
   version "27.0.6"
@@ -3900,9 +3900,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.793:
-  version "1.3.799"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.799.tgz#6e9911b25e7ecd5aa1e54dcb68f82a3e02d00f09"
-  integrity sha512-V2rbYWdGvSqrg+95KjkVuSi41bGfrhrOzjl1tSi2VLnm0mRe3FsSvhiqidSiSll9WiMhrQAhpDcW/wcqK3c+Yw==
+  version "1.3.798"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.798.tgz#12b0bb826ddf35486f2ca41c01be4bd6ad1b9b1e"
+  integrity sha512-fwsr6oXAORoV9a6Ak2vMCdXfmHIpAGgpOGesulS1cbGgJmrMl3H+GicUyRG3t+z9uHTMrIuMTleFDW+EUFYT3g==
 
 emoji-regex@^7.0.1:
   version "7.0.3"
@@ -5930,9 +5930,9 @@ is-arrayish@^0.2.1:
   integrity sha1-d8mYQFJ6qOyxqLppe4BkWnqSap0=
 
 is-bigint@^1.0.1:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/is-bigint/-/is-bigint-1.0.3.tgz#fc9d9e364210480675653ddaea0518528d49a581"
-  integrity sha512-ZU538ajmYJmzysE5yU4Y7uIrPQ2j704u+hXFiIPQExpqzzUbpe5jCPdTfmz7jXRxZdvjY3KZ3ZNenoXQovX+Dg==
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/is-bigint/-/is-bigint-1.0.2.tgz#ffb381442503235ad245ea89e45b3dbff040ee5a"
+  integrity sha512-0JV5+SOCQkIdzjBK9buARcV804Ddu7A0Qet6sHi3FimE9ne6m4BGQZfRn+NZiXbBk4F4XmHfDZIipLj9pX8dSA==
 
 is-binary-path@^1.0.0:
   version "1.0.1"
