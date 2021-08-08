@@ -101,10 +101,7 @@ function optimizeImages() {
         }),
         imageminGifsicle(),
         imageminSvgo(),
-      ],
-      {
-        verbose: true,
-      })
+      ])
     )
     .pipe(gulp.dest(".", { overwrite: true }));
 }
@@ -114,6 +111,7 @@ function npx(bin, args) {
   // WARNING: MAJOR HACKS AHEAD:
   const cmd = `${bin} ${args ? args.join(" ") : ""}`.trim();
   return execa(cmd, {
+    echo: false,
     preferLocal: true,
     shell: true,
     stdio: "inherit",

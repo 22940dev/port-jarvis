@@ -166,6 +166,10 @@ export default {
       },
     ],
   },
+  performance: {
+    // ignore performance hints on source maps and JSON asset manifest
+    assetFilter: (assetFilename) => !/\.map|\.json$/.test(assetFilename),
+  },
   optimization: {
     sideEffects: true,
     minimize: isProd,
