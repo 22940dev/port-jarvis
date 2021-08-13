@@ -9,6 +9,8 @@ updates:
   ignore:
     - dependency-name: "@types/*"
     - dependency-name: "@fontsource/*"
+  labels:
+    - "📦 dependencies"
   commit-message:
     prefix: "📦 npm:"
 
@@ -16,5 +18,7 @@ updates:
   directory: "/"
   schedule:
     interval: weekly
+  labels:
+    - "📦 dependencies"
   commit-message:
     prefix: "📦 ci:"

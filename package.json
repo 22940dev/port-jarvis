@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jakejarvis/jarv.is.git"
+    "url": "https://github.com/jakejarvis/jarv.is.git"
   },
   "type": "module",
   "exports": "./assets/js/index.js",
@@ -32,9 +32,9 @@
     "@fontsource/comic-neue": "4.5.0",
     "@fontsource/inter": "4.5.0",
     "@fontsource/roboto-mono": "4.5.0",
-    "@jakejarvis/dark-mode": "0.6.2",
+    "@jakejarvis/dark-mode": "0.6.3",
     "@octokit/graphql": "^4.6.4",
-    "@octokit/graphql-schema": "^10.59.0",
+    "@octokit/graphql-schema": "^10.60.1",
     "@sentry/node": "^6.11.0",
     "cross-fetch": "3.1.4",
     "date-fns": "2.23.0",
@@ -58,14 +58,14 @@
     "@babel/core": "^7.15.0",
     "@babel/eslint-parser": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
-    "@percy/cli": "^1.0.0-beta.63",
+    "@percy/cli": "^1.0.0-beta.65",
     "@types/node-fetch": "^2.5.12",
     "@types/numeral": "^2.0.1",
     "@types/twemoji": "^12.1.2",
-    "@types/url-parse": "^1.4.3",
-    "@typescript-eslint/eslint-plugin": "^4.29.0",
-    "@typescript-eslint/parser": "^4.29.0",
-    "@vercel/node": "^1.12.0",
+    "@types/url-parse": "^1.4.4",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
+    "@vercel/node": "^1.12.1",
     "autoprefixer": "^10.3.1",
     "babel-loader": "^8.2.2",
     "babel-plugin-template-html-minifier": "^4.1.0",
@@ -78,8 +78,8 @@
     "del": "^6.0.0",
     "eslint": "~7.32.0",
     "eslint-config-prettier": "~8.3.0",
-    "eslint-plugin-compat": "~3.11.1",
-    "eslint-plugin-import": "~2.23.4",
+    "eslint-plugin-compat": "~3.12.0",
+    "eslint-plugin-import": "~2.24.0",
     "eslint-plugin-lit": "~1.5.1",
     "eslint-plugin-no-unsanitized": "~3.1.5",
     "eslint-plugin-prettier": "~3.4.0",
@@ -88,7 +88,7 @@
     "gulp-cli": "^2.3.0",
     "gulp-execa": "^3.0.2",
     "gulp-html-minifier-terser": "^6.0.1",
-    "gulp-imagemin": "^7.1.0",
+    "gulp-imagemin": "^8.0.0",
     "hugo-extended": "0.86.1",
     "lint-staged": "^11.1.2",
     "markdownlint-cli": "~0.28.1",
@@ -118,7 +118,7 @@
     "terser": "^5.7.1",
     "terser-webpack-plugin": "^5.1.4",
     "typescript": "^4.3.5",
-    "webpack": "^5.49.0",
+    "webpack": "^5.50.0",
     "webpack-assets-manifest": "^5.0.6",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.7.2",
@@ -150,5 +150,9 @@
       "markdownlint",
       "pretty-quick --staged"
     ]
+  },
+  "volta": {
+    "node": "14.17.5",
+    "yarn": "1.22.10"
   }
 }
