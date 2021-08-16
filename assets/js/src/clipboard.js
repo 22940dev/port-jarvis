@@ -1,4 +1,5 @@
 import ClipboardJS from "clipboard";
+import trimNewlines from "trim-newlines";
 
 // the default text of the copy button:
 const copyTerm = "Copy";
@@ -15,8 +16,12 @@ if (ClipboardJS.isSupported()) {
     highlightDiv.insertBefore(button, highlightDiv.firstChild);
 
     new ClipboardJS(button, {
-      // actual code element will have class "language-*", even if plaintext
-      text: (trigger) => trigger.parentElement.querySelector('code[class^="language-"]').innerText, // eslint-disable-line quotes
+      text: (trigger) => {
+        // actual code element will (should) have class "language-*", even if plaintext
+        const fenceElement = trigger.parentElement.querySelector('code[class^="language-"]'); // eslint-disable-line quotes
+
+        return fenceElement ? trimNewlines(fenceElement.innerText) : false;
+      },
     }).on("success", (e) => {
       // show a subtle indication of success
       e.trigger.innerText = "✓";
