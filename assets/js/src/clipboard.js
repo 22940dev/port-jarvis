@@ -14,25 +14,25 @@ if (ClipboardJS.isSupported()) {
 
     // insert button as a sibling to Hugo's code fence
     highlightDiv.insertBefore(button, highlightDiv.firstChild);
+  });
 
-    new ClipboardJS(button, {
-      text: (trigger) => {
-        // actual code element will (should) have class "language-*", even if plaintext
-        const fenceElement = trigger.parentElement.querySelector('code[class^="language-"]'); // eslint-disable-line quotes
+  new ClipboardJS("button.copy-button", {
+    text: (trigger) => {
+      // actual code element will (should) have class "language-*", even if plaintext
+      const fenceElement = trigger.parentElement.querySelector('code[class^="language-"]'); // eslint-disable-line quotes
 
-        return fenceElement ? trimNewlines(fenceElement.innerText) : false;
-      },
-    }).on("success", (e) => {
-      // show a subtle indication of success
-      e.trigger.innerText = "✓";
+      return fenceElement ? trimNewlines(fenceElement.innerText) : false;
+    },
+  }).on("success", (e) => {
+    // show a subtle indication of success
+    e.trigger.innerText = "✓";
 
-      // reset button to original text after 2 seconds
-      setTimeout(() => {
-        e.trigger.innerText = copyTerm;
-      }, 2000);
+    // reset button to original text after 2 seconds
+    setTimeout(() => {
+      e.trigger.innerText = copyTerm;
+    }, 2000);
 
-      // text needed to be auto-selected to copy, unselect immediately
-      e.clearSelection();
-    });
+    // text needed to be auto-selected to copy, unselect immediately
+    e.clearSelection();
   });
 }
