@@ -20,55 +20,27 @@
   @return linear-gradient($color-opaque-alpha, $color-opaque-alpha);
 }
 
+// Returns a list of strings from a given string separated by a given
+// separator (defaults to comma).
 // https://stackoverflow.com/a/65853667/1438024
-@function str-split($str, $substr: ",") {
+@function str-split($str, $separator: ",") {
   // return immediately if this function isn't necessary
-  @if (string.index("#{$str}", "#{$substr}") == null) {
+  @if (string.index("#{$str}", "#{$separator}") == null) {
     @return $str;
   }
 
-  $list: ();
+  $str-list: ();
 
-  @while string.index("#{$str}", "#{$substr}") != null {
-    @if (string.index("#{$str}", "#{$substr}") > 1) {
-      $list: list.append($list, string.slice("#{$str}", 1, string.index("#{$str}", "#{$substr}") - 1));
+  @while string.index("#{$str}", "#{$separator}") != null {
+    @if (string.index("#{$str}", "#{$separator}") > 1) {
+      $str-list: list.append($str-list, string.slice("#{$str}", 1, string.index("#{$str}", "#{$separator}") - 1));
     }
-    $str: string.slice("#{$str}", string.index("#{$str}", "#{$substr}") + 1, string.length("#{$str}"));
+    $str: string.slice("#{$str}", string.index("#{$str}", "#{$separator}") + 1, string.length("#{$str}"));
   }
 
   @if (string.slice("#{$str}", 1, string.length("#{$str}")) != "") {
-    $list: list.append($list, string.slice("#{$str}", 1, string.length("#{$str}")));
+    $str-list: list.append($str-list, string.slice("#{$str}", 1, string.length("#{$str}")));
   }
 
-  @return $list;
-}
-
-// Web fonts (see components/_typography.scss)
-@mixin font-face(
-  $family,
-  $src,
-  $weight: normal,
-  $style: normal,
-  $display: swap,
-  $variable: false,
-  $base-path: "../fonts/"
-) {
-  @font-face {
-    font-family: string.quote($family);
-    font-style: $style;
-    font-weight: $weight;
-    font-display: $display;
-
-    @if $variable {
-      // all browsers that support variable fonts also support woff2, so a woff file is unncessary
-      // draft spec for formats: https://www.w3.org/TR/css-fonts-4/#src-desc
-      src: url($base-path + $src + ".woff2") format("woff2-variations"),
-        url($base-path + $src + ".woff2") format("woff2");
-    } @else {
-      src: url($base-path + $src + ".woff2") format("woff2"), url($base-path + $src + ".woff") format("woff");
-    }
-
-    // Allow additional rules to be passed in:
-    @content;
-  }
+  @return $str-list;
 }

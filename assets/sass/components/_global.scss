@@ -1,8 +1,8 @@
 @use "sass:map";
 
-@use "../abstracts/functions";
 @use "../abstracts/settings";
 @use "../abstracts/themes";
+@use "../abstracts/functions" as *;
 
 // Global Styles
 body {
@@ -30,15 +30,15 @@ body {
   }
 }
 
+// need to set light/dark mode backgrounds outside of the body selector
+@include themes.themed(background-color, "background-outer");
+
 code,
 pre,
 .monospace {
   font-family: settings.$font-stack-mono;
   letter-spacing: normal;
 }
-
-// need to set light/dark mode backgrounds outside of the body selector
-@include themes.themed(background-color, "background-outer");
 
 // override above font-family if browser supports variable fonts
 // https://caniuse.com/#feat=variable-fonts
@@ -85,7 +85,7 @@ a {
   // https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/
   @each $theme, $map in themes.$themes {
     @at-root body.#{$theme} #{&} {
-      background-image: functions.underline-hack(map-get($map, "links"));
+      background-image: underline-hack(map-get($map, "links"));
     }
   }
 

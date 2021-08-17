@@ -1,5 +1,128 @@
-@use "../abstracts/functions";
 @use "../abstracts/themes";
+@use "../abstracts/functions" as *;
+
+// Colorful Homepage
+$colors-home: (
+  boston: (
+    light: #fb4d42,
+    dark: #ff5146,
+  ),
+  jamstack: (
+    light: #04a699,
+    dark: #08bbac,
+  ),
+  javascript: (
+    light: #f48024,
+    dark: #e18431,
+  ),
+  node: (
+    light: #6fbc4e,
+    dark: #84d95f,
+  ),
+  golang: (
+    light: #00acd7,
+    dark: #2ad1fb,
+  ),
+  react: (
+    light: #4fb3cd,
+    dark: #6fcbe3,
+  ),
+  angular: (
+    light: #c3002f,
+    dark: #f95757,
+  ),
+  php: (
+    light: #8892bf,
+    dark: #a4afe3,
+  ),
+  ruby: (
+    light: #d34135,
+    dark: #f95a4d,
+  ),
+  python: (
+    light: #fea500,
+    dark: #ffbb3c,
+  ),
+  infosec: (
+    light: #00b81a,
+    dark: #57f06d,
+  ),
+  server: (
+    light: #0098ec,
+    dark: #43b9fb,
+  ),
+  devops: (
+    light: #ff6200,
+    dark: #f46c16,
+  ),
+  frontend: (
+    light: #4169e1,
+    dark: #8ca9ff,
+  ),
+  backend: (
+    light: #9932cc,
+    dark: #d588fb,
+  ),
+  birthday: (
+    light: #e40088,
+    dark: #fd40b1,
+  ),
+  github: (
+    light: #8d4eff,
+    dark: #a379f0,
+  ),
+  linkedin: (
+    light: #0073b1,
+    dark: #3b9dd2,
+  ),
+  twitter: (
+    light: #00acee,
+    dark: #3bc9ff,
+  ),
+  email: (
+    light: #de0c0c,
+    dark: #ff5050,
+  ),
+  pgp: (
+    light: #757575,
+    dark: #959595,
+  ),
+  sms: (
+    light: #6fcc01,
+    dark: #8edb34,
+  ),
+  news-1: (
+    light: #ff1b1b,
+    dark: #f06060,
+  ),
+  news-2: (
+    light: #f78200,
+    dark: #fd992a,
+  ),
+  news-3: (
+    light: #f2b702,
+    dark: #ffcc2e,
+  ),
+  news-4: (
+    light: #5ebd3e,
+    dark: #78df55,
+  ),
+  news-5: (
+    light: #009cdf,
+    dark: #29bfff,
+  ),
+  news-6: (
+    light: #3e49bb,
+    dark: #7b87ff,
+  ),
+  news-7: (
+    light: #973999,
+    dark: #db60dd,
+  ),
+);
+$color-serverless: #87cef7;
+
+// ----------------
 
 // Home Styles
 div.layout-home {
@@ -60,7 +183,7 @@ div.layout-home {
   // non-link colors
   span {
     &#serverless {
-      color: themes.$color-serverless;
+      color: $color-serverless;
     }
 
     &#shh {
@@ -74,11 +197,11 @@ div.layout-home {
 }
 
 // Loop through $colors-home (see abstracts/_variables)
-@each $id, $colors in themes.$colors-home {
+@each $id, $colors in $colors-home {
   @each $theme, $color in $colors {
     @at-root body.#{$theme} div.layout-home a##{$id} {
       color: $color;
-      background-image: functions.underline-hack($color);
+      background-image: underline-hack($color);
     }
   }
 }
