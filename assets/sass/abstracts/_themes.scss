@@ -1,4 +1,7 @@
 @use "sass:map";
+@use "sass:string";
+
+@use "../abstracts/functions";
 
 // Dark & Light Themes
 $themes: (
@@ -165,9 +168,14 @@ $icon-wand: 'data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000
 // ----------------------------------------
 
 @mixin themed($property, $key) {
+  // hack to allow root (body) theming
+  $selectors: functions.str-split("#{&}");
+
   @each $theme, $map in $themes {
-    @at-root body.#{$theme} #{&} {
-      #{$property}: map-get($map, $key);
+    @each $selector in $selectors {
+      @at-root body.#{$theme} #{$selector} {
+        #{$property}: map.get($map, $key);
+      }
     }
   }
 }

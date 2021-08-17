@@ -1,3 +1,5 @@
+@use "../abstracts/themes";
+
 // all code
 code {
   font-size: 0.925em;
@@ -53,13 +55,18 @@ div.highlight-clipboard-enabled {
     top: 0;
     right: 0;
 
-    width: 5.25em;
-    padding: 0.75em 0.25em;
+    width: 5.5em;
+    padding: 0.6em 0.2em;
     border: 1px solid;
     cursor: pointer;
 
-    font-size: 0.9em;
+    font-size: 0.85em;
     font-weight: 500;
+    line-height: 1;
+
+    &:hover {
+      @include themes.themed(color, "links");
+    }
   }
 }
 
