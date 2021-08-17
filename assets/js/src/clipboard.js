@@ -2,34 +2,37 @@ import ClipboardJS from "clipboard";
 import trimNewlines from "trim-newlines";
 
 // the default text of the copy button:
-const copyTerm = "Copy";
+const defaultTerm = "Copy";
+const successTerm = "Copied!";
 
 // immediately give up if not supported
 if (ClipboardJS.isSupported()) {
   // loop through each code fence on page (if any)
   document.querySelectorAll("div.highlight").forEach((highlightDiv) => {
+    const wrapperDiv = document.createElement("div");
+    wrapperDiv.className = "highlight-clipboard-enabled";
+
     const button = document.createElement("button");
     button.className = "copy-button";
-    button.innerText = copyTerm;
+    button.innerText = defaultTerm;
 
     // insert button as a sibling to Hugo's code fence
-    highlightDiv.insertBefore(button, highlightDiv.firstChild);
+    highlightDiv.parentNode.insertBefore(wrapperDiv, highlightDiv);
+    wrapperDiv.appendChild(highlightDiv);
+    wrapperDiv.insertBefore(button, wrapperDiv.firstChild);
   });
 
   new ClipboardJS("button.copy-button", {
-    text: (trigger) => {
-      // actual code element will (should) have class "language-*", even if plaintext
-      const fenceElement = trigger.parentElement.querySelector('code[class^="language-"]'); // eslint-disable-line quotes
-
-      return fenceElement ? trimNewlines(fenceElement.innerText) : false;
-    },
+    // actual code element will (should) have class "language-*", even if plaintext
+    // eslint-disable-next-line quotes
+    text: (trigger) => trimNewlines(trigger.parentElement.querySelector('code[class^="language-"]').innerText),
   }).on("success", (e) => {
     // show a subtle indication of success
-    e.trigger.innerText = "✓";
+    e.trigger.innerText = successTerm;
 
     // reset button to original text after 2 seconds
     setTimeout(() => {
-      e.trigger.innerText = copyTerm;
+      e.trigger.innerText = defaultTerm;
     }, 2000);
 
     // text needed to be auto-selected to copy, unselect immediately
