@@ -21,7 +21,7 @@ const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks?time_range
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN || "",
-  environment: process.env.NODE_ENV || process.env.VERCEL_ENV || process.env.SENTRY_ENVIRONMENT || "",
+  environment: process.env.NODE_ENV || process.env.VERCEL_ENV || "",
 });
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -31,7 +31,11 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     if (req.method !== "GET") {
       throw new Error(`Method ${req.method} not allowed.`);
     }
-    if (!process.env.SPOTIFY_CLIENT_ID || !process.env.SPOTIFY_CLIENT_SECRET || !process.env.SPOTIFY_REFRESH_TOKEN) {
+    if (
+      !process.env.SPOTIFY_CLIENT_ID ||
+      !process.env.SPOTIFY_CLIENT_SECRET ||
+      !process.env.SPOTIFY_REFRESH_TOKEN
+    ) {
       throw new Error("Spotify API credentials aren't set.");
     }
 
@@ -47,7 +51,10 @@ export default async (req: VercelRequest, res: VercelResponse) => {
       response = await getTopTracks();
 
       // let Vercel edge and browser cache results for 3 hours
-      res.setHeader("Cache-Control", "public, max-age=10800, s-maxage=10800, stale-while-revalidate");
+      res.setHeader(
+        "Cache-Control",
+        "public, max-age=10800, s-maxage=10800, stale-while-revalidate"
+      );
     }
 
     res.setHeader("Access-Control-Allow-Methods", "GET");
@@ -88,6 +95,7 @@ const getNowPlaying = async (): Promise<Track> => {
 
   const response = await fetch(NOW_PLAYING_ENDPOINT, {
     headers: {
+      // eslint-disable-next-line camelcase
       Authorization: `Bearer ${access_token}`,
       Accept: "application/json",
       "Content-Type": "application/json",
@@ -121,6 +129,7 @@ const getTopTracks = async (): Promise<Track[]> => {
 
   const response = await fetch(TOP_TRACKS_ENDPOINT, {
     headers: {
+      // eslint-disable-next-line camelcase
       Authorization: `Bearer ${access_token}`,
       Accept: "application/json",
       "Content-Type": "application/json",

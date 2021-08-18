@@ -11,7 +11,7 @@ const baseUrl = "https://jarv.is/";
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN || "",
-  environment: process.env.NODE_ENV || process.env.VERCEL_ENV || process.env.SENTRY_ENVIRONMENT || "",
+  environment: process.env.NODE_ENV || process.env.VERCEL_ENV || "",
 });
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -111,7 +111,9 @@ const getSiteStats = async (client: Client): Promise<OverallStats> => {
   pages.map((p: PageStats) => {
     // match URLs from RSS feed with db to populate some metadata
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
-    const match = feed.rss.channel.item.find((x: { link: string }) => x.link === baseUrl + p.slug + "/");
+    const match = feed.rss.channel.item.find(
+      (x: { link: string }) => x.link === baseUrl + p.slug + "/"
+    );
     if (match) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       p.title = decode(match.title);

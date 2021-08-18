@@ -6,7 +6,7 @@ import type { Repository, GHRepoSchema } from "./types/projects";
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN || "",
-  environment: process.env.NODE_ENV || process.env.VERCEL_ENV || process.env.SENTRY_ENVIRONMENT || "",
+  environment: process.env.NODE_ENV || process.env.VERCEL_ENV || "",
 });
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types

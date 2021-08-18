@@ -24,8 +24,9 @@ if (ClipboardJS.isSupported()) {
 
   new ClipboardJS("button.copy-button", {
     // actual code element will (should) have class "language-*", even if plaintext
-    // eslint-disable-next-line quotes
-    text: (trigger) => trimNewlines(trigger.parentElement.querySelector('code[class^="language-"]').innerText),
+    text: (trigger) =>
+      // eslint-disable-next-line quotes
+      trimNewlines(trigger.parentElement.querySelector('code[class^="language-"]').innerText),
   }).on("success", (e) => {
     // show a subtle indication of success
     e.trigger.innerText = successTerm;

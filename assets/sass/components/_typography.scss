@@ -31,7 +31,8 @@ $unicode-subset: U+0000-00FF, U+2000-206F, U+2200-22FF, U+2122;
       src: url($base-path + $src + ".woff2") format("woff2-variations"),
         url($base-path + $src + ".woff2") format("woff2");
     } @else {
-      src: url($base-path + $src + ".woff2") format("woff2"), url($base-path + $src + ".woff") format("woff");
+      src: url($base-path + $src + ".woff2") format("woff2"),
+        url($base-path + $src + ".woff") format("woff");
     }
 
     // Allow additional rules to be passed in:
@@ -89,7 +90,13 @@ $unicode-subset: U+0000-00FF, U+2000-206F, U+2200-22FF, U+2122;
 
 // Variable
 @include font-face("Roboto Mono var", "roboto-mono-subset.var", 100 700, $variable: true);
-@include font-face("Roboto Mono var", "roboto-mono-italic-subset.var", 100 700, italic, $variable: true);
+@include font-face(
+  "Roboto Mono var",
+  "roboto-mono-italic-subset.var",
+  100 700,
+  italic,
+  $variable: true
+);
 
 // Legacy
 @include font-face("Roboto Mono", "roboto-mono-regular-subset", 400);

@@ -33,9 +33,16 @@
 
   @while string.index("#{$str}", "#{$separator}") != null {
     @if (string.index("#{$str}", "#{$separator}") > 1) {
-      $str-list: list.append($str-list, string.slice("#{$str}", 1, string.index("#{$str}", "#{$separator}") - 1));
+      $str-list: list.append(
+        $str-list,
+        string.slice("#{$str}", 1, string.index("#{$str}", "#{$separator}") - 1)
+      );
     }
-    $str: string.slice("#{$str}", string.index("#{$str}", "#{$separator}") + 1, string.length("#{$str}"));
+    $str: string.slice(
+      "#{$str}",
+      string.index("#{$str}", "#{$separator}") + 1,
+      string.length("#{$str}")
+    );
   }
 
   @if (string.slice("#{$str}", 1, string.length("#{$str}")) != "") {
