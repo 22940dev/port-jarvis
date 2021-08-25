@@ -13,6 +13,7 @@ updates:
     - "📦 dependencies"
   commit-message:
     prefix: "📦 npm:"
+  open-pull-requests-limit: 99
 
 - package-ecosystem: github-actions
   directory: "/"
@@ -22,3 +23,4 @@ updates:
     - "📦 dependencies"
   commit-message:
     prefix: "📦 ci:"
+  open-pull-requests-limit: 99
