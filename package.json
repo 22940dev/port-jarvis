@@ -26,7 +26,7 @@
     "lint:scss": "stylelint 'assets/sass/**/*.scss' --syntax scss",
     "lint:md": "markdownlint 'content/**/*.md'",
     "lint:prettier": "prettier --check .",
-    "percy": "npx percy snapshot ./public --files 'index.html,uses/index.html,notes/{how-to-pull-request-fork-github,shodan-search-queries}/index.html'"
+    "percy": "npx percy snapshot ./public"
   },
   "dependencies": {
     "@fontsource/comic-neue": "4.5.0",

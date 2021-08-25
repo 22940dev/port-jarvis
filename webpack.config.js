@@ -61,14 +61,15 @@ export default {
       ],
     }),
     new SubresourceIntegrityPlugin({
-      hashFuncNames: ["sha512"],
       enabled: true,
+      hashFuncNames: ["sha384"],
     }),
     new WebpackAssetsManifest({
-      writeToDisk: true,
+      writeToDisk: true, // allow Hugo to access file in dev mode
       output: path.resolve(__dirname, "data/manifest.json"),
       publicPath: true,
       integrity: true,
+      integrityHashes: ["sha384"],
     }),
   ],
   module: {

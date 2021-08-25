@@ -21,10 +21,11 @@ snapshot:
       transition-delay: 0s !important;
     }
 static:
-  files:
+  include:
     - "index.html"
     - "uses/index.html"
-    - "notes/{how-to-pull-request-fork-github,shodan-search-queries}/index.html"
+    - "notes/how-to-pull-request-fork-github/index.html"
+    - "notes/shodan-search-queries/index.html"
 discovery:
   network-idle-timeout: 750
   disable-cache: true
