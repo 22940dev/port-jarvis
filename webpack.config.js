@@ -2,7 +2,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import webpack from "webpack";
 import WebpackAssetsManifest from "webpack-assets-manifest";
-import SriPlugin from "webpack-subresource-integrity";
+import { SubresourceIntegrityPlugin } from "webpack-subresource-integrity";
 import CopyPlugin from "copy-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
@@ -60,7 +60,7 @@ export default {
         },
       ],
     }),
-    new SriPlugin({
+    new SubresourceIntegrityPlugin({
       hashFuncNames: ["sha512"],
       enabled: true,
     }),
