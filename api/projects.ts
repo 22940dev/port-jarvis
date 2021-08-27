@@ -42,8 +42,9 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     Sentry.captureException(error);
     await Sentry.flush(2000);
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
-    res.status(400).json({ message: error.message });
+    const message = error instanceof Error ? error.message : "Unknown error.";
+
+    res.status(400).json({ success: false, message: message });
   }
 };
 
