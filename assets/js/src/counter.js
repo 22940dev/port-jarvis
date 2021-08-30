@@ -27,11 +27,15 @@ if (wrapper && canonical) {
 
         // finally inject the hits...
         const counter = document.getElementById("hit-counter");
-        if (counter) counter.appendChild(document.createTextNode(hitsComma));
+        if (counter) {
+          counter.appendChild(document.createTextNode(hitsComma));
+        }
 
         // ...and hide the loading spinner
         const spinner = document.getElementById("hit-spinner");
-        if (spinner) spinner.style.display = "none";
+        if (spinner) {
+          spinner.style.display = "none";
+        }
       } else {
         // something went horribly wrong, initiate coverup
         wrapper.style.display = "none";

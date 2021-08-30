@@ -14,7 +14,9 @@ if (wrapper) {
     <a class="repo-name" href="${repo.url}" target="_blank" rel="noopener">${repo.name}</a>
 
     ${(() => {
-      if (repo.description) return html`<p class="repo-description">${repo.description}</p>`;
+      if (repo.description) {
+        return html`<p class="repo-description">${repo.description}</p>`;
+      }
     })()}
     ${(() => {
       if (repo.language) {
@@ -75,7 +77,9 @@ if (wrapper) {
       });
 
       // we're done, hide the loading spinner
-      if (spinner) spinner.style.display = "none";
+      if (spinner) {
+        spinner.style.display = "none";
+      }
 
       // the repo descriptions were added after the first twemoji parsing
       twemoji.parse(wrapper, {
