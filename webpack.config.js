@@ -188,6 +188,7 @@ export default {
           },
           format: {
             comments: /^\**!|@preserve|@license/i,
+            ascii_only: true, // some symbols get disfigured otherwise
           },
           mangle: true,
         },

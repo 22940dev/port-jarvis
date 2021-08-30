@@ -55,6 +55,35 @@ div#content {
       padding-left: 0.25em;
     }
   }
+
+  // AnchorJS styles
+  h2,
+  h3,
+  h4 {
+    a.anchorjs-link {
+      display: inline-block;
+      margin-left: 0.25em;
+      padding-left: 0.25em;
+      padding-right: 0.5em;
+      opacity: 0;
+      font-weight: 300;
+      background: none;
+
+      &::before {
+        content: "\0023"; // pound sign
+      }
+
+      @include themes.themed(color, "medium-light");
+
+      &:hover {
+        @include themes.themed(color, "links");
+      }
+    }
+
+    &:hover > a.anchorjs-link {
+      opacity: 1;
+    }
+  }
 }
 
 // Responsive
