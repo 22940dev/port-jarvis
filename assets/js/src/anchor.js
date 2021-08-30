@@ -4,4 +4,4 @@ const anchors = new SimpleAnchor({
   icon: "",
 });
 
-anchors.add("article #content h2, article #content h3, article #content h4");
+anchors.add("div#content h2, div#content h3, div#content h4");
