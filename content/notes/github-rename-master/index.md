@@ -29,7 +29,7 @@ But this means in the meantime, project owners are free to rename their branches
 
 ---
 
-### 1. Move your `master` branch to `main`:
+### 1. Move your `master` branch to `main`: {#step-1}
 
 ...or `development`, `unstable`, `trunk`, `live`, `original`; your choice!
 
@@ -39,7 +39,7 @@ We use `branch -m` to **move** the branch locally instead of creating a new one 
 git branch -m master main
 ```
 
-### 2. Push the new branch to GitHub:
+### 2. Push the new branch to GitHub: {#step-2}
 
 The first command is probably familiar. `-u` sets the new branch as the local default at the same time, and the second line ensures our local `HEAD` points to our new branch on GitHub.
 
@@ -50,13 +50,13 @@ git remote set-head origin main
 
 You can verify this worked by running `git branch -r`. You should see something like `origin/HEAD -> origin/main`.
 
-### 3. Change the default branch in your repository's settings:
+### 3. Change the default branch in your repository's settings: {#step-3}
 
 Setting the default branch remotely is the only step that can't be done on the command line (although you can technically [use the GitHub API](https://github.com/erbridge/github-branch-renamer)). Head to **Settings → Branches** on GitHub to [change the default branch](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/changing-the-base-branch-of-a-pull-request).
 
 {{< image src="images/github-default.png" width="810" alt="Changing the default branch of a GitHub repository" />}}
 
-### 4. Delete the old `master` branch on GitHub:
+### 4. Delete the old `master` branch on GitHub: {#step-4}
 
 We used `-m` (move) to **rename** the `master` branch locally, but GitHub will still have two identical branches at this point (as you saw in the previous step). Deleting it can be a little nerve-racking, so poke around your repository on GitHub and make sure your new branch is there and the commit history is correct.
 
@@ -66,7 +66,7 @@ You can say good riddance to `master` [through the GitHub UI](https://help.githu
 git push origin --delete master
 ```
 
-### 5. Scan your code, scripts, automation, etc. for references to `master`:
+### 5. Scan your code, scripts, automation, etc. for references to `master`: {#step-5}
 
 Do a quick search of your codebase for `master` to manually replace any dead references to it.
 
@@ -78,7 +78,7 @@ Pay attention to CI files — `.travis.yml`, `.github/workflows/`, `.circleci/c
 
 > **Update:** GitHub is now [redirecting deleted branches](https://github.blog/changelog/2020-07-17-links-to-deleted-branches-now-redirect-to-the-default-branch/) to the default branch!
 
-### Bonus points:
+### Bonus points: {#bonus-points}
 
 None of this will work on a brand new repository with zero commits. But we can hack around this limitation pretty easily...
 
@@ -96,7 +96,7 @@ And while we're at it, Nat... **It's time to finally [#DropICE](https://github.c
 
 ---
 
-### Further reading:
+### Further reading: {#further-reading}
 
 - [_Master/slave (technology)_ on Wikipedia](<https://en.wikipedia.org/wiki/Master/slave_(technology)>)
 - [History of "master" in BitKeeper → Git](https://mail.gnome.org/archives/desktop-devel-list/2019-May/msg00066.html)

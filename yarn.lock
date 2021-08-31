@@ -955,9 +955,12 @@
   integrity sha512-T9pUWd3dp2lcJabGGkQClNPbPUsBeoR2APnKkgjtxiTrnbl4cRjaXYlQvyyvRRASAe07agYnJobdDqA+IbvnXg==
 
 "@jakejarvis/eslint-config@*":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@jakejarvis/eslint-config/-/eslint-config-1.0.1.tgz#10a149fa8fdbe730a7d65f7808b9acc149564df8"
-  integrity sha512-+UM5F7BQRBses5DpaWj6hcvxE5Qqb8xJRYSxp7ucqk6eEnm92xLgN0frGe2/zXtVgRWGt5Fvx/5EwkGM6tfNCg==
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@jakejarvis/eslint-config/-/eslint-config-1.0.3.tgz#4074b572dbb0ad0b5223ef9f286ae1a863042e9f"
+  integrity sha512-BQvuO9h8bgxtMYhz9ksutEzNqBl74Bi4PL5MDRv4xoBLMCcbhXyDWZOGiyMSNy3CyaK0LSUEGUTKWIqz9avyrQ==
+  dependencies:
+    eslint-plugin-compat "^3.13.0"
+    eslint-plugin-import "^2.24.2"
 
 "@jest/types@^27.1.0":
   version "27.1.0"
@@ -1480,9 +1483,9 @@
     form-data "^3.0.0"
 
 "@types/node@*":
-  version "16.7.7"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.7.7.tgz#73b345af160b495716cf7e2b54b68f701320f08b"
-  integrity sha512-bxWC4rgIF/FjM7JsPvpk6ZKGITgw27qsYCbi6h4kWZWYpchOLENgvFaRBZUc64Q/M1y+X2EteahRbyo8QFCKdw==
+  version "16.7.8"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.7.8.tgz#2448be5f24fe6b77114632b6350fcd219334651e"
+  integrity sha512-8upnoQU0OPzbIkm+ZMM0zCeFCkw2s3mS0IWdx0+AAaWqm4fkBb0UJp8Edl7FVKRamYbpJC/aVsHpKWBIbiC7Zg==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -3884,9 +3887,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.811:
-  version "1.3.822"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.822.tgz#7036edc7f669b0aa79e9801dc5f56866c6ddc0b2"
-  integrity sha512-k7jG5oYYHxF4jx6PcqwHX3JVME/OjzolqOZiIogi9xtsfsmTjTdie4x88OakYFPEa8euciTgCCzvVNwvmjHb1Q==
+  version "1.3.824"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.824.tgz#9f85cc826c70b12180009d461e3b19c8121a56d2"
+  integrity sha512-Fk+5aD0HDi9i9ZKt9n2VPOZO1dQy7PV++hz2wJ/KIn+CvVfu4fny39squHtyVDPuHNuoJGAZIbuReEklqYIqfA==
 
 emoji-regex@^7.0.1:
   version "7.0.3"
@@ -4111,7 +4114,7 @@ eslint-module-utils@^2.6.2:
     debug "^3.2.7"
     pkg-dir "^2.0.0"
 
-eslint-plugin-compat@~3.13.0:
+eslint-plugin-compat@^3.13.0, eslint-plugin-compat@~3.13.0:
   version "3.13.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-compat/-/eslint-plugin-compat-3.13.0.tgz#fade6f2ad25263cf93f8d23c988533551ced8663"
   integrity sha512-cv8IYMuTXm7PIjMVDN2y4k/KVnKZmoNGHNq27/9dLstOLydKblieIv+oe2BN2WthuXnFNhaNvv3N1Bvl4dbIGA==
@@ -4125,7 +4128,7 @@ eslint-plugin-compat@~3.13.0:
     lodash.memoize "4.1.2"
     semver "7.3.5"
 
-eslint-plugin-import@~2.24.2:
+eslint-plugin-import@^2.24.2, eslint-plugin-import@~2.24.2:
   version "2.24.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.24.2.tgz#2c8cd2e341f3885918ee27d18479910ade7bb4da"
   integrity sha512-hNVtyhiEtZmpsabL4neEj+6M5DCLgpYyG9nzJY8lZQeQXEn5UPW1DpUdsMHMXsq98dbNm7nt1w9ZMSVpfJdi8Q==
@@ -9490,10 +9493,10 @@ signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
   integrity sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFRoeDoJO7wthSLq42EjA==
 
-simple-anchor@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/simple-anchor/-/simple-anchor-1.0.1.tgz#bc3e069554bae19c9e2063cd1c72e2c6d94b0774"
-  integrity sha512-wX21+94g3rUrbva9iLXzPtI6aJX84KzcAi2PJH2aacqM9C8pYDgOMkCjG+lrXhrF2OdCjFvO8zjUfnhUzHL13A==
+simple-anchor@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/simple-anchor/-/simple-anchor-1.0.2.tgz#a58aab1dad122ccb1cc5d07a5b1130132dc0a6eb"
+  integrity sha512-PeUwwqJqj43UkW+Pyb4IaSPXDdrANANnnhYV4n9czRbnBuxIIhpiKC3KNkOWh8iaFbCdnP8vnmfQBPg4H4QU8A==
 
 simple-git-hooks@^2.6.1:
   version "2.6.1"

@@ -29,13 +29,13 @@ The following steps to submit a pull request will work on Git repositories hoste
 
 Starting from the very beginning, we'll fork an existing repository to our account, clone the fork locally, commit your changes to a new branch, and push it back upstream to GitHub to submit for approval.
 
-## 1. Forking the Repository
+## 1. Forking the Repository {#step-1}
 
 Assuming you're using GitHub, this step is easy. Just find the repository you're contributing to and press the Fork button in the upper left. This will create an exact copy of the repository (and all of its branches) under your own username.
 
 {{< image src="images/step1.png" alt="Step 1" />}}
 
-## 2. Clone your new fork locally
+## 2. Clone your new fork locally {#step-2}
 
 GitHub will automatically redirect you to the forked repository under your username. This is the repository you need to clone to your local development environment, **not** the original. Grab the URL GitHub provides under the green "Clone or Download" button and plug it into the command below.
 
@@ -45,7 +45,7 @@ git clone git@github.com:jakejarvis/react-native.git
 
 {{< image src="images/step2.png" width="420" alt="Step 2" />}}
 
-## 3. Track the original repository as a remote of the fork
+## 3. Track the original repository as a remote of the fork {#step-3}
 
 _This step is technically optional, but important if you plan to continue contributing to a project in the future, so we might as well..._
 
@@ -60,7 +60,7 @@ git remote add --track master upstream git@github.com:facebook/react-native.git
 git fetch upstream
 ```
 
-## 4. Create a new branch for your changes
+## 4. Create a new branch for your changes {#step-4}
 
 It's possible to make changes directly to the `master` branch, but this might FUBAR things down the road for complicated reasons. It's best to [`checkout`](https://git-scm.com/docs/git-checkout) a new branch for **each** change/improvement you want to make. Replace `fix-readme-typo` with a more descriptive name for your changes, like `add-mobile-site` or `update-dependencies`.
 
@@ -68,11 +68,11 @@ It's possible to make changes directly to the `master` branch, but this might FU
 git checkout -b fix-readme-typo upstream/master
 ```
 
-## 5. Make your changes!
+## 5. Make your changes! {#step-5}
 
 This is either the easiest part or the hardest part, depending on how you look at it. 😉 At this point, you're isolated in the new branch you just created, and it's safe to open whatever text editor or IDE you use and go wild.
 
-## 6. Add, commit, and push the changes
+## 6. Add, commit, and push the changes {#step-6}
 
 You're probably used to these commands. Add the files you've changed and commit them with a descriptive message.
 
@@ -87,7 +87,7 @@ The one difference is the branch you're pushing to. You likely usually push to `
 git push -u origin fix-readme-typo
 ```
 
-## 7. Submit your pull request
+## 7. Submit your pull request {#step-7}
 
 You're now all ready to submit the improvement you've made to the project's maintainers for approval. Head over to the original repositories Pull Requests tab, and you should see an automatic suggestion from GitHub to create a pull request from your new branch.
 

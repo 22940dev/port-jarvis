@@ -63,11 +63,11 @@ div#content {
     a.anchorjs-link {
       display: inline-block;
       margin-left: 0.25em;
-      padding-left: 0.25em;
-      padding-right: 0.5em;
+      padding: 0 0.5em 0 0.25em;
+      background: none;
       opacity: 0;
       font-weight: 300;
-      background: none;
+      line-height: 1;
 
       &::before {
         content: "\0023"; // pound sign
@@ -81,7 +81,7 @@ div#content {
     }
 
     &:hover > a.anchorjs-link {
-      opacity: 1;
+      opacity: 1; // '#' link appears on hover over entire sub-heading line
     }
   }
 }

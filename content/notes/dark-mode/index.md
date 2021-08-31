@@ -45,7 +45,7 @@ A _very_ barebones example is embedded above ([view the source here](https://git
 
 ---
 
-### [Minified JS](https://raw.githubusercontent.com/jakejarvis/dark-mode-example/gh-pages/dark-mode.min.js) (410 bytes gzipped! 📦):
+### [Minified JS](https://raw.githubusercontent.com/jakejarvis/dark-mode-example/gh-pages/dark-mode.min.js) (410 bytes gzipped! 📦): {#minified-js}
 
 <!-- prettier-ignore -->
 ```js
@@ -53,7 +53,7 @@ A _very_ barebones example is embedded above ([view the source here](https://git
 (function(){var e=window,t=e.document,i=t.body.classList,a=localStorage,c="dark_mode_pref",d=a.getItem(c),n="dark",o="light",r=o,s=t.querySelector(".dark-mode-toggle"),m=r===n,l=function(e){i.remove(n,o);i.add(e);m=e===n};d===n&&l(n);d===o&&l(o);if(!d){var f=function(e){return"(prefers-color-scheme: "+e+")"};e.matchMedia(f(n)).matches?l(n):e.matchMedia(f(o)).matches?l(o):l(r);e.matchMedia(f(n)).addListener((function(e){e.matches&&l(n)}));e.matchMedia(f(o)).addListener((function(e){e.matches&&l(o)}))}if(s){s.style.visibility="visible";s.addEventListener("click",(function(){if(m){l(o);a.setItem(c,o)}else{l(n);a.setItem(c,n)}}),!0)}})();
 ```
 
-### Full JS:
+### Full JS: {#full-js}
 
 <!-- prettier-ignore -->
 ```js
@@ -136,7 +136,7 @@ A _very_ barebones example is embedded above ([view the source here](https://git
 })();
 ```
 
-### HTML & CSS Example:
+### HTML & CSS Example: {#html-css}
 
 <!-- prettier-ignore -->
 ```html
@@ -191,7 +191,7 @@ A _very_ barebones example is embedded above ([view the source here](https://git
 
 ---
 
-### Further reading:
+### Further reading: {#further-reading}
 
 - [The Dark (Mode) Web Rises](https://charlesrt.uk/blog/the-dark-web-rises/)
 - [Dark Mode vs. Light Mode: Which Is Better?](https://www.nngroup.com/articles/dark-mode/)
