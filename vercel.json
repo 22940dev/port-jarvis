@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "name": "jarvis",
   "alias": [ "jarv.is", "www.jarv.is" ],
   "public": false,
@@ -7,11 +8,19 @@
   "env": {
     "FORCE_RUNTIME_TAG": "canary"
   },
-  "functions": {
-    "api/*.ts": {
-      "runtime": "@vercel/node@1.12.2-canary.1"
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build@canary",
+      "config": {
+        "distDir": "public"
+      }
+    },
+    {
+      "src": "api/*.ts",
+      "use": "@vercel/node@canary"
     }
-  },
+  ],
   "rewrites": [
     { "source": "/favicon.ico", "destination": "/assets/images/favicon.ico" },
     { "source": "/apple-touch-icon.png", "destination": "/assets/images/apple-touch-icon.png" },
