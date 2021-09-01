@@ -6,7 +6,13 @@ import { VercelRequest, VercelResponse } from "@vercel/node";
 import fetch from "node-fetch";
 import * as queryString from "query-string";
 
-import type { Track, SpotifyTrackSchema, SpotifyActivitySchema } from "./types/tracks";
+import type {
+  Track,
+  SpotifyTrackSchema,
+  SpotifyActivitySchema,
+  SpotifyTokenSchema,
+  SpotifyTopSchema,
+} from "./types/tracks";
 
 const { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN } = process.env;
 
@@ -74,7 +80,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
   }
 };
 
-const getAccessToken = async () => {
+const getAccessToken = async (): Promise<SpotifyTokenSchema> => {
   const response = await fetch(TOKEN_ENDPOINT, {
     method: "POST",
     headers: {
@@ -87,11 +93,10 @@ const getAccessToken = async () => {
     }),
   });
 
-  return response.json();
+  return response.json() as Promise<SpotifyTokenSchema>;
 };
 
 const getNowPlaying = async (): Promise<Track> => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { access_token } = await getAccessToken();
 
   const response = await fetch(NOW_PLAYING_ENDPOINT, {
@@ -107,8 +112,7 @@ const getNowPlaying = async (): Promise<Track> => {
     return { isPlaying: false };
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const active: SpotifyActivitySchema = await response.json();
+  const active = (await response.json()) as SpotifyActivitySchema;
 
   if (active.is_playing === true && active.item) {
     return {
@@ -138,7 +142,7 @@ const getTopTracks = async (): Promise<Track[]> => {
   });
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const { items } = await response.json();
+  const { items } = (await response.json()) as SpotifyTopSchema;
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
   const tracks: Track[] = items.map((track: Readonly<SpotifyTrackSchema>) => ({
