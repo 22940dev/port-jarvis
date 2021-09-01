@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es2020",
     "lib": [
       "esnext",
-      "es2018"
+      "es2020"
     ],
-    "module": "commonjs",
+    "module": "es2020",
     "moduleResolution": "node",
     "importHelpers": true,
     "esModuleInterop": true,
